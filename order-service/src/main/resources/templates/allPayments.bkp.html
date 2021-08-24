@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-us" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+	crossorigin="anonymous">
+</head>
+
+
+
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">Payment-Service</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active"><a class="nav-link" href="#">Home
+				</a></li>
+				<li class="nav-item"></li>
+				<li class="nav-item dropdown"><a class="nav-link"
+					href="/mvc/createPayment">Create Payment</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="/mvc/all-payments">All Payments</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<br>
+	<table class="table">
+		<thead class="table-light">
+			<tr>
+				<th>userId</th>
+				<th>From Account</th>
+				<th>To Account</th>
+				<th>Amount</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="t : ${list}">
+				<td th:text="${t.userId}"></td>
+				<td th:text="${t.accountFrom}"></td>
+				<td th:text="${t.accountTo}"></td>
+				<td th:text="${t.amount}"></td>
+		</tbody>
+
+	</table>
+</body>
+</html>

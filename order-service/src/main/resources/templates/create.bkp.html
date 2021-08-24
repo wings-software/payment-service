@@ -1,0 +1,67 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create new Payment</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+         <script src="/webjars/jquery/jquery.min.js"></script>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+	crossorigin="anonymous">
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">Payment-Service</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active"><a class="nav-link" href="#">Home
+				</a></li>
+				<li class="nav-item"></li>
+				<li class="nav-item dropdown"><a class="nav-link"
+					href="/mvc/createPayment">Create Payment</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="/mvc/all-payments">All Payments</a></li>
+			</ul>
+		</div>
+	</nav>
+
+<div class="container center_div">
+<form action="#" th:action="@{/mvc/payment}" th:object="${paymentDto}" method="post">
+  <div class="mb-3">
+    <label for="userid" class="form-label">userId</label>
+    <input type="text" th:field="*{userId}" aria-describedby="userIdHelp">
+  </div>
+  <div class="mb-3">
+    <label for="accountfrom" class="form-label">accountFrom</label>
+    <input type="text" th:field="*{accountFrom}">
+  </div>
+    <div class="mb-3">
+    <label for="accountto" class="form-label">accountTo</label>
+    <input type="text" th:field="*{accountTo}">
+  </div>
+    <div class="mb-3">
+    <label for="amount" class="form-label">amount</label>
+    <input type="number" th:field="*{amount}">
+  </div>
+<div class="g-recaptcha col-sm-5"
+          th:attr="data-sitekey=6LdXZzQbAAAAAM2BjBs_0gLs3lantY_JM7MjiOxr"></div>
+        <span id="captchaError" class="alert alert-danger col-sm-4"
+          style="display:none"></span></div>
+
+  <button type="submit" class="btn btn-primary"  value="Submit">Submit</button>
+  <button type="reset" value="Reset" class="btn btn-secondary"  >Reset</button>
+</form>
+
+</div>
+
+</body>
+</html>

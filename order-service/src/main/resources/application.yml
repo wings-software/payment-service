@@ -1,0 +1,24 @@
+payment-config.supportedAccounts: BARCELONA,TENERIFE,CRETE,LONDON,PARIS
+
+management.endpoints.web.base-path: "/"
+management.endpoints.web.exposure.include: "*"
+management.health.defaults.enabled: true
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, metrics
+  metrics:
+    export:
+      atlas:
+        enabled: false
+  security:
+    enabled: false
+
+harness:
+  se: ${HARNESS_SE:nikpapag}
+  build: ${HARNESS_BUILD:1}
+  api:
+    key: ${HARNESS_FF_KEY:5bf77c96-fbae-446e-b83e-e1aba03e203a}
