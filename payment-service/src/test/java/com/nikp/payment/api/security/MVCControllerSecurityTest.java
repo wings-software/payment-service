@@ -92,7 +92,9 @@ public class MVCControllerSecurityTest {
             .contentType(MediaType.APPLICATION_FORM_URLENCODED).with(csrf())
             .sessionAttr("paymentDto", paymentDto)
     )
-        .andExpect(status().isOk());
+
+        .andExpect(status().is4xxClientError());
+
   }
 
   @Test
