@@ -19,4 +19,5 @@ COPY ./payment-service/target/*.jar payment-service.jar
 
 EXPOSE 8080
 
+
 CMD ["java","-jar","payment-service.jar"]                              
