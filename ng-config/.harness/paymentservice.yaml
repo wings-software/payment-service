@@ -191,7 +191,7 @@ pipeline:
                               variables: []
                       serviceRef: paymentservice
                   infrastructure:
-                      environmentRef: GKEDev
+                      environmentRef: GKEDEV
                       infrastructureDefinition:
                           type: KubernetesDirect
                           spec:
