@@ -1,0 +1,12 @@
+connector:
+  name: nikp-gke-cluster
+  identifier: nikpgkecluster
+  description:
+  orgIdentifier: default
+  projectIdentifier: NG_Demo
+  type: K8sCluster
+  spec:
+    credential:
+      type: InheritFromDelegate
+    delegateSelectors:
+    - nikp-gke-eu
