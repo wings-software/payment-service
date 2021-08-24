@@ -96,6 +96,7 @@ public class MVCControllerTest {
             .contentType(MediaType.APPLICATION_FORM_URLENCODED)
             .sessionAttr("paymentDto", paymentDto)
     )
-        .andExpect(status().isOk());
+        .andExpect(status().is4xxClientError());
+
   }
 }
