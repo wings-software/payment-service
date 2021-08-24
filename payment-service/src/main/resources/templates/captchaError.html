@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-us" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+	crossorigin="anonymous">
+</head>
+
+
+
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">Payment-Service</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active"><a class="nav-link" href="#">Home
+				</a></li>
+				<li class="nav-item"></li>
+				<li class="nav-item dropdown"><a class="nav-link"
+					href="/mvc/createPayment">Create Payment</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="/mvc/all-payments">All Payments</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<br>
+	
+	<body class="text-center">
+
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading">Captcha Validation Failed</h1>
+        <p class="lead">reCaptcha entry was invalid. Please retry </p>
+        <p class="lead">
+          <a href="/mvc/createPayment" class="btn btn-lg btn-secondary">Retry</a>
+        </p>
+      </main>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+  
+
+</body>
+
+</body>
+</html>
