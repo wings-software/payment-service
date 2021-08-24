@@ -276,7 +276,7 @@ pipeline:
                               manifestOverrideSets: []
                               variables: []
                   infrastructure:
-                      environmentRef: GKEProd
+                      environmentRef: GKEPROD
                       infrastructureDefinition:
                           type: KubernetesDirect
                           spec:
