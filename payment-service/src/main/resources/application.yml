@@ -21,4 +21,4 @@ harness:
   se: ${HARNESS_SE:nikpapag}
   build: ${HARNESS_BUILD:1}
   api:
-    key: ${HARNESS_FF_KEY:5bf77c96-fbae-446e-b83e-e1aba03e203a}
+    key: ${HARNESS_FF_KEY:44c9dcaa-dab2-4100-b2b5-75bdeb7aa497}
