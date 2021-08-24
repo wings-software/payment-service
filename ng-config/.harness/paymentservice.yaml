@@ -232,7 +232,7 @@ pipeline:
               type: Deployment
               spec:
                   serviceConfig:
-                      serviceRef: paymentservice
+                      serviceRef: paymentserviceprod
                       serviceDefinition:
                           type: Kubernetes
                           spec:
