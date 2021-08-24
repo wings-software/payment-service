@@ -385,5 +385,5 @@ pipeline:
           value: <+input>
         - name: ffsdkkeyprod
           type: String
-          default: " 5bf77c96-fbae-446e-b83e-e1aba03e203a"
+          default: 44c9dcaa-dab2-4100-b2b5-75bdeb7aa497
           value: <+input>
