@@ -1,7 +1,7 @@
 pipeline:
     name: payment-service
     identifier: paymentservice
-    projectIdentifier: NG_Demo
+    projectIdentifier: DevX_Demo
     orgIdentifier: default
     tags: {}
     properties:
