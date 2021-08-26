@@ -232,8 +232,11 @@ pipeline:
               type: Deployment
               spec:
                   serviceConfig:
-                      useFromStage:
-                          stage: DeployDev
+                      serviceRef: paymentservice
+                      serviceDefinition:
+                          type: Kubernetes
+                          spec:
+                              variables: []
                   infrastructure:
                       environmentRef: GKEPROD
                       infrastructureDefinition:
