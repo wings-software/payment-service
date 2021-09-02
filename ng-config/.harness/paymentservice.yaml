@@ -79,6 +79,8 @@ pipeline:
                                               export GITHUB_TOKEN=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
                                               git config --global user.name "nikpapag"
                                               git config --global user.email "nikpap.cs@icloud.com"
+                                              mkdir gitrepo
+                                              cd gitrepo
 
 
                                               git clone https://github.com/wings-software/payment-service.git
