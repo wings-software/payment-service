@@ -74,7 +74,7 @@ pipeline:
                                       identifier: cleanup
                                       spec:
                                           connectorRef: nikpdockerhub
-                                          image: nikpap/githubcli:latest
+                                          image: nikpap/githubcli:v2
                                           privileged: false
                                           settings:
                                               GITHUB_TOKEN: <+secrets.getValue("githubtoken")>
