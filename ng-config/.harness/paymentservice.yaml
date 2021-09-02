@@ -80,6 +80,7 @@ pipeline:
                                               GITHUB_TOKEN: <+secrets.getValue("githubtoken")>
                                               GITHUB_USERNAME: nikpapag
                                               GITHUB_EMAIL: nikpap.cs@icloud.com
+                                          imagePullPolicy: Always
                           - step:
                                 type: Run
                                 name: Build
