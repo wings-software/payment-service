@@ -68,6 +68,16 @@ pipeline:
                                             memory: 1Gi
                                             cpu: "2"
                           - step:
+                                type: Plugin
+                                name: cleanup
+                                identifier: cleanup
+                                spec:
+                                    connectorRef: nikpdockerhub
+                                    image: nikpap/githubcli:latest
+                                    privileged: false
+                                    settings:
+                                        GITHUB_TOKEN: <+secrets.getValue("githubtoken")
+                          - step:
                                 type: Run
                                 name: Build
                                 identifier: Build
