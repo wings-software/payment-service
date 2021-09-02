@@ -80,6 +80,8 @@ pipeline:
                                               git config --global user.name "nikpapag"
                                               git config --global user.email "nikpap.cs@icloud.com"
 
+                                              sleep 90000
+
                                               mkdir gitrepo
                                               cd gitrepo
 
@@ -98,6 +100,7 @@ pipeline:
                                                 gh pr close "$prnumber" 2>/dev/null
                                               done < "$input"
                                           privileged: false
+                                      failureStrategies: []
                           - step:
                                 type: Run
                                 name: Build
