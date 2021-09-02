@@ -90,16 +90,12 @@ pipeline:
 
                                               echo -ne '\n' | gh auth login --web
 
-                                              prs= gh pr list
 
-                                              echo "$prs" > "./pull-requests"
 
-                                              input="./pull-requests"
-                                              while IFS= read -r line
-                                              do
-                                                prnumber=$(echo "$line" | awk '{print $1}')
-                                                gh pr close "$prnumber" 2>/dev/null
-                                              done < "$input"
+                                              prs=$(gh pr list | awk '{print $1}')
+
+
+                                              gh pr close "$prs"
                                           privileged: false
                                       failureStrategies: []
                           - step:
