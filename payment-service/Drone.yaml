@@ -12,5 +12,9 @@ steps:
     branch:
       include:
       - master
+      
+      
+      
+      -m
  
 
