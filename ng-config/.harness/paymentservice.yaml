@@ -76,7 +76,7 @@ pipeline:
                                           connectorRef: nikpdockerhub
                                           image: nikpap/githubcli:latest
                                           command: |-
-                                              export GITHUB_TOKEN=<+secrets.getValue("github-token")>
+                                              export GITHUB_TOKEN=<+secrets.getValue("githubtoken")>
                                               git config --global user.name "nikpapag"
                                               git config --global user.email "nikpap.cs@icloud.com"
 
