@@ -39,34 +39,64 @@ pipeline:
                                         limits:
                                             memory: 512Mi
                                             cpu: "0.5"
-                          - step:
-                                type: RunTests
-                                name: runTestsWithIntelligence
-                                identifier: runTestsWithIntelligence
-                                spec:
-                                    connectorRef: nikpdockerhub
-                                    image: maven:<+pipeline.variables.mavenversion>-jdk-<+pipeline.variables.javaversion>
-                                    args: test
-                                    buildTool: Maven
-                                    language: Java
-                                    packages: con.nikp.
-                                    runOnlySelectedTests: true
-                                    preCommand: cd payment-service
-                                    reports:
-                                        type: JUnit
-                                        spec:
-                                            paths:
-                                                - "**/*.xml"
-                                    envVariables:
-                                        DRONE_COMMIT_SHA: any
-                                        DRONE_REMOTE_URL: any
-                                        DRONE_SOURCE_BRANCH: any
-                                        DRONE_TARGET_BRANCH: any
-                                        MAVEN_OPTS: -Dmaven.repo.local=/harness/maven/repository
-                                    resources:
-                                        limits:
-                                            memory: 1Gi
-                                            cpu: "2"
+                          - parallel:
+                                - step:
+                                      type: RunTests
+                                      name: runTestsWithIntelligence
+                                      identifier: runTestsWithIntelligence
+                                      spec:
+                                          connectorRef: nikpdockerhub
+                                          image: maven:<+pipeline.variables.mavenversion>-jdk-<+pipeline.variables.javaversion>
+                                          args: test
+                                          buildTool: Maven
+                                          language: Java
+                                          packages: con.nikp.
+                                          runOnlySelectedTests: true
+                                          preCommand: cd payment-service
+                                          reports:
+                                              type: JUnit
+                                              spec:
+                                                  paths:
+                                                      - "**/*.xml"
+                                          envVariables:
+                                              DRONE_COMMIT_SHA: any
+                                              DRONE_REMOTE_URL: any
+                                              DRONE_SOURCE_BRANCH: any
+                                              DRONE_TARGET_BRANCH: any
+                                              MAVEN_OPTS: -Dmaven.repo.local=/harness/maven/repository
+                                          resources:
+                                              limits:
+                                                  memory: 1Gi
+                                                  cpu: "2"
+                                - step:
+                                      type: Run
+                                      name: cleanup
+                                      identifier: cleanup
+                                      spec:
+                                          connectorRef: nikpdockerhub
+                                          image: nikpap/githubcli:latest
+                                          command: |-
+                                              export GITHUB_TOKEN=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
+                                              git config --global user.name "nikpapag"
+                                              git config --global user.email "nikpap.cs@icloud.com"
+
+
+                                              git clone https://github.com/wings-software/payment-service.git
+                                              cd payment-service
+
+                                              export GITHUB_TOKEN=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
+                                              echo -ne '\n' | gh auth login --web
+
+
+                                              gh pr list > pull-requests
+
+                                              input="./pull-requests"
+                                              while IFS= read -r line
+                                              do
+                                                prnumber=$(echo "$line" | awk '{print $1}')
+                                                gh pr close "$prnumber"
+                                              done < "$input"
+                                          privileged: false
                           - step:
                                 type: Run
                                 name: Build
@@ -137,7 +167,6 @@ pipeline:
                                         limits:
                                             memory: 1Gi
                                             cpu: "1"
-                      rollbackSteps: []
               when:
                   pipelineStatus: Success
               variables: []
