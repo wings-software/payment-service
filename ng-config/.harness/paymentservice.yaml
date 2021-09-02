@@ -77,7 +77,7 @@ pipeline:
                                           image: nikpap/githubcli:latest
                                           privileged: false
                                           settings:
-                                              GITHUB_TOKEN: <+secrets.getValue("github")>
+                                              GITHUB_TOKEN: <+secrets.getValue("githubtoken")>
                                               GITHUB_USERNAME: nikpapag
                                               GITHUB_EMAIL: nikpap.cs@icloud.com
                           - step:
