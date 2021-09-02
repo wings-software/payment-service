@@ -76,11 +76,11 @@ pipeline:
                                           connectorRef: nikpdockerhub
                                           image: nikpap/githubcli:latest
                                           command: |-
+                                              #!/bin/bash
                                               export GITHUB_TOKEN=<+secrets.getValue("githubtoken")>
                                               git config --global user.name "nikpapag"
                                               git config --global user.email "nikpap.cs@icloud.com"
 
-                                              sleep 90000
 
                                               mkdir gitrepo
                                               cd gitrepo
