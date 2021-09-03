@@ -64,6 +64,7 @@ pipeline:
                                               DRONE_SOURCE_BRANCH: any
                                               DRONE_TARGET_BRANCH: any
                                               MAVEN_OPTS: -Dmaven.repo.local=/harness/maven/repository
+                                              CONTAINER_STEP: "3"
                                           resources:
                                               limits:
                                                   memory: 1Gi
@@ -157,6 +158,12 @@ pipeline:
                                         limits:
                                             memory: 1Gi
                                             cpu: "1"
+                  serviceConfig:
+                      serviceRef: ""
+                      serviceDefinition:
+                          type: Kubernetes
+                          spec:
+                              variables: []
               when:
                   pipelineStatus: Success
               variables: []
