@@ -81,6 +81,12 @@ pipeline:
                                               GITHUB_USERNAME: nikpapag
                                               GITHUB_EMAIL: nikpap.cs@icloud.com
                                           imagePullPolicy: Always
+                                      failureStrategies:
+                                          - onFailure:
+                                                errors:
+                                                    - Unknown
+                                                action:
+                                                    type: Ignore
                           - step:
                                 type: Run
                                 name: Build
