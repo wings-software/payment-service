@@ -60,6 +60,7 @@ public abstract class AbstractCaptchaService implements ICaptchaService{
 
         if (!responseSanityCheck(response)) {
             throw new ReCaptchaInvalidException("Response contains invalid characters");
+            
         }
     }
 
