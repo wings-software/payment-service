@@ -209,7 +209,7 @@
     			<configuration>
     			    <forkCount>1</forkCount>
     				<reuseForks>true</reuseForks>
-    				<argLine>-Xmx1024m -XX:MaxPermSize=256m ${env.HARNESS_JAVA_AGENT}</argLine>
+    				<argLine>-Xmx1024m -XX:MaxPermSize=256m -javaagent:/addon/bin/java-agent.jar=/addon/tmp/config.ini</argLine>
        				 <useSystemClassLoader>false</useSystemClassLoader>
     			</configuration>
 			</plugin>  
