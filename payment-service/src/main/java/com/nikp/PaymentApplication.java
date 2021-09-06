@@ -48,6 +48,7 @@ public class PaymentApplication {
     	 return cfClient;
     }
     
+    
     @Bean
     public CaptchaService captchaService() {
     	return new CaptchaService();
