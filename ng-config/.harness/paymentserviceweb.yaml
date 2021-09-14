@@ -306,7 +306,7 @@ pipeline:
                               connectorRef: nikpgkecluster
                               namespace: payment-service
                               releaseName: release-1
-                      allowSimultaneousDeployments: false
+                      allowSimultaneousDeployments: true
                       infrastructureKey: ""
                   execution:
                       steps:
