@@ -50,7 +50,7 @@ public class PaymentApplication {
     
     @Bean
     public CaptchaService captchaService() {
-    	return new CaptchaService();
+    	return new CaptchaService(); 
     }
 
     @Bean
@@ -67,7 +67,7 @@ public class PaymentApplication {
             .setConnectTimeout(500)
             .setSocketTimeout(500)
             .build();
-        return result;
+        return  result;
     }
     @Bean
     public CloseableHttpClient httpClient(PoolingHttpClientConnectionManager poolingHttpClientConnectionManager, RequestConfig requestConfig) {
