@@ -1,0 +1,12 @@
+connector:
+  name: nikp-gcp
+  identifier: nikpgcp
+  description:
+  orgIdentifier: default
+  projectIdentifier: DevX_Demo
+  type: Gcp
+  spec:
+    credential:
+      type: InheritFromDelegate
+    delegateSelectors:
+    - nikp-devx-gke
