@@ -9,4 +9,4 @@ connector:
     credential:
       type: InheritFromDelegate
     delegateSelectors:
-    - nikp-devx-gke
+    - devx-demo-gke
