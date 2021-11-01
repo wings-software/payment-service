@@ -366,7 +366,7 @@ pipeline:
                                                           errors:
                                                               - AllErrors
                                                           action:
-                                                              type: StageRollback
+                                                              type: StepGroupRollback
                                           - step:
                                                 type: ShellScript
                                                 name: Selenium-prod
