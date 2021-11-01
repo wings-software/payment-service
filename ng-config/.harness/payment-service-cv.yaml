@@ -531,7 +531,14 @@ pipeline:
                                         - devx-demo-gke
                                 timeout: 10m
                                 failureStrategies: []
-                      rollbackSteps: []
+                      rollbackSteps:
+                          - step:
+                                type: K8sRollingRollback
+                                name: Rollback
+                                identifier: Rollback
+                                spec:
+                                    skipDryRun: false
+                                timeout: 10m
                   serviceDependencies: []
               tags: {}
               failureStrategies:
