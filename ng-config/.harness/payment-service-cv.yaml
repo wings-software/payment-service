@@ -366,12 +366,7 @@ pipeline:
                                                           errors:
                                                               - AllErrors
                                                           action:
-                                                              type: ManualIntervention
-                                                              spec:
-                                                                  timeout: 1d
-                                                                  onTimeout:
-                                                                      action:
-                                                                          type: MarkAsSuccess
+                                                              type: StageRollback
                                           - step:
                                                 type: ShellScript
                                                 name: Selenium-prod
