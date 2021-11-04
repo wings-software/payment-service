@@ -468,19 +468,19 @@ pipeline:
                                                                         unittest.main()
 
                                                                 EOF
-                                                                python -c "$script"
+                                                                python3 -c "$script"
                                                                 sleep 60
-                                                                python -c "$script"
+                                                                python3 -c "$script"
                                                                 sleep 60
-                                                                python -c "$script"
+                                                                python3 -c "$script"
                                                                 sleep 60
-                                                                python -c "$script"
+                                                                python3 -c "$script"
                                                                 sleep 60
-                                                                python -c "$script"
+                                                                python3 -c "$script"
                                                                 sleep 60
-                                                                python -c "$script"
+                                                                python3 -c "$script"
                                                                 sleep 60
-                                                                python -c "$script"
+                                                                python3 -c "$script"
 
                                                     environmentVariables:
                                                         - name: subdomain
