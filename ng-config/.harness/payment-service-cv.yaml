@@ -156,8 +156,8 @@ pipeline:
                                     optimize: true
                                     resources:
                                         limits:
-                                            memory: 1Gi
-                                            cpu: "1"
+                                            memory: 2Gi
+                                            cpu: "2"
                   serviceConfig:
                       serviceRef: ""
                       serviceDefinition:
