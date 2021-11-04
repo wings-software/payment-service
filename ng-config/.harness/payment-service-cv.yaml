@@ -325,6 +325,164 @@ pipeline:
                                                   spec:
                                                       count: 1
                                               skipDryRun: false
+                                    - parallel:
+                                          - step:
+                                                type: Verify
+                                                name: Canary-Verification
+                                                identifier: CanaryVerification
+                                                spec:
+                                                    type: Canary
+                                                    spec:
+                                                        sensitivity: HIGH
+                                                        duration: 5m
+                                                        deploymentTag: <+serviceConfig.artifacts.primary.tag>
+                                                timeout: 2h
+                                                failureStrategies:
+                                                    - onFailure:
+                                                          errors:
+                                                              - Verification
+                                                          action:
+                                                              type: ManualIntervention
+                                                              spec:
+                                                                  timeout: 2h
+                                                                  onTimeout:
+                                                                      action:
+                                                                          type: StageRollback
+                                                    - onFailure:
+                                                          errors:
+                                                              - Unknown
+                                                          action:
+                                                              type: ManualIntervention
+                                                              spec:
+                                                                  timeout: 2h
+                                                                  onTimeout:
+                                                                      action:
+                                                                          type: Ignore
+                                          - step:
+                                                type: ShellScript
+                                                name: Selenium-Canary
+                                                identifier: SeleniumCanary
+                                                spec:
+                                                    shell: Bash
+                                                    onDelegate: true
+                                                    source:
+                                                        type: Inline
+                                                        spec:
+                                                            script: |+
+                                                                sleep 90
+                                                                read -r -d '' script <<-"EOF"
+                                                                import os
+                                                                from selenium import webdriver
+                                                                from selenium.webdriver.common.by import By
+                                                                from selenium.webdriver.common.keys import Keys
+                                                                from selenium.webdriver.support.ui import Select
+                                                                from selenium.common.exceptions import NoSuchElementException
+                                                                from selenium.common.exceptions import NoAlertPresentException
+                                                                from selenium.webdriver.chrome.options import Options
+                                                                import unittest, time, re
+
+                                                                se_username = os.getenv('SE_USERNAME')
+                                                                deployment_type= os.getenv('HARNESS_DEPLOYMENT')
+
+                                                                pod_name=os.popen('kubectl -n payment-service get pods -o=jsonpath="{.items[*][\'.metadata.name\']}"')
+                                                                pod_name_output = pod_name.read()
+
+                                                                pod=re.findall(r'payment-service-nikpapag-deployment\S+', pod_name_output)[0]
+                                                                print(pod)
+
+                                                                urlstream = os.popen("kubectl -n payment-service get pod "+pod+"  --template={{.status.podIP}}")
+                                                                url_output=urlstream.read()
+                                                                print(url_output)
+
+
+                                                                url='http://'+url_output+':8080'
+                                                                print(url)
+
+
+                                                                class SeleniumTest(unittest.TestCase):
+                                                                    def setUp(self):
+                                                                        self.options = Options()
+                                                                        self.options.add_argument('--no-sandbox')
+                                                                        self.options.add_argument('--headless')
+                                                                        self.options.add_argument('--disable-dev-shm-usage')
+                                                                        self.options.add_argument('--disable-gpu')
+                                                                        self.driver = webdriver.Chrome("/usr/bin/chromedriver",chrome_options=self.options)
+                                                                        self.driver.implicitly_wait(30)
+                                                                        self.base_url = "https://www.google.com/"
+                                                                        self.verificationErrors = []
+                                                                        self.accept_next_alert = True
+
+                                                                    def test_payment_service_job(self):
+                                                                        driver = self.driver
+                                                                        driver.get(url)
+                                                                        driver.find_element_by_xpath("(.//*[normalize-space(text()) and normalize-space(.)='Savings Account'])[1]/following::span[1]").click()
+                                                                        driver.find_element_by_id("userId").click()
+                                                                        driver.find_element_by_id("userId").clear()
+                                                                        driver.find_element_by_id("userId").send_keys("harness")
+                                                                        driver.find_element_by_xpath("(.//*[normalize-space(text()) and normalize-space(.)='From Account'])[1]/following::span[3]").click()
+                                                                        driver.find_element_by_id("amount").click()
+                                                                        driver.find_element_by_id("amount").clear()
+                                                                        driver.find_element_by_id("amount").send_keys("100")
+                                                                        driver.find_element_by_xpath("(.//*[normalize-space(text()) and normalize-space(.)='Amount'])[1]/following::button[1]").click()
+
+                                                                    def is_element_present(self, how, what):
+                                                                        try:
+                                                                            self.driver.find_element(by=how, value=what)
+                                                                        except NoSuchElementException as e:
+                                                                            return False
+                                                                        return True
+                                                                        def is_alert_present(self):
+                                                                            try:
+                                                                                self.driver.switch_to_alert()
+                                                                            except NoAlertPresentException as e:
+                                                                                return False
+                                                                            return True
+
+                                                                        def close_alert_and_get_its_text(self):
+                                                                            try:
+                                                                                alert = self.driver.switch_to_alert()
+                                                                                alert_text = alert.text
+                                                                                if self.accept_next_alert:
+                                                                                    alert.accept()
+                                                                                else:
+                                                                                    alert.dismiss()
+                                                                                return alert_text
+                                                                            finally:
+                                                                                self.accept_next_alert = True
+
+                                                                        def tearDown(self):
+                                                                            # To know more about the difference between verify and assert,
+                                                                            # visit https://www.seleniumhq.org/docs/06_test_design_considerations.jsp#validating-results
+                                                                            self.assertEqual([], self.verificationErrors)
+
+                                                                if __name__ == "__main__":
+                                                                        unittest.main()
+
+                                                                EOF
+                                                                python3 -c "$script"
+                                                                sleep 60
+                                                                python3 -c "$script"
+                                                                sleep 60
+                                                                python3 -c "$script"
+                                                                sleep 60
+                                                                python3 -c "$script"
+                                                                sleep 60
+                                                                python3 -c "$script"
+                                                                sleep 60
+                                                                python3 -c "$script"
+                                                                sleep 60
+                                                                python3 -c "$script"
+
+                                                    environmentVariables:
+                                                        - name: subdomain
+                                                          type: String
+                                                          value: <+pipeline.variables.seusername>
+                                                    outputVariables: []
+                                                    executionTarget: {}
+                                                    delegateSelectors:
+                                                        - devx-demo-gke
+                                                timeout: 10m
+                                                failureStrategies: []
                                     - step:
                                           name: Canary Delete
                                           identifier: canaryDelete
