@@ -67,7 +67,7 @@ pipeline:
                                               CONTAINER_STEP: "3"
                                           resources:
                                               limits:
-                                                  memory: 1Gi
+                                                  memory: 2Gi
                                                   cpu: "2"
                                 - step:
                                       type: Plugin
@@ -103,7 +103,7 @@ pipeline:
                                         MAVEN_OPTS: -Dmaven.repo.local=/harness/maven/repository
                                     resources:
                                         limits:
-                                            memory: 1Gi
+                                            memory: 2Gi
                                             cpu: "1"
                           - step:
                                 type: SaveCacheS3
@@ -156,8 +156,8 @@ pipeline:
                                     optimize: true
                                     resources:
                                         limits:
-                                            memory: 1Gi
-                                            cpu: "1"
+                                            memory: 2Gi
+                                            cpu: "2"
                   serviceConfig:
                       serviceRef: ""
                       serviceDefinition:
