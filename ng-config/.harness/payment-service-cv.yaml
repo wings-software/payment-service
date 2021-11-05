@@ -548,7 +548,7 @@ pipeline:
                                                                 from selenium.common.exceptions import NoSuchElementException
                                                                 from selenium.common.exceptions import NoAlertPresentException
                                                                 from selenium.webdriver.chrome.options import Options
-                                                                from selenium.webdriver.firefox.service import Service
+                                                                from selenium.webdriver.chrome.service import Service
                                                                 import unittest, time, re
 
                                                                 se_username = os.getenv('SE_USERNAME')
