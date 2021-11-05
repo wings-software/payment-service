@@ -380,6 +380,7 @@ pipeline:
                                                                 from selenium.common.exceptions import NoAlertPresentException
                                                                 from selenium.webdriver.chrome.options import Options
                                                                 from selenium.webdriver.chrome.service import Service
+
                                                                 import unittest, time, re
 
                                                                 se_username = os.getenv('SE_USERNAME')
@@ -400,15 +401,15 @@ pipeline:
                                                                 print(url)
 
 
-                                                                class SeleniumTest(unittest.TestCase):
-                                                                    def setUp(self):
-                                                                        self.service = Service('/usr/bin/chromedriver')
+                                                                class SeleniumTest():
+                                                                    def __init__(self):
+                                                                        self.service = Service(executable_path='/usr/bin/chromedriver')
                                                                         self.options = Options()
                                                                         self.options.add_argument('--no-sandbox')
                                                                         self.options.add_argument('--headless')
                                                                         self.options.add_argument('--disable-dev-shm-usage')
                                                                         self.options.add_argument('--disable-gpu')
-                                                                        self.driver = webdriver.Chrome(options=self.options, service=self.service)
+                                                                        self.driver = webdriver.Chrome(options=self.options,service=self.service)
                                                                         self.driver.implicitly_wait(30)
                                                                         self.base_url = "https://www.google.com/"
                                                                         self.verificationErrors = []
@@ -417,49 +418,22 @@ pipeline:
                                                                     def test_payment_service_job(self):
                                                                         driver = self.driver
                                                                         driver.get(url)
-                                                                        driver.find_element_by_xpath("(.//*[normalize-space(text()) and normalize-space(.)='Savings Account'])[1]/following::span[1]").click()
-                                                                        driver.find_element_by_id("userId").click()
-                                                                        driver.find_element_by_id("userId").clear()
-                                                                        driver.find_element_by_id("userId").send_keys("harness")
-                                                                        driver.find_element_by_xpath("(.//*[normalize-space(text()) and normalize-space(.)='From Account'])[1]/following::span[3]").click()
-                                                                        driver.find_element_by_id("amount").click()
-                                                                        driver.find_element_by_id("amount").clear()
-                                                                        driver.find_element_by_id("amount").send_keys("100")
-                                                                        driver.find_element_by_xpath("(.//*[normalize-space(text()) and normalize-space(.)='Amount'])[1]/following::button[1]").click()
+                                                                        driver.find_element(By.XPATH,"(.//*[normalize-space(text()) and normalize-space(.)='Savings Account'])[1]/following::span[1]").click()
+                                                                        driver.find_element(By.ID,"userId").click()
+                                                                        driver.find_element(By.ID,"userId").clear()
+                                                                        driver.find_element(By.ID,"userId").send_keys("harness")
+                                                                        driver.find_element(By.XPATH,"(.//*[normalize-space(text()) and normalize-space(.)='From Account'])[1]/following::span[3]").click()
+                                                                        driver.find_element(By.ID,"amount").click()
+                                                                        driver.find_element(By.ID,"amount").clear()
+                                                                        driver.find_element(By.ID,"amount").send_keys("100")
+                                                                        driver.find_element(By.XPATH,"(.//*[normalize-space(text()) and normalize-space(.)='Amount'])[1]/following::button[1]").click()
+                                                                        driver.close()
 
-                                                                    def is_element_present(self, how, what):
-                                                                        try:
-                                                                            self.driver.find_element(by=how, value=what)
-                                                                        except NoSuchElementException as e:
-                                                                            return False
-                                                                        return True
-                                                                        def is_alert_present(self):
-                                                                            try:
-                                                                                self.driver.switch_to_alert()
-                                                                            except NoAlertPresentException as e:
-                                                                                return False
-                                                                            return True
 
-                                                                        def close_alert_and_get_its_text(self):
-                                                                            try:
-                                                                                alert = self.driver.switch_to_alert()
-                                                                                alert_text = alert.text
-                                                                                if self.accept_next_alert:
-                                                                                    alert.accept()
-                                                                                else:
-                                                                                    alert.dismiss()
-                                                                                return alert_text
-                                                                            finally:
-                                                                                self.accept_next_alert = True
 
-                                                                        def tearDown(self):
-                                                                            # To know more about the difference between verify and assert,
-                                                                            # visit https://www.seleniumhq.org/docs/06_test_design_considerations.jsp#validating-results
-                                                                            self.assertEqual([], self.verificationErrors)
 
-                                                                if __name__ == "__main__":
-                                                                        unittest.main()
-
+                                                                selenium = SeleniumTest()
+                                                                selenium.test_payment_service_job()
                                                                 EOF
                                                                 python3 -c "$script"
                                                                 sleep 60
@@ -549,6 +523,7 @@ pipeline:
                                                                 from selenium.common.exceptions import NoAlertPresentException
                                                                 from selenium.webdriver.chrome.options import Options
                                                                 from selenium.webdriver.chrome.service import Service
+
                                                                 import unittest, time, re
 
                                                                 se_username = os.getenv('SE_USERNAME')
@@ -569,9 +544,9 @@ pipeline:
                                                                 print(url)
 
 
-                                                                class SeleniumTest(unittest.TestCase):
-                                                                    def setUp(self):
-                                                                        self.service = Service('/usr/bin/chromedriver')
+                                                                class SeleniumTest():
+                                                                    def __init__(self):
+                                                                        self.service = Service(executable_path='/usr/bin/chromedriver')
                                                                         self.options = Options()
                                                                         self.options.add_argument('--no-sandbox')
                                                                         self.options.add_argument('--headless')
@@ -586,49 +561,22 @@ pipeline:
                                                                     def test_payment_service_job(self):
                                                                         driver = self.driver
                                                                         driver.get(url)
-                                                                        driver.find_element_by_xpath("(.//*[normalize-space(text()) and normalize-space(.)='Savings Account'])[1]/following::span[1]").click()
-                                                                        driver.find_element_by_id("userId").click()
-                                                                        driver.find_element_by_id("userId").clear()
-                                                                        driver.find_element_by_id("userId").send_keys("harness")
-                                                                        driver.find_element_by_xpath("(.//*[normalize-space(text()) and normalize-space(.)='From Account'])[1]/following::span[3]").click()
-                                                                        driver.find_element_by_id("amount").click()
-                                                                        driver.find_element_by_id("amount").clear()
-                                                                        driver.find_element_by_id("amount").send_keys("100")
-                                                                        driver.find_element_by_xpath("(.//*[normalize-space(text()) and normalize-space(.)='Amount'])[1]/following::button[1]").click()
+                                                                        driver.find_element(By.XPATH,"(.//*[normalize-space(text()) and normalize-space(.)='Savings Account'])[1]/following::span[1]").click()
+                                                                        driver.find_element(By.ID,"userId").click()
+                                                                        driver.find_element(By.ID,"userId").clear()
+                                                                        driver.find_element(By.ID,"userId").send_keys("harness")
+                                                                        driver.find_element(By.XPATH,"(.//*[normalize-space(text()) and normalize-space(.)='From Account'])[1]/following::span[3]").click()
+                                                                        driver.find_element(By.ID,"amount").click()
+                                                                        driver.find_element(By.ID,"amount").clear()
+                                                                        driver.find_element(By.ID,"amount").send_keys("100")
+                                                                        driver.find_element(By.XPATH,"(.//*[normalize-space(text()) and normalize-space(.)='Amount'])[1]/following::button[1]").click()
+                                                                        driver.close()
 
-                                                                    def is_element_present(self, how, what):
-                                                                        try:
-                                                                            self.driver.find_element(by=how, value=what)
-                                                                        except NoSuchElementException as e:
-                                                                            return False
-                                                                        return True
-                                                                        def is_alert_present(self):
-                                                                            try:
-                                                                                self.driver.switch_to_alert()
-                                                                            except NoAlertPresentException as e:
-                                                                                return False
-                                                                            return True
 
-                                                                        def close_alert_and_get_its_text(self):
-                                                                            try:
-                                                                                alert = self.driver.switch_to_alert()
-                                                                                alert_text = alert.text
-                                                                                if self.accept_next_alert:
-                                                                                    alert.accept()
-                                                                                else:
-                                                                                    alert.dismiss()
-                                                                                return alert_text
-                                                                            finally:
-                                                                                self.accept_next_alert = True
 
-                                                                        def tearDown(self):
-                                                                            # To know more about the difference between verify and assert,
-                                                                            # visit https://www.seleniumhq.org/docs/06_test_design_considerations.jsp#validating-results
-                                                                            self.assertEqual([], self.verificationErrors)
 
-                                                                if __name__ == "__main__":
-                                                                        unittest.main()
-
+                                                                selenium = SeleniumTest()
+                                                                selenium.test_payment_service_job()
                                                                 EOF
                                                                 python3 -c "$script"
                                                                 sleep 60
