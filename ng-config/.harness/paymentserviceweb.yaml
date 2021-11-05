@@ -104,7 +104,7 @@ pipeline:
                                     resources:
                                         limits:
                                             memory: 2Gi
-                                            cpu: "1"
+                                            cpu: "2"
                           - step:
                                 type: SaveCacheS3
                                 name: Savemavenrepo
