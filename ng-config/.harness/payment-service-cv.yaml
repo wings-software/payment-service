@@ -408,7 +408,7 @@ pipeline:
                                                                         self.options.add_argument('--headless')
                                                                         self.options.add_argument('--disable-dev-shm-usage')
                                                                         self.options.add_argument('--disable-gpu')
-                                                                        self.driver = webdriver.Chrome(chrome_options=self.options, service=self.service)
+                                                                        self.driver = webdriver.Chrome(options=self.options, service=self.service)
                                                                         self.driver.implicitly_wait(30)
                                                                         self.base_url = "https://www.google.com/"
                                                                         self.verificationErrors = []
@@ -577,7 +577,7 @@ pipeline:
                                                                         self.options.add_argument('--headless')
                                                                         self.options.add_argument('--disable-dev-shm-usage')
                                                                         self.options.add_argument('--disable-gpu')
-                                                                        self.driver = webdriver.Chrome(chrome_options=self.options,service=self.service)
+                                                                        self.driver = webdriver.Chrome(options=self.options,service=self.service)
                                                                         self.driver.implicitly_wait(30)
                                                                         self.base_url = "https://www.google.com/"
                                                                         self.verificationErrors = []
