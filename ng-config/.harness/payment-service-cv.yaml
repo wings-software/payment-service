@@ -369,7 +369,7 @@ pipeline:
                                                         type: Inline
                                                         spec:
                                                             script: |+
-                                                                sleep 90
+                                                                sleep 10
                                                                 read -r -d '' script <<-"EOF"
                                                                 import os
                                                                 from selenium import webdriver
@@ -436,17 +436,17 @@ pipeline:
                                                                 selenium.test_payment_service_job()
                                                                 EOF
                                                                 python3 -c "$script"
-                                                                sleep 60
+                                                                sleep 10
                                                                 python3 -c "$script"
-                                                                sleep 60
+                                                                sleep 10
                                                                 python3 -c "$script"
-                                                                sleep 60
+                                                                sleep 10
                                                                 python3 -c "$script"
-                                                                sleep 60
+                                                                sleep 10
                                                                 python3 -c "$script"
-                                                                sleep 60
+                                                                sleep 10
                                                                 python3 -c "$script"
-                                                                sleep 60
+                                                                sleep 10
                                                                 python3 -c "$script"
 
                                                     environmentVariables:
@@ -517,7 +517,7 @@ pipeline:
                                                         type: Inline
                                                         spec:
                                                             script: |+
-                                                                sleep 90
+                                                                sleep 10
                                                                 read -r -d '' script <<-"EOF"
                                                                 import os
                                                                 from selenium import webdriver
@@ -584,17 +584,17 @@ pipeline:
                                                                 selenium.test_payment_service_job()
                                                                 EOF
                                                                 python3 -c "$script"
-                                                                sleep 60
+                                                                sleep 10
                                                                 python3 -c "$script"
-                                                                sleep 60
+                                                                sleep 10
                                                                 python3 -c "$script"
-                                                                sleep 60
+                                                                sleep 10
                                                                 python3 -c "$script"
-                                                                sleep 60
+                                                                sleep 10
                                                                 python3 -c "$script"
-                                                                sleep 60
+                                                                sleep 10
                                                                 python3 -c "$script"
-                                                                sleep 60
+                                                                sleep 10
                                                                 python3 -c "$script"
 
                                                     environmentVariables:
