@@ -492,7 +492,7 @@ pipeline:
                                                     type: Rolling
                                                     spec:
                                                         sensitivity: HIGH
-                                                        duration: 15m
+                                                        duration: 5m
                                                         deploymentTag: <+serviceConfig.artifacts.primary.tag>
                                                 timeout: 2h
                                                 failureStrategies:
@@ -501,6 +501,21 @@ pipeline:
                                                               - AllErrors
                                                           action:
                                                               type: StepGroupRollback
+                                                              spec:
+                                                                  timeout: 2h
+                                                                  onTimeout:
+                                                                      action:
+                                                                          type: StageRollback
+                                                    - onFailure:
+                                                          errors:
+                                                              - Unknown
+                                                          action:
+                                                              type: ManualIntervention
+                                                              spec:
+                                                                  timeout: 2h
+                                                                  onTimeout:
+                                                                      action:
+                                                                          type: Ignore
                                           - step:
                                                 type: ShellScript
                                                 name: Selenium-prod
