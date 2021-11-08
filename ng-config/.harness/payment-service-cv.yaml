@@ -492,7 +492,7 @@ pipeline:
                                                     type: Rolling
                                                     spec:
                                                         sensitivity: HIGH
-                                                        duration: 5m
+                                                        duration: 10m
                                                         deploymentTag: <+serviceConfig.artifacts.primary.tag>
                                                 timeout: 2h
                                                 failureStrategies:
