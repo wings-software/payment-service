@@ -334,7 +334,7 @@ pipeline:
                                                     type: Canary
                                                     spec:
                                                         sensitivity: HIGH
-                                                        duration: 5m
+                                                        duration: 15m
                                                         deploymentTag: <+serviceConfig.artifacts.primary.tag>
                                                 timeout: 2h
                                                 failureStrategies:
@@ -368,7 +368,7 @@ pipeline:
                                                     source:
                                                         type: Inline
                                                         spec:
-                                                            script: |+
+                                                            script: |
                                                                 sleep 30
                                                                 read -r -d '' script <<-"EOF"
                                                                 import os
@@ -436,19 +436,28 @@ pipeline:
                                                                 selenium.test_payment_service_job()
                                                                 EOF
                                                                 python3 -c "$script"
-                                                                sleep 10
+                                                                sleep 30
                                                                 python3 -c "$script"
-                                                                sleep 10
+                                                                sleep 30
                                                                 python3 -c "$script"
-                                                                sleep 10
+                                                                sleep 30
                                                                 python3 -c "$script"
-                                                                sleep 10
+                                                                sleep 30
                                                                 python3 -c "$script"
-                                                                sleep 10
+                                                                sleep 30
                                                                 python3 -c "$script"
-                                                                sleep 10
+                                                                sleep 30
                                                                 python3 -c "$script"
-
+                                                                sleep 30
+                                                                python3 -c "$script"
+                                                                sleep 30
+                                                                python3 -c "$script"
+                                                                sleep 30
+                                                                python3 -c "$script"
+                                                                sleep 30
+                                                                python3 -c "$script"
+                                                                sleep 30
+                                                                python3 -c "$script"
                                                     environmentVariables:
                                                         - name: subdomain
                                                           type: String
@@ -492,7 +501,7 @@ pipeline:
                                                     type: Rolling
                                                     spec:
                                                         sensitivity: HIGH
-                                                        duration: 5m
+                                                        duration: 15m
                                                         deploymentTag: <+serviceConfig.artifacts.primary.tag>
                                                 timeout: 2h
                                                 failureStrategies:
@@ -506,6 +515,16 @@ pipeline:
                                                                   onTimeout:
                                                                       action:
                                                                           type: StageRollback
+                                                    - onFailure:
+                                                          errors:
+                                                              - Unknown
+                                                          action:
+                                                              type: ManualIntervention
+                                                              spec:
+                                                                  timeout: 2h
+                                                                  onTimeout:
+                                                                      action:
+                                                                          type: Ignore
                                           - step:
                                                 type: ShellScript
                                                 name: Selenium-prod
@@ -584,17 +603,37 @@ pipeline:
                                                                 selenium.test_payment_service_job()
                                                                 EOF
                                                                 python3 -c "$script"
-                                                                sleep 10
+                                                                sleep 30
                                                                 python3 -c "$script"
-                                                                sleep 10
+                                                                sleep 30
                                                                 python3 -c "$script"
-                                                                sleep 10
+                                                                sleep 30
                                                                 python3 -c "$script"
-                                                                sleep 10
+                                                                sleep 30
                                                                 python3 -c "$script"
-                                                                sleep 10
+                                                                sleep 30
                                                                 python3 -c "$script"
-                                                                sleep 10
+                                                                sleep 30
+                                                                python3 -c "$script"
+                                                                sleep 30
+                                                                python3 -c "$script"
+                                                                sleep 30
+                                                                python3 -c "$script"
+                                                                sleep 30
+                                                                python3 -c "$script"
+                                                                sleep 30
+                                                                python3 -c "$script"
+                                                                sleep 30
+                                                                python3 -c "$script"
+                                                                sleep 30
+                                                                python3 -c "$script"
+                                                                sleep 30
+                                                                python3 -c "$script"
+                                                                sleep 30
+                                                                python3 -c "$script"
+                                                                sleep 30
+                                                                python3 -c "$script"
+                                                                sleep 30
                                                                 python3 -c "$script"
 
                                                     environmentVariables:
