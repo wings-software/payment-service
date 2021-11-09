@@ -507,24 +507,9 @@ pipeline:
                                                 failureStrategies:
                                                     - onFailure:
                                                           errors:
-                                                              - AllErrors
-                                                          action:
-                                                              type: ManualIntervention
-                                                              spec:
-                                                                  timeout: 5m
-                                                                  onTimeout:
-                                                                      action:
-                                                                          type: StageRollback
-                                                    - onFailure:
-                                                          errors:
                                                               - Unknown
                                                           action:
-                                                              type: ManualIntervention
-                                                              spec:
-                                                                  timeout: 2h
-                                                                  onTimeout:
-                                                                      action:
-                                                                          type: Ignore
+                                                              type: StageRollback
                                           - step:
                                                 type: ShellScript
                                                 name: Selenium-prod
