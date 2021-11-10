@@ -466,7 +466,7 @@ pipeline:
                                                     executionTarget: {}
                                                     delegateSelectors:
                                                         - devx-demo-gke
-                                                timeout: 10m
+                                                timeout: 30m
                                                 failureStrategies: []
                                     - step:
                                           name: Canary Delete
@@ -629,7 +629,7 @@ pipeline:
                                                     executionTarget: {}
                                                     delegateSelectors:
                                                         - devx-demo-gke
-                                                timeout: 10m
+                                                timeout: 30m
                                                 failureStrategies: []
                                     - step:
                                           type: K8sRollingRollback
