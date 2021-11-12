@@ -337,10 +337,20 @@ pipeline:
                                                     type: Canary
                                                     spec:
                                                         sensitivity: HIGH
-                                                        duration: 10m
+                                                        duration: 15m
                                                         deploymentTag: <+serviceConfig.artifacts.primary.tag>
                                                 timeout: 2h
                                                 failureStrategies:
+                                                    - onFailure:
+                                                          errors:
+                                                              - Unknown
+                                                          action:
+                                                              type: ManualIntervention
+                                                              spec:
+                                                                  timeout: 2h
+                                                                  onTimeout:
+                                                                      action:
+                                                                          type: Ignore
                                                     - onFailure:
                                                           errors:
                                                               - Unknown
@@ -494,10 +504,20 @@ pipeline:
                                                     type: Rolling
                                                     spec:
                                                         sensitivity: HIGH
-                                                        duration: 10m
+                                                        duration: 15m
                                                         deploymentTag: <+serviceConfig.artifacts.primary.tag>
                                                 timeout: 2h
                                                 failureStrategies:
+                                                    - onFailure:
+                                                          errors:
+                                                              - Unknown
+                                                          action:
+                                                              type: ManualIntervention
+                                                              spec:
+                                                                  timeout: 2h
+                                                                  onTimeout:
+                                                                      action:
+                                                                          type: Ignore
                                                     - onFailure:
                                                           errors:
                                                               - Unknown
