@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import com.nikp.notifications.domain.HelloMessage;
 import com.nikp.notifications.domain.PaymentAddedNotification;
 
+
 @Controller
 public class NotificationController {
 
