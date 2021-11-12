@@ -88,6 +88,9 @@ pipeline:
                                                     - Unknown
                                                 action:
                                                     type: Ignore
+                                      when:
+                                          stageStatus: Success
+                                          condition: <+pipeline.variables.deletepr> == 'yes'
                           - step:
                                 type: Run
                                 name: Build
