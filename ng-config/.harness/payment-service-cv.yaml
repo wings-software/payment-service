@@ -340,16 +340,6 @@ pipeline:
                                                 failureStrategies:
                                                     - onFailure:
                                                           errors:
-                                                              - Verification
-                                                          action:
-                                                              type: ManualIntervention
-                                                              spec:
-                                                                  timeout: 2h
-                                                                  onTimeout:
-                                                                      action:
-                                                                          type: StageRollback
-                                                    - onFailure:
-                                                          errors:
                                                               - Unknown
                                                           action:
                                                               type: ManualIntervention
