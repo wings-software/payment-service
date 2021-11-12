@@ -361,7 +361,7 @@ pipeline:
                                                     source:
                                                         type: Inline
                                                         spec:
-                                                            script: |
+                                                            script: |-
                                                                 sleep 30
                                                                 read -r -d '' script <<-"EOF"
                                                                 import os
@@ -373,7 +373,6 @@ pipeline:
                                                                 from selenium.common.exceptions import NoAlertPresentException
                                                                 from selenium.webdriver.chrome.options import Options
                                                                 from selenium.webdriver.chrome.service import Service
-
                                                                 import unittest, time, re
 
                                                                 se_username = os.getenv('SE_USERNAME')
@@ -382,17 +381,10 @@ pipeline:
                                                                 pod_name=os.popen('kubectl -n payment-service get pods -o=jsonpath="{.items[*][\'.metadata.name\']}"')
                                                                 pod_name_output = pod_name.read()
 
-                                                                pod=re.findall(r'payment-service-nikpapag-deployment-canary\S+', pod_name_output)[0]
-                                                                print(pod)
-
-                                                                urlstream = os.popen("kubectl -n payment-service get pod "+pod+"  --template={{.status.podIP}}")
-                                                                url_output=urlstream.read()
-                                                                print(url_output)
 
 
-                                                                url='http://'+url_output+':8080'
-                                                                print(url)
-
+                                                                pods=re.findall(r'payment-service-nikpapag\S+', pod_name_output)
+                                                                print(pods)
 
                                                                 class SeleniumTest():
                                                                     def __init__(self):
@@ -408,7 +400,7 @@ pipeline:
                                                                         self.verificationErrors = []
                                                                         self.accept_next_alert = True
 
-                                                                    def test_payment_service_job(self):
+                                                                  def test_payment_service_job(self, url):
                                                                         driver = self.driver
                                                                         driver.get(url)
                                                                         driver.find_element(By.XPATH,"(.//*[normalize-space(text()) and normalize-space(.)='Savings Account'])[1]/following::span[1]").click()
@@ -425,29 +417,20 @@ pipeline:
 
 
 
-                                                                selenium = SeleniumTest()
-                                                                selenium.test_payment_service_job()
+                                                                for pod in pods:
+                                                                    urlstream = os.popen("kubectl -n payment-service get pod "+pod+"  --template={{.status.podIP}}")
+                                                                    url_output=urlstream.read()
+                                                                    print(pod, url_output)
+
+                                                                    url='http://'+url_output+':8080'
+                                                                    print(url)
+
+                                                                    selenium = SeleniumTest()
+                                                                    selenium.test_payment_service_job(url)
+
+
+
                                                                 EOF
-                                                                python3 -c "$script"
-                                                                sleep 30
-                                                                python3 -c "$script"
-                                                                sleep 30
-                                                                python3 -c "$script"
-                                                                sleep 30
-                                                                python3 -c "$script"
-                                                                sleep 30
-                                                                python3 -c "$script"
-                                                                sleep 30
-                                                                python3 -c "$script"
-                                                                sleep 30
-                                                                python3 -c "$script"
-                                                                sleep 30
-                                                                python3 -c "$script"
-                                                                sleep 30
-                                                                python3 -c "$script"
-                                                                sleep 30
-                                                                python3 -c "$script"
-                                                                sleep 30
                                                                 python3 -c "$script"
                                                                 sleep 30
                                                                 python3 -c "$script"
