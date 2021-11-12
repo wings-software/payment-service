@@ -389,7 +389,7 @@ pipeline:
                                                                 pod_name=os.popen('kubectl -n payment-service get pods -o=jsonpath="{.items[*][\'.metadata.name\']}"')
                                                                 pod_name_output = pod_name.read()
 
-                                                                pod=re.findall(r'payment-service-goto-deployment-canary\S+', pod_name_output)[0]
+                                                                pod=re.findall(r'payment-service-nikpapag-deployment-canary\S+', pod_name_output)[0]
                                                                 print(pod)
 
                                                                 urlstream = os.popen("kubectl -n payment-service get pod "+pod+"  --template={{.status.podIP}}")
@@ -556,7 +556,7 @@ pipeline:
                                                                 pod_name=os.popen('kubectl -n payment-service get pods -o=jsonpath="{.items[*][\'.metadata.name\']}"')
                                                                 pod_name_output = pod_name.read()
 
-                                                                pod=re.findall(r'payment-service-goto-deployment\S+', pod_name_output)[0]
+                                                                pod=re.findall(r'payment-service-nikpapag-deployment\S+', pod_name_output)[0]
                                                                 print(pod)
 
                                                                 urlstream = os.popen("kubectl -n payment-service get pod "+pod+"  --template={{.status.podIP}}")
