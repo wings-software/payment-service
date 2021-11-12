@@ -512,22 +512,7 @@ pipeline:
                                                           errors:
                                                               - Unknown
                                                           action:
-                                                              type: ManualIntervention
-                                                              spec:
-                                                                  timeout: 2h
-                                                                  onTimeout:
-                                                                      action:
-                                                                          type: Ignore
-                                                    - onFailure:
-                                                          errors:
-                                                              - Unknown
-                                                          action:
-                                                              type: ManualIntervention
-                                                              spec:
-                                                                  timeout: 2h
-                                                                  onTimeout:
-                                                                      action:
-                                                                          type: Ignore
+                                                              type: StageRollback
                                           - step:
                                                 type: ShellScript
                                                 name: Selenium-prod
