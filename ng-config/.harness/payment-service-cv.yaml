@@ -400,7 +400,7 @@ pipeline:
                                                                         self.verificationErrors = []
                                                                         self.accept_next_alert = True
 
-                                                                  def test_payment_service_job(self, url):
+                                                                    def test_payment_service_job(self, url):
                                                                         driver = self.driver
                                                                         driver.get(url)
                                                                         driver.find_element(By.XPATH,"(.//*[normalize-space(text()) and normalize-space(.)='Savings Account'])[1]/following::span[1]").click()
@@ -540,7 +540,7 @@ pipeline:
                                                                         self.verificationErrors = []
                                                                         self.accept_next_alert = True
 
-                                                                  def test_payment_service_job(self, url):
+                                                                    def test_payment_service_job(self, url):
                                                                         driver = self.driver
                                                                         driver.get(url)
                                                                         driver.find_element(By.XPATH,"(.//*[normalize-space(text()) and normalize-space(.)='Savings Account'])[1]/following::span[1]").click()
