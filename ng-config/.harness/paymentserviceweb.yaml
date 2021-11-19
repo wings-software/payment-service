@@ -411,6 +411,6 @@ pipeline:
           default: 44c9dcaa-dab2-4100-b2b5-75bdeb7aa497
           value: <+input>
         - name: ingressrequired
-          type: String
-          default: "no"
-          value: <+input>
+          type: Number
+          default: 1
+          value: <+input>.allowedValues(0,1)
