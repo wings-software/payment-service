@@ -362,7 +362,7 @@ pipeline:
                                                         type: Inline
                                                         spec:
                                                             script: |
-                                                                sleep 60
+                                                                sleep 100
                                                                 read -r -d '' script <<-"EOF"
                                                                 import os
                                                                 from selenium import webdriver
@@ -506,7 +506,7 @@ pipeline:
                                                         type: Inline
                                                         spec:
                                                             script: |-
-                                                                sleep 30
+                                                                sleep 100
                                                                 read -r -d '' script <<-"EOF"
                                                                 import os
                                                                 from selenium import webdriver
