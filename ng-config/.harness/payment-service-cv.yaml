@@ -402,7 +402,11 @@ pipeline:
 
                                                                     def test_payment_service_job(self, url):
                                                                         driver = self.driver
-                                                                        driver.get(url)
+                                                                        try:
+                                                                           driver.get(url)
+                                                                           print("Retrieved url succesfully", url)
+                                                                        except:
+                                                                            print("Failed to get url", url)
                                                                         driver.find_element(By.XPATH,"(.//*[normalize-space(text()) and normalize-space(.)='Savings Account'])[1]/following::span[1]").click()
                                                                         driver.find_element(By.ID,"userId").click()
                                                                         driver.find_element(By.ID,"userId").clear()
@@ -546,7 +550,11 @@ pipeline:
 
                                                                     def test_payment_service_job(self, url):
                                                                         driver = self.driver
-                                                                        driver.get(url)
+                                                                        try:
+                                                                           driver.get(url)
+                                                                           print("Retrieved url succesfully", url)
+                                                                        except:
+                                                                            print("Failed to get url", url)
                                                                         driver.find_element(By.XPATH,"(.//*[normalize-space(text()) and normalize-space(.)='Savings Account'])[1]/following::span[1]").click()
                                                                         driver.find_element(By.ID,"userId").click()
                                                                         driver.find_element(By.ID,"userId").clear()
