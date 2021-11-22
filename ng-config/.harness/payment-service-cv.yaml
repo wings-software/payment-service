@@ -441,11 +441,13 @@ pipeline:
                                                                  
 
                                                                 EOF
-                                                                for i in {1...10}
-                                                                do
-                                                                   python3 -c "$script"
-                                                                   sleep 30
-                                                                done
+
+                                                                python3 -c "$script"
+                                                                sleep 30
+                                                                python3 -c "$script"
+                                                                sleep 30
+                                                                python3 -c "$script"
+                                                                sleep 30
                                                     environmentVariables:
                                                         - name: subdomain
                                                           type: String
@@ -583,11 +585,12 @@ pipeline:
 
 
                                                                 EOF
-                                                                for i in {1...10}
-                                                                do
-                                                                   python3 -c "$script"
-                                                                   sleep 30
-                                                                done
+                                                                python3 -c "$script"
+                                                                sleep 30
+                                                                python3 -c "$script"
+                                                                sleep 30
+                                                                python3 -c "$script"
+                                                                sleep 30
                                                     environmentVariables:
                                                         - name: subdomain
                                                           type: String
