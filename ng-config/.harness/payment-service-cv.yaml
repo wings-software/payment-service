@@ -351,6 +351,16 @@ pipeline:
                                                                   onTimeout:
                                                                       action:
                                                                           type: Ignore
+                                                    - onFailure:
+                                                          errors:
+                                                              - Unknown
+                                                          action:
+                                                              type: ManualIntervention
+                                                              spec:
+                                                                  timeout: 2h
+                                                                  onTimeout:
+                                                                      action:
+                                                                          type: Ignore
                                           - step:
                                                 type: ShellScript
                                                 name: Selenium-Canary
