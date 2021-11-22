@@ -351,16 +351,6 @@ pipeline:
                                                                   onTimeout:
                                                                       action:
                                                                           type: Ignore
-                                                    - onFailure:
-                                                          errors:
-                                                              - Unknown
-                                                          action:
-                                                              type: ManualIntervention
-                                                              spec:
-                                                                  timeout: 2h
-                                                                  onTimeout:
-                                                                      action:
-                                                                          type: Ignore
                                           - step:
                                                 type: ShellScript
                                                 name: Selenium-Canary
@@ -495,16 +485,6 @@ pipeline:
                                                         deploymentTag: <+serviceConfig.artifacts.primary.tag>
                                                 timeout: 2h
                                                 failureStrategies:
-                                                    - onFailure:
-                                                          errors:
-                                                              - Unknown
-                                                          action:
-                                                              type: ManualIntervention
-                                                              spec:
-                                                                  timeout: 2h
-                                                                  onTimeout:
-                                                                      action:
-                                                                          type: Ignore
                                                     - onFailure:
                                                           errors:
                                                               - Unknown
