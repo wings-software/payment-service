@@ -337,7 +337,7 @@ pipeline:
                                                     type: Canary
                                                     spec:
                                                         sensitivity: MEDIUM
-                                                        duration: 5m
+                                                        duration: 10m
                                                         deploymentTag: <+serviceConfig.artifacts.primary.tag>
                                                 timeout: 2h
                                                 failureStrategies:
@@ -494,13 +494,23 @@ pipeline:
                                                     type: Rolling
                                                     spec:
                                                         sensitivity: HIGH
-                                                        duration: 5m
+                                                        duration: 10m
                                                         deploymentTag: <+serviceConfig.artifacts.primary.tag>
                                                 timeout: 2h
                                                 failureStrategies:
                                                     - onFailure:
                                                           errors:
                                                               - Verification
+                                                          action:
+                                                              type: ManualIntervention
+                                                              spec:
+                                                                  timeout: 2h
+                                                                  onTimeout:
+                                                                      action:
+                                                                          type: Ignore
+                                                    - onFailure:
+                                                          errors:
+                                                              - Unknown
                                                           action:
                                                               type: ManualIntervention
                                                               spec:
