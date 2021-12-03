@@ -327,7 +327,7 @@ pipeline:
                                                   value: Rejected
                                     connectorRef: account.Harness_JIRA
                                     projectKey: HD
-                                    issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.id>
+                                    issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.key>
                       rollbackSteps: []
                   serviceDependencies: []
               tags: {}
