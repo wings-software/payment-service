@@ -229,6 +229,20 @@ pipeline:
                   execution:
                       steps:
                           - step:
+                                type: JiraCreate
+                                name: JiraCreate
+                                identifier: JiraCreate
+                                spec:
+                                    connectorRef: account.Harness_JIRA
+                                    projectKey: HD
+                                    issueType: Story
+                                    fields:
+                                        - name: Summary
+                                          value: Ticket to track deployment of <+pipeline.variables.servicename> triggered by <+pipeline.variables.seusername>
+                                        - name: Description
+                                          value: "triggeredBy: <+pipeline.variables.seusername> buildNumber: <+pipeline.sequenceId>"
+                                timeout: 1d
+                          - step:
                                 name: Rollout Deployment
                                 identifier: rolloutDeployment
                                 type: K8sRollingDeploy
