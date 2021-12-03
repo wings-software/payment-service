@@ -286,6 +286,24 @@ pipeline:
                   execution:
                       steps:
                           - step:
+                                type: ShellScript
+                                name: JiraUrl
+                                identifier: JiraUrl
+                                spec:
+                                    shell: Bash
+                                    onDelegate: true
+                                    source:
+                                        type: Inline
+                                        spec:
+                                            script: echo $jiraurl
+                                    environmentVariables:
+                                        - name: jiraurl
+                                          type: String
+                                          value: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.url>
+                                    outputVariables: []
+                                    executionTarget: {}
+                                timeout: 10m
+                          - step:
                                 name: Jira Approval
                                 identifier: jiraApproval
                                 type: JiraApproval
@@ -310,6 +328,7 @@ pipeline:
                                     connectorRef: account.Harness_JIRA
                                     projectKey: HD
                                     issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.id>
+                      rollbackSteps: []
                   serviceDependencies: []
               tags: {}
         - stage:
