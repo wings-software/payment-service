@@ -249,6 +249,18 @@ pipeline:
                                 timeout: 10m
                                 spec:
                                     skipDryRun: false
+                          - step:
+                                type: JiraUpdate
+                                name: JiraUpdate
+                                identifier: JiraUpdate
+                                spec:
+                                    connectorRef: account.Harness_JIRA
+                                    issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.id>
+                                    transitionTo:
+                                        transitionName: ""
+                                        status: Release Ready
+                                    fields: []
+                                timeout: 1d
                       rollbackSteps:
                           - step:
                                 name: Rollback Rollout Deployment
