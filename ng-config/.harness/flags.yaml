@@ -1,0 +1,61 @@
+featureFlags:
+  flags:
+  - flag:
+      name: bankvalidation
+      identifier: bankvalidation
+      description: ""
+      permanent: true
+      spec:
+        type: boolean
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        variations:
+        - identifier: "true"
+          value: "true"
+        - identifier: "false"
+          value: "false"
+      environments:
+      - identifier: GKEQA
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "on"
+      - identifier: GKEDEV
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: GKEPROD
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "on"
+        rules:
+        - priority: 1
+          serve:
+            distribution:
+              bucketBy: response
+              variations:
+              - weight: 10
+                variation: "true"
+              - weight: 90
+                variation: "false"
+          clauses:
+          - attribute: identifier
+            op: starts_with
+            values:
+            - goto
+        targetRules:
+        - targets:
+          - identifier: goto
+          - identifier: nikpapag
+          - identifier: harness-olirees
+          variation: "true"
+        - targets:
+          - identifier: julianklodzinski
+          - identifier: karanvir95
+          - identifier: andydpage
+          variation: "false"
+  projectIdentifier: DevX_Demo
+  orgIdentifier: default
