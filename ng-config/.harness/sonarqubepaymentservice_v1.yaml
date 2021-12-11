@@ -1,0 +1,10 @@
+template:
+    name: sonarqube-payment-service
+    identifier: sonarqubepaymentservice
+    versionLabel: v1
+    type: Step
+    projectIdentifier: DevX_Demo
+    orgIdentifier: default
+    tags: {}
+    spec:
+        type: Plugin
