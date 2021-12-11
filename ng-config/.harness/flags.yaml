@@ -48,14 +48,14 @@ featureFlags:
             - goto
         targetRules:
         - targets:
-          - identifier: goto
-          - identifier: harness-olirees
-          variation: "true"
-        - targets:
           - identifier: julianklodzinski
           - identifier: nikpapag
           - identifier: karanvir95
           - identifier: andydpage
+          - identifier: harness-olirees
           variation: "false"
+        - targets:
+          - identifier: goto
+          variation: "true"
   projectIdentifier: DevX_Demo
   orgIdentifier: default
