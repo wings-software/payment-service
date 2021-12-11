@@ -89,6 +89,13 @@ pipeline:
                                                 action:
                                                     type: Ignore
                           - step:
+                                name: sonarqube-payment-service
+                                identifier: sonarqubepaymentservice
+                                template:
+                                    templateRef: sonarqubepaymentservice
+                                    versionLabel: v1
+                                    templateInputs: null
+                          - step:
                                 type: Run
                                 name: Build
                                 identifier: Build
