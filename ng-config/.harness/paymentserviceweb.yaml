@@ -89,12 +89,31 @@ pipeline:
                                                 action:
                                                     type: Ignore
                           - step:
+                                type: Plugin
+                                name: sonarqube
+                                identifier: sonarqube
+                                spec:
+                                    connectorRef: nikpdockerhub
+                                    image: nikpap/harness-plugin:sonarqube
+                                    privileged: true
+                                    reports:
+                                        type: JUnit
+                                        spec:
+                                            paths:
+                                                - "**/SonarqubeJunitResults.xml"
+                                    settings:
+                                        SONAR_URL: http://35.214.81.102
+                                        SONAR_PORT: "9000"
+                                        SONAR_TOKEN: c00fa8ffd513a84923e9f62353e8447823f45ca2
+                                        SONAR_PROJECT_KEY: devxdemo
+                                        SONAR_REPORT_NAME: sonarqube-report-name
+                                    imagePullPolicy: Always
+                          - step:
                                 name: sonarqube-payment-service
                                 identifier: sonarqubepaymentservice
                                 template:
                                     templateRef: sonarqubepaymentservice
                                     versionLabel: v1
-                                    templateInputs: null
                           - step:
                                 type: Run
                                 name: Build
