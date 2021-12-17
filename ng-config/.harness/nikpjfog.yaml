@@ -6,7 +6,7 @@ connector:
   projectIdentifier: DevX_Demo
   type: Artifactory
   spec:
-    artifactoryServerUrl: https://registry-1.docker.io/
+    artifactoryServerUrl: https://nikpapag.jfrog.io
     auth:
       type: UsernamePassword
       spec:
