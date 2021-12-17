@@ -508,3 +508,7 @@ pipeline:
           type: Number
           default: 1
           value: <+input>.allowedValues(0,1)
+    flowControl:
+        barriers:
+            - name: Barrier
+              identifier: Barrier
