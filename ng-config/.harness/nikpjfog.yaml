@@ -1,0 +1,14 @@
+connector:
+  name: nikp-jfog
+  identifier: nikpjfog
+  description:
+  orgIdentifier: default
+  projectIdentifier: DevX_Demo
+  type: Artifactory
+  spec:
+    artifactoryServerUrl: https://registry-1.docker.io/
+    auth:
+      type: UsernamePassword
+      spec:
+        username: nikpapag
+        passwordRef: nikpjfrogpassword
