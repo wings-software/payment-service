@@ -14,7 +14,6 @@ pipeline:
         - stage:
               name: Build
               identifier: Build
-              description: ""
               type: CI
               spec:
                   cloneCodebase: true
@@ -186,7 +185,6 @@ pipeline:
                               variables: []
               when:
                   pipelineStatus: Success
-              variables: []
         - stage:
               name: DeployDev
               identifier: DeployDev
