@@ -14,7 +14,9 @@ import com.nikp.payment.infrastructure.persistance.PaymentRepository;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-
+/**
+ * test
+ */
 @Component
 public class ExternalPaymentService implements PaymentService {
     static Logger log = Logger.getLogger(ExternalPaymentService.class.getName());
