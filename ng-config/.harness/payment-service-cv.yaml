@@ -626,6 +626,24 @@ pipeline:
                                                                 sleep 30
                                                                 python3 -c "$script"
                                                                 sleep 30
+                                                                python3 -c "$script"
+                                                                sleep 30
+                                                                python3 -c "$script"
+                                                                sleep 30
+                                                                python3 -c "$script"
+                                                                sleep 30
+                                                                python3 -c "$script"
+                                                                sleep 30
+                                                                python3 -c "$script"
+                                                                sleep 30
+                                                                python3 -c "$script"
+                                                                sleep 30
+                                                                python3 -c "$script"
+                                                                sleep 30
+                                                                python3 -c "$script"
+                                                                sleep 30
+                                                                python3 -c "$script"
+                                                                sleep 30
                                                     environmentVariables:
                                                         - name: subdomain
                                                           type: String
