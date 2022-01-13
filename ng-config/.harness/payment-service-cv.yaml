@@ -393,7 +393,7 @@ pipeline:
 
 
 
-                                                                pods=re.findall(r'payment-service-nikpapag\S+', pod_name_output)
+                                                                pods=re.findall(r'payment-service-goto\S+', pod_name_output)
                                                                 print(pods)
 
                                                                 class SeleniumTest():
@@ -568,7 +568,7 @@ pipeline:
 
 
 
-                                                                pods=re.findall(r'payment-service-nikpapag\S+', pod_name_output)
+                                                                pods=re.findall(r'payment-service-goto\S+', pod_name_output)
                                                                 print(pods)
 
                                                                 class SeleniumTest():
