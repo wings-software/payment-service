@@ -31,36 +31,5 @@ featureFlags:
           onVariation: "true"
           offVariation: "false"
         state: "on"
-  - flag:
-      name: test
-      identifier: test
-      description: ""
-      permanent: false
-      spec:
-        type: boolean
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        variations:
-        - identifier: "true"
-          value: "true"
-        - identifier: "false"
-          value: "false"
-      environments:
-      - identifier: GKEQA
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-      - identifier: GKEDEV
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-      - identifier: GKEPROD
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
   projectIdentifier: DevX_Demo
   orgIdentifier: default
