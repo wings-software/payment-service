@@ -15,6 +15,21 @@ featureFlags:
           value: "true"
         - identifier: "false"
           value: "false"
+  - flag:
+      name: bankvalidation-test
+      identifier: bankvalidation-test
+      description: ""
+      permanent: true
+      spec:
+        type: boolean
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        variations:
+        - identifier: "true"
+          value: "true"
+        - identifier: "false"
+          value: "false"
       environments:
       - identifier: GKEQA
         default:
