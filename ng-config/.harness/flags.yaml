@@ -20,7 +20,7 @@ featureFlags:
         default:
           onVariation: "true"
           offVariation: "false"
-        state: "off"
+        state: "on"
       - identifier: GKEDEV
         default:
           onVariation: "true"
@@ -30,6 +30,6 @@ featureFlags:
         default:
           onVariation: "true"
           offVariation: "false"
-        state: "off"
+        state: "on"
   projectIdentifier: DevX_Demo
   orgIdentifier: default
