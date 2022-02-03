@@ -7,7 +7,7 @@ pipeline:
     tags: {}
     stages:
         - stage:
-              name: bank-validation-true
+              name: bankvalidation
               identifier: bankvalidationtrue
               description: ""
               type: FeatureFlag
