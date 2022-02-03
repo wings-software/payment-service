@@ -41,7 +41,7 @@ pipeline:
                                             conditions:
                                                 - key: Status
                                                   operator: equals
-                                                  value: Approved
+                                                  value: In Progress
                                     rejectionCriteria:
                                         type: KeyValues
                                         spec:
