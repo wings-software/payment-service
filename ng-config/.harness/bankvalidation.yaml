@@ -73,3 +73,7 @@ pipeline:
                                             conditions: []
                                     issueKey: <+pipeline.stages.bankvalidationtrue.execution.steps.JiraCreate.issue.key>
                                 timeout: 1d
+    variables:
+        - name: target_flag
+          type: String
+          value: <+input>
