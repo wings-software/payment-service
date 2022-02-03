@@ -40,6 +40,17 @@ pipeline:
                                           type: SetFeatureFlagState
                                           spec:
                                               state: "on"
+                                        - identifier: SetDefaultVariationsIdentifier
+                                          type: SetDefaultVariations
+                                          spec:
+                                              "on": "true"
+                                              "off": "false"
+                                        - identifier: SetVariationForTarget
+                                          type: AddTargetsToVariationTargetMap
+                                          spec:
+                                              variation: "true"
+                                              targets:
+                                                  - nikpapag
                                 timeout: 10m
                           - step:
                                 type: JiraApproval
