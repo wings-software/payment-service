@@ -15,6 +15,20 @@ pipeline:
                   execution:
                       steps:
                           - step:
+                                type: JiraCreate
+                                name: JiraCreate
+                                identifier: JiraCreate
+                                spec:
+                                    connectorRef: account.Harness_JIRA
+                                    projectKey: HD
+                                    issueType: Story
+                                    fields:
+                                        - name: Summary
+                                          value: Ticket to track rollout deployment of Feature Flag
+                                        - name: Description
+                                          value: ""
+                                timeout: 1d
+                          - step:
                                 type: FlagConfiguration
                                 name: flag-enable
                                 identifier: flagenable
@@ -27,3 +41,24 @@ pipeline:
                                           spec:
                                               state: "on"
                                 timeout: 10m
+                          - step:
+                                type: JiraApproval
+                                name: Jira Approval
+                                identifier: Jira_Approval
+                                spec:
+                                    connectorRef: account.Harness_JIRA
+                                    approvalCriteria:
+                                        type: KeyValues
+                                        spec:
+                                            matchAnyCondition: true
+                                            conditions:
+                                                - key: Status
+                                                  operator: equals
+                                                  value: Approved
+                                    rejectionCriteria:
+                                        type: KeyValues
+                                        spec:
+                                            matchAnyCondition: true
+                                            conditions: []
+                                    issueKey: <+pipeline.bankvalidation.steps.JiraCreate.issue.key>
+                                timeout: 1d
