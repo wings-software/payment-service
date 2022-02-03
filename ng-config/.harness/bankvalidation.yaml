@@ -1,0 +1,29 @@
+pipeline:
+    name: bank-validation
+    identifier: bankvalidation
+    allowStageExecutions: false
+    projectIdentifier: DevX_Demo
+    orgIdentifier: default
+    tags: {}
+    stages:
+        - stage:
+              name: bank-validation-true
+              identifier: bankvalidationtrue
+              description: ""
+              type: FeatureFlag
+              spec:
+                  execution:
+                      steps:
+                          - step:
+                                type: FlagConfiguration
+                                name: flag-enable
+                                identifier: flagenable
+                                spec:
+                                    feature: bankvalidation
+                                    environment: GKEPROD
+                                    instructions:
+                                        - identifier: SetFeatureFlagStateIdentifier
+                                          type: SetFeatureFlagState
+                                          spec:
+                                              state: "on"
+                                timeout: 10m
