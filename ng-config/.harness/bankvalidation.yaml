@@ -29,6 +29,27 @@ pipeline:
                                           value: ""
                                 timeout: 1d
                           - step:
+                                type: JiraApproval
+                                name: Jira Check
+                                identifier: Jira_Check
+                                spec:
+                                    connectorRef: account.Harness_JIRA
+                                    approvalCriteria:
+                                        type: KeyValues
+                                        spec:
+                                            matchAnyCondition: true
+                                            conditions:
+                                                - key: Status
+                                                  operator: equals
+                                                  value: Approved
+                                    rejectionCriteria:
+                                        type: KeyValues
+                                        spec:
+                                            matchAnyCondition: true
+                                            conditions: []
+                                    issueKey: <+pipeline.stages.bankvalidationtrue.execution.steps.JiraCreate.issue.key>
+                                timeout: 1d
+                          - step:
                                 type: FlagConfiguration
                                 name: flag-enable
                                 identifier: flagenable
