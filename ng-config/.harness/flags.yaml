@@ -37,6 +37,6 @@ featureFlags:
           variation: "false"
         - targets:
           - identifier: nikpapag
-          variation: "true"
+          variation: "false"
   projectIdentifier: DevX_Demo
   orgIdentifier: default
