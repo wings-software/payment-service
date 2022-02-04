@@ -71,7 +71,7 @@ pipeline:
                                           spec:
                                               variation: "true"
                                               targets:
-                                                  - nikpapag
+                                                  - beta
                                 timeout: 10m
                           - step:
                                 type: JiraApproval
