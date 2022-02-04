@@ -33,6 +33,9 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
+          - identifier: beta
+          variation: "false"
+        - targets:
           - identifier: nikpapag
           variation: "true"
   projectIdentifier: DevX_Demo
