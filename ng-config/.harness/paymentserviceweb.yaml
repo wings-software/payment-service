@@ -228,11 +228,11 @@ pipeline:
                               artifacts:
                                   sidecars: []
                                   primary:
-                                      type: DockerRegistry
                                       spec:
                                           connectorRef: nikpdockerhub
                                           imagePath: nikpap/payment-service
-                                          tag: <+pipeline.sequenceId>
+                                          tag: "376"
+                                      type: DockerRegistry
                               variables: []
                       serviceRef: paymentservice
                   infrastructure:
