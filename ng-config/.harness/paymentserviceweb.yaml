@@ -185,7 +185,6 @@ pipeline:
                               variables: []
               when:
                   pipelineStatus: Success
-                  condition: <+pipeline.variables.seusername> != "NikUppercase"
         - stage:
               name: DeployDev
               identifier: DeployDev
