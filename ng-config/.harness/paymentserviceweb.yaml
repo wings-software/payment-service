@@ -230,7 +230,7 @@ pipeline:
                                       spec:
                                           connectorRef: nikpdockerhub
                                           imagePath: nikpap/payment-service
-                                          tag: "376"
+                                          tag: <+pipeline.sequenceId>
                                       type: DockerRegistry
                               variables: []
                       serviceRef: paymentservice
