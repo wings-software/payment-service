@@ -87,6 +87,9 @@ pipeline:
                                                     - Unknown
                                                 action:
                                                     type: Ignore
+                                      when:
+                                          stageStatus: Success
+                                          condition: <+pipeline.variables.seusername> != "nikpapag"
                           - step:
                                 type: Plugin
                                 name: sonarqube
