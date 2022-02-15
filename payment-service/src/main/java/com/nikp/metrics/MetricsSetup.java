@@ -7,6 +7,7 @@ import org.springframework.metrics.instrument.Clock;
 import org.springframework.metrics.instrument.MeterRegistry;
 import org.springframework.metrics.instrument.prometheus.PrometheusMeterRegistry;
 
+
 @Configuration
 public class MetricsSetup {
   @Bean
