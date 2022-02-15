@@ -50,7 +50,7 @@ pipeline:
                                           buildTool: Maven
                                           args: test
                                           packages: com.nikp.
-                                          runOnlySelectedTests: true
+                                          runOnlySelectedTests: false
                                           preCommand: cd payment-service
                                           reports:
                                               type: JUnit
