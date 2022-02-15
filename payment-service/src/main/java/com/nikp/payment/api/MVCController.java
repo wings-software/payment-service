@@ -47,7 +47,7 @@ public class MVCController {
   public String indexView(@RequestParam(name = "number", required = false, defaultValue = "")
   String number, @RequestParam(name = "sename", required = false, defaultValue = "") 
   String sename, Model model) {
-    System.out.println("all payments executed");
+    System.out.println("Notification: all payments listed");
     model.addAttribute("list", paymentRepository.findAll());
     model.addAttribute("number",buildNumber );
     model.addAttribute("sename", seName);
@@ -62,6 +62,7 @@ public class MVCController {
 	  
     paymentRepository.save(new Payment(paymentDto.getUserId(), paymentDto.getAccountFrom(), paymentDto.getAccountTo(), paymentDto.getAmount()));
     eventBus.publish(new Event("SAVE", "Save payment" + paymentDto));
+    System.out.println("Notification: added payment from user "+paymentDto.getUserId());
     model.addAttribute("list", paymentRepository.findAll());
     model.addAttribute("number",buildNumber );
     model.addAttribute("sename", seName);
@@ -72,6 +73,7 @@ public class MVCController {
   public String paymentForm( @ModelAttribute PaymentDto paymentDto,@RequestParam(name = "number", required = false, defaultValue = "") 
   String number, @RequestParam(name = "sename", required = false, defaultValue = "") 
   String sename, Model model) {
+	  System.out.println("Notification: creating payment using the main form");
     model.addAttribute("paymentDto", new PaymentDto());
     model.addAttribute("number",buildNumber );
     model.addAttribute("sename", seName);
