@@ -19,65 +19,102 @@ import com.nikp.payment.infrastructure.exceptions.BankValidationException;
 import com.nikp.payment.infrastructure.exceptions.ReCaptchaInvalidException;
 import com.nikp.payment.infrastructure.exceptions.ReCaptchaUnavailableException;
 import com.nikp.payment.infrastructure.persistance.PaymentRepository;
-
+import com.nikp.captcha.CaptchaService;
 import javax.annotation.PostConstruct;
 import javax.ws.rs.ForbiddenException;
 
 @Controller
 public class MVCController {
 
-  @Autowired
-  private PaymentRepository paymentRepository;
+	@Autowired
+	private PaymentRepository paymentRepository;
 
-  
-  @Value("${harness.build}" )
-  String buildNumber;
-  @Value("${harness.se}" )
-  String seName;
+	@Autowired
+	private CaptchaService captchaService;
 
-  @PostConstruct
-  private void init() {
-    paymentRepository.save(new Payment("T1", "Current Account", "Savings Account", 100L));
-  }
+	@Value("${harness.build}")
+	String buildNumber;
+	@Value("${harness.se}")
+	String seName;
 
-  @Autowired
-  private EventBus eventBus;
+	@PostConstruct
+	private void init() {
+		paymentRepository.save(new Payment("T1", "Current Account", "Savings Account", 100L));
+	}
 
-  @RequestMapping("/")
-  public String indexView(@RequestParam(name = "number", required = false, defaultValue = "")
-  String number, @RequestParam(name = "sename", required = false, defaultValue = "") 
-  String sename, Model model) {
-    System.out.println("Notification: all payments listed");
-    model.addAttribute("list", paymentRepository.findAll());
-    model.addAttribute("number",buildNumber );
-    model.addAttribute("sename", seName);
-    return "allPayments";
-  }
+	@Autowired
+	private EventBus eventBus;
 
-  
-  @PostMapping("/mvc/payment")
-  public String paymentSubmit(@ModelAttribute PaymentDto paymentDto,@RequestParam(name = "number", required = false, defaultValue = "") 
-  String number, @RequestParam(name = "sename", required = false, defaultValue = "") 
-  String sename, Model model) {
-	  
-    paymentRepository.save(new Payment(paymentDto.getUserId(), paymentDto.getAccountFrom(), paymentDto.getAccountTo(), paymentDto.getAmount()));
-    eventBus.publish(new Event("SAVE", "Save payment" + paymentDto));
-    System.out.println("Notification: added payment from user "+paymentDto.getUserId());
-    model.addAttribute("list", paymentRepository.findAll());
-    model.addAttribute("number",buildNumber );
-    model.addAttribute("sename", seName);
-    return "allPayments";
-  }
+	@RequestMapping("/")
+	public String indexView(@RequestParam(name = "number", required = false, defaultValue = "") String number,
+			@RequestParam(name = "sename", required = false, defaultValue = "") String sename, Model model) {
+		System.out.println("Notification: all payments listed");
+		model.addAttribute("list", paymentRepository.findAll());
+		model.addAttribute("number", buildNumber);
+		model.addAttribute("sename", seName);
+		return "allPayments";
+	}
 
-  @GetMapping("/mvc/createPayment")
-  public String paymentForm( @ModelAttribute PaymentDto paymentDto,@RequestParam(name = "number", required = false, defaultValue = "") 
-  String number, @RequestParam(name = "sename", required = false, defaultValue = "") 
-  String sename, Model model) {
-	  System.out.println("Notification: creating payment using the main form");
-    model.addAttribute("paymentDto", new PaymentDto());
-    model.addAttribute("number",buildNumber );
-    model.addAttribute("sename", seName);
-    
-    return "createOriginal";
-  }
+	@PostMapping("/mvc/payment")
+
+	public String paymentSubmit(@ModelAttribute PaymentDto paymentDto,
+			@RequestParam(value = "g-recaptcha-response") String response,
+			@RequestParam(name = "number", required = false, defaultValue = "") String number,
+			@RequestParam(name = "sename", required = false, defaultValue = "") String sename, Model model) {
+
+		if (paymentDto.getBankValidation().isEmpty()) {
+			try {
+				captchaService.processResponse(response);
+			} catch (BankValidationException e) {
+
+				model.addAttribute(paymentDto);
+				model.addAttribute("response", response);
+
+				return "bankError";
+			} catch (ReCaptchaInvalidException re) {
+				return "captchaError";
+			} catch (ReCaptchaUnavailableException reU) {
+				return "captchaError";
+			}
+		}
+
+		paymentRepository.save(new Payment(paymentDto.getUserId(), paymentDto.getAccountFrom(),
+				paymentDto.getAccountTo(), paymentDto.getAmount()));
+		eventBus.publish(new Event("SAVE", "Save payment" + paymentDto));
+		System.out.println("Notification: added payment from user " + paymentDto.getUserId());
+		model.addAttribute("list", paymentRepository.findAll());
+		model.addAttribute("number", buildNumber);
+		model.addAttribute("sename", seName);
+		return "allPayments";
+	}
+
+	@GetMapping("/mvc/createPayment")
+	public String paymentForm(@ModelAttribute PaymentDto paymentDto,
+			@RequestParam(name = "number", required = false, defaultValue = "") String number,
+			@RequestParam(name = "sename", required = false, defaultValue = "") String sename, Model model) {
+		System.out.println("Notification: creating payment using the main form");
+		model.addAttribute("paymentDto", new PaymentDto());
+		model.addAttribute("number", buildNumber);
+		model.addAttribute("sename", seName);
+		
+		   return "create";
+
+
+	  }
+
+	  @PostMapping("/mvc/payment/bank")
+	  public String paymentSubmitBank(@ModelAttribute PaymentDto paymentDto,@RequestParam(name = "number", required = false, defaultValue = "") 
+	  String number, @RequestParam(name = "sename", required = false, defaultValue = "") 
+	  String sename, Model model) {
+
+
+
+	    paymentRepository.save(new Payment(paymentDto.getUserId(), paymentDto.getAccountFrom(), paymentDto.getAccountTo(), paymentDto.getAmount()));
+	    eventBus.publish(new Event("SAVE", "Save payment" + paymentDto));
+	    model.addAttribute("list", paymentRepository.findAll());
+	    model.addAttribute("number",buildNumber );
+	    model.addAttribute("sename", seName);
+
+	    return "allPayments";
+	}
 }
