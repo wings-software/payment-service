@@ -7,31 +7,6 @@ pipeline:
     tags: {}
     stages:
         - stage:
-              name: Approve Rollout
-              identifier: Approve_Rollout
-              description: ""
-              type: Approval
-              spec:
-                  execution:
-                      steps:
-                          - step:
-                                name: Approval
-                                identifier: approval
-                                type: HarnessApproval
-                                timeout: 1d
-                                spec:
-                                    approvalMessage: |-
-                                        Please review the following information
-                                        and approve the pipeline progression
-                                    includePipelineExecutionHistory: true
-                                    approvers:
-                                        minimumCount: 1
-                                        disallowPipelineExecutor: false
-                                        userGroups:
-                                            - account.Field_Engineering
-                                    approverInputs: []
-              tags: {}
-        - stage:
               name: Harness_Offer
               identifier: Harness_Offer_50
               description: ""
@@ -39,6 +14,20 @@ pipeline:
               spec:
                   execution:
                       steps:
+                          - step:
+                                type: HarnessApproval
+                                name: Enable Flag
+                                identifier: Enable_Flag
+                                spec:
+                                    approvalMessage: Please review the following information and approve the pipeline progression
+                                    includePipelineExecutionHistory: true
+                                    approvers:
+                                        userGroups:
+                                            - account.Field_Engineering
+                                        minimumCount: 1
+                                        disallowPipelineExecutor: false
+                                    approverInputs: []
+                                timeout: 1d
                           - step:
                                 type: FlagConfiguration
                                 name: Flag Enable
