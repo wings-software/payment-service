@@ -1,0 +1,16 @@
+connector:
+  name: nikp-git-ssh
+  identifier: nikpgitssh1
+  description:
+  orgIdentifier: default
+  projectIdentifier: DevX_Demo
+  type: Github
+  spec:
+    url: git@github.com:nikpapag/
+    validationRepo: firstdrone
+    authentication:
+      type: Ssh
+      spec:
+        sshKeyRef: nikpsshcredentials
+    executeOnDelegate: false
+    type: Account
