@@ -1,0 +1,93 @@
+pipeline:
+    name: harness-offer
+    identifier: harnessoffer
+    allowStageExecutions: false
+    projectIdentifier: DevX_Demo
+    orgIdentifier: default
+    tags: {}
+    stages:
+        - stage:
+              name: Approve Rollout
+              identifier: Approve_Rollout
+              description: ""
+              type: Approval
+              spec:
+                  execution:
+                      steps:
+                          - step:
+                                name: Approval
+                                identifier: approval
+                                type: HarnessApproval
+                                timeout: 1d
+                                spec:
+                                    approvalMessage: |-
+                                        Please review the following information
+                                        and approve the pipeline progression
+                                    includePipelineExecutionHistory: true
+                                    approvers:
+                                        minimumCount: 1
+                                        disallowPipelineExecutor: false
+                                        userGroups:
+                                            - account.Field_Engineering
+                                    approverInputs: []
+              tags: {}
+        - stage:
+              name: Harness_Offer
+              identifier: Harness_Offer_50
+              description: ""
+              type: FeatureFlag
+              spec:
+                  execution:
+                      steps:
+                          - step:
+                                type: FlagConfiguration
+                                name: Flag Enable
+                                identifier: Flag_Enable
+                                spec:
+                                    feature: mortgageoffer
+                                    environment: GKEPROD
+                                    instructions:
+                                        - identifier: SetFeatureFlagStateIdentifier
+                                          type: SetFeatureFlagState
+                                          spec:
+                                              state: "on"
+                                        - identifier: SetVariationForTarget
+                                          type: AddTargetsToVariationTargetMap
+                                          spec:
+                                              variation: "true"
+                                              targets:
+                                                  - nikpapag
+                                timeout: 10m
+                          - step:
+                                type: HarnessApproval
+                                name: Disable Flag
+                                identifier: Disable_Flag
+                                spec:
+                                    approvalMessage: Please review the following information and approve the pipeline progression
+                                    includePipelineExecutionHistory: true
+                                    approvers:
+                                        userGroups:
+                                            - account.Field_Engineering
+                                        minimumCount: 1
+                                        disallowPipelineExecutor: false
+                                    approverInputs: []
+                                timeout: 1d
+                          - step:
+                                type: FlagConfiguration
+                                name: Flag Disable
+                                identifier: Flag_Disable
+                                spec:
+                                    feature: mortgageoffer
+                                    environment: GKEPROD
+                                    instructions:
+                                        - identifier: SetFeatureFlagStateIdentifier
+                                          type: SetFeatureFlagState
+                                          spec:
+                                              state: "on"
+                                        - identifier: SetVariationForTarget
+                                          type: AddTargetsToVariationTargetMap
+                                          spec:
+                                              variation: "false"
+                                              targets:
+                                                  - nikpapag
+                                timeout: 10m
