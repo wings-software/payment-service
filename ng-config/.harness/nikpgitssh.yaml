@@ -11,6 +11,6 @@ connector:
     authentication:
       type: Ssh
       spec:
-        sshKeyRef: nikpsshkey
+        sshKeyRef: nikpciegit
     executeOnDelegate: false
     type: Account
