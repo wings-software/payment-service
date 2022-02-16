@@ -318,6 +318,7 @@ pipeline:
                             type: StageRollback
               when:
                   pipelineStatus: Success
+                  condition: <+pipeline.variables.seusername> != "nikpapag"
         - stage:
               name: Jira Approve
               identifier: Jira_Approve
@@ -354,6 +355,9 @@ pipeline:
                       rollbackSteps: []
                   serviceDependencies: []
               tags: {}
+              when:
+                  pipelineStatus: Success
+                  condition: <+pipeline.variables.seusername> != "nikpapag"
         - stage:
               name: DeployProd
               identifier: DeployProd
@@ -576,6 +580,7 @@ pipeline:
                             type: StageRollback
               when:
                   pipelineStatus: Success
+                  condition: <+pipeline.variables.seusername> != "nikpapag"
     variables:
         - name: mavenversion
           type: String
