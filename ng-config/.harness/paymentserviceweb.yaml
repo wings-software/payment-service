@@ -38,6 +38,10 @@ pipeline:
                                         limits:
                                             memory: 512Mi
                                             cpu: "0.5"
+                                when:
+                                    stageStatus: Success
+                                    condition: <+pipeline.variables.seusername> != "nikpapag"
+                                failureStrategies: []
                           - parallel:
                                 - step:
                                       type: RunTests
@@ -89,6 +93,7 @@ pipeline:
                                                     type: Ignore
                                       when:
                                           stageStatus: Success
+                                          condition: <+pipeline.variables.seusername> != "nikpapag"
                           - step:
                                 type: Plugin
                                 name: sonarqube
@@ -109,6 +114,10 @@ pipeline:
                                         SONAR_PROJECT_KEY: devxdemo
                                         SONAR_REPORT_NAME: sonarqube-report-name
                                     imagePullPolicy: Always
+                                when:
+                                    stageStatus: Success
+                                    condition: <+pipeline.variables.seusername> != "nikpapag"
+                                failureStrategies: []
                           - step:
                                 type: Run
                                 name: Build
@@ -126,6 +135,10 @@ pipeline:
                                         limits:
                                             memory: 2Gi
                                             cpu: "2"
+                                when:
+                                    stageStatus: Success
+                                    condition: <+pipeline.variables.seusername> != "nikpapag"
+                                failureStrategies: []
                           - step:
                                 type: SaveCacheS3
                                 name: Savemavenrepo
@@ -143,6 +156,10 @@ pipeline:
                                         limits:
                                             memory: 512Mi
                                             cpu: "0.5"
+                                when:
+                                    stageStatus: Success
+                                    condition: <+pipeline.variables.seusername> != "nikpapag"
+                                failureStrategies: []
                           - step:
                                 type: BuildAndPushECR
                                 name: pushToECR
@@ -179,6 +196,10 @@ pipeline:
                                         limits:
                                             memory: 2Gi
                                             cpu: "2"
+                                when:
+                                    stageStatus: Success
+                                    condition: <+pipeline.variables.seusername> != "nikpapag"
+                                failureStrategies: []
                   serviceConfig:
                       serviceRef: ""
                       serviceDefinition:
