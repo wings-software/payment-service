@@ -340,7 +340,7 @@ pipeline:
               type: Deployment
               spec:
                   serviceConfig:
-                      serviceRef: paymentservice
+                      serviceRef: paymentserviceprod
                       serviceDefinition:
                           type: Kubernetes
                           spec:
@@ -407,6 +407,77 @@ pipeline:
                                                   spec:
                                                       count: 1
                                               skipDryRun: false
+                                    - parallel:
+                                          - step:
+                                                type: Verify
+                                                name: verify_canary
+                                                identifier: verify_dev
+                                                spec:
+                                                    type: Canary
+                                                    spec:
+                                                        sensitivity: LOW
+                                                        duration: 5m
+                                                        deploymentTag: <+serviceConfig.artifacts.primary.tag>
+                                                timeout: 2h
+                                                failureStrategies:
+                                                    - onFailure:
+                                                          errors:
+                                                              - Verification
+                                                          action:
+                                                              type: ManualIntervention
+                                                              spec:
+                                                                  timeout: 2h
+                                                                  onTimeout:
+                                                                      action:
+                                                                          type: StageRollback
+                                                    - onFailure:
+                                                          errors:
+                                                              - Unknown
+                                                          action:
+                                                              type: ManualIntervention
+                                                              spec:
+                                                                  timeout: 2h
+                                                                  onTimeout:
+                                                                      action:
+                                                                          type: Ignore
+                                                when:
+                                                    stageStatus: Success
+                                                    condition: <+pipeline.variables.verify_fail> == "true"
+                                          - step:
+                                                type: Verify
+                                                name: verification
+                                                identifier: verify_prod
+                                                spec:
+                                                    type: Canary
+                                                    spec:
+                                                        sensitivity: HIGH
+                                                        duration: 5m
+                                                        deploymentTag: <+serviceConfig.artifacts.primary.tag>
+                                                timeout: 2h
+                                                failureStrategies:
+                                                    - onFailure:
+                                                          errors:
+                                                              - Verification
+                                                          action:
+                                                              type: ManualIntervention
+                                                              spec:
+                                                                  timeout: 2h
+                                                                  onTimeout:
+                                                                      action:
+                                                                          type: StageRollback
+                                                    - onFailure:
+                                                          errors:
+                                                              - Unknown
+                                                          action:
+                                                              type: ManualIntervention
+                                                              spec:
+                                                                  timeout: 2h
+                                                                  onTimeout:
+                                                                      action:
+                                                                          type: Ignore
+                                                when:
+                                                    stageStatus: Success
+                                                    condition: <+pipeline.variables.verify_fail> == "false"
                                     - step:
                                           name: Canary Delete
                                           identifier: canaryDelete
@@ -508,6 +579,10 @@ pipeline:
           type: Number
           default: 1
           value: <+input>.allowedValues(0,1)
+        - name: verify_fail
+          type: String
+          default: "false"
+          value: <+input>.allowedValues(true,false)
     flowControl:
         barriers:
             - name: Barrier
