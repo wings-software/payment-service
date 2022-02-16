@@ -6,3 +6,4 @@ public interface EventBus {
   void publish(Event event);
   Event receive();
 }
+
