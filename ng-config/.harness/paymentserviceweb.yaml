@@ -600,6 +600,12 @@ pipeline:
           type: String
           default: "false"
           value: <+input>.allowedValues(true,false)
+        - name: dbuser
+          type: String
+          value: <+secrets.getValue("dbuser")>
+        - name: dbpassword
+          type: String
+          value: <+secrets.getValue("dbpassword")>
     flowControl:
         barriers:
             - name: Barrier
