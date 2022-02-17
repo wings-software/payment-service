@@ -92,7 +92,6 @@ pipeline:
                                                     type: Ignore
                                       when:
                                           stageStatus: Success
-                                          condition: <+pipeline.variables.seusername> != "nikpapag"
                           - step:
                                 type: Plugin
                                 name: sonarqube
@@ -115,7 +114,6 @@ pipeline:
                                     imagePullPolicy: Always
                                 when:
                                     stageStatus: Success
-                                    condition: <+pipeline.variables.seusername> != "nikpapag"
                                 failureStrategies: []
                           - step:
                                 type: Run
@@ -195,7 +193,6 @@ pipeline:
                                             cpu: "2"
                                 when:
                                     stageStatus: Success
-                                    condition: <+pipeline.variables.seusername> != "nikpapag"
                                 failureStrategies: []
                   serviceConfig:
                       serviceRef: ""
@@ -315,7 +312,6 @@ pipeline:
                             type: StageRollback
               when:
                   pipelineStatus: Success
-                  condition: <+pipeline.variables.seusername> != "nikpapag"
         - stage:
               name: Jira Approve
               identifier: Jira_Approve
@@ -354,7 +350,6 @@ pipeline:
               tags: {}
               when:
                   pipelineStatus: Success
-                  condition: <+pipeline.variables.seusername> != "nikpapag"
         - stage:
               name: DeployProd
               identifier: DeployProd
@@ -577,7 +572,6 @@ pipeline:
                             type: StageRollback
               when:
                   pipelineStatus: Success
-                  condition: <+pipeline.variables.seusername> != "nikpapag"
     variables:
         - name: mavenversion
           type: String
