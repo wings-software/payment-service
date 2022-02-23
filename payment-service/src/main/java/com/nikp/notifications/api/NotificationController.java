@@ -16,6 +16,7 @@ public class NotificationController {
     public HelloMessage welcomeUser(PaymentAddedNotification paymentAddedNotification) throws Exception {
         Thread.sleep(1000); // simulated delay
         return new HelloMessage("Hello, " + paymentAddedNotification.getName() + "!");
+        
     }
 
 }
