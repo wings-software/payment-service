@@ -36,5 +36,36 @@ featureFlags:
           - identifier: nikpapag
           - identifier: beta
           variation: "true"
+  - flag:
+      name: mortgageoffer
+      identifier: mortgageoffer
+      description: ""
+      permanent: true
+      spec:
+        type: boolean
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        variations:
+        - identifier: "true"
+          value: "true"
+        - identifier: "false"
+          value: "false"
+      environments:
+      - identifier: GKEQA
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: GKEDEV
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: GKEPROD
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
   projectIdentifier: DevX_Demo
   orgIdentifier: default
