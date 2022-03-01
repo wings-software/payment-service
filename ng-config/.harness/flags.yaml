@@ -67,5 +67,9 @@ featureFlags:
           onVariation: "true"
           offVariation: "false"
         state: "on"
+        targetRules:
+        - targets:
+          - identifier: nikpapag
+          variation: "false"
   projectIdentifier: DevX_Demo
   orgIdentifier: default
