@@ -70,6 +70,6 @@ featureFlags:
         targetRules:
         - targets:
           - identifier: nikpapag
-          variation: "false"
+          variation: "true"
   projectIdentifier: DevX_Demo
   orgIdentifier: default
