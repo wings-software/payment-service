@@ -34,6 +34,8 @@ featureFlags:
         targetRules:
         - targets:
           - identifier: nikpapag
+          variation: "false"
+        - targets:
           - identifier: beta
           variation: "true"
   - flag:
