@@ -1,4 +1,4 @@
-From tomcat:8.0.51-jre8-alpine
+From tomcat:8.0.51-jre8-alpine 
 
 RUN apk update && apk add --no-cache nmap && \
     echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories && \
