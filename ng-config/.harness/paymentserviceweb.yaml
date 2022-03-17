@@ -250,7 +250,7 @@ pipeline:
                                           tag: <+pipeline.sequenceId>
                                       type: DockerRegistry
                               variables: []
-                      serviceRef: <+pipeline.variables.servicename>
+                      serviceRef: paymentservicesrm_dev
                   infrastructure:
                       environmentRef: GKEDEV
                       infrastructureDefinition:
@@ -357,7 +357,7 @@ pipeline:
               type: Deployment
               spec:
                   serviceConfig:
-                      serviceRef: <+pipeline.variables.servicename>
+                      serviceRef: paymentservicesrm_dev
                       serviceDefinition:
                           type: Kubernetes
                           spec:
