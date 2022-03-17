@@ -549,7 +549,7 @@ pipeline:
         - name: servicename
           type: String
           default: payment-service-srm
-          value: <+input>.allowedValues(payment-service-srm,payment-service)
+          value: <+input>.allowedValues(payment-service-srm,payment-service,paymentservice)
         - name: seusername
           type: String
           value: <+input>
