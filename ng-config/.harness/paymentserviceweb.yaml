@@ -458,7 +458,6 @@ pipeline:
                                                                     type: Ignore
                                           when:
                                               stageStatus: Success
-                                              condition: <+pipeline.variables.verify_fail> == "false"
                                     - step:
                                           name: Canary Delete
                                           identifier: canaryDelete
