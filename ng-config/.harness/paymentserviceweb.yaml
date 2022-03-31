@@ -71,6 +71,10 @@ pipeline:
                                               limits:
                                                   memory: 2Gi
                                                   cpu: "2"
+                                      when:
+                                          stageStatus: Success
+                                          condition: <+pipeline.variables.seusername> != "nikpapag"
+                                      failureStrategies: []
                                 - step:
                                       type: Plugin
                                       name: cleanup
