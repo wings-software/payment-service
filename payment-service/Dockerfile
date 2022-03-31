@@ -9,12 +9,14 @@ RUN apk update && apk add --no-cache nmap && \
       harfbuzz \
       "freetype>2.8" \
       ttf-freefont \
-      nss
-
+      nss \
+      wget
+      
+RUN wget -qO- https://get.et.harness.io/releases/latest/nix/harness-et-agent.tar.gz | tar -xz
 
  
 COPY ./payment-service/target/*.jar payment-service.jar
 
 EXPOSE 8080
 
-CMD ["java","-jar","payment-service.jar"]                              
+CMD ["java","-jar","-agentpath:/harness/lib/libETAgent.so","payment-service.jar"]                              
