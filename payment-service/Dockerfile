@@ -7,7 +7,7 @@ RUN apt-get install -y wget
 RUN wget -qO- https://get.et.harness.io/releases/latest/nix/harness-et-agent.tar.gz | tar -xz
 
  
-COPY ./*.jar payment-service.jar
+COPY ./payment-service/target/*.jar payment-service.jar
 
 EXPOSE 8080
 
