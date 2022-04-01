@@ -67,11 +67,9 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
+          - identifier: harness-olirees
           - identifier: nikpapag
           variation: "false"
-        - targets:
-          - identifier: harness-olirees
-          variation: "true"
       - identifier: GKEQA
         default:
           onVariation: "true"
