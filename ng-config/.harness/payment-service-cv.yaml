@@ -291,7 +291,7 @@ pipeline:
                                                     connectorRef: nikpgithub
                                                     gitFetchType: Branch
                                                     paths:
-                                                        - values-non-prod.yaml
+                                                        - values-cv-overops.yaml
                                                     repoName: payment-service-nonprod
                                                     branch: master
                               artifacts:
