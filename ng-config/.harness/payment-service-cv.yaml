@@ -301,6 +301,14 @@ pipeline:
                                           connectorRef: nikpdockerhub
                                           imagePath: nikpap/payment-service
                                           tag: <+pipeline.sequenceId>
+                                  sidecars:
+                                      - sidecar:
+                                            spec:
+                                                connectorRef: nikpdockerhub
+                                                imagePath: nikpap/overops-event-generator
+                                                tag: devx
+                                            identifier: overops
+                                            type: DockerRegistry
                   infrastructure:
                       environmentRef: GKEPROD
                       infrastructureDefinition:
