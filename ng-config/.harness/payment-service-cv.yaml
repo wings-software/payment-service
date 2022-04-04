@@ -747,3 +747,6 @@ pipeline:
         - name: dbpassword
           type: String
           value: <+secrets.getValue("dbpassword")>
+        - name: COLLECTOR_URL
+          type: String
+          value: https://app.harness.io/gratis/et-collector
