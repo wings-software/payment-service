@@ -620,6 +620,10 @@ pipeline:
           type: String
           default: "false"
           value: <+input>.allowedValues(true,false)
+        - name: run_owasp_scan
+          type: String
+          default: "false"
+          value: <+input>.allowedValues(true,false)
     flowControl:
         barriers:
             - name: Barrier
