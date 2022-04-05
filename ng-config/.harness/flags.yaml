@@ -23,12 +23,12 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
+          - identifier: nikpapag
+          variation: "false"
+        - targets:
           - identifier: harness-olirees
           - identifier: beta
           variation: "true"
-        - targets:
-          - identifier: nikpapag
-          variation: "false"
       - identifier: GKEDEV
         default:
           onVariation: "true"
@@ -62,8 +62,10 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
-          - identifier: harness-olirees
           - identifier: nikpapag
+          variation: "true"
+        - targets:
+          - identifier: harness-olirees
           variation: "false"
       - identifier: GKEDEV
         default:
