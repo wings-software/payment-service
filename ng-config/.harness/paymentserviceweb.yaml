@@ -160,7 +160,7 @@ pipeline:
                                               type: Ignore
                                 when:
                                     stageStatus: Success
-                                    condition: <+pipeline.variables.run_oswasp_scan> == "true"
+                                    condition: <+pipeline.variables.run_owasp_scan> == true
                           - step:
                                 type: SaveCacheS3
                                 name: Savemavenrepo
