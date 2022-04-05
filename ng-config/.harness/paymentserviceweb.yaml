@@ -624,6 +624,12 @@ pipeline:
           type: String
           default: "false"
           value: <+input>.allowedValues(true,false)
+        - name: dbuser
+          type: Secret
+          value: dbuser
+        - name: dbpassword
+          type: Secret
+          value: dbpassword
     flowControl:
         barriers:
             - name: Barrier
