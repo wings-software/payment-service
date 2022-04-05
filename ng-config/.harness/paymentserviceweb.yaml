@@ -411,7 +411,7 @@ pipeline:
               type: Deployment
               spec:
                   serviceConfig:
-                      serviceRef: paymentservicesrm_dev
+                      serviceRef: paymentservice
                       serviceDefinition:
                           type: Kubernetes
                           spec:
