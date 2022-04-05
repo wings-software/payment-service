@@ -553,6 +553,7 @@ pipeline:
           value: <+input>
         - name: seusername
           type: String
+          default: et
           value: <+input>
         - name: ffsdkkeyprod
           type: String
