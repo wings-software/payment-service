@@ -71,9 +71,6 @@ pipeline:
                                               limits:
                                                   memory: 2Gi
                                                   cpu: "2"
-                                      when:
-                                          stageStatus: Success
-                                      failureStrategies: []
                                 - step:
                                       type: Plugin
                                       name: cleanup
@@ -95,6 +92,26 @@ pipeline:
                                                     type: Ignore
                                       when:
                                           stageStatus: Success
+                          - step:
+                                type: Run
+                                name: Build
+                                identifier: Build
+                                spec:
+                                    connectorRef: nikpdockerhub
+                                    image: maven:<+pipeline.variables.mavenversion>-jdk-<+pipeline.variables.javaversion>
+                                    command: |-
+                                        cd payment-service
+                                        mvn -Dmaven.test.skip=true clean install -X
+                                    privileged: false
+                                    envVariables:
+                                        MAVEN_OPTS: -Dmaven.repo.local=/harness/maven/repository
+                                    resources:
+                                        limits:
+                                            memory: 2Gi
+                                            cpu: "2"
+                                when:
+                                    stageStatus: Success
+                                failureStrategies: []
                           - step:
                                 type: Plugin
                                 name: sonarqube
@@ -119,25 +136,30 @@ pipeline:
                                     stageStatus: Success
                                 failureStrategies: []
                           - step:
-                                type: Run
-                                name: Build
-                                identifier: Build
+                                type: Security
+                                name: OWASP
+                                identifier: OWASP
                                 spec:
-                                    connectorRef: nikpdockerhub
-                                    image: maven:<+pipeline.variables.mavenversion>-jdk-<+pipeline.variables.javaversion>
-                                    command: |-
-                                        cd payment-service
-                                        mvn -Dmaven.test.skip=true clean install -X
-                                    privileged: false
-                                    envVariables:
-                                        MAVEN_OPTS: -Dmaven.repo.local=/harness/maven/repository
-                                    resources:
-                                        limits:
-                                            memory: 2Gi
-                                            cpu: "2"
+                                    connectorRef: harnessImage
+                                    privileged: true
+                                    settings:
+                                        policy_type: orchestratedScan
+                                        scan_type: repository
+                                        repository_project: payment-service
+                                        repository_branch: master
+                                        product_name: owasp
+                                        product_config_name: owasp 5.x
+                                        fail_on_severity: HIGH
+                                    imagePullPolicy: Always
+                                failureStrategies:
+                                    - onFailure:
+                                          errors:
+                                              - AllErrors
+                                          action:
+                                              type: Ignore
                                 when:
                                     stageStatus: Success
-                                failureStrategies: []
+                                    condition: <+pipeline.variables.run_oswasp_scan> == "true"
                           - step:
                                 type: SaveCacheS3
                                 name: Savemavenrepo
@@ -203,8 +225,37 @@ pipeline:
                           type: Kubernetes
                           spec:
                               variables: []
+                  sharedPaths:
+                      - /var/run
+                  serviceDependencies:
+                      - identifier: dind
+                        name: dind
+                        type: Service
+                        spec:
+                            connectorRef: nikpdockerhub
+                            image: docker:dind
+                            privileged: true
+                            entrypoint:
+                                - dockerd-entrypoint.sh
+                            imagePullPolicy: IfNotPresent
               when:
                   pipelineStatus: Success
+              variables:
+                  - name: sto_api_key
+                    type: Secret
+                    value: STOJWT
+                  - name: runner_registry_username
+                    type: Secret
+                    value: ZN_Docker_Student_Username
+                  - name: runner_registry_token
+                    type: Secret
+                    value: zeronorthpass
+                  - name: runner_tag
+                    type: String
+                    value: dev
+                  - name: api_domain_name
+                    type: String
+                    value: https://api.sto.harness.io
         - stage:
               name: DeployDev
               identifier: DeployDev
@@ -253,7 +304,7 @@ pipeline:
                                           tag: <+pipeline.sequenceId>
                                       type: DockerRegistry
                               variables: []
-                      serviceRef: paymentservice
+                      serviceRef: <+input>
                   infrastructure:
                       environmentRef: GKEDEV
                       infrastructureDefinition:
@@ -360,7 +411,7 @@ pipeline:
               type: Deployment
               spec:
                   serviceConfig:
-                      serviceRef: paymentservice
+                      serviceRef: <+input>
                       serviceDefinition:
                           type: Kubernetes
                           spec:
@@ -461,6 +512,7 @@ pipeline:
                                                                     type: Ignore
                                           when:
                                               stageStatus: Success
+                                              condition: <+pipeline.variables.verify_fail> == "false"
                                     - step:
                                           name: Canary Delete
                                           identifier: canaryDelete
@@ -550,8 +602,8 @@ pipeline:
           value: <+input>
         - name: servicename
           type: String
-          default: paymentservice
-          value: <+input>.allowedValues(paymentservice,paymentservicesrm_dev)
+          default: payment-service
+          value: <+input>
         - name: seusername
           type: String
           value: <+input>
@@ -573,6 +625,25 @@ pipeline:
         - name: dbpassword
           type: String
           value: <+secrets.getValue("dbpassword")>
+        - name: api_domain_name
+          type: String
+          value: https://api.sto.harness.io
+        - name: sto_api_key
+          type: Secret
+          value: STOJWT
+        - name: runner_registry_username
+          type: Secret
+          value: ZN_Docker_Student_Username
+        - name: runner_registry_token
+          type: Secret
+          value: zeronorthpass
+        - name: runner_tag
+          type: String
+          value: dev
+        - name: run_owasp_scan
+          type: String
+          default: "false"
+          value: <+input>.allowedValues(true,false)
     flowControl:
         barriers:
             - name: Barrier
