@@ -64,6 +64,7 @@ featureFlags:
         - targets:
           - identifier: harness-olirees
           - identifier: nikpapag
+          - identifier: jkharnessio
           variation: "false"
       - identifier: GKEDEV
         default:
