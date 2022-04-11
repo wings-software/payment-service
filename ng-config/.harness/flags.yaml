@@ -16,6 +16,11 @@ featureFlags:
         - identifier: "false"
           value: "false"
       environments:
+      - identifier: GKEDEV
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
       - identifier: GKEPROD
         default:
           onVariation: "true"
@@ -30,11 +35,6 @@ featureFlags:
           - identifier: harness-olirees
           - identifier: beta
           variation: "true"
-      - identifier: GKEDEV
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
       - identifier: GKEQA
         default:
           onVariation: "true"
@@ -56,6 +56,11 @@ featureFlags:
         - identifier: "false"
           value: "false"
       environments:
+      - identifier: GKEDEV
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
       - identifier: GKEPROD
         default:
           onVariation: "true"
@@ -63,15 +68,12 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
+          - identifier: jkharnessio
+          variation: "true"
+        - targets:
           - identifier: harness-olirees
           - identifier: nikpapag
-          - identifier: jkharnessio
           variation: "false"
-      - identifier: GKEDEV
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
       - identifier: GKEQA
         default:
           onVariation: "true"
