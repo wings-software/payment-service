@@ -1,0 +1,61 @@
+pipeline:
+  identifier: cipipelineCgtOdPkgbR
+  name: multi stage parallel pipeline with success
+  stages:
+  - parallel:
+    - stage:
+        identifier: ms_parallel_1_success
+        name: parallel stage 1
+        type: CI
+        spec:
+          execution:
+            steps:
+            - step:
+                identifier: one
+                name: one
+                type: Run
+                spec:
+                  command: |
+                    echo hello
+                    echo world
+                  connectorRef: account.CItestDockerConnectorCB20iF0B9J
+                  image: alpine
+                  resources:
+                    limits:
+                      memory: 100Mi
+                      cpu: 100m
+          infrastructure:
+            type: KubernetesDirect
+            spec:
+              connectorRef: account.CItestK8sConnectorl18JaIqmt8
+              namespace: harness-qa-delegate
+          cloneCodebase: false
+    - stage:
+        identifier: ms_parallel_2_success
+        name: parallel stage 2
+        type: CI
+        spec:
+          execution:
+            steps:
+            - step:
+                identifier: two
+                type: Run
+                name: two
+                spec:
+                  command: |
+                    echo hola
+                    echo mundo
+                  connectorRef: account.CItestDockerConnectorCB20iF0B9J
+                  image: alpine
+                  resources:
+                    limits:
+                      memory: 100Mi
+                      cpu: 100m
+          infrastructure:
+            type: KubernetesDirect
+            spec:
+              connectorRef: account.CItestK8sConnectorl18JaIqmt8
+              namespace: harness-qa-delegate
+          cloneCodebase: false
+  projectIdentifier: CITestDemoProxXecTIxqtt
+  orgIdentifier: CITestDemoOrgLSOkxQvbKU
