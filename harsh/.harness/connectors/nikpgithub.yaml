@@ -14,10 +14,10 @@ connector:
         type: UsernameToken
         spec:
           username: harshjain12
-          tokenRef: account.harshgir
+          tokenRef: harshgir
     apiAccess:
       type: Token
       spec:
-        tokenRef: account.harshgir
+        tokenRef: harshgir
     executeOnDelegate: true
     type: Account
