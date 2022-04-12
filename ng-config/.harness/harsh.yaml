@@ -1,0 +1,23 @@
+connector:
+  name: harsh
+  identifier: harsh
+  description:
+  orgIdentifier: default
+  projectIdentifier: DevX_Demo
+  type: Github
+  spec:
+    url: https://github.com/wings-software
+    validationRepo: payment-service
+    authentication:
+      type: Http
+      spec:
+        type: UsernameToken
+        spec:
+          username: harshjain12
+          tokenRef: harshsecret
+    apiAccess:
+      type: Token
+      spec:
+        tokenRef: harshsecret
+    executeOnDelegate: true
+    type: Account
