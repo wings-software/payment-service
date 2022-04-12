@@ -1,0 +1,137 @@
+pipeline:
+    name: HarshPipeline
+    identifier: HarshPipeline
+    allowStageExecutions: false
+    projectIdentifier: DevX_Demo
+    orgIdentifier: default
+    tags: {}
+    properties:
+        ci:
+            codebase:
+                connectorRef: nikpwingssoftware
+                repoName: payment-service
+                build: <+input>
+    stages:
+        - stage:
+              name: Build
+              identifier: Build
+              type: CI
+              spec:
+                  cloneCodebase: true
+                  infrastructure:
+                      type: KubernetesDirect
+                      spec:
+                          connectorRef: nikpgkecluster
+                          namespace: payment-service-build
+                  execution:
+                      steps:
+                          - step:
+                                type: RestoreCacheS3
+                                name: RestoreCache
+                                identifier: RestoreCache
+                                spec:
+                                    connectorRef: nikpaws
+                                    region: eu-west-2
+                                    bucket: nikp-maven
+                                    key: payment-service-ci
+                                    archiveFormat: Tar
+                                    resources:
+                                        limits:
+                                            memory: 512Mi
+                                            cpu: "0.5"
+                                when:
+                                    stageStatus: Success
+                                failureStrategies: []
+                          - parallel:
+                                - step:
+                                      type: RunTests
+                                      name: runTestsWithIntelligence
+                                      identifier: runTestsWithIntelligence
+                                      spec:
+                                          connectorRef: nikpdockerhub
+                                          image: maven:<+pipeline.variables.mavenversion>-jdk-<+pipeline.variables.javaversion>
+                                          language: Java
+                                          buildTool: Maven
+                                          args: test
+                                          packages: com.nikp.
+                                          runOnlySelectedTests: true
+                                          preCommand: cd payment-service
+                                          reports:
+                                              type: JUnit
+                                              spec:
+                                                  paths:
+                                                      - "**/*.xml"
+                                          envVariables:
+                                              DRONE_COMMIT_SHA: any
+                                              DRONE_REMOTE_URL: any
+                                              DRONE_SOURCE_BRANCH: any
+                                              DRONE_TARGET_BRANCH: any
+                                              MAVEN_OPTS: -Dmaven.repo.local=/harness/maven/repository
+                                              CONTAINER_STEP: "3"
+                                          resources:
+                                              limits:
+                                                  memory: 2Gi
+                                                  cpu: "2"
+                                - step:
+                                      type: Plugin
+                                      name: cleanup
+                                      identifier: cleanup
+                                      spec:
+                                          connectorRef: nikpdockerhub
+                                          image: nikpap/githubcli:v2
+                                          privileged: false
+                                          settings:
+                                              GITHUB_TOKEN: <+secrets.getValue("githubtoken")>
+                                              GITHUB_USERNAME: nikpapag
+                                              GITHUB_EMAIL: nikpap.cs@icloud.com
+                                          imagePullPolicy: Always
+                                      failureStrategies:
+                                          - onFailure:
+                                                errors:
+                                                    - Unknown
+                                                action:
+                                                    type: Ignore
+                                      when:
+                                          stageStatus: Success
+    variables:
+        - name: mavenversion
+          type: String
+          default: "3.8"
+          value: <+input>
+        - name: javaversion
+          type: String
+          default: "8"
+          value: <+input>
+        - name: servicename
+          type: String
+          default: payment-service
+          value: <+input>
+        - name: seusername
+          type: String
+          value: <+input>
+        - name: ffsdkkeyprod
+          type: String
+          default: 44c9dcaa-dab2-4100-b2b5-75bdeb7aa497
+          value: <+input>
+        - name: isingress
+          type: Number
+          default: 1
+          value: <+input>.allowedValues(0,1)
+        - name: verify_fail
+          type: String
+          default: "false"
+          value: <+input>.allowedValues(true,false)
+        - name: run_owasp_scan
+          type: String
+          default: "false"
+          value: <+input>.allowedValues(true,false)
+        - name: dbuser
+          type: Secret
+          value: dbuser
+        - name: dbpassword
+          type: Secret
+          value: dbpassword
+    flowControl:
+        barriers:
+            - name: Barrier
+              identifier: Barrier
