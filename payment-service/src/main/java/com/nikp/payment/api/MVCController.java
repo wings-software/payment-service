@@ -78,6 +78,7 @@ public class MVCController {
     model.addAttribute("number",buildNumber );
     model.addAttribute("sename", seName);
     
+	  
     return "createOriginal";
   }
 }
