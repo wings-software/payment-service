@@ -25,21 +25,19 @@ featureFlags:
         - targets:
           - identifier: harness-olirees
           - identifier: beta
+          - identifier: jkharnessio
           - identifier: nikpapag
           variation: "true"
-        - targets:
-          - identifier: jkharnessio
-          variation: "false"
-      - identifier: GKEDEV
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
       - identifier: GKEQA
         default:
           onVariation: "true"
           offVariation: "false"
         state: "on"
+      - identifier: GKEDEV
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
   - flag:
       name: mortgageoffer
       identifier: mortgageoffer
@@ -67,15 +65,15 @@ featureFlags:
           - identifier: jkharnessio
           - identifier: nikpapag
           variation: "false"
-      - identifier: GKEDEV
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
       - identifier: GKEQA
         default:
           onVariation: "true"
           offVariation: "false"
         state: "on"
+      - identifier: GKEDEV
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
   projectIdentifier: DevX_Demo
   orgIdentifier: default
