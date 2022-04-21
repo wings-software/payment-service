@@ -630,6 +630,9 @@ pipeline:
         - name: dbpassword
           type: Secret
           value: dbpassword
+        - name: verify_fail2
+          type: String
+          value: hello
     flowControl:
         barriers:
             - name: Barrier
