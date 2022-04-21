@@ -581,7 +581,14 @@ pipeline:
                                         status: Done
                                     fields: []
                                 timeout: 1d
-                      rollbackSteps: []
+                      rollbackSteps:
+                          - step:
+                                type: K8sCanaryDelete
+                                name: Canary Rollback
+                                identifier: Canary_Rollback
+                                spec:
+                                    skipDryRun: false
+                                timeout: 10m
                   serviceDependencies: []
               tags: {}
               failureStrategies:
