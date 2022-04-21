@@ -630,10 +630,6 @@ pipeline:
         - name: dbpassword
           type: Secret
           value: dbpassword
-        - name: verify_fail2
-          type: String
-          default: "false"
-          value: <+input>.allowedValues(true,false)
     flowControl:
         barriers:
             - name: Barrier
