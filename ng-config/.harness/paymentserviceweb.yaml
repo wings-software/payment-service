@@ -71,6 +71,7 @@ pipeline:
                                               limits:
                                                   memory: 2Gi
                                                   cpu: "2"
+                                      description: ad
                                 - step:
                                       type: Plugin
                                       name: cleanup
