@@ -73,10 +73,10 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
-          - identifier: harness-olirees
           - identifier: nikpapag
           variation: "true"
         - targets:
+          - identifier: harness-olirees
           - identifier: jkharnessio
           variation: "false"
   projectIdentifier: DevX_Demo
