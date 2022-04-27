@@ -16,6 +16,16 @@ featureFlags:
         - identifier: "false"
           value: "false"
       environments:
+      - identifier: GKEDEV
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: GKEQA
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "on"
       - identifier: GKEPROD
         default:
           onVariation: "true"
@@ -23,23 +33,13 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
-          - identifier: nikpapag
-          variation: "false"
-        - targets:
-          - identifier: harness-olirees
           - identifier: beta
           - identifier: jkharnessio
           variation: "true"
-      - identifier: GKEQA
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "on"
-      - identifier: GKEDEV
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
+        - targets:
+          - identifier: harness-olirees
+          - identifier: nikpapag
+          variation: "false"
   - flag:
       name: mortgageoffer
       identifier: mortgageoffer
@@ -56,6 +56,16 @@ featureFlags:
         - identifier: "false"
           value: "false"
       environments:
+      - identifier: GKEDEV
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: GKEQA
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "on"
       - identifier: GKEPROD
         default:
           onVariation: "true"
@@ -69,15 +79,5 @@ featureFlags:
           - identifier: harness-olirees
           - identifier: jkharnessio
           variation: "false"
-      - identifier: GKEQA
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "on"
-      - identifier: GKEDEV
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
   projectIdentifier: DevX_Demo
   orgIdentifier: default
