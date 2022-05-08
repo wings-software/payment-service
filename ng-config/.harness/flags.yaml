@@ -33,13 +33,13 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
-          - identifier: beta
-          - identifier: jkharnessio
-          variation: "true"
-        - targets:
           - identifier: harness-olirees
           - identifier: nikpapag
           variation: "false"
+        - targets:
+          - identifier: beta
+          - identifier: jkharnessio
+          variation: "true"
   - flag:
       name: mortgageoffer
       identifier: mortgageoffer
@@ -73,11 +73,9 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
-          - identifier: nikpapag
-          variation: "true"
-        - targets:
           - identifier: jkharnessio
           - identifier: harness-olirees
+          - identifier: nikpapag
           variation: "false"
   projectIdentifier: DevX_Demo
   orgIdentifier: default
