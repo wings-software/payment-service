@@ -71,7 +71,7 @@ pipeline:
                                               limits:
                                                   memory: 2Gi
                                                   cpu: "2"
-                                      description: ad
+                                      description: ader
                                 - step:
                                       type: Plugin
                                       name: cleanup
