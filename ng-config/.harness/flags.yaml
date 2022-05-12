@@ -70,6 +70,7 @@ featureFlags:
         - targets:
           - identifier: jkharnessio
           - identifier: harness-olirees
+          - identifier: nikp
           - identifier: nikpapag
           variation: "false"
       - identifier: GKEQA
