@@ -70,8 +70,10 @@ featureFlags:
         - targets:
           - identifier: jkharnessio
           - identifier: harness-olirees
-          - identifier: nikpapag
           variation: "false"
+        - targets:
+          - identifier: nikpapag
+          variation: "true"
       - identifier: GKEQA
         default:
           onVariation: "true"
