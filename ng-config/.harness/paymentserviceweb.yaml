@@ -581,6 +581,20 @@ pipeline:
                                         status: Done
                                     fields: []
                                 timeout: 1d
+                          - step:
+                                type: K8sApply
+                                name: Autostopping
+                                identifier: Autostopping
+                                spec:
+                                    filePaths:
+                                        - autostopping/ccm-autostoppingrule.yaml
+                                    skipDryRun: false
+                                    skipSteadyStateCheck: false
+                                timeout: 10m
+                                when:
+                                    stageStatus: Success
+                                    condition: <+pipeline.variables.autostopping> == "true"
+                                failureStrategies: []
                       rollbackSteps:
                           - step:
                                 type: K8sCanaryDelete
@@ -640,6 +654,10 @@ pipeline:
         - name: verify_fail2
           type: String
           value: test
+        - name: autostopping
+          type: String
+          default: "false"
+          value: <+input>.allowedValues(true,false)
     flowControl:
         barriers:
             - name: Barrier
