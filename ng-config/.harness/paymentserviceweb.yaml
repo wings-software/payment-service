@@ -100,6 +100,7 @@ pipeline:
                                 spec:
                                     connectorRef: nikpdockerhub
                                     image: maven:<+pipeline.variables.mavenversion>-jdk-<+pipeline.variables.javaversion>
+                                    shell: Sh
                                     command: |-
                                         cd payment-service
                                         mvn -Dmaven.test.skip=true clean install -X
@@ -113,6 +114,7 @@ pipeline:
                                 when:
                                     stageStatus: Success
                                 failureStrategies: []
+                                description: hello
                           - step:
                                 type: Plugin
                                 name: sonarqube
