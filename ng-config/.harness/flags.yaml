@@ -71,10 +71,8 @@ featureFlags:
           - identifier: nikp
           - identifier: nikpapag
           - identifier: harness-olirees
-          variation: "false"
-        - targets:
           - identifier: jkharnessio
-          variation: "true"
+          variation: "false"
       - identifier: GKEQA
         default:
           onVariation: "true"
