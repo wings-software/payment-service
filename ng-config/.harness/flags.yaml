@@ -28,8 +28,8 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
-          - identifier: harness-olirees
           - identifier: nikpapag
+          - identifier: harness-olirees
           variation: "false"
         - targets:
           - identifier: beta
@@ -69,9 +69,11 @@ featureFlags:
         targetRules:
         - targets:
           - identifier: jkharnessio
-          - identifier: harness-olirees
+          variation: "true"
+        - targets:
           - identifier: nikp
           - identifier: nikpapag
+          - identifier: harness-olirees
           variation: "false"
       - identifier: GKEQA
         default:
