@@ -68,12 +68,10 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
-          - identifier: jkharnessio
-          variation: "true"
-        - targets:
           - identifier: nikp
           - identifier: nikpapag
           - identifier: harness-olirees
+          - identifier: jkharnessio
           variation: "false"
       - identifier: GKEQA
         default:
