@@ -114,7 +114,7 @@ pipeline:
                                 when:
                                     stageStatus: Success
                                 failureStrategies: []
-                                description: hello
+                                description: hello-
                           - step:
                                 type: Plugin
                                 name: sonarqube
