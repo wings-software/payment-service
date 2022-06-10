@@ -16,6 +16,11 @@ featureFlags:
         - identifier: "false"
           value: "false"
       environments:
+      - identifier: gitopsprod
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
       - identifier: GKEDEV
         default:
           onVariation: "true"
@@ -28,13 +33,13 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
-          - identifier: nikpapag
-          - identifier: harness-olirees
-          variation: "false"
-        - targets:
           - identifier: beta
           - identifier: jkharnessio
           variation: "true"
+        - targets:
+          - identifier: nikpapag
+          - identifier: harness-olirees
+          variation: "false"
       - identifier: GKEQA
         default:
           onVariation: "true"
@@ -56,6 +61,11 @@ featureFlags:
         - identifier: "false"
           value: "false"
       environments:
+      - identifier: gitopsprod
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
       - identifier: GKEDEV
         default:
           onVariation: "true"
