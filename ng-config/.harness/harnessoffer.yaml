@@ -50,6 +50,7 @@ pipeline:
                                           spec:
                                               variation: "true"
                                               targets:
+                                                  - harness-olirees
                                                   - nikpapag
                                 timeout: 10m
                           - step:
@@ -83,5 +84,6 @@ pipeline:
                                           spec:
                                               variation: "false"
                                               targets:
+                                                  - harness-olirees
                                                   - nikpapag
                                 timeout: 10m
