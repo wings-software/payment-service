@@ -24,11 +24,11 @@ featureFlags:
         targetRules:
         - targets:
           - identifier: beta
+          - identifier: harness-olirees
           - identifier: jkharnessio
           variation: "true"
         - targets:
           - identifier: nikpapag
-          - identifier: harness-olirees
           variation: "false"
       - identifier: GKEDEV
         default:
