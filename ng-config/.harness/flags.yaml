@@ -69,11 +69,11 @@ featureFlags:
         targetRules:
         - targets:
           - identifier: nikpapag
-          - identifier: harness-olirees
           variation: "true"
         - targets:
           - identifier: nikp
           - identifier: jkharnessio
+          - identifier: harness-olirees
           variation: "false"
       - identifier: GKEDEV
         default:
