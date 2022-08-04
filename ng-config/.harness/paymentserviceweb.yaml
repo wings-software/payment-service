@@ -297,6 +297,60 @@ pipeline:
                                 when:
                                     stageStatus: Success
                                 failureStrategies: []
+                          - parallel:
+                                - step:
+                                      type: Security
+                                      name: Veracode
+                                      identifier: veracode
+                                      spec:
+                                          connectorRef: account.Harness_Docker_Connector
+                                          privileged: true
+                                          settings:
+                                              product_name: veracode
+                                              product_config_name: default
+                                              policy_type: ingestionOnly
+                                              scan_type: repository
+                                              repository_project: payment-service
+                                              repository_branch: <+codebase.branch>
+                                              customer_artifacts_path: sto_tests/scan_tools/veracode/test_data
+                                              manual_upload_filename: "001"
+                                          imagePullPolicy: Always
+                                      failureStrategies:
+                                          - onFailure:
+                                                errors:
+                                                    - AllErrors
+                                                action:
+                                                    type: Ignore
+                                      when:
+                                          stageStatus: Success
+                                - step:
+                                      type: Security
+                                      name: Aqua
+                                      identifier: Aqua2
+                                      spec:
+                                          connectorRef: account.Harness_Docker_Connector
+                                          privileged: true
+                                          settings:
+                                              product_name: aqua-trivy
+                                              product_config_name: aqua-trivy
+                                              policy_type: manualUpload
+                                              scan_type: container
+                                              container_type: local_image
+                                              container_domain: docker.io
+                                              container_project: nodegoat
+                                              container_tag: local
+                                              fail_on_severity: HIGH
+                                              customer_artifacts_path: sto_tests/scan_tools/aqua_trivy/test_data
+                                              manual_upload_filename: "005"
+                                          imagePullPolicy: Always
+                                      failureStrategies:
+                                          - onFailure:
+                                                errors:
+                                                    - AllErrors
+                                                action:
+                                                    type: Ignore
+                                      when:
+                                          stageStatus: Success
                   serviceConfig:
                       serviceRef: ""
                       serviceDefinition:
