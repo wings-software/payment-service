@@ -152,7 +152,7 @@ pipeline:
                                               repository_project: jhttp_isolated
                                               repository_branch: main
                                               customer_artifacts_path: sto_tests/scan_tools/fortify/test_data
-                                              manual_upload_filename: "001"
+                                              manual_upload_filename: 001_refined_issues
                                           imagePullPolicy: Always
                                       failureStrategies:
                                           - onFailure:
@@ -202,7 +202,7 @@ pipeline:
                                               repository_project: jhttp_isolated
                                               repository_branch: dev
                                               customer_artifacts_path: sto_tests/scan_tools/checkmarx/test_data
-                                              manual_upload_filename: "001"
+                                              manual_upload_filename: 001_refined_issues
                                           imagePullPolicy: Always
                                       failureStrategies:
                                           - onFailure:
@@ -232,7 +232,7 @@ pipeline:
                                               product_lookup_type: byKey
                                               repository_project: jhttp_isolated
                                               customer_artifacts_path: sto_tests/scan_tools/sonarqube/test_data
-                                              manual_upload_filename: "001"
+                                              manual_upload_filename: 001_refined_issues
                                           imagePullPolicy: Always
                                       when:
                                           stageStatus: Success
