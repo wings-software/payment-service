@@ -155,7 +155,7 @@ pipeline:
                                               repository_project: payment-service
                                               repository_branch: <+codebase.branch>
                                               customer_artifacts_path: sto_tests/scan_tools/fortify/test_data
-                                              manual_upload_filename: "005"
+                                              manual_upload_filename: "001"
                                           imagePullPolicy: Always
                                       failureStrategies:
                                           - onFailure:
@@ -205,7 +205,7 @@ pipeline:
                                               repository_project: payment-service
                                               repository_branch: <+codebase.branch>
                                               customer_artifacts_path: sto_tests/scan_tools/checkmarx/test_data
-                                              manual_upload_filename: "002"
+                                              manual_upload_filename: "001"
                                           imagePullPolicy: Always
                                       failureStrategies:
                                           - onFailure:
