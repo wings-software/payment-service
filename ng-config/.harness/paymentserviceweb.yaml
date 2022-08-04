@@ -634,7 +634,7 @@ pipeline:
         - name: ffsdkkeyprod
           type: String
           default: 44c9dcaa-dab2-4100-b2b5-75bdeb7aa497
-          value: <+input>
+          value: 44c9dcaa-dab2-4100-b2b5-75bdeb7aa497
         - name: isingress
           type: Number
           default: 1
