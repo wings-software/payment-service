@@ -115,54 +115,129 @@ pipeline:
                                     stageStatus: Success
                                 failureStrategies: []
                                 description: hello-
-                          - step:
-                                type: Plugin
-                                name: sonarqube
-                                identifier: sonarqube
-                                spec:
-                                    connectorRef: nikpdockerhub
-                                    image: nikpap/harness-plugin:sonarqube
-                                    privileged: true
-                                    reports:
-                                        type: JUnit
-                                        spec:
-                                            paths:
-                                                - "**/SonarqubeJunitResults.xml"
-                                    settings:
-                                        SONAR_URL: http://35.214.81.102
-                                        SONAR_PORT: "9000"
-                                        SONAR_TOKEN: c00fa8ffd513a84923e9f62353e8447823f45ca2
-                                        SONAR_PROJECT_KEY: devxdemo
-                                        SONAR_REPORT_NAME: sonarqube-report-name
-                                    imagePullPolicy: Always
-                                when:
-                                    stageStatus: Success
-                                failureStrategies: []
-                          - step:
-                                type: Security
-                                name: OWASP
-                                identifier: OWASP
-                                spec:
-                                    connectorRef: harnessImage
-                                    privileged: true
-                                    settings:
-                                        policy_type: orchestratedScan
-                                        scan_type: repository
-                                        repository_project: payment-service
-                                        repository_branch: master
-                                        product_name: owasp
-                                        product_config_name: owasp 5.x
-                                        fail_on_severity: HIGH
-                                    imagePullPolicy: Always
-                                failureStrategies:
-                                    - onFailure:
-                                          errors:
-                                              - AllErrors
-                                          action:
-                                              type: Ignore
-                                when:
-                                    stageStatus: Success
-                                    condition: <+pipeline.variables.run_owasp_scan> == true
+                          - parallel:
+                                - step:
+                                      type: Security
+                                      name: Fortify
+                                      identifier: fortify
+                                      spec:
+                                          connectorRef: account.Harness_Docker_Connector
+                                          privileged: true
+                                          settings:
+                                              product_name: fortify
+                                              product_config_name: fortify-default
+                                              policy_type: manualUpload
+                                              scan_type: repository
+                                              repository_project: jhttp_isolated
+                                              repository_branch: main
+                                              customer_artifacts_path: sto_tests/scan_tools/fortify/test_data
+                                              manual_upload_filename: "001"
+                                          imagePullPolicy: Always
+                                      failureStrategies:
+                                          - onFailure:
+                                                errors:
+                                                    - AllErrors
+                                                action:
+                                                    type: Ignore
+                                      when:
+                                          stageStatus: Success
+                                - step:
+                                      type: Security
+                                      name: OWASP
+                                      identifier: OWASP
+                                      spec:
+                                          connectorRef: harnessImage
+                                          privileged: true
+                                          settings:
+                                              policy_type: orchestratedScan
+                                              scan_type: repository
+                                              repository_project: payment-service
+                                              repository_branch: master
+                                              product_name: owasp
+                                              product_config_name: owasp 5.x
+                                              fail_on_severity: HIGH
+                                          imagePullPolicy: Always
+                                      failureStrategies:
+                                          - onFailure:
+                                                errors:
+                                                    - AllErrors
+                                                action:
+                                                    type: Ignore
+                                      when:
+                                          stageStatus: Success
+                                          condition: <+pipeline.variables.run_owasp_scan> == true
+                                - step:
+                                      type: Security
+                                      name: Checkmarx
+                                      identifier: checkmarx
+                                      spec:
+                                          connectorRef: account.Harness_Docker_Connector
+                                          privileged: true
+                                          settings:
+                                              product_name: checkmarx
+                                              product_config_name: checkmarx
+                                              policy_type: manualUpload
+                                              scan_type: repository
+                                              repository_project: jhttp_isolated
+                                              repository_branch: dev
+                                              customer_artifacts_path: sto_tests/scan_tools/checkmarx/test_data
+                                              manual_upload_filename: "001"
+                                          imagePullPolicy: Always
+                                      failureStrategies:
+                                          - onFailure:
+                                                errors:
+                                                    - AllErrors
+                                                action:
+                                                    type: Ignore
+                                      when:
+                                          stageStatus: Success
+                                - step:
+                                      type: Security
+                                      name: Sonar_STO
+                                      identifier: Sonar_Scan_Vulnerabilities
+                                      spec:
+                                          connectorRef: account.Harness_Docker_Connector
+                                          privileged: true
+                                          settings:
+                                              policy_type: manualUpload
+                                              scan_type: repository
+                                              repository_branch: main
+                                              product_name: sonarqube
+                                              product_access_token: 9be106a1849c3b98f5beb1cc4b916674432944e0
+                                              product_project_name: jhttp_isolated
+                                              product_project_key: jhttp_isolated
+                                              product_domain: http://sonar.harness-demo.site
+                                              product_config_name: sonarqube-agent
+                                              product_lookup_type: byKey
+                                              repository_project: jhttp_isolated
+                                              customer_artifacts_path: sto_tests/scan_tools/sonarqube/test_data
+                                              manual_upload_filename: "001"
+                                          imagePullPolicy: Always
+                                      when:
+                                          stageStatus: Success
+                                - step:
+                                      type: Plugin
+                                      name: sonarqube
+                                      identifier: sonarqube
+                                      spec:
+                                          connectorRef: nikpdockerhub
+                                          image: nikpap/harness-plugin:sonarqube
+                                          privileged: true
+                                          reports:
+                                              type: JUnit
+                                              spec:
+                                                  paths:
+                                                      - "**/SonarqubeJunitResults.xml"
+                                          settings:
+                                              SONAR_URL: http://35.214.81.102
+                                              SONAR_PORT: "9000"
+                                              SONAR_TOKEN: c00fa8ffd513a84923e9f62353e8447823f45ca2
+                                              SONAR_PROJECT_KEY: devxdemo
+                                              SONAR_REPORT_NAME: sonarqube-report-name
+                                          imagePullPolicy: Always
+                                      when:
+                                          stageStatus: Success
+                                      failureStrategies: []
                           - step:
                                 type: SaveCacheS3
                                 name: Savemavenrepo
