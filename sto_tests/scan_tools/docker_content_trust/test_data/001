@@ -1,0 +1,4 @@
+{
+    "result": "{'id': 'Z-jqGKgBTBu-KSuys410nA', 'stage': 'build', 'targetName': 'alpine-image', 'includeRegex': [], 'excludeRegex': [], 'secretKey': None, 'project_name': 'alpine', 'tag': 'latest'} is trusted",
+    "trusted": true
+}

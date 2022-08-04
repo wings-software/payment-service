@@ -1,0 +1,2217 @@
+[
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "name",
+                "value": "Client_DOM_XSS"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "name",
+                    "group"
+                ]
+            },
+            {
+                "key": "group",
+                "value": "JavaScript_High_Risk"
+            },
+            {
+                "key": "cwe",
+                "value": "79"
+            },
+            {
+                "key": "_raw_@id",
+                "value": "2415"
+            },
+            {
+                "key": "_raw_@language",
+                "value": "JavaScript"
+            },
+            {
+                "key": "_raw_@languagehash",
+                "value": "0935562945055365"
+            },
+            {
+                "key": "_raw_@languagechangedate",
+                "value": "2020-06-25T00:00:00.0000000"
+            },
+            {
+                "key": "_raw_@severityindex",
+                "value": "3"
+            },
+            {
+                "key": "_raw_@querypath",
+                "value": "JavaScript\\Cx\\JavaScript High Risk\\Client DOM XSS Version:2"
+            },
+            {
+                "key": "_raw_@queryversioncode",
+                "value": "77107155"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "PCI DSS v3.2;PCI DSS (3.2) - 6.5.7 - Cross-site scripting (XSS),OWASP Top 10 2013;A3-Cross-Site Scripting (XSS),FISMA 2014;Access Control,NIST SP 800-53;SI-15 Information Output Filtering (P0),OWASP Top 10 2017;A7-Cross-Site Scripting (XSS)",
+        "issueName": "Client_DOM_XSS: JavaScript_High_Risk",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Client_DOM_XSS//JavaScript_High_Risk",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "checkmarx",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "79",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "High",
+        "scanStatus": null,
+        "scanTool": "checkmarx",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 8,
+        "severityCode": "High",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": [
+            {
+                "filename": "virtual-platform/client/src/components/videoplayer.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=8",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "584"
+                        ],
+                        "snippet": "href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform/client/src/components/videoplayer.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=9",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "595"
+                        ],
+                        "snippet": "href={`https://twitter.com/intent/tweet?text=Join%20me%20on%20R%2BF%20Virtual%2C%20your%20ultimate%20digital%20power%20partner%21%20${window.location.href}&hashtags=RFVirtual`}"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "name",
+                "value": "Missing_HSTS_Header"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "name",
+                    "group"
+                ]
+            },
+            {
+                "key": "group",
+                "value": "JavaScript_Medium_Threat"
+            },
+            {
+                "key": "cwe",
+                "value": "346"
+            },
+            {
+                "key": "_raw_@id",
+                "value": "5404"
+            },
+            {
+                "key": "_raw_@language",
+                "value": "JavaScript"
+            },
+            {
+                "key": "_raw_@languagehash",
+                "value": "0935562945055365"
+            },
+            {
+                "key": "_raw_@languagechangedate",
+                "value": "2020-06-25T00:00:00.0000000"
+            },
+            {
+                "key": "_raw_@severityindex",
+                "value": "2"
+            },
+            {
+                "key": "_raw_@querypath",
+                "value": "JavaScript\\Cx\\JavaScript Medium Threat\\Missing HSTS Header Version:1"
+            },
+            {
+                "key": "_raw_@queryversioncode",
+                "value": "118674716"
+            },
+            {
+                "key": "_raw_result",
+                "value": {
+                    "@AssignToUser": "",
+                    "@Column": "32",
+                    "@DeepLink": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=54",
+                    "@FalsePositive": "False",
+                    "@FileName": "virtual-platform/client/src/actions/podcast.js",
+                    "@Line": "34",
+                    "@NodeId": "10104490054",
+                    "@Remark": "",
+                    "@Severity": "Medium",
+                    "@SeverityIndex": "2",
+                    "@Status": "Recurrent",
+                    "@state": "0",
+                    "Path": {
+                        "@PathId": "54",
+                        "@ResultId": "1010449",
+                        "@SimilarityId": "1992525279",
+                        "PathNode": {
+                            "Column": "32",
+                            "FileName": "virtual-platform/client/src/actions/podcast.js",
+                            "Length": "1",
+                            "Line": "34",
+                            "Name": "json",
+                            "NodeId": "1",
+                            "Snippet": {
+                                "Line": {
+                                    "Code": "const json = await response.json();",
+                                    "Number": "34"
+                                }
+                            },
+                            "Type": null
+                        }
+                    }
+                }
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Missing_HSTS_Header",
+        "issueName": "Missing_HSTS_Header: JavaScript_Medium_Threat",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Missing_HSTS_Header//JavaScript_Medium_Threat",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "checkmarx",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "346",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "Medium",
+        "scanStatus": null,
+        "scanTool": "checkmarx",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 6,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": [
+            {
+                "filename": "virtual-platform/client/src/actions/podcast.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=54",
+                "severity": "Medium",
+                "snippets": [
+                    {
+                        "lines": [
+                            "34"
+                        ],
+                        "snippet": "const json = await response.json();"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "name",
+                "value": "Missing_HSTS_Header"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "name",
+                    "group"
+                ]
+            },
+            {
+                "key": "group",
+                "value": "PHP_Medium_Threat"
+            },
+            {
+                "key": "cwe",
+                "value": "346"
+            },
+            {
+                "key": "_raw_@id",
+                "value": "5437"
+            },
+            {
+                "key": "_raw_@language",
+                "value": "PHP"
+            },
+            {
+                "key": "_raw_@languagehash",
+                "value": "0154511310701953"
+            },
+            {
+                "key": "_raw_@languagechangedate",
+                "value": "2020-06-25T00:00:00.0000000"
+            },
+            {
+                "key": "_raw_@severityindex",
+                "value": "2"
+            },
+            {
+                "key": "_raw_@querypath",
+                "value": "PHP\\Cx\\PHP Medium Threat\\Missing HSTS Header Version:2"
+            },
+            {
+                "key": "_raw_@queryversioncode",
+                "value": "119199082"
+            },
+            {
+                "key": "_raw_result",
+                "value": {
+                    "@AssignToUser": "",
+                    "@Column": "0",
+                    "@DeepLink": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=55",
+                    "@FalsePositive": "False",
+                    "@FileName": "virtual-platform-drupal/docroot/index.php",
+                    "@Line": "1",
+                    "@NodeId": "10104490055",
+                    "@Remark": "",
+                    "@Severity": "Medium",
+                    "@SeverityIndex": "2",
+                    "@Status": "Recurrent",
+                    "@state": "0",
+                    "Path": {
+                        "@PathId": "55",
+                        "@ResultId": "1010449",
+                        "@SimilarityId": "-1623470909",
+                        "PathNode": {
+                            "Column": "0",
+                            "FileName": "virtual-platform-drupal/docroot/index.php",
+                            "Length": "0",
+                            "Line": "1",
+                            "Name": "$NS_index_1273494544",
+                            "NodeId": "1",
+                            "Snippet": {
+                                "Line": {
+                                    "Code": "<?php",
+                                    "Number": "1"
+                                }
+                            },
+                            "Type": null
+                        }
+                    }
+                }
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Missing_HSTS_Header",
+        "issueName": "Missing_HSTS_Header: PHP_Medium_Threat",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Missing_HSTS_Header//PHP_Medium_Threat",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "checkmarx",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "346",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "Medium",
+        "scanStatus": null,
+        "scanTool": "checkmarx",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 6,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": [
+            {
+                "filename": "virtual-platform-drupal/docroot/index.php",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=55",
+                "severity": "Medium",
+                "snippets": [
+                    {
+                        "lines": [
+                            "1"
+                        ],
+                        "snippet": "<?php"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "name",
+                "value": "Parameter_Tampering"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "name",
+                    "group"
+                ]
+            },
+            {
+                "key": "group",
+                "value": "PHP_Medium_Threat"
+            },
+            {
+                "key": "cwe",
+                "value": "472"
+            },
+            {
+                "key": "_raw_@id",
+                "value": "1339"
+            },
+            {
+                "key": "_raw_@language",
+                "value": "PHP"
+            },
+            {
+                "key": "_raw_@languagehash",
+                "value": "0154511310701953"
+            },
+            {
+                "key": "_raw_@languagechangedate",
+                "value": "2020-06-25T00:00:00.0000000"
+            },
+            {
+                "key": "_raw_@severityindex",
+                "value": "2"
+            },
+            {
+                "key": "_raw_@querypath",
+                "value": "PHP\\Cx\\PHP Medium Threat\\Parameter Tampering Version:0"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "PCI DSS v3.2;PCI DSS (3.2) - 6.5.1 - Injection flaws - particularly SQL injection,OWASP Top 10 2013;A4-Insecure Direct Object References,OWASP Top 10 2017;A5-Broken Access Control",
+        "issueName": "Parameter_Tampering: PHP_Medium_Threat",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Parameter_Tampering//PHP_Medium_Threat",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "checkmarx",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "472",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "Medium",
+        "scanStatus": null,
+        "scanTool": "checkmarx",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 6,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": [
+            {
+                "filename": "virtual-platform-drupal/docroot/quiz_status.php",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=4",
+                "severity": "Medium",
+                "snippets": [
+                    {
+                        "lines": [
+                            "16"
+                        ],
+                        "snippet": "$user_gigya_uid = $_GET['uid'];"
+                    },
+                    {
+                        "lines": [
+                            "22"
+                        ],
+                        "snippet": "$stmt->execute([$user_gigya_uid]);"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "name",
+                "value": "Path_Traversal"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "name",
+                    "group"
+                ]
+            },
+            {
+                "key": "group",
+                "value": "PHP_Medium_Threat"
+            },
+            {
+                "key": "cwe",
+                "value": "36"
+            },
+            {
+                "key": "_raw_@id",
+                "value": "1337"
+            },
+            {
+                "key": "_raw_@language",
+                "value": "PHP"
+            },
+            {
+                "key": "_raw_@languagehash",
+                "value": "0154511310701953"
+            },
+            {
+                "key": "_raw_@languagechangedate",
+                "value": "2020-06-25T00:00:00.0000000"
+            },
+            {
+                "key": "_raw_@severityindex",
+                "value": "2"
+            },
+            {
+                "key": "_raw_@querypath",
+                "value": "PHP\\Cx\\PHP Medium Threat\\Path Traversal Version:1"
+            },
+            {
+                "key": "_raw_@queryversioncode",
+                "value": "64290792"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "PCI DSS v3.2;PCI DSS (3.2) - 6.5.8 - Improper access control,OWASP Top 10 2013;A4-Insecure Direct Object References,OWASP Top 10 2017;A5-Broken Access Control",
+        "issueName": "Path_Traversal: PHP_Medium_Threat",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Path_Traversal//PHP_Medium_Threat",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "checkmarx",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "36",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "Medium",
+        "scanStatus": null,
+        "scanTool": "checkmarx",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 6,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": [
+            {
+                "filename": "virtual-platform-drupal/docroot/sites/default/settings.php",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=6",
+                "severity": "Medium",
+                "snippets": [
+                    {
+                        "lines": [
+                            "813"
+                        ],
+                        "snippet": "if (isset($_SERVER['DEVDESKTOP_DRUPAL_SETTINGS_DIR']) && file_exists($_SERVER['DEVDESKTOP_DRUPAL_SETTINGS_DIR'] . '/loc_rf_dd.inc')) {"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "name",
+                "value": "Reflected_XSS"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "name",
+                    "group"
+                ]
+            },
+            {
+                "key": "group",
+                "value": "JavaScript_Server_Side_Vulnerabilities"
+            },
+            {
+                "key": "cwe",
+                "value": "79"
+            },
+            {
+                "key": "_raw_@id",
+                "value": "2982"
+            },
+            {
+                "key": "_raw_@language",
+                "value": "JavaScript"
+            },
+            {
+                "key": "_raw_@languagehash",
+                "value": "0935562945055365"
+            },
+            {
+                "key": "_raw_@languagechangedate",
+                "value": "2020-06-25T00:00:00.0000000"
+            },
+            {
+                "key": "_raw_@severityindex",
+                "value": "3"
+            },
+            {
+                "key": "_raw_@querypath",
+                "value": "JavaScript\\Cx\\JavaScript Server Side Vulnerabilities\\Reflected XSS Version:2"
+            },
+            {
+                "key": "_raw_@queryversioncode",
+                "value": "84308622"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "PCI DSS v3.2;PCI DSS (3.2) - 6.5.7 - Cross-site scripting (XSS),OWASP Top 10 2013;A3-Cross-Site Scripting (XSS),FISMA 2014;System And Information Integrity,NIST SP 800-53;SI-15 Information Output Filtering (P0),OWASP Top 10 2017;A7-Cross-Site Scripting (XSS)",
+        "issueName": "Reflected_XSS: JavaScript_Server_Side_Vulnerabilities",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Reflected_XSS//JavaScript_Server_Side_Vulnerabilities",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "checkmarx",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "79",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "High",
+        "scanStatus": null,
+        "scanTool": "checkmarx",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 8,
+        "severityCode": "High",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": [
+            {
+                "filename": "virtual-platform/server/controllers/podcast.controller.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=10",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "11"
+                        ],
+                        "snippet": "req.params.uid"
+                    },
+                    {
+                        "lines": [
+                            "10"
+                        ],
+                        "snippet": "const podcastProgress = await Firebase.getPodcastProgressByUID("
+                    },
+                    {
+                        "lines": [
+                            "18"
+                        ],
+                        "snippet": "return res.send({ success: true, podcastProgress });"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform/server/routes/events.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=16",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "516"
+                        ],
+                        "snippet": "const { eventID } = req.params;"
+                    },
+                    {
+                        "lines": [
+                            "524"
+                        ],
+                        "snippet": "`jsonapi/magic_link/magic_link?filter[event_id]=${eventID}&TS=${Date.now()}`"
+                    },
+                    {
+                        "lines": [
+                            "523"
+                        ],
+                        "snippet": "const magicLinkForEvent = await jsonAPI("
+                    },
+                    {
+                        "lines": [
+                            "536"
+                        ],
+                        "snippet": "const { uuid } = magicLinkForEvent[0];"
+                    },
+                    {
+                        "lines": [
+                            "557"
+                        ],
+                        "snippet": "`jsonapi/magic_link/magic_link/${uuid}`,"
+                    },
+                    {
+                        "lines": [
+                            "258"
+                        ],
+                        "snippet": "function newRelicjsonAPIMutate(method, path, req, body) {"
+                    },
+                    {
+                        "lines": [
+                            "260"
+                        ],
+                        "snippet": "jsonAPIMutate(method, path, req, body)"
+                    },
+                    {
+                        "lines": [
+                            "129"
+                        ],
+                        "snippet": "async function jsonAPIMutate(method, path, req, body) {"
+                    },
+                    {
+                        "lines": [
+                            "137"
+                        ],
+                        "snippet": "return (await fetch(`${process.env.DRUPAL_BASE}${path}`, {"
+                    },
+                    {
+                        "lines": [
+                            "145"
+                        ],
+                        "snippet": "})).json();"
+                    },
+                    {
+                        "lines": [
+                            "193"
+                        ],
+                        "snippet": "const result = await jsonAPIMutate("
+                    },
+                    {
+                        "lines": [
+                            "210"
+                        ],
+                        "snippet": "message = result ? result.errors : 'patch failed';"
+                    },
+                    {
+                        "lines": [
+                            "242"
+                        ],
+                        "snippet": "error: message"
+                    },
+                    {
+                        "lines": [
+                            "240"
+                        ],
+                        "snippet": "res.send({"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform/server/controllers/api.controller.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=22",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "16"
+                        ],
+                        "snippet": "const { email } = req.body;"
+                    },
+                    {
+                        "lines": [
+                            "18"
+                        ],
+                        "snippet": "const response = await VerifyEmail.verify(email);"
+                    },
+                    {
+                        "lines": [
+                            "20"
+                        ],
+                        "snippet": "res.send(response);"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform/server/controllers/api.controller.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=23",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "24"
+                        ],
+                        "snippet": "const { email, cid } = req.body;"
+                    },
+                    {
+                        "lines": [
+                            "25"
+                        ],
+                        "snippet": "const unsubscribed = await Mailgun.checkUnsubscribed(email, cid);"
+                    },
+                    {
+                        "lines": [
+                            "28"
+                        ],
+                        "snippet": "unsubscribed"
+                    },
+                    {
+                        "lines": [
+                            "27"
+                        ],
+                        "snippet": "res.send({"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform/server/controllers/api.controller.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=24",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "24"
+                        ],
+                        "snippet": "const { email, cid } = req.body;"
+                    },
+                    {
+                        "lines": [
+                            "25"
+                        ],
+                        "snippet": "const unsubscribed = await Mailgun.checkUnsubscribed(email, cid);"
+                    },
+                    {
+                        "lines": [
+                            "28"
+                        ],
+                        "snippet": "unsubscribed"
+                    },
+                    {
+                        "lines": [
+                            "27"
+                        ],
+                        "snippet": "res.send({"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform/server/controllers/videos.controller.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=25",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "10"
+                        ],
+                        "snippet": "const videosProgress = await Firebase.getVideoProgressByUID(req.params.uid);"
+                    },
+                    {
+                        "lines": [
+                            "16"
+                        ],
+                        "snippet": "return res.send({ success: true, videosProgress });"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform/server/routes/events.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=26",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "504"
+                        ],
+                        "snippet": "const { eventID } = req.params;"
+                    },
+                    {
+                        "lines": [
+                            "506"
+                        ],
+                        "snippet": "const { success } = await Visitors.trackWaiting(eventID, uid);"
+                    },
+                    {
+                        "lines": [
+                            "509"
+                        ],
+                        "snippet": "success"
+                    },
+                    {
+                        "lines": [
+                            "508"
+                        ],
+                        "snippet": "res.send({"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform/server/routes/events.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=27",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "505"
+                        ],
+                        "snippet": "const { uid } = req.query;"
+                    },
+                    {
+                        "lines": [
+                            "506"
+                        ],
+                        "snippet": "const { success } = await Visitors.trackWaiting(eventID, uid);"
+                    },
+                    {
+                        "lines": [
+                            "509"
+                        ],
+                        "snippet": "success"
+                    },
+                    {
+                        "lines": [
+                            "508"
+                        ],
+                        "snippet": "res.send({"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform/server/routes/events.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=28",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "607"
+                        ],
+                        "snippet": "const { eventID } = req.params;"
+                    },
+                    {
+                        "lines": [
+                            "614"
+                        ],
+                        "snippet": "`jsonapi/magic_link/magic_link?filter[event_id]=${eventID}&TS=${Math.random()}`"
+                    },
+                    {
+                        "lines": [
+                            "613"
+                        ],
+                        "snippet": "const magicLinkForEvent = await jsonAPI("
+                    },
+                    {
+                        "lines": [
+                            "620"
+                        ],
+                        "snippet": "state: magicLinkForEvent[0].state"
+                    },
+                    {
+                        "lines": [
+                            "619"
+                        ],
+                        "snippet": "res.send({"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform/server/routes/events.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=29",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "516"
+                        ],
+                        "snippet": "const { eventID } = req.params;"
+                    },
+                    {
+                        "lines": [
+                            "586"
+                        ],
+                        "snippet": "eventID,"
+                    },
+                    {
+                        "lines": [
+                            "584"
+                        ],
+                        "snippet": "res.send({"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform/server/routes/events.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=30",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "516"
+                        ],
+                        "snippet": "const { eventID } = req.params;"
+                    },
+                    {
+                        "lines": [
+                            "524"
+                        ],
+                        "snippet": "`jsonapi/magic_link/magic_link?filter[event_id]=${eventID}&TS=${Date.now()}`"
+                    },
+                    {
+                        "lines": [
+                            "523"
+                        ],
+                        "snippet": "const magicLinkForEvent = await jsonAPI("
+                    },
+                    {
+                        "lines": [
+                            "548"
+                        ],
+                        "snippet": "magicLinkForEvent[0].state"
+                    },
+                    {
+                        "lines": [
+                            "53"
+                        ],
+                        "snippet": "function eventError(res, errorCode, errorMessage) {"
+                    },
+                    {
+                        "lines": [
+                            "57"
+                        ],
+                        "snippet": "errorMessage"
+                    },
+                    {
+                        "lines": [
+                            "54"
+                        ],
+                        "snippet": "res.status(errorCode).send({"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform/server/routes/events.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=32",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "516"
+                        ],
+                        "snippet": "const { eventID } = req.params;"
+                    },
+                    {
+                        "lines": [
+                            "524"
+                        ],
+                        "snippet": "`jsonapi/magic_link/magic_link?filter[event_id]=${eventID}&TS=${Date.now()}`"
+                    },
+                    {
+                        "lines": [
+                            "523"
+                        ],
+                        "snippet": "const magicLinkForEvent = await jsonAPI("
+                    },
+                    {
+                        "lines": [
+                            "536"
+                        ],
+                        "snippet": "const { uuid } = magicLinkForEvent[0];"
+                    },
+                    {
+                        "lines": [
+                            "557"
+                        ],
+                        "snippet": "`jsonapi/magic_link/magic_link/${uuid}`,"
+                    },
+                    {
+                        "lines": [
+                            "258"
+                        ],
+                        "snippet": "function newRelicjsonAPIMutate(method, path, req, body) {"
+                    },
+                    {
+                        "lines": [
+                            "260"
+                        ],
+                        "snippet": "jsonAPIMutate(method, path, req, body)"
+                    },
+                    {
+                        "lines": [
+                            "129"
+                        ],
+                        "snippet": "async function jsonAPIMutate(method, path, req, body) {"
+                    },
+                    {
+                        "lines": [
+                            "137"
+                        ],
+                        "snippet": "return (await fetch(`${process.env.DRUPAL_BASE}${path}`, {"
+                    },
+                    {
+                        "lines": [
+                            "145"
+                        ],
+                        "snippet": "})).json();"
+                    },
+                    {
+                        "lines": [
+                            "365"
+                        ],
+                        "snippet": "const result = await jsonAPIMutate("
+                    },
+                    {
+                        "lines": [
+                            "385"
+                        ],
+                        "snippet": "error_message: JSON.stringify(result.errors)"
+                    },
+                    {
+                        "lines": [
+                            "382"
+                        ],
+                        "snippet": "res.send({"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform/server/routes/events.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=34",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "516"
+                        ],
+                        "snippet": "const { eventID } = req.params;"
+                    },
+                    {
+                        "lines": [
+                            "524"
+                        ],
+                        "snippet": "`jsonapi/magic_link/magic_link?filter[event_id]=${eventID}&TS=${Date.now()}`"
+                    },
+                    {
+                        "lines": [
+                            "523"
+                        ],
+                        "snippet": "const magicLinkForEvent = await jsonAPI("
+                    },
+                    {
+                        "lines": [
+                            "536"
+                        ],
+                        "snippet": "const { uuid } = magicLinkForEvent[0];"
+                    },
+                    {
+                        "lines": [
+                            "557"
+                        ],
+                        "snippet": "`jsonapi/magic_link/magic_link/${uuid}`,"
+                    },
+                    {
+                        "lines": [
+                            "258"
+                        ],
+                        "snippet": "function newRelicjsonAPIMutate(method, path, req, body) {"
+                    },
+                    {
+                        "lines": [
+                            "260"
+                        ],
+                        "snippet": "jsonAPIMutate(method, path, req, body)"
+                    },
+                    {
+                        "lines": [
+                            "129"
+                        ],
+                        "snippet": "async function jsonAPIMutate(method, path, req, body) {"
+                    },
+                    {
+                        "lines": [
+                            "137"
+                        ],
+                        "snippet": "return (await fetch(`${process.env.DRUPAL_BASE}${path}`, {"
+                    },
+                    {
+                        "lines": [
+                            "145"
+                        ],
+                        "snippet": "})).json();"
+                    },
+                    {
+                        "lines": [
+                            "450"
+                        ],
+                        "snippet": "const result = await jsonAPIMutate("
+                    },
+                    {
+                        "lines": [
+                            "475"
+                        ],
+                        "snippet": "errors: result.errors"
+                    },
+                    {
+                        "lines": [
+                            "473"
+                        ],
+                        "snippet": "res.send({"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform/server/routes/events.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=36",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "516"
+                        ],
+                        "snippet": "const { eventID } = req.params;"
+                    },
+                    {
+                        "lines": [
+                            "524"
+                        ],
+                        "snippet": "`jsonapi/magic_link/magic_link?filter[event_id]=${eventID}&TS=${Date.now()}`"
+                    },
+                    {
+                        "lines": [
+                            "523"
+                        ],
+                        "snippet": "const magicLinkForEvent = await jsonAPI("
+                    },
+                    {
+                        "lines": [
+                            "536"
+                        ],
+                        "snippet": "const { uuid } = magicLinkForEvent[0];"
+                    },
+                    {
+                        "lines": [
+                            "557"
+                        ],
+                        "snippet": "`jsonapi/magic_link/magic_link/${uuid}`,"
+                    },
+                    {
+                        "lines": [
+                            "258"
+                        ],
+                        "snippet": "function newRelicjsonAPIMutate(method, path, req, body) {"
+                    },
+                    {
+                        "lines": [
+                            "260"
+                        ],
+                        "snippet": "jsonAPIMutate(method, path, req, body)"
+                    },
+                    {
+                        "lines": [
+                            "129"
+                        ],
+                        "snippet": "async function jsonAPIMutate(method, path, req, body) {"
+                    },
+                    {
+                        "lines": [
+                            "137"
+                        ],
+                        "snippet": "return (await fetch(`${process.env.DRUPAL_BASE}${path}`, {"
+                    },
+                    {
+                        "lines": [
+                            "145"
+                        ],
+                        "snippet": "})).json();"
+                    },
+                    {
+                        "lines": [
+                            "450"
+                        ],
+                        "snippet": "const result = await jsonAPIMutate("
+                    },
+                    {
+                        "lines": [
+                            "480"
+                        ],
+                        "snippet": "result"
+                    },
+                    {
+                        "lines": [
+                            "478"
+                        ],
+                        "snippet": "res.send({"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform/server/routes/events.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=38",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "516"
+                        ],
+                        "snippet": "const { eventID } = req.params;"
+                    },
+                    {
+                        "lines": [
+                            "524"
+                        ],
+                        "snippet": "`jsonapi/magic_link/magic_link?filter[event_id]=${eventID}&TS=${Date.now()}`"
+                    },
+                    {
+                        "lines": [
+                            "523"
+                        ],
+                        "snippet": "const magicLinkForEvent = await jsonAPI("
+                    },
+                    {
+                        "lines": [
+                            "536"
+                        ],
+                        "snippet": "const { uuid } = magicLinkForEvent[0];"
+                    },
+                    {
+                        "lines": [
+                            "557"
+                        ],
+                        "snippet": "`jsonapi/magic_link/magic_link/${uuid}`,"
+                    },
+                    {
+                        "lines": [
+                            "258"
+                        ],
+                        "snippet": "function newRelicjsonAPIMutate(method, path, req, body) {"
+                    },
+                    {
+                        "lines": [
+                            "260"
+                        ],
+                        "snippet": "jsonAPIMutate(method, path, req, body)"
+                    },
+                    {
+                        "lines": [
+                            "129"
+                        ],
+                        "snippet": "async function jsonAPIMutate(method, path, req, body) {"
+                    },
+                    {
+                        "lines": [
+                            "137"
+                        ],
+                        "snippet": "return (await fetch(`${process.env.DRUPAL_BASE}${path}`, {"
+                    },
+                    {
+                        "lines": [
+                            "145"
+                        ],
+                        "snippet": "})).json();"
+                    },
+                    {
+                        "lines": [
+                            "259"
+                        ],
+                        "snippet": "return nr.startSegment(`${method} ${path}`, true, () =>"
+                    },
+                    {
+                        "lines": [
+                            "582"
+                        ],
+                        "snippet": "return jsonAPIMutate('POST', `jsonapi/quiz_response/quiz_response`, req, {"
+                    },
+                    {
+                        "lines": [
+                            "770"
+                        ],
+                        "snippet": "const quizSaved = await saveQuiz(quiz_id, score, req);"
+                    },
+                    {
+                        "lines": [
+                            "777"
+                        ],
+                        "snippet": "? quizSaved.errors"
+                    },
+                    {
+                        "lines": [
+                            "775"
+                        ],
+                        "snippet": "errors:"
+                    },
+                    {
+                        "lines": [
+                            "773"
+                        ],
+                        "snippet": "res.send({"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform/server/routes/api.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=40",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "353"
+                        ],
+                        "snippet": "const { sort, timeframe, search, page } = req.query;"
+                    },
+                    {
+                        "lines": [
+                            "390"
+                        ],
+                        "snippet": "'filter[pec-title][value]': search"
+                    },
+                    {
+                        "lines": [
+                            "386"
+                        ],
+                        "snippet": "parameters = {"
+                    },
+                    {
+                        "lines": [
+                            "397"
+                        ],
+                        "snippet": "let encodedParameters = Object.keys(parameters)"
+                    },
+                    {
+                        "lines": [
+                            "398"
+                        ],
+                        "snippet": ".map(k => `${encodeURIComponent(k)}=${encodeURIComponent(parameters[k])}`)"
+                    },
+                    {
+                        "lines": [
+                            "399"
+                        ],
+                        "snippet": ".join('&');"
+                    },
+                    {
+                        "lines": [
+                            "418"
+                        ],
+                        "snippet": "const results = await jsonAPI(`/jsonapi/node/pec?${encodedParameters}`);"
+                    },
+                    {
+                        "lines": [
+                            "421"
+                        ],
+                        "snippet": "results.map(async event => {"
+                    },
+                    {
+                        "lines": [
+                            "420"
+                        ],
+                        "snippet": "const publicEvents = await Promise.all("
+                    },
+                    {
+                        "lines": [
+                            "440"
+                        ],
+                        "snippet": "res.send({ publicEvents, isNextPage: true });"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform/server/routes/api.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=41",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "767"
+                        ],
+                        "snippet": "errors: [\"Couldn't get user UUID\", JSON.parse(req.body)]"
+                    },
+                    {
+                        "lines": [
+                            "765"
+                        ],
+                        "snippet": "res.send({"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform/server/routes/prospects.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=42",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "32"
+                        ],
+                        "snippet": "let { firstName, lastName, emailAddress, consultantId } = req.body;"
+                    },
+                    {
+                        "lines": [
+                            "41"
+                        ],
+                        "snippet": "firstName,"
+                    },
+                    {
+                        "lines": [
+                            "40"
+                        ],
+                        "snippet": "const { response, status } = await Mulesoft.create({"
+                    },
+                    {
+                        "lines": [
+                            "55"
+                        ],
+                        "snippet": ".send({ response: status === 201 ? { prospect } : response, status });"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform/server/routes/prospects.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=43",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "32"
+                        ],
+                        "snippet": "let { firstName, lastName, emailAddress, consultantId } = req.body;"
+                    },
+                    {
+                        "lines": [
+                            "42"
+                        ],
+                        "snippet": "lastName,"
+                    },
+                    {
+                        "lines": [
+                            "40"
+                        ],
+                        "snippet": "const { response, status } = await Mulesoft.create({"
+                    },
+                    {
+                        "lines": [
+                            "55"
+                        ],
+                        "snippet": ".send({ response: status === 201 ? { prospect } : response, status });"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform/server/routes/prospects.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=44",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "32"
+                        ],
+                        "snippet": "let { firstName, lastName, emailAddress, consultantId } = req.body;"
+                    },
+                    {
+                        "lines": [
+                            "43"
+                        ],
+                        "snippet": "emailAddress,"
+                    },
+                    {
+                        "lines": [
+                            "40"
+                        ],
+                        "snippet": "const { response, status } = await Mulesoft.create({"
+                    },
+                    {
+                        "lines": [
+                            "55"
+                        ],
+                        "snippet": ".send({ response: status === 201 ? { prospect } : response, status });"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform/server/routes/prospects.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=45",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "32"
+                        ],
+                        "snippet": "let { firstName, lastName, emailAddress, consultantId } = req.body;"
+                    },
+                    {
+                        "lines": [
+                            "44"
+                        ],
+                        "snippet": "consultantId"
+                    },
+                    {
+                        "lines": [
+                            "40"
+                        ],
+                        "snippet": "const { response, status } = await Mulesoft.create({"
+                    },
+                    {
+                        "lines": [
+                            "55"
+                        ],
+                        "snippet": ".send({ response: status === 201 ? { prospect } : response, status });"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform/server/routes/prospects.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=46",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "75",
+                            "65"
+                        ],
+                        "snippet": "emailAddress,"
+                    },
+                    {
+                        "lines": [
+                            "74"
+                        ],
+                        "snippet": "const { response, status } = await Mulesoft.update(prospectId, {"
+                    },
+                    {
+                        "lines": [
+                            "83"
+                        ],
+                        "snippet": "res.status(status).send({ response, status });"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform/server/routes/prospects.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=47",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "66",
+                            "76"
+                        ],
+                        "snippet": "facebook,"
+                    },
+                    {
+                        "lines": [
+                            "74"
+                        ],
+                        "snippet": "const { response, status } = await Mulesoft.update(prospectId, {"
+                    },
+                    {
+                        "lines": [
+                            "83"
+                        ],
+                        "snippet": "res.status(status).send({ response, status });"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform/server/routes/prospects.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=48",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "77",
+                            "67"
+                        ],
+                        "snippet": "phone,"
+                    },
+                    {
+                        "lines": [
+                            "74"
+                        ],
+                        "snippet": "const { response, status } = await Mulesoft.update(prospectId, {"
+                    },
+                    {
+                        "lines": [
+                            "83"
+                        ],
+                        "snippet": "res.status(status).send({ response, status });"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform/server/routes/prospects.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=49",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "68"
+                        ],
+                        "snippet": "prospectId,"
+                    },
+                    {
+                        "lines": [
+                            "74"
+                        ],
+                        "snippet": "const { response, status } = await Mulesoft.update(prospectId, {"
+                    },
+                    {
+                        "lines": [
+                            "83"
+                        ],
+                        "snippet": "res.status(status).send({ response, status });"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform/server/routes/prospects.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=50",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "69",
+                            "78"
+                        ],
+                        "snippet": "deleted,"
+                    },
+                    {
+                        "lines": [
+                            "74"
+                        ],
+                        "snippet": "const { response, status } = await Mulesoft.update(prospectId, {"
+                    },
+                    {
+                        "lines": [
+                            "83"
+                        ],
+                        "snippet": "res.status(status).send({ response, status });"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform/server/routes/prospects.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=51",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "79",
+                            "70"
+                        ],
+                        "snippet": "archived,"
+                    },
+                    {
+                        "lines": [
+                            "74"
+                        ],
+                        "snippet": "const { response, status } = await Mulesoft.update(prospectId, {"
+                    },
+                    {
+                        "lines": [
+                            "83"
+                        ],
+                        "snippet": "res.status(status).send({ response, status });"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform/server/routes/prospects.js",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=52",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "71",
+                            "80"
+                        ],
+                        "snippet": "archived_date"
+                    },
+                    {
+                        "lines": [
+                            "74"
+                        ],
+                        "snippet": "const { response, status } = await Mulesoft.update(prospectId, {"
+                    },
+                    {
+                        "lines": [
+                            "83"
+                        ],
+                        "snippet": "res.status(status).send({ response, status });"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "name",
+                "value": "Stored_Code_Injection"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "name",
+                    "group"
+                ]
+            },
+            {
+                "key": "group",
+                "value": "PHP_Medium_Threat"
+            },
+            {
+                "key": "cwe",
+                "value": "94"
+            },
+            {
+                "key": "_raw_@id",
+                "value": "1319"
+            },
+            {
+                "key": "_raw_@language",
+                "value": "PHP"
+            },
+            {
+                "key": "_raw_@languagehash",
+                "value": "0154511310701953"
+            },
+            {
+                "key": "_raw_@languagechangedate",
+                "value": "2020-06-25T00:00:00.0000000"
+            },
+            {
+                "key": "_raw_@severityindex",
+                "value": "2"
+            },
+            {
+                "key": "_raw_@querypath",
+                "value": "PHP\\Cx\\PHP Medium Threat\\Stored Code Injection Version:0"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "PCI DSS v3.2;PCI DSS (3.2) - 6.5.1 - Injection flaws - particularly SQL injection,OWASP Top 10 2013;A1-Injection,FISMA 2014;System And Information Integrity,NIST SP 800-53;SI-10 Information Input Validation (P1),OWASP Top 10 2017;A1-Injection",
+        "issueName": "Stored_Code_Injection: PHP_Medium_Threat",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Stored_Code_Injection//PHP_Medium_Threat",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "checkmarx",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "94",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "Medium",
+        "scanStatus": null,
+        "scanTool": "checkmarx",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 6,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": [
+            {
+                "filename": "virtual-platform-drupal/docroot/drupalless/database.php",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=1",
+                "severity": "Medium",
+                "snippets": [
+                    {
+                        "lines": [
+                            "11"
+                        ],
+                        "snippet": "eval('?>' . implode(\"\\n\", array_slice(file('/var/www/site-php/***************stg/D8-test-***************-settings.inc'), 0, -1)));"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform-drupal/docroot/drupalless/database.php",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=2",
+                "severity": "Medium",
+                "snippets": [
+                    {
+                        "lines": [
+                            "14"
+                        ],
+                        "snippet": "eval('?>' . implode(\"\\n\", array_slice(file('/var/www/site-php/***************preprod/D8-preprod-***************-settings.inc'), 0, -1)));"
+                    }
+                ]
+            },
+            {
+                "filename": "virtual-platform-drupal/docroot/drupalless/database.php",
+                "link": "https://checkmarx.***************.com/CxWebClient/ViewerMain.aspx?scanid=*******&projectid=**&pathid=3",
+                "severity": "Medium",
+                "snippets": [
+                    {
+                        "lines": [
+                            "17"
+                        ],
+                        "snippet": "eval('?>' . implode(\"\\n\", array_slice(file('/var/www/site-php/***************/D8-prod-***************-settings.inc'), 0, -1)));"
+                    }
+                ]
+            }
+        ]
+    }
+]

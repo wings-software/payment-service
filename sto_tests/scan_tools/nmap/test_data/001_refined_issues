@@ -1,0 +1,317 @@
+[
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "port",
+                    "protocol",
+                    "state"
+                ]
+            },
+            {
+                "key": "protocol",
+                "value": "tcp"
+            },
+            {
+                "key": "state",
+                "value": "open"
+            },
+            {
+                "key": "_raw_state",
+                "value": {
+                    "reason": "syn-ack",
+                    "reason_ttl": "0",
+                    "state": "open"
+                }
+            },
+            {
+                "key": "_raw_service",
+                "value": {
+                    "conf": "3",
+                    "method": "table",
+                    "name": "rpcbind"
+                }
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": "127.0.0.1 (ipv4)",
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Port: 127.0.0.1 (ipv4):111 tcp; State: open; Service: rpcbind; Reason: syn-ack; Product: None",
+        "issueName": "Port 111 tcp (open)",
+        "issueType": "inventory",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "111//tcp//open",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": "111",
+        "product": "nmap",
+        "project": "127.0.0.1 (ipv4)",
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "nmap",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "port",
+                    "protocol",
+                    "state"
+                ]
+            },
+            {
+                "key": "protocol",
+                "value": "tcp"
+            },
+            {
+                "key": "state",
+                "value": "open"
+            },
+            {
+                "key": "_raw_state",
+                "value": {
+                    "reason": "syn-ack",
+                    "reason_ttl": "0",
+                    "state": "open"
+                }
+            },
+            {
+                "key": "_raw_service",
+                "value": {
+                    "conf": "3",
+                    "method": "table",
+                    "name": "nfs"
+                }
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": "127.0.0.1 (ipv4)",
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Port: 127.0.0.1 (ipv4):2049 tcp; State: open; Service: nfs; Reason: syn-ack; Product: None",
+        "issueName": "Port 2049 tcp (open)",
+        "issueType": "inventory",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "2049//tcp//open",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": "2049",
+        "product": "nmap",
+        "project": "127.0.0.1 (ipv4)",
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "nmap",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "port",
+                    "protocol",
+                    "state"
+                ]
+            },
+            {
+                "key": "protocol",
+                "value": "tcp"
+            },
+            {
+                "key": "state",
+                "value": "open"
+            },
+            {
+                "key": "_raw_state",
+                "value": {
+                    "reason": "syn-ack",
+                    "reason_ttl": "0",
+                    "state": "open"
+                }
+            },
+            {
+                "key": "_raw_service",
+                "value": {
+                    "conf": "3",
+                    "method": "table",
+                    "name": "postgresql"
+                }
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": "127.0.0.1 (ipv4)",
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Port: 127.0.0.1 (ipv4):5432 tcp; State: open; Service: postgresql; Reason: syn-ack; Product: None",
+        "issueName": "Port 5432 tcp (open)",
+        "issueType": "inventory",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "5432//tcp//open",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": "5432",
+        "product": "nmap",
+        "project": "127.0.0.1 (ipv4)",
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "nmap",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    }
+]

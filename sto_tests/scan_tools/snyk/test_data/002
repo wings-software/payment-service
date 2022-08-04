@@ -1,0 +1,2241 @@
+{
+    "vulnerabilities": [
+        {
+            "title": "Security Features",
+            "credit": [
+                ""
+            ],
+            "packageName": "apparmor",
+            "language": "linux",
+            "packageManager": "debian:10",
+            "description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `apparmor` package. </i>\n\nIn all versions of AppArmor mount rules are accidentally widened when compiled.\n## Remediation\nThere is no fixed version for `Debian:10` `apparmor`.\n## References\n- [Debian Security Tracker](https://security-tracker.debian.org/tracker/CVE-2016-1585)\n- [MISC](https://bugs.launchpad.net/apparmor/+bug/1597017)\n- [MLIST](https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E)\n- [Ubuntu CVE Tracker](http://people.ubuntu.com/~ubuntu-security/cve/CVE-2016-1585)\n",
+            "identifiers": {
+                "ALTERNATIVE": [],
+                "CVE": [
+                    "CVE-2016-1585"
+                ],
+                "CWE": [
+                    "CWE-254"
+                ]
+            },
+            "severity": "low",
+            "severityWithCritical": "low",
+            "socialTrendAlert": false,
+            "cvssScore": 9.8,
+            "CVSSv3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "patches": [],
+            "references": [
+                {
+                    "title": "Debian Security Tracker",
+                    "url": "https://security-tracker.debian.org/tracker/CVE-2016-1585"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://bugs.launchpad.net/apparmor/%2Bbug/1597017"
+                },
+                {
+                    "title": "MLIST",
+                    "url": "https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E"
+                },
+                {
+                    "title": "Ubuntu CVE Tracker",
+                    "url": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2016-1585"
+                }
+            ],
+            "creationTime": "2020-08-19T09:25:20.670288Z",
+            "modificationTime": "2021-05-09T12:30:27.173616Z",
+            "publicationTime": "2018-06-27T16:16:11.500686Z",
+            "disclosureTime": "2019-04-22T16:29:00Z",
+            "id": "SNYK-DEBIAN10-APPARMOR-345761",
+            "nvdSeverity": "critical",
+            "relativeImportance": "low",
+            "semver": {
+                "vulnerable": [
+                    "*"
+                ]
+            },
+            "exploit": "Not Defined",
+            "from": [
+                "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                "meta-common-packages@meta",
+                "apparmor/libapparmor1@2.13.2-10"
+            ],
+            "upgradePath": [],
+            "isUpgradable": false,
+            "isPatchable": false,
+            "name": "apparmor/libapparmor1",
+            "version": "2.13.2-10"
+        },
+        {
+            "title": "Integer Overflow or Wraparound",
+            "credit": [
+                ""
+            ],
+            "packageName": "apt",
+            "language": "linux",
+            "packageManager": "debian:10",
+            "description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `apt` package. </i>\n<i> See `Remediation` section below for `Debian:10` relevant versions. </i>\n\nAPT had several integer overflows and underflows while parsing .deb packages, aka GHSL-2020-168 GHSL-2020-169, in files apt-pkg/contrib/extracttar.cc, apt-pkg/deb/debfile.cc, and apt-pkg/contrib/arfile.cc. This issue affects: apt 1.2.32ubuntu0 versions prior to 1.2.32ubuntu0.2; 1.6.12ubuntu0 versions prior to 1.6.12ubuntu0.2; 2.0.2ubuntu0 versions prior to 2.0.2ubuntu0.2; 2.1.10ubuntu0 versions prior to 2.1.10ubuntu0.1;\n## Remediation\nUpgrade `Debian:10` `apt` to version 1.8.2.2 or higher.\n## References\n- [ADVISORY](https://security-tracker.debian.org/tracker/CVE-2020-27350)\n- [CONFIRM](https://bugs.launchpad.net/bugs/1899193)\n- [CONFIRM](https://security.netapp.com/advisory/ntap-20210108-0005/)\n- [DEBIAN](https://www.debian.org/security/2020/dsa-4808)\n- [UBUNTU](https://usn.ubuntu.com/usn/usn-4667-1)\n",
+            "identifiers": {
+                "ALTERNATIVE": [],
+                "CVE": [
+                    "CVE-2020-27350"
+                ],
+                "CWE": [
+                    "CWE-190"
+                ]
+            },
+            "severity": "medium",
+            "severityWithCritical": "medium",
+            "socialTrendAlert": false,
+            "cvssScore": 5.7,
+            "CVSSv3": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:L/I:L/A:L",
+            "patches": [],
+            "references": [
+                {
+                    "title": "ADVISORY",
+                    "url": "https://security-tracker.debian.org/tracker/CVE-2020-27350"
+                },
+                {
+                    "title": "CONFIRM",
+                    "url": "https://bugs.launchpad.net/bugs/1899193"
+                },
+                {
+                    "title": "CONFIRM",
+                    "url": "https://security.netapp.com/advisory/ntap-20210108-0005/"
+                },
+                {
+                    "title": "DEBIAN",
+                    "url": "https://www.debian.org/security/2020/dsa-4808"
+                },
+                {
+                    "title": "UBUNTU",
+                    "url": "https://usn.ubuntu.com/usn/usn-4667-1"
+                }
+            ],
+            "creationTime": "2020-12-10T03:10:24.252539Z",
+            "modificationTime": "2021-06-19T15:13:18.413399Z",
+            "publicationTime": "2020-12-10T03:10:23.901831Z",
+            "disclosureTime": "2020-12-10T04:15:00Z",
+            "id": "SNYK-DEBIAN10-APT-1049974",
+            "nvdSeverity": "medium",
+            "relativeImportance": "not yet assigned",
+            "semver": {
+                "vulnerable": [
+                    "<1.8.2.2"
+                ]
+            },
+            "exploit": "Not Defined",
+            "from": [
+                "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                "apt/libapt-pkg5.0@1.8.2.1"
+            ],
+            "upgradePath": [],
+            "isUpgradable": false,
+            "isPatchable": false,
+            "name": "apt/libapt-pkg5.0",
+            "version": "1.8.2.1",
+            "nearestFixedInVersion": "1.8.2.2"
+        },
+        {
+            "title": "Improper Verification of Cryptographic Signature",
+            "credit": [
+                ""
+            ],
+            "packageName": "apt",
+            "language": "linux",
+            "packageManager": "debian:10",
+            "description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `apt` package. </i>\n\nIt was found that apt-key in apt, all versions, do not correctly validate gpg keys with the master keyring, leading to a potential man-in-the-middle attack.\n## Remediation\nThere is no fixed version for `Debian:10` `apt`.\n## References\n- [Debian Bug Report](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=642480)\n- [Debian Security Tracker](https://security-tracker.debian.org/tracker/CVE-2011-3374)\n- [MISC](https://people.canonical.com/~ubuntu-security/cve/2011/CVE-2011-3374.html)\n- [MISC](https://seclists.org/fulldisclosure/2011/Sep/221)\n- [MISC](https://snyk.io/vuln/SNYK-LINUX-APT-116518)\n- [MISC](https://ubuntu.com/security/CVE-2011-3374)\n- [RedHat CVE Database](https://access.redhat.com/security/cve/cve-2011-3374)\n",
+            "identifiers": {
+                "ALTERNATIVE": [],
+                "CVE": [
+                    "CVE-2011-3374"
+                ],
+                "CWE": [
+                    "CWE-347"
+                ]
+            },
+            "severity": "low",
+            "severityWithCritical": "low",
+            "socialTrendAlert": false,
+            "cvssScore": 3.7,
+            "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+            "patches": [],
+            "references": [
+                {
+                    "title": "Debian Bug Report",
+                    "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=642480"
+                },
+                {
+                    "title": "Debian Security Tracker",
+                    "url": "https://security-tracker.debian.org/tracker/CVE-2011-3374"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://people.canonical.com/~ubuntu-security/cve/2011/CVE-2011-3374.html"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://seclists.org/fulldisclosure/2011/Sep/221"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://snyk.io/vuln/SNYK-LINUX-APT-116518"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://ubuntu.com/security/CVE-2011-3374"
+                },
+                {
+                    "title": "RedHat CVE Database",
+                    "url": "https://access.redhat.com/security/cve/cve-2011-3374"
+                }
+            ],
+            "creationTime": "2020-08-19T09:26:56.580359Z",
+            "modificationTime": "2021-06-19T15:13:17.124789Z",
+            "publicationTime": "2018-06-27T16:20:45.037549Z",
+            "disclosureTime": "2019-11-26T00:15:00Z",
+            "id": "SNYK-DEBIAN10-APT-407502",
+            "nvdSeverity": "low",
+            "relativeImportance": "unimportant",
+            "semver": {
+                "vulnerable": [
+                    "*"
+                ]
+            },
+            "exploit": "Not Defined",
+            "from": [
+                "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                "apt/libapt-pkg5.0@1.8.2.1"
+            ],
+            "upgradePath": [],
+            "isUpgradable": false,
+            "isPatchable": false,
+            "name": "apt/libapt-pkg5.0",
+            "version": "1.8.2.1"
+        },
+        {
+            "title": "Integer Overflow or Wraparound",
+            "credit": [
+                ""
+            ],
+            "packageName": "apt",
+            "language": "linux",
+            "packageManager": "debian:10",
+            "description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `apt` package. </i>\n<i> See `Remediation` section below for `Debian:10` relevant versions. </i>\n\nAPT had several integer overflows and underflows while parsing .deb packages, aka GHSL-2020-168 GHSL-2020-169, in files apt-pkg/contrib/extracttar.cc, apt-pkg/deb/debfile.cc, and apt-pkg/contrib/arfile.cc. This issue affects: apt 1.2.32ubuntu0 versions prior to 1.2.32ubuntu0.2; 1.6.12ubuntu0 versions prior to 1.6.12ubuntu0.2; 2.0.2ubuntu0 versions prior to 2.0.2ubuntu0.2; 2.1.10ubuntu0 versions prior to 2.1.10ubuntu0.1;\n## Remediation\nUpgrade `Debian:10` `apt` to version 1.8.2.2 or higher.\n## References\n- [ADVISORY](https://security-tracker.debian.org/tracker/CVE-2020-27350)\n- [CONFIRM](https://bugs.launchpad.net/bugs/1899193)\n- [CONFIRM](https://security.netapp.com/advisory/ntap-20210108-0005/)\n- [DEBIAN](https://www.debian.org/security/2020/dsa-4808)\n- [UBUNTU](https://usn.ubuntu.com/usn/usn-4667-1)\n",
+            "identifiers": {
+                "ALTERNATIVE": [],
+                "CVE": [
+                    "CVE-2020-27350"
+                ],
+                "CWE": [
+                    "CWE-190"
+                ]
+            },
+            "severity": "medium",
+            "severityWithCritical": "medium",
+            "socialTrendAlert": false,
+            "cvssScore": 5.7,
+            "CVSSv3": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:L/I:L/A:L",
+            "patches": [],
+            "references": [
+                {
+                    "title": "ADVISORY",
+                    "url": "https://security-tracker.debian.org/tracker/CVE-2020-27350"
+                },
+                {
+                    "title": "CONFIRM",
+                    "url": "https://bugs.launchpad.net/bugs/1899193"
+                },
+                {
+                    "title": "CONFIRM",
+                    "url": "https://security.netapp.com/advisory/ntap-20210108-0005/"
+                },
+                {
+                    "title": "DEBIAN",
+                    "url": "https://www.debian.org/security/2020/dsa-4808"
+                },
+                {
+                    "title": "UBUNTU",
+                    "url": "https://usn.ubuntu.com/usn/usn-4667-1"
+                }
+            ],
+            "creationTime": "2020-12-10T03:10:24.252539Z",
+            "modificationTime": "2021-06-19T15:13:18.413399Z",
+            "publicationTime": "2020-12-10T03:10:23.901831Z",
+            "disclosureTime": "2020-12-10T04:15:00Z",
+            "id": "SNYK-DEBIAN10-APT-1049974",
+            "nvdSeverity": "medium",
+            "relativeImportance": "not yet assigned",
+            "semver": {
+                "vulnerable": [
+                    "<1.8.2.2"
+                ]
+            },
+            "exploit": "Not Defined",
+            "from": [
+                "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                "apt@1.8.2.1",
+                "apt/libapt-pkg5.0@1.8.2.1"
+            ],
+            "upgradePath": [],
+            "isUpgradable": false,
+            "isPatchable": false,
+            "name": "apt/libapt-pkg5.0",
+            "version": "1.8.2.1",
+            "nearestFixedInVersion": "1.8.2.2"
+        },
+        {
+            "title": "Improper Verification of Cryptographic Signature",
+            "credit": [
+                ""
+            ],
+            "packageName": "apt",
+            "language": "linux",
+            "packageManager": "debian:10",
+            "description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `apt` package. </i>\n\nIt was found that apt-key in apt, all versions, do not correctly validate gpg keys with the master keyring, leading to a potential man-in-the-middle attack.\n## Remediation\nThere is no fixed version for `Debian:10` `apt`.\n## References\n- [Debian Bug Report](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=642480)\n- [Debian Security Tracker](https://security-tracker.debian.org/tracker/CVE-2011-3374)\n- [MISC](https://people.canonical.com/~ubuntu-security/cve/2011/CVE-2011-3374.html)\n- [MISC](https://seclists.org/fulldisclosure/2011/Sep/221)\n- [MISC](https://snyk.io/vuln/SNYK-LINUX-APT-116518)\n- [MISC](https://ubuntu.com/security/CVE-2011-3374)\n- [RedHat CVE Database](https://access.redhat.com/security/cve/cve-2011-3374)\n",
+            "identifiers": {
+                "ALTERNATIVE": [],
+                "CVE": [
+                    "CVE-2011-3374"
+                ],
+                "CWE": [
+                    "CWE-347"
+                ]
+            },
+            "severity": "low",
+            "severityWithCritical": "low",
+            "socialTrendAlert": false,
+            "cvssScore": 3.7,
+            "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+            "patches": [],
+            "references": [
+                {
+                    "title": "Debian Bug Report",
+                    "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=642480"
+                },
+                {
+                    "title": "Debian Security Tracker",
+                    "url": "https://security-tracker.debian.org/tracker/CVE-2011-3374"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://people.canonical.com/~ubuntu-security/cve/2011/CVE-2011-3374.html"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://seclists.org/fulldisclosure/2011/Sep/221"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://snyk.io/vuln/SNYK-LINUX-APT-116518"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://ubuntu.com/security/CVE-2011-3374"
+                },
+                {
+                    "title": "RedHat CVE Database",
+                    "url": "https://access.redhat.com/security/cve/cve-2011-3374"
+                }
+            ],
+            "creationTime": "2020-08-19T09:26:56.580359Z",
+            "modificationTime": "2021-06-19T15:13:17.124789Z",
+            "publicationTime": "2018-06-27T16:20:45.037549Z",
+            "disclosureTime": "2019-11-26T00:15:00Z",
+            "id": "SNYK-DEBIAN10-APT-407502",
+            "nvdSeverity": "low",
+            "relativeImportance": "unimportant",
+            "semver": {
+                "vulnerable": [
+                    "*"
+                ]
+            },
+            "exploit": "Not Defined",
+            "from": [
+                "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                "apt@1.8.2.1",
+                "apt/libapt-pkg5.0@1.8.2.1"
+            ],
+            "upgradePath": [],
+            "isUpgradable": false,
+            "isPatchable": false,
+            "name": "apt/libapt-pkg5.0",
+            "version": "1.8.2.1"
+        },
+        {
+            "title": "Integer Overflow or Wraparound",
+            "credit": [
+                ""
+            ],
+            "packageName": "apt",
+            "language": "linux",
+            "packageManager": "debian:10",
+            "description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `apt` package. </i>\n<i> See `Remediation` section below for `Debian:10` relevant versions. </i>\n\nAPT had several integer overflows and underflows while parsing .deb packages, aka GHSL-2020-168 GHSL-2020-169, in files apt-pkg/contrib/extracttar.cc, apt-pkg/deb/debfile.cc, and apt-pkg/contrib/arfile.cc. This issue affects: apt 1.2.32ubuntu0 versions prior to 1.2.32ubuntu0.2; 1.6.12ubuntu0 versions prior to 1.6.12ubuntu0.2; 2.0.2ubuntu0 versions prior to 2.0.2ubuntu0.2; 2.1.10ubuntu0 versions prior to 2.1.10ubuntu0.1;\n## Remediation\nUpgrade `Debian:10` `apt` to version 1.8.2.2 or higher.\n## References\n- [ADVISORY](https://security-tracker.debian.org/tracker/CVE-2020-27350)\n- [CONFIRM](https://bugs.launchpad.net/bugs/1899193)\n- [CONFIRM](https://security.netapp.com/advisory/ntap-20210108-0005/)\n- [DEBIAN](https://www.debian.org/security/2020/dsa-4808)\n- [UBUNTU](https://usn.ubuntu.com/usn/usn-4667-1)\n",
+            "identifiers": {
+                "ALTERNATIVE": [],
+                "CVE": [
+                    "CVE-2020-27350"
+                ],
+                "CWE": [
+                    "CWE-190"
+                ]
+            },
+            "severity": "medium",
+            "severityWithCritical": "medium",
+            "socialTrendAlert": false,
+            "cvssScore": 5.7,
+            "CVSSv3": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:L/I:L/A:L",
+            "patches": [],
+            "references": [
+                {
+                    "title": "ADVISORY",
+                    "url": "https://security-tracker.debian.org/tracker/CVE-2020-27350"
+                },
+                {
+                    "title": "CONFIRM",
+                    "url": "https://bugs.launchpad.net/bugs/1899193"
+                },
+                {
+                    "title": "CONFIRM",
+                    "url": "https://security.netapp.com/advisory/ntap-20210108-0005/"
+                },
+                {
+                    "title": "DEBIAN",
+                    "url": "https://www.debian.org/security/2020/dsa-4808"
+                },
+                {
+                    "title": "UBUNTU",
+                    "url": "https://usn.ubuntu.com/usn/usn-4667-1"
+                }
+            ],
+            "creationTime": "2020-12-10T03:10:24.252539Z",
+            "modificationTime": "2021-06-19T15:13:18.413399Z",
+            "publicationTime": "2020-12-10T03:10:23.901831Z",
+            "disclosureTime": "2020-12-10T04:15:00Z",
+            "id": "SNYK-DEBIAN10-APT-1049974",
+            "nvdSeverity": "medium",
+            "relativeImportance": "not yet assigned",
+            "semver": {
+                "vulnerable": [
+                    "<1.8.2.2"
+                ]
+            },
+            "exploit": "Not Defined",
+            "from": [
+                "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                "apt@1.8.2.1"
+            ],
+            "upgradePath": [
+                false,
+                "apt@1.8.2.2"
+            ],
+            "isUpgradable": true,
+            "isPatchable": false,
+            "name": "apt",
+            "version": "1.8.2.1",
+            "nearestFixedInVersion": "1.8.2.2"
+        },
+        {
+            "title": "Improper Verification of Cryptographic Signature",
+            "credit": [
+                ""
+            ],
+            "packageName": "apt",
+            "language": "linux",
+            "packageManager": "debian:10",
+            "description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `apt` package. </i>\n\nIt was found that apt-key in apt, all versions, do not correctly validate gpg keys with the master keyring, leading to a potential man-in-the-middle attack.\n## Remediation\nThere is no fixed version for `Debian:10` `apt`.\n## References\n- [Debian Bug Report](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=642480)\n- [Debian Security Tracker](https://security-tracker.debian.org/tracker/CVE-2011-3374)\n- [MISC](https://people.canonical.com/~ubuntu-security/cve/2011/CVE-2011-3374.html)\n- [MISC](https://seclists.org/fulldisclosure/2011/Sep/221)\n- [MISC](https://snyk.io/vuln/SNYK-LINUX-APT-116518)\n- [MISC](https://ubuntu.com/security/CVE-2011-3374)\n- [RedHat CVE Database](https://access.redhat.com/security/cve/cve-2011-3374)\n",
+            "identifiers": {
+                "ALTERNATIVE": [],
+                "CVE": [
+                    "CVE-2011-3374"
+                ],
+                "CWE": [
+                    "CWE-347"
+                ]
+            },
+            "severity": "low",
+            "severityWithCritical": "low",
+            "socialTrendAlert": false,
+            "cvssScore": 3.7,
+            "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+            "patches": [],
+            "references": [
+                {
+                    "title": "Debian Bug Report",
+                    "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=642480"
+                },
+                {
+                    "title": "Debian Security Tracker",
+                    "url": "https://security-tracker.debian.org/tracker/CVE-2011-3374"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://people.canonical.com/~ubuntu-security/cve/2011/CVE-2011-3374.html"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://seclists.org/fulldisclosure/2011/Sep/221"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://snyk.io/vuln/SNYK-LINUX-APT-116518"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://ubuntu.com/security/CVE-2011-3374"
+                },
+                {
+                    "title": "RedHat CVE Database",
+                    "url": "https://access.redhat.com/security/cve/cve-2011-3374"
+                }
+            ],
+            "creationTime": "2020-08-19T09:26:56.580359Z",
+            "modificationTime": "2021-06-19T15:13:17.124789Z",
+            "publicationTime": "2018-06-27T16:20:45.037549Z",
+            "disclosureTime": "2019-11-26T00:15:00Z",
+            "id": "SNYK-DEBIAN10-APT-407502",
+            "nvdSeverity": "low",
+            "relativeImportance": "unimportant",
+            "semver": {
+                "vulnerable": [
+                    "*"
+                ]
+            },
+            "exploit": "Not Defined",
+            "from": [
+                "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                "apt@1.8.2.1"
+            ],
+            "upgradePath": [],
+            "isUpgradable": false,
+            "isPatchable": false,
+            "name": "apt",
+            "version": "1.8.2.1"
+        },
+        {
+            "title": "Link Following",
+            "credit": [
+                ""
+            ],
+            "packageName": "avahi",
+            "language": "linux",
+            "packageManager": "debian:10",
+            "description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `avahi` package. </i>\n<i> See `Remediation` section below for `Debian:10` relevant versions. </i>\n\navahi-daemon-check-dns.sh in the Debian avahi package through 0.8-4 is executed as root via /etc/network/if-up.d/avahi-daemon, and allows a local attacker to cause a denial of service or create arbitrary empty files via a symlink attack on files under /run/avahi-daemon. NOTE: this only affects the packaging for Debian GNU/Linux (used indirectly by SUSE), not the upstream Avahi product.\n## Remediation\nUpgrade `Debian:10` `avahi` to version 0.7-4+deb10u1 or higher.\n## References\n- [ADVISORY](https://security-tracker.debian.org/tracker/CVE-2021-26720)\n- [MISC](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=982796)\n- [MISC](https://bugs.launchpad.net/ubuntu/+source/avahi/+bug/1870824)\n- [MISC](https://bugzilla.suse.com/show_bug.cgi?id=1180827)\n- [MISC](https://metadata.ftp-master.debian.org/changelogs/main/a/avahi/avahi_0.8-4_changelog)\n- [MISC](https://packages.debian.org/bullseye/avahi-daemon)\n- [MISC](https://packages.debian.org/buster/avahi-daemon)\n- [MISC](https://packages.debian.org/sid/avahi-daemon)\n- [MISC](https://www.openwall.com/lists/oss-security/2021/02/15/2)\n",
+            "identifiers": {
+                "ALTERNATIVE": [],
+                "CVE": [
+                    "CVE-2021-26720"
+                ],
+                "CWE": [
+                    "CWE-59"
+                ]
+            },
+            "severity": "high",
+            "severityWithCritical": "high",
+            "socialTrendAlert": false,
+            "cvssScore": 7.8,
+            "CVSSv3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "patches": [],
+            "references": [
+                {
+                    "title": "ADVISORY",
+                    "url": "https://security-tracker.debian.org/tracker/CVE-2021-26720"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=982796"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://bugs.launchpad.net/ubuntu/%2Bsource/avahi/%2Bbug/1870824"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://bugzilla.suse.com/show_bug.cgi?id=1180827"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://metadata.ftp-master.debian.org/changelogs/main/a/avahi/avahi_0.8-4_changelog"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://packages.debian.org/bullseye/avahi-daemon"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://packages.debian.org/buster/avahi-daemon"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://packages.debian.org/sid/avahi-daemon"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://www.openwall.com/lists/oss-security/2021/02/15/2"
+                }
+            ],
+            "creationTime": "2021-02-16T03:10:44.912274Z",
+            "modificationTime": "2021-05-09T12:30:27.173616Z",
+            "publicationTime": "2021-02-16T03:10:44.804823Z",
+            "disclosureTime": "2021-02-17T22:15:00Z",
+            "id": "SNYK-DEBIAN10-AVAHI-1075017",
+            "nvdSeverity": "high",
+            "relativeImportance": "not yet assigned",
+            "semver": {
+                "vulnerable": [
+                    "<0.7-4+deb10u1"
+                ]
+            },
+            "exploit": "Not Defined",
+            "from": [
+                "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                "gtk+3.0/libgtk-3-0@3.24.5-1",
+                "cups/libcups2@2.2.10-6+deb10u3",
+                "avahi/libavahi-client3@0.7-4+b1",
+                "avahi/libavahi-common3@0.7-4+b1",
+                "avahi/libavahi-common-data@0.7-4+b1"
+            ],
+            "upgradePath": [],
+            "isUpgradable": false,
+            "isPatchable": false,
+            "name": "avahi/libavahi-common-data",
+            "version": "0.7-4+b1",
+            "nearestFixedInVersion": "0.7-4+deb10u1"
+        },
+        {
+            "title": "Loop with Unreachable Exit Condition ('Infinite Loop')",
+            "credit": [
+                ""
+            ],
+            "packageName": "avahi",
+            "language": "linux",
+            "packageManager": "debian:10",
+            "description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `avahi` package. </i>\n\nA flaw was found in avahi in versions 0.6 up to 0.8. The event used to signal the termination of the client connection on the avahi Unix socket is not correctly handled in the client_work function, allowing a local attacker to trigger an infinite loop. The highest threat from this vulnerability is to the availability of the avahi service, which becomes unresponsive after this flaw is triggered.\n## Remediation\nThere is no fixed version for `Debian:10` `avahi`.\n## References\n- [ADVISORY](https://security-tracker.debian.org/tracker/CVE-2021-3468)\n- [MISC](https://bugzilla.redhat.com/show_bug.cgi?id=1939614)\n",
+            "identifiers": {
+                "ALTERNATIVE": [],
+                "CVE": [
+                    "CVE-2021-3468"
+                ],
+                "CWE": [
+                    "CWE-835"
+                ]
+            },
+            "severity": "medium",
+            "severityWithCritical": "medium",
+            "socialTrendAlert": false,
+            "cvssScore": 5.5,
+            "CVSSv3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "patches": [],
+            "references": [
+                {
+                    "title": "ADVISORY",
+                    "url": "https://security-tracker.debian.org/tracker/CVE-2021-3468"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1939614"
+                }
+            ],
+            "creationTime": "2021-03-28T03:11:13.879264Z",
+            "modificationTime": "2021-06-04T15:13:27.282977Z",
+            "publicationTime": "2021-03-28T03:11:13.670318Z",
+            "disclosureTime": "2021-06-02T16:15:00Z",
+            "id": "SNYK-DEBIAN10-AVAHI-1089437",
+            "nvdSeverity": "medium",
+            "relativeImportance": "not yet assigned",
+            "semver": {
+                "vulnerable": [
+                    "*"
+                ]
+            },
+            "exploit": "Not Defined",
+            "from": [
+                "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                "gtk+3.0/libgtk-3-0@3.24.5-1",
+                "cups/libcups2@2.2.10-6+deb10u3",
+                "avahi/libavahi-client3@0.7-4+b1",
+                "avahi/libavahi-common3@0.7-4+b1",
+                "avahi/libavahi-common-data@0.7-4+b1"
+            ],
+            "upgradePath": [],
+            "isUpgradable": false,
+            "isPatchable": false,
+            "name": "avahi/libavahi-common-data",
+            "version": "0.7-4+b1"
+        },
+        {
+            "title": "Origin Validation Error",
+            "credit": [
+                ""
+            ],
+            "packageName": "avahi",
+            "language": "linux",
+            "packageManager": "debian:10",
+            "description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `avahi` package. </i>\n\navahi-daemon in Avahi through 0.6.32 and 0.7 inadvertently responds to IPv6 unicast queries with source addresses that are not on-link, which allows remote attackers to cause a denial of service (traffic amplification) and may cause information leakage by obtaining potentially sensitive  information from the responding device via port-5353 UDP packets.  NOTE: this may overlap CVE-2015-2809.\n## Remediation\nThere is no fixed version for `Debian:10` `avahi`.\n## References\n- [CVE Details](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-6519)\n- [Debian Security Tracker](https://security-tracker.debian.org/tracker/CVE-2017-6519)\n- [GitHub Issue](https://github.com/lathiat/avahi/issues/203)\n- [GitHub Issue](https://github.com/lathiat/avahi/issues/203#issuecomment-449536790)\n- [MISC](https://www.secfu.net/advisories)\n- [MLIST](https://lists.apache.org/thread.html/r1b103833cb5bc8466e24ff0ecc5e75b45a705334ab6a444e64e840a0@%3Cissues.bookkeeper.apache.org%3E)\n- [RedHat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=1426712)\n- [Ubuntu CVE Tracker](http://people.ubuntu.com/~ubuntu-security/cve/CVE-2017-6519)\n- [Ubuntu Security Advisory](https://usn.ubuntu.com/3876-1/)\n- [Ubuntu Security Advisory](https://usn.ubuntu.com/3876-2/)\n",
+            "identifiers": {
+                "ALTERNATIVE": [],
+                "CVE": [
+                    "CVE-2017-6519"
+                ],
+                "CWE": [
+                    "CWE-346"
+                ]
+            },
+            "severity": "low",
+            "severityWithCritical": "low",
+            "socialTrendAlert": false,
+            "cvssScore": 9.1,
+            "CVSSv3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+            "patches": [],
+            "references": [
+                {
+                    "title": "CVE Details",
+                    "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-6519"
+                },
+                {
+                    "title": "Debian Security Tracker",
+                    "url": "https://security-tracker.debian.org/tracker/CVE-2017-6519"
+                },
+                {
+                    "title": "GitHub Issue",
+                    "url": "https://github.com/lathiat/avahi/issues/203"
+                },
+                {
+                    "title": "GitHub Issue",
+                    "url": "https://github.com/lathiat/avahi/issues/203%23issuecomment-449536790"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://www.secfu.net/advisories"
+                },
+                {
+                    "title": "MLIST",
+                    "url": "https://lists.apache.org/thread.html/r1b103833cb5bc8466e24ff0ecc5e75b45a705334ab6a444e64e840a0@%3Cissues.bookkeeper.apache.org%3E"
+                },
+                {
+                    "title": "RedHat Bugzilla Bug",
+                    "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1426712"
+                },
+                {
+                    "title": "Ubuntu CVE Tracker",
+                    "url": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2017-6519"
+                },
+                {
+                    "title": "Ubuntu Security Advisory",
+                    "url": "https://usn.ubuntu.com/3876-1/"
+                },
+                {
+                    "title": "Ubuntu Security Advisory",
+                    "url": "https://usn.ubuntu.com/3876-2/"
+                }
+            ],
+            "creationTime": "2020-08-19T09:25:26.010326Z",
+            "modificationTime": "2021-05-09T12:30:27.173616Z",
+            "publicationTime": "2017-05-01T01:59:00Z",
+            "disclosureTime": "2017-05-01T01:59:00Z",
+            "id": "SNYK-DEBIAN10-AVAHI-330424",
+            "nvdSeverity": "critical",
+            "relativeImportance": "unimportant",
+            "semver": {
+                "vulnerable": [
+                    "*"
+                ]
+            },
+            "exploit": "Not Defined",
+            "from": [
+                "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                "gtk+3.0/libgtk-3-0@3.24.5-1",
+                "cups/libcups2@2.2.10-6+deb10u3",
+                "avahi/libavahi-client3@0.7-4+b1",
+                "avahi/libavahi-common3@0.7-4+b1",
+                "avahi/libavahi-common-data@0.7-4+b1"
+            ],
+            "upgradePath": [],
+            "isUpgradable": false,
+            "isPatchable": false,
+            "name": "avahi/libavahi-common-data",
+            "version": "0.7-4+b1"
+        },
+        {
+            "title": "Link Following",
+            "credit": [
+                ""
+            ],
+            "packageName": "avahi",
+            "language": "linux",
+            "packageManager": "debian:10",
+            "description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `avahi` package. </i>\n<i> See `Remediation` section below for `Debian:10` relevant versions. </i>\n\navahi-daemon-check-dns.sh in the Debian avahi package through 0.8-4 is executed as root via /etc/network/if-up.d/avahi-daemon, and allows a local attacker to cause a denial of service or create arbitrary empty files via a symlink attack on files under /run/avahi-daemon. NOTE: this only affects the packaging for Debian GNU/Linux (used indirectly by SUSE), not the upstream Avahi product.\n## Remediation\nUpgrade `Debian:10` `avahi` to version 0.7-4+deb10u1 or higher.\n## References\n- [ADVISORY](https://security-tracker.debian.org/tracker/CVE-2021-26720)\n- [MISC](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=982796)\n- [MISC](https://bugs.launchpad.net/ubuntu/+source/avahi/+bug/1870824)\n- [MISC](https://bugzilla.suse.com/show_bug.cgi?id=1180827)\n- [MISC](https://metadata.ftp-master.debian.org/changelogs/main/a/avahi/avahi_0.8-4_changelog)\n- [MISC](https://packages.debian.org/bullseye/avahi-daemon)\n- [MISC](https://packages.debian.org/buster/avahi-daemon)\n- [MISC](https://packages.debian.org/sid/avahi-daemon)\n- [MISC](https://www.openwall.com/lists/oss-security/2021/02/15/2)\n",
+            "identifiers": {
+                "ALTERNATIVE": [],
+                "CVE": [
+                    "CVE-2021-26720"
+                ],
+                "CWE": [
+                    "CWE-59"
+                ]
+            },
+            "severity": "high",
+            "severityWithCritical": "high",
+            "socialTrendAlert": false,
+            "cvssScore": 7.8,
+            "CVSSv3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "patches": [],
+            "references": [
+                {
+                    "title": "ADVISORY",
+                    "url": "https://security-tracker.debian.org/tracker/CVE-2021-26720"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=982796"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://bugs.launchpad.net/ubuntu/%2Bsource/avahi/%2Bbug/1870824"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://bugzilla.suse.com/show_bug.cgi?id=1180827"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://metadata.ftp-master.debian.org/changelogs/main/a/avahi/avahi_0.8-4_changelog"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://packages.debian.org/bullseye/avahi-daemon"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://packages.debian.org/buster/avahi-daemon"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://packages.debian.org/sid/avahi-daemon"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://www.openwall.com/lists/oss-security/2021/02/15/2"
+                }
+            ],
+            "creationTime": "2021-02-16T03:10:44.912274Z",
+            "modificationTime": "2021-05-09T12:30:27.173616Z",
+            "publicationTime": "2021-02-16T03:10:44.804823Z",
+            "disclosureTime": "2021-02-17T22:15:00Z",
+            "id": "SNYK-DEBIAN10-AVAHI-1075017",
+            "nvdSeverity": "high",
+            "relativeImportance": "not yet assigned",
+            "semver": {
+                "vulnerable": [
+                    "<0.7-4+deb10u1"
+                ]
+            },
+            "exploit": "Not Defined",
+            "from": [
+                "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                "gtk+3.0/libgtk-3-0@3.24.5-1",
+                "cups/libcups2@2.2.10-6+deb10u3",
+                "avahi/libavahi-common3@0.7-4+b1"
+            ],
+            "upgradePath": [],
+            "isUpgradable": false,
+            "isPatchable": false,
+            "name": "avahi/libavahi-common3",
+            "version": "0.7-4+b1",
+            "nearestFixedInVersion": "0.7-4+deb10u1"
+        },
+        {
+            "title": "Loop with Unreachable Exit Condition ('Infinite Loop')",
+            "credit": [
+                ""
+            ],
+            "packageName": "avahi",
+            "language": "linux",
+            "packageManager": "debian:10",
+            "description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `avahi` package. </i>\n\nA flaw was found in avahi in versions 0.6 up to 0.8. The event used to signal the termination of the client connection on the avahi Unix socket is not correctly handled in the client_work function, allowing a local attacker to trigger an infinite loop. The highest threat from this vulnerability is to the availability of the avahi service, which becomes unresponsive after this flaw is triggered.\n## Remediation\nThere is no fixed version for `Debian:10` `avahi`.\n## References\n- [ADVISORY](https://security-tracker.debian.org/tracker/CVE-2021-3468)\n- [MISC](https://bugzilla.redhat.com/show_bug.cgi?id=1939614)\n",
+            "identifiers": {
+                "ALTERNATIVE": [],
+                "CVE": [
+                    "CVE-2021-3468"
+                ],
+                "CWE": [
+                    "CWE-835"
+                ]
+            },
+            "severity": "medium",
+            "severityWithCritical": "medium",
+            "socialTrendAlert": false,
+            "cvssScore": 5.5,
+            "CVSSv3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "patches": [],
+            "references": [
+                {
+                    "title": "ADVISORY",
+                    "url": "https://security-tracker.debian.org/tracker/CVE-2021-3468"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1939614"
+                }
+            ],
+            "creationTime": "2021-03-28T03:11:13.879264Z",
+            "modificationTime": "2021-06-04T15:13:27.282977Z",
+            "publicationTime": "2021-03-28T03:11:13.670318Z",
+            "disclosureTime": "2021-06-02T16:15:00Z",
+            "id": "SNYK-DEBIAN10-AVAHI-1089437",
+            "nvdSeverity": "medium",
+            "relativeImportance": "not yet assigned",
+            "semver": {
+                "vulnerable": [
+                    "*"
+                ]
+            },
+            "exploit": "Not Defined",
+            "from": [
+                "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                "gtk+3.0/libgtk-3-0@3.24.5-1",
+                "cups/libcups2@2.2.10-6+deb10u3",
+                "avahi/libavahi-common3@0.7-4+b1"
+            ],
+            "upgradePath": [],
+            "isUpgradable": false,
+            "isPatchable": false,
+            "name": "avahi/libavahi-common3",
+            "version": "0.7-4+b1"
+        },
+        {
+            "title": "Origin Validation Error",
+            "credit": [
+                ""
+            ],
+            "packageName": "avahi",
+            "language": "linux",
+            "packageManager": "debian:10",
+            "description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `avahi` package. </i>\n\navahi-daemon in Avahi through 0.6.32 and 0.7 inadvertently responds to IPv6 unicast queries with source addresses that are not on-link, which allows remote attackers to cause a denial of service (traffic amplification) and may cause information leakage by obtaining potentially sensitive  information from the responding device via port-5353 UDP packets.  NOTE: this may overlap CVE-2015-2809.\n## Remediation\nThere is no fixed version for `Debian:10` `avahi`.\n## References\n- [CVE Details](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-6519)\n- [Debian Security Tracker](https://security-tracker.debian.org/tracker/CVE-2017-6519)\n- [GitHub Issue](https://github.com/lathiat/avahi/issues/203)\n- [GitHub Issue](https://github.com/lathiat/avahi/issues/203#issuecomment-449536790)\n- [MISC](https://www.secfu.net/advisories)\n- [MLIST](https://lists.apache.org/thread.html/r1b103833cb5bc8466e24ff0ecc5e75b45a705334ab6a444e64e840a0@%3Cissues.bookkeeper.apache.org%3E)\n- [RedHat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=1426712)\n- [Ubuntu CVE Tracker](http://people.ubuntu.com/~ubuntu-security/cve/CVE-2017-6519)\n- [Ubuntu Security Advisory](https://usn.ubuntu.com/3876-1/)\n- [Ubuntu Security Advisory](https://usn.ubuntu.com/3876-2/)\n",
+            "identifiers": {
+                "ALTERNATIVE": [],
+                "CVE": [
+                    "CVE-2017-6519"
+                ],
+                "CWE": [
+                    "CWE-346"
+                ]
+            },
+            "severity": "low",
+            "severityWithCritical": "low",
+            "socialTrendAlert": false,
+            "cvssScore": 9.1,
+            "CVSSv3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+            "patches": [],
+            "references": [
+                {
+                    "title": "CVE Details",
+                    "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-6519"
+                },
+                {
+                    "title": "Debian Security Tracker",
+                    "url": "https://security-tracker.debian.org/tracker/CVE-2017-6519"
+                },
+                {
+                    "title": "GitHub Issue",
+                    "url": "https://github.com/lathiat/avahi/issues/203"
+                },
+                {
+                    "title": "GitHub Issue",
+                    "url": "https://github.com/lathiat/avahi/issues/203%23issuecomment-449536790"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://www.secfu.net/advisories"
+                },
+                {
+                    "title": "MLIST",
+                    "url": "https://lists.apache.org/thread.html/r1b103833cb5bc8466e24ff0ecc5e75b45a705334ab6a444e64e840a0@%3Cissues.bookkeeper.apache.org%3E"
+                },
+                {
+                    "title": "RedHat Bugzilla Bug",
+                    "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1426712"
+                },
+                {
+                    "title": "Ubuntu CVE Tracker",
+                    "url": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2017-6519"
+                },
+                {
+                    "title": "Ubuntu Security Advisory",
+                    "url": "https://usn.ubuntu.com/3876-1/"
+                },
+                {
+                    "title": "Ubuntu Security Advisory",
+                    "url": "https://usn.ubuntu.com/3876-2/"
+                }
+            ],
+            "creationTime": "2020-08-19T09:25:26.010326Z",
+            "modificationTime": "2021-05-09T12:30:27.173616Z",
+            "publicationTime": "2017-05-01T01:59:00Z",
+            "disclosureTime": "2017-05-01T01:59:00Z",
+            "id": "SNYK-DEBIAN10-AVAHI-330424",
+            "nvdSeverity": "critical",
+            "relativeImportance": "unimportant",
+            "semver": {
+                "vulnerable": [
+                    "*"
+                ]
+            },
+            "exploit": "Not Defined",
+            "from": [
+                "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                "gtk+3.0/libgtk-3-0@3.24.5-1",
+                "cups/libcups2@2.2.10-6+deb10u3",
+                "avahi/libavahi-common3@0.7-4+b1"
+            ],
+            "upgradePath": [],
+            "isUpgradable": false,
+            "isPatchable": false,
+            "name": "avahi/libavahi-common3",
+            "version": "0.7-4+b1"
+        },
+        {
+            "title": "Link Following",
+            "credit": [
+                ""
+            ],
+            "packageName": "avahi",
+            "language": "linux",
+            "packageManager": "debian:10",
+            "description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `avahi` package. </i>\n<i> See `Remediation` section below for `Debian:10` relevant versions. </i>\n\navahi-daemon-check-dns.sh in the Debian avahi package through 0.8-4 is executed as root via /etc/network/if-up.d/avahi-daemon, and allows a local attacker to cause a denial of service or create arbitrary empty files via a symlink attack on files under /run/avahi-daemon. NOTE: this only affects the packaging for Debian GNU/Linux (used indirectly by SUSE), not the upstream Avahi product.\n## Remediation\nUpgrade `Debian:10` `avahi` to version 0.7-4+deb10u1 or higher.\n## References\n- [ADVISORY](https://security-tracker.debian.org/tracker/CVE-2021-26720)\n- [MISC](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=982796)\n- [MISC](https://bugs.launchpad.net/ubuntu/+source/avahi/+bug/1870824)\n- [MISC](https://bugzilla.suse.com/show_bug.cgi?id=1180827)\n- [MISC](https://metadata.ftp-master.debian.org/changelogs/main/a/avahi/avahi_0.8-4_changelog)\n- [MISC](https://packages.debian.org/bullseye/avahi-daemon)\n- [MISC](https://packages.debian.org/buster/avahi-daemon)\n- [MISC](https://packages.debian.org/sid/avahi-daemon)\n- [MISC](https://www.openwall.com/lists/oss-security/2021/02/15/2)\n",
+            "identifiers": {
+                "ALTERNATIVE": [],
+                "CVE": [
+                    "CVE-2021-26720"
+                ],
+                "CWE": [
+                    "CWE-59"
+                ]
+            },
+            "severity": "high",
+            "severityWithCritical": "high",
+            "socialTrendAlert": false,
+            "cvssScore": 7.8,
+            "CVSSv3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "patches": [],
+            "references": [
+                {
+                    "title": "ADVISORY",
+                    "url": "https://security-tracker.debian.org/tracker/CVE-2021-26720"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=982796"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://bugs.launchpad.net/ubuntu/%2Bsource/avahi/%2Bbug/1870824"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://bugzilla.suse.com/show_bug.cgi?id=1180827"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://metadata.ftp-master.debian.org/changelogs/main/a/avahi/avahi_0.8-4_changelog"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://packages.debian.org/bullseye/avahi-daemon"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://packages.debian.org/buster/avahi-daemon"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://packages.debian.org/sid/avahi-daemon"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://www.openwall.com/lists/oss-security/2021/02/15/2"
+                }
+            ],
+            "creationTime": "2021-02-16T03:10:44.912274Z",
+            "modificationTime": "2021-05-09T12:30:27.173616Z",
+            "publicationTime": "2021-02-16T03:10:44.804823Z",
+            "disclosureTime": "2021-02-17T22:15:00Z",
+            "id": "SNYK-DEBIAN10-AVAHI-1075017",
+            "nvdSeverity": "high",
+            "relativeImportance": "not yet assigned",
+            "semver": {
+                "vulnerable": [
+                    "<0.7-4+deb10u1"
+                ]
+            },
+            "exploit": "Not Defined",
+            "from": [
+                "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                "gtk+3.0/libgtk-3-0@3.24.5-1",
+                "cups/libcups2@2.2.10-6+deb10u3",
+                "avahi/libavahi-client3@0.7-4+b1",
+                "avahi/libavahi-common3@0.7-4+b1"
+            ],
+            "upgradePath": [],
+            "isUpgradable": false,
+            "isPatchable": false,
+            "name": "avahi/libavahi-common3",
+            "version": "0.7-4+b1",
+            "nearestFixedInVersion": "0.7-4+deb10u1"
+        },
+        {
+            "title": "Loop with Unreachable Exit Condition ('Infinite Loop')",
+            "credit": [
+                ""
+            ],
+            "packageName": "avahi",
+            "language": "linux",
+            "packageManager": "debian:10",
+            "description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `avahi` package. </i>\n\nA flaw was found in avahi in versions 0.6 up to 0.8. The event used to signal the termination of the client connection on the avahi Unix socket is not correctly handled in the client_work function, allowing a local attacker to trigger an infinite loop. The highest threat from this vulnerability is to the availability of the avahi service, which becomes unresponsive after this flaw is triggered.\n## Remediation\nThere is no fixed version for `Debian:10` `avahi`.\n## References\n- [ADVISORY](https://security-tracker.debian.org/tracker/CVE-2021-3468)\n- [MISC](https://bugzilla.redhat.com/show_bug.cgi?id=1939614)\n",
+            "identifiers": {
+                "ALTERNATIVE": [],
+                "CVE": [
+                    "CVE-2021-3468"
+                ],
+                "CWE": [
+                    "CWE-835"
+                ]
+            },
+            "severity": "medium",
+            "severityWithCritical": "medium",
+            "socialTrendAlert": false,
+            "cvssScore": 5.5,
+            "CVSSv3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "patches": [],
+            "references": [
+                {
+                    "title": "ADVISORY",
+                    "url": "https://security-tracker.debian.org/tracker/CVE-2021-3468"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1939614"
+                }
+            ],
+            "creationTime": "2021-03-28T03:11:13.879264Z",
+            "modificationTime": "2021-06-04T15:13:27.282977Z",
+            "publicationTime": "2021-03-28T03:11:13.670318Z",
+            "disclosureTime": "2021-06-02T16:15:00Z",
+            "id": "SNYK-DEBIAN10-AVAHI-1089437",
+            "nvdSeverity": "medium",
+            "relativeImportance": "not yet assigned",
+            "semver": {
+                "vulnerable": [
+                    "*"
+                ]
+            },
+            "exploit": "Not Defined",
+            "from": [
+                "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                "gtk+3.0/libgtk-3-0@3.24.5-1",
+                "cups/libcups2@2.2.10-6+deb10u3",
+                "avahi/libavahi-client3@0.7-4+b1",
+                "avahi/libavahi-common3@0.7-4+b1"
+            ],
+            "upgradePath": [],
+            "isUpgradable": false,
+            "isPatchable": false,
+            "name": "avahi/libavahi-common3",
+            "version": "0.7-4+b1"
+        },
+        {
+            "title": "Origin Validation Error",
+            "credit": [
+                ""
+            ],
+            "packageName": "avahi",
+            "language": "linux",
+            "packageManager": "debian:10",
+            "description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `avahi` package. </i>\n\navahi-daemon in Avahi through 0.6.32 and 0.7 inadvertently responds to IPv6 unicast queries with source addresses that are not on-link, which allows remote attackers to cause a denial of service (traffic amplification) and may cause information leakage by obtaining potentially sensitive  information from the responding device via port-5353 UDP packets.  NOTE: this may overlap CVE-2015-2809.\n## Remediation\nThere is no fixed version for `Debian:10` `avahi`.\n## References\n- [CVE Details](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-6519)\n- [Debian Security Tracker](https://security-tracker.debian.org/tracker/CVE-2017-6519)\n- [GitHub Issue](https://github.com/lathiat/avahi/issues/203)\n- [GitHub Issue](https://github.com/lathiat/avahi/issues/203#issuecomment-449536790)\n- [MISC](https://www.secfu.net/advisories)\n- [MLIST](https://lists.apache.org/thread.html/r1b103833cb5bc8466e24ff0ecc5e75b45a705334ab6a444e64e840a0@%3Cissues.bookkeeper.apache.org%3E)\n- [RedHat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=1426712)\n- [Ubuntu CVE Tracker](http://people.ubuntu.com/~ubuntu-security/cve/CVE-2017-6519)\n- [Ubuntu Security Advisory](https://usn.ubuntu.com/3876-1/)\n- [Ubuntu Security Advisory](https://usn.ubuntu.com/3876-2/)\n",
+            "identifiers": {
+                "ALTERNATIVE": [],
+                "CVE": [
+                    "CVE-2017-6519"
+                ],
+                "CWE": [
+                    "CWE-346"
+                ]
+            },
+            "severity": "low",
+            "severityWithCritical": "low",
+            "socialTrendAlert": false,
+            "cvssScore": 9.1,
+            "CVSSv3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+            "patches": [],
+            "references": [
+                {
+                    "title": "CVE Details",
+                    "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-6519"
+                },
+                {
+                    "title": "Debian Security Tracker",
+                    "url": "https://security-tracker.debian.org/tracker/CVE-2017-6519"
+                },
+                {
+                    "title": "GitHub Issue",
+                    "url": "https://github.com/lathiat/avahi/issues/203"
+                },
+                {
+                    "title": "GitHub Issue",
+                    "url": "https://github.com/lathiat/avahi/issues/203%23issuecomment-449536790"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://www.secfu.net/advisories"
+                },
+                {
+                    "title": "MLIST",
+                    "url": "https://lists.apache.org/thread.html/r1b103833cb5bc8466e24ff0ecc5e75b45a705334ab6a444e64e840a0@%3Cissues.bookkeeper.apache.org%3E"
+                },
+                {
+                    "title": "RedHat Bugzilla Bug",
+                    "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1426712"
+                },
+                {
+                    "title": "Ubuntu CVE Tracker",
+                    "url": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2017-6519"
+                },
+                {
+                    "title": "Ubuntu Security Advisory",
+                    "url": "https://usn.ubuntu.com/3876-1/"
+                },
+                {
+                    "title": "Ubuntu Security Advisory",
+                    "url": "https://usn.ubuntu.com/3876-2/"
+                }
+            ],
+            "creationTime": "2020-08-19T09:25:26.010326Z",
+            "modificationTime": "2021-05-09T12:30:27.173616Z",
+            "publicationTime": "2017-05-01T01:59:00Z",
+            "disclosureTime": "2017-05-01T01:59:00Z",
+            "id": "SNYK-DEBIAN10-AVAHI-330424",
+            "nvdSeverity": "critical",
+            "relativeImportance": "unimportant",
+            "semver": {
+                "vulnerable": [
+                    "*"
+                ]
+            },
+            "exploit": "Not Defined",
+            "from": [
+                "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                "gtk+3.0/libgtk-3-0@3.24.5-1",
+                "cups/libcups2@2.2.10-6+deb10u3",
+                "avahi/libavahi-client3@0.7-4+b1",
+                "avahi/libavahi-common3@0.7-4+b1"
+            ],
+            "upgradePath": [],
+            "isUpgradable": false,
+            "isPatchable": false,
+            "name": "avahi/libavahi-common3",
+            "version": "0.7-4+b1"
+        },
+        {
+            "title": "Link Following",
+            "credit": [
+                ""
+            ],
+            "packageName": "avahi",
+            "language": "linux",
+            "packageManager": "debian:10",
+            "description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `avahi` package. </i>\n<i> See `Remediation` section below for `Debian:10` relevant versions. </i>\n\navahi-daemon-check-dns.sh in the Debian avahi package through 0.8-4 is executed as root via /etc/network/if-up.d/avahi-daemon, and allows a local attacker to cause a denial of service or create arbitrary empty files via a symlink attack on files under /run/avahi-daemon. NOTE: this only affects the packaging for Debian GNU/Linux (used indirectly by SUSE), not the upstream Avahi product.\n## Remediation\nUpgrade `Debian:10` `avahi` to version 0.7-4+deb10u1 or higher.\n## References\n- [ADVISORY](https://security-tracker.debian.org/tracker/CVE-2021-26720)\n- [MISC](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=982796)\n- [MISC](https://bugs.launchpad.net/ubuntu/+source/avahi/+bug/1870824)\n- [MISC](https://bugzilla.suse.com/show_bug.cgi?id=1180827)\n- [MISC](https://metadata.ftp-master.debian.org/changelogs/main/a/avahi/avahi_0.8-4_changelog)\n- [MISC](https://packages.debian.org/bullseye/avahi-daemon)\n- [MISC](https://packages.debian.org/buster/avahi-daemon)\n- [MISC](https://packages.debian.org/sid/avahi-daemon)\n- [MISC](https://www.openwall.com/lists/oss-security/2021/02/15/2)\n",
+            "identifiers": {
+                "ALTERNATIVE": [],
+                "CVE": [
+                    "CVE-2021-26720"
+                ],
+                "CWE": [
+                    "CWE-59"
+                ]
+            },
+            "severity": "high",
+            "severityWithCritical": "high",
+            "socialTrendAlert": false,
+            "cvssScore": 7.8,
+            "CVSSv3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+            "patches": [],
+            "references": [
+                {
+                    "title": "ADVISORY",
+                    "url": "https://security-tracker.debian.org/tracker/CVE-2021-26720"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=982796"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://bugs.launchpad.net/ubuntu/%2Bsource/avahi/%2Bbug/1870824"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://bugzilla.suse.com/show_bug.cgi?id=1180827"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://metadata.ftp-master.debian.org/changelogs/main/a/avahi/avahi_0.8-4_changelog"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://packages.debian.org/bullseye/avahi-daemon"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://packages.debian.org/buster/avahi-daemon"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://packages.debian.org/sid/avahi-daemon"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://www.openwall.com/lists/oss-security/2021/02/15/2"
+                }
+            ],
+            "creationTime": "2021-02-16T03:10:44.912274Z",
+            "modificationTime": "2021-05-09T12:30:27.173616Z",
+            "publicationTime": "2021-02-16T03:10:44.804823Z",
+            "disclosureTime": "2021-02-17T22:15:00Z",
+            "id": "SNYK-DEBIAN10-AVAHI-1075017",
+            "nvdSeverity": "high",
+            "relativeImportance": "not yet assigned",
+            "semver": {
+                "vulnerable": [
+                    "<0.7-4+deb10u1"
+                ]
+            },
+            "exploit": "Not Defined",
+            "from": [
+                "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                "gtk+3.0/libgtk-3-0@3.24.5-1",
+                "cups/libcups2@2.2.10-6+deb10u3",
+                "avahi/libavahi-client3@0.7-4+b1"
+            ],
+            "upgradePath": [],
+            "isUpgradable": false,
+            "isPatchable": false,
+            "name": "avahi/libavahi-client3",
+            "version": "0.7-4+b1",
+            "nearestFixedInVersion": "0.7-4+deb10u1"
+        },
+        {
+            "title": "Loop with Unreachable Exit Condition ('Infinite Loop')",
+            "credit": [
+                ""
+            ],
+            "packageName": "avahi",
+            "language": "linux",
+            "packageManager": "debian:10",
+            "description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `avahi` package. </i>\n\nA flaw was found in avahi in versions 0.6 up to 0.8. The event used to signal the termination of the client connection on the avahi Unix socket is not correctly handled in the client_work function, allowing a local attacker to trigger an infinite loop. The highest threat from this vulnerability is to the availability of the avahi service, which becomes unresponsive after this flaw is triggered.\n## Remediation\nThere is no fixed version for `Debian:10` `avahi`.\n## References\n- [ADVISORY](https://security-tracker.debian.org/tracker/CVE-2021-3468)\n- [MISC](https://bugzilla.redhat.com/show_bug.cgi?id=1939614)\n",
+            "identifiers": {
+                "ALTERNATIVE": [],
+                "CVE": [
+                    "CVE-2021-3468"
+                ],
+                "CWE": [
+                    "CWE-835"
+                ]
+            },
+            "severity": "medium",
+            "severityWithCritical": "medium",
+            "socialTrendAlert": false,
+            "cvssScore": 5.5,
+            "CVSSv3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+            "patches": [],
+            "references": [
+                {
+                    "title": "ADVISORY",
+                    "url": "https://security-tracker.debian.org/tracker/CVE-2021-3468"
+                },
+                {
+                    "title": "MISC",
+                    "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1939614"
+                }
+            ],
+            "creationTime": "2021-03-28T03:11:13.879264Z",
+            "modificationTime": "2021-06-04T15:13:27.282977Z",
+            "publicationTime": "2021-03-28T03:11:13.670318Z",
+            "disclosureTime": "2021-06-02T16:15:00Z",
+            "id": "SNYK-DEBIAN10-AVAHI-1089437",
+            "nvdSeverity": "medium",
+            "relativeImportance": "not yet assigned",
+            "semver": {
+                "vulnerable": [
+                    "*"
+                ]
+            },
+            "exploit": "Not Defined",
+            "from": [
+                "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                "gtk+3.0/libgtk-3-0@3.24.5-1",
+                "cups/libcups2@2.2.10-6+deb10u3",
+                "avahi/libavahi-client3@0.7-4+b1"
+            ],
+            "upgradePath": [],
+            "isUpgradable": false,
+            "isPatchable": false,
+            "name": "avahi/libavahi-client3",
+            "version": "0.7-4+b1"
+        }
+    ],
+    "ok": false,
+    "dependencyCount": 534,
+    "org": "zeronorth",
+    "policy": "# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.\nversion: v1.21.5\nignore: {}\npatch: {}\n",
+    "isPrivate": true,
+    "licensesPolicy": {
+        "severities": {},
+        "orgLicenseRules": {
+            "AGPL-1.0": {
+                "licenseType": "AGPL-1.0",
+                "severity": "high",
+                "instructions": ""
+            },
+            "AGPL-3.0": {
+                "licenseType": "AGPL-3.0",
+                "severity": "high",
+                "instructions": ""
+            },
+            "Artistic-1.0": {
+                "licenseType": "Artistic-1.0",
+                "severity": "medium",
+                "instructions": ""
+            },
+            "Artistic-2.0": {
+                "licenseType": "Artistic-2.0",
+                "severity": "medium",
+                "instructions": ""
+            },
+            "CDDL-1.0": {
+                "licenseType": "CDDL-1.0",
+                "severity": "medium",
+                "instructions": ""
+            },
+            "CPOL-1.02": {
+                "licenseType": "CPOL-1.02",
+                "severity": "high",
+                "instructions": ""
+            },
+            "EPL-1.0": {
+                "licenseType": "EPL-1.0",
+                "severity": "medium",
+                "instructions": ""
+            },
+            "GPL-2.0": {
+                "licenseType": "GPL-2.0",
+                "severity": "high",
+                "instructions": ""
+            },
+            "GPL-3.0": {
+                "licenseType": "GPL-3.0",
+                "severity": "high",
+                "instructions": ""
+            },
+            "LGPL-2.0": {
+                "licenseType": "LGPL-2.0",
+                "severity": "medium",
+                "instructions": ""
+            },
+            "LGPL-2.1": {
+                "licenseType": "LGPL-2.1",
+                "severity": "medium",
+                "instructions": ""
+            },
+            "LGPL-3.0": {
+                "licenseType": "LGPL-3.0",
+                "severity": "medium",
+                "instructions": ""
+            },
+            "MPL-1.1": {
+                "licenseType": "MPL-1.1",
+                "severity": "medium",
+                "instructions": ""
+            },
+            "MPL-2.0": {
+                "licenseType": "MPL-2.0",
+                "severity": "medium",
+                "instructions": ""
+            },
+            "MS-RL": {
+                "licenseType": "MS-RL",
+                "severity": "medium",
+                "instructions": ""
+            },
+            "SimPL-2.0": {
+                "licenseType": "SimPL-2.0",
+                "severity": "high",
+                "instructions": ""
+            }
+        }
+    },
+    "packageManager": "deb",
+    "ignoreSettings": null,
+    "docker": {
+        "binariesVulns": {
+            "issuesData": {
+                "SNYK-UPSTREAM-NODE-1009920": {
+                    "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+                    "alternativeIds": [],
+                    "creationTime": "2020-09-20T09:34:17.858905Z",
+                    "credit": [
+                        "Unknown"
+                    ],
+                    "cvssScore": 6.5,
+                    "description": "## Overview\n[node](https://nodejs.org/en/) is a JavaScript runtime built on Chrome's V8 JavaScript engine.\n\nAffected versions of this package are vulnerable to Buffer Overflow. `realpath()` implementation performs an incorrect calculation when allocating a buffer, leading to a potential buffer overflow.\n## Remediation\nUpgrade `node` to version 10.22.1, 12.18.4, 14.9.0 or higher.\n## References\n- [GitHub PR](https://github.com/libuv/libuv/pull/2966)\n- [Hackerone Report](https://hackerone.com/reports/965914)\n- [Node Security Advisory](https://nodejs.org/en/blog/vulnerability/september-2020-security-releases/)\n- [RedHat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=1879315)\n",
+                    "disclosureTime": "2020-09-15T00:00:00Z",
+                    "exploit": "Not Defined",
+                    "fixedIn": [
+                        "10.22.1",
+                        "12.18.4",
+                        "14.9.0"
+                    ],
+                    "functions": [],
+                    "functions_new": [],
+                    "id": "SNYK-UPSTREAM-NODE-1009920",
+                    "identifiers": {
+                        "CVE": [
+                            "CVE-2020-8252"
+                        ],
+                        "CWE": [
+                            "CWE-119"
+                        ]
+                    },
+                    "language": "js",
+                    "modificationTime": "2020-11-16T09:47:56.277310Z",
+                    "packageManager": "upstream",
+                    "packageName": "node",
+                    "patches": [],
+                    "publicationTime": "2020-09-16T14:54:55Z",
+                    "references": [
+                        {
+                            "title": "GitHub PR",
+                            "url": "https://github.com/libuv/libuv/pull/2966"
+                        },
+                        {
+                            "title": "Hackerone Report",
+                            "url": "https://hackerone.com/reports/965914"
+                        },
+                        {
+                            "title": "Node Security Advisory",
+                            "url": "https://nodejs.org/en/blog/vulnerability/september-2020-security-releases/"
+                        },
+                        {
+                            "title": "RedHat Bugzilla Bug",
+                            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1879315"
+                        }
+                    ],
+                    "semver": {
+                        "vulnerable": [
+                            "[, 10.22.1)",
+                            "[12.0.0, 12.18.4)",
+                            "[14.0.0,14.9.0)"
+                        ]
+                    },
+                    "severity": "medium",
+                    "severityWithCritical": "medium",
+                    "socialTrendAlert": false,
+                    "title": "Buffer Overflow"
+                },
+                "SNYK-UPSTREAM-NODE-1055465": {
+                    "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N/E:P/RL:O/RC:C",
+                    "alternativeIds": [],
+                    "creationTime": "2021-01-05T14:02:35.181696Z",
+                    "credit": [
+                        "Unknown"
+                    ],
+                    "cvssScore": 7.5,
+                    "description": "## Overview\n[node](https://nodejs.org/en/) is a JavaScript runtime built on Chrome's V8 JavaScript engine.\n\nAffected versions of this package are vulnerable to HTTP Request Smuggling. Two copies of a header field are allowed in a HTTP request, which causes `Node.js` to identifiy the first header and ignore the second.\n## Remediation\nUpgrade `node` to version 10.23.1, 12.20.1, 14.15.4, 15.5.1 or higher.\n## References\n- [GitHub Commit](https://github.com/nodejs/node/commit/051154e0e68b72cbd34068f4e2676bfb4c59439a)\n- [HTTP Request Smuggling Demystified - Snyk Blog](https://snyk.io/blog/demystifying-http-request-smuggling/)\n- [NodeJS Security Release Notes](https://nodejs.org/en/blog/vulnerability/january-2021-security-releases/)\n- [progfay's PoC](https://github.com/progfay/nodejs-http-transfer-encoding-smuggling-poc)\n- [RedHat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=1912863)\n",
+                    "disclosureTime": "2021-01-05T13:24:42Z",
+                    "exploit": "Proof of Concept",
+                    "fixedIn": [
+                        "10.23.1",
+                        "12.20.1",
+                        "14.15.4",
+                        "15.5.1"
+                    ],
+                    "functions": [],
+                    "functions_new": [],
+                    "id": "SNYK-UPSTREAM-NODE-1055465",
+                    "identifiers": {
+                        "CVE": [
+                            "CVE-2020-8287"
+                        ],
+                        "CWE": [
+                            "CWE-444"
+                        ]
+                    },
+                    "language": "js",
+                    "modificationTime": "2021-01-05T16:41:27.009952Z",
+                    "packageManager": "upstream",
+                    "packageName": "node",
+                    "patches": [],
+                    "publicationTime": "2021-01-05T16:41:27Z",
+                    "references": [
+                        {
+                            "title": "GitHub Commit",
+                            "url": "https://github.com/nodejs/node/commit/051154e0e68b72cbd34068f4e2676bfb4c59439a"
+                        },
+                        {
+                            "title": "HTTP Request Smuggling Demystified - Snyk Blog",
+                            "url": "https://snyk.io/blog/demystifying-http-request-smuggling/"
+                        },
+                        {
+                            "title": "NodeJS Security Release Notes",
+                            "url": "https://nodejs.org/en/blog/vulnerability/january-2021-security-releases/"
+                        },
+                        {
+                            "title": "progfay's PoC",
+                            "url": "https://github.com/progfay/nodejs-http-transfer-encoding-smuggling-poc"
+                        },
+                        {
+                            "title": "RedHat Bugzilla Bug",
+                            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1912863"
+                        }
+                    ],
+                    "semver": {
+                        "vulnerable": [
+                            "[,10.23.1)",
+                            "[11.0.0, 12.20.1)",
+                            "[13.0.0, 14.15.4)",
+                            "[15.0.0, 15.5.1)"
+                        ]
+                    },
+                    "severity": "high",
+                    "severityWithCritical": "high",
+                    "socialTrendAlert": false,
+                    "title": "HTTP Request Smuggling"
+                },
+                "SNYK-UPSTREAM-NODE-1055471": {
+                    "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+                    "alternativeIds": [],
+                    "creationTime": "2021-01-05T14:13:21.175859Z",
+                    "credit": [
+                        "Unknown"
+                    ],
+                    "cvssScore": 5.9,
+                    "description": "## Overview\n[node](https://nodejs.org/en/) is a JavaScript runtime built on Chrome's V8 JavaScript engine.\n\nAffected versions of this package are vulnerable to Use After Free. When writing to a TLS enabled socket, `node::StreamBase::Write` calls `node::TLSWrap::DoWrite` with a freshly allocated `WriteWrap` object as first argument. If the `DoWrite` method does not return an error, this object is passed back to the caller as part of a `StreamWriteResult` structure. This may be exploited to corrupt memory.\n## Remediation\nUpgrade `node` to version 10.23.1, 12.20.1, 14.15.4, 15.5.1 or higher.\n## References\n- [GitHub Commit](https://github.com/nodejs/node/commit/b0ac080fa77286dbc92b0beb49d1bb4d69c5784e)\n",
+                    "disclosureTime": "2021-01-05T13:37:32Z",
+                    "exploit": "Not Defined",
+                    "fixedIn": [
+                        "10.23.1",
+                        "12.20.1",
+                        "14.15.4",
+                        "15.5.1"
+                    ],
+                    "functions": [],
+                    "functions_new": [],
+                    "id": "SNYK-UPSTREAM-NODE-1055471",
+                    "identifiers": {
+                        "CVE": [
+                            "CVE-2020-8265"
+                        ],
+                        "CWE": [
+                            "CWE-416"
+                        ]
+                    },
+                    "language": "js",
+                    "modificationTime": "2021-01-05T16:41:26.368647Z",
+                    "packageManager": "upstream",
+                    "packageName": "node",
+                    "patches": [],
+                    "publicationTime": "2021-01-05T16:41:26.557293Z",
+                    "references": [
+                        {
+                            "title": "GitHub Commit",
+                            "url": "https://github.com/nodejs/node/commit/b0ac080fa77286dbc92b0beb49d1bb4d69c5784e"
+                        }
+                    ],
+                    "semver": {
+                        "vulnerable": [
+                            "[,10.23.1)",
+                            "[11.0.0, 12.20.1)",
+                            "[13.0.0, 14.15.4)",
+                            "[15.0.0, 15.5.1)"
+                        ]
+                    },
+                    "severity": "medium",
+                    "severityWithCritical": "medium",
+                    "socialTrendAlert": false,
+                    "title": "Use After Free"
+                },
+                "SNYK-UPSTREAM-NODE-1078517": {
+                    "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+                    "alternativeIds": [],
+                    "creationTime": "2021-02-23T16:15:02.894000Z",
+                    "credit": [
+                        "OMICRON electronics"
+                    ],
+                    "cvssScore": 7.5,
+                    "description": "## Overview\n[node](https://nodejs.org/en/) is a JavaScript runtime built on Chrome's V8 JavaScript engine.\n\nAffected versions of this package are vulnerable to Denial of Service (DoS). When too many connection attempts with an HTTP2 `unknownProtocol` are established. This leads to a leak of file descriptors. If a file descriptor limit is configured on the system, then the server is unable to accept new connections and prevent the process also from opening. If no file descriptor limit is configured, then this leads to an excessive memory usage and causes the system to run out of memory.\n\n## Details\n\nDenial of Service (DoS) describes a family of attacks, all aimed at making a system inaccessible to its intended and legitimate users.\n\nUnlike other vulnerabilities, DoS attacks usually do not aim at breaching security. Rather, they are focused on making websites and services unavailable to genuine users resulting in downtime.\n\nOne popular Denial of Service vulnerability is DDoS (a Distributed Denial of Service), an attack that attempts to clog network pipes to the system by generating a large volume of traffic from many machines.\n\nWhen it comes to open source libraries, DoS vulnerabilities allow attackers to trigger such a crash or crippling of the service by using a flaw either in the application code or from the use of open source libraries.\n\nTwo common types of DoS vulnerabilities:\n\n* High CPU/Memory Consumption- An attacker sending crafted requests that could cause the system to take a disproportionate amount of time to process. For example, [commons-fileupload:commons-fileupload](SNYK-JAVA-COMMONSFILEUPLOAD-30082).\n\n* Crash - An attacker sending crafted requests that could cause the system to crash. For Example,  [npm `ws` package](https://snyk.io/vuln/npm:ws:20171108)\n\n## Remediation\nUpgrade `node` to version 15.10.0, 14.16.0, 12.21.0, 10.24.0 or higher.\n## References\n- [GitHub Commit](https://github.com/nodejs/node/commit/4184806dee)\n- [NodeJS Security Release](https://nodejs.org/en/blog/vulnerability/february-2021-security-releases/)\n",
+                    "disclosureTime": null,
+                    "exploit": "Not Defined",
+                    "fixedIn": [
+                        "15.10.0",
+                        "14.16.0",
+                        "12.21.0",
+                        "10.24.0"
+                    ],
+                    "functions": [],
+                    "functions_new": [],
+                    "id": "SNYK-UPSTREAM-NODE-1078517",
+                    "identifiers": {
+                        "CVE": [
+                            "CVE-2021-22883"
+                        ],
+                        "CWE": [
+                            "CWE-400"
+                        ]
+                    },
+                    "language": "js",
+                    "modificationTime": "2021-02-23T16:42:38.236000Z",
+                    "packageManager": "upstream",
+                    "packageName": "node",
+                    "patches": [],
+                    "publicationTime": "2021-02-23T16:42:38.451000Z",
+                    "references": [
+                        {
+                            "title": "GitHub Commit",
+                            "url": "https://github.com/nodejs/node/commit/4184806dee"
+                        },
+                        {
+                            "title": "NodeJS Security Release",
+                            "url": "https://nodejs.org/en/blog/vulnerability/february-2021-security-releases/"
+                        }
+                    ],
+                    "semver": {
+                        "vulnerable": [
+                            "[15.0.0, 15.10.0)",
+                            "[14.0.0, 14.16.0)",
+                            "[12.0.0, 12.21.0)",
+                            "[10.0.0, 10.24.0)"
+                        ]
+                    },
+                    "severity": "high",
+                    "severityWithCritical": "high",
+                    "socialTrendAlert": false,
+                    "title": "Denial of Service (DoS)"
+                },
+                "SNYK-UPSTREAM-NODE-1078518": {
+                    "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+                    "alternativeIds": [],
+                    "creationTime": "2021-02-23T16:20:36.011000Z",
+                    "credit": [
+                        "Vít Šesták"
+                    ],
+                    "cvssScore": 5.9,
+                    "description": "## Overview\n[node](https://nodejs.org/en/) is a JavaScript runtime built on Chrome's V8 JavaScript engine.\n\nAffected versions of this package are vulnerable to DNS Rebinding. A Denial of Service can occur when the whitelist in `/etc/hosts` includes `localhost6`. If an attacker controls the victim's DNS server or can spoof its responses, the DNS rebinding protection can be bypassed by using the `localhost6` domain.\n## Remediation\nUpgrade `node` to version 15.10.0, 14.16.0, 12.21.0, 10.24.0 or higher.\n## References\n- [GitHub Commit](https://github.com/nodejs/node/commit/43ae9c46c3)\n- [NodeJS Security Release](https://nodejs.org/en/blog/vulnerability/february-2021-security-releases/)\n",
+                    "disclosureTime": null,
+                    "exploit": "Not Defined",
+                    "fixedIn": [
+                        "15.10.0",
+                        "14.16.0",
+                        "12.21.0",
+                        "10.24.0"
+                    ],
+                    "functions": [],
+                    "functions_new": [],
+                    "id": "SNYK-UPSTREAM-NODE-1078518",
+                    "identifiers": {
+                        "CVE": [
+                            "CVE-2021-22884"
+                        ],
+                        "CWE": [
+                            "CWE-350"
+                        ]
+                    },
+                    "language": "js",
+                    "modificationTime": "2021-02-23T16:42:37.586000Z",
+                    "packageManager": "upstream",
+                    "packageName": "node",
+                    "patches": [],
+                    "publicationTime": "2021-02-23T16:42:37.794000Z",
+                    "references": [
+                        {
+                            "title": "GitHub Commit",
+                            "url": "https://github.com/nodejs/node/commit/43ae9c46c3"
+                        },
+                        {
+                            "title": "NodeJS Security Release",
+                            "url": "https://nodejs.org/en/blog/vulnerability/february-2021-security-releases/"
+                        }
+                    ],
+                    "semver": {
+                        "vulnerable": [
+                            "[15.0.0, 15.10.0)",
+                            "[14.0.0, 14.16.0)",
+                            "[12.0.0, 12.21.0)",
+                            "[10.0.0, 10.24.0)"
+                        ]
+                    },
+                    "severity": "medium",
+                    "severityWithCritical": "medium",
+                    "socialTrendAlert": false,
+                    "title": "DNS Rebinding"
+                },
+                "SNYK-UPSTREAM-NODE-1078519": {
+                    "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+                    "alternativeIds": [],
+                    "creationTime": "2021-02-23T16:34:57.725000Z",
+                    "credit": [
+                        "Paul Kehrer"
+                    ],
+                    "cvssScore": 3.7,
+                    "description": "## Overview\n[node](https://nodejs.org/en/) is a JavaScript runtime built on Chrome's V8 JavaScript engine.\n\nAffected versions of this package are vulnerable to Buffer Overflow. Calls to `EVP_CipherUpdate`, `EVP_EncryptUpdate` and `EVP_DecryptUpdate` may overflow the output length argument in some cases where the input length is close to the maximum permissable length for an integer on the platform. In such cases the return value from the function call will be 1 (indicating success), but the output length value will be negative. This could cause applications to behave incorrectly or crash.\n## Remediation\nUpgrade `node` to version 15.10.0, 14.16.0, 12.21.0, 10.24.0 or higher.\n## References\n- [GitHub Commit](https://github.com/nodejs/node/commit/afbce66874)\n- [NodeJS Security Release](https://nodejs.org/en/blog/vulnerability/february-2021-security-releases/)\n",
+                    "disclosureTime": null,
+                    "exploit": "Not Defined",
+                    "fixedIn": [
+                        "15.10.0",
+                        "14.16.0",
+                        "12.21.0",
+                        "10.24.0"
+                    ],
+                    "functions": [],
+                    "functions_new": [],
+                    "id": "SNYK-UPSTREAM-NODE-1078519",
+                    "identifiers": {
+                        "CVE": [
+                            "CVE-2021-23840"
+                        ],
+                        "CWE": [
+                            "CWE-121"
+                        ]
+                    },
+                    "language": "js",
+                    "modificationTime": "2021-02-23T16:42:37.805000Z",
+                    "packageManager": "upstream",
+                    "packageName": "node",
+                    "patches": [],
+                    "publicationTime": "2021-02-23T16:42:38.003000Z",
+                    "references": [
+                        {
+                            "title": "GitHub Commit",
+                            "url": "https://github.com/nodejs/node/commit/afbce66874"
+                        },
+                        {
+                            "title": "NodeJS Security Release",
+                            "url": "https://nodejs.org/en/blog/vulnerability/february-2021-security-releases/"
+                        }
+                    ],
+                    "semver": {
+                        "vulnerable": [
+                            "[15.0.0, 15.10.0)",
+                            "[14.0.0, 14.16.0)",
+                            "[12.0.0, 12.21.0)",
+                            "[10.0.0, 10.24.0)"
+                        ]
+                    },
+                    "severity": "low",
+                    "severityWithCritical": "low",
+                    "socialTrendAlert": false,
+                    "title": "Buffer Overflow"
+                },
+                "SNYK-UPSTREAM-NODE-1243765": {
+                    "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+                    "alternativeIds": [],
+                    "creationTime": "2021-04-07T12:29:57.307199Z",
+                    "credit": [
+                        "Xiang Ding"
+                    ],
+                    "cvssScore": 7.4,
+                    "description": "## Overview\n[node](https://nodejs.org/en/) is a JavaScript runtime built on Chrome's V8 JavaScript engine.\n\nAffected versions of this package are vulnerable to Improper Certificate Validation. There is insufficient verification of a certificate chain when using the `X509_V_FLAG_X509_STRICT` flag.\n## Remediation\nUpgrade `node` to version 15.14.0, 14.16.1, 12.22.1, 10.24.1 or higher.\n## References\n- [GitHub Commit](https://github.com/nodejs/node/commit/6f2085dc985c40b085802454079201266363face)\n- [NodeJS Security Release](https://nodejs.org/en/blog/vulnerability/april-2021-security-releases/)\n",
+                    "disclosureTime": null,
+                    "exploit": "Not Defined",
+                    "fixedIn": [
+                        "15.14.0",
+                        "14.16.1",
+                        "12.22.1",
+                        "10.24.1"
+                    ],
+                    "functions": [],
+                    "functions_new": [],
+                    "id": "SNYK-UPSTREAM-NODE-1243765",
+                    "identifiers": {
+                        "CVE": [
+                            "CVE-2021-3450"
+                        ],
+                        "CWE": [
+                            "CWE-295"
+                        ]
+                    },
+                    "language": "js",
+                    "modificationTime": "2021-04-07T14:48:15.927539Z",
+                    "packageManager": "upstream",
+                    "packageName": "node",
+                    "patches": [],
+                    "publicationTime": "2021-04-07T12:20:12Z",
+                    "references": [
+                        {
+                            "title": "GitHub Commit",
+                            "url": "https://github.com/nodejs/node/commit/6f2085dc985c40b085802454079201266363face"
+                        },
+                        {
+                            "title": "NodeJS Security Release",
+                            "url": "https://nodejs.org/en/blog/vulnerability/april-2021-security-releases/"
+                        }
+                    ],
+                    "semver": {
+                        "vulnerable": [
+                            "[15.0.0,15.14.0)",
+                            "[13.0.0,14.16.1)",
+                            "[12.0.0,12.22.1)",
+                            "[,10.24.1)"
+                        ]
+                    },
+                    "severity": "high",
+                    "severityWithCritical": "high",
+                    "socialTrendAlert": false,
+                    "title": "Improper Certificate Validation"
+                },
+                "SNYK-UPSTREAM-NODE-1243766": {
+                    "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+                    "alternativeIds": [],
+                    "creationTime": "2021-04-07T12:45:04.116578Z",
+                    "credit": [
+                        "Nokia"
+                    ],
+                    "cvssScore": 5.9,
+                    "description": "## Overview\n[node](https://nodejs.org/en/) is a JavaScript runtime built on Chrome's V8 JavaScript engine.\n\nAffected versions of this package are vulnerable to NULL Pointer Dereference. If sent a maliciously crafted renegotiation `ClientHello` message from a client, an OpenSSL TLS server may crash.\r\nIf a TLSv1.2 renegotiation `ClientHello` omits the `signature_algorithms` extension (where it was present in the initial `ClientHello`), but includes a `signature_algorithms_cert` extension then a NULL pointer dereference will result, leading to a crash and a Denial of Service.\n## Remediation\nUpgrade `node` to version 15.14.0, 14.16.1, 12.22.1, 10.24.1 or higher.\n## References\n- [GitHub Commit](https://github.com/nodejs/node/commit/6f2085dc985c40b085802454079201266363face)\n- [NodeJS Security Release](https://nodejs.org/en/blog/vulnerability/april-2021-security-releases/)\n",
+                    "disclosureTime": null,
+                    "exploit": "Not Defined",
+                    "fixedIn": [
+                        "15.14.0",
+                        "14.16.1",
+                        "12.22.1",
+                        "10.24.1"
+                    ],
+                    "functions": [],
+                    "functions_new": [],
+                    "id": "SNYK-UPSTREAM-NODE-1243766",
+                    "identifiers": {
+                        "CVE": [
+                            "CVE-2021-3449"
+                        ],
+                        "CWE": [
+                            "CWE-476"
+                        ]
+                    },
+                    "language": "js",
+                    "modificationTime": "2021-04-07T14:48:15.367695Z",
+                    "packageManager": "upstream",
+                    "packageName": "node",
+                    "patches": [],
+                    "publicationTime": "2021-04-07T12:36:43Z",
+                    "references": [
+                        {
+                            "title": "GitHub Commit",
+                            "url": "https://github.com/nodejs/node/commit/6f2085dc985c40b085802454079201266363face"
+                        },
+                        {
+                            "title": "NodeJS Security Release",
+                            "url": "https://nodejs.org/en/blog/vulnerability/april-2021-security-releases/"
+                        }
+                    ],
+                    "semver": {
+                        "vulnerable": [
+                            "[15.0.0,15.14.0)",
+                            "[13.0.0,14.16.1)",
+                            "[12.0.0,12.22.1)",
+                            "[,10.24.1)"
+                        ]
+                    },
+                    "severity": "medium",
+                    "severityWithCritical": "medium",
+                    "socialTrendAlert": false,
+                    "title": "NULL Pointer Dereference"
+                },
+                "SNYK-UPSTREAM-NODE-1315789": {
+                    "CVSSv3": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:P/RL:O/RC:C",
+                    "alternativeIds": [],
+                    "creationTime": "2021-07-02T12:34:28.252477Z",
+                    "credit": [
+                        "Unknown"
+                    ],
+                    "cvssScore": 8.4,
+                    "description": "## Overview\n[node](https://nodejs.org/en/) is a JavaScript runtime built on Chrome's V8 JavaScript engine.\n\nAffected versions of this package are vulnerable to Privilege Escalation under certain conditions on Windows platforms. More specifically, improper configuration of permissions in the installation directory allows an attacker to perform two different escalation attacks: `PATH` variable hijacking and DLL hijacking.\n## Remediation\nUpgrade `node` to version 16.4.1, 14.17.2, 12.22.2 or higher.\n## References\n- [GitHub Commit](https://github.com/nodejs/node/commit/a52790cba097d20c246645827397ffc19fc2e7d9)\n- [GitHub Release](https://github.com/nodejs/node/releases/tag/v12.22.2)\n- [GitHub Release](https://github.com/nodejs/node/releases/tag/v14.17.2)\n- [GitHub Release](https://github.com/nodejs/node/releases/tag/v16.4.1)\n- [HackerOne Report](https://hackerone.com/reports/1211160)\n- [Node.js Security Releases](https://nodejs.org/en/blog/vulnerability/july-2021-security-releases/)\n",
+                    "disclosureTime": "2021-07-02T12:25:44Z",
+                    "exploit": "Proof of Concept",
+                    "fixedIn": [
+                        "16.4.1",
+                        "14.17.2",
+                        "12.22.2"
+                    ],
+                    "functions": [],
+                    "functions_new": [],
+                    "id": "SNYK-UPSTREAM-NODE-1315789",
+                    "identifiers": {
+                        "CVE": [
+                            "CVE-2021-22921"
+                        ],
+                        "CWE": [
+                            "CWE-264"
+                        ]
+                    },
+                    "language": "js",
+                    "modificationTime": "2021-07-02T12:46:08.148363Z",
+                    "packageManager": "upstream",
+                    "packageName": "node",
+                    "patches": [],
+                    "publicationTime": "2021-07-02T12:46:08Z",
+                    "references": [
+                        {
+                            "title": "GitHub Commit",
+                            "url": "https://github.com/nodejs/node/commit/a52790cba097d20c246645827397ffc19fc2e7d9"
+                        },
+                        {
+                            "title": "GitHub Release",
+                            "url": "https://github.com/nodejs/node/releases/tag/v12.22.2"
+                        },
+                        {
+                            "title": "GitHub Release",
+                            "url": "https://github.com/nodejs/node/releases/tag/v14.17.2"
+                        },
+                        {
+                            "title": "GitHub Release",
+                            "url": "https://github.com/nodejs/node/releases/tag/v16.4.1"
+                        },
+                        {
+                            "title": "HackerOne Report",
+                            "url": "https://hackerone.com/reports/1211160"
+                        },
+                        {
+                            "title": "Node.js Security Releases",
+                            "url": "https://nodejs.org/en/blog/vulnerability/july-2021-security-releases/"
+                        }
+                    ],
+                    "semver": {
+                        "vulnerable": [
+                            "[15.0.0,16.4.1)",
+                            "[13.0.0,14.17.2)",
+                            "[,12.22.2)"
+                        ]
+                    },
+                    "severity": "high",
+                    "severityWithCritical": "high",
+                    "socialTrendAlert": false,
+                    "title": "Privilege Escalation"
+                },
+                "SNYK-UPSTREAM-NODE-1315790": {
+                    "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:H",
+                    "alternativeIds": [],
+                    "creationTime": "2021-07-02T12:39:52.939982Z",
+                    "credit": [
+                        "Unknown"
+                    ],
+                    "cvssScore": 8.2,
+                    "description": "## Overview\n[node](https://nodejs.org/en/) is a JavaScript runtime built on Chrome's V8 JavaScript engine.\n\nAffected versions of this package are vulnerable to Out-of-bounds Read in libuv's `uv__idna_toascii()` function which is used to convert strings to ASCII. This is called by Node's `dns` module's `lookup()` function and can lead to information disclosures or crashes.\n## Remediation\nUpgrade `node` to version 16.4.1, 14.17.2, 12.22.2 or higher.\n## References\n- [GitHub Commit](https://github.com/nodejs/node/commit/d33aead28bcec32a2a450f884907a6d971631829)\n- [GitHub Release](https://github.com/nodejs/node/releases/tag/v12.22.2)\n- [GitHub Release](https://github.com/nodejs/node/releases/tag/v14.17.2)\n- [GitHub Release](https://github.com/nodejs/node/releases/tag/v16.4.1)\n- [HackerOne Report](https://hackerone.com/reports/1209681)\n- [Node.js Security Releases](https://nodejs.org/en/blog/vulnerability/july-2021-security-releases/)\n",
+                    "disclosureTime": "2021-07-02T12:34:50Z",
+                    "exploit": "Not Defined",
+                    "fixedIn": [
+                        "16.4.1",
+                        "14.17.2",
+                        "12.22.2"
+                    ],
+                    "functions": [],
+                    "functions_new": [],
+                    "id": "SNYK-UPSTREAM-NODE-1315790",
+                    "identifiers": {
+                        "CVE": [
+                            "CVE-2021-22918"
+                        ],
+                        "CWE": [
+                            "CWE-125"
+                        ]
+                    },
+                    "language": "js",
+                    "modificationTime": "2021-07-02T14:31:24.071166Z",
+                    "packageManager": "upstream",
+                    "packageName": "node",
+                    "patches": [],
+                    "publicationTime": "2021-07-02T14:31:24.361748Z",
+                    "references": [
+                        {
+                            "title": "GitHub Commit",
+                            "url": "https://github.com/nodejs/node/commit/d33aead28bcec32a2a450f884907a6d971631829"
+                        },
+                        {
+                            "title": "GitHub Release",
+                            "url": "https://github.com/nodejs/node/releases/tag/v12.22.2"
+                        },
+                        {
+                            "title": "GitHub Release",
+                            "url": "https://github.com/nodejs/node/releases/tag/v14.17.2"
+                        },
+                        {
+                            "title": "GitHub Release",
+                            "url": "https://github.com/nodejs/node/releases/tag/v16.4.1"
+                        },
+                        {
+                            "title": "HackerOne Report",
+                            "url": "https://hackerone.com/reports/1209681"
+                        },
+                        {
+                            "title": "Node.js Security Releases",
+                            "url": "https://nodejs.org/en/blog/vulnerability/july-2021-security-releases/"
+                        }
+                    ],
+                    "semver": {
+                        "vulnerable": [
+                            "[15.0.0,16.4.1)",
+                            "[13.0.0,14.17.2)",
+                            "[,12.22.2)"
+                        ]
+                    },
+                    "severity": "high",
+                    "severityWithCritical": "high",
+                    "socialTrendAlert": false,
+                    "title": "Out-of-bounds Read"
+                }
+            },
+            "affectedPkgs": {
+                "node@10.22.0": {
+                    "pkg": {
+                        "name": "node",
+                        "version": "10.22.0"
+                    },
+                    "issues": {
+                        "SNYK-UPSTREAM-NODE-1009920": {
+                            "issueId": "SNYK-UPSTREAM-NODE-1009920",
+                            "fixInfo": {
+                                "isPatchable": false,
+                                "upgradePaths": [],
+                                "isPinnable": false
+                            }
+                        },
+                        "SNYK-UPSTREAM-NODE-1055465": {
+                            "issueId": "SNYK-UPSTREAM-NODE-1055465",
+                            "fixInfo": {
+                                "isPatchable": false,
+                                "upgradePaths": [],
+                                "isPinnable": false
+                            }
+                        },
+                        "SNYK-UPSTREAM-NODE-1055471": {
+                            "issueId": "SNYK-UPSTREAM-NODE-1055471",
+                            "fixInfo": {
+                                "isPatchable": false,
+                                "upgradePaths": [],
+                                "isPinnable": false
+                            }
+                        },
+                        "SNYK-UPSTREAM-NODE-1078517": {
+                            "issueId": "SNYK-UPSTREAM-NODE-1078517",
+                            "fixInfo": {
+                                "isPatchable": false,
+                                "upgradePaths": [
+                                    {
+                                        "path": [
+                                            {
+                                                "name": "docker-image|contrastsecuritydemo/nodegoat",
+                                                "version": "1.3.0"
+                                            },
+                                            {
+                                                "name": "node",
+                                                "version": "10.22.0",
+                                                "newVersion": "10.24.0"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "nearestFixedInVersion": "10.24.0",
+                                "isPinnable": false
+                            }
+                        },
+                        "SNYK-UPSTREAM-NODE-1078518": {
+                            "issueId": "SNYK-UPSTREAM-NODE-1078518",
+                            "fixInfo": {
+                                "isPatchable": false,
+                                "upgradePaths": [
+                                    {
+                                        "path": [
+                                            {
+                                                "name": "docker-image|contrastsecuritydemo/nodegoat",
+                                                "version": "1.3.0"
+                                            },
+                                            {
+                                                "name": "node",
+                                                "version": "10.22.0",
+                                                "newVersion": "10.24.0"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "nearestFixedInVersion": "10.24.0",
+                                "isPinnable": false
+                            }
+                        },
+                        "SNYK-UPSTREAM-NODE-1078519": {
+                            "issueId": "SNYK-UPSTREAM-NODE-1078519",
+                            "fixInfo": {
+                                "isPatchable": false,
+                                "upgradePaths": [
+                                    {
+                                        "path": [
+                                            {
+                                                "name": "docker-image|contrastsecuritydemo/nodegoat",
+                                                "version": "1.3.0"
+                                            },
+                                            {
+                                                "name": "node",
+                                                "version": "10.22.0",
+                                                "newVersion": "10.24.0"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "nearestFixedInVersion": "10.24.0",
+                                "isPinnable": false
+                            }
+                        },
+                        "SNYK-UPSTREAM-NODE-1243765": {
+                            "issueId": "SNYK-UPSTREAM-NODE-1243765",
+                            "fixInfo": {
+                                "isPatchable": false,
+                                "upgradePaths": [],
+                                "isPinnable": false
+                            }
+                        },
+                        "SNYK-UPSTREAM-NODE-1243766": {
+                            "issueId": "SNYK-UPSTREAM-NODE-1243766",
+                            "fixInfo": {
+                                "isPatchable": false,
+                                "upgradePaths": [],
+                                "isPinnable": false
+                            }
+                        },
+                        "SNYK-UPSTREAM-NODE-1315789": {
+                            "issueId": "SNYK-UPSTREAM-NODE-1315789",
+                            "fixInfo": {
+                                "isPatchable": false,
+                                "upgradePaths": [],
+                                "isPinnable": false
+                            }
+                        },
+                        "SNYK-UPSTREAM-NODE-1315790": {
+                            "issueId": "SNYK-UPSTREAM-NODE-1315790",
+                            "fixInfo": {
+                                "isPatchable": false,
+                                "upgradePaths": [],
+                                "isPinnable": false
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "summary": "3527 vulnerable dependency paths",
+    "filesystemPolicy": false,
+    "filtered": {
+        "ignore": [],
+        "patch": []
+    },
+    "uniqueCount": 500,
+    "projectName": "docker-image|contrastsecuritydemo/nodegoat",
+    "platform": "linux/amd64",
+    "path": "contrastsecuritydemo/nodegoat:1.3.0/nodegoat"
+}

@@ -1,0 +1,14 @@
+App Name: BitbarIOSSample - PreProd,,,,,,,,,,,
+Platform: IOS,,,,,,,,,,,
+ScanDate: 07/28/2020,,,,,,,,,,,
+App Version: 1.0,,,,,,,,,,,
+Package ID: com.bitbar.testdroid.BitbarIOSSample,,,,,,,,,,,
+Release Type: PRE_PROD,,,,,,,,,,,
+ID,Category,Title,Severity,CvssScore,Priority,Exploitability,Status,Aging,Description,Reproduction,Recommendation
+796,DATA_AT_REST_EXPOSURE,Enable Data Protection Entitlement,MEDIUM,3,,MODERATE,OPEN,,The Data Protection entitlement is not enabled within the Xcode project for the App. ,,Enable the Data Protection entitlement in the Xcode project configuration of the App.
+2825,DATA_LOSS_TO_HACKERS,Automatic Reference Counting (ARC) not Enabled,MEDIUM,5,,MODERATE,OPEN,,The App is compiled with Automatic Reference Counting (ARC) disabled.,,Enable ARC within the App's compilation settings: 
+8532,DATA_EXPOSURE_TO_THIRD_PARTY_APPS,Disable Third-Party Keyboards,MEDIUM,4,,MODERATE,OPEN,,The App does not disable custom keyboards.,,If most of the user's keystrokes within the App may contain sensitive data 
+1796,DATA_LOSS_TO_HACKERS,Enable Two-Factor Authentication Input Field,LOW,4,,MODERATE,OPEN,,The App does not specify a text field marked as a two-factor authentication code input field.  ,,Ensure two-factor authentication is offered or enforced in your service.
+8674,DATA_AT_REST_EXPOSURE,App Store Blocker - App Must Adapt to Different Screen Sizes,LOW,1,,DIFFICULT,OPEN,, all Apps must use an Xcode storyboard to provide the App's launch screen  and must use the Auto Layout APIs to provide an adaptive UI.,,Leverage the system APIs which inform the App about changes in the available screen space  such as `traitCollectionDidChange:`  and layout the App's UI accordingly. 
+8326,DATA_LOSS_TO_HACKERS,App Store Blocker: App Built with Deprecated iOS SDK,LOW,3,,DIFFICULT,OPEN,,The App was compiled with an iOS SDK older than iOS 12.1.,,Recompile the App with the highest iOS SDK version available and do not rely on functionality only present in older SDK versions.
+8871,DATA_LOSS_TO_HACKERS,Enable System-Managed Login Input Fields,LOW,3,,DIFFICULT,OPEN,,The App does not specify text fields marked as username and password input fields.,,Automate the process of generating secure passwords and inputting login credentials for your users.

@@ -1,0 +1,1694 @@
+[
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_auditoptions": {
+                            "auditActions": [],
+                            "auditProcessing": false,
+                            "canAudit": false,
+                            "canChallenge": false,
+                            "canEdit": false,
+                            "inAuditMode": false,
+                            "releaseId": 174280,
+                            "vulnId": "drop"
+                        },
+                        "_raw_details": {
+                            "analyzerName": "sonatype",
+                            "complianceCategories": [
+                                {
+                                    "categoryName": "OWASP 2017",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "A9 - Using Components with Known Vulnerabilities"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "categoryName": "PCI 3.2",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "6.2 - Known Vulnerabilities"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "categoryName": "CWE",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "CWE-611"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "confidence": null,
+                            "explanation": "first",
+                            "impact": null,
+                            "instanceId": "vegetable",
+                            "isStatic": false,
+                            "probability": null,
+                            "releaseId": 174280,
+                            "ruleId": "heel",
+                            "severity": null,
+                            "sink": "first",
+                            "source": null,
+                            "summary": "safety",
+                            "vulnId": "drop"
+                        },
+                        "_raw_headers": {
+                            "releaseId": 174280,
+                            "requestHeaders": null,
+                            "responseHeaders": null,
+                            "vulnId": "drop"
+                        },
+                        "_raw_parameters": {
+                            "postParameters": null,
+                            "queryParameters": null,
+                            "releaseId": 174280,
+                            "vulnId": "drop"
+                        },
+                        "_raw_recommendations": {
+                            "isStatic": false,
+                            "recommendations": null,
+                            "references": "<ol><li><a href=\"https://nvd.nist.gov/vuln/detail/CVE-2017-9096\" target=\"_blank\">https://nvd.nist.gov/vuln/detail/CVE-2017-9096</a></li><li><a href=\"https://cwe.mitre.org/data/definitions/611.html\" target=\"_blank\">https://cwe.mitre.org/data/definitions/611.html</a></li></ol>",
+                            "releaseId": 174280,
+                            "tips": "first",
+                            "vulnId": "drop"
+                        },
+                        "_raw_requestresponse": {
+                            "releaseId": 174280,
+                            "requestContent": "first",
+                            "responseContent": "first",
+                            "vulnId": "drop"
+                        },
+                        "_raw_summary": {
+                            "assignedUser": "(Not Set)",
+                            "auditPending": false,
+                            "auditPendingAuditorStatus": null,
+                            "auditPendingSeverity": null,
+                            "auditPendingSuppression": null,
+                            "auditorStatus": "Pending Review",
+                            "bugLink": "",
+                            "bugSubmitted": false,
+                            "comments": null,
+                            "developerStatus": "Open",
+                            "isSuppressed": false,
+                            "lineNumber": null,
+                            "notes": "first",
+                            "primaryLocation": "last",
+                            "primaryLocationFull": "productive",
+                            "releaseId": 174280,
+                            "severity": "High",
+                            "vulnId": "drop"
+                        },
+                        "compliance_categories": [
+                            {
+                                "categoryName": "OWASP 2017",
+                                "complianceItems": [
+                                    {
+                                        "complianceRule": "A9 - Using Components with Known Vulnerabilities"
+                                    }
+                                ]
+                            },
+                            {
+                                "categoryName": "PCI 3.2",
+                                "complianceItems": [
+                                    {
+                                        "complianceRule": "6.2 - Known Vulnerabilities"
+                                    }
+                                ]
+                            },
+                            {
+                                "categoryName": "CWE",
+                                "complianceItems": [
+                                    {
+                                        "complianceRule": "CWE-611"
+                                    }
+                                ]
+                            }
+                        ],
+                        "issue_description": "safety",
+                        "reference_identifiers": [
+                            {
+                                "id": "2017-9096",
+                                "type": "cve"
+                            },
+                            {
+                                "id": "611",
+                                "type": "cwe"
+                            }
+                        ],
+                        "references": "<ol><li><a href=\"https://nvd.nist.gov/vuln/detail/CVE-2017-9096\" target=\"_blank\">https://nvd.nist.gov/vuln/detail/CVE-2017-9096</a></li><li><a href=\"https://cwe.mitre.org/data/definitions/611.html\" target=\"_blank\">https://cwe.mitre.org/data/definitions/611.html</a></li></ol>",
+                        "vulnId": "drop"
+                    }
+                ]
+            },
+            {
+                "key": "issue_details",
+                "value": "first"
+            },
+            {
+                "key": "raw_severity",
+                "value": null
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "ruleId"
+                ]
+            },
+            {
+                "key": "analyzer_name",
+                "value": "sonatype"
+            },
+            {
+                "key": "recommendations",
+                "value": null
+            },
+            {
+                "key": "auditor_status",
+                "value": "Pending Review"
+            },
+            {
+                "key": "assigned_user",
+                "value": "(Not Set)"
+            },
+            {
+                "key": "primaryLocationFull",
+                "value": "productive"
+            },
+            {
+                "key": "developerStatus",
+                "value": "Open"
+            },
+            {
+                "key": "bugSubmitted",
+                "value": false
+            },
+            {
+                "key": "bugLink",
+                "value": ""
+            },
+            {
+                "key": "releaseId",
+                "value": 174280
+            },
+            {
+                "key": "impact",
+                "value": null
+            },
+            {
+                "key": "probability",
+                "value": null
+            },
+            {
+                "key": "traces",
+                "value": null
+            },
+            {
+                "key": "category",
+                "value": null
+            },
+            {
+                "key": "rule_id",
+                "value": "heel"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "safety",
+        "issueName": "first_last",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "heel",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortifyondemand",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "2017-9096",
+                "type": "cve"
+            },
+            {
+                "id": "611",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "first",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": 8.0,
+        "scanStatus": null,
+        "scanTool": "fortifyondemand",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 8.0,
+        "severityCode": "High",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": "productive",
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_auditoptions": {
+                            "auditActions": [],
+                            "auditProcessing": false,
+                            "canAudit": false,
+                            "canChallenge": false,
+                            "canEdit": false,
+                            "inAuditMode": false,
+                            "releaseId": 174280,
+                            "vulnId": "refrigerator"
+                        },
+                        "_raw_details": {
+                            "analyzerName": "sonatype",
+                            "complianceCategories": [
+                                {
+                                    "categoryName": "OWASP 2017",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "A9 - Using Components with Known Vulnerabilities"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "categoryName": "PCI 3.2",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "6.2 - Known Vulnerabilities"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "categoryName": "CWE",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "CWE-79"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "confidence": null,
+                            "explanation": "first",
+                            "impact": null,
+                            "instanceId": "warrant",
+                            "isStatic": false,
+                            "probability": null,
+                            "releaseId": 174280,
+                            "ruleId": "left",
+                            "severity": null,
+                            "sink": "first",
+                            "source": null,
+                            "summary": "praise",
+                            "vulnId": "refrigerator"
+                        },
+                        "_raw_headers": {
+                            "releaseId": 174280,
+                            "requestHeaders": null,
+                            "responseHeaders": null,
+                            "vulnId": "refrigerator"
+                        },
+                        "_raw_parameters": {
+                            "postParameters": null,
+                            "queryParameters": null,
+                            "releaseId": 174280,
+                            "vulnId": "refrigerator"
+                        },
+                        "_raw_recommendations": {
+                            "isStatic": false,
+                            "recommendations": null,
+                            "references": "<ol><li><a href=\"https://cwe.mitre.org/data/definitions/79.html\" target=\"_blank\">https://cwe.mitre.org/data/definitions/79.html</a></li></ol>",
+                            "releaseId": 174280,
+                            "tips": "first",
+                            "vulnId": "refrigerator"
+                        },
+                        "_raw_requestresponse": {
+                            "releaseId": 174280,
+                            "requestContent": "first",
+                            "responseContent": "first",
+                            "vulnId": "refrigerator"
+                        },
+                        "_raw_summary": {
+                            "assignedUser": "(Not Set)",
+                            "auditPending": false,
+                            "auditPendingAuditorStatus": null,
+                            "auditPendingSeverity": null,
+                            "auditPendingSuppression": null,
+                            "auditorStatus": "Pending Review",
+                            "bugLink": "",
+                            "bugSubmitted": false,
+                            "comments": null,
+                            "developerStatus": "Open",
+                            "isSuppressed": false,
+                            "lineNumber": null,
+                            "notes": "first",
+                            "primaryLocation": "hole",
+                            "primaryLocationFull": "regulation",
+                            "releaseId": 174280,
+                            "severity": "Medium",
+                            "vulnId": "refrigerator"
+                        },
+                        "compliance_categories": [
+                            {
+                                "categoryName": "OWASP 2017",
+                                "complianceItems": [
+                                    {
+                                        "complianceRule": "A9 - Using Components with Known Vulnerabilities"
+                                    }
+                                ]
+                            },
+                            {
+                                "categoryName": "PCI 3.2",
+                                "complianceItems": [
+                                    {
+                                        "complianceRule": "6.2 - Known Vulnerabilities"
+                                    }
+                                ]
+                            },
+                            {
+                                "categoryName": "CWE",
+                                "complianceItems": [
+                                    {
+                                        "complianceRule": "CWE-79"
+                                    }
+                                ]
+                            }
+                        ],
+                        "issue_description": "praise",
+                        "reference_identifiers": [
+                            {
+                                "id": "79",
+                                "type": "cwe"
+                            }
+                        ],
+                        "references": "<ol><li><a href=\"https://cwe.mitre.org/data/definitions/79.html\" target=\"_blank\">https://cwe.mitre.org/data/definitions/79.html</a></li></ol>",
+                        "vulnId": "refrigerator"
+                    },
+                    {
+                        "_raw_auditoptions": {
+                            "auditActions": [],
+                            "auditProcessing": false,
+                            "canAudit": false,
+                            "canChallenge": false,
+                            "canEdit": false,
+                            "inAuditMode": false,
+                            "releaseId": 174280,
+                            "vulnId": "track"
+                        },
+                        "_raw_details": {
+                            "analyzerName": "sonatype",
+                            "complianceCategories": [
+                                {
+                                    "categoryName": "OWASP 2017",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "A9 - Using Components with Known Vulnerabilities"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "categoryName": "PCI 3.2",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "6.2 - Known Vulnerabilities"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "categoryName": "CWE",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "CWE-79"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "confidence": null,
+                            "explanation": "first",
+                            "impact": null,
+                            "instanceId": "side",
+                            "isStatic": false,
+                            "probability": null,
+                            "releaseId": 174280,
+                            "ruleId": "left",
+                            "severity": null,
+                            "sink": "first",
+                            "source": null,
+                            "summary": "bare",
+                            "vulnId": "track"
+                        },
+                        "_raw_headers": {
+                            "releaseId": 174280,
+                            "requestHeaders": null,
+                            "responseHeaders": null,
+                            "vulnId": "track"
+                        },
+                        "_raw_parameters": {
+                            "postParameters": null,
+                            "queryParameters": null,
+                            "releaseId": 174280,
+                            "vulnId": "track"
+                        },
+                        "_raw_recommendations": {
+                            "isStatic": false,
+                            "recommendations": null,
+                            "references": "<ol><li><a href=\"https://cwe.mitre.org/data/definitions/79.html\" target=\"_blank\">https://cwe.mitre.org/data/definitions/79.html</a></li></ol>",
+                            "releaseId": 174280,
+                            "tips": "first",
+                            "vulnId": "track"
+                        },
+                        "_raw_requestresponse": {
+                            "releaseId": 174280,
+                            "requestContent": "first",
+                            "responseContent": "first",
+                            "vulnId": "track"
+                        },
+                        "_raw_summary": {
+                            "assignedUser": "(Not Set)",
+                            "auditPending": false,
+                            "auditPendingAuditorStatus": null,
+                            "auditPendingSeverity": null,
+                            "auditPendingSuppression": null,
+                            "auditorStatus": "Pending Review",
+                            "bugLink": "",
+                            "bugSubmitted": false,
+                            "comments": null,
+                            "developerStatus": "Open",
+                            "isSuppressed": false,
+                            "lineNumber": null,
+                            "notes": "first",
+                            "primaryLocation": "hole",
+                            "primaryLocationFull": "regulation",
+                            "releaseId": 174280,
+                            "severity": "Medium",
+                            "vulnId": "track"
+                        },
+                        "compliance_categories": [
+                            {
+                                "categoryName": "OWASP 2017",
+                                "complianceItems": [
+                                    {
+                                        "complianceRule": "A9 - Using Components with Known Vulnerabilities"
+                                    }
+                                ]
+                            },
+                            {
+                                "categoryName": "PCI 3.2",
+                                "complianceItems": [
+                                    {
+                                        "complianceRule": "6.2 - Known Vulnerabilities"
+                                    }
+                                ]
+                            },
+                            {
+                                "categoryName": "CWE",
+                                "complianceItems": [
+                                    {
+                                        "complianceRule": "CWE-79"
+                                    }
+                                ]
+                            }
+                        ],
+                        "issue_description": "bare",
+                        "reference_identifiers": [
+                            {
+                                "id": "79",
+                                "type": "cwe"
+                            }
+                        ],
+                        "references": "<ol><li><a href=\"https://cwe.mitre.org/data/definitions/79.html\" target=\"_blank\">https://cwe.mitre.org/data/definitions/79.html</a></li></ol>",
+                        "vulnId": "track"
+                    }
+                ]
+            },
+            {
+                "key": "issue_details",
+                "value": "first"
+            },
+            {
+                "key": "raw_severity",
+                "value": null
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "ruleId"
+                ]
+            },
+            {
+                "key": "analyzer_name",
+                "value": "sonatype"
+            },
+            {
+                "key": "recommendations",
+                "value": null
+            },
+            {
+                "key": "auditor_status",
+                "value": "Pending Review"
+            },
+            {
+                "key": "assigned_user",
+                "value": "(Not Set)"
+            },
+            {
+                "key": "primaryLocationFull",
+                "value": "regulation"
+            },
+            {
+                "key": "developerStatus",
+                "value": "Open"
+            },
+            {
+                "key": "bugSubmitted",
+                "value": false
+            },
+            {
+                "key": "bugLink",
+                "value": ""
+            },
+            {
+                "key": "releaseId",
+                "value": 174280
+            },
+            {
+                "key": "impact",
+                "value": null
+            },
+            {
+                "key": "probability",
+                "value": null
+            },
+            {
+                "key": "traces",
+                "value": null
+            },
+            {
+                "key": "category",
+                "value": null
+            },
+            {
+                "key": "rule_id",
+                "value": "left"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "praise",
+        "issueName": "first_hole",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "left",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortifyondemand",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "79",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "first",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": 6.0,
+        "scanStatus": null,
+        "scanTool": "fortifyondemand",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 6.0,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": "regulation",
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_auditoptions": {
+                            "auditActions": [],
+                            "auditProcessing": false,
+                            "canAudit": false,
+                            "canChallenge": false,
+                            "canEdit": false,
+                            "inAuditMode": false,
+                            "releaseId": 174280,
+                            "vulnId": "just"
+                        },
+                        "_raw_details": {
+                            "analyzerName": "sonatype",
+                            "complianceCategories": [
+                                {
+                                    "categoryName": "OWASP 2017",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "A9 - Using Components with Known Vulnerabilities"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "categoryName": "PCI 3.2",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "6.2 - Known Vulnerabilities"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "categoryName": "CWE",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "CWE-79"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "confidence": null,
+                            "explanation": "first",
+                            "impact": null,
+                            "instanceId": "stain",
+                            "isStatic": false,
+                            "probability": null,
+                            "releaseId": 174280,
+                            "ruleId": "mainstream",
+                            "severity": null,
+                            "sink": "first",
+                            "source": null,
+                            "summary": "ticket",
+                            "vulnId": "just"
+                        },
+                        "_raw_headers": {
+                            "releaseId": 174280,
+                            "requestHeaders": null,
+                            "responseHeaders": null,
+                            "vulnId": "just"
+                        },
+                        "_raw_parameters": {
+                            "postParameters": null,
+                            "queryParameters": null,
+                            "releaseId": 174280,
+                            "vulnId": "just"
+                        },
+                        "_raw_recommendations": {
+                            "isStatic": false,
+                            "recommendations": null,
+                            "references": "<ol><li><a href=\"https://cwe.mitre.org/data/definitions/79.html\" target=\"_blank\">https://cwe.mitre.org/data/definitions/79.html</a></li></ol>",
+                            "releaseId": 174280,
+                            "tips": "first",
+                            "vulnId": "just"
+                        },
+                        "_raw_requestresponse": {
+                            "releaseId": 174280,
+                            "requestContent": "first",
+                            "responseContent": "first",
+                            "vulnId": "just"
+                        },
+                        "_raw_summary": {
+                            "assignedUser": "(Not Set)",
+                            "auditPending": false,
+                            "auditPendingAuditorStatus": null,
+                            "auditPendingSeverity": null,
+                            "auditPendingSuppression": null,
+                            "auditorStatus": "Pending Review",
+                            "bugLink": "",
+                            "bugSubmitted": false,
+                            "comments": null,
+                            "developerStatus": "Open",
+                            "isSuppressed": false,
+                            "lineNumber": null,
+                            "notes": "first",
+                            "primaryLocation": "disposition",
+                            "primaryLocationFull": "illness",
+                            "releaseId": 174280,
+                            "severity": "Medium",
+                            "vulnId": "just"
+                        },
+                        "compliance_categories": [
+                            {
+                                "categoryName": "OWASP 2017",
+                                "complianceItems": [
+                                    {
+                                        "complianceRule": "A9 - Using Components with Known Vulnerabilities"
+                                    }
+                                ]
+                            },
+                            {
+                                "categoryName": "PCI 3.2",
+                                "complianceItems": [
+                                    {
+                                        "complianceRule": "6.2 - Known Vulnerabilities"
+                                    }
+                                ]
+                            },
+                            {
+                                "categoryName": "CWE",
+                                "complianceItems": [
+                                    {
+                                        "complianceRule": "CWE-79"
+                                    }
+                                ]
+                            }
+                        ],
+                        "issue_description": "ticket",
+                        "reference_identifiers": [
+                            {
+                                "id": "79",
+                                "type": "cwe"
+                            }
+                        ],
+                        "references": "<ol><li><a href=\"https://cwe.mitre.org/data/definitions/79.html\" target=\"_blank\">https://cwe.mitre.org/data/definitions/79.html</a></li></ol>",
+                        "vulnId": "just"
+                    }
+                ]
+            },
+            {
+                "key": "issue_details",
+                "value": "first"
+            },
+            {
+                "key": "raw_severity",
+                "value": null
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "ruleId"
+                ]
+            },
+            {
+                "key": "analyzer_name",
+                "value": "sonatype"
+            },
+            {
+                "key": "recommendations",
+                "value": null
+            },
+            {
+                "key": "auditor_status",
+                "value": "Pending Review"
+            },
+            {
+                "key": "assigned_user",
+                "value": "(Not Set)"
+            },
+            {
+                "key": "primaryLocationFull",
+                "value": "illness"
+            },
+            {
+                "key": "developerStatus",
+                "value": "Open"
+            },
+            {
+                "key": "bugSubmitted",
+                "value": false
+            },
+            {
+                "key": "bugLink",
+                "value": ""
+            },
+            {
+                "key": "releaseId",
+                "value": 174280
+            },
+            {
+                "key": "impact",
+                "value": null
+            },
+            {
+                "key": "probability",
+                "value": null
+            },
+            {
+                "key": "traces",
+                "value": null
+            },
+            {
+                "key": "category",
+                "value": null
+            },
+            {
+                "key": "rule_id",
+                "value": "mainstream"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "ticket",
+        "issueName": "first_disposition",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "mainstream",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortifyondemand",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "79",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "first",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": 6.0,
+        "scanStatus": null,
+        "scanTool": "fortifyondemand",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 6.0,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": "illness",
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_auditoptions": {
+                            "auditActions": [],
+                            "auditProcessing": false,
+                            "canAudit": false,
+                            "canChallenge": false,
+                            "canEdit": false,
+                            "inAuditMode": false,
+                            "releaseId": 174280,
+                            "vulnId": "fascinate"
+                        },
+                        "_raw_details": {
+                            "analyzerName": "sonatype",
+                            "complianceCategories": [
+                                {
+                                    "categoryName": "OWASP 2017",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "A9 - Using Components with Known Vulnerabilities"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "categoryName": "PCI 3.2",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "6.2 - Known Vulnerabilities"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "categoryName": "CWE",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "CWE-79"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "confidence": null,
+                            "explanation": "first",
+                            "impact": null,
+                            "instanceId": "fortune",
+                            "isStatic": false,
+                            "probability": null,
+                            "releaseId": 174280,
+                            "ruleId": "net",
+                            "severity": null,
+                            "sink": "first",
+                            "source": null,
+                            "summary": "reach",
+                            "vulnId": "fascinate"
+                        },
+                        "_raw_headers": {
+                            "releaseId": 174280,
+                            "requestHeaders": null,
+                            "responseHeaders": null,
+                            "vulnId": "fascinate"
+                        },
+                        "_raw_parameters": {
+                            "postParameters": null,
+                            "queryParameters": null,
+                            "releaseId": 174280,
+                            "vulnId": "fascinate"
+                        },
+                        "_raw_recommendations": {
+                            "isStatic": false,
+                            "recommendations": null,
+                            "references": "<ol><li><a href=\"https://cwe.mitre.org/data/definitions/79.html\" target=\"_blank\">https://cwe.mitre.org/data/definitions/79.html</a></li></ol>",
+                            "releaseId": 174280,
+                            "tips": "first",
+                            "vulnId": "fascinate"
+                        },
+                        "_raw_requestresponse": {
+                            "releaseId": 174280,
+                            "requestContent": "first",
+                            "responseContent": "first",
+                            "vulnId": "fascinate"
+                        },
+                        "_raw_summary": {
+                            "assignedUser": "(Not Set)",
+                            "auditPending": false,
+                            "auditPendingAuditorStatus": null,
+                            "auditPendingSeverity": null,
+                            "auditPendingSuppression": null,
+                            "auditorStatus": "Pending Review",
+                            "bugLink": "",
+                            "bugSubmitted": false,
+                            "comments": null,
+                            "developerStatus": "Open",
+                            "isSuppressed": false,
+                            "lineNumber": null,
+                            "notes": "first",
+                            "primaryLocation": "disposition",
+                            "primaryLocationFull": "illness",
+                            "releaseId": 174280,
+                            "severity": "High",
+                            "vulnId": "fascinate"
+                        },
+                        "compliance_categories": [
+                            {
+                                "categoryName": "OWASP 2017",
+                                "complianceItems": [
+                                    {
+                                        "complianceRule": "A9 - Using Components with Known Vulnerabilities"
+                                    }
+                                ]
+                            },
+                            {
+                                "categoryName": "PCI 3.2",
+                                "complianceItems": [
+                                    {
+                                        "complianceRule": "6.2 - Known Vulnerabilities"
+                                    }
+                                ]
+                            },
+                            {
+                                "categoryName": "CWE",
+                                "complianceItems": [
+                                    {
+                                        "complianceRule": "CWE-79"
+                                    }
+                                ]
+                            }
+                        ],
+                        "issue_description": "reach",
+                        "reference_identifiers": [
+                            {
+                                "id": "79",
+                                "type": "cwe"
+                            }
+                        ],
+                        "references": "<ol><li><a href=\"https://cwe.mitre.org/data/definitions/79.html\" target=\"_blank\">https://cwe.mitre.org/data/definitions/79.html</a></li></ol>",
+                        "vulnId": "fascinate"
+                    }
+                ]
+            },
+            {
+                "key": "issue_details",
+                "value": "first"
+            },
+            {
+                "key": "raw_severity",
+                "value": null
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "ruleId"
+                ]
+            },
+            {
+                "key": "analyzer_name",
+                "value": "sonatype"
+            },
+            {
+                "key": "recommendations",
+                "value": null
+            },
+            {
+                "key": "auditor_status",
+                "value": "Pending Review"
+            },
+            {
+                "key": "assigned_user",
+                "value": "(Not Set)"
+            },
+            {
+                "key": "primaryLocationFull",
+                "value": "illness"
+            },
+            {
+                "key": "developerStatus",
+                "value": "Open"
+            },
+            {
+                "key": "bugSubmitted",
+                "value": false
+            },
+            {
+                "key": "bugLink",
+                "value": ""
+            },
+            {
+                "key": "releaseId",
+                "value": 174280
+            },
+            {
+                "key": "impact",
+                "value": null
+            },
+            {
+                "key": "probability",
+                "value": null
+            },
+            {
+                "key": "traces",
+                "value": null
+            },
+            {
+                "key": "category",
+                "value": null
+            },
+            {
+                "key": "rule_id",
+                "value": "net"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "reach",
+        "issueName": "first_disposition",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "net",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortifyondemand",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "79",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "first",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": 8.0,
+        "scanStatus": null,
+        "scanTool": "fortifyondemand",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 8.0,
+        "severityCode": "High",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": "illness",
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_auditoptions": {
+                            "auditActions": [],
+                            "auditProcessing": false,
+                            "canAudit": false,
+                            "canChallenge": false,
+                            "canEdit": false,
+                            "inAuditMode": false,
+                            "releaseId": 174280,
+                            "vulnId": "avant-garde"
+                        },
+                        "_raw_details": {
+                            "analyzerName": "sonatype",
+                            "complianceCategories": [
+                                {
+                                    "categoryName": "OWASP 2017",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "A9 - Using Components with Known Vulnerabilities"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "categoryName": "PCI 3.2",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "6.2 - Known Vulnerabilities"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "categoryName": "CWE",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "CWE-400"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "confidence": null,
+                            "explanation": "first",
+                            "impact": null,
+                            "instanceId": "ancestor",
+                            "isStatic": false,
+                            "probability": null,
+                            "releaseId": 174280,
+                            "ruleId": "sacrifice",
+                            "severity": null,
+                            "sink": "first",
+                            "source": null,
+                            "summary": "jurisdiction",
+                            "vulnId": "avant-garde"
+                        },
+                        "_raw_headers": {
+                            "releaseId": 174280,
+                            "requestHeaders": null,
+                            "responseHeaders": null,
+                            "vulnId": "avant-garde"
+                        },
+                        "_raw_parameters": {
+                            "postParameters": null,
+                            "queryParameters": null,
+                            "releaseId": 174280,
+                            "vulnId": "avant-garde"
+                        },
+                        "_raw_recommendations": {
+                            "isStatic": false,
+                            "recommendations": null,
+                            "references": "<ol><li><a href=\"https://cwe.mitre.org/data/definitions/400.html\" target=\"_blank\">https://cwe.mitre.org/data/definitions/400.html</a></li></ol>",
+                            "releaseId": 174280,
+                            "tips": "first",
+                            "vulnId": "avant-garde"
+                        },
+                        "_raw_requestresponse": {
+                            "releaseId": 174280,
+                            "requestContent": "first",
+                            "responseContent": "first",
+                            "vulnId": "avant-garde"
+                        },
+                        "_raw_summary": {
+                            "assignedUser": "(Not Set)",
+                            "auditPending": false,
+                            "auditPendingAuditorStatus": null,
+                            "auditPendingSeverity": null,
+                            "auditPendingSuppression": null,
+                            "auditorStatus": "Pending Review",
+                            "bugLink": "",
+                            "bugSubmitted": false,
+                            "comments": null,
+                            "developerStatus": "Open",
+                            "isSuppressed": false,
+                            "lineNumber": null,
+                            "notes": "first",
+                            "primaryLocation": "inspire",
+                            "primaryLocationFull": "marine",
+                            "releaseId": 174280,
+                            "severity": "High",
+                            "vulnId": "avant-garde"
+                        },
+                        "compliance_categories": [
+                            {
+                                "categoryName": "OWASP 2017",
+                                "complianceItems": [
+                                    {
+                                        "complianceRule": "A9 - Using Components with Known Vulnerabilities"
+                                    }
+                                ]
+                            },
+                            {
+                                "categoryName": "PCI 3.2",
+                                "complianceItems": [
+                                    {
+                                        "complianceRule": "6.2 - Known Vulnerabilities"
+                                    }
+                                ]
+                            },
+                            {
+                                "categoryName": "CWE",
+                                "complianceItems": [
+                                    {
+                                        "complianceRule": "CWE-400"
+                                    }
+                                ]
+                            }
+                        ],
+                        "issue_description": "jurisdiction",
+                        "reference_identifiers": [
+                            {
+                                "id": "400",
+                                "type": "cwe"
+                            }
+                        ],
+                        "references": "<ol><li><a href=\"https://cwe.mitre.org/data/definitions/400.html\" target=\"_blank\">https://cwe.mitre.org/data/definitions/400.html</a></li></ol>",
+                        "vulnId": "avant-garde"
+                    },
+                    {
+                        "_raw_auditoptions": {
+                            "auditActions": [],
+                            "auditProcessing": false,
+                            "canAudit": false,
+                            "canChallenge": false,
+                            "canEdit": false,
+                            "inAuditMode": false,
+                            "releaseId": 174280,
+                            "vulnId": "south"
+                        },
+                        "_raw_details": {
+                            "analyzerName": "sonatype",
+                            "complianceCategories": [
+                                {
+                                    "categoryName": "OWASP 2017",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "A9 - Using Components with Known Vulnerabilities"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "categoryName": "PCI 3.2",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "6.2 - Known Vulnerabilities"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "categoryName": "CWE",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "CWE-185"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "confidence": null,
+                            "explanation": "first",
+                            "impact": null,
+                            "instanceId": "grateful",
+                            "isStatic": false,
+                            "probability": null,
+                            "releaseId": 174280,
+                            "ruleId": "sacrifice",
+                            "severity": null,
+                            "sink": "first",
+                            "source": null,
+                            "summary": "jurisdiction",
+                            "vulnId": "south"
+                        },
+                        "_raw_headers": {
+                            "releaseId": 174280,
+                            "requestHeaders": null,
+                            "responseHeaders": null,
+                            "vulnId": "south"
+                        },
+                        "_raw_parameters": {
+                            "postParameters": null,
+                            "queryParameters": null,
+                            "releaseId": 174280,
+                            "vulnId": "south"
+                        },
+                        "_raw_recommendations": {
+                            "isStatic": false,
+                            "recommendations": null,
+                            "references": "<ol><li><a href=\"https://cwe.mitre.org/data/definitions/185.html\" target=\"_blank\">https://cwe.mitre.org/data/definitions/185.html</a></li></ol>",
+                            "releaseId": 174280,
+                            "tips": "first",
+                            "vulnId": "south"
+                        },
+                        "_raw_requestresponse": {
+                            "releaseId": 174280,
+                            "requestContent": "first",
+                            "responseContent": "first",
+                            "vulnId": "south"
+                        },
+                        "_raw_summary": {
+                            "assignedUser": "(Not Set)",
+                            "auditPending": false,
+                            "auditPendingAuditorStatus": null,
+                            "auditPendingSeverity": null,
+                            "auditPendingSuppression": null,
+                            "auditorStatus": "Pending Review",
+                            "bugLink": "",
+                            "bugSubmitted": false,
+                            "comments": null,
+                            "developerStatus": "Open",
+                            "isSuppressed": false,
+                            "lineNumber": null,
+                            "notes": "first",
+                            "primaryLocation": "inspire",
+                            "primaryLocationFull": "marine",
+                            "releaseId": 174280,
+                            "severity": "High",
+                            "vulnId": "south"
+                        },
+                        "compliance_categories": [
+                            {
+                                "categoryName": "OWASP 2017",
+                                "complianceItems": [
+                                    {
+                                        "complianceRule": "A9 - Using Components with Known Vulnerabilities"
+                                    }
+                                ]
+                            },
+                            {
+                                "categoryName": "PCI 3.2",
+                                "complianceItems": [
+                                    {
+                                        "complianceRule": "6.2 - Known Vulnerabilities"
+                                    }
+                                ]
+                            },
+                            {
+                                "categoryName": "CWE",
+                                "complianceItems": [
+                                    {
+                                        "complianceRule": "CWE-185"
+                                    }
+                                ]
+                            }
+                        ],
+                        "issue_description": "jurisdiction",
+                        "reference_identifiers": [
+                            {
+                                "id": "185",
+                                "type": "cwe"
+                            }
+                        ],
+                        "references": "<ol><li><a href=\"https://cwe.mitre.org/data/definitions/185.html\" target=\"_blank\">https://cwe.mitre.org/data/definitions/185.html</a></li></ol>",
+                        "vulnId": "south"
+                    }
+                ]
+            },
+            {
+                "key": "issue_details",
+                "value": "first"
+            },
+            {
+                "key": "raw_severity",
+                "value": null
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "ruleId"
+                ]
+            },
+            {
+                "key": "analyzer_name",
+                "value": "sonatype"
+            },
+            {
+                "key": "recommendations",
+                "value": null
+            },
+            {
+                "key": "auditor_status",
+                "value": "Pending Review"
+            },
+            {
+                "key": "assigned_user",
+                "value": "(Not Set)"
+            },
+            {
+                "key": "primaryLocationFull",
+                "value": "marine"
+            },
+            {
+                "key": "developerStatus",
+                "value": "Open"
+            },
+            {
+                "key": "bugSubmitted",
+                "value": false
+            },
+            {
+                "key": "bugLink",
+                "value": ""
+            },
+            {
+                "key": "releaseId",
+                "value": 174280
+            },
+            {
+                "key": "impact",
+                "value": null
+            },
+            {
+                "key": "probability",
+                "value": null
+            },
+            {
+                "key": "traces",
+                "value": null
+            },
+            {
+                "key": "category",
+                "value": null
+            },
+            {
+                "key": "rule_id",
+                "value": "sacrifice"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "jurisdiction",
+        "issueName": "first_inspire",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "sacrifice",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortifyondemand",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "400",
+                "type": "cwe"
+            },
+            {
+                "id": "185",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "first",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": 8.0,
+        "scanStatus": null,
+        "scanTool": "fortifyondemand",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 8.0,
+        "severityCode": "High",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": "marine",
+        "vulnerabilityDetails": null
+    }
+]

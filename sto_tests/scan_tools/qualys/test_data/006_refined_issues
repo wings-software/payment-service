@@ -1,0 +1,2350 @@
+[
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101588226"
+            },
+            {
+                "key": "unique_id",
+                "value": "903bdca6-7bb2-11ea-b4c6-836ba4efc9eb"
+            },
+            {
+                "key": "detection_id",
+                "value": "2253544"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "12 Mar 2020 04:42PM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "Duration of crawl phase (seconds): 171.00\nNumber of links: 1\n(This number excludes form requests and links re-requested during authentication.)\n\nhttps://services.example.com/\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150009"
+            },
+            {
+                "key": "info_id",
+                "value": "101588226"
+            },
+            {
+                "key": "description",
+                "value": "The list of unique links crawled and HTML forms submitted by the Web application scanner appear in the Results section. This list may contain fewer links than the maximum threshold defined at scan launch. \n<P>NOTE: This list also includes \n- All the unique links that are reported in QID 150140 (Redundant links/URL paths crawled and not crawled)\n- All the forms reported in QID 150152 (Forms Crawled), \n- All the forms in QID 150115 (Authentication Form Found) and \n- Certain requests from QID 150172 (Requests Crawled)"
+            },
+            {
+                "key": "group",
+                "value": "IG-DIAG"
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_data",
+                "value": {
+                    "#text": "RHVyYXRpb24gb2YgY3Jhd2wgcGhhc2UgKHNlY29uZHMpOiAxNzEuMDAKTnVtYmVyIG9mIGxpbmtzOiAxCihUaGlzIG51bWJlciBleGNsdWRlcyBmb3JtIHJlcXVlc3RzIGFuZCBsaW5rcyByZS1yZXF1ZXN0ZWQgZHVyaW5nIGF1dGhlbnRpY2F0aW9uLikKCmh0dHBzOi8vc2VydmljZXMuZXhhbXBsZS5jb20vCg==",
+                    "@base64": "true"
+                }
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "N/A",
+        "issueName": "Links Crawled",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150009//101588226",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101588216"
+            },
+            {
+                "key": "unique_id",
+                "value": "4b8d3402-7bb1-11ea-9410-4bff9473d4c9"
+            },
+            {
+                "key": "detection_id",
+                "value": "2253534"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "12 Mar 2020 04:42PM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "\nTotal number of unique links that encountered timeout errors: 1\nLinks with highest number of timeouts:\n   1 http://services.example.com/\n\nPhase wise summary of timeout and connection errors encountered: \nePhaseCrawl                        :          1         0\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150018"
+            },
+            {
+                "key": "info_id",
+                "value": "101588216"
+            },
+            {
+                "key": "description",
+                "value": "The following are some of the possible reasons for the timeouts or connection errors:\n<OL>\n<LI> A disturbance in network connectivity between the scanner and the web application occurred.</LI>\n<LI> The web server or application server hosting the application was taken down in the midst of a scan.</LI>\n<LI> The web application experienced an overload, possibly due to load generated by the scan.</LI>\n<LI> An error occurred in the SSL/TLS handshake (applies to HTTPS web applications only).</LI>\n<LI> A security device, such as an IDS/IPS or web application firewall (WAF), began to drop or reject the HTTP connections from the scanner.</LI>\n<LI> Very large files like PDFs, videos, etc. are present on the site and caused timeouts when accessed by the scanner.</LI>\n</OL>"
+            },
+            {
+                "key": "group",
+                "value": "IG-DIAG"
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_data",
+                "value": {
+                    "#text": "ClRvdGFsIG51bWJlciBvZiB1bmlxdWUgbGlua3MgdGhhdCBlbmNvdW50ZXJlZCB0aW1lb3V0IGVycm9yczogMQpMaW5rcyB3aXRoIGhpZ2hlc3QgbnVtYmVyIG9mIHRpbWVvdXRzOgogICAxIGh0dHA6Ly9zZXJ2aWNlcy5leGFtcGxlLmNvbS8KClBoYXNlIHdpc2Ugc3VtbWFyeSBvZiB0aW1lb3V0IGFuZCBjb25uZWN0aW9uIGVycm9ycyBlbmNvdW50ZXJlZDogCmVQaGFzZUNyYXdsICAgICAgICAgICAgICAgICAgICAgICAgOiAgICAgICAgICAxICAgICAgICAgMAo=",
+                    "@base64": "true"
+                }
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Some of the links were not crawled or scanned. Results may be incomplete or incorrect.",
+        "issueName": "Connection Error Occurred During Web Application Scan",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150018//101588216",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "First, confirm that the server was not taken down in the midst of the scan.  After that, investigate the root cause by reviewing the listed links and examining web server logs, application server logs, or IDS/IPS/WAF logs. If the errors are caused due to load generated by the scanner then try reducing the scan intensity (this could increase the scan duration). If the errors are due to specific URLs being tested by the scanner or due to specific form data sent by the scanner, then configure blacklists in the scan configuration as needed to avoid such requests. If timeouts or connection errors are a persistent issue but you want the scan to run to completion, change the Behavior Settings in the option profile to increase the error thresholds or disable the error checks entirely.",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "2",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101588219"
+            },
+            {
+                "key": "unique_id",
+                "value": "ffd62018-7bb1-11ea-9fc5-97c2a4275221"
+            },
+            {
+                "key": "detection_id",
+                "value": "2253537"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "12 Mar 2020 04:42PM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "Loaded 0 blacklist entries.\nLoaded 0 whitelist entries.\nHTML form authentication unavailable, no WEBAPP entry found\nBatch #0 VirtualHostDiscovery: estimated time < 1 minute (0 tests, 0 inputs)\nVirtualHostDiscovery: 0 vulnsigs tests, completed 0  requests, 0 seconds. No tests to execute.\nBatch #0 CMSDetection: estimated time < 1 minute (1 tests, 1 inputs)\n[CMSDetection phase] : No potential CMS found. Aborting the CMS Detection phaseCMSDetection: 1 vulnsigs tests, completed 48  requests, 11 seconds. Completed 48 requests of 48 estimated requests (100%). All tests completed.\nCollected 1 links overall in 0 hours 2 minutes duration.\nPath manipulation: Estimated requests (payloads x links): files with extension:(0 x 0) + files:(0 x 0) +  directories:(9 x 1) +  paths:(0 x 1) = total (9) \nBatch #0 WS Directory Path manipulation: estimated time < 1 minute (9 tests, 1 inputs)\nWS Directory Path manipulation: 9 vulnsigs tests, completed 9  requests, 1 seconds. Completed 9 requests of 9 estimated requests (100%). All tests completed.\nBatch #0 WS enumeration: estimated time < 1 minute (11 tests, 1 inputs)\nWS enumeration: 11 vulnsigs tests, completed 11  requests, 1 seconds. Completed 11 requests of 11 estimated requests (100%). All tests completed.\nBatch #4 WebCgiOob: estimated time < 1 minute (2 tests, 1 inputs)\nBatch #4 WebCgiOob: 2 vulnsigs tests, completed 0  requests, 0 seconds. Completed 0 requests of 2 estimated requests (0%). All tests completed.\nNo XML requests found. Skipping XXE tests.\nBatch #4 DOM XSS exploitation: estimated time < 1 minute (4 tests, 0 inputs)\nBatch #4 DOM XSS exploitation: 4 vulnsigs tests, completed 0  requests, 0 seconds. No tests to execute.\nBatch #4 HTTP call manipulation: estimated time < 1 minute (37 tests, 0 inputs)\nBatch #4 HTTP call manipulation: 37 vulnsigs tests, completed 0  requests, 0 seconds. No tests to execute.\nBatch #4 Open Redirect analysis: estimated time < 1 minute (3 tests, 0 inputs)\nBatch #4 Open Redirect analysis: 3 vulnsigs tests, completed 0  requests, 5 seconds. No tests to execute.\nCSRF tests will not be launched because the scan is not successfully authenticated.\nBatch #4 File Inclusion analysis: estimated time < 1 minute (1 tests, 1 inputs)\nBatch #4 File Inclusion analysis: 1 vulnsigs tests, completed 0  requests, 0 seconds. Completed 0 requests of 1 estimated requests (0%). All tests completed.\nBatch #4 Cookie manipulation: estimated time < 1 minute (45 tests, 0 inputs)\nBatch #4 Cookie manipulation: 45 vulnsigs tests, completed 0  requests, 0 seconds. No tests to execute.\nBatch #4 Header manipulation: estimated time < 1 minute (45 tests, 1 inputs)\nBatch #4 Header manipulation: 45 vulnsigs tests, completed 59  requests, 4 seconds. Completed 59 requests of 124 estimated requests (47.5806%). XSS optimization removed 28 links. All tests completed.\nBatch #4 shell shock detector: estimated time < 1 minute (1 tests, 1 inputs)\nBatch #4 shell shock detector: 1 vulnsigs tests, completed 1  requests, 0 seconds. Completed 1 requests of 1 estimated requests (100%). All tests completed.\nBatch #4 shell shock detector(form): estimated time < 1 minute (1 tests, 0 inputs)\nBatch #4 shell shock detector(form): 1 vulnsigs tests, completed 0  requests, 0 seconds. No tests to execute.\nBatch #4 httpoxy detector: estimated time < 1 minute (1 tests, 1 inputs)\nBatch #4 httpoxy detector: 1 vulnsigs tests, completed 1  requests, 0 seconds. Completed 1 requests of 1 estimated requests (100%). All tests completed.\nBatch #4 httpoxy detector(form): estimated time < 1 minute (1 tests, 0 inputs)\nBatch #4 httpoxy detector(form): 1 vulnsigs tests, completed 0  requests, 0 seconds. No tests to execute.\nBatch #4 Struts timebased detector: estimated time < 1 minute (1 tests, 1 inputs)\nBatch #4 Struts timebased detector: 1 vulnsigs tests, completed 1  requests, 1 seconds. Completed 1 requests of 1 estimated requests (100%). All tests completed.\nBatch #5 HTTP Time Bandit: estimated time < 1 minute (1 tests, 10 inputs)\nBatch #5 HTTP Time Bandit: 1 vulnsigs tests, completed 0  requests, 0 seconds. No tests to execute.\nPath manipulation: Estimated requests (payloads x links): files with extension:(0 x 0) + files:(0 x 0) +  directories:(4 x 1) +  paths:(11 x 1) = total (15) \nBatch #5 Path XSS manipulation: estimated time < 1 minute (15 tests, 1 inputs)\nBatch #5 Path XSS manipulation: 15 vulnsigs tests, completed 14  requests, 1 seconds. Completed 14 requests of 15 estimated requests (93.3333%). All tests completed.\nPath manipulation: Estimated requests (payloads x links): files with extension:(0 x 0) + files:(0 x 0) +  directories:(1 x 1) +  paths:(0 x 1) = total (1) \nBatch #5 Tomcat Vuln manipulation: estimated time < 1 minute (1 tests, 1 inputs)\nBatch #5 Tomcat Vuln manipulation: 1 vulnsigs tests, completed 1  requests, 1 seconds. Completed 1 requests of 1 estimated requests (100%). All tests completed.\nPath manipulation: Estimated requests (payloads x links): files with extension:(0 x 0) + files:(0 x 0) +  directories:(16 x 1) +  paths:(0 x 1) = total (16) \nBatch #5 Time based path manipulation: estimated time < 1 minute (16 tests, 1 inputs)\nBatch #5 Time based path manipulation: 16 vulnsigs tests, completed 16  requests, 360 seconds. Completed 16 requests of 16 estimated requests (100%). All tests completed.\nPath manipulation: Estimated requests (payloads x links): files with extension:(4 x 0) + files:(18 x 0) +  directories:(123 x 1) +  paths:(16 x 1) = total (139) \nBatch #5 Path manipulation: estimated time < 1 minute (161 tests, 1 inputs)\nBatch #5 Path manipulation: 161 vulnsigs tests, completed 134  requests, 7 seconds. Completed 134 requests of 139 estimated requests (96.4029%). All tests completed.\nBatch #5 WebCgiGeneric: estimated time < 1 minute (23 tests, 1 inputs)\nBatch #5 WebCgiGeneric: 23 vulnsigs tests, completed 12  requests, 3 seconds. Completed 12 requests of 41 estimated requests (29.2683%). All tests completed.\nTotal requests made: 332\nAverage server response time: 0.27 seconds\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150021"
+            },
+            {
+                "key": "info_id",
+                "value": "101588219"
+            },
+            {
+                "key": "description",
+                "value": "This check provides various details of the scan's performance and behavior. In some cases, this check can be used to identify problems that the scanner encountered when crawling the target Web application."
+            },
+            {
+                "key": "group",
+                "value": "IG-DIAG"
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "The scan diagnostics data provides technical details about the crawler's performance and behavior. This information does not necessarily imply problems with the Web application.",
+        "issueName": "Scan Diagnostics",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150021//101588219",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "No action is required.",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101588223"
+            },
+            {
+                "key": "unique_id",
+                "value": "b45acfde-7bb2-11ea-87ea-531484f0fbb5"
+            },
+            {
+                "key": "detection_id",
+                "value": "2253541"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "12 Mar 2020 04:42PM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "https://services.example.com/\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150042"
+            },
+            {
+                "key": "info_id",
+                "value": "101588223"
+            },
+            {
+                "key": "description",
+                "value": "During the scanning engine's crawl phase, the Web server responded with an HTTP 500 message for each link listed below. The HTTP 500 message indicates a server error."
+            },
+            {
+                "key": "group",
+                "value": "IG-DIAG"
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": "WASC-14"
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_data",
+                "value": {
+                    "#text": "aHR0cHM6Ly9zZXJ2aWNlcy5leGFtcGxlLmNvbS8K",
+                    "@base64": "true"
+                }
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "The presence of an HTTP 500 error during the crawl phase indicates that some problem exists in the Web site that will be encountered during normal usage of the Web application.",
+        "issueName": "Server Returns HTTP 500 Message For Request",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150042//101588223",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "Review each link to determine why the server encountered an error when responding to the link.",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "3",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 6,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101588230"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": "INFO"
+            },
+            {
+                "key": "owasp",
+                "value": "A6"
+            },
+            {
+                "key": "wasc",
+                "value": "WASC-10"
+            },
+            {
+                "key": "vuln_id",
+                "value": "101588230"
+            },
+            {
+                "key": "lookup_id",
+                "value": "150079"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "vuln_id"
+                ]
+            },
+            {
+                "key": "description",
+                "value": "The web application is possibly vulnerable to \"slow HTTP headers\" Denial of Service (DoS) attack. This is an application-level DoS, that occurs when an attacker holds server connections open by sending partial HTTP requests, and continues to send subsequent headers at some interval to prevent the server from closing sockets. In this way, the web server becomes unavailable because the number of available sockets decreases and memory usage may increase, especially if the server allocates a thread per connection.\nOne of the reasons for this behavior is that some servers have \"no data\" timers, that reset each time a byte arrives at the socket, but the server does not enforce an overall time limit for a connection. For example, the attacker sends the data for its request one byte at a time over several minutes rather than following the expected behavior of transmitting a complete request of several hundred bytes in a single packet. This enables the attacker to prolong the connection virtually forever. \nMore information can be found at the <A HREF=\"https://blog.qualys.com/tag/slowloris\" TARGET=\"_blank\">Slowloris HTTP DoS</A>."
+            },
+            {
+                "key": "cvss_base",
+                "value": "6.1"
+            },
+            {
+                "key": "cvss_temporal",
+                "value": "5.5"
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_unique_id",
+                "value": "a62d1478-7bb0-11ea-a2b5-c7872c5883e4"
+            },
+            {
+                "key": "_raw_detection_id",
+                "value": "6074204"
+            },
+            {
+                "key": "_raw_ajax",
+                "value": "false"
+            },
+            {
+                "key": "_raw_authentication",
+                "value": "Not Required"
+            },
+            {
+                "key": "_raw_detection_date",
+                "value": "12 Mar 2020 04:42PM GMT-0400"
+            },
+            {
+                "key": "_raw_payloads",
+                "value": {
+                    "PAYLOAD": {
+                        "NUM": "1",
+                        "PAYLOAD": "N/A",
+                        "REQUEST": {
+                            "HEADERS": {
+                                "HEADER": [
+                                    {
+                                        "key": "Host",
+                                        "value": "services.example.com"
+                                    },
+                                    {
+                                        "key": "User-Agent",
+                                        "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/601.4.4 (KHTML, like Gecko) Version/9.0.3 Safari/601.4.4"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "*/*"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/x-www-form-urlencoded"
+                                    }
+                                ]
+                            },
+                            "METHOD": "POST",
+                            "URL": "https://services.example.com/"
+                        },
+                        "RESPONSE": {
+                            "CONTENTS": {
+                                "#text": "VnVsbmVyYWJsZSB0byBzbG93IEhUVFAgaGVhZGVycyBhdHRhY2sKCglTZXJ2ZXIgcmVzZXRzIHRpbWVvdXQgYWZ0ZXIgYWNjZXB0aW5nIGhlYWRlciBkYXRhIGZyb20gcGVlci4=",
+                                "@base64": "true"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "key": "_raw__type",
+                "value": "VULNERABILITY"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "All other services remain intact but the web server itself becomes completely inaccessible.",
+        "issueName": "Slow HTTP headers vulnerability",
+        "issueType": "Potential Vulnerability",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150079//101588230",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "772",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "Server-specific recommendations can be found <A HREF=\"https://community.qualys.com/blogs/securitylabs/2011/11/02/how-to-protect-against-slow-http-attacks\" TARGET=\"_blank\">here</A>.\nCountermeasures for Apache are described <A HREF=\"http://httpd.apache.org/docs/trunk/misc/security_tips.html#dos\" TARGET=\"_blank\">here</A>.\nEasy to use tool for intrusive testing is available <A HREF=\"https://github.com/shekyan/slowhttptest/wiki\" TARGET=\"_blank\">here</A>.",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "3",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 6,
+        "severityCode": "Medium",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": "https://services.example.com/",
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101588229"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": "INFO"
+            },
+            {
+                "key": "owasp",
+                "value": "A6"
+            },
+            {
+                "key": "wasc",
+                "value": "WASC-10"
+            },
+            {
+                "key": "vuln_id",
+                "value": "101588229"
+            },
+            {
+                "key": "lookup_id",
+                "value": "150085"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "vuln_id"
+                ]
+            },
+            {
+                "key": "description",
+                "value": "The web application is possibly vulnerable to a \"slow HTTP POST\" Denial of Service (DoS) attack. This is an application-level DoS that consumes server resources by maintaining open connections for an extended period of time by slowly sending traffic to the server. If the server maintains too many connections open at once, then it may not be able to respond to new, legitimate connections. Unlike bandwidth-consumption DoS attacks, the \"slow\" attack does not require a large amount of traffic to be sent to the server -- only that the client is able to maintain open connections for several minutes at a time.\n<P>\nThe attack holds server connections open by sending properly crafted HTTP POST headers that contain a Content-Length header with a large value to inform the web server how much of data to expect. After the HTTP POST headers are fully sent, the HTTP POST message body is sent at slow speeds to prolong the completion of the connection and lock up server resources. By waiting for the complete request body, the server is helping clients with slow or intermittent connections to complete requests, but is also exposing itself to abuse.\n<P>\nFurther information can be found under <A HREF=\"https://media.blackhat.com/bh-dc-11/Brennan/BlackHat_DC_2011_Brennan_Denial_Service-Slides.pdf\" TARGET=\"_blank\">BlackHat_DC_2011_Brennan_Denial_Service-Slides.pdf</A>."
+            },
+            {
+                "key": "cvss_base",
+                "value": "6.1"
+            },
+            {
+                "key": "cvss_temporal",
+                "value": "5.5"
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_unique_id",
+                "value": "20f4ba90-7bb0-11ea-ac65-5fc1d89b8cc7"
+            },
+            {
+                "key": "_raw_detection_id",
+                "value": "6074202"
+            },
+            {
+                "key": "_raw_ajax",
+                "value": "false"
+            },
+            {
+                "key": "_raw_authentication",
+                "value": "Not Required"
+            },
+            {
+                "key": "_raw_detection_date",
+                "value": "12 Mar 2020 04:42PM GMT-0400"
+            },
+            {
+                "key": "_raw_payloads",
+                "value": {
+                    "PAYLOAD": {
+                        "NUM": "1",
+                        "PAYLOAD": "N/A",
+                        "REQUEST": {
+                            "HEADERS": {
+                                "HEADER": [
+                                    {
+                                        "key": "Host",
+                                        "value": "services.example.com"
+                                    },
+                                    {
+                                        "key": "User-Agent",
+                                        "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/601.4.4 (KHTML, like Gecko) Version/9.0.3 Safari/601.4.4"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "*/*"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/x-www-form-urlencoded"
+                                    }
+                                ]
+                            },
+                            "METHOD": "POST",
+                            "URL": "https://services.example.com/"
+                        },
+                        "RESPONSE": {
+                            "CONTENTS": {
+                                "#text": "VnVsbmVyYWJsZSB0byBzbG93IEhUVFAgUE9TVCBhdHRhY2sKCUNvbm5lY3Rpb24gd2l0aCBwYXJ0aWFsIFBPU1QgYm9keSByZW1haW5lZCBvcGVuIGZvcjogMTMyMDc2IG1pbGxpc2Vjb25kcwoJU2VydmVyIHJlc2V0cyB0aW1lb3V0IGFmdGVyIGFjY2VwdGluZyByZXF1ZXN0IGRhdGEgZnJvbSBwZWVyLg==",
+                                "@base64": "true"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "key": "_raw__type",
+                "value": "VULNERABILITY"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "All other services remain intact but the web server itself becomes inaccessible.",
+        "issueName": "Slow HTTP POST vulnerability",
+        "issueType": "Potential Vulnerability",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150085//101588229",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "772",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "Solution would be server-specific, but general recommendations are:\n- to limit the size of the acceptable request to each form requirements\n- establish minimal acceptable speed rate\n- establish absolute request timeout for connection with POST request\nServer-specific details can be found <A HREF=\"https://blog.qualys.com/securitylabs/2011/11/02/how-to-protect-against-slow-http-attacks\" TARGET=\"_blank\">here</A>. \nA tool that demonstrates this vulnerability in a more intrusive manner is available <A HREF=\"https://github.com/shekyan/slowhttptest\" TARGET=\"_blank\">here</A>.",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "3",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 6,
+        "severityCode": "Medium",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": "https://services.example.com/",
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101588220"
+            },
+            {
+                "key": "unique_id",
+                "value": "2931ed9e-7bb1-11ea-a51a-c30b86e854b1"
+            },
+            {
+                "key": "detection_id",
+                "value": "2253538"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "12 Mar 2020 04:42PM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "Total internal forms seen (this count includes duplicate forms): 0\n\nCrawled forms (Total: 0)\nNOTE: This does not include authentication forms. Authentication forms are reported separately in QID 150115\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150152"
+            },
+            {
+                "key": "info_id",
+                "value": "101588220"
+            },
+            {
+                "key": "description",
+                "value": "Results section consists of the unique forms submitted by the Web Application Scanner. Reported list of forms in this QID does not contain authentication forms (i.e. login forms) which are reported separately in QID 150115. There is redundancy checks done on forms based on form fields. Forms determined to be similar will be considered redundant and not tested. \n<P>NOTE: The regular expression specified under 'Redundant Links' are not applied to forms. Forms (unique or redundant) are not reported under QID 150140."
+            },
+            {
+                "key": "group",
+                "value": "IG-DIAG"
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_data",
+                "value": {
+                    "#text": "VG90YWwgaW50ZXJuYWwgZm9ybXMgc2VlbiAodGhpcyBjb3VudCBpbmNsdWRlcyBkdXBsaWNhdGUgZm9ybXMpOiAwCgpDcmF3bGVkIGZvcm1zIChUb3RhbDogMCkKTk9URTogVGhpcyBkb2VzIG5vdCBpbmNsdWRlIGF1dGhlbnRpY2F0aW9uIGZvcm1zLiBBdXRoZW50aWNhdGlvbiBmb3JtcyBhcmUgcmVwb3J0ZWQgc2VwYXJhdGVseSBpbiBRSUQgMTUwMTE1Cg==",
+                    "@base64": "true"
+                }
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "N/A",
+        "issueName": "Forms Crawled",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150152//101588220",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101588224"
+            },
+            {
+                "key": "unique_id",
+                "value": "57de95b0-7bb2-11ea-93b6-6f2febb6f95e"
+            },
+            {
+                "key": "detection_id",
+                "value": "2253542"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "12 Mar 2020 04:42PM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "\nX-Content-Type-Options: Header missing\nResponse headers on link: GET https://services.example.com/ response code: 500\nContent-Type: text/xml;charset=utf-8\nContent-Length: 663\nDate: Thu, 12 Mar 2020 20:43:50 GMT\nConnection: close\nServer: eagle\n\nHeader missing on the following link(s):\n(Only first 50 such pages are listed)\n\nGET https://services.example.com/ response code: 500\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150202"
+            },
+            {
+                "key": "info_id",
+                "value": "101588224"
+            },
+            {
+                "key": "description",
+                "value": "The X-Content-Type-Options response header is not present. WAS reports missing X-Content-Type-Options header on each crawled link for both static and dynamic responses. The scanner performs the check not only on 200 responses but 4xx and 5xx responses as well. It's also possible the QID will be reported on directory-level links."
+            },
+            {
+                "key": "group",
+                "value": "IG-WEAK"
+            },
+            {
+                "key": "owasp",
+                "value": "A6"
+            },
+            {
+                "key": "wasc",
+                "value": "WASC-15"
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_data",
+                "value": {
+                    "#text": "ClgtQ29udGVudC1UeXBlLU9wdGlvbnM6IEhlYWRlciBtaXNzaW5nClJlc3BvbnNlIGhlYWRlcnMgb24gbGluazogR0VUIGh0dHBzOi8vc2VydmljZXMuZXhhbXBsZS5jb20vIHJlc3BvbnNlIGNvZGU6IDUwMApDb250ZW50LVR5cGU6IHRleHQveG1sO2NoYXJzZXQ9dXRmLTgKQ29udGVudC1MZW5ndGg6IDY2MwpEYXRlOiBUaHUsIDEyIE1hciAyMDIwIDIwOjQzOjUwIEdNVApDb25uZWN0aW9uOiBjbG9zZQpTZXJ2ZXI6IGVhZ2xlCgpIZWFkZXIgbWlzc2luZyBvbiB0aGUgZm9sbG93aW5nIGxpbmsocyk6CihPbmx5IGZpcnN0IDUwIHN1Y2ggcGFnZXMgYXJlIGxpc3RlZCkKCkdFVCBodHRwczovL3NlcnZpY2VzLmV4YW1wbGUuY29tLyByZXNwb25zZSBjb2RlOiA1MDAK",
+                    "@base64": "true"
+                }
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "All web browsers employ a content-sniffing algorithm that inspects the contents of HTTP responses and also occasionally overrides the MIME type provided by the server. If X-Content-Type-Options header is not present, browsers can potentially be tricked into treating non-HTML response as HTML. An attacker can then potentially leverage the functionality to perform a cross-site scripting (XSS) attack. This specific case is known as a Content-Sniffing XSS (CS-XSS) attack.",
+        "issueName": "Missing header: X-Content-Type-Options",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150202//101588224",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "It is recommended to disable browser content sniffing by adding the X-Content-Type-Options header to the HTTP response with a value of 'nosniff'. Also, ensure that the 'Content-Type' header is set correctly on responses.",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "2",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101588228"
+            },
+            {
+                "key": "unique_id",
+                "value": "d5ad72f6-7bb0-11ea-9509-c75c9c776794"
+            },
+            {
+                "key": "detection_id",
+                "value": "2253546"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "12 Mar 2020 04:42PM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "\nX-Xss-Protection: Header missing\nResponse headers on link: GET https://services.example.com/ response code: 500\nContent-Type: text/xml;charset=utf-8\nContent-Length: 663\nDate: Thu, 12 Mar 2020 20:43:50 GMT\nConnection: close\nServer: eagle\n\nHeader missing on the following link(s):\n(Only first 50 such pages are listed)\n\nGET https://services.example.com/ response code: 500\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150204"
+            },
+            {
+                "key": "info_id",
+                "value": "101588228"
+            },
+            {
+                "key": "description",
+                "value": "The X-XSS-Protection response header is not present."
+            },
+            {
+                "key": "group",
+                "value": "IG-WEAK"
+            },
+            {
+                "key": "owasp",
+                "value": "A6"
+            },
+            {
+                "key": "wasc",
+                "value": "WASC-15"
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_data",
+                "value": {
+                    "#text": "ClgtWHNzLVByb3RlY3Rpb246IEhlYWRlciBtaXNzaW5nClJlc3BvbnNlIGhlYWRlcnMgb24gbGluazogR0VUIGh0dHBzOi8vc2VydmljZXMuZXhhbXBsZS5jb20vIHJlc3BvbnNlIGNvZGU6IDUwMApDb250ZW50LVR5cGU6IHRleHQveG1sO2NoYXJzZXQ9dXRmLTgKQ29udGVudC1MZW5ndGg6IDY2MwpEYXRlOiBUaHUsIDEyIE1hciAyMDIwIDIwOjQzOjUwIEdNVApDb25uZWN0aW9uOiBjbG9zZQpTZXJ2ZXI6IGVhZ2xlCgpIZWFkZXIgbWlzc2luZyBvbiB0aGUgZm9sbG93aW5nIGxpbmsocyk6CihPbmx5IGZpcnN0IDUwIHN1Y2ggcGFnZXMgYXJlIGxpc3RlZCkKCkdFVCBodHRwczovL3NlcnZpY2VzLmV4YW1wbGUuY29tLyByZXNwb25zZSBjb2RlOiA1MDAK",
+                    "@base64": "true"
+                }
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "The X-XSS-Protection response header provides a layer of protection against reflected cross-site scripting (XSS) attacks by instructing browsers to abort rendering a page in which a reflected XSS attack has been detected. This is a best-effort second line of defense measure which helps prevent an attacker from using evasion techniques to avoid the neutralization mechanisms that the filters use by default. When configured appropriately, browser-level XSS filters can provide additional layers of defense against web application attacks.\n<P>\nNote that HTTP 4xx and 5xx responses can also be susceptible to attacks such as XSS. For better security the X-XSS-Protection header should be set on 4xx and 5xx responses as well.",
+        "issueName": "Missing header: X-XSS-Protection",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150204//101588228",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "It is recommend to set X-XSS-Protection header with value set to '1; mode=block' on all the relevant responses to activate browser's XSS filter.\n\n<P><B>NOTE:</B> The X-XSS-Protection header is not supported by all browsers. Google Chrome and Safari are some of the browsers which support it, Firefox on the other hand does not support the header. X-XSS-Protection header does not guarantee a complete protection against XSS. For better protection against XSS attacks, the web application should use secure coding principles. Also, consider leveraging the Content-Security-Policy (CSP) header, which is supported by all browsers.\n\n<P>Using X-XSS-Protection could have unintended side effects, please understand the implications carefully before using it.\n\n<P>References:<BR>\n- <A HREF=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection\" TARGET=\"_blank\">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection</A><BR>\n- <A HREF=\"https://blog.innerht.ml/the-misunderstood-x-xss-protection/\" TARGET=\"_blank\">https://blog.innerht.ml/the-misunderstood-x-xss-protection/</A><BR>\n- <A HREF=\"https://www.mbsd.jp/blog/20160407.html\" TARGET=\"_blank\">https://www.mbsd.jp/blog/20160407.html</A><BR>\n- <A HREF=\"https://www.chromium.org/developers/design-documents/xss-auditor\" TARGET=\"_blank\">https://www.chromium.org/developers/design-documents/xss-auditor</A>",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101588227"
+            },
+            {
+                "key": "unique_id",
+                "value": "3368d48e-7bb2-11ea-ba1a-e76c2dd1fafa"
+            },
+            {
+                "key": "detection_id",
+                "value": "2253545"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "12 Mar 2020 04:42PM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "\nContent-Security-Policy: Header missing\nResponse headers on link: GET https://services.example.com/ response code: 500\nContent-Type: text/xml;charset=utf-8\nContent-Length: 663\nDate: Thu, 12 Mar 2020 20:43:50 GMT\nConnection: close\nServer: eagle\n\nHeader missing on the following link(s):\n(Only first 50 such pages are listed)\n\nGET https://services.example.com/ response code: 500\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150206"
+            },
+            {
+                "key": "info_id",
+                "value": "101588227"
+            },
+            {
+                "key": "description",
+                "value": "No Content-Security-Policy (CSP) is specified for the page. WAS checks for the missing CSP on all static and dynamic pages. It checks for CSP in the response headers (Content-Security-Policy, X-Content-Security-Policy or X-Webkit-CSP) and in response body (http-equiv=\"Content-Security-Policy\" meta tag).<P>\n\nHTTP 4xx and 5xx responses can also be susceptible to attacks such as XSS. For better security it's important to set appropriate CSP policies on 4xx and 5xx responses as well."
+            },
+            {
+                "key": "group",
+                "value": "IG-WEAK"
+            },
+            {
+                "key": "owasp",
+                "value": "A6"
+            },
+            {
+                "key": "wasc",
+                "value": "WASC-15"
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_data",
+                "value": {
+                    "#text": "CkNvbnRlbnQtU2VjdXJpdHktUG9saWN5OiBIZWFkZXIgbWlzc2luZwpSZXNwb25zZSBoZWFkZXJzIG9uIGxpbms6IEdFVCBodHRwczovL3NlcnZpY2VzLmV4YW1wbGUuY29tLyByZXNwb25zZSBjb2RlOiA1MDAKQ29udGVudC1UeXBlOiB0ZXh0L3htbDtjaGFyc2V0PXV0Zi04CkNvbnRlbnQtTGVuZ3RoOiA2NjMKRGF0ZTogVGh1LCAxMiBNYXIgMjAyMCAyMDo0Mzo1MCBHTVQKQ29ubmVjdGlvbjogY2xvc2UKU2VydmVyOiBlYWdsZQoKSGVhZGVyIG1pc3Npbmcgb24gdGhlIGZvbGxvd2luZyBsaW5rKHMpOgooT25seSBmaXJzdCA1MCBzdWNoIHBhZ2VzIGFyZSBsaXN0ZWQpCgpHRVQgaHR0cHM6Ly9zZXJ2aWNlcy5leGFtcGxlLmNvbS8gcmVzcG9uc2UgY29kZTogNTAwCg==",
+                    "@base64": "true"
+                }
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Content-Security Policy is a defense mechanism that can significantly reduce the risk and impact of XSS attacks in modern browsers. The CSP specification provides a set of content restrictions for web resources and a mechanism for transmitting the policy from a server to a client where the policy is enforced. When a Content Security Policy is specified, a number of default behaviors in user agents are changed; specifically inline content and JavaScript eval constructs are not interpreted without additional directives. In short, CSP allows you to create a whitelist of sources of the trusted content. The CSP policy instructs the browser to only render resources from those whitelisted sources. Even though an attacker can find a security vulnerability in the application through which to inject script, the script won't match the whitelisted sources defined in the CSP policy, and therefore will not be executed.<P>\n\nThe absence of Content Security Policy in the response will allow the attacker to exploit vulnerabilities as the protection provided by the browser is not at all leveraged by the Web application. If secure CSP configuration is not implemented, browsers will not be able to block content-injection attacks such as Cross-Site Scripting and Clickjacking.",
+        "issueName": "Content-Security-Policy Not Implemented",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150206//101588227",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "Appropriate CSP policies help prevent content-injection attacks such as cross-site scripting (XSS) and clickjacking. It's recommended to add secure CSP policies as a part of a defense-in-depth approach for securing web applications.<P>\n\nReferences:<BR>\n- <A HREF=\"https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html\" TARGET=\"_blank\">https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</A><BR>\n- <A HREF=\"https://developers.google.com/web/fundamentals/security/csp/\" TARGET=\"_blank\">https://developers.google.com/web/fundamentals/security/csp/</A>",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "2",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101588217"
+            },
+            {
+                "key": "unique_id",
+                "value": "c9ac8d24-7bb1-11ea-9881-2f3103649b8c"
+            },
+            {
+                "key": "detection_id",
+                "value": "2253535"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "12 Mar 2020 04:42PM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "\nReferrer-Policy: Header missing\nResponse headers on link: GET https://services.example.com/ response code: 500\nContent-Type: text/xml;charset=utf-8\nContent-Length: 663\nDate: Thu, 12 Mar 2020 20:43:50 GMT\nConnection: close\nServer: eagle\n\nHeader missing on the following link(s):\n(Only first 50 such pages are listed)\n\nGET https://services.example.com/ response code: 500\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150208"
+            },
+            {
+                "key": "info_id",
+                "value": "101588217"
+            },
+            {
+                "key": "description",
+                "value": "No Referrer Policy is specified for the link. WAS checks for the missing Referrer Policy on all static and dynamic pages. It checks for one of the following Referrer Policy in the response headers:<P>\n1) no-referrer<BR>\n2) no-referrer-when-downgrade<BR>\n3) same-origin<BR>\n4) origin<BR>\n5) origin-when-cross-origin<BR>\n6) strict-origin<BR>\n7) strict-origin-when-cross-origin<BR>\n<P>\nIf the Referrer Policy header is not found , WAS checks in response body for meta tag containing tag name as \"referrer\" and one of the above Referrer Policy."
+            },
+            {
+                "key": "group",
+                "value": "IG-WEAK"
+            },
+            {
+                "key": "owasp",
+                "value": "A6"
+            },
+            {
+                "key": "wasc",
+                "value": "WASC-15"
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_data",
+                "value": {
+                    "#text": "ClJlZmVycmVyLVBvbGljeTogSGVhZGVyIG1pc3NpbmcKUmVzcG9uc2UgaGVhZGVycyBvbiBsaW5rOiBHRVQgaHR0cHM6Ly9zZXJ2aWNlcy5leGFtcGxlLmNvbS8gcmVzcG9uc2UgY29kZTogNTAwCkNvbnRlbnQtVHlwZTogdGV4dC94bWw7Y2hhcnNldD11dGYtOApDb250ZW50LUxlbmd0aDogNjYzCkRhdGU6IFRodSwgMTIgTWFyIDIwMjAgMjA6NDM6NTAgR01UCkNvbm5lY3Rpb246IGNsb3NlClNlcnZlcjogZWFnbGUKCkhlYWRlciBtaXNzaW5nIG9uIHRoZSBmb2xsb3dpbmcgbGluayhzKToKKE9ubHkgZmlyc3QgNTAgc3VjaCBwYWdlcyBhcmUgbGlzdGVkKQoKR0VUIGh0dHBzOi8vc2VydmljZXMuZXhhbXBsZS5jb20vIHJlc3BvbnNlIGNvZGU6IDUwMAo=",
+                    "@base64": "true"
+                }
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "The Referrer-Policy header controls how much referrer information is sent to a site when navigating to it. Absence of Referrer-Policy header can lead to leakage of sensitive information via the referrer header.",
+        "issueName": "Missing header: Referrer-Policy",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150208//101588217",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "Referrer Policy header improves security by ensuring websites don't leak sensitive information via the referrer header. It's recommended to add secure Referrer Policies as a part of a defense-in-depth approach.<P>\n\nReferences:<BR>\n- <A HREF=\"https://www.w3.org/TR/referrer-policy/\" TARGET=\"_blank\">https://www.w3.org/TR/referrer-policy/</A><BR>\n- <A HREF=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy\" TARGET=\"_blank\">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy</A>",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "2",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101588222"
+            },
+            {
+                "key": "unique_id",
+                "value": "714ffe04-7bb1-11ea-a3c5-c308cc34010e"
+            },
+            {
+                "key": "detection_id",
+                "value": "2253540"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "12 Mar 2020 04:42PM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "\nFeature-Policy: Header missing\nResponse headers on link: GET https://services.example.com/ response code: 500\nContent-Type: text/xml;charset=utf-8\nContent-Length: 663\nDate: Thu, 12 Mar 2020 20:43:50 GMT\nConnection: close\nServer: eagle\n\nHeader missing on the following link(s):\n(Only first 50 such pages are listed)\n\nGET https://services.example.com/ response code: 500\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150262"
+            },
+            {
+                "key": "info_id",
+                "value": "101588222"
+            },
+            {
+                "key": "description",
+                "value": "The Feature-Policy response header is not present."
+            },
+            {
+                "key": "group",
+                "value": "IG-WEAK"
+            },
+            {
+                "key": "owasp",
+                "value": "A6"
+            },
+            {
+                "key": "wasc",
+                "value": "WASC-15"
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_data",
+                "value": {
+                    "#text": "CkZlYXR1cmUtUG9saWN5OiBIZWFkZXIgbWlzc2luZwpSZXNwb25zZSBoZWFkZXJzIG9uIGxpbms6IEdFVCBodHRwczovL3NlcnZpY2VzLmV4YW1wbGUuY29tLyByZXNwb25zZSBjb2RlOiA1MDAKQ29udGVudC1UeXBlOiB0ZXh0L3htbDtjaGFyc2V0PXV0Zi04CkNvbnRlbnQtTGVuZ3RoOiA2NjMKRGF0ZTogVGh1LCAxMiBNYXIgMjAyMCAyMDo0Mzo1MCBHTVQKQ29ubmVjdGlvbjogY2xvc2UKU2VydmVyOiBlYWdsZQoKSGVhZGVyIG1pc3Npbmcgb24gdGhlIGZvbGxvd2luZyBsaW5rKHMpOgooT25seSBmaXJzdCA1MCBzdWNoIHBhZ2VzIGFyZSBsaXN0ZWQpCgpHRVQgaHR0cHM6Ly9zZXJ2aWNlcy5leGFtcGxlLmNvbS8gcmVzcG9uc2UgY29kZTogNTAwCg==",
+                    "@base64": "true"
+                }
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Feature Policy allows web developers to selectively enable, disable, and modify the behavior of certain APIs and web features such as \"geolocation\",\"camera\", \"usb\", \"fullscreen\", \"animations\" etc in the browser.\n<P> \nThese policies restrict what APIs the site can access or modify the browser's default behavior for certain features.",
+        "issueName": "Missing header: Feature-Policy",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150262//101588222",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "It is recommended to set the Feature-Policy header to selectively enable, disable, and modify the behavior of certain APIs and web features.<P>\n\nReferences:<BR>\n- <A HREF=\"https://www.w3.org/TR/feature-policy/\" TARGET=\"_blank\">https://www.w3.org/TR/feature-policy/</A><BR>\n- <A HREF=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy\" TARGET=\"_blank\">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy</A>",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "2",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101588225"
+            },
+            {
+                "key": "unique_id",
+                "value": "de5ab448-7bb2-11ea-a314-f3089504f5a9"
+            },
+            {
+                "key": "detection_id",
+                "value": "2253543"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "12 Mar 2020 04:42PM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "Ubuntu_/_Tiny_Core_Linux_/_Linux_2.6.x TCP/IP_Fingerprint U4856:443\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "45017"
+            },
+            {
+                "key": "info_id",
+                "value": "101588225"
+            },
+            {
+                "key": "description",
+                "value": "Several different techniques can be used to identify the operating system (OS) running on a host. A short description of these techniques is provided below. The specific technique used to identify the OS on this host is included in the RESULTS section of your report.\n<P>\n1) <B>TCP/IP Fingerprint</B>: The operating system of a host can be identified from a remote system using TCP/IP fingerprinting. All underlying operating system TCP/IP stacks have subtle differences that can be seen in their responses to specially-crafted TCP packets. According to the results of this \"fingerprinting\" technique, the OS version is among those listed below. \n<P>\nNote that if one or more of these subtle differences are modified by a firewall or a packet filtering device between the scanner and the host, the fingerprinting technique may fail. Consequently, the version of the OS may not be detected correctly. If the host is behind a proxy-type firewall, the version of the operating system detected may be that of the firewall instead of the host being scanned.\n<P>\n2) <B>NetBIOS</B>: Short for Network Basic Input Output System, an application programming interface (API) that augments the DOS BIOS by adding special functions for local-area networks (LANs). Almost all LANs for PCs are based on the NetBIOS. Some LAN manufacturers have even extended it, adding additional network capabilities. NetBIOS relies on a message format called Server Message Block (SMB). \n<P>\n3) <B>PHP Info</B>: PHP is a hypertext pre-processor, an open-source, server-side, HTML-embedded scripting language used to create dynamic Web pages. Under some configurations it is possible to call PHP functions like phpinfo() and obtain operating system information.\n<P>\n4) <B>SNMP</B>: The Simple Network Monitoring Protocol is used to monitor hosts, routers, and the networks to which they attach. The SNMP service maintains Management Information Base (MIB), a set of variables (database) that can be fetched by Managers. These include \"MIB_II.system.sysDescr\" for the operating system."
+            },
+            {
+                "key": "group",
+                "value": "IG-DIAG"
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_data",
+                "value": {
+                    "#text": "VWJ1bnR1Xy9fVGlueV9Db3JlX0xpbnV4Xy9fTGludXhfMi42LnggVENQL0lQX0ZpbmdlcnByaW50IFU0ODU2OjQ0Mwo=",
+                    "@base64": "true"
+                }
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Not  applicable.",
+        "issueName": "Operating System Detected",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "45017//101588225",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "Not  applicable.",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "2",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101588221"
+            },
+            {
+                "key": "unique_id",
+                "value": "7c0870c8-7bb2-11ea-9864-efc6593dd0f3"
+            },
+            {
+                "key": "detection_id",
+                "value": "2253539"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "12 Mar 2020 04:42PM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "Scan duration: 686 seconds\n\nStart time: Thu, Mar 12 2020, 20:42:42 GMT\n\nEnd time: Thu, Mar 12 2020, 20:54:08 GMT\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "45038"
+            },
+            {
+                "key": "info_id",
+                "value": "101588221"
+            },
+            {
+                "key": "description",
+                "value": "The Host Scan Time is the period of time it takes the scanning engine to perform the vulnerability assessment of a single target host. The Host Scan Time for this host is reported in the Result section below. \n<P>\nThe Host Scan Time does not have a direct correlation to the Duration time as displayed in the Report Summary section of a scan results report. The Duration is the period of time it takes the service to perform a scan task. The Duration includes the time it takes the service to scan all hosts, which may involve parallel scanning. It also includes the time it takes for a scanner appliance to pick up the scan task and transfer the results back to the service's Secure Operating Center. Further, when a scan task is distributed across multiple scanners, the Duration includes the time it takes to perform parallel host scanning on all scanners.\n<P>\nFor host running the Qualys Windows agent this QID reports the time taken by the agent to collect the host metadata used for the most recent assessment scan."
+            },
+            {
+                "key": "group",
+                "value": "IG-DIAG"
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_data",
+                "value": {
+                    "#text": "U2NhbiBkdXJhdGlvbjogNjg2IHNlY29uZHMKClN0YXJ0IHRpbWU6IFRodSwgTWFyIDEyIDIwMjAsIDIwOjQyOjQyIEdNVAoKRW5kIHRpbWU6IFRodSwgTWFyIDEyIDIwMjAsIDIwOjU0OjA4IEdNVAo=",
+                    "@base64": "true"
+                }
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "N/A",
+        "issueName": "Host Scan Time",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "45038//101588221",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101588218"
+            },
+            {
+                "key": "unique_id",
+                "value": "a1afd4e8-7bb1-11ea-9cda-a37f6230c4bd"
+            },
+            {
+                "key": "detection_id",
+                "value": "2253536"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "12 Mar 2020 04:42PM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "#table\nIP_address Host_name\n\nservices.example.com No_registered_hostname\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "6"
+            },
+            {
+                "key": "info_id",
+                "value": "101588218"
+            },
+            {
+                "key": "description",
+                "value": "The fully qualified domain name of this host, if it was obtained from a DNS server, is displayed in the RESULT section."
+            },
+            {
+                "key": "group",
+                "value": "IG-DIAG"
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_data",
+                "value": {
+                    "#text": "I3RhYmxlCklQX2FkZHJlc3MgSG9zdF9uYW1lCgpzZXJ2aWNlcy5leGFtcGxlLmNvbSBOb19yZWdpc3RlcmVkX2hvc3RuYW1lCg==",
+                    "@base64": "true"
+                }
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "N/A",
+        "issueName": "DNS Host Name",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "6//101588218",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    }
+]

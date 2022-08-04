@@ -1,0 +1,1268 @@
+[
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "issue_description": "Password Policy has weak reuse requirement (lower than 24)"
+                    }
+                ]
+            },
+            {
+                "key": "scored",
+                "value": "Scored"
+            },
+            {
+                "key": "level",
+                "value": "Level 1"
+            },
+            {
+                "key": "title_id",
+                "value": "1.10"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "title_id"
+                ]
+            },
+            {
+                "key": "_raw_issue_name",
+                "value": "[check110] Ensure IAM password policy prevents password reuse: 24 or greater (Scored)"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Password Policy has weak reuse requirement (lower than 24)",
+        "issueName": "1.10 [check110] Ensure IAM password policy prevents password reuse: 24 or greater (Scored)",
+        "issueType": "Not part of CIS benchmark",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "1.10",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "prowler",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "FAIL",
+        "scanStatus": null,
+        "scanTool": "prowler",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 9,
+        "severityCode": "Critical",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "issue_description": "Password expiration is set greater than 90 days"
+                    }
+                ]
+            },
+            {
+                "key": "scored",
+                "value": "Scored"
+            },
+            {
+                "key": "level",
+                "value": "Level 1"
+            },
+            {
+                "key": "title_id",
+                "value": "1.11"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "title_id"
+                ]
+            },
+            {
+                "key": "_raw_issue_name",
+                "value": "[check111] Ensure IAM password policy expires passwords within 90 days or less (Scored)"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Password expiration is set greater than 90 days",
+        "issueName": "1.11 [check111] Ensure IAM password policy expires passwords within 90 days or less (Scored)",
+        "issueType": "Not part of CIS benchmark",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "1.11",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "prowler",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "FAIL",
+        "scanStatus": null,
+        "scanTool": "prowler",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 9,
+        "severityCode": "Critical",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "issue_description": "Only Virtual MFA is enabled for root"
+                    }
+                ]
+            },
+            {
+                "key": "scored",
+                "value": "Scored"
+            },
+            {
+                "key": "level",
+                "value": "Level 2"
+            },
+            {
+                "key": "title_id",
+                "value": "1.14"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "title_id"
+                ]
+            },
+            {
+                "key": "_raw_issue_name",
+                "value": "[check114] Ensure hardware MFA is enabled for the root account (Scored)"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Only Virtual MFA is enabled for root",
+        "issueName": "1.14 [check114] Ensure hardware MFA is enabled for the root account (Scored)",
+        "issueType": "Not part of CIS benchmark",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "1.14",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "prowler",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "FAIL",
+        "scanStatus": null,
+        "scanTool": "prowler",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 9,
+        "severityCode": "Critical",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "issue_description": "User has Password enabled but MFA disabled"
+                    }
+                ]
+            },
+            {
+                "key": "scored",
+                "value": "Scored"
+            },
+            {
+                "key": "level",
+                "value": "Level 1"
+            },
+            {
+                "key": "title_id",
+                "value": "1.2"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "title_id"
+                ]
+            },
+            {
+                "key": "_raw_issue_name",
+                "value": "[check12] Ensure multi-factor authentication (MFA) is enabled for all IAM users that have a console password (Scored)"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "User has Password enabled but MFA disabled",
+        "issueName": "1.2 [check12] Ensure multi-factor authentication (MFA) is enabled for all IAM users that have a console password (Scored)",
+        "issueType": "Not part of CIS benchmark",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "1.2",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "prowler",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "FAIL",
+        "scanStatus": null,
+        "scanTool": "prowler",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 9,
+        "severityCode": "Critical",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "issue_description": "Support Policy not applied to any Role "
+                    }
+                ]
+            },
+            {
+                "key": "scored",
+                "value": "Scored"
+            },
+            {
+                "key": "level",
+                "value": "Level 1"
+            },
+            {
+                "key": "title_id",
+                "value": "1.20"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "title_id"
+                ]
+            },
+            {
+                "key": "_raw_issue_name",
+                "value": "[check120] Ensure a support role has been created to manage incidents with AWS Support (Scored)"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Support Policy not applied to any Role ",
+        "issueName": "1.20 [check120] Ensure a support role has been created to manage incidents with AWS Support (Scored)",
+        "issueType": "Not part of CIS benchmark",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "1.20",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "prowler",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "FAIL",
+        "scanStatus": null,
+        "scanTool": "prowler",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 9,
+        "severityCode": "Critical",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "issue_description": "JSentongo has never used Access Key 1"
+                    },
+                    {
+                        "issue_description": "zn-dev-new-eks-cluster-minio has never used Access Key 1"
+                    }
+                ]
+            },
+            {
+                "key": "scored",
+                "value": "Not Scored"
+            },
+            {
+                "key": "level",
+                "value": "Level 1"
+            },
+            {
+                "key": "title_id",
+                "value": "1.21"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "title_id"
+                ]
+            },
+            {
+                "key": "_raw_issue_name",
+                "value": "[check121] Do not setup access keys during initial user setup for all IAM users that have a console password (Not Scored)"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "JSentongo has never used Access Key 1",
+        "issueName": "1.21 [check121] Do not setup access keys during initial user setup for all IAM users that have a console password (Not Scored)",
+        "issueType": "Not part of CIS benchmark",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "1.21",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "prowler",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "FAIL",
+        "scanStatus": null,
+        "scanTool": "prowler",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 1,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "issue_description": "User \"\" has not logged in during the last 90 days "
+                    }
+                ]
+            },
+            {
+                "key": "scored",
+                "value": "Scored"
+            },
+            {
+                "key": "level",
+                "value": "Level 1"
+            },
+            {
+                "key": "title_id",
+                "value": "1.3"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "title_id"
+                ]
+            },
+            {
+                "key": "_raw_issue_name",
+                "value": "[check13] Ensure credentials unused for 90 days or greater are disabled (Scored)"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "User \"\" has not logged in during the last 90 days ",
+        "issueName": "1.3 [check13] Ensure credentials unused for 90 days or greater are disabled (Scored)",
+        "issueType": "Not part of CIS benchmark",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "1.3",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "prowler",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "FAIL",
+        "scanStatus": null,
+        "scanTool": "prowler",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 9,
+        "severityCode": "Critical",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "issue_description": " has not rotated access key1 in over 90 days."
+                    },
+                    {
+                        "issue_description": " thanos has not rotated access key1 in over 90 days."
+                    }
+                ]
+            },
+            {
+                "key": "scored",
+                "value": "Scored"
+            },
+            {
+                "key": "level",
+                "value": "Level 1"
+            },
+            {
+                "key": "title_id",
+                "value": "1.4"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "title_id"
+                ]
+            },
+            {
+                "key": "_raw_issue_name",
+                "value": "[check14] Ensure access keys are rotated every 90 days or less (Scored)"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": " has not rotated access key1 in over 90 days.",
+        "issueName": "1.4 [check14] Ensure access keys are rotated every 90 days or less (Scored)",
+        "issueType": "Not part of CIS benchmark",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "1.4",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "prowler",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "FAIL",
+        "scanStatus": null,
+        "scanTool": "prowler",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 9,
+        "severityCode": "Critical",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "issue_description": "Password Policy missing or weak length requirement"
+                    }
+                ]
+            },
+            {
+                "key": "scored",
+                "value": "Scored"
+            },
+            {
+                "key": "level",
+                "value": "Level 1"
+            },
+            {
+                "key": "title_id",
+                "value": "1.9"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "title_id"
+                ]
+            },
+            {
+                "key": "_raw_issue_name",
+                "value": "[check19] Ensure IAM password policy requires minimum length of 14 or greater (Scored)"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Password Policy missing or weak length requirement",
+        "issueName": "1.9 [check19] Ensure IAM password policy requires minimum length of 14 or greater (Scored)",
+        "issueType": "Not part of CIS benchmark",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "1.9",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "prowler",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "FAIL",
+        "scanStatus": null,
+        "scanTool": "prowler",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 9,
+        "severityCode": "Critical",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "issue_description": "Region eu-north-1 has AWS Config disabled or not configured"
+                    },
+                    {
+                        "issue_description": "Region ap-south-1 has AWS Config disabled or not configured"
+                    },
+                    {
+                        "issue_description": "Region eu-west-3 has AWS Config disabled or not configured"
+                    },
+                    {
+                        "issue_description": "Region eu-west-2 has AWS Config disabled or not configured"
+                    },
+                    {
+                        "issue_description": "Region eu-west-1 has AWS Config disabled or not configured"
+                    },
+                    {
+                        "issue_description": "Region ap-northeast-3 has AWS Config disabled or not configured"
+                    },
+                    {
+                        "issue_description": "Region ap-northeast-2 has AWS Config disabled or not configured"
+                    },
+                    {
+                        "issue_description": "Region ap-northeast-1 has AWS Config disabled or not configured"
+                    },
+                    {
+                        "issue_description": "Region sa-east-1 has AWS Config disabled or not configured"
+                    },
+                    {
+                        "issue_description": "Region ca-central-1 has AWS Config disabled or not configured"
+                    },
+                    {
+                        "issue_description": "Region ap-southeast-1 has AWS Config disabled or not configured"
+                    },
+                    {
+                        "issue_description": "Region ap-southeast-2 has AWS Config disabled or not configured"
+                    },
+                    {
+                        "issue_description": "Region eu-central-1 has AWS Config disabled or not configured"
+                    },
+                    {
+                        "issue_description": "Region us-east-1 has AWS Config disabled or not configured"
+                    },
+                    {
+                        "issue_description": "Region us-east-2 has AWS Config disabled or not configured"
+                    },
+                    {
+                        "issue_description": "Region us-west-1 has AWS Config disabled or not configured"
+                    }
+                ]
+            },
+            {
+                "key": "scored",
+                "value": "Scored"
+            },
+            {
+                "key": "level",
+                "value": "Level 1"
+            },
+            {
+                "key": "title_id",
+                "value": "2.5"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "title_id"
+                ]
+            },
+            {
+                "key": "_raw_issue_name",
+                "value": "[check25] Ensure AWS Config is enabled in all regions (Scored)"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Region eu-north-1 has AWS Config disabled or not configured",
+        "issueName": "2.5 [check25] Ensure AWS Config is enabled in all regions (Scored)",
+        "issueType": "Not part of CIS benchmark",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "2.5",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "prowler",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "FAIL",
+        "scanStatus": null,
+        "scanTool": "prowler",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 9,
+        "severityCode": "Critical",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "issue_description": "us-east-1: Key 0993d642-5ad9-4b9d-ae9a-fbb127dd1f4f is not set to rotate!"
+                    },
+                    {
+                        "issue_description": "us-east-1: Key 412e2e3c-c976-4440-a7ac-e2217836501b is not set to rotate!"
+                    },
+                    {
+                        "issue_description": "us-east-1: Key ac58f07f-8b16-443a-a10e-639f9f9a98e7 is not set to rotate!"
+                    },
+                    {
+                        "issue_description": "us-east-1: Key db243d2a-7a4b-4ec6-9dfd-0cdf4f034f5a is not set to rotate!"
+                    },
+                    {
+                        "issue_description": "us-east-1: Key e538338c-3dc0-4b70-ab9d-fd1650b000ba is not set to rotate!"
+                    },
+                    {
+                        "issue_description": "us-west-2: Key 3b10333f-965e-42e3-be30-06b153d788d7 is not set to rotate!"
+                    }
+                ]
+            },
+            {
+                "key": "scored",
+                "value": "Scored"
+            },
+            {
+                "key": "level",
+                "value": "Level 2"
+            },
+            {
+                "key": "title_id",
+                "value": "2.8"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "title_id"
+                ]
+            },
+            {
+                "key": "_raw_issue_name",
+                "value": "[check28] Ensure rotation for customer created CMKs is enabled (Scored)"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "us-east-1: Key 0993d642-5ad9-4b9d-ae9a-fbb127dd1f4f is not set to rotate!",
+        "issueName": "2.8 [check28] Ensure rotation for customer created CMKs is enabled (Scored)",
+        "issueType": "Not part of CIS benchmark",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "2.8",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "prowler",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "FAIL",
+        "scanStatus": null,
+        "scanTool": "prowler",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 9,
+        "severityCode": "Critical",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "issue_description": "No VPCFlowLog has been found in Region eu-north-1"
+                    },
+                    {
+                        "issue_description": "No VPCFlowLog has been found in Region ap-south-1"
+                    },
+                    {
+                        "issue_description": "No VPCFlowLog has been found in Region eu-west-3"
+                    },
+                    {
+                        "issue_description": "No VPCFlowLog has been found in Region eu-west-2"
+                    },
+                    {
+                        "issue_description": "No VPCFlowLog has been found in Region eu-west-1"
+                    },
+                    {
+                        "issue_description": "No VPCFlowLog has been found in Region ap-northeast-3"
+                    },
+                    {
+                        "issue_description": "No VPCFlowLog has been found in Region ap-northeast-2"
+                    },
+                    {
+                        "issue_description": "No VPCFlowLog has been found in Region ap-northeast-1"
+                    },
+                    {
+                        "issue_description": "No VPCFlowLog has been found in Region sa-east-1"
+                    },
+                    {
+                        "issue_description": "No VPCFlowLog has been found in Region ca-central-1"
+                    },
+                    {
+                        "issue_description": "No VPCFlowLog has been found in Region ap-southeast-1"
+                    },
+                    {
+                        "issue_description": "No VPCFlowLog has been found in Region ap-southeast-2"
+                    },
+                    {
+                        "issue_description": "No VPCFlowLog has been found in Region eu-central-1"
+                    }
+                ]
+            },
+            {
+                "key": "scored",
+                "value": "Scored"
+            },
+            {
+                "key": "level",
+                "value": "Level 2"
+            },
+            {
+                "key": "title_id",
+                "value": "2.9"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "title_id"
+                ]
+            },
+            {
+                "key": "_raw_issue_name",
+                "value": "[check29] Ensure VPC Flow Logging is Enabled in all VPCs (Scored)"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "No VPCFlowLog has been found in Region eu-north-1",
+        "issueName": "2.9 [check29] Ensure VPC Flow Logging is Enabled in all VPCs (Scored)",
+        "issueType": "Not part of CIS benchmark",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "2.9",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "prowler",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "FAIL",
+        "scanStatus": null,
+        "scanTool": "prowler",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 9,
+        "severityCode": "Critical",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    }
+]

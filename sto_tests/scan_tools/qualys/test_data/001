@@ -1,0 +1,1076 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<WAS_WEBAPP_REPORT>
+    <HEADER>
+        <NAME>Web App Report R+F CA</NAME>
+        <DESCRIPTION>Each targeted web application is listed with the total number of detected vulnerabilities and sensitive content.</DESCRIPTION>
+        <GENERATION_DATETIME>15 Jul 2020 03:06PM GMT-0700</GENERATION_DATETIME>
+        <COMPANY_INFO>
+            <NAME><![CDATA[Rodan & Fields, LLC]]></NAME>
+            <ADDRESS>60 Spear Street, Suite 600</ADDRESS>
+            <CITY>San Francisco</CITY>
+            <STATE>California</STATE>
+            <COUNTRY>United States of America</COUNTRY>
+            <ZIP_CODE>94105</ZIP_CODE>
+        </COMPANY_INFO>
+        <USER_INFO>
+            <NAME>Carlos Verduzco</NAME>
+            <USERNAME>rdanf2cv</USERNAME>
+        </USER_INFO>
+    </HEADER>
+    <FILTERS>
+        <FILTER>
+            <NAME>FINDING_STATUS</NAME>
+            <VALUE>New,Active,Re-Opened</VALUE>
+        </FILTER>
+        <FILTER>
+            <NAME>REMEDIATION</NAME>
+            <VALUE>Do not show ignored findings, Include patched findings</VALUE>
+        </FILTER>
+        <FILTER>
+            <NAME>DETECTION_SOURCE</NAME>
+            <VALUE>QUALYS,BURP,BUGCROWD</VALUE>
+        </FILTER>
+    </FILTERS>
+    <TARGET>
+        <WEB_APPLICATIONS>
+            <WEB_APPLICATION>Hybris-CA</WEB_APPLICATION>
+        </WEB_APPLICATIONS>
+    </TARGET>
+    <SUMMARY>
+        <GLOBAL_SUMMARY>
+            <SECURITY_RISK>Medium</SECURITY_RISK>
+            <WEB_APPLICATIONS>1</WEB_APPLICATIONS>
+            <VULNERABILITY>7</VULNERABILITY>
+            <SENSITIVE_CONTENT>0</SENSITIVE_CONTENT>
+            <INFORMATION_GATHERED>15</INFORMATION_GATHERED>
+        </GLOBAL_SUMMARY>
+        <SUMMARY_STATS>
+            <SUMMARY_STAT>
+                <WEB_APPLICATION>Hybris-CA</WEB_APPLICATION>
+                <LEVEL5>0</LEVEL5>
+                <LEVEL4>0</LEVEL4>
+                <LEVEL3>2</LEVEL3>
+                <LEVEL2>4</LEVEL2>
+                <LEVEL1>1</LEVEL1>
+                <SENSITIVE_CONTENT>0</SENSITIVE_CONTENT>
+                <INFORMATION_GATHERED>15</INFORMATION_GATHERED>
+            </SUMMARY_STAT>
+        </SUMMARY_STATS>
+    </SUMMARY>
+    <RESULTS>
+        <WEB_APPLICATION>
+            <ID>134122294</ID>
+            <NAME>Hybris-CA</NAME>
+            <VULNERABILITY_LIST>
+                <VULNERABILITY>
+                    <UNIQUE_ID>8f416861-a415-befd-e053-a02410acaab3</UNIQUE_ID>
+                    <ID>7795810</ID>
+                    <QID>150124</QID>
+                    <URL><![CDATA[https://www.rodanandfields.com/_Incapsula_Resource?CWUDNSAI=21&xinfo=5-101018338-0%200NNN%20RT%281563156582964%208%29%20q%280%20-1%20-1%20-1%29%20r%280%20-1%29%20B15%284%2C200%2C0%29%20U5&incident_id=480001530199237855-405551728610511253&edet=15&cinfo=04000000]]></URL>
+                    <AUTHENTICATION>Not Required</AUTHENTICATION>
+                    <AJAX>false</AJAX>
+                    <STATUS>ACTIVE</STATUS>
+                    <FIRST_TIME_DETECTED>09 May 2019 09:10PM GMT-0700</FIRST_TIME_DETECTED>
+                    <LAST_TIME_DETECTED>14 Jul 2019 07:08PM GMT-0700</LAST_TIME_DETECTED>
+                    <LAST_TIME_TESTED>14 Jul 2019 07:08PM GMT-0700</LAST_TIME_TESTED>
+                    <TIMES_DETECTED>4</TIMES_DETECTED>
+                    <PAYLOADS>
+                        <PAYLOAD>
+                            <NUM>1</NUM>
+                            <PAYLOAD>N/A</PAYLOAD>
+                            <REQUEST>
+                                <METHOD>GET</METHOD>
+                                <URL><![CDATA[https://www.rodanandfields.com/_Incapsula_Resource?CWUDNSAI=21&xinfo=3-72586369-0%200NNN%20RT%281563156585368%205%29%20q%280%20-1%20-1%200%29%20r%280%20-1%29%20B15%284%2c200%2c0%29%20U5&incident_id=480001530199237855-289752607082154387&edet=15&cinfo=04000000]]></URL>
+                                <HEADERS>
+                                    <HEADER>
+                                        <key>Host</key>
+                                        <value><![CDATA[ www.rodanandfields.com]]></value>
+                                    </HEADER>
+                                    <HEADER>
+                                        <key>User-Agent</key>
+                                        <value><![CDATA[ Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/601.4.4 (KHTML, like Gecko) Version/9.0.3 Safari/601.4.4]]></value>
+                                    </HEADER>
+                                    <HEADER>
+                                        <key>Accept</key>
+                                        <value><![CDATA[ */*]]></value>
+                                    </HEADER>
+                                </HEADERS>
+                            </REQUEST>
+                            <RESPONSE>
+                                <CONTENTS base64="true">VGhlIFVSSSB3YXMgZnJhbWVkLgo=</CONTENTS>
+                            </RESPONSE>
+                        </PAYLOAD>
+                    </PAYLOADS>
+                    <IGNORED>false</IGNORED>
+                </VULNERABILITY>
+                <VULNERABILITY>
+                    <UNIQUE_ID>8f416861-a417-befd-e053-a02410acaab3</UNIQUE_ID>
+                    <ID>7795814</ID>
+                    <QID>150123</QID>
+                    <URL>https://www.rodanandfields.com/ca</URL>
+                    <PARAM>visid_incap_1147811, ___utmvc, incap_ses_480_1147811</PARAM>
+                    <AUTHENTICATION>Not Required</AUTHENTICATION>
+                    <AJAX>false</AJAX>
+                    <STATUS>ACTIVE</STATUS>
+                    <FIRST_TIME_DETECTED>09 May 2019 09:10PM GMT-0700</FIRST_TIME_DETECTED>
+                    <LAST_TIME_DETECTED>14 Jul 2019 07:08PM GMT-0700</LAST_TIME_DETECTED>
+                    <LAST_TIME_TESTED>14 Jul 2019 07:08PM GMT-0700</LAST_TIME_TESTED>
+                    <TIMES_DETECTED>4</TIMES_DETECTED>
+                    <PAYLOADS>
+                        <PAYLOAD>
+                            <NUM>1</NUM>
+                            <PAYLOAD>N/A</PAYLOAD>
+                            <REQUEST>
+                                <METHOD>GET</METHOD>
+                                <URL>https://www.rodanandfields.com/ca</URL>
+                                <HEADERS>
+                                    <HEADER>
+                                        <key>Host</key>
+                                        <value><![CDATA[ www.rodanandfields.com]]></value>
+                                    </HEADER>
+                                    <HEADER>
+                                        <key>User-Agent</key>
+                                        <value><![CDATA[ Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/601.4.4 (KHTML, like Gecko) Version/9.0.3 Safari/601.4.4]]></value>
+                                    </HEADER>
+                                    <HEADER>
+                                        <key>Accept</key>
+                                        <value><![CDATA[ */*]]></value>
+                                    </HEADER>
+                                </HEADERS>
+                            </REQUEST>
+                            <RESPONSE>
+                                <CONTENTS base64="true">dmlzaWRfaW5jYXBfMTE0NzgxMT1Md0s1NDRqUlM3R3c5VG8vbmliV1RtYmdLMTBBQUFBQVFVSVBBQUFBQUFBRk9mKzNRQ1AwREFRUG15cEJsMmp2OyBleHBpcmVzPU1vbiBKdWwgMTMgMTI6MTc6NTMgMjAyMDsgcGF0aD0vOyBkb21haW49LnJvZGFuYW5kZmllbGRzLmNvbTsgbWF4LWFnZT0zMTQ4NTc1NApfX191dG12Yz0ydUNRbmVvTXZQb1Y1NmZFc2dpbnU2STdhT2o5R0VEVFphS0lGK1Jua2ZVL0swZ3FTRkZLRjNrVnlxSmx0OGRKMjROT2k1b2trYjZEUG8rVnBnV0VvT3VweXc0cUtqekdJVkdIcG04SUxzREs5QjExUTNBT2V1Ny9xVkJ5bDE1cnNXNE1DS1pqRXNlNEZZbTJVOXRDc1g0UURNdlRpYjR0UllHTjRlN3hhczZRUDNMRHNlTXYrZXRPQmx5MTN2L3BiRkhFMXlleFRwd1lRTWk1TVh2MjNtd0lPQWQ0cjNVakt1a0tScnFlODZ5NnFnWWdhUHZUUmVrMmR3L2pkVmNtZHhiTUErdS9tU1l3QVJ0dFBvQ2VRZUVKdWJMakZNM3d6OEk3SXY2WFNDWmtDSmpFYy94ZkF1aTI1RG1XVG1QV0djWmQ2MXZVeTNzL1hIUUpCZ3NHcGc3NUVmdGNNR2FwU0syQTl5ZWNoRTE2cHRSNmtHK0lmNXA1aXFHUUI5Z3NOejF4aWxmeWUyeFdrd1k0Mjd6SW9Ba0h6aVROZVQvVktvMnYwcS9lS2h6RmppS2t2VWZHUVdCOFp5dzQyV0NueXFxamRrYmpTYzdFVjNHMGlGU0ZiSmFkNXordzcxaHhFUkFHUEpaT0gwZzFUZjduRmNYMHNVSVpsSVVJdFAvYTU3ZksyRUJybEhPU25XMmNEU25qOVFUcTJmQmQvVjluR2Z2WHJQN0xqK2V2UkVxK1dRNEhMSkRDTldpY2g5UENYT2V6M0E0YUFVQ2pFbDN4b1NTbXplTDBZT3JBV2cwVFBTbjlxMFJ5QjdDc1RiWERMWXd2aC9LVjdKb2NDem5oeDZBQldTaFEvTDM2djJZUFpveFBGWHNaczRmYTRHUzhlR1ZxQ1RXQ2dXUHBNVW10b2ViVUM5cWUxTE1ZcHJqMk1TekFnYWxOWWsyRkFXNHVudnpGbnNsRU9OWVpSY3ArSFJyYmhxNHh3Ym10OVJEbHh6NExSVFYxYklDaS9JNnNhdlM3ZVl1WEgwRXdhWWFyRmVjUjAySDB4bWYwY3IwYXBObk5aOU55R09ibzhqRGNQZDBDc25nYVl3aDlxWm8xQTc1dVJBdWczL3o4V25FVGdDSjJvN0dBTkpibldqTzJqK1NXcDh1dEV4aHRHQVRuZm85ZWpDQlZRTkJBdU1VeE03UjJ2ZnlHZ3JQTlRqd2VFbXB2YUpyU3MyYzZvbkhrUkdQM2NrTWZDSkxzSG1yY3RScy9OUGdvUXhzem9UTWphc1BnUllTbUg3YURRZE9mN00zajdrb0VvM0c4bGMxUWQ5WUtGTWlsQ2F2TkxWaHNCajV6L3Z5OWM0Nk9TUmR3N0dpb1ZYQk42MFluOUR2M0tvUVREM0Y2YVE0UytqN0ZHSlNibDBwcWlYblgwS243NTcxdXVwNXhHbXdiODErb2ltbE4rRUthRHdReDBNQ2E4R0NtTmp3QkRKaXV0bDlwT0dBUlRVOW4xWVJYS3pLVlVkL3dvMHUxc0VPN3RPV3NDdW1qbG9FV2psV2doczJEeXVsa0lhOVBISjNtQ242UGdZd2tOWTlQYUJCaVoxNlh0UkQvU2FZc1pHbG5aWE4wUFRnNE5qTTRMSE05WVdVNE1qYzNOems0TVdFMU9URTRaRGxsT0dJM1pqa3hZV1EzWm1GaU9ETTRaamhqTmpVMllqYzVPV0k0TkRsak9UQTVaVGxqTm1VNE1qWmxOMkU0WkRnMU9EWmhPV0ZpT0RZNVpEY3dOelU9OyBleHBpcmVzPU1vbiBKdWwgMTUgMDI6MTA6MDMgMjAxOTsgcGF0aD0vOyBkb21haW49d3d3LnJvZGFuYW5kZmllbGRzLmNvbQppbmNhcF9zZXNfNDgwXzExNDc4MTE9c2xhWkZRV0pVVnliYmlzNzJVNnBCbWJnSzEwQUFBQUFvRWFpQmlqcGhJdDIwT2hQYjBZSnB3PT07IHBhdGg9LzsgZG9tYWluPS5yb2RhbmFuZGZpZWxkcy5jb20=</CONTENTS>
+                            </RESPONSE>
+                        </PAYLOAD>
+                    </PAYLOADS>
+                    <IGNORED>false</IGNORED>
+                </VULNERABILITY>
+                <VULNERABILITY>
+                    <UNIQUE_ID>8f416861-a416-befd-e053-a02410acaab3</UNIQUE_ID>
+                    <ID>7795812</ID>
+                    <QID>150081</QID>
+                    <URL><![CDATA[https://www.rodanandfields.com/_Incapsula_Resource?CWUDNSAI=21&xinfo=5-101018338-0%200NNN%20RT%281563156582964%208%29%20q%280%20-1%20-1%20-1%29%20r%280%20-1%29%20B15%284%2C200%2C0%29%20U5&incident_id=480001530199237855-405551728610511253&edet=15&cinfo=04000000]]></URL>
+                    <ACCESS_PATH>
+                        <URL>https://www.rodanandfields.com/ca</URL>
+                    </ACCESS_PATH>
+                    <AUTHENTICATION>Not Required</AUTHENTICATION>
+                    <AJAX>false</AJAX>
+                    <STATUS>ACTIVE</STATUS>
+                    <FIRST_TIME_DETECTED>09 May 2019 09:10PM GMT-0700</FIRST_TIME_DETECTED>
+                    <LAST_TIME_DETECTED>14 Jul 2019 07:08PM GMT-0700</LAST_TIME_DETECTED>
+                    <LAST_TIME_TESTED>14 Jul 2019 07:08PM GMT-0700</LAST_TIME_TESTED>
+                    <TIMES_DETECTED>4</TIMES_DETECTED>
+                    <PAYLOADS>
+                        <PAYLOAD>
+                            <NUM>1</NUM>
+                            <PAYLOAD>N/A</PAYLOAD>
+                            <REQUEST>
+                                <METHOD>GET</METHOD>
+                                <URL><![CDATA[https://www.rodanandfields.com/_Incapsula_Resource?CWUDNSAI=21&xinfo=3-72586369-0%200NNN%20RT%281563156585368%205%29%20q%280%20-1%20-1%200%29%20r%280%20-1%29%20B15%284%2c200%2c0%29%20U5&incident_id=480001530199237855-289752607082154387&edet=15&cinfo=04000000]]></URL>
+                                <HEADERS>
+                                    <HEADER>
+                                        <key>Host</key>
+                                        <value><![CDATA[ www.rodanandfields.com]]></value>
+                                    </HEADER>
+                                    <HEADER>
+                                        <key>User-Agent</key>
+                                        <value><![CDATA[ Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/601.4.4 (KHTML, like Gecko) Version/9.0.3 Safari/601.4.4]]></value>
+                                    </HEADER>
+                                    <HEADER>
+                                        <key>Accept</key>
+                                        <value><![CDATA[ */*]]></value>
+                                    </HEADER>
+                                </HEADERS>
+                            </REQUEST>
+                            <RESPONSE>
+                                <CONTENTS base64="true">VGhlIHJlc3BvbnNlIGZvciB0aGlzIHJlcXVlc3QgZWl0aGVyIGRpZCBub3QgaGF2ZSBhbiAiWC1GUkFNRS1PUFRJT05TIiBoZWFkZXIgcHJlc2VudCBvciB3YXMgbm90IHNldCB0byBERU5ZIG9yIFNBTUVPUklHSU4K</CONTENTS>
+                            </RESPONSE>
+                        </PAYLOAD>
+                    </PAYLOADS>
+                    <IGNORED>false</IGNORED>
+                </VULNERABILITY>
+                <VULNERABILITY>
+                    <UNIQUE_ID>8f416861-a419-befd-e053-a02410acaab3</UNIQUE_ID>
+                    <ID>7795818</ID>
+                    <QID>150124</QID>
+                    <URL>https://www.rodanandfields.com/ca</URL>
+                    <AUTHENTICATION>Not Required</AUTHENTICATION>
+                    <AJAX>false</AJAX>
+                    <STATUS>ACTIVE</STATUS>
+                    <FIRST_TIME_DETECTED>09 May 2019 09:10PM GMT-0700</FIRST_TIME_DETECTED>
+                    <LAST_TIME_DETECTED>14 Jul 2019 07:08PM GMT-0700</LAST_TIME_DETECTED>
+                    <LAST_TIME_TESTED>14 Jul 2019 07:08PM GMT-0700</LAST_TIME_TESTED>
+                    <TIMES_DETECTED>4</TIMES_DETECTED>
+                    <PAYLOADS>
+                        <PAYLOAD>
+                            <NUM>1</NUM>
+                            <PAYLOAD>N/A</PAYLOAD>
+                            <REQUEST>
+                                <METHOD>GET</METHOD>
+                                <URL>https://www.rodanandfields.com/ca</URL>
+                                <HEADERS>
+                                    <HEADER>
+                                        <key>Host</key>
+                                        <value><![CDATA[ www.rodanandfields.com]]></value>
+                                    </HEADER>
+                                    <HEADER>
+                                        <key>User-Agent</key>
+                                        <value><![CDATA[ Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/601.4.4 (KHTML, like Gecko) Version/9.0.3 Safari/601.4.4]]></value>
+                                    </HEADER>
+                                    <HEADER>
+                                        <key>Accept</key>
+                                        <value><![CDATA[ */*]]></value>
+                                    </HEADER>
+                                </HEADERS>
+                            </REQUEST>
+                            <RESPONSE>
+                                <CONTENTS base64="true">VGhlIFVSSSB3YXMgZnJhbWVkLgo=</CONTENTS>
+                            </RESPONSE>
+                        </PAYLOAD>
+                    </PAYLOADS>
+                    <IGNORED>false</IGNORED>
+                </VULNERABILITY>
+                <VULNERABILITY>
+                    <UNIQUE_ID>8f416861-a418-befd-e053-a02410acaab3</UNIQUE_ID>
+                    <ID>7795816</ID>
+                    <QID>150122</QID>
+                    <URL>https://www.rodanandfields.com/ca</URL>
+                    <PARAM>visid_incap_1147811, ___utmvc, incap_ses_480_1147811</PARAM>
+                    <AUTHENTICATION>Not Required</AUTHENTICATION>
+                    <AJAX>false</AJAX>
+                    <STATUS>ACTIVE</STATUS>
+                    <FIRST_TIME_DETECTED>09 May 2019 09:10PM GMT-0700</FIRST_TIME_DETECTED>
+                    <LAST_TIME_DETECTED>14 Jul 2019 07:08PM GMT-0700</LAST_TIME_DETECTED>
+                    <LAST_TIME_TESTED>14 Jul 2019 07:08PM GMT-0700</LAST_TIME_TESTED>
+                    <TIMES_DETECTED>4</TIMES_DETECTED>
+                    <PAYLOADS>
+                        <PAYLOAD>
+                            <NUM>1</NUM>
+                            <PAYLOAD>N/A</PAYLOAD>
+                            <REQUEST>
+                                <METHOD>GET</METHOD>
+                                <URL>https://www.rodanandfields.com/ca</URL>
+                                <HEADERS>
+                                    <HEADER>
+                                        <key>Host</key>
+                                        <value><![CDATA[ www.rodanandfields.com]]></value>
+                                    </HEADER>
+                                    <HEADER>
+                                        <key>User-Agent</key>
+                                        <value><![CDATA[ Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/601.4.4 (KHTML, like Gecko) Version/9.0.3 Safari/601.4.4]]></value>
+                                    </HEADER>
+                                    <HEADER>
+                                        <key>Accept</key>
+                                        <value><![CDATA[ */*]]></value>
+                                    </HEADER>
+                                </HEADERS>
+                            </REQUEST>
+                            <RESPONSE>
+                                <CONTENTS base64="true">dmlzaWRfaW5jYXBfMTE0NzgxMT1Md0s1NDRqUlM3R3c5VG8vbmliV1RtYmdLMTBBQUFBQVFVSVBBQUFBQUFBRk9mKzNRQ1AwREFRUG15cEJsMmp2OyBleHBpcmVzPU1vbiBKdWwgMTMgMTI6MTc6NTMgMjAyMDsgcGF0aD0vOyBkb21haW49LnJvZGFuYW5kZmllbGRzLmNvbTsgbWF4LWFnZT0zMTQ4NTc1NApfX191dG12Yz0ydUNRbmVvTXZQb1Y1NmZFc2dpbnU2STdhT2o5R0VEVFphS0lGK1Jua2ZVL0swZ3FTRkZLRjNrVnlxSmx0OGRKMjROT2k1b2trYjZEUG8rVnBnV0VvT3VweXc0cUtqekdJVkdIcG04SUxzREs5QjExUTNBT2V1Ny9xVkJ5bDE1cnNXNE1DS1pqRXNlNEZZbTJVOXRDc1g0UURNdlRpYjR0UllHTjRlN3hhczZRUDNMRHNlTXYrZXRPQmx5MTN2L3BiRkhFMXlleFRwd1lRTWk1TVh2MjNtd0lPQWQ0cjNVakt1a0tScnFlODZ5NnFnWWdhUHZUUmVrMmR3L2pkVmNtZHhiTUErdS9tU1l3QVJ0dFBvQ2VRZUVKdWJMakZNM3d6OEk3SXY2WFNDWmtDSmpFYy94ZkF1aTI1RG1XVG1QV0djWmQ2MXZVeTNzL1hIUUpCZ3NHcGc3NUVmdGNNR2FwU0syQTl5ZWNoRTE2cHRSNmtHK0lmNXA1aXFHUUI5Z3NOejF4aWxmeWUyeFdrd1k0Mjd6SW9Ba0h6aVROZVQvVktvMnYwcS9lS2h6RmppS2t2VWZHUVdCOFp5dzQyV0NueXFxamRrYmpTYzdFVjNHMGlGU0ZiSmFkNXordzcxaHhFUkFHUEpaT0gwZzFUZjduRmNYMHNVSVpsSVVJdFAvYTU3ZksyRUJybEhPU25XMmNEU25qOVFUcTJmQmQvVjluR2Z2WHJQN0xqK2V2UkVxK1dRNEhMSkRDTldpY2g5UENYT2V6M0E0YUFVQ2pFbDN4b1NTbXplTDBZT3JBV2cwVFBTbjlxMFJ5QjdDc1RiWERMWXd2aC9LVjdKb2NDem5oeDZBQldTaFEvTDM2djJZUFpveFBGWHNaczRmYTRHUzhlR1ZxQ1RXQ2dXUHBNVW10b2ViVUM5cWUxTE1ZcHJqMk1TekFnYWxOWWsyRkFXNHVudnpGbnNsRU9OWVpSY3ArSFJyYmhxNHh3Ym10OVJEbHh6NExSVFYxYklDaS9JNnNhdlM3ZVl1WEgwRXdhWWFyRmVjUjAySDB4bWYwY3IwYXBObk5aOU55R09ibzhqRGNQZDBDc25nYVl3aDlxWm8xQTc1dVJBdWczL3o4V25FVGdDSjJvN0dBTkpibldqTzJqK1NXcDh1dEV4aHRHQVRuZm85ZWpDQlZRTkJBdU1VeE03UjJ2ZnlHZ3JQTlRqd2VFbXB2YUpyU3MyYzZvbkhrUkdQM2NrTWZDSkxzSG1yY3RScy9OUGdvUXhzem9UTWphc1BnUllTbUg3YURRZE9mN00zajdrb0VvM0c4bGMxUWQ5WUtGTWlsQ2F2TkxWaHNCajV6L3Z5OWM0Nk9TUmR3N0dpb1ZYQk42MFluOUR2M0tvUVREM0Y2YVE0UytqN0ZHSlNibDBwcWlYblgwS243NTcxdXVwNXhHbXdiODErb2ltbE4rRUthRHdReDBNQ2E4R0NtTmp3QkRKaXV0bDlwT0dBUlRVOW4xWVJYS3pLVlVkL3dvMHUxc0VPN3RPV3NDdW1qbG9FV2psV2doczJEeXVsa0lhOVBISjNtQ242UGdZd2tOWTlQYUJCaVoxNlh0UkQvU2FZc1pHbG5aWE4wUFRnNE5qTTRMSE05WVdVNE1qYzNOems0TVdFMU9URTRaRGxsT0dJM1pqa3hZV1EzWm1GaU9ETTRaamhqTmpVMllqYzVPV0k0TkRsak9UQTVaVGxqTm1VNE1qWmxOMkU0WkRnMU9EWmhPV0ZpT0RZNVpEY3dOelU9OyBleHBpcmVzPU1vbiBKdWwgMTUgMDI6MTA6MDMgMjAxOTsgcGF0aD0vOyBkb21haW49d3d3LnJvZGFuYW5kZmllbGRzLmNvbQppbmNhcF9zZXNfNDgwXzExNDc4MTE9c2xhWkZRV0pVVnliYmlzNzJVNnBCbWJnSzEwQUFBQUFvRWFpQmlqcGhJdDIwT2hQYjBZSnB3PT07IHBhdGg9LzsgZG9tYWluPS5yb2RhbmFuZGZpZWxkcy5jb20=</CONTENTS>
+                            </RESPONSE>
+                        </PAYLOAD>
+                    </PAYLOADS>
+                    <IGNORED>false</IGNORED>
+                </VULNERABILITY>
+                <VULNERABILITY>
+                    <UNIQUE_ID>8f416861-a41b-befd-e053-a02410acaab3</UNIQUE_ID>
+                    <ID>7795822</ID>
+                    <QID>150122</QID>
+                    <URL>https://www.rodanandfields.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3</URL>
+                    <PARAM>___utmvmBRuFDLcB, ___utmvaBRuFDLcB, ___utmvbBRuFDLcB</PARAM>
+                    <AUTHENTICATION>Not Required</AUTHENTICATION>
+                    <AJAX>false</AJAX>
+                    <STATUS>ACTIVE</STATUS>
+                    <FIRST_TIME_DETECTED>09 May 2019 09:10PM GMT-0700</FIRST_TIME_DETECTED>
+                    <LAST_TIME_DETECTED>14 Jul 2019 07:08PM GMT-0700</LAST_TIME_DETECTED>
+                    <LAST_TIME_TESTED>14 Jul 2019 07:08PM GMT-0700</LAST_TIME_TESTED>
+                    <TIMES_DETECTED>4</TIMES_DETECTED>
+                    <PAYLOADS>
+                        <PAYLOAD>
+                            <NUM>1</NUM>
+                            <PAYLOAD>N/A</PAYLOAD>
+                            <REQUEST>
+                                <METHOD>GET</METHOD>
+                                <URL>https://www.rodanandfields.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3</URL>
+                                <HEADERS>
+                                    <HEADER>
+                                        <key>Host</key>
+                                        <value><![CDATA[ www.rodanandfields.com]]></value>
+                                    </HEADER>
+                                    <HEADER>
+                                        <key>User-Agent</key>
+                                        <value><![CDATA[ Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/601.4.4 (KHTML, like Gecko) Version/9.0.3 Safari/601.4.4]]></value>
+                                    </HEADER>
+                                    <HEADER>
+                                        <key>Accept</key>
+                                        <value><![CDATA[ */*]]></value>
+                                    </HEADER>
+                                </HEADERS>
+                            </REQUEST>
+                            <RESPONSE>
+                                <CONTENTS base64="true">X19fdXRtdm1CUnVGRExjQj1qY1h5UHlRd05GbzsgZXhwaXJlcz1Nb24gSnVsIDE1IDAyOjI0OjQ4IDIwMTk7IHBhdGg9LzsgZG9tYWluPXd3dy5yb2RhbmFuZGZpZWxkcy5jb207IG1heC1hZ2U9NTY5Cl9fX3V0bXZhQlJ1RkRMY0I9ZkxMAWVwZHU7IGV4cGlyZXM9TW9uIEp1bCAxNSAwMjoyNDo0OCAyMDE5OyBwYXRoPS87IGRvbWFpbj13d3cucm9kYW5hbmRmaWVsZHMuY29tOyBtYXgtYWdlPTU2OQpfX191dG12YkJSdUZETGNCPW1aVCBYVGlPWWFsaDogQnROOyBleHBpcmVzPU1vbiBKdWwgMTUgMDI6MjQ6NDggMjAxOTsgcGF0aD0vOyBkb21haW49d3d3LnJvZGFuYW5kZmllbGRzLmNvbTsgbWF4LWFnZT01Njk=</CONTENTS>
+                            </RESPONSE>
+                        </PAYLOAD>
+                    </PAYLOADS>
+                    <IGNORED>false</IGNORED>
+                </VULNERABILITY>
+                <VULNERABILITY>
+                    <UNIQUE_ID>8f416861-a41a-befd-e053-a02410acaab3</UNIQUE_ID>
+                    <ID>7795820</ID>
+                    <QID>150123</QID>
+                    <URL>https://www.rodanandfields.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3</URL>
+                    <PARAM>___utmvmBRuFDLcB, ___utmvaBRuFDLcB, ___utmvbBRuFDLcB</PARAM>
+                    <AUTHENTICATION>Not Required</AUTHENTICATION>
+                    <AJAX>false</AJAX>
+                    <STATUS>ACTIVE</STATUS>
+                    <FIRST_TIME_DETECTED>09 May 2019 09:10PM GMT-0700</FIRST_TIME_DETECTED>
+                    <LAST_TIME_DETECTED>14 Jul 2019 07:08PM GMT-0700</LAST_TIME_DETECTED>
+                    <LAST_TIME_TESTED>14 Jul 2019 07:08PM GMT-0700</LAST_TIME_TESTED>
+                    <TIMES_DETECTED>4</TIMES_DETECTED>
+                    <PAYLOADS>
+                        <PAYLOAD>
+                            <NUM>1</NUM>
+                            <PAYLOAD>N/A</PAYLOAD>
+                            <REQUEST>
+                                <METHOD>GET</METHOD>
+                                <URL>https://www.rodanandfields.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3</URL>
+                                <HEADERS>
+                                    <HEADER>
+                                        <key>Host</key>
+                                        <value><![CDATA[ www.rodanandfields.com]]></value>
+                                    </HEADER>
+                                    <HEADER>
+                                        <key>User-Agent</key>
+                                        <value><![CDATA[ Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/601.4.4 (KHTML, like Gecko) Version/9.0.3 Safari/601.4.4]]></value>
+                                    </HEADER>
+                                    <HEADER>
+                                        <key>Accept</key>
+                                        <value><![CDATA[ */*]]></value>
+                                    </HEADER>
+                                </HEADERS>
+                            </REQUEST>
+                            <RESPONSE>
+                                <CONTENTS base64="true">X19fdXRtdm1CUnVGRExjQj1qY1h5UHlRd05GbzsgZXhwaXJlcz1Nb24gSnVsIDE1IDAyOjI0OjQ4IDIwMTk7IHBhdGg9LzsgZG9tYWluPXd3dy5yb2RhbmFuZGZpZWxkcy5jb207IG1heC1hZ2U9NTY5Cl9fX3V0bXZhQlJ1RkRMY0I9ZkxMAWVwZHU7IGV4cGlyZXM9TW9uIEp1bCAxNSAwMjoyNDo0OCAyMDE5OyBwYXRoPS87IGRvbWFpbj13d3cucm9kYW5hbmRmaWVsZHMuY29tOyBtYXgtYWdlPTU2OQpfX191dG12YkJSdUZETGNCPW1aVCBYVGlPWWFsaDogQnROOyBleHBpcmVzPU1vbiBKdWwgMTUgMDI6MjQ6NDggMjAxOTsgcGF0aD0vOyBkb21haW49d3d3LnJvZGFuYW5kZmllbGRzLmNvbTsgbWF4LWFnZT01Njk=</CONTENTS>
+                            </RESPONSE>
+                        </PAYLOAD>
+                    </PAYLOADS>
+                    <IGNORED>false</IGNORED>
+                </VULNERABILITY>
+            </VULNERABILITY_LIST>
+            <BURP_ISSUES_LIST/>
+            <BUGCROWD_SUBMISSIONS_LIST/>
+            <SENSITIVE_CONTENT_LIST/>
+            <INFORMATION_GATHERED_LIST>
+                <INFORMATION_GATHERED>
+                    <UNIQUE_ID>8f418e3a-0193-7274-e053-a02410ac6d67</UNIQUE_ID>
+                    <ID>2607828</ID>
+                    <QID>150041</QID>
+                    <LAST_TIME_DETECTED>14 Jul 2019 07:08PM GMT-0700</LAST_TIME_DETECTED>
+                    <DATA base64="true">aHR0cHM6Ly93d3cucm9kYW5hbmRmaWVsZHMuY29tLyUyNTNDaW1nJTI1MjBzcmMlMjUzRGh0dHAlMjUzQSUyNTJmJTI1MmZsb2NhbGhvc3QlMjUyZjEuZ2lmJTI1MjBvbmxvYWQlMjUzRGFsZXJ0JTI1Mjg5JTI1MjklMjUzRQo=</DATA>
+                </INFORMATION_GATHERED>
+                <INFORMATION_GATHERED>
+                    <UNIQUE_ID>8f418e3a-0192-7274-e053-a02410ac6d67</UNIQUE_ID>
+                    <ID>2607827</ID>
+                    <QID>150009</QID>
+                    <LAST_TIME_DETECTED>14 Jul 2019 07:08PM GMT-0700</LAST_TIME_DETECTED>
+                    <DATA base64="true">RHVyYXRpb24gb2YgY3Jhd2wgcGhhc2UgKHNlY29uZHMpOiAzNDguMDAKTnVtYmVyIG9mIGxpbmtzOiA2CihUaGlzIG51bWJlciBleGNsdWRlcyBmb3JtIHJlcXVlc3RzIGFuZCBsaW5rcyByZS1yZXF1ZXN0ZWQgZHVyaW5nIGF1dGhlbnRpY2F0aW9uLikKCmh0dHBzOi8vd3d3LnJvZGFuYW5kZmllbGRzLmNvbS9fSW5jYXBzdWxhX1Jlc291cmNlP0NXVUROU0FJPTIxJnhpbmZvPTMtNzI1ODYzNjktMCUyMDBOTk4lMjBSVCUyODE1NjMxNTY1ODUzNjglMjA1JTI5JTIwcSUyODAlMjAtMSUyMC0xJTIwMCUyOSUyMHIlMjgwJTIwLTElMjklMjBCMTUlMjg0JTJDMjAwJTJDMCUyOSUyMFU1JmluY2lkZW50X2lkPTQ4MDAwMTUzMDE5OTIzNzg1NS0yODk3NTI2MDcwODIxNTQzODcmZWRldD0xNSZjaW5mbz0wNDAwMDAwMApodHRwczovL3d3dy5yb2RhbmFuZGZpZWxkcy5jb20vX0luY2Fwc3VsYV9SZXNvdXJjZT9DV1VETlNBST0yMSZ4aW5mbz0zLTcyNTg2MzY5LTAlMjAwTk5OJTIwUlQlMjgxNTYzMTU2NTg1MzY4JTIwNSUyOSUyMHElMjgwJTIwLTElMjAtMSUyMDAlMjklMjByJTI4MCUyMC0xJTI5JTIwQjE1JTI4NCUyYzIwMCUyYzAlMjklMjBVNSZpbmNpZGVudF9pZD00ODAwMDE1MzAxOTkyMzc4NTUtMjg5NzUyNjA3MDgyMTU0Mzg3JmVkZXQ9MTUmY2luZm89MDQwMDAwMDAKaHR0cHM6Ly93d3cucm9kYW5hbmRmaWVsZHMuY29tL19JbmNhcHN1bGFfUmVzb3VyY2U/Q1dVRE5TQUk9MjEmeGluZm89NC04OTE4MTgwNC0wJTIwME5OTiUyMFJUJTI4MTU2MzE1NjU3NzcwMiUyMDEzJTI5JTIwcSUyODAlMjAtMSUyMC0xJTIwLTElMjklMjByJTI4MCUyMC0xJTI5JTIwQjE1JTI4NCUyYzIwMCUyYzAlMjklMjBVNSZpbmNpZGVudF9pZD00ODAwMDE1MzAxOTkyMzc4NTUtMzU5MzE1OTI0NjMyNzM0MTAwJmVkZXQ9MTUmY2luZm89MDQwMDAwMDAKaHR0cHM6Ly93d3cucm9kYW5hbmRmaWVsZHMuY29tL19JbmNhcHN1bGFfUmVzb3VyY2U/Q1dVRE5TQUk9MjEmeGluZm89NS0xMDEwMTgzMzgtMCUyMDBOTk4lMjBSVCUyODE1NjMxNTY1ODI5NjQlMjA4JTI5JTIwcSUyODAlMjAtMSUyMC0xJTIwLTElMjklMjByJTI4MCUyMC0xJTI5JTIwQjE1JTI4NCUyQzIwMCUyQzAlMjklMjBVNSZpbmNpZGVudF9pZD00ODAwMDE1MzAxOTkyMzc4NTUtNDA1NTUxNzI4NjEwNTExMjUzJmVkZXQ9MTUmY2luZm89MDQwMDAwMDAKaHR0cHM6Ly93d3cucm9kYW5hbmRmaWVsZHMuY29tL19JbmNhcHN1bGFfUmVzb3VyY2U/U1dLTVRGU1I9MSZlPTAuNzM4MDgwMjkxMjI4ODI5MgpodHRwczovL3d3dy5yb2RhbmFuZGZpZWxkcy5jb20vY2EK</DATA>
+                </INFORMATION_GATHERED>
+                <INFORMATION_GATHERED>
+                    <UNIQUE_ID>8f418e3a-0131-7274-e053-a02410ac6d67</UNIQUE_ID>
+                    <ID>2607816</ID>
+                    <QID>6</QID>
+                    <LAST_TIME_DETECTED>14 Jul 2019 07:08PM GMT-0700</LAST_TIME_DETECTED>
+                    <DATA base64="true">I3RhYmxlCklQX2FkZHJlc3MgSG9zdF9uYW1lCgoxMDcuMTU0LjEwOC4xMzAgMTA3LjE1NC4xMDguMTMwLmlwLmluY2FwZG5zLm5ldAo=</DATA>
+                </INFORMATION_GATHERED>
+                <INFORMATION_GATHERED>
+                    <UNIQUE_ID>8f418e3a-0191-7274-e053-a02410ac6d67</UNIQUE_ID>
+                    <ID>2607826</ID>
+                    <QID>45017</QID>
+                    <LAST_TIME_DETECTED>14 Jul 2019 07:08PM GMT-0700</LAST_TIME_DETECTED>
+                    <DATA base64="true">VWJ1bnR1Xy9fRmVkb3JhXy9fVGlueV9Db3JlX0xpbnV4Xy9fTGludXhfMy54IFRDUC9JUF9GaW5nZXJwcmludCBVNTkzMzo0NDMK</DATA>
+                </INFORMATION_GATHERED>
+                <INFORMATION_GATHERED>
+                    <UNIQUE_ID>8f418e3a-0190-7274-e053-a02410ac6d67</UNIQUE_ID>
+                    <ID>2607825</ID>
+                    <QID>150202</QID>
+                    <LAST_TIME_DETECTED>14 Jul 2019 07:08PM GMT-0700</LAST_TIME_DETECTED>
+                    <DATA base64="true">ClgtQ29udGVudC1UeXBlLU9wdGlvbnM6IEhlYWRlciBtaXNzaW5nClJlc3BvbnNlIGhlYWRlcnMgb24gbGluazogR0VUIGh0dHBzOi8vd3d3LnJvZGFuYW5kZmllbGRzLmNvbS9jYSByZXNwb25zZSBjb2RlOiA0MDMKQ29udGVudC1UeXBlOiB0ZXh0L2h0bWwKQ2FjaGUtQ29udHJvbDogbm8tY2FjaGUKQ29ubmVjdGlvbjogY2xvc2UKQ29udGVudC1MZW5ndGg6IDgyNApYLUlpbmZvOiAzLTcyNTg2MzY5LTAgME5OTiBSVCgxNTYzMTU2NTg1MzY4IDUpIHEoMCAtMSAtMSAwKSByKDAgLTEpIEIxNSg0LDIwMCwwKSBVNQpYLUllamd3dWNneXU6IDEKU2V0LUNvb2tpZTogdmlzaWRfaW5jYXBfMTE0NzgxMT1Md0s1NDRqUlM3R3c5VG8vbmliV1RtYmdLMTBBQUFBQVFVSVBBQUFBQUFBRk9mKzNRQ1AwREFRUG15cEJsMmp2OyBleHBpcmVzPU1vbiwgMTMtSnVsLTIwMjAgMTI6MTc6NTMgR01UOyBkb21haW49LnJvZGFuYW5kZmllbGRzLmNvbTsgcGF0aD0vClNldC1Db29raWU6IGluY2FwX3Nlc180ODBfMTE0NzgxMT1zbGFaRlFXSlVWeWJiaXM3MlU2cEJtYmdLMTBBQUFBQW9FYWlCaWpwaEl0MjBPaFBiMFlKcHc9PTsgZG9tYWluPS5yb2RhbmFuZGZpZWxkcy5jb207IHBhdGg9LwpTZXQtQ29va2llOiBfX191dG12Yz1TOEVEZFk2cUdmcW5uMHJlMTNnRFBMbVJLbSt2SWRxT1IzT1hZMmlwUy9UYVNpcEdsSjBOUjJ2UXNGYnpTNkpGYmE5TXJuRGpBbmlIWnBCNU13S1VRMzJKMjV1bUU2U01YNWcxY04zMmJOMXFudm4xd1ByNzBLaTI0a2xuWWRXWWYvNGhxMEVBY1l6Y1FYSUpVcmMrQVhWSHlBU3dBc2pBbnZoekEzNVp3a2pqYWN2TVUwUDNuUGl3NlFyMFUrZkRrV2lJaVl0REdTc0lsL1JKKzJhcjRwRStSKzA1VkJMRjJuWjZwWVJ5V2NPNVprWUFmVW9zMlBPc0pJSko2R2N5VzNWS0FIaGM5eDdZUUlud0VPczZEczhsMXJidzVlRjVaN09DVFZYNk41WVBqS252SFArVlg2djU4RUVURm9oMG96aEkvNHpjTDNkd0w4QUpOeE5pM0ZFMkRnR0FjUlQ3VXBOdW8zZzNJZmxKVHhwZW5hQnZuNlNaSGxSclNNMWRPK0tnQjllWmViMzhsVTl4RCtSVTNOY29tS1gxOXRWMmdXVjd4UFhEZWwyMk1KRGhxY0RMOStzSlAxYzFUcGZldUFJemRjbGNndGk4Ri82RG9xa3R1RVRSWVAvYkRGOEZ3VGdqMkhpaWhVQmppZC9TUjVyTWh0emFKaFpNa0I2Zk84Q1FMOGMzV1N5NUNKeTN5Ulg5bTZYalg1U3pHSHZqclFmSlNZeXRUMmZsQ2NTd09WOGlVZVJJNzg0RUpHUlFGTE9JaFFjTHZqNGJrK3d6UEVmbURIcHh4cFVrQmVpaC9LVFdTMlpUeGRwV1pZM00yT2tjNjZjanB6SGlwZ0lGamxFOXBHaElGcSszY1ptODhUSktETVVQUHNOejJGREdIb0lGUnh0cTNyZFNpeXVMT1ZjeERncHg5elhQN2NGcEpVemxKblZPckc3RTFiY1h6K1ErRExMelVUczd4MmZjdVhZb09oS1FQeEY5dHBYYkhNdEZGSU1keHV4NEN6b0NnUzRQc01uL1YrZjZlL1FFeTY3MDB6UFhMS0JEQUtKTTdxTFJxV2NaMHoxZ3JQaEM0VW1hWEZOMDhJK3R3K3lldGdzVDM0bjZRUFk1ZzJZNkczV1BlYzB6TFkwMUd6YUtwSGdpK1lNcWJ5MjBHVzF6QW8wcEJGQW9SdHZPQUpOc1Z6VDdHT2RLaEwzN2tQSVJXczZrMXo0ZmE0MVdZcXBDdlVWSjEzWUdpdndqR1ZVdHRTc0xRbkw4QjFhKzlEOXJ1dC9acVIveVVURGdqdGsveGxJbTExUmZkcE1mYUg1bG1RQlUrMDFFWTVBQjl6VUQwcFNFNmpKU0IrcFRoRHBJaTJlOWZzazgvQkJFWnFzQlZLMU94TmNpTHdJL290S3NHcjNmY25IejJMd0lzMFBMaW14N1Yxa3VJMk5IVmdkR1hZRERhN3dna1ByUm5UL2FnbyszQnBITVZ6dVBvY0dJdzhac3J5RVNHZG91MncxaHdidHN6aXIxZXA1RGpvenpDWkNoVGNZdzE1NTY4Wm83NWRsaGYrd0pyS0pYdS9QS1FQaEJ0VkJ2Q0JFNDVQcVhieEpTTXNNc1pHbG5aWE4wUFRnNE5qTTRMSE05WVRoaE1qZGhZV0U0TlRaaFlUTTRaRGxsT0dJM1pUZGpPV00zTm1FeU9ESmlNalkyT0RZNU1UZ3dZakJoTWpnM09XUTVaV0l4T0dFNVl6a3dZakEzWmpZNVlXRTRaamRoT1dVM056Y3dOelU9OyBleHBpcmVzPU1vbiwgMTUtSnVsLTIwMTkgMDI6MTA6MDUgR01UOyBkb21haW49d3d3LnJvZGFuYW5kZmllbGRzLmNvbTsgcGF0aD0vCgpIZWFkZXIgbWlzc2luZyBvbiB0aGUgZm9sbG93aW5nIGxpbmsocyk6CihPbmx5IGZpcnN0IDUwIHN1Y2ggcGFnZXMgYXJlIGxpc3RlZCkKCkdFVCBodHRwczovL3d3dy5yb2RhbmFuZGZpZWxkcy5jb20vY2EgcmVzcG9uc2UgY29kZTogNDAzCkdFVCBodHRwczovL3d3dy5yb2RhbmFuZGZpZWxkcy5jb20vX0luY2Fwc3VsYV9SZXNvdXJjZT9TV0pJWUxXQT03MTlkMzRkMzFjOGUzYTZlNmZmZmQ0MjVmN2UwMzJmMyByZXNwb25zZSBjb2RlOiAyMDAKR0VUIGh0dHBzOi8vd3d3LnJvZGFuYW5kZmllbGRzLmNvbS9fSW5jYXBzdWxhX1Jlc291cmNlP0NXVUROU0FJPTIxJnhpbmZvPTQtODkxODE4MDQtMCUyMDBOTk4lMjBSVCUyODE1NjMxNTY1Nzc3MDIlMjAxMyUyOSUyMHElMjgwJTIwLTElMjAtMSUyMC0xJTI5JTIwciUyODAlMjAtMSUyOSUyMEIxNSUyODQlMmMyMDAlMmMwJTI5JTIwVTUmaW5jaWRlbnRfaWQ9NDgwMDAxNTMwMTk5MjM3ODU1LTM1OTMxNTkyNDYzMjczNDEwMCZlZGV0PTE1JmNpbmZvPTA0MDAwMDAwIHJlc3BvbnNlIGNvZGU6IDIwMApHRVQgaHR0cHM6Ly93d3cucm9kYW5hbmRmaWVsZHMuY29tL19JbmNhcHN1bGFfUmVzb3VyY2U/Q1dVRE5TQUk9MjEmeGluZm89My03MjU4NjM2OS0wJTIwME5OTiUyMFJUJTI4MTU2MzE1NjU4NTM2OCUyMDUlMjklMjBxJTI4MCUyMC0xJTIwLTElMjAwJTI5JTIwciUyODAlMjAtMSUyOSUyMEIxNSUyODQlMmMyMDAlMmMwJTI5JTIwVTUmaW5jaWRlbnRfaWQ9NDgwMDAxNTMwMTk5MjM3ODU1LTI4OTc1MjYwNzA4MjE1NDM4NyZlZGV0PTE1JmNpbmZvPTA0MDAwMDAwIHJlc3BvbnNlIGNvZGU6IDIwMApHRVQgaHR0cHM6Ly93d3cucm9kYW5hbmRmaWVsZHMuY29tL19JbmNhcHN1bGFfUmVzb3VyY2U/Q1dVRE5TQUk9MjEmeGluZm89My03MjU4NjM2OS0wJTIwME5OTiUyMFJUJTI4MTU2MzE1NjU4NTM2OCUyMDUlMjklMjBxJTI4MCUyMC0xJTIwLTElMjAwJTI5JTIwciUyODAlMjAtMSUyOSUyMEIxNSUyODQlMkMyMDAlMkMwJTI5JTIwVTUmaW5jaWRlbnRfaWQ9NDgwMDAxNTMwMTk5MjM3ODU1LTI4OTc1MjYwNzA4MjE1NDM4NyZlZGV0PTE1JmNpbmZvPTA0MDAwMDAwIHJlc3BvbnNlIGNvZGU6IDIwMApHRVQgaHR0cHM6Ly93d3cucm9kYW5hbmRmaWVsZHMuY29tL19JbmNhcHN1bGFfUmVzb3VyY2U/Q1dVRE5TQUk9MjEmeGluZm89NS0xMDEwMTgzMzgtMCUyMDBOTk4lMjBSVCUyODE1NjMxNTY1ODI5NjQlMjA4JTI5JTIwcSUyODAlMjAtMSUyMC0xJTIwLTElMjklMjByJTI4MCUyMC0xJTI5JTIwQjE1JTI4NCUyQzIwMCUyQzAlMjklMjBVNSZpbmNpZGVudF9pZD00ODAwMDE1MzAxOTkyMzc4NTUtNDA1NTUxNzI4NjEwNTExMjUzJmVkZXQ9MTUmY2luZm89MDQwMDAwMDAgcmVzcG9uc2UgY29kZTogMjAwCkdFVCBodHRwczovL3d3dy5yb2RhbmFuZGZpZWxkcy5jb20vX0luY2Fwc3VsYV9SZXNvdXJjZT9TV0tNVEZTUj0xJmU9MC43MzgwODAyOTEyMjg4MjkyIHJlc3BvbnNlIGNvZGU6IDIwMAo=</DATA>
+                </INFORMATION_GATHERED>
+                <INFORMATION_GATHERED>
+                    <UNIQUE_ID>8f418e3a-0195-7274-e053-a02410ac6d67</UNIQUE_ID>
+                    <ID>2607830</ID>
+                    <QID>150204</QID>
+                    <LAST_TIME_DETECTED>14 Jul 2019 07:08PM GMT-0700</LAST_TIME_DETECTED>
+                    <DATA base64="true">ClgtWHNzLVByb3RlY3Rpb246IEhlYWRlciBtaXNzaW5nClJlc3BvbnNlIGhlYWRlcnMgb24gbGluazogR0VUIGh0dHBzOi8vd3d3LnJvZGFuYW5kZmllbGRzLmNvbS9jYSByZXNwb25zZSBjb2RlOiA0MDMKQ29udGVudC1UeXBlOiB0ZXh0L2h0bWwKQ2FjaGUtQ29udHJvbDogbm8tY2FjaGUKQ29ubmVjdGlvbjogY2xvc2UKQ29udGVudC1MZW5ndGg6IDgyNApYLUlpbmZvOiAzLTcyNTg2MzY5LTAgME5OTiBSVCgxNTYzMTU2NTg1MzY4IDUpIHEoMCAtMSAtMSAwKSByKDAgLTEpIEIxNSg0LDIwMCwwKSBVNQpYLUllamd3dWNneXU6IDEKU2V0LUNvb2tpZTogdmlzaWRfaW5jYXBfMTE0NzgxMT1Md0s1NDRqUlM3R3c5VG8vbmliV1RtYmdLMTBBQUFBQVFVSVBBQUFBQUFBRk9mKzNRQ1AwREFRUG15cEJsMmp2OyBleHBpcmVzPU1vbiwgMTMtSnVsLTIwMjAgMTI6MTc6NTMgR01UOyBkb21haW49LnJvZGFuYW5kZmllbGRzLmNvbTsgcGF0aD0vClNldC1Db29raWU6IGluY2FwX3Nlc180ODBfMTE0NzgxMT1zbGFaRlFXSlVWeWJiaXM3MlU2cEJtYmdLMTBBQUFBQW9FYWlCaWpwaEl0MjBPaFBiMFlKcHc9PTsgZG9tYWluPS5yb2RhbmFuZGZpZWxkcy5jb207IHBhdGg9LwpTZXQtQ29va2llOiBfX191dG12Yz1TOEVEZFk2cUdmcW5uMHJlMTNnRFBMbVJLbSt2SWRxT1IzT1hZMmlwUy9UYVNpcEdsSjBOUjJ2UXNGYnpTNkpGYmE5TXJuRGpBbmlIWnBCNU13S1VRMzJKMjV1bUU2U01YNWcxY04zMmJOMXFudm4xd1ByNzBLaTI0a2xuWWRXWWYvNGhxMEVBY1l6Y1FYSUpVcmMrQVhWSHlBU3dBc2pBbnZoekEzNVp3a2pqYWN2TVUwUDNuUGl3NlFyMFUrZkRrV2lJaVl0REdTc0lsL1JKKzJhcjRwRStSKzA1VkJMRjJuWjZwWVJ5V2NPNVprWUFmVW9zMlBPc0pJSko2R2N5VzNWS0FIaGM5eDdZUUlud0VPczZEczhsMXJidzVlRjVaN09DVFZYNk41WVBqS252SFArVlg2djU4RUVURm9oMG96aEkvNHpjTDNkd0w4QUpOeE5pM0ZFMkRnR0FjUlQ3VXBOdW8zZzNJZmxKVHhwZW5hQnZuNlNaSGxSclNNMWRPK0tnQjllWmViMzhsVTl4RCtSVTNOY29tS1gxOXRWMmdXVjd4UFhEZWwyMk1KRGhxY0RMOStzSlAxYzFUcGZldUFJemRjbGNndGk4Ri82RG9xa3R1RVRSWVAvYkRGOEZ3VGdqMkhpaWhVQmppZC9TUjVyTWh0emFKaFpNa0I2Zk84Q1FMOGMzV1N5NUNKeTN5Ulg5bTZYalg1U3pHSHZqclFmSlNZeXRUMmZsQ2NTd09WOGlVZVJJNzg0RUpHUlFGTE9JaFFjTHZqNGJrK3d6UEVmbURIcHh4cFVrQmVpaC9LVFdTMlpUeGRwV1pZM00yT2tjNjZjanB6SGlwZ0lGamxFOXBHaElGcSszY1ptODhUSktETVVQUHNOejJGREdIb0lGUnh0cTNyZFNpeXVMT1ZjeERncHg5elhQN2NGcEpVemxKblZPckc3RTFiY1h6K1ErRExMelVUczd4MmZjdVhZb09oS1FQeEY5dHBYYkhNdEZGSU1keHV4NEN6b0NnUzRQc01uL1YrZjZlL1FFeTY3MDB6UFhMS0JEQUtKTTdxTFJxV2NaMHoxZ3JQaEM0VW1hWEZOMDhJK3R3K3lldGdzVDM0bjZRUFk1ZzJZNkczV1BlYzB6TFkwMUd6YUtwSGdpK1lNcWJ5MjBHVzF6QW8wcEJGQW9SdHZPQUpOc1Z6VDdHT2RLaEwzN2tQSVJXczZrMXo0ZmE0MVdZcXBDdlVWSjEzWUdpdndqR1ZVdHRTc0xRbkw4QjFhKzlEOXJ1dC9acVIveVVURGdqdGsveGxJbTExUmZkcE1mYUg1bG1RQlUrMDFFWTVBQjl6VUQwcFNFNmpKU0IrcFRoRHBJaTJlOWZzazgvQkJFWnFzQlZLMU94TmNpTHdJL290S3NHcjNmY25IejJMd0lzMFBMaW14N1Yxa3VJMk5IVmdkR1hZRERhN3dna1ByUm5UL2FnbyszQnBITVZ6dVBvY0dJdzhac3J5RVNHZG91MncxaHdidHN6aXIxZXA1RGpvenpDWkNoVGNZdzE1NTY4Wm83NWRsaGYrd0pyS0pYdS9QS1FQaEJ0VkJ2Q0JFNDVQcVhieEpTTXNNc1pHbG5aWE4wUFRnNE5qTTRMSE05WVRoaE1qZGhZV0U0TlRaaFlUTTRaRGxsT0dJM1pUZGpPV00zTm1FeU9ESmlNalkyT0RZNU1UZ3dZakJoTWpnM09XUTVaV0l4T0dFNVl6a3dZakEzWmpZNVlXRTRaamRoT1dVM056Y3dOelU9OyBleHBpcmVzPU1vbiwgMTUtSnVsLTIwMTkgMDI6MTA6MDUgR01UOyBkb21haW49d3d3LnJvZGFuYW5kZmllbGRzLmNvbTsgcGF0aD0vCgpIZWFkZXIgbWlzc2luZyBvbiB0aGUgZm9sbG93aW5nIGxpbmsocyk6CihPbmx5IGZpcnN0IDUwIHN1Y2ggcGFnZXMgYXJlIGxpc3RlZCkKCkdFVCBodHRwczovL3d3dy5yb2RhbmFuZGZpZWxkcy5jb20vY2EgcmVzcG9uc2UgY29kZTogNDAzCkdFVCBodHRwczovL3d3dy5yb2RhbmFuZGZpZWxkcy5jb20vX0luY2Fwc3VsYV9SZXNvdXJjZT9DV1VETlNBST0yMSZ4aW5mbz00LTg5MTgxODA0LTAlMjAwTk5OJTIwUlQlMjgxNTYzMTU2NTc3NzAyJTIwMTMlMjklMjBxJTI4MCUyMC0xJTIwLTElMjAtMSUyOSUyMHIlMjgwJTIwLTElMjklMjBCMTUlMjg0JTJjMjAwJTJjMCUyOSUyMFU1JmluY2lkZW50X2lkPTQ4MDAwMTUzMDE5OTIzNzg1NS0zNTkzMTU5MjQ2MzI3MzQxMDAmZWRldD0xNSZjaW5mbz0wNDAwMDAwMCByZXNwb25zZSBjb2RlOiAyMDAKR0VUIGh0dHBzOi8vd3d3LnJvZGFuYW5kZmllbGRzLmNvbS9fSW5jYXBzdWxhX1Jlc291cmNlP0NXVUROU0FJPTIxJnhpbmZvPTMtNzI1ODYzNjktMCUyMDBOTk4lMjBSVCUyODE1NjMxNTY1ODUzNjglMjA1JTI5JTIwcSUyODAlMjAtMSUyMC0xJTIwMCUyOSUyMHIlMjgwJTIwLTElMjklMjBCMTUlMjg0JTJjMjAwJTJjMCUyOSUyMFU1JmluY2lkZW50X2lkPTQ4MDAwMTUzMDE5OTIzNzg1NS0yODk3NTI2MDcwODIxNTQzODcmZWRldD0xNSZjaW5mbz0wNDAwMDAwMCByZXNwb25zZSBjb2RlOiAyMDAKR0VUIGh0dHBzOi8vd3d3LnJvZGFuYW5kZmllbGRzLmNvbS9fSW5jYXBzdWxhX1Jlc291cmNlP0NXVUROU0FJPTIxJnhpbmZvPTMtNzI1ODYzNjktMCUyMDBOTk4lMjBSVCUyODE1NjMxNTY1ODUzNjglMjA1JTI5JTIwcSUyODAlMjAtMSUyMC0xJTIwMCUyOSUyMHIlMjgwJTIwLTElMjklMjBCMTUlMjg0JTJDMjAwJTJDMCUyOSUyMFU1JmluY2lkZW50X2lkPTQ4MDAwMTUzMDE5OTIzNzg1NS0yODk3NTI2MDcwODIxNTQzODcmZWRldD0xNSZjaW5mbz0wNDAwMDAwMCByZXNwb25zZSBjb2RlOiAyMDAKR0VUIGh0dHBzOi8vd3d3LnJvZGFuYW5kZmllbGRzLmNvbS9fSW5jYXBzdWxhX1Jlc291cmNlP0NXVUROU0FJPTIxJnhpbmZvPTUtMTAxMDE4MzM4LTAlMjAwTk5OJTIwUlQlMjgxNTYzMTU2NTgyOTY0JTIwOCUyOSUyMHElMjgwJTIwLTElMjAtMSUyMC0xJTI5JTIwciUyODAlMjAtMSUyOSUyMEIxNSUyODQlMkMyMDAlMkMwJTI5JTIwVTUmaW5jaWRlbnRfaWQ9NDgwMDAxNTMwMTk5MjM3ODU1LTQwNTU1MTcyODYxMDUxMTI1MyZlZGV0PTE1JmNpbmZvPTA0MDAwMDAwIHJlc3BvbnNlIGNvZGU6IDIwMApHRVQgaHR0cHM6Ly93d3cucm9kYW5hbmRmaWVsZHMuY29tL19JbmNhcHN1bGFfUmVzb3VyY2U/U1dLTVRGU1I9MSZlPTAuNzM4MDgwMjkxMjI4ODI5MiByZXNwb25zZSBjb2RlOiAyMDAK</DATA>
+                </INFORMATION_GATHERED>
+                <INFORMATION_GATHERED>
+                    <UNIQUE_ID>8f418e3a-0194-7274-e053-a02410ac6d67</UNIQUE_ID>
+                    <ID>2607829</ID>
+                    <QID>150206</QID>
+                    <LAST_TIME_DETECTED>14 Jul 2019 07:08PM GMT-0700</LAST_TIME_DETECTED>
+                    <DATA base64="true">CkNvbnRlbnQtU2VjdXJpdHktUG9saWN5OiBIZWFkZXIgbWlzc2luZwpSZXNwb25zZSBoZWFkZXJzIG9uIGxpbms6IEdFVCBodHRwczovL3d3dy5yb2RhbmFuZGZpZWxkcy5jb20vY2EgcmVzcG9uc2UgY29kZTogNDAzCkNvbnRlbnQtVHlwZTogdGV4dC9odG1sCkNhY2hlLUNvbnRyb2w6IG5vLWNhY2hlCkNvbm5lY3Rpb246IGNsb3NlCkNvbnRlbnQtTGVuZ3RoOiA4MjQKWC1JaW5mbzogMy03MjU4NjM2OS0wIDBOTk4gUlQoMTU2MzE1NjU4NTM2OCA1KSBxKDAgLTEgLTEgMCkgcigwIC0xKSBCMTUoNCwyMDAsMCkgVTUKWC1JZWpnd3VjZ3l1OiAxClNldC1Db29raWU6IHZpc2lkX2luY2FwXzExNDc4MTE9THdLNTQ0alJTN0d3OVRvL25pYldUbWJnSzEwQUFBQUFRVUlQQUFBQUFBQUZPZiszUUNQMERBUVBteXBCbDJqdjsgZXhwaXJlcz1Nb24sIDEzLUp1bC0yMDIwIDEyOjE3OjUzIEdNVDsgZG9tYWluPS5yb2RhbmFuZGZpZWxkcy5jb207IHBhdGg9LwpTZXQtQ29va2llOiBpbmNhcF9zZXNfNDgwXzExNDc4MTE9c2xhWkZRV0pVVnliYmlzNzJVNnBCbWJnSzEwQUFBQUFvRWFpQmlqcGhJdDIwT2hQYjBZSnB3PT07IGRvbWFpbj0ucm9kYW5hbmRmaWVsZHMuY29tOyBwYXRoPS8KU2V0LUNvb2tpZTogX19fdXRtdmM9UzhFRGRZNnFHZnFubjByZTEzZ0RQTG1SS20rdklkcU9SM09YWTJpcFMvVGFTaXBHbEowTlIydlFzRmJ6UzZKRmJhOU1ybkRqQW5pSFpwQjVNd0tVUTMySjI1dW1FNlNNWDVnMWNOMzJiTjFxbnZuMXdQcjcwS2kyNGtsbllkV1lmLzRocTBFQWNZemNRWElKVXJjK0FYVkh5QVN3QXNqQW52aHpBMzVad2tqamFjdk1VMFAzblBpdzZRcjBVK2ZEa1dpSWlZdERHU3NJbC9SSisyYXI0cEUrUiswNVZCTEYyblo2cFlSeVdjTzVaa1lBZlVvczJQT3NKSUpKNkdjeVczVktBSGhjOXg3WVFJbndFT3M2RHM4bDFyYnc1ZUY1WjdPQ1RWWDZONVlQaktudkhQK1ZYNnY1OEVFVEZvaDBvemhJLzR6Y0wzZHdMOEFKTnhOaTNGRTJEZ0dBY1JUN1VwTnVvM2czSWZsSlR4cGVuYUJ2bjZTWkhsUnJTTTFkTytLZ0I5ZVplYjM4bFU5eEQrUlUzTmNvbUtYMTl0VjJnV1Y3eFBYRGVsMjJNSkRocWNETDkrc0pQMWMxVHBmZXVBSXpkY2xjZ3RpOEYvNkRvcWt0dUVUUllQL2JERjhGd1RnajJIaWloVUJqaWQvU1I1ck1odHphSmhaTWtCNmZPOENRTDhjM1dTeTVDSnkzeVJYOW02WGpYNVN6R0h2anJRZkpTWXl0VDJmbENjU3dPVjhpVWVSSTc4NEVKR1JRRkxPSWhRY0x2ajRiayt3elBFZm1ESHB4eHBVa0JlaWgvS1RXUzJaVHhkcFdaWTNNMk9rYzY2Y2pwekhpcGdJRmpsRTlwR2hJRnErM2NabTg4VEpLRE1VUFBzTnoyRkRHSG9JRlJ4dHEzcmRTaXl1TE9WY3hEZ3B4OXpYUDdjRnBKVXpsSm5WT3JHN0UxYmNYeitRK0RMTHpVVHM3eDJmY3VYWW9PaEtRUHhGOXRwWGJITXRGRklNZHh1eDRDem9DZ1M0UHNNbi9WK2Y2ZS9RRXk2NzAwelBYTEtCREFLSk03cUxScVdjWjB6MWdyUGhDNFVtYVhGTjA4SSt0dyt5ZXRnc1QzNG42UVBZNWcyWTZHM1dQZWMwekxZMDFHemFLcEhnaStZTXFieTIwR1cxekFvMHBCRkFvUnR2T0FKTnNWelQ3R09kS2hMMzdrUElSV3M2azF6NGZhNDFXWXFwQ3ZVVkoxM1lHaXZ3akdWVXR0U3NMUW5MOEIxYSs5RDlydXQvWnFSL3lVVERnanRrL3hsSW0xMVJmZHBNZmFINWxtUUJVKzAxRVk1QUI5elVEMHBTRTZqSlNCK3BUaERwSWkyZTlmc2s4L0JCRVpxc0JWSzFPeE5jaUx3SS9vdEtzR3IzZmNuSHoyTHdJczBQTGlteDdWMWt1STJOSFZnZEdYWUREYTd3Z2tQclJuVC9hZ28rM0JwSE1WenVQb2NHSXc4WnNyeUVTR2RvdTJ3MWh3YnRzemlyMWVwNURqb3p6Q1pDaFRjWXcxNTU2OFpvNzVkbGhmK3dKcktKWHUvUEtRUGhCdFZCdkNCRTQ1UHFYYnhKU01zTXNaR2xuWlhOMFBUZzROak00TEhNOVlUaGhNamRoWVdFNE5UWmhZVE00WkRsbE9HSTNaVGRqT1dNM05tRXlPREppTWpZMk9EWTVNVGd3WWpCaE1qZzNPV1E1WldJeE9HRTVZemt3WWpBM1pqWTVZV0U0WmpkaE9XVTNOemN3TnpVPTsgZXhwaXJlcz1Nb24sIDE1LUp1bC0yMDE5IDAyOjEwOjA1IEdNVDsgZG9tYWluPXd3dy5yb2RhbmFuZGZpZWxkcy5jb207IHBhdGg9LwoKSGVhZGVyIG1pc3Npbmcgb24gdGhlIGZvbGxvd2luZyBsaW5rKHMpOgooT25seSBmaXJzdCA1MCBzdWNoIHBhZ2VzIGFyZSBsaXN0ZWQpCgpHRVQgaHR0cHM6Ly93d3cucm9kYW5hbmRmaWVsZHMuY29tL2NhIHJlc3BvbnNlIGNvZGU6IDQwMwpHRVQgaHR0cHM6Ly93d3cucm9kYW5hbmRmaWVsZHMuY29tL19JbmNhcHN1bGFfUmVzb3VyY2U/U1dKSVlMV0E9NzE5ZDM0ZDMxYzhlM2E2ZTZmZmZkNDI1ZjdlMDMyZjMgcmVzcG9uc2UgY29kZTogMjAwCkdFVCBodHRwczovL3d3dy5yb2RhbmFuZGZpZWxkcy5jb20vX0luY2Fwc3VsYV9SZXNvdXJjZT9DV1VETlNBST0yMSZ4aW5mbz00LTg5MTgxODA0LTAlMjAwTk5OJTIwUlQlMjgxNTYzMTU2NTc3NzAyJTIwMTMlMjklMjBxJTI4MCUyMC0xJTIwLTElMjAtMSUyOSUyMHIlMjgwJTIwLTElMjklMjBCMTUlMjg0JTJjMjAwJTJjMCUyOSUyMFU1JmluY2lkZW50X2lkPTQ4MDAwMTUzMDE5OTIzNzg1NS0zNTkzMTU5MjQ2MzI3MzQxMDAmZWRldD0xNSZjaW5mbz0wNDAwMDAwMCByZXNwb25zZSBjb2RlOiAyMDAKR0VUIGh0dHBzOi8vd3d3LnJvZGFuYW5kZmllbGRzLmNvbS9fSW5jYXBzdWxhX1Jlc291cmNlP0NXVUROU0FJPTIxJnhpbmZvPTMtNzI1ODYzNjktMCUyMDBOTk4lMjBSVCUyODE1NjMxNTY1ODUzNjglMjA1JTI5JTIwcSUyODAlMjAtMSUyMC0xJTIwMCUyOSUyMHIlMjgwJTIwLTElMjklMjBCMTUlMjg0JTJjMjAwJTJjMCUyOSUyMFU1JmluY2lkZW50X2lkPTQ4MDAwMTUzMDE5OTIzNzg1NS0yODk3NTI2MDcwODIxNTQzODcmZWRldD0xNSZjaW5mbz0wNDAwMDAwMCByZXNwb25zZSBjb2RlOiAyMDAKR0VUIGh0dHBzOi8vd3d3LnJvZGFuYW5kZmllbGRzLmNvbS9fSW5jYXBzdWxhX1Jlc291cmNlP0NXVUROU0FJPTIxJnhpbmZvPTMtNzI1ODYzNjktMCUyMDBOTk4lMjBSVCUyODE1NjMxNTY1ODUzNjglMjA1JTI5JTIwcSUyODAlMjAtMSUyMC0xJTIwMCUyOSUyMHIlMjgwJTIwLTElMjklMjBCMTUlMjg0JTJDMjAwJTJDMCUyOSUyMFU1JmluY2lkZW50X2lkPTQ4MDAwMTUzMDE5OTIzNzg1NS0yODk3NTI2MDcwODIxNTQzODcmZWRldD0xNSZjaW5mbz0wNDAwMDAwMCByZXNwb25zZSBjb2RlOiAyMDAKR0VUIGh0dHBzOi8vd3d3LnJvZGFuYW5kZmllbGRzLmNvbS9fSW5jYXBzdWxhX1Jlc291cmNlP0NXVUROU0FJPTIxJnhpbmZvPTUtMTAxMDE4MzM4LTAlMjAwTk5OJTIwUlQlMjgxNTYzMTU2NTgyOTY0JTIwOCUyOSUyMHElMjgwJTIwLTElMjAtMSUyMC0xJTI5JTIwciUyODAlMjAtMSUyOSUyMEIxNSUyODQlMkMyMDAlMkMwJTI5JTIwVTUmaW5jaWRlbnRfaWQ9NDgwMDAxNTMwMTk5MjM3ODU1LTQwNTU1MTcyODYxMDUxMTI1MyZlZGV0PTE1JmNpbmZvPTA0MDAwMDAwIHJlc3BvbnNlIGNvZGU6IDIwMApHRVQgaHR0cHM6Ly93d3cucm9kYW5hbmRmaWVsZHMuY29tL19JbmNhcHN1bGFfUmVzb3VyY2U/U1dLTVRGU1I9MSZlPTAuNzM4MDgwMjkxMjI4ODI5MiByZXNwb25zZSBjb2RlOiAyMDAK</DATA>
+                </INFORMATION_GATHERED>
+                <INFORMATION_GATHERED>
+                    <UNIQUE_ID>8f418e3a-018b-7274-e053-a02410ac6d67</UNIQUE_ID>
+                    <ID>2607820</ID>
+                    <QID>150028</QID>
+                    <LAST_TIME_DETECTED>14 Jul 2019 07:08PM GMT-0700</LAST_TIME_DETECTED>
+                    <DATA base64="true">VG90YWwgY29va2llczogNgp2aXNpZF9pbmNhcF8xMTQ3ODExPUx3SzU0NGpSUzdHdzlUby9uaWJXVG1iZ0sxMEFBQUFBUVVJUEFBQUFBQUFGT2YrM1FDUDBEQVFQbXlwQmwyanY7IGV4cGlyZXM9TW9uLCAxMy1KdWwtMjAyMCAxMjoxNzo1MyBHTVQ7IGRvbWFpbj0ucm9kYW5hbmRmaWVsZHMuY29tOyBwYXRoPS8gRmlyc3Qgc2V0IGF0IFVSTDogaHR0cHM6Ly93d3cucm9kYW5hbmRmaWVsZHMuY29tL2NhCmluY2FwX3Nlc180ODBfMTE0NzgxMT1zbGFaRlFXSlVWeWJiaXM3MlU2cEJtYmdLMTBBQUFBQW9FYWlCaWpwaEl0MjBPaFBiMFlKcHc9PTsgZG9tYWluPS5yb2RhbmFuZGZpZWxkcy5jb207IHBhdGg9LyBGaXJzdCBzZXQgYXQgVVJMOiBodHRwczovL3d3dy5yb2RhbmFuZGZpZWxkcy5jb20vY2EKX19fdXRtdmM9MnVDUW5lb012UG9WNTZmRXNnaW51Nkk3YU9qOUdFRFRaYUtJRitSbmtmVS9LMGdxU0ZGS0Yza1Z5cUpsdDhkSjI0Tk9pNW9ra2I2RFBvK1ZwZ1dFb091cHl3NHFLanpHSVZHSHBtOElMc0RLOUIxMVEzQU9ldTcvcVZCeWwxNXJzVzRNQ0taakVzZTRGWW0yVTl0Q3NYNFFETXZUaWI0dFJZR040ZTd4YXM2UVAzTERzZU12K2V0T0JseTEzdi9wYkZIRTF5ZXhUcHdZUU1pNU1YdjIzbXdJT0FkNHIzVWpLdWtLUnJxZTg2eTZxZ1lnYVB2VFJlazJkdy9qZFZjbWR4Yk1BK3UvbVNZd0FSdHRQb0NlUWVFSnViTGpGTTN3ejhJN0l2NlhTQ1prQ0pqRWMveGZBdWkyNURtV1RtUFdHY1pkNjF2VXkzcy9YSFFKQmdzR3BnNzVFZnRjTUdhcFNLMkE5eWVjaEUxNnB0UjZrRytJZjVwNWlxR1FCOWdzTnoxeGlsZnllMnhXa3dZNDI3eklvQWtIemlUTmVUL1ZLbzJ2MHEvZUtoekZqaUtrdlVmR1FXQjhaeXc0MldDbnlxcWpka2JqU2M3RVYzRzBpRlNGYkphZDV6K3c3MWh4RVJBR1BKWk9IMGcxVGY3bkZjWDBzVUlabElVSXRQL2E1N2ZLMkVCcmxIT1NuVzJjRFNuajlRVHEyZkJkL1Y5bkdmdlhyUDdMaitldlJFcStXUTRITEpEQ05XaWNoOVBDWE9lejNBNGFBVUNqRWwzeG9TU216ZUwwWU9yQVdnMFRQU245cTBSeUI3Q3NUYlhETFl3dmgvS1Y3Sm9jQ3puaHg2QUJXU2hRL0wzNnYyWVBab3hQRlhzWnM0ZmE0R1M4ZUdWcUNUV0NnV1BwTVVtdG9lYlVDOXFlMUxNWXByajJNU3pBZ2FsTllrMkZBVzR1bnZ6Rm5zbEVPTllaUmNwK0hScmJocTR4d2JtdDlSRGx4ejRMUlRWMWJJQ2kvSTZzYXZTN2VZdVhIMEV3YVlhckZlY1IwMkgweG1mMGNyMGFwTm5OWjlOeUdPYm84akRjUGQwQ3NuZ2FZd2g5cVpvMUE3NXVSQXVnMy96OFduRVRnQ0oybzdHQU5KYm5Xak8yaitTV3A4dXRFeGh0R0FUbmZvOWVqQ0JWUU5CQXVNVXhNN1IydmZ5R2dyUE5UandlRW1wdmFKclNzMmM2b25Ia1JHUDNja01mQ0pMc0htcmN0UnMvTlBnb1F4c3pvVE1qYXNQZ1JZU21IN2FEUWRPZjdNM2o3a29FbzNHOGxjMVFkOVlLRk1pbENhdk5MVmhzQmo1ei92eTljNDZPU1JkdzdHaW9WWEJONjBZbjlEdjNLb1FURDNGNmFRNFMrajdGR0pTYmwwcHFpWG5YMEtuNzU3MXV1cDV4R213YjgxK29pbWxOK0VLYUR3UXgwTUNhOEdDbU5qd0JESml1dGw5cE9HQVJUVTluMVlSWEt6S1ZVZC93bzB1MXNFTzd0T1dzQ3VtamxvRVdqbFdnaHMyRHl1bGtJYTlQSEozbUNuNlBnWXdrTlk5UGFCQmlaMTZYdFJEL1NhWXNaR2xuWlhOMFBUZzROak00TEhNOVlXVTRNamMzTnprNE1XRTFPVEU0WkRsbE9HSTNaamt4WVdRM1ptRmlPRE00Wmpoak5qVTJZamM1T1dJNE5EbGpPVEE1WlRsak5tVTRNalpsTjJFNFpEZzFPRFpoT1dGaU9EWTVaRGN3TnpVPTsgZXhwaXJlcz1Nb24sIDE1LUp1bC0yMDE5IDAyOjEwOjAzIEdNVDsgcGF0aD0vIEZpcnN0IHNldCBhdCBVUkw6IGh0dHBzOi8vd3d3LnJvZGFuYW5kZmllbGRzLmNvbS9jYQpfX191dG12bUJSdUZETGNCPWpjWHlQeVF3TkZvOyBleHBpcmVzPU1vbiwgMTUtSnVsLTIwMTkgMDI6MjQ6NDggR01UOyBwYXRoPS8gRmlyc3Qgc2V0IGF0IFVSTDogaHR0cHM6Ly93d3cucm9kYW5hbmRmaWVsZHMuY29tL19JbmNhcHN1bGFfUmVzb3VyY2U/U1dKSVlMV0E9NzE5ZDM0ZDMxYzhlM2E2ZTZmZmZkNDI1ZjdlMDMyZjMKX19fdXRtdmFCUnVGRExjQj1mTExlcGR1OyBleHBpcmVzPU1vbiwgMTUtSnVsLTIwMTkgMDI6MjQ6NDggR01UOyBwYXRoPS8gRmlyc3Qgc2V0IGF0IFVSTDogaHR0cHM6Ly93d3cucm9kYW5hbmRmaWVsZHMuY29tL19JbmNhcHN1bGFfUmVzb3VyY2U/U1dKSVlMV0E9NzE5ZDM0ZDMxYzhlM2E2ZTZmZmZkNDI1ZjdlMDMyZjMKX19fdXRtdmJCUnVGRExjQj1tWlQgWFRpT1lhbGg6IEJ0TjsgZXhwaXJlcz1Nb24sIDE1LUp1bC0yMDE5IDAyOjI0OjQ4IEdNVDsgcGF0aD0vIEZpcnN0IHNldCBhdCBVUkw6IGh0dHBzOi8vd3d3LnJvZGFuYW5kZmllbGRzLmNvbS9fSW5jYXBzdWxhX1Jlc291cmNlP1NXSklZTFdBPTcxOWQzNGQzMWM4ZTNhNmU2ZmZmZDQyNWY3ZTAzMmYzCg==</DATA>
+                </INFORMATION_GATHERED>
+                <INFORMATION_GATHERED>
+                    <UNIQUE_ID>8f418e3a-018a-7274-e053-a02410ac6d67</UNIQUE_ID>
+                    <ID>2607819</ID>
+                    <QID>150152</QID>
+                    <LAST_TIME_DETECTED>14 Jul 2019 07:08PM GMT-0700</LAST_TIME_DETECTED>
+                    <DATA base64="true">VG90YWwgaW50ZXJuYWwgZm9ybXMgc2VlbiAodGhpcyBjb3VudCBpbmNsdWRlcyBkdXBsaWNhdGUgZm9ybXMpOiAwCgpDcmF3bGVkIGZvcm1zIChUb3RhbDogMCkKTk9URTogVGhpcyBkb2VzIG5vdCBpbmNsdWRlIGF1dGhlbnRpY2F0aW9uIGZvcm1zLiBBdXRoZW50aWNhdGlvbiBmb3JtcyBhcmUgcmVwb3J0ZWQgc2VwYXJhdGVseSBpbiBRSUQgMTUwMTE1Cg==</DATA>
+                </INFORMATION_GATHERED>
+                <INFORMATION_GATHERED>
+                    <UNIQUE_ID>8f418e3a-0189-7274-e053-a02410ac6d67</UNIQUE_ID>
+                    <ID>2607818</ID>
+                    <QID>150021</QID>
+                    <LAST_TIME_DETECTED>14 Jul 2019 07:08PM GMT-0700</LAST_TIME_DETECTED>
+                    <DATA base64="true">TG9hZGVkIDEgYmxhY2tsaXN0IGVudHJpZXMuCkxvYWRlZCAwIHdoaXRlbGlzdCBlbnRyaWVzLgpIVE1MIGZvcm0gYXV0aGVudGljYXRpb24gdW5hdmFpbGFibGUsIG5vIFdFQkFQUCBlbnRyeSBmb3VuZApCYXRjaCAjMCBWaXJ0dWFsSG9zdERpc2NvdmVyeTogZXN0aW1hdGVkIHRpbWUgPCAxMCBtaW51dGVzICg3MCB0ZXN0cywgMCBpbnB1dHMpClZpcnR1YWxIb3N0RGlzY292ZXJ5OiA3MCB2dWxuc2lncyB0ZXN0cywgY29tcGxldGVkIDY5ICByZXF1ZXN0cywgMjAyIHNlY29uZHMuIENvbXBsZXRlZCA2OSByZXF1ZXN0cyBvZiA3MCBlc3RpbWF0ZWQgcmVxdWVzdHMgKDk4LjU3MTQlKS4gQWxsIHRlc3RzIGNvbXBsZXRlZC4KQmF0Y2ggIzAgQ01TRGV0ZWN0aW9uOiBlc3RpbWF0ZWQgdGltZSA8IDEwIG1pbnV0ZXMgKDEgdGVzdHMsIDEgaW5wdXRzKQpbQ01TRGV0ZWN0aW9uIHBoYXNlXSA6IE5vIHBvdGVudGlhbCBDTVMgZm91bmQuIEFib3J0aW5nIHRoZSBDTVMgRGV0ZWN0aW9uIHBoYXNlQ01TRGV0ZWN0aW9uOiAxIHZ1bG5zaWdzIHRlc3RzLCBjb21wbGV0ZWQgMzggIHJlcXVlc3RzLCAyIHNlY29uZHMuIENvbXBsZXRlZCAzOCByZXF1ZXN0cyBvZiAzOCBlc3RpbWF0ZWQgcmVxdWVzdHMgKDEwMCUpLiBBbGwgdGVzdHMgY29tcGxldGVkLgpDb2xsZWN0ZWQgNyBsaW5rcyBvdmVyYWxsIGluIDAgaG91cnMgNSBtaW51dGVzIGR1cmF0aW9uLgpQYXRoIG1hbmlwdWxhdGlvbjogRXN0aW1hdGVkIHJlcXVlc3RzIChwYXlsb2FkcyB4IGxpbmtzKTogZmlsZXMgd2l0aCBleHRlbnNpb246KDAgeCAwKSArIGZpbGVzOigwIHggNikgKyAgZGlyZWN0b3JpZXM6KDkgeCAxKSArICBwYXRoczooMCB4IDcpID0gdG90YWwgKDkpIApCYXRjaCAjMCBXUyBEaXJlY3RvcnkgUGF0aCBtYW5pcHVsYXRpb246IGVzdGltYXRlZCB0aW1lIDwgMSBtaW51dGUgKDkgdGVzdHMsIDcgaW5wdXRzKQpXUyBEaXJlY3RvcnkgUGF0aCBtYW5pcHVsYXRpb246IDkgdnVsbnNpZ3MgdGVzdHMsIGNvbXBsZXRlZCA5ICByZXF1ZXN0cywgMCBzZWNvbmRzLiBDb21wbGV0ZWQgOSByZXF1ZXN0cyBvZiA5IGVzdGltYXRlZCByZXF1ZXN0cyAoMTAwJSkuIEFsbCB0ZXN0cyBjb21wbGV0ZWQuCkJhdGNoICMwIFdTIGVudW1lcmF0aW9uOiBlc3RpbWF0ZWQgdGltZSA8IDEgbWludXRlICgxMSB0ZXN0cywgNyBpbnB1dHMpCldTIGVudW1lcmF0aW9uOiAxMSB2dWxuc2lncyB0ZXN0cywgY29tcGxldGVkIDEzICByZXF1ZXN0cywgMCBzZWNvbmRzLiBDb21wbGV0ZWQgMTMgcmVxdWVzdHMgb2YgNzcgZXN0aW1hdGVkIHJlcXVlc3RzICgxNi44ODMxJSkuIEFsbCB0ZXN0cyBjb21wbGV0ZWQuCkJhdGNoICMxIFVSSSBwYXJhbWV0ZXIgbWFuaXB1bGF0aW9uIChubyBhdXRoKTogZXN0aW1hdGVkIHRpbWUgPCAxMCBtaW51dGVzICg1OCB0ZXN0cywgNSBpbnB1dHMpCkJhdGNoICMxIFVSSSBwYXJhbWV0ZXIgbWFuaXB1bGF0aW9uIChubyBhdXRoKTogNTggdnVsbnNpZ3MgdGVzdHMsIGNvbXBsZXRlZCAyODUgIHJlcXVlc3RzLCAxIHNlY29uZHMuIENvbXBsZXRlZCAyODUgcmVxdWVzdHMgb2YgMjkwIGVzdGltYXRlZCByZXF1ZXN0cyAoOTguMjc1OSUpLiBBbGwgdGVzdHMgY29tcGxldGVkLgpCYXRjaCAjMSBVUkkgYmxpbmQgU1FMIG1hbmlwdWxhdGlvbiAobm8gYXV0aCk6IGVzdGltYXRlZCB0aW1lIDwgMSBtaW51dGUgKDggdGVzdHMsIDUgaW5wdXRzKQpCYXRjaCAjMSBVUkkgYmxpbmQgU1FMIG1hbmlwdWxhdGlvbiAobm8gYXV0aCk6IDggdnVsbnNpZ3MgdGVzdHMsIGNvbXBsZXRlZCA5NiAgcmVxdWVzdHMsIDAgc2Vjb25kcy4gQ29tcGxldGVkIDk2IHJlcXVlc3RzIG9mIDEyMCBlc3RpbWF0ZWQgcmVxdWVzdHMgKDgwJSkuIEFsbCB0ZXN0cyBjb21wbGV0ZWQuCkJhdGNoICMxIFVSSSBwYXJhbWV0ZXIgdGltZS1iYXNlZCB0ZXN0cyAobm8gYXV0aCk6IGVzdGltYXRlZCB0aW1lIDwgMSBtaW51dGUgKDE0IHRlc3RzLCA1IGlucHV0cykKQmF0Y2ggIzEgVVJJIHBhcmFtZXRlciB0aW1lLWJhc2VkIHRlc3RzIChubyBhdXRoKTogMTQgdnVsbnNpZ3MgdGVzdHMsIGNvbXBsZXRlZCA3MCAgcmVxdWVzdHMsIDAgc2Vjb25kcy4gQ29tcGxldGVkIDcwIHJlcXVlc3RzIG9mIDcwIGVzdGltYXRlZCByZXF1ZXN0cyAoMTAwJSkuIEFsbCB0ZXN0cyBjb21wbGV0ZWQuCkJhdGNoICMxIFVSSSBwYXJhbWV0ZXIgdGltZS1iYXNlZCB0ZXN0cyBmb3IgQ1ZFLTIwMTEtMzkyMyAobm8gYXV0aCk6IGVzdGltYXRlZCB0aW1lIDwgMSBtaW51dGUgKDEgdGVzdHMsIDUgaW5wdXRzKQpCYXRjaCAjMSBVUkkgcGFyYW1ldGVyIHRpbWUtYmFzZWQgdGVzdHMgZm9yIENWRS0yMDExLTM5MjMgKG5vIGF1dGgpOiAxIHZ1bG5zaWdzIHRlc3RzLCBjb21wbGV0ZWQgNSAgcmVxdWVzdHMsIDAgc2Vjb25kcy4gQ29tcGxldGVkIDUgcmVxdWVzdHMgb2YgNSBlc3RpbWF0ZWQgcmVxdWVzdHMgKDEwMCUpLiBBbGwgdGVzdHMgY29tcGxldGVkLgpCYXRjaCAjMiBVUkkgcGFyYW1ldGVyIG1hbmlwdWxhdGlvbiAobm8gYXV0aCk6IGVzdGltYXRlZCB0aW1lIDwgMTAgbWludXRlcyAoNTggdGVzdHMsIDEwIGlucHV0cykKQmF0Y2ggIzIgVVJJIHBhcmFtZXRlciBtYW5pcHVsYXRpb24gKG5vIGF1dGgpOiA1OCB2dWxuc2lncyB0ZXN0cywgY29tcGxldGVkIDU3MCAgcmVxdWVzdHMsIDEgc2Vjb25kcy4gQ29tcGxldGVkIDU3MCByZXF1ZXN0cyBvZiA1ODAgZXN0aW1hdGVkIHJlcXVlc3RzICg5OC4yNzU5JSkuIEFsbCB0ZXN0cyBjb21wbGV0ZWQuCkJhdGNoICMyIFVSSSBibGluZCBTUUwgbWFuaXB1bGF0aW9uIChubyBhdXRoKTogZXN0aW1hdGVkIHRpbWUgPCAxIG1pbnV0ZSAoOCB0ZXN0cywgMTAgaW5wdXRzKQpCYXRjaCAjMiBVUkkgYmxpbmQgU1FMIG1hbmlwdWxhdGlvbiAobm8gYXV0aCk6IDggdnVsbnNpZ3MgdGVzdHMsIGNvbXBsZXRlZCAxOTMgIHJlcXVlc3RzLCAxIHNlY29uZHMuIENvbXBsZXRlZCAxOTMgcmVxdWVzdHMgb2YgMjQwIGVzdGltYXRlZCByZXF1ZXN0cyAoODAuNDE2NyUpLiBBbGwgdGVzdHMgY29tcGxldGVkLgpCYXRjaCAjMiBVUkkgcGFyYW1ldGVyIHRpbWUtYmFzZWQgdGVzdHMgKG5vIGF1dGgpOiBlc3RpbWF0ZWQgdGltZSA8IDEgbWludXRlICgxNCB0ZXN0cywgMTAgaW5wdXRzKQpCYXRjaCAjMiBVUkkgcGFyYW1ldGVyIHRpbWUtYmFzZWQgdGVzdHMgKG5vIGF1dGgpOiAxNCB2dWxuc2lncyB0ZXN0cywgY29tcGxldGVkIDE0MCAgcmVxdWVzdHMsIDAgc2Vjb25kcy4gQ29tcGxldGVkIDE0MCByZXF1ZXN0cyBvZiAxNDAgZXN0aW1hdGVkIHJlcXVlc3RzICgxMDAlKS4gQWxsIHRlc3RzIGNvbXBsZXRlZC4KQmF0Y2ggIzIgVVJJIHBhcmFtZXRlciB0aW1lLWJhc2VkIHRlc3RzIGZvciBDVkUtMjAxMS0zOTIzIChubyBhdXRoKTogZXN0aW1hdGVkIHRpbWUgPCAxIG1pbnV0ZSAoMSB0ZXN0cywgMTAgaW5wdXRzKQpCYXRjaCAjMiBVUkkgcGFyYW1ldGVyIHRpbWUtYmFzZWQgdGVzdHMgZm9yIENWRS0yMDExLTM5MjMgKG5vIGF1dGgpOiAxIHZ1bG5zaWdzIHRlc3RzLCBjb21wbGV0ZWQgMTAgIHJlcXVlc3RzLCAwIHNlY29uZHMuIENvbXBsZXRlZCAxMCByZXF1ZXN0cyBvZiAxMCBlc3RpbWF0ZWQgcmVxdWVzdHMgKDEwMCUpLiBBbGwgdGVzdHMgY29tcGxldGVkLgpCYXRjaCAjMyBVUkkgcGFyYW1ldGVyIG1hbmlwdWxhdGlvbiAobm8gYXV0aCk6IGVzdGltYXRlZCB0aW1lIDwgMSBtaW51dGUgKDU4IHRlc3RzLCAyIGlucHV0cykKQmF0Y2ggIzMgVVJJIHBhcmFtZXRlciBtYW5pcHVsYXRpb24gKG5vIGF1dGgpOiA1OCB2dWxuc2lncyB0ZXN0cywgY29tcGxldGVkIDExMCAgcmVxdWVzdHMsIDAgc2Vjb25kcy4gQ29tcGxldGVkIDExMCByZXF1ZXN0cyBvZiAxMTYgZXN0aW1hdGVkIHJlcXVlc3RzICg5NC44Mjc2JSkuIEFsbCB0ZXN0cyBjb21wbGV0ZWQuCkJhdGNoICMzIFVSSSBibGluZCBTUUwgbWFuaXB1bGF0aW9uIChubyBhdXRoKTogZXN0aW1hdGVkIHRpbWUgPCAxIG1pbnV0ZSAoOCB0ZXN0cywgMiBpbnB1dHMpCkJhdGNoICMzIFVSSSBibGluZCBTUUwgbWFuaXB1bGF0aW9uIChubyBhdXRoKTogOCB2dWxuc2lncyB0ZXN0cywgY29tcGxldGVkIDYzICByZXF1ZXN0cywgMCBzZWNvbmRzLiBDb21wbGV0ZWQgNjMgcmVxdWVzdHMgb2YgNDggZXN0aW1hdGVkIHJlcXVlc3RzICgxMzEuMjUlKS4gQWxsIHRlc3RzIGNvbXBsZXRlZC4KQmF0Y2ggIzMgVVJJIHBhcmFtZXRlciB0aW1lLWJhc2VkIHRlc3RzIChubyBhdXRoKTogZXN0aW1hdGVkIHRpbWUgPCAxIG1pbnV0ZSAoMTQgdGVzdHMsIDIgaW5wdXRzKQpCYXRjaCAjMyBVUkkgcGFyYW1ldGVyIHRpbWUtYmFzZWQgdGVzdHMgKG5vIGF1dGgpOiAxNCB2dWxuc2lncyB0ZXN0cywgY29tcGxldGVkIDI4ICByZXF1ZXN0cywgMCBzZWNvbmRzLiBDb21wbGV0ZWQgMjggcmVxdWVzdHMgb2YgMjggZXN0aW1hdGVkIHJlcXVlc3RzICgxMDAlKS4gQWxsIHRlc3RzIGNvbXBsZXRlZC4KQmF0Y2ggIzMgVVJJIHBhcmFtZXRlciB0aW1lLWJhc2VkIHRlc3RzIGZvciBDVkUtMjAxMS0zOTIzIChubyBhdXRoKTogZXN0aW1hdGVkIHRpbWUgPCAxIG1pbnV0ZSAoMSB0ZXN0cywgMiBpbnB1dHMpCkJhdGNoICMzIFVSSSBwYXJhbWV0ZXIgdGltZS1iYXNlZCB0ZXN0cyBmb3IgQ1ZFLTIwMTEtMzkyMyAobm8gYXV0aCk6IDEgdnVsbnNpZ3MgdGVzdHMsIGNvbXBsZXRlZCAyICByZXF1ZXN0cywgMCBzZWNvbmRzLiBDb21wbGV0ZWQgMiByZXF1ZXN0cyBvZiAyIGVzdGltYXRlZCByZXF1ZXN0cyAoMTAwJSkuIEFsbCB0ZXN0cyBjb21wbGV0ZWQuCk5vIFhNTCByZXF1ZXN0cyBmb3VuZC4gU2tpcHBpbmcgWFhFIHRlc3RzLgpCYXRjaCAjNCBET00gWFNTIGV4cGxvaXRhdGlvbjogZXN0aW1hdGVkIHRpbWUgPCAxIG1pbnV0ZSAoNCB0ZXN0cywgMCBpbnB1dHMpCkJhdGNoICM0IERPTSBYU1MgZXhwbG9pdGF0aW9uOiA0IHZ1bG5zaWdzIHRlc3RzLCBjb21wbGV0ZWQgMCAgcmVxdWVzdHMsIDEgc2Vjb25kcy4gTm8gdGVzdHMgdG8gZXhlY3V0ZS4KQmF0Y2ggIzQgSFRUUCBjYWxsIG1hbmlwdWxhdGlvbjogZXN0aW1hdGVkIHRpbWUgPCAxIG1pbnV0ZSAoMzMgdGVzdHMsIDAgaW5wdXRzKQpCYXRjaCAjNCBIVFRQIGNhbGwgbWFuaXB1bGF0aW9uOiAzMyB2dWxuc2lncyB0ZXN0cywgY29tcGxldGVkIDAgIHJlcXVlc3RzLCAwIHNlY29uZHMuIE5vIHRlc3RzIHRvIGV4ZWN1dGUuCkJhdGNoICM0IE9wZW4gUmVkaXJlY3QgYW5hbHlzaXM6IGVzdGltYXRlZCB0aW1lIDwgMSBtaW51dGUgKDEgdGVzdHMsIDAgaW5wdXRzKQpCYXRjaCAjNCBPcGVuIFJlZGlyZWN0IGFuYWx5c2lzOiAxIHZ1bG5zaWdzIHRlc3RzLCBjb21wbGV0ZWQgMCAgcmVxdWVzdHMsIDAgc2Vjb25kcy4gTm8gdGVzdHMgdG8gZXhlY3V0ZS4KQ1NSRiB0ZXN0cyB3aWxsIG5vdCBiZSBsYXVuY2hlZCBiZWNhdXNlIHRoZSBzY2FuIGlzIG5vdCBzdWNjZXNzZnVsbHkgYXV0aGVudGljYXRlZC4KQmF0Y2ggIzQgRmlsZSBJbmNsdXNpb24gYW5hbHlzaXM6IGVzdGltYXRlZCB0aW1lIDwgMSBtaW51dGUgKDEgdGVzdHMsIDYgaW5wdXRzKQpCYXRjaCAjNCBGaWxlIEluY2x1c2lvbiBhbmFseXNpczogMSB2dWxuc2lncyB0ZXN0cywgY29tcGxldGVkIDAgIHJlcXVlc3RzLCAwIHNlY29uZHMuIENvbXBsZXRlZCAwIHJlcXVlc3RzIG9mIDYgZXN0aW1hdGVkIHJlcXVlc3RzICgwJSkuIEFsbCB0ZXN0cyBjb21wbGV0ZWQuCkJhdGNoICM0IENvb2tpZSBtYW5pcHVsYXRpb246IGVzdGltYXRlZCB0aW1lIDwgMSBtaW51dGUgKDM3IHRlc3RzLCA2IGlucHV0cykKQmF0Y2ggIzQgQ29va2llIG1hbmlwdWxhdGlvbjogMzcgdnVsbnNpZ3MgdGVzdHMsIGNvbXBsZXRlZCAzMjUgIHJlcXVlc3RzLCAxIHNlY29uZHMuIENvbXBsZXRlZCAzMjUgcmVxdWVzdHMgb2YgMzI1IGVzdGltYXRlZCByZXF1ZXN0cyAoMTAwJSkuIFhTUyBvcHRpbWl6YXRpb24gcmVtb3ZlZCAxMjAgbGlua3MuIEFsbCB0ZXN0cyBjb21wbGV0ZWQuCkJhdGNoICM0IEhlYWRlciBtYW5pcHVsYXRpb246IGVzdGltYXRlZCB0aW1lIDwgMSBtaW51dGUgKDM3IHRlc3RzLCA1IGlucHV0cykKQmF0Y2ggIzQgSGVhZGVyIG1hbmlwdWxhdGlvbjogMzcgdnVsbnNpZ3MgdGVzdHMsIGNvbXBsZXRlZCAxMTAgIHJlcXVlc3RzLCAxIHNlY29uZHMuIENvbXBsZXRlZCAxMTAgcmVxdWVzdHMgb2YgMjUwIGVzdGltYXRlZCByZXF1ZXN0cyAoNDQlKS4gWFNTIG9wdGltaXphdGlvbiByZW1vdmVkIDEyMCBsaW5rcy4gQWxsIHRlc3RzIGNvbXBsZXRlZC4KQmF0Y2ggIzQgc2hlbGwgc2hvY2sgZGV0ZWN0b3I6IGVzdGltYXRlZCB0aW1lIDwgMSBtaW51dGUgKDEgdGVzdHMsIDUgaW5wdXRzKQpCYXRjaCAjNCBzaGVsbCBzaG9jayBkZXRlY3RvcjogMSB2dWxuc2lncyB0ZXN0cywgY29tcGxldGVkIDUgIHJlcXVlc3RzLCAwIHNlY29uZHMuIENvbXBsZXRlZCA1IHJlcXVlc3RzIG9mIDUgZXN0aW1hdGVkIHJlcXVlc3RzICgxMDAlKS4gQWxsIHRlc3RzIGNvbXBsZXRlZC4KQmF0Y2ggIzQgc2hlbGwgc2hvY2sgZGV0ZWN0b3IoZm9ybSk6IGVzdGltYXRlZCB0aW1lIDwgMSBtaW51dGUgKDEgdGVzdHMsIDAgaW5wdXRzKQpCYXRjaCAjNCBzaGVsbCBzaG9jayBkZXRlY3Rvcihmb3JtKTogMSB2dWxuc2lncyB0ZXN0cywgY29tcGxldGVkIDAgIHJlcXVlc3RzLCAwIHNlY29uZHMuIE5vIHRlc3RzIHRvIGV4ZWN1dGUuCkJhdGNoICM0IGh0dHBveHkgZGV0ZWN0b3I6IGVzdGltYXRlZCB0aW1lIDwgMSBtaW51dGUgKDEgdGVzdHMsIDUgaW5wdXRzKQpCYXRjaCAjNCBodHRwb3h5IGRldGVjdG9yOiAxIHZ1bG5zaWdzIHRlc3RzLCBjb21wbGV0ZWQgNSAgcmVxdWVzdHMsIDAgc2Vjb25kcy4gQ29tcGxldGVkIDUgcmVxdWVzdHMgb2YgNSBlc3RpbWF0ZWQgcmVxdWVzdHMgKDEwMCUpLiBBbGwgdGVzdHMgY29tcGxldGVkLgpCYXRjaCAjNCBodHRwb3h5IGRldGVjdG9yKGZvcm0pOiBlc3RpbWF0ZWQgdGltZSA8IDEgbWludXRlICgxIHRlc3RzLCAwIGlucHV0cykKQmF0Y2ggIzQgaHR0cG94eSBkZXRlY3Rvcihmb3JtKTogMSB2dWxuc2lncyB0ZXN0cywgY29tcGxldGVkIDAgIHJlcXVlc3RzLCAwIHNlY29uZHMuIE5vIHRlc3RzIHRvIGV4ZWN1dGUuCkJhdGNoICM0IFN0cnV0cyB0aW1lYmFzZWQgZGV0ZWN0b3I6IGVzdGltYXRlZCB0aW1lIDwgMSBtaW51dGUgKDEgdGVzdHMsIDUgaW5wdXRzKQpCYXRjaCAjNCBTdHJ1dHMgdGltZWJhc2VkIGRldGVjdG9yOiAxIHZ1bG5zaWdzIHRlc3RzLCBjb21wbGV0ZWQgNSAgcmVxdWVzdHMsIDIgc2Vjb25kcy4gQ29tcGxldGVkIDUgcmVxdWVzdHMgb2YgNSBlc3RpbWF0ZWQgcmVxdWVzdHMgKDEwMCUpLiBBbGwgdGVzdHMgY29tcGxldGVkLgpCYXRjaCAjNSBIVFRQIFRpbWUgQmFuZGl0OiBlc3RpbWF0ZWQgdGltZSA8IDEgbWludXRlICgxIHRlc3RzLCAxMCBpbnB1dHMpCkJhdGNoICM1IEhUVFAgVGltZSBCYW5kaXQ6IDEgdnVsbnNpZ3MgdGVzdHMsIGNvbXBsZXRlZCAwICByZXF1ZXN0cywgMCBzZWNvbmRzLiBObyB0ZXN0cyB0byBleGVjdXRlLgpQYXRoIG1hbmlwdWxhdGlvbjogRXN0aW1hdGVkIHJlcXVlc3RzIChwYXlsb2FkcyB4IGxpbmtzKTogZmlsZXMgd2l0aCBleHRlbnNpb246KDAgeCAwKSArIGZpbGVzOigwIHggNikgKyAgZGlyZWN0b3JpZXM6KDQgeCAxKSArICBwYXRoczooMTEgeCA3KSA9IHRvdGFsICg4MSkgCkJhdGNoICM1IFBhdGggWFNTIG1hbmlwdWxhdGlvbjogZXN0aW1hdGVkIHRpbWUgPCAxIG1pbnV0ZSAoMTUgdGVzdHMsIDcgaW5wdXRzKQpCYXRjaCAjNSBQYXRoIFhTUyBtYW5pcHVsYXRpb246IDE1IHZ1bG5zaWdzIHRlc3RzLCBjb21wbGV0ZWQgMzYgIHJlcXVlc3RzLCAwIHNlY29uZHMuIENvbXBsZXRlZCAzNiByZXF1ZXN0cyBvZiA4MSBlc3RpbWF0ZWQgcmVxdWVzdHMgKDQ0LjQ0NDQlKS4gQWxsIHRlc3RzIGNvbXBsZXRlZC4KUGF0aCBtYW5pcHVsYXRpb246IEVzdGltYXRlZCByZXF1ZXN0cyAocGF5bG9hZHMgeCBsaW5rcyk6IGZpbGVzIHdpdGggZXh0ZW5zaW9uOigwIHggMCkgKyBmaWxlczooMCB4IDYpICsgIGRpcmVjdG9yaWVzOigxIHggMSkgKyAgcGF0aHM6KDAgeCA3KSA9IHRvdGFsICgxKSAKQmF0Y2ggIzUgVG9tY2F0IFZ1bG4gbWFuaXB1bGF0aW9uOiBlc3RpbWF0ZWQgdGltZSA8IDEgbWludXRlICgxIHRlc3RzLCA3IGlucHV0cykKQmF0Y2ggIzUgVG9tY2F0IFZ1bG4gbWFuaXB1bGF0aW9uOiAxIHZ1bG5zaWdzIHRlc3RzLCBjb21wbGV0ZWQgMSAgcmVxdWVzdHMsIDAgc2Vjb25kcy4gQ29tcGxldGVkIDEgcmVxdWVzdHMgb2YgMSBlc3RpbWF0ZWQgcmVxdWVzdHMgKDEwMCUpLiBBbGwgdGVzdHMgY29tcGxldGVkLgpQYXRoIG1hbmlwdWxhdGlvbjogRXN0aW1hdGVkIHJlcXVlc3RzIChwYXlsb2FkcyB4IGxpbmtzKTogZmlsZXMgd2l0aCBleHRlbnNpb246KDAgeCAwKSArIGZpbGVzOigwIHggNikgKyAgZGlyZWN0b3JpZXM6KDE2IHggMSkgKyAgcGF0aHM6KDAgeCA3KSA9IHRvdGFsICgxNikgCkJhdGNoICM1IFRpbWUgYmFzZWQgcGF0aCBtYW5pcHVsYXRpb246IGVzdGltYXRlZCB0aW1lIDwgMSBtaW51dGUgKDE2IHRlc3RzLCA2IGlucHV0cykKQmF0Y2ggIzUgVGltZSBiYXNlZCBwYXRoIG1hbmlwdWxhdGlvbjogMTYgdnVsbnNpZ3MgdGVzdHMsIGNvbXBsZXRlZCAzMiAgcmVxdWVzdHMsIDM2MCBzZWNvbmRzLiBDb21wbGV0ZWQgMzIgcmVxdWVzdHMgb2YgMTYgZXN0aW1hdGVkIHJlcXVlc3RzICgyMDAlKS4gQWxsIHRlc3RzIGNvbXBsZXRlZC4KUGF0aCBtYW5pcHVsYXRpb246IEVzdGltYXRlZCByZXF1ZXN0cyAocGF5bG9hZHMgeCBsaW5rcyk6IGZpbGVzIHdpdGggZXh0ZW5zaW9uOig0IHggMCkgKyBmaWxlczooMTggeCA2KSArICBkaXJlY3RvcmllczooMTAyIHggMSkgKyAgcGF0aHM6KDE1IHggNykgPSB0b3RhbCAoMzE1KSAKQmF0Y2ggIzUgUGF0aCBtYW5pcHVsYXRpb246IGVzdGltYXRlZCB0aW1lIDwgMSBtaW51dGUgKDEzOSB0ZXN0cywgNyBpbnB1dHMpCkJhdGNoICM1IFBhdGggbWFuaXB1bGF0aW9uOiAxMzkgdnVsbnNpZ3MgdGVzdHMsIGNvbXBsZXRlZCAxNTIgIHJlcXVlc3RzLCAxIHNlY29uZHMuIENvbXBsZXRlZCAxNTIgcmVxdWVzdHMgb2YgMzE1IGVzdGltYXRlZCByZXF1ZXN0cyAoNDguMjU0JSkuIEFsbCB0ZXN0cyBjb21wbGV0ZWQuCkdlbmVyaWMgV2ViQ2dpIFRlc3Qgbm8gdGVzdCBlbmFibGVkClRvdGFsIHJlcXVlc3RzIG1hZGU6IDIzOTgKQXZlcmFnZSBzZXJ2ZXIgcmVzcG9uc2UgdGltZTogMC4xMiBzZWNvbmRzCg==</DATA>
+                </INFORMATION_GATHERED>
+                <INFORMATION_GATHERED>
+                    <UNIQUE_ID>8f418e3a-018f-7274-e053-a02410ac6d67</UNIQUE_ID>
+                    <ID>2607824</ID>
+                    <QID>150010</QID>
+                    <LAST_TIME_DETECTED>14 Jul 2019 07:08PM GMT-0700</LAST_TIME_DETECTED>
+                    <DATA base64="true">TnVtYmVyIG9mIGxpbmtzOiAxCmh0dHBzOi8vd3d3LmltcGVydmEuY29tL3doeS1hbS1pLXNlZWluZy10aGlzLXBhZ2UvP3NyYz0yMyZ1dG1fc291cmNlPWJsb2NraW5ncGFnZXMK</DATA>
+                </INFORMATION_GATHERED>
+                <INFORMATION_GATHERED>
+                    <UNIQUE_ID>8f418e3a-018e-7274-e053-a02410ac6d67</UNIQUE_ID>
+                    <ID>2607823</ID>
+                    <QID>150135</QID>
+                    <LAST_TIME_DETECTED>14 Jul 2019 07:08PM GMT-0700</LAST_TIME_DETECTED>
+                    <DATA base64="true">U3RyaWN0IFRyYW5zcG9ydCBTZWN1cml0eSBoZWFkZXIgbWlzc2luZyBmb3IgCmh0dHBzOi8vd3d3LnJvZGFuYW5kZmllbGRzLmNvbS9fSW5jYXBzdWxhX1Jlc291cmNlP0NXVUROU0FJPTIxJnhpbmZvPTMtNzI1ODYzNjktMCUyMDBOTk4lMjBSVCUyODE1NjMxNTY1ODUzNjglMjA1JTI5JTIwcSUyODAlMjAtMSUyMC0xJTIwMCUyOSUyMHIlMjgwJTIwLTElMjklMjBCMTUlMjg0JTJDMjAwJTJDMCUyOSUyMFU1JmluY2lkZW50X2lkPTQ4MDAwMTUzMDE5OTIzNzg1NS0yODk3NTI2MDcwODIxNTQzODcmZWRldD0xNSZjaW5mbz0wNDAwMDAwMAo=</DATA>
+                </INFORMATION_GATHERED>
+                <INFORMATION_GATHERED>
+                    <UNIQUE_ID>8f418e3a-018d-7274-e053-a02410ac6d67</UNIQUE_ID>
+                    <ID>2607822</ID>
+                    <QID>150099</QID>
+                    <LAST_TIME_DETECTED>14 Jul 2019 07:08PM GMT-0700</LAST_TIME_DETECTED>
+                    <DATA base64="true">VG90YWwgY29va2llczogMgp2aXNpZF9pbmNhcF8xMTQ3ODExPW9MZStodGR5U2t1SlJVNUNicGZLbjhQaEsxMEFBQUFBUVVJUEFBQUFBQUNRenNvL2s3dlN3WktGdmVUZVhxT1g7IGV4cGlyZXM9TW9uLCAxMy1KdWwtMjAyMCAxMjoxNzo0NCBHTVQ7IGRvbWFpbj0ucm9kYW5hbmRmaWVsZHMuY29tOyBwYXRoPS8gRmlyc3Qgc2V0IGF0IFVSTDogaHR0cHM6Ly93d3cucm9kYW5hbmRmaWVsZHMuY29tL2NhCmluY2FwX3Nlc180ODBfMTE0NzgxMT1XWUpyWGxPNGtDRGI1eTA3MlU2cEJzUGhLMTBBQUFBQWcxVjZJRHNyYlpWeGVobmo5T0xuQnc9PTsgZG9tYWluPS5yb2RhbmFuZGZpZWxkcy5jb207IHBhdGg9LyBGaXJzdCBzZXQgYXQgVVJMOiBodHRwczovL3d3dy5yb2RhbmFuZGZpZWxkcy5jb20vY2EK</DATA>
+                </INFORMATION_GATHERED>
+                <INFORMATION_GATHERED>
+                    <UNIQUE_ID>8f418e3a-016c-7274-e053-a02410ac6d67</UNIQUE_ID>
+                    <ID>2607817</ID>
+                    <QID>150020</QID>
+                    <LAST_TIME_DETECTED>14 Jul 2019 07:08PM GMT-0700</LAST_TIME_DETECTED>
+                    <DATA base64="true">TGlua3MgcmVqZWN0ZWQgZHVyaW5nIHRoZSB0ZXN0IHBoYXNlIG5vdCByZXBvcnRlZCBkdWUgdG8gdm9sdW1lIG9mIGxpbmtzLgo=</DATA>
+                </INFORMATION_GATHERED>
+                <INFORMATION_GATHERED>
+                    <UNIQUE_ID>8f418e3a-018c-7274-e053-a02410ac6d67</UNIQUE_ID>
+                    <ID>2607821</ID>
+                    <QID>45038</QID>
+                    <LAST_TIME_DETECTED>08 Jun 2019 01:06AM GMT-0700</LAST_TIME_DETECTED>
+                    <DATA base64="true">U2NhbiBkdXJhdGlvbjogODgzIHNlY29uZHMKClN0YXJ0IHRpbWU6IFNhdCwgSnVuIDA4IDIwMTksIDA4OjA2OjA3IEdNVAoKRW5kIHRpbWU6IFNhdCwgSnVuIDA4IDIwMTksIDA4OjIwOjUwIEdNVAo=</DATA>
+                </INFORMATION_GATHERED>
+            </INFORMATION_GATHERED_LIST>
+        </WEB_APPLICATION>
+    </RESULTS>
+    <GLOSSARY>
+        <BURP_TYPE_CODE_LIST/>
+        <QID_LIST>
+            <QID>
+                <QID>6</QID>
+                <CATEGORY>Information Gathered</CATEGORY>
+                <SEVERITY>1</SEVERITY>
+                <TITLE>DNS Host Name</TITLE>
+                <GROUP>DIAG</GROUP>
+                <DESCRIPTION>The fully qualified domain name of this host, if it was obtained from a DNS server, is displayed in the RESULT section.</DESCRIPTION>
+                <IMPACT>N/A</IMPACT>
+                <SOLUTION>N/A</SOLUTION>
+            </QID>
+            <QID>
+                <QID>45017</QID>
+                <CATEGORY>Information Gathered</CATEGORY>
+                <SEVERITY>2</SEVERITY>
+                <TITLE>Operating System Detected</TITLE>
+                <GROUP>DIAG</GROUP>
+                <DESCRIPTION><![CDATA[Several different techniques can be used to identify the operating system (OS) running on a host. A short description of these techniques is provided below. The specific technique used to identify the OS on this host is included in the RESULTS section of your report.
+<P>
+1) <B>TCP/IP Fingerprint</B>: The operating system of a host can be identified from a remote system using TCP/IP fingerprinting. All underlying operating system TCP/IP stacks have subtle differences that can be seen in their responses to specially-crafted TCP packets. According to the results of this "fingerprinting" technique, the OS version is among those listed below. 
+<P>
+Note that if one or more of these subtle differences are modified by a firewall or a packet filtering device between the scanner and the host, the fingerprinting technique may fail. Consequently, the version of the OS may not be detected correctly. If the host is behind a proxy-type firewall, the version of the operating system detected may be that of the firewall instead of the host being scanned.
+<P>
+2) <B>NetBIOS</B>: Short for Network Basic Input Output System, an application programming interface (API) that augments the DOS BIOS by adding special functions for local-area networks (LANs). Almost all LANs for PCs are based on the NetBIOS. Some LAN manufacturers have even extended it, adding additional network capabilities. NetBIOS relies on a message format called Server Message Block (SMB). 
+<P>
+3) <B>PHP Info</B>: PHP is a hypertext pre-processor, an open-source, server-side, HTML-embedded scripting language used to create dynamic Web pages. Under some configurations it is possible to call PHP functions like phpinfo() and obtain operating system information.
+<P>
+4) <B>SNMP</B>: The Simple Network Monitoring Protocol is used to monitor hosts, routers, and the networks to which they attach. The SNMP service maintains Management Information Base (MIB), a set of variables (database) that can be fetched by Managers. These include "MIB_II.system.sysDescr" for the operating system.
+]]></DESCRIPTION>
+                <IMPACT>Not  applicable.</IMPACT>
+                <SOLUTION>Not  applicable.</SOLUTION>
+            </QID>
+            <QID>
+                <QID>45038</QID>
+                <CATEGORY>Information Gathered</CATEGORY>
+                <SEVERITY>1</SEVERITY>
+                <TITLE>Host Scan Time</TITLE>
+                <GROUP>DIAG</GROUP>
+                <DESCRIPTION><![CDATA[The Host Scan Time is the period of time it takes the scanning engine to perform the vulnerability assessment of a single target host. The Host Scan Time for this host is reported in the Result section below. 
+<P>
+The Host Scan Time does not have a direct correlation to the Duration time as displayed in the Report Summary section of a scan results report. The Duration is the period of time it takes the service to perform a scan task. The Duration includes the time it takes the service to scan all hosts, which may involve parallel scanning. It also includes the time it takes for a scanner appliance to pick up the scan task and transfer the results back to the service's Secure Operating Center. Further, when a scan task is distributed across multiple scanners, the Duration includes the time it takes to perform parallel host scanning on all scanners.
+<P>
+For host running the Qualys Windows agent this QID reports the time taken by the agent to collect the host metadata used for the most recent assessment scan.]]></DESCRIPTION>
+                <IMPACT>N/A</IMPACT>
+                <SOLUTION>N/A</SOLUTION>
+            </QID>
+            <QID>
+                <QID>150009</QID>
+                <CATEGORY>Information Gathered</CATEGORY>
+                <SEVERITY>1</SEVERITY>
+                <TITLE>Links Crawled</TITLE>
+                <GROUP>DIAG</GROUP>
+                <DESCRIPTION><![CDATA[The list of unique links crawled and HTML forms submitted by the Web application scanner appear in the Results section. This list may contain fewer links than the maximum threshold defined at scan launch. 
+<P>NOTE: This list also includes 
+- All the unique links that are reported in QID 150140 (Redundant links/URL paths crawled and not crawled)
+- All the forms reported in QID 150152 (Forms Crawled), 
+- All the forms in QID 150115 (Authentication Form Found) and 
+- Certain requests from QID 150172 (Requests Crawled)]]></DESCRIPTION>
+                <IMPACT>N/A</IMPACT>
+                <SOLUTION>N/A</SOLUTION>
+            </QID>
+            <QID>
+                <QID>150010</QID>
+                <CATEGORY>Information Gathered</CATEGORY>
+                <SEVERITY>1</SEVERITY>
+                <TITLE>External Links Discovered</TITLE>
+                <GROUP>DIAG</GROUP>
+                <DESCRIPTION>External links discovered during the scan are listed in the Results section. These links were out of scope for the scan and were not crawled.</DESCRIPTION>
+                <IMPACT>N/A</IMPACT>
+                <SOLUTION>N/A</SOLUTION>
+            </QID>
+            <QID>
+                <QID>150020</QID>
+                <CATEGORY>Information Gathered</CATEGORY>
+                <SEVERITY>1</SEVERITY>
+                <TITLE>Links Rejected By Crawl Scope or Exclusion List</TITLE>
+                <GROUP>DIAG</GROUP>
+                <DESCRIPTION><![CDATA[One or more links were not crawled because of an explicit rule to exclude them. This also occurs if a link is malformed.
+<P>
+Black list and white list entries can cause links to be rejected. If a scan is limited to a specific starting directory, then links outside that directory will neither be crawled or tested.
+<P>
+Links that contain a host name or IP address different from the target application are considered external links and not crawled by default; those types of links are not listed here. This often happens when the scope of a scan is limited to the directory of the starting URL. The scope can be changed in the Web Application Record.
+<P>
+During the test phase, some path-based tests may be rejected if the scan is limited to the directory of the starting URL and the test would fall outside that directory. In these cases, the number of rejected links may be too high to list in the Results section.]]></DESCRIPTION>
+                <IMPACT>Links listed here were neither crawled or tested by the Web application scanning engine.</IMPACT>
+                <SOLUTION>A link might have been intentionally matched by a black or white list entry. Verify that no links in this list were unintentionally rejected.</SOLUTION>
+            </QID>
+            <QID>
+                <QID>150021</QID>
+                <CATEGORY>Information Gathered</CATEGORY>
+                <SEVERITY>1</SEVERITY>
+                <TITLE>Scan Diagnostics</TITLE>
+                <GROUP>DIAG</GROUP>
+                <DESCRIPTION>This check provides various details of the scan's performance and behavior. In some cases, this check can be used to identify problems that the scanner encountered when crawling the target Web application.</DESCRIPTION>
+                <IMPACT>The scan diagnostics data provides technical details about the crawler's performance and behavior. This information does not necessarily imply problems with the Web application.</IMPACT>
+                <SOLUTION>No action is required.</SOLUTION>
+            </QID>
+            <QID>
+                <QID>150028</QID>
+                <CATEGORY>Information Gathered</CATEGORY>
+                <SEVERITY>1</SEVERITY>
+                <TITLE>Cookies Collected</TITLE>
+                <GROUP>DIAG</GROUP>
+                <DESCRIPTION>The cookies listed in the Results section were set by the web application during the crawl phase.</DESCRIPTION>
+                <IMPACT><![CDATA[Cookies may potentially contain sensitive information about the user.<P>
+
+Note: Long scan duration can occur if a web application sets a large number of cookies (e.g., 25 cookies or more) and QIDs 150002, 150046, 150047, and 150048 are enabled.]]></IMPACT>
+                <SOLUTION>Review cookie values to ensure they do not include sensitive information. If scan duration is excessive due to a large number of cookies, consider excluding QIDs 150002, 150046, 150047, and 150048.</SOLUTION>
+            </QID>
+            <QID>
+                <QID>150041</QID>
+                <CATEGORY>Information Gathered</CATEGORY>
+                <SEVERITY>1</SEVERITY>
+                <TITLE>Links Rejected</TITLE>
+                <GROUP>DIAG</GROUP>
+                <DESCRIPTION>This has an informative nature. The links listed below were not crawled by the Web application scanning engine because they were intentionally prohibited by a blacklist or whitelist configuration setting. The list is provided to verify that links have been correctly blocked by blacklist and whitelist filters.</DESCRIPTION>
+                <IMPACT>Links listed here were neither crawled or tested by the Web application scanning engine, and that should be in sync with the intended behavior.</IMPACT>
+                <SOLUTION>No action is required.</SOLUTION>
+            </QID>
+            <QID>
+                <QID>150081</QID>
+                <CATEGORY>Potential Vulnerability</CATEGORY>
+                <SEVERITY>1</SEVERITY>
+                <TITLE>X-Frame-Options header is not set</TITLE>
+                <GROUP>INFO</GROUP>
+                <OWASP>A6</OWASP>
+                <WASC>WASC-15</WASC>
+                <CWE>CWE-693</CWE>
+                <CVSS_BASE>5.0</CVSS_BASE>
+                <CVSS_TEMPORAL>4.1</CVSS_TEMPORAL>
+                <DESCRIPTION><![CDATA[The X-Frame-Options header is not set in the HTTP response, meaning the page can potentially be loaded into an attacker-controlled frame. This could lead to clickjacking, where an attacker adds an invisible layer on top of the legitimate page to trick users into clicking on a malicious link or taking a harmful action.
+]]></DESCRIPTION>
+                <IMPACT><![CDATA[Without an X-Frame-Options response header, clickjacking may be possible. However, if the application properly uses the Content-Security-Policy "frame-ancestors" directive, then modern web browsers would stop the page from being framed and prevent clickjacking.
+]]></IMPACT>
+                <SOLUTION><![CDATA[The X-Frame-Options allows three values: DENY, SAMEORIGIN and ALLOW-FROM. It is recommended to use DENY, which prevents all domains from framing the page or SAMEORIGIN, which allows framing only by the same site. DENY and SAMEORGIN are supported by all browsers. Using ALLOW-FROM is not recommended because not all browsers support it.<P>
+
+Note: To avoid a common X-Frame-Options implementation mistake, see <A HREF="https://blog.qualys.com/securitylabs/2015/10/20/clickjacking-a-common-implementation-mistake-that-can-put-your-websites-in-danger" TARGET="_blank">https://blog.qualys.com/securitylabs/2015/10/20/clickjacking-a-common-implementation-mistake-that-can-put-your-websites-in-danger</A>.<P>
+
+It is also recommended to use the Content-Security-Policy "frame-ancestors directive". For more information, see the <A HREF="https://cheatsheetseries.owasp.org/cheatsheets/Clickjacking_Defense_Cheat_Sheet.html" TARGET="_blank">OWASP Clickjacking Defense Cheat Sheet</A>]]></SOLUTION>
+            </QID>
+            <QID>
+                <QID>150099</QID>
+                <CATEGORY>Information Gathered</CATEGORY>
+                <SEVERITY>1</SEVERITY>
+                <TITLE>Cookies Issued Without User Consent</TITLE>
+                <GROUP>WEAK</GROUP>
+                <DESCRIPTION><![CDATA[The cookies listed in the Results section were issued from the web
+application during the crawl without accepting any opt-in dialogs.]]></DESCRIPTION>
+                <IMPACT>Cookies may be set without user explicitly agreeing to accept them.</IMPACT>
+                <SOLUTION>Review the application to ensure that all cookies listed are supposed to be issued without user opt-in.  If the EU Cookie law is applicable for this web application, ensure these cookies require user opt-in or have been classified as exempt by your organization.</SOLUTION>
+            </QID>
+            <QID>
+                <QID>150122</QID>
+                <CATEGORY>Confirmed Vulnerability</CATEGORY>
+                <SEVERITY>2</SEVERITY>
+                <TITLE>Cookie Does Not Contain The "secure" Attribute</TITLE>
+                <GROUP>INFO</GROUP>
+                <OWASP>A3</OWASP>
+                <WASC>WASC-4</WASC>
+                <CWE>CWE-614</CWE>
+                <CVSS_BASE>6.4</CVSS_BASE>
+                <CVSS_TEMPORAL>5.8</CVSS_TEMPORAL>
+                <DESCRIPTION><![CDATA[The cookie does not contain the "secure" attribute.
+]]></DESCRIPTION>
+                <IMPACT>Cookies with the "secure" attribute are only permitted to be sent via HTTPS. Cookies sent via HTTP expose an unsuspecting user to sniffing attacks that could lead to user impersonation or compromise of the application account.</IMPACT>
+                <SOLUTION>If the associated risk of a compromised account is high, apply the "secure" attribute to cookies and force all sensitive requests to be sent via HTTPS.</SOLUTION>
+            </QID>
+            <QID>
+                <QID>150123</QID>
+                <CATEGORY>Confirmed Vulnerability</CATEGORY>
+                <SEVERITY>2</SEVERITY>
+                <TITLE>Cookie Does Not Contain The "HTTPOnly" Attribute</TITLE>
+                <GROUP>INFO</GROUP>
+                <OWASP>A3</OWASP>
+                <WASC>WASC-4</WASC>
+                <CWE>CWE-1004</CWE>
+                <DESCRIPTION>The cookie does not contain the "HTTPOnly" attribute.</DESCRIPTION>
+                <IMPACT>Cookies without the "HTTPOnly" attribute are permitted to be accessed via JavaScript. Cross-site scripting attacks can steal cookies which could lead to user impersonation or compromise of the application account.</IMPACT>
+                <SOLUTION>If the associated risk of a compromised account is high, apply the "HTTPOnly" attribute to cookies.</SOLUTION>
+            </QID>
+            <QID>
+                <QID>150124</QID>
+                <CATEGORY>Confirmed Vulnerability</CATEGORY>
+                <SEVERITY>3</SEVERITY>
+                <TITLE>Clickjacking - Framable Page</TITLE>
+                <GROUP>INFO</GROUP>
+                <OWASP>A6</OWASP>
+                <WASC>WASC-15</WASC>
+                <CWE>CWE-451</CWE>
+                <CVSS_BASE>6.4</CVSS_BASE>
+                <CVSS_TEMPORAL>5.8</CVSS_TEMPORAL>
+                <DESCRIPTION><![CDATA[The web page can be framed. This means that clickjacking attacks against users are possible.
+]]></DESCRIPTION>
+                <IMPACT><![CDATA[With clickjacking, an attacker can trick a victim user into clicking an invisible frame on the web page, thereby causing the victim to take an action they did not intend to take.
+
+]]></IMPACT>
+                <SOLUTION><![CDATA[Clickjacking prevention mechanisms include:<BR>
+- X-Frame-Options: This HTTP response header can be used to prevent framing of web pages.<BR>
+- Content-Security-Policy: The 'frame-ancestors' directive can be used to prevent framing of web pages.<BR>
+- Framekiller JavaScript code designed to prevent a malicious user from framing the page. This method is not recommended due to its unreliability.<P>
+
+See the <A HREF="https://cheatsheetseries.owasp.org/cheatsheets/Clickjacking_Defense_Cheat_Sheet.html" TARGET="_blank">OWASP Clickjacking Defense Cheat Sheet</A> for more information.]]></SOLUTION>
+            </QID>
+            <QID>
+                <QID>150135</QID>
+                <CATEGORY>Information Gathered</CATEGORY>
+                <SEVERITY>1</SEVERITY>
+                <TITLE>HTTP Strict Transport Security (HSTS) header missing or misconfigured</TITLE>
+                <GROUP>WEAK</GROUP>
+                <DESCRIPTION>HTTP Strict Transport Security (HSTS) header was found to be missing or misconfigured. The HSTS header instructs browsers that all subsequent connections to the website, for a configurable amount of time, should be performed over a secure (HTTPS) connection only. Additionally, it instructs browsers that users should not be permitted to bypass SSL/TLS certificate errors, in the event of an expired or otherwise untrusted certificate for example. </DESCRIPTION>
+                <IMPACT>If HSTS header is not set, users are potentially vulnerable to man-in-the-middle (MITM) attacks, SSL stripping, and passive eavesdropper attacks.</IMPACT>
+                <SOLUTION><![CDATA[For information about how to implement the HSTS header properly, refer to the <A HREF="https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html" TARGET="_blank">OWASP HTTP Strict Transport Security Cheat Sheet</A>.]]></SOLUTION>
+            </QID>
+            <QID>
+                <QID>150152</QID>
+                <CATEGORY>Information Gathered</CATEGORY>
+                <SEVERITY>1</SEVERITY>
+                <TITLE>Forms Crawled</TITLE>
+                <GROUP>DIAG</GROUP>
+                <DESCRIPTION><![CDATA[Results section consists of the unique forms submitted by the Web Application Scanner. Reported list of forms in this QID does not contain authentication forms (i.e. login forms) which are reported separately in QID 150115. There is redundancy checks done on forms based on form fields. Forms determined to be similar will be considered redundant and not tested. 
+<P>NOTE: The regular expression specified under 'Redundant Links' are not applied to forms. Forms (unique or redundant) are not reported under QID 150140.]]></DESCRIPTION>
+                <IMPACT>N/A</IMPACT>
+                <SOLUTION>N/A</SOLUTION>
+            </QID>
+            <QID>
+                <QID>150202</QID>
+                <CATEGORY>Information Gathered</CATEGORY>
+                <SEVERITY>2</SEVERITY>
+                <TITLE>Missing header: X-Content-Type-Options</TITLE>
+                <GROUP>WEAK</GROUP>
+                <OWASP>A6</OWASP>
+                <WASC>WASC-15</WASC>
+                <DESCRIPTION>The X-Content-Type-Options response header is not present. WAS reports missing X-Content-Type-Options header on each crawled link for both static and dynamic responses. The scanner performs the check not only on 200 responses but 4xx and 5xx responses as well. It's also possible the QID will be reported on directory-level links.</DESCRIPTION>
+                <IMPACT><![CDATA[All web browsers employ a content-sniffing algorithm that inspects the contents of HTTP responses and also occasionally overrides the MIME type provided by the server. If X-Content-Type-Options header is not present, browsers can potentially be tricked into treating non-HTML response as HTML. An attacker can then potentially leverage the functionality to perform a cross-site scripting (XSS) attack. This specific case is known as a Content-Sniffing XSS (CS-XSS) attack.
+
+
+
+]]></IMPACT>
+                <SOLUTION><![CDATA[It is recommended to disable browser content sniffing by adding the X-Content-Type-Options header to the HTTP response with a value of 'nosniff'. Also, ensure that the 'Content-Type' header is set correctly on responses.
+]]></SOLUTION>
+            </QID>
+            <QID>
+                <QID>150204</QID>
+                <CATEGORY>Information Gathered</CATEGORY>
+                <SEVERITY>1</SEVERITY>
+                <TITLE>Missing header: X-XSS-Protection</TITLE>
+                <GROUP>WEAK</GROUP>
+                <OWASP>A6</OWASP>
+                <WASC>WASC-15</WASC>
+                <DESCRIPTION><![CDATA[The X-XSS-Protection response header is not present.
+]]></DESCRIPTION>
+                <IMPACT><![CDATA[The X-XSS-Protection response header provides a layer of protection against reflected cross-site scripting (XSS) attacks by instructing browsers to abort rendering a page in which a reflected XSS attack has been detected. This is a best-effort second line of defense measure which helps prevent an attacker from using evasion techniques to avoid the neutralization mechanisms that the filters use by default. When configured appropriately, browser-level XSS filters can provide additional layers of defense against web application attacks.
+<P>
+Note that HTTP 4xx and 5xx responses can also be susceptible to attacks such as XSS. For better security the X-XSS-Protection header should be set on 4xx and 5xx responses as well.]]></IMPACT>
+                <SOLUTION><![CDATA[It is recommend to set X-XSS-Protection header with value set to '1; mode=block' on all the relevant responses to activate browser's XSS filter.
+
+<P><B>NOTE:</B> The X-XSS-Protection header is not supported by all browsers. Google Chrome and Safari are some of the browsers which support it, Firefox on the other hand does not support the header. X-XSS-Protection header does not guarantee a complete protection against XSS. For better protection against XSS attacks, the web application should use secure coding principles. Also, consider leveraging the Content-Security-Policy (CSP) header, which is supported by all browsers.
+
+<P>Using X-XSS-Protection could have unintended side effects, please understand the implications carefully before using it.
+
+<P>References:<BR>
+- <A HREF="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection" TARGET="_blank">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection</A><BR>
+- <A HREF="https://blog.innerht.ml/the-misunderstood-x-xss-protection/" TARGET="_blank">https://blog.innerht.ml/the-misunderstood-x-xss-protection/</A><BR>
+- <A HREF="https://www.mbsd.jp/blog/20160407.html" TARGET="_blank">https://www.mbsd.jp/blog/20160407.html</A><BR>
+- <A HREF="https://www.chromium.org/developers/design-documents/xss-auditor" TARGET="_blank">https://www.chromium.org/developers/design-documents/xss-auditor</A>]]></SOLUTION>
+            </QID>
+            <QID>
+                <QID>150206</QID>
+                <CATEGORY>Information Gathered</CATEGORY>
+                <SEVERITY>2</SEVERITY>
+                <TITLE>Content-Security-Policy Not Implemented</TITLE>
+                <GROUP>WEAK</GROUP>
+                <OWASP>A6</OWASP>
+                <WASC>WASC-15</WASC>
+                <DESCRIPTION><![CDATA[No Content-Security-Policy (CSP) is specified for the page. WAS checks for the missing CSP on all static and dynamic pages. It checks for CSP in the response headers (Content-Security-Policy, X-Content-Security-Policy or X-Webkit-CSP) and in response body (http-equiv="Content-Security-Policy" meta tag).<P>
+
+HTTP 4xx and 5xx responses can also be susceptible to attacks such as XSS. For better security it's important to set appropriate CSP policies on 4xx and 5xx responses as well.
+]]></DESCRIPTION>
+                <IMPACT><![CDATA[Content-Security Policy is a defense mechanism that can significantly reduce the risk and impact of XSS attacks in modern browsers. The CSP specification provides a set of content restrictions for web resources and a mechanism for transmitting the policy from a server to a client where the policy is enforced. When a Content Security Policy is specified, a number of default behaviors in user agents are changed; specifically inline content and JavaScript eval constructs are not interpreted without additional directives. In short, CSP allows you to create a whitelist of sources of the trusted content. The CSP policy instructs the browser to only render resources from those whitelisted sources. Even though an attacker can find a security vulnerability in the application through which to inject script, the script won't match the whitelisted sources defined in the CSP policy, and therefore will not be executed.<P>
+
+The absence of Content Security Policy in the response will allow the attacker to exploit vulnerabilities as the protection provided by the browser is not at all leveraged by the Web application. If secure CSP configuration is not implemented, browsers will not be able to block content-injection attacks such as Cross-Site Scripting and Clickjacking.
+
+]]></IMPACT>
+                <SOLUTION><![CDATA[Appropriate CSP policies help prevent content-injection attacks such as cross-site scripting (XSS) and clickjacking. It's recommended to add secure CSP policies as a part of a defense-in-depth approach for securing web applications.<P>
+
+References:<BR>
+- <A HREF="https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html" TARGET="_blank">https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</A><BR>
+- <A HREF="https://developers.google.com/web/fundamentals/security/csp/" TARGET="_blank">https://developers.google.com/web/fundamentals/security/csp/</A>
+
+
+
+]]></SOLUTION>
+            </QID>
+        </QID_LIST>
+        <GROUP_LIST>
+            <GROUP>
+                <CODE>PATH</CODE>
+                <NAME>Path Disclosure</NAME>
+                <TYPE>VULNERABILITY</TYPE>
+            </GROUP>
+            <GROUP>
+                <CODE>CC</CODE>
+                <NAME>Credit Card Numbers</NAME>
+                <TYPE>SENSITIVE_CONTENT</TYPE>
+            </GROUP>
+            <GROUP>
+                <CODE>DIAG</CODE>
+                <NAME>Scan Diagnostics</NAME>
+                <TYPE>INFORMATION_GATHERED</TYPE>
+            </GROUP>
+            <GROUP>
+                <CODE>BUGCROWD</CODE>
+                <NAME>Bugcrowd</NAME>
+                <TYPE>VULNERABILITY</TYPE>
+            </GROUP>
+            <GROUP>
+                <CODE>SSN-US</CODE>
+                <NAME>Social Security Numbers (US)</NAME>
+                <TYPE>SENSITIVE_CONTENT</TYPE>
+            </GROUP>
+            <GROUP>
+                <CODE>WEAK</CODE>
+                <NAME>Security Weaknesses</NAME>
+                <TYPE>INFORMATION_GATHERED</TYPE>
+            </GROUP>
+            <GROUP>
+                <CODE>CUSTOM</CODE>
+                <NAME>Custom Contents</NAME>
+                <TYPE>SENSITIVE_CONTENT</TYPE>
+            </GROUP>
+            <GROUP>
+                <CODE>XSS</CODE>
+                <NAME>Cross-Site Scripting</NAME>
+                <TYPE>VULNERABILITY</TYPE>
+            </GROUP>
+            <GROUP>
+                <CODE>INFO</CODE>
+                <NAME>Information Disclosure</NAME>
+                <TYPE>VULNERABILITY</TYPE>
+            </GROUP>
+            <GROUP>
+                <CODE>BURP</CODE>
+                <NAME>Burp</NAME>
+                <TYPE>VULNERABILITY</TYPE>
+            </GROUP>
+            <GROUP>
+                <CODE>SQL</CODE>
+                <NAME>SQL Injection</NAME>
+                <TYPE>VULNERABILITY</TYPE>
+            </GROUP>
+        </GROUP_LIST>
+        <OWASP_LIST>
+            <OWASP>
+                <CODE>A1</CODE>
+                <NAME>Injection</NAME>
+            </OWASP>
+            <OWASP>
+                <CODE>A2</CODE>
+                <NAME>Broken Authentication</NAME>
+            </OWASP>
+            <OWASP>
+                <CODE>A3</CODE>
+                <NAME>Sensitive Data Exposure</NAME>
+            </OWASP>
+            <OWASP>
+                <CODE>A4</CODE>
+                <NAME>XML External Entities (XXE)</NAME>
+            </OWASP>
+            <OWASP>
+                <CODE>A5</CODE>
+                <NAME>Broken Access Control</NAME>
+            </OWASP>
+            <OWASP>
+                <CODE>A6</CODE>
+                <NAME>Security Misconfiguration</NAME>
+            </OWASP>
+            <OWASP>
+                <CODE>A7</CODE>
+                <NAME>Cross-Site Scripting (XSS)</NAME>
+            </OWASP>
+            <OWASP>
+                <CODE>A8</CODE>
+                <NAME>Insecure Deserialization</NAME>
+            </OWASP>
+            <OWASP>
+                <CODE>A9</CODE>
+                <NAME>Using Components with Known Vulnerabilities</NAME>
+            </OWASP>
+            <OWASP>
+                <CODE>A10</CODE>
+                <NAME><![CDATA[Insufficient Logging & Monitoring]]></NAME>
+            </OWASP>
+        </OWASP_LIST>
+        <WASC_LIST>
+            <WASC>
+                <CODE>WASC-1</CODE>
+                <NAME>INSUFFICIENT AUTHENTICATION</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-2</CODE>
+                <NAME>INSUFFICIENT AUTHORIZATION</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-3</CODE>
+                <NAME>INTEGER OVERFLOWS</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-4</CODE>
+                <NAME>INSUFFICIENT TRANSPORT LAYER PROTECTION</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-5</CODE>
+                <NAME>REMOTE FILE INCLUSION</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-6</CODE>
+                <NAME>FORMAT STRING</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-7</CODE>
+                <NAME>BUFFER OVERFLOW</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-8</CODE>
+                <NAME>CROSS-SITE SCRIPTING</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-9</CODE>
+                <NAME>CROSS-SITE REQUEST FORGERY</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-10</CODE>
+                <NAME>DENIAL OF SERVICE</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-11</CODE>
+                <NAME>BRUTE FORCE</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-12</CODE>
+                <NAME>CONTENT SPOOFING</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-13</CODE>
+                <NAME>INFORMATION LEAKAGE</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-14</CODE>
+                <NAME>SERVER MISCONFIGURATION</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-15</CODE>
+                <NAME>APPLICATION MISCONFIGURATION</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-16</CODE>
+                <NAME>DIRECTORY INDEXING</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-17</CODE>
+                <NAME>IMPROPER FILESYSTEM PERMISSIONS</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-18</CODE>
+                <NAME>CREDENTIAL/SESSION PREDICTION</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-19</CODE>
+                <NAME>SQL INJECTION</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-20</CODE>
+                <NAME>IMPROPER INPUT HANDLING</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-21</CODE>
+                <NAME>INSUFFICIENT ANTI-AUTOMATION</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-22</CODE>
+                <NAME>IMPROPER OUTPUT HANDLING</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-23</CODE>
+                <NAME>XML INJECTION</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-24</CODE>
+                <NAME>HTTP REQUEST SPLITTING</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-25</CODE>
+                <NAME>HTTP RESPONSE SPLITTING</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-26</CODE>
+                <NAME>HTTP REQUEST SMUGGLING</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-27</CODE>
+                <NAME>HTTP RESPONSE SMUGGLING</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-28</CODE>
+                <NAME>NULL BYTE INJECTION</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-29</CODE>
+                <NAME>LDAP INJECTION</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-30</CODE>
+                <NAME>MAIL COMMAND INJECTION</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-31</CODE>
+                <NAME>OS COMMANDING</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-32</CODE>
+                <NAME>ROUTING DETOUR</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-33</CODE>
+                <NAME>PATH TRAVERSAL</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-34</CODE>
+                <NAME>PREDICTABLE RESOURCE LOCATION</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-35</CODE>
+                <NAME>SOAP ARRAY ABUSE</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-36</CODE>
+                <NAME>SSI INJECTION</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-37</CODE>
+                <NAME>SESSION FIXATION</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-38</CODE>
+                <NAME>URL REDIRECTOR ABUSE</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-39</CODE>
+                <NAME>XPATH INJECTION</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-40</CODE>
+                <NAME>INSUFFICIENT PROCESS VALIDATION</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-41</CODE>
+                <NAME>XML ATTRIBUTE BLOWUP</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-42</CODE>
+                <NAME>ABUSE OF FUNCTIONALITY</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-43</CODE>
+                <NAME>XML EXTERNAL ENTITIES (XXE)</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-44</CODE>
+                <NAME>XML ENTITY EXPANSION</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-45</CODE>
+                <NAME>FINGERPRINTING</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-46</CODE>
+                <NAME>XQUERY INJECTION</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-47</CODE>
+                <NAME>INSUFFICIENT SESSION EXPIRATION</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-48</CODE>
+                <NAME>INSECURE INDEXING</NAME>
+            </WASC>
+            <WASC>
+                <CODE>WASC-49</CODE>
+                <NAME>INSUFFICIENT PASSWORD RECOVERY</NAME>
+            </WASC>
+        </WASC_LIST>
+    </GLOSSARY>
+    <APPENDIX>
+        <WEB_APPLICATION>
+            <ID>134122294</ID>
+            <NAME>Hybris-CA</NAME>
+            <URL>https://www.rodanandfields.com/ca</URL>
+            <OWNER>Chandan Singh (rdanf2cs)</OWNER>
+            <OPERATING_SYSTEM>Ubuntu / Fedora / Tiny Core Linux / Linux 3.x</OPERATING_SYSTEM>
+            <SCOPE>Limit to URL hostname</SCOPE>
+        </WEB_APPLICATION>
+    </APPENDIX>
+</WAS_WEBAPP_REPORT>

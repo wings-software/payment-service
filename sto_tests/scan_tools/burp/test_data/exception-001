@@ -1,0 +1,775 @@
+{
+	"noissues": {
+		"issue": [
+			{
+				"serialNumber": "8801295048214289408",
+				"type": "16777728",
+				"name": {
+					"__cdata": "Unencrypted communications"
+				},
+				"host": {
+					"_ip": "54.208.137.193",
+					"__text": "http://blab-a-gab.examplico.com"
+				},
+				"path": {
+					"__cdata": "/"
+				},
+				"location": {
+					"__cdata": "/"
+				},
+				"severity": "Low",
+				"confidence": "Certain",
+				"issueBackground": {
+					"__cdata": "<p>The application allows users to connect to it over unencrypted connections.  An attacker suitably positioned to view a legitimate user's network traffic could record and monitor their interactions with the application and obtain any information the user supplies. Furthermore, an attacker able to modify traffic could use the application as a platform for attacks against its users and third-party websites. Unencrypted connections have been exploited by ISPs and governments to track users, and to inject adverts and malicious JavaScript. Due to these concerns, web browser vendors are planning to visually flag unencrypted connections as hazardous.</p><p>\nTo exploit this vulnerability, an attacker must be suitably positioned to eavesdrop on the victim's network traffic. This scenario typically occurs when a client communicates with the server over an insecure connection such as public Wi-Fi, or a corporate or home network that is shared with a compromised computer. Common defenses such as switched networks are not sufficient to prevent this. An attacker situated in the user's ISP or the application's hosting infrastructure could also perform this attack. Note that an advanced adversary could potentially target any connection made over the Internet's core infrastructure.\n</p><p>Please note that using a mixture of encrypted and unencrypted communications is an ineffective defense against active attackers, because they can easily remove references to encrypted resources when these references are transmitted over an unencrypted connection.</p>"
+				},
+				"remediationBackground": {
+					"__cdata": "<p>Applications should use transport-level encryption (SSL/TLS) to protect all communications passing between the client and the server. The Strict-Transport-Security HTTP header should be used to ensure that clients refuse to access the server over an insecure connection.</p>"
+				},
+				"references": {
+					"__cdata": "<ul><li><a href=\"https://www.chromium.org/Home/chromium-security/marking-http-as-non-secure\">Marking HTTP as non-secure</a></li><li><a href=\"https://wiki.mozilla.org/Security/Server_Side_TLS\">Configuring Server-Side SSL/TLS</a></li><li><a href=\"https://developer.mozilla.org/en-US/docs/Web/Security/HTTP_strict_transport_security\">HTTP Strict Transport Security</a></li></ul>"
+				},
+				"vulnerabilityClassifications": {
+					"__cdata": "<ul><li><a href=\"https://cwe.mitre.org/data/definitions/326.html\">CWE-326: Inadequate Encryption Strength</a></li></ul>"
+				}
+			},
+			{
+				"serialNumber": "5797638102858784768",
+				"type": "5245344",
+				"name": {
+					"__cdata": "Frameable response (potential Clickjacking)"
+				},
+				"host": {
+					"_ip": "54.208.137.193",
+					"__text": "http://blab-a-gab.examplico.com"
+				},
+				"path": {
+					"__cdata": "/login"
+				},
+				"location": {
+					"__cdata": "/login"
+				},
+				"severity": "Information",
+				"confidence": "Firm",
+				"issueBackground": {
+					"__cdata": "<p>If a page fails to set an appropriate X-Frame-Options or Content-Security-Policy HTTP header, it might be possible for a page controlled by an attacker to load it within an iframe. This may enable a clickjacking attack, in which the attacker's page overlays the target application's interface with a different interface provided by the attacker. By inducing victim users to perform actions such as mouse clicks and keystrokes, the attacker can cause them to unwittingly carry out actions within the application that is being targeted. This technique allows the attacker to circumvent defenses against cross-site request forgery, and may result in unauthorized actions.</p><p>Note that some applications attempt to prevent these attacks from within the HTML page itself, using \"framebusting\" code. However, this type of defense is normally ineffective and can usually be circumvented by a skilled attacker.</p><p>You should determine whether any functions accessible within frameable pages can be used by application users to perform any sensitive actions within the application. </p>"
+				},
+				"remediationBackground": {
+					"__cdata": "<p>To effectively prevent framing attacks, the application should return a response header with the name <b>X-Frame-Options</b> and the value <b>DENY</b> to prevent framing altogether, or the value <b>SAMEORIGIN</b> to allow framing only by pages on the same origin as the response itself. Note that the SAMEORIGIN header can be partially bypassed if the application itself can be made to frame untrusted websites.</p>"
+				},
+				"references": {
+					"__cdata": "<ul><li><a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/X-Frame-Options\">X-Frame-Options</a></li></ul>"
+				},
+				"vulnerabilityClassifications": {
+					"__cdata": "<ul><li><a href=\"https://cwe.mitre.org/data/definitions/693.html\">CWE-693: Protection Mechanism Failure</a></li></ul>"
+				},
+				"requestresponse": {
+					"request": {
+						"_method": "GET",
+						"_base64": "true",
+						"__cdata": "R0VUIC9sb2dpbiBIVFRQLzEuMQ0KSG9zdDogYmxhYi1hLWdhYi5leGFtcGxpY28uY29tDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUNCkFjY2VwdDogKi8qDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoY29tcGF0aWJsZTsgTVNJRSA5LjA7IFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0OyBUcmlkZW50LzUuMCkNCkNvbm5lY3Rpb246IGNsb3NlDQpSZWZlcmVyOiBodHRwOi8vYmxhYi1hLWdhYi5leGFtcGxpY28uY29tLw0KQ29va2llOiBKU0VTU0lPTklEPTIyMEVBMDFCRjMxRkREODVDNTYxNUY5RkExMjg1RkRBDQoNCg=="
+					},
+					"response": {
+						"_base64": "true",
+						"__cdata": "SFRUUC8xLjEgMjAwIA0KRGF0ZTogV2VkLCAwMSBKdWwgMjAyMCAxNzoxOToxOCBHTVQNClNlcnZlcjogQXBhY2hlLzIuNC40MSAoQW1hem9uKSBPcGVuU1NMLzEuMC4yay1maXBzDQpDb250ZW50LVR5cGU6IHRleHQvaHRtbDtjaGFyc2V0PVVTLUFTQ0lJDQpDb250ZW50LUxhbmd1YWdlOiBlbg0KVmFyeTogQWNjZXB0LUVuY29kaW5nDQpDb250ZW50LUxlbmd0aDogMzQwNw0KQ29ubmVjdGlvbjogY2xvc2UNCg0KCjwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgo8bWV0YSBjaGFyc2V0PSJ1dGYtOCI+CjxtZXRhIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9ZWRnZSI+CjxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MSI+CjxtZXRhIG5hbWU9ImRlc2NyaXB0aW9uIiBjb250ZW50PSIiPgo8bWV0YSBuYW1lPSJhdXRob3IiIGNvbnRlbnQ9IiI+CjxsaW5rIHJlbD0iaWNvbiIgaHJlZj0iLi4vLi4vZmF2aWNvbi5pY28iPgoKPHRpdGxlPkxvZ2luIHRvIEJsYWI8L3RpdGxlPgoKPCEtLSBCb290c3RyYXAgY29yZSBDU1MgLS0+CjxsaW5rIGhyZWY9InJlc291cmNlcy9jc3MvYm9vdHN0cmFwLm1pbi5jc3MiIHJlbD0ic3R5bGVzaGVldCI+CjwhLS0gQm9vdHN0cmFwIHRoZW1lIC0tPgo8bGluayBocmVmPSJyZXNvdXJjZXMvY3NzL2Jvb3RzdHJhcC10aGVtZS5taW4uY3NzIiByZWw9InN0eWxlc2hlZXQiPgoKPCEtLSBDdXN0b20gc3R5bGVzIGZvciB0aGlzIHRlbXBsYXRlIC0tPgo8bGluayBocmVmPSJyZXNvdXJjZXMvY3NzL3B3bS5jc3MiIHJlbD0ic3R5bGVzaGVldCI+Cgo8IS0tIEhUTUw1IHNoaW0gYW5kIFJlc3BvbmQuanMgZm9yIElFOCBzdXBwb3J0IG9mIEhUTUw1IGVsZW1lbnRzIGFuZCBtZWRpYSBxdWVyaWVzIC0tPgo8IS0tW2lmIGx0IElFIDldPgogICAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9vc3MubWF4Y2RuLmNvbS9odG1sNXNoaXYvMy43LjIvaHRtbDVzaGl2Lm1pbi5qcyI+PC9zY3JpcHQ+CiAgICAgIDxzY3JpcHQgc3JjPSJodHRwczovL29zcy5tYXhjZG4uY29tL3Jlc3BvbmQvMS40LjIvcmVzcG9uZC5taW4uanMiPjwvc2NyaXB0PgogICAgPCFbZW5kaWZdLS0+CjwvaGVhZD4KCjxib2R5IHJvbGU9ImRvY3VtZW50Ij4KCgk8ZGl2IGNsYXNzPSJjb250YWluZXIiPgoKCQk8ZGl2IGNsYXNzPSJoZWFkZXIgY2xlYXJmaXgiPgoJCQk8bmF2PgoJCQkJPHVsIGNsYXNzPSJuYXYgbmF2LXBpbGxzIHB1bGwtcmlnaHQiPgoJCQkJCTxsaSByb2xlPSJwcmVzZW50YXRpb24iPjxhIGhyZWY9InJlc2V0Ij5SZXNldDwvYT48L2xpPgoJCQkJCTxsaSByb2xlPSJwcmVzZW50YXRpb24iPjxhIGhyZWY9ImxvZ2luIiBjbGFzcz0iYWN0aXZlIj5Mb2dpbjwvYT48L2xpPgoJCQkJCTxsaSByb2xlPSJwcmVzZW50YXRpb24iPjxhIGhyZWY9InJlZ2lzdGVyIj5SZWdpc3RlcjwvYT48L2xpPgoJCQkJPC91bD4KCQkJPC9uYXY+CgkJCTxpbWcgc3JjPSJyZXNvdXJjZXMvaW1hZ2VzL1Rva3lvc2hpcF9UYWxrX2ljb24uc3ZnIiBoZWlnaHQ9IjEwMCIKCQkJCXdpZHRoPSIxMDAiPgoJCTwvZGl2PgoKCgk8L2Rpdj4KCgk8ZGl2IGNsYXNzPSJjb250YWluZXIgdGhlbWUtc2hvd2Nhc2UiIHJvbGU9Im1haW4iPgoKCQk8ZGl2IGNsYXNzPSJwYWdlLWhlYWRlciI+CgkJCTxoMz5Mb2dpbjwvaDM+CgkJPC9kaXY+CgoJCQoKCgkJPGRpdiBjbGFzcz0icm93Ij4KCQkJPGRpdiBjbGFzcz0iY29sLW1kLTEyIj4KCgkJCQk8ZGl2IGNsYXNzPSJwYW5lbCBwYW5lbC1kZWZhdWx0Ij4KCQkJCQk8ZGl2IGNsYXNzPSJwYW5lbC1oZWFkaW5nIj4KCQkJCQkJPGgzIGNsYXNzPSJwYW5lbC10aXRsZSI+UGxlYXNlIHByb3ZpZGUgeW91ciB1c2VybmFtZSBhbmQKCQkJCQkJCXBhc3N3b3JkIHRvIGxvZ2luIHRvIEJsYWI8L2gzPgoJCQkJCTwvZGl2PgoJCQkJCTxkaXYgY2xhc3M9InBhbmVsLWJvZHkiPgoJCQkJCQk8Zm9ybSBtZXRob2Q9IlBPU1QiIGFjdGlvbj0iL2xvZ2luIj4KCQkJCQkJCTxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9InRhcmdldCIKCQkJCQkJCQl2YWx1ZT0iIj4KCQkJCQkJCTx0YWJsZSBjbGFzcz0idGFibGUgdGFibGUtY29uZGVuc2VkIj4KCQkJCQkJCQk8dGJvZHk+CgkJCQkJCQkJCTx0cj4KCQkJCQkJCQkJCTx0ZD5Vc2VybmFtZTwvdGQ+CgkJCQkJCQkJCQk8dGQ+PGRpdiBjbGFzcz0iZm9ybS1ncm91cCI+CgkJCQkJCQkJCQkJCTxpbnB1dCB0eXBlPSJ0ZXh0IiBjbGFzcz0iZm9ybS1jb250cm9sIiBuYW1lPSJ1c2VyIgoJCQkJCQkJCQkJCQkJdmFsdWU9IiI+CgkJCQkJCQkJCQkJPC9kaXY+PGEgaHJlZj0iamF2YXNjcmlwdDpoaW50KCkiPkhpbnQ8L2E+PC90ZD4KCQkJCQkJCQkJPC90cj4KCQkJCQkJCQkJPHRyPgoJCQkJCQkJCQkJPHRkPlBhc3N3b3JkPC90ZD4KCQkJCQkJCQkJCTx0ZD48ZGl2IGNsYXNzPSJmb3JtLWdyb3VwIj4KCQkJCQkJCQkJCQkJPGlucHV0IHR5cGU9InRleHQiIGNsYXNzPSJmb3JtLWNvbnRyb2wiIG5hbWU9InBhc3N3b3JkIgoJCQkJCQkJCQkJCQkJdmFsdWU9IiI+CgkJCQkJCQkJCQkJPC9kaXY+PC90ZD4KCQkJCQkJCQkJPC90cj4KCQkJCQkJCQkJPHRyPgoJCQkJCQkJCQkJPHRkPjwvdGQ+CgkJCQkJCQkJCQk8dGQ+PGlucHV0IHR5cGU9ImNoZWNrYm94IiBuYW1lPSJyZW1lbWJlciIgdmFsdWU9IjEiIC8+CgkJCQkJCQkJCQk8bGFiZWwgZm9yPSJyZW1lbWJlciI+UmVtZW1iZXIgbWU8L2xhYmVsPgoJCQkJCQkJCQk8L3RyPgoJCQkJCQkJCQk8dHI+CgkJCQkJCQkJCQk8dGQ+PGJ1dHRvbiB0eXBlPSJzdWJtaXQiIGNsYXNzPSJidG4gYnRuLXByaW1hcnkiCgkJCQkJCQkJCQkJCWlkPSJsb2dpbiIgbmFtZT0iTG9naW4iIHZhbHVlPSJMb2dpbiI+TG9naW48L2J1dHRvbj48L3RkPgoJCQkJCQkJCQkJPHRkPjwvdGQ+CgkJCQkJCQkJCTwvdHI+CgkJCQkJCQkJPC90Ym9keT4KCQkJCQkJCTwvdGFibGU+CgkJCQkJCTwvZm9ybT4KCQkJCQk8L2Rpdj4KCQkJCTwvZGl2PgoJCQk8L2Rpdj4KCQk8L2Rpdj4KCTwvZGl2PgoJPCEtLSAvY29udGFpbmVyIC0tPgoKCTwhLS0gQm9vdHN0cmFwIGNvcmUgSmF2YVNjcmlwdAogICAgPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0gLS0+Cgk8IS0tIFBsYWNlZCBhdCB0aGUgZW5kIG9mIHRoZSBkb2N1bWVudCBzbyB0aGUgcGFnZXMgbG9hZCBmYXN0ZXIgLS0+Cgk8c2NyaXB0IHNyYz0icmVzb3VyY2VzL2pzL2pxdWVyeS0xLjExLjIubWluLmpzIj48L3NjcmlwdD4KCTxzY3JpcHQgc3JjPSJyZXNvdXJjZXMvanMvYm9vdHN0cmFwLm1pbi5qcyI+PC9zY3JpcHQ+Cgk8c2NyaXB0PgoJZnVuY3Rpb24gaGludCgpIHsKCQkKCQlmdW5jdGlvbiBhbGVydGVyICgpIHsKCQkJd2luZG93LmFsZXJ0KHRoaXMucmVzcG9uc2VUZXh0KTsKCQl9CgoJCXZhciBvUmVxID0gbmV3IFhNTEh0dHBSZXF1ZXN0KCk7CgkJb1JlcS5hZGRFdmVudExpc3RlbmVyKCJsb2FkIiwgYWxlcnRlcik7CgkJb1JlcS5vcGVuKCJHRVQiLCAiL3ZlcmFkZW1vL3Bhc3N3b3JkLWhpbnQ/dXNlcm5hbWU9IiArIGRvY3VtZW50LmZvcm1zWzBdLnVzZXIudmFsdWUpOwoJCW9SZXEuc2VuZCgpOwoJfQoJPC9zY3JpcHQ+CjwvYm9keT4KPC9odG1sPgo="
+					},
+					"responseRedirected": "false"
+				}
+			},
+			{
+				"serialNumber": "8557405360554209280",
+				"type": "2097960",
+				"name": {
+					"__cdata": "Path-relative style sheet import"
+				},
+				"host": {
+					"_ip": "54.208.137.193",
+					"__text": "http://blab-a-gab.examplico.com"
+				},
+				"path": {
+					"__cdata": "/login"
+				},
+				"location": {
+					"__cdata": "/login"
+				},
+				"severity": "Information",
+				"confidence": "Tentative",
+				"issueBackground": {
+					"__cdata": "<p>Path-relative style sheet import vulnerabilities arise when the following conditions hold:</p><ol><li>A response contains a style sheet import that uses a path-relative URL (for example, the page at \"/original-path/file.php\" might import \"styles/main.css\").</li><li>When handling requests, the application or platform tolerates superfluous path-like data following the original filename in the URL (for example, \"/original-path/file.php/extra-junk/\"). When superfluous data is added to the original URL, the application's response still contains a path-relative stylesheet import.</li><li>The response in condition 2 can be made to render in a browser's quirks mode, either because it has a missing or old doctype directive, or because it allows itself to be framed by a page under an attacker's control.</li><li>When a browser requests the style sheet that is imported in the response from the modified URL (using the URL \"/original-path/file.php/extra-junk/styles/main.css\"), the application returns something other than the CSS response that was supposed to be imported. Given the behavior described in condition 2, this will typically be the same response that was originally returned in condition 1.</li><li>An attacker has a means of manipulating some text within the response in condition 4, for example because the application stores and displays some past input, or echoes some text within the current URL.</li></ol><p>Given the above conditions, an attacker can execute CSS injection within the browser of the target user. The attacker can construct a URL that causes the victim's browser to import as CSS a different URL than normal, containing text that the attacker can manipulate.</p><p>Being able to inject arbitrary CSS into the victim's browser may enable various attacks, including:</p><ul><li>Executing arbitrary JavaScript using IE's expression() function.</li><li>Using CSS selectors to read parts of the HTML source, which may include sensitive data such as anti-CSRF tokens.</li><li>Capturing any sensitive data within the URL query string by making a further style sheet import to a URL on the attacker's domain, and monitoring the incoming Referer header.</li></ul>"
+				},
+				"remediationBackground": {
+					"__cdata": "<p>The root cause of the vulnerability can be resolved by not using path-relative URLs in style sheet imports. Aside from this, attacks can also be prevented by implementing all of the following defensive measures: </p><ul><li>Setting the HTTP response header \"X-Frame-Options: deny\" in all responses. One method that an attacker can use to make a page render in quirks mode is to frame it within their own page that is rendered in quirks mode. Setting this header prevents the page from being framed.</li><li>Setting a modern doctype (e.g. \"&lt;!doctype html&gt;\") in all HTML responses. This prevents the page from being rendered in quirks mode (unless it is being framed, as described above).</li><li>Setting the HTTP response header \"X-Content-Type-Options: no sniff\" in all responses. This prevents the browser from processing a non-CSS response as CSS, even if another page loads the response via a style sheet import.</li></ul>"
+				},
+				"references": {
+					"__cdata": "<ul><li><a href=\"http://blog.portswigger.net/2015/02/prssi.html\">Detecting and exploiting path-relative stylesheet import (PRSSI) vulnerabilities</a></li></ul>"
+				},
+				"vulnerabilityClassifications": {
+					"__cdata": "<ul><li><a href=\"https://cwe.mitre.org/data/definitions/16.html\">CWE-16: Configuration</a></li></ul>"
+				},
+				"issueDetail": {
+					"__cdata": "The application may be vulnerable to path-relative style sheet import (PRSSI) attacks. The response contains a path-relative style sheet import, and so condition 1 for an exploitable vulnerability is present (see issue background). The response can also be made to render in a browser's quirks mode. The page does not contain a doctype directive, and so it will always be rendered in quirks mode. Further, the response does not prevent itself from being framed, so an attacker can frame the response within a page that they control, to force it to be rendered in quirks mode. (Note that this technique is IE-specific and due to P3P restrictions might sometimes limit the impact of a successful attack.) This means that condition 3 for an exploitable vulnerability is probably present if condition 2 is present.<br><br>Burp was not able to confirm that the other conditions hold, and you should manually investigate this issue to confirm whether they do hold."
+				},
+				"requestresponse": {
+					"request": {
+						"_method": "GET",
+						"_base64": "true",
+						"__cdata": "R0VUIC9sb2dpbiBIVFRQLzEuMQ0KSG9zdDogYmxhYi1hLWdhYi5leGFtcGxpY28uY29tDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUNCkFjY2VwdDogKi8qDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoY29tcGF0aWJsZTsgTVNJRSA5LjA7IFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0OyBUcmlkZW50LzUuMCkNCkNvbm5lY3Rpb246IGNsb3NlDQpSZWZlcmVyOiBodHRwOi8vYmxhYi1hLWdhYi5leGFtcGxpY28uY29tLw0KQ29va2llOiBKU0VTU0lPTklEPTIyMEVBMDFCRjMxRkREODVDNTYxNUY5RkExMjg1RkRBDQoNCg=="
+					},
+					"response": {
+						"_base64": "true",
+						"__cdata": "SFRUUC8xLjEgMjAwIA0KRGF0ZTogV2VkLCAwMSBKdWwgMjAyMCAxNzoxOToxOCBHTVQNClNlcnZlcjogQXBhY2hlLzIuNC40MSAoQW1hem9uKSBPcGVuU1NMLzEuMC4yay1maXBzDQpDb250ZW50LVR5cGU6IHRleHQvaHRtbDtjaGFyc2V0PVVTLUFTQ0lJDQpDb250ZW50LUxhbmd1YWdlOiBlbg0KVmFyeTogQWNjZXB0LUVuY29kaW5nDQpDb250ZW50LUxlbmd0aDogMzQwNw0KQ29ubmVjdGlvbjogY2xvc2UNCg0KCjwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgo8bWV0YSBjaGFyc2V0PSJ1dGYtOCI+CjxtZXRhIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9ZWRnZSI+CjxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MSI+CjxtZXRhIG5hbWU9ImRlc2NyaXB0aW9uIiBjb250ZW50PSIiPgo8bWV0YSBuYW1lPSJhdXRob3IiIGNvbnRlbnQ9IiI+CjxsaW5rIHJlbD0iaWNvbiIgaHJlZj0iLi4vLi4vZmF2aWNvbi5pY28iPgoKPHRpdGxlPkxvZ2luIHRvIEJsYWI8L3RpdGxlPgoKPCEtLSBCb290c3RyYXAgY29yZSBDU1MgLS0+CjxsaW5rIGhyZWY9InJlc291cmNlcy9jc3MvYm9vdHN0cmFwLm1pbi5jc3MiIHJlbD0ic3R5bGVzaGVldCI+CjwhLS0gQm9vdHN0cmFwIHRoZW1lIC0tPgo8bGluayBocmVmPSJyZXNvdXJjZXMvY3NzL2Jvb3RzdHJhcC10aGVtZS5taW4uY3NzIiByZWw9InN0eWxlc2hlZXQiPgoKPCEtLSBDdXN0b20gc3R5bGVzIGZvciB0aGlzIHRlbXBsYXRlIC0tPgo8bGluayBocmVmPSJyZXNvdXJjZXMvY3NzL3B3bS5jc3MiIHJlbD0ic3R5bGVzaGVldCI+Cgo8IS0tIEhUTUw1IHNoaW0gYW5kIFJlc3BvbmQuanMgZm9yIElFOCBzdXBwb3J0IG9mIEhUTUw1IGVsZW1lbnRzIGFuZCBtZWRpYSBxdWVyaWVzIC0tPgo8IS0tW2lmIGx0IElFIDldPgogICAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9vc3MubWF4Y2RuLmNvbS9odG1sNXNoaXYvMy43LjIvaHRtbDVzaGl2Lm1pbi5qcyI+PC9zY3JpcHQ+CiAgICAgIDxzY3JpcHQgc3JjPSJodHRwczovL29zcy5tYXhjZG4uY29tL3Jlc3BvbmQvMS40LjIvcmVzcG9uZC5taW4uanMiPjwvc2NyaXB0PgogICAgPCFbZW5kaWZdLS0+CjwvaGVhZD4KCjxib2R5IHJvbGU9ImRvY3VtZW50Ij4KCgk8ZGl2IGNsYXNzPSJjb250YWluZXIiPgoKCQk8ZGl2IGNsYXNzPSJoZWFkZXIgY2xlYXJmaXgiPgoJCQk8bmF2PgoJCQkJPHVsIGNsYXNzPSJuYXYgbmF2LXBpbGxzIHB1bGwtcmlnaHQiPgoJCQkJCTxsaSByb2xlPSJwcmVzZW50YXRpb24iPjxhIGhyZWY9InJlc2V0Ij5SZXNldDwvYT48L2xpPgoJCQkJCTxsaSByb2xlPSJwcmVzZW50YXRpb24iPjxhIGhyZWY9ImxvZ2luIiBjbGFzcz0iYWN0aXZlIj5Mb2dpbjwvYT48L2xpPgoJCQkJCTxsaSByb2xlPSJwcmVzZW50YXRpb24iPjxhIGhyZWY9InJlZ2lzdGVyIj5SZWdpc3RlcjwvYT48L2xpPgoJCQkJPC91bD4KCQkJPC9uYXY+CgkJCTxpbWcgc3JjPSJyZXNvdXJjZXMvaW1hZ2VzL1Rva3lvc2hpcF9UYWxrX2ljb24uc3ZnIiBoZWlnaHQ9IjEwMCIKCQkJCXdpZHRoPSIxMDAiPgoJCTwvZGl2PgoKCgk8L2Rpdj4KCgk8ZGl2IGNsYXNzPSJjb250YWluZXIgdGhlbWUtc2hvd2Nhc2UiIHJvbGU9Im1haW4iPgoKCQk8ZGl2IGNsYXNzPSJwYWdlLWhlYWRlciI+CgkJCTxoMz5Mb2dpbjwvaDM+CgkJPC9kaXY+CgoJCQoKCgkJPGRpdiBjbGFzcz0icm93Ij4KCQkJPGRpdiBjbGFzcz0iY29sLW1kLTEyIj4KCgkJCQk8ZGl2IGNsYXNzPSJwYW5lbCBwYW5lbC1kZWZhdWx0Ij4KCQkJCQk8ZGl2IGNsYXNzPSJwYW5lbC1oZWFkaW5nIj4KCQkJCQkJPGgzIGNsYXNzPSJwYW5lbC10aXRsZSI+UGxlYXNlIHByb3ZpZGUgeW91ciB1c2VybmFtZSBhbmQKCQkJCQkJCXBhc3N3b3JkIHRvIGxvZ2luIHRvIEJsYWI8L2gzPgoJCQkJCTwvZGl2PgoJCQkJCTxkaXYgY2xhc3M9InBhbmVsLWJvZHkiPgoJCQkJCQk8Zm9ybSBtZXRob2Q9IlBPU1QiIGFjdGlvbj0iL2xvZ2luIj4KCQkJCQkJCTxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9InRhcmdldCIKCQkJCQkJCQl2YWx1ZT0iIj4KCQkJCQkJCTx0YWJsZSBjbGFzcz0idGFibGUgdGFibGUtY29uZGVuc2VkIj4KCQkJCQkJCQk8dGJvZHk+CgkJCQkJCQkJCTx0cj4KCQkJCQkJCQkJCTx0ZD5Vc2VybmFtZTwvdGQ+CgkJCQkJCQkJCQk8dGQ+PGRpdiBjbGFzcz0iZm9ybS1ncm91cCI+CgkJCQkJCQkJCQkJCTxpbnB1dCB0eXBlPSJ0ZXh0IiBjbGFzcz0iZm9ybS1jb250cm9sIiBuYW1lPSJ1c2VyIgoJCQkJCQkJCQkJCQkJdmFsdWU9IiI+CgkJCQkJCQkJCQkJPC9kaXY+PGEgaHJlZj0iamF2YXNjcmlwdDpoaW50KCkiPkhpbnQ8L2E+PC90ZD4KCQkJCQkJCQkJPC90cj4KCQkJCQkJCQkJPHRyPgoJCQkJCQkJCQkJPHRkPlBhc3N3b3JkPC90ZD4KCQkJCQkJCQkJCTx0ZD48ZGl2IGNsYXNzPSJmb3JtLWdyb3VwIj4KCQkJCQkJCQkJCQkJPGlucHV0IHR5cGU9InRleHQiIGNsYXNzPSJmb3JtLWNvbnRyb2wiIG5hbWU9InBhc3N3b3JkIgoJCQkJCQkJCQkJCQkJdmFsdWU9IiI+CgkJCQkJCQkJCQkJPC9kaXY+PC90ZD4KCQkJCQkJCQkJPC90cj4KCQkJCQkJCQkJPHRyPgoJCQkJCQkJCQkJPHRkPjwvdGQ+CgkJCQkJCQkJCQk8dGQ+PGlucHV0IHR5cGU9ImNoZWNrYm94IiBuYW1lPSJyZW1lbWJlciIgdmFsdWU9IjEiIC8+CgkJCQkJCQkJCQk8bGFiZWwgZm9yPSJyZW1lbWJlciI+UmVtZW1iZXIgbWU8L2xhYmVsPgoJCQkJCQkJCQk8L3RyPgoJCQkJCQkJCQk8dHI+CgkJCQkJCQkJCQk8dGQ+PGJ1dHRvbiB0eXBlPSJzdWJtaXQiIGNsYXNzPSJidG4gYnRuLXByaW1hcnkiCgkJCQkJCQkJCQkJCWlkPSJsb2dpbiIgbmFtZT0iTG9naW4iIHZhbHVlPSJMb2dpbiI+TG9naW48L2J1dHRvbj48L3RkPgoJCQkJCQkJCQkJPHRkPjwvdGQ+CgkJCQkJCQkJCTwvdHI+CgkJCQkJCQkJPC90Ym9keT4KCQkJCQkJCTwvdGFibGU+CgkJCQkJCTwvZm9ybT4KCQkJCQk8L2Rpdj4KCQkJCTwvZGl2PgoJCQk8L2Rpdj4KCQk8L2Rpdj4KCTwvZGl2PgoJPCEtLSAvY29udGFpbmVyIC0tPgoKCTwhLS0gQm9vdHN0cmFwIGNvcmUgSmF2YVNjcmlwdAogICAgPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0gLS0+Cgk8IS0tIFBsYWNlZCBhdCB0aGUgZW5kIG9mIHRoZSBkb2N1bWVudCBzbyB0aGUgcGFnZXMgbG9hZCBmYXN0ZXIgLS0+Cgk8c2NyaXB0IHNyYz0icmVzb3VyY2VzL2pzL2pxdWVyeS0xLjExLjIubWluLmpzIj48L3NjcmlwdD4KCTxzY3JpcHQgc3JjPSJyZXNvdXJjZXMvanMvYm9vdHN0cmFwLm1pbi5qcyI+PC9zY3JpcHQ+Cgk8c2NyaXB0PgoJZnVuY3Rpb24gaGludCgpIHsKCQkKCQlmdW5jdGlvbiBhbGVydGVyICgpIHsKCQkJd2luZG93LmFsZXJ0KHRoaXMucmVzcG9uc2VUZXh0KTsKCQl9CgoJCXZhciBvUmVxID0gbmV3IFhNTEh0dHBSZXF1ZXN0KCk7CgkJb1JlcS5hZGRFdmVudExpc3RlbmVyKCJsb2FkIiwgYWxlcnRlcik7CgkJb1JlcS5vcGVuKCJHRVQiLCAiL3ZlcmFkZW1vL3Bhc3N3b3JkLWhpbnQ/dXNlcm5hbWU9IiArIGRvY3VtZW50LmZvcm1zWzBdLnVzZXIudmFsdWUpOwoJCW9SZXEuc2VuZCgpOwoJfQoJPC9zY3JpcHQ+CjwvYm9keT4KPC9odG1sPgo="
+					},
+					"responseRedirected": "false"
+				}
+			},
+			{
+				"serialNumber": "6461517012438228992",
+				"type": "5245344",
+				"name": {
+					"__cdata": "Frameable response (potential Clickjacking)"
+				},
+				"host": {
+					"_ip": "54.208.137.193",
+					"__text": "http://blab-a-gab.examplico.com"
+				},
+				"path": {
+					"__cdata": "/register"
+				},
+				"location": {
+					"__cdata": "/register"
+				},
+				"severity": "Medium",
+				"confidence": "Firm",
+				"issueBackground": {
+					"__cdata": "<p>If a page fails to set an appropriate X-Frame-Options or Content-Security-Policy HTTP header, it might be possible for a page controlled by an attacker to load it within an iframe. This may enable a clickjacking attack, in which the attacker's page overlays the target application's interface with a different interface provided by the attacker. By inducing victim users to perform actions such as mouse clicks and keystrokes, the attacker can cause them to unwittingly carry out actions within the application that is being targeted. This technique allows the attacker to circumvent defenses against cross-site request forgery, and may result in unauthorized actions.</p><p>Note that some applications attempt to prevent these attacks from within the HTML page itself, using \"framebusting\" code. However, this type of defense is normally ineffective and can usually be circumvented by a skilled attacker.</p><p>You should determine whether any functions accessible within frameable pages can be used by application users to perform any sensitive actions within the application. </p>"
+				},
+				"remediationBackground": {
+					"__cdata": "<p>To effectively prevent framing attacks, the application should return a response header with the name <b>X-Frame-Options</b> and the value <b>DENY</b> to prevent framing altogether, or the value <b>SAMEORIGIN</b> to allow framing only by pages on the same origin as the response itself. Note that the SAMEORIGIN header can be partially bypassed if the application itself can be made to frame untrusted websites.</p>"
+				},
+				"references": {
+					"__cdata": "<ul><li><a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/X-Frame-Options\">X-Frame-Options</a></li></ul>"
+				},
+				"vulnerabilityClassifications": {
+					"__cdata": "<ul><li><a href=\"https://cwe.mitre.org/data/definitions/693.html\">CWE-693: Protection Mechanism Failure</a></li></ul>"
+				},
+				"requestresponse": {
+					"request": {
+						"_method": "GET",
+						"_base64": "true",
+						"__cdata": "R0VUIC9yZWdpc3RlciBIVFRQLzEuMQ0KSG9zdDogYmxhYi1hLWdhYi5leGFtcGxpY28uY29tDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUNCkFjY2VwdDogKi8qDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoY29tcGF0aWJsZTsgTVNJRSA5LjA7IFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0OyBUcmlkZW50LzUuMCkNCkNvbm5lY3Rpb246IGNsb3NlDQpSZWZlcmVyOiBodHRwOi8vYmxhYi1hLWdhYi5leGFtcGxpY28uY29tL2xvZ2luDQpDb29raWU6IEpTRVNTSU9OSUQ9MjIwRUEwMUJGMzFGREQ4NUM1NjE1RjlGQTEyODVGREENCg0K"
+					},
+					"response": {
+						"_base64": "true",
+						"__cdata": "SFRUUC8xLjEgMjAwIA0KRGF0ZTogV2VkLCAwMSBKdWwgMjAyMCAxNzoyMjowOCBHTVQNClNlcnZlcjogQXBhY2hlLzIuNC40MSAoQW1hem9uKSBPcGVuU1NMLzEuMC4yay1maXBzDQpDb250ZW50LVR5cGU6IHRleHQvaHRtbDtjaGFyc2V0PVVTLUFTQ0lJDQpDb250ZW50LUxhbmd1YWdlOiBlbg0KVmFyeTogQWNjZXB0LUVuY29kaW5nDQpDb250ZW50LUxlbmd0aDogMjczMg0KQ29ubmVjdGlvbjogY2xvc2UNCg0KCjwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgo8bWV0YSBjaGFyc2V0PSJ1dGYtOCI+CjxtZXRhIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9ZWRnZSI+CjxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MSI+CjxtZXRhIG5hbWU9ImRlc2NyaXB0aW9uIiBjb250ZW50PSIiPgo8bWV0YSBuYW1lPSJhdXRob3IiIGNvbnRlbnQ9IiI+CjxsaW5rIHJlbD0iaWNvbiIgaHJlZj0iLi4vLi4vZmF2aWNvbi5pY28iPgoKPHRpdGxlPlJlZ2lzdGVyIGZvciBCbGFiPC90aXRsZT4KCjwhLS0gQm9vdHN0cmFwIGNvcmUgQ1NTIC0tPgo8bGluayBocmVmPSJyZXNvdXJjZXMvY3NzL2Jvb3RzdHJhcC5taW4uY3NzIiByZWw9InN0eWxlc2hlZXQiPgo8IS0tIEJvb3RzdHJhcCB0aGVtZSAtLT4KPGxpbmsgaHJlZj0icmVzb3VyY2VzL2Nzcy9ib290c3RyYXAtdGhlbWUubWluLmNzcyIgcmVsPSJzdHlsZXNoZWV0Ij4KCjwhLS0gQ3VzdG9tIHN0eWxlcyBmb3IgdGhpcyB0ZW1wbGF0ZSAtLT4KPGxpbmsgaHJlZj0icmVzb3VyY2VzL2Nzcy9wd20uY3NzIiByZWw9InN0eWxlc2hlZXQiPgoKPCEtLSBIVE1MNSBzaGltIGFuZCBSZXNwb25kLmpzIGZvciBJRTggc3VwcG9ydCBvZiBIVE1MNSBlbGVtZW50cyBhbmQgbWVkaWEgcXVlcmllcyAtLT4KPCEtLVtpZiBsdCBJRSA5XT4KICAgICAgPHNjcmlwdCBzcmM9Imh0dHBzOi8vb3NzLm1heGNkbi5jb20vaHRtbDVzaGl2LzMuNy4yL2h0bWw1c2hpdi5taW4uanMiPjwvc2NyaXB0PgogICAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9vc3MubWF4Y2RuLmNvbS9yZXNwb25kLzEuNC4yL3Jlc3BvbmQubWluLmpzIj48L3NjcmlwdD4KICAgIDwhW2VuZGlmXS0tPgo8L2hlYWQ+Cgo8Ym9keSByb2xlPSJkb2N1bWVudCI+CgoJPGRpdiBjbGFzcz0iY29udGFpbmVyIj4KCgkJPGRpdiBjbGFzcz0iaGVhZGVyIGNsZWFyZml4Ij4KCQkJPG5hdj4KCQkJCTx1bCBjbGFzcz0ibmF2IG5hdi1waWxscyBwdWxsLXJpZ2h0Ij4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJyZXNldCI+UmVzZXQ8L2E+PC9saT4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJsb2dpbiI+TG9naW48L2E+PC9saT4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJyZWdpc3RlciIgY2xhc3M9ImFjdGl2ZSI+UmVnaXN0ZXI8L2E+PC9saT4KCQkJCTwvdWw+CgkJCTwvbmF2PgoJCQk8aW1nIHNyYz0icmVzb3VyY2VzL2ltYWdlcy9Ub2t5b3NoaXBfVGFsa19pY29uLnN2ZyIgaGVpZ2h0PSIxMDAiCgkJCQl3aWR0aD0iMTAwIj4KCQk8L2Rpdj4KCgoJPC9kaXY+CgoJPGRpdiBjbGFzcz0iY29udGFpbmVyIHRoZW1lLXNob3djYXNlIiByb2xlPSJtYWluIj4KCgkJPGRpdiBjbGFzcz0icGFnZS1oZWFkZXIiPgoJCQk8aDM+UmVnaXN0ZXI8L2gzPgoJCTwvZGl2PgoKCQkKCgkJPGRpdiBjbGFzcz0icm93Ij4KCQkJPGRpdiBjbGFzcz0iY29sLW1kLTEyIj4KCgkJCQk8ZGl2IGNsYXNzPSJwYW5lbCBwYW5lbC1kZWZhdWx0Ij4KCQkJCQk8ZGl2IGNsYXNzPSJwYW5lbC1oZWFkaW5nIj4KCQkJCQkJPGgzIGNsYXNzPSJwYW5lbC10aXRsZSI+UGxlYXNlIHByb3ZpZGUgeW91ciB1c2VyIGluZm9ybWF0aW9uCgkJCQkJCQl0byByZWdpc3RlciBmb3IgQmxhYjwvaDM+CgkJCQkJPC9kaXY+CgkJCQkJCgkJCQkJPGRpdiBjbGFzcz0icGFuZWwtYm9keSI+CgkJCQkJCTxmb3JtIG1ldGhvZD0iUE9TVCIgYWN0aW9uPSJyZWdpc3RlciI+CgkJCQkJCQk8aW5wdXQgdHlwZT0iaGlkZGVuIiBuYW1lPSJyZXR1cm5QYXRoIiB2YWx1ZT0iIj4KCQkJCQkJCTx0YWJsZSBjbGFzcz0idGFibGUgdGFibGUtY29uZGVuc2VkIj4KCQkJCQkJCQk8dGJvZHk+CgkJCQkJCQkJCTx0cj4KCQkJCQkJCQkJCTx0ZD5Vc2VybmFtZTwvdGQ+CgkJCQkJCQkJCQk8dGQ+PGRpdiBjbGFzcz0iZm9ybS1ncm91cCI+CgkJCQkJCQkJCQkJCTxpbnB1dCB0eXBlPSJ0ZXh0IiBjbGFzcz0iZm9ybS1jb250cm9sIiBuYW1lPSJ1c2VyIiB2YWx1ZT0iNTU1LTU1NS0wMTk5QGV4YW1wbGUuY29tIj4KCQkJCQkJCQkJCQk8L2Rpdj48L3RkPgoJCQkJCQkJCQk8L3RyPgoJCQkJCQkJCQk8dHI+CgkJCQkJCQkJCQk8dGQ+PGJ1dHRvbiB0eXBlPSJzdWJtaXQiIGNsYXNzPSJidG4gYnRuLXByaW1hcnkiCgkJCQkJCQkJCQkJCWlkPSJsb2dpbiIgbmFtZT0iUmVnaXN0ZXIiIHZhbHVlPSJSZWdpc3RlciI+UmVnaXN0ZXI8L2J1dHRvbj48L3RkPgoJCQkJCQkJCQkJPHRkPjwvdGQ+CgkJCQkJCQkJCTwvdHI+CgkJCQkJCQkJPC90Ym9keT4KCQkJCQkJCTwvdGFibGU+CgkJCQkJCTwvZm9ybT4KCQkJCQk8L2Rpdj4KCQkJCTwvZGl2PgoJCQk8L2Rpdj4KCQk8L2Rpdj4KCTwvZGl2PgoJPCEtLSAvY29udGFpbmVyIC0tPgoKCTwhLS0gQm9vdHN0cmFwIGNvcmUgSmF2YVNjcmlwdAogICAgPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0gLS0+Cgk8IS0tIFBsYWNlZCBhdCB0aGUgZW5kIG9mIHRoZSBkb2N1bWVudCBzbyB0aGUgcGFnZXMgbG9hZCBmYXN0ZXIgLS0+Cgk8c2NyaXB0IHNyYz0icmVzb3VyY2VzL2pzL2pxdWVyeS0xLjExLjIubWluLmpzIj48L3NjcmlwdD4KCTxzY3JpcHQgc3JjPSJyZXNvdXJjZXMvanMvYm9vdHN0cmFwLm1pbi5qcyI+PC9zY3JpcHQ+CjwvYm9keT4KPC9odG1sPgo="
+					},
+					"responseRedirected": "false"
+				}
+			},
+			{
+				"serialNumber": "8697663657297088512",
+				"type": "5245344",
+				"name": {
+					"__cdata": "Frameable response (potential Clickjacking)"
+				},
+				"host": {
+					"_ip": "54.208.137.193",
+					"__text": "http://blab-a-gab.examplico.com"
+				},
+				"path": {
+					"__cdata": "/reset"
+				},
+				"location": {
+					"__cdata": "/reset"
+				},
+				"severity": "Information",
+				"confidence": "Firm",
+				"issueBackground": {
+					"__cdata": "<p>If a page fails to set an appropriate X-Frame-Options or Content-Security-Policy HTTP header, it might be possible for a page controlled by an attacker to load it within an iframe. This may enable a clickjacking attack, in which the attacker's page overlays the target application's interface with a different interface provided by the attacker. By inducing victim users to perform actions such as mouse clicks and keystrokes, the attacker can cause them to unwittingly carry out actions within the application that is being targeted. This technique allows the attacker to circumvent defenses against cross-site request forgery, and may result in unauthorized actions.</p><p>Note that some applications attempt to prevent these attacks from within the HTML page itself, using \"framebusting\" code. However, this type of defense is normally ineffective and can usually be circumvented by a skilled attacker.</p><p>You should determine whether any functions accessible within frameable pages can be used by application users to perform any sensitive actions within the application. </p>"
+				},
+				"remediationBackground": {
+					"__cdata": "<p>To effectively prevent framing attacks, the application should return a response header with the name <b>X-Frame-Options</b> and the value <b>DENY</b> to prevent framing altogether, or the value <b>SAMEORIGIN</b> to allow framing only by pages on the same origin as the response itself. Note that the SAMEORIGIN header can be partially bypassed if the application itself can be made to frame untrusted websites.</p>"
+				},
+				"references": {
+					"__cdata": "<ul><li><a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/X-Frame-Options\">X-Frame-Options</a></li></ul>"
+				},
+				"vulnerabilityClassifications": {
+					"__cdata": "<ul><li><a href=\"https://cwe.mitre.org/data/definitions/693.html\">CWE-693: Protection Mechanism Failure</a></li></ul>"
+				},
+				"requestresponse": {
+					"request": {
+						"_method": "GET",
+						"_base64": "true",
+						"__cdata": "R0VUIC9yZXNldCBIVFRQLzEuMQ0KSG9zdDogYmxhYi1hLWdhYi5leGFtcGxpY28uY29tDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUNCkFjY2VwdDogKi8qDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoY29tcGF0aWJsZTsgTVNJRSA5LjA7IFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0OyBUcmlkZW50LzUuMCkNCkNvbm5lY3Rpb246IGNsb3NlDQpSZWZlcmVyOiBodHRwOi8vYmxhYi1hLWdhYi5leGFtcGxpY28uY29tL2xvZ2luDQpDb29raWU6IEpTRVNTSU9OSUQ9MjIwRUEwMUJGMzFGREQ4NUM1NjE1RjlGQTEyODVGREENCg0K"
+					},
+					"response": {
+						"_base64": "true",
+						"__cdata": "SFRUUC8xLjEgMjAwIA0KRGF0ZTogV2VkLCAwMSBKdWwgMjAyMCAxNzoyNDowMyBHTVQNClNlcnZlcjogQXBhY2hlLzIuNC40MSAoQW1hem9uKSBPcGVuU1NMLzEuMC4yay1maXBzDQpDb250ZW50LVR5cGU6IHRleHQvaHRtbDtjaGFyc2V0PVVTLUFTQ0lJDQpDb250ZW50LUxhbmd1YWdlOiBlbg0KVmFyeTogQWNjZXB0LUVuY29kaW5nDQpDb250ZW50LUxlbmd0aDogMjY4OA0KQ29ubmVjdGlvbjogY2xvc2UNCg0KCgo8IURPQ1RZUEUgaHRtbD4KPGh0bWwgbGFuZz0iZW4iPgo8aGVhZD4KPG1ldGEgY2hhcnNldD0idXRmLTgiPgo8bWV0YSBodHRwLWVxdWl2PSJYLVVBLUNvbXBhdGlibGUiIGNvbnRlbnQ9IklFPWVkZ2UiPgo8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgY29udGVudD0id2lkdGg9ZGV2aWNlLXdpZHRoLCBpbml0aWFsLXNjYWxlPTEiPgo8bWV0YSBuYW1lPSJkZXNjcmlwdGlvbiIgY29udGVudD0iIj4KPG1ldGEgbmFtZT0iYXV0aG9yIiBjb250ZW50PSIiPgo8bGluayByZWw9Imljb24iIGhyZWY9Ii4uLy4uL2Zhdmljb24uaWNvIj4KCjx0aXRsZT5SZXNldCBCbGFiIERhdGE8L3RpdGxlPgoKPCEtLSBCb290c3RyYXAgY29yZSBDU1MgLS0+CjxsaW5rIGhyZWY9InJlc291cmNlcy9jc3MvYm9vdHN0cmFwLm1pbi5jc3MiIHJlbD0ic3R5bGVzaGVldCI+CjwhLS0gQm9vdHN0cmFwIHRoZW1lIC0tPgo8bGluayBocmVmPSJyZXNvdXJjZXMvY3NzL2Jvb3RzdHJhcC10aGVtZS5taW4uY3NzIiByZWw9InN0eWxlc2hlZXQiPgoKPCEtLSBDdXN0b20gc3R5bGVzIGZvciB0aGlzIHRlbXBsYXRlIC0tPgo8bGluayBocmVmPSJyZXNvdXJjZXMvY3NzL3B3bS5jc3MiIHJlbD0ic3R5bGVzaGVldCI+Cgo8IS0tIEhUTUw1IHNoaW0gYW5kIFJlc3BvbmQuanMgZm9yIElFOCBzdXBwb3J0IG9mIEhUTUw1IGVsZW1lbnRzIGFuZCBtZWRpYSBxdWVyaWVzIC0tPgo8IS0tW2lmIGx0IElFIDldPgogICAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9vc3MubWF4Y2RuLmNvbS9odG1sNXNoaXYvMy43LjIvaHRtbDVzaGl2Lm1pbi5qcyI+PC9zY3JpcHQ+CiAgICAgIDxzY3JpcHQgc3JjPSJodHRwczovL29zcy5tYXhjZG4uY29tL3Jlc3BvbmQvMS40LjIvcmVzcG9uZC5taW4uanMiPjwvc2NyaXB0PgogICAgPCFbZW5kaWZdLS0+CjwvaGVhZD4KCjxib2R5IHJvbGU9ImRvY3VtZW50Ij4KCgk8ZGl2IGNsYXNzPSJjb250YWluZXIiPgoKCQk8ZGl2IGNsYXNzPSJoZWFkZXIgY2xlYXJmaXgiPgoJCQk8bmF2PgoJCQkJPHVsIGNsYXNzPSJuYXYgbmF2LXBpbGxzIHB1bGwtcmlnaHQiPgoJCQkJCTxsaSByb2xlPSJwcmVzZW50YXRpb24iPjxhIGhyZWY9InJlc2V0IiBjbGFzcz0iYWN0aXZlIj5SZXNldDwvYT48L2xpPgoJCQkJCTxsaSByb2xlPSJwcmVzZW50YXRpb24iPjxhIGhyZWY9ImxvZ2luIj5Mb2dpbjwvYT48L2xpPgoJCQkJCTxsaSByb2xlPSJwcmVzZW50YXRpb24iPjxhIGhyZWY9InJlZ2lzdGVyIj5SZWdpc3RlcjwvYT48L2xpPgoJCQkJPC91bD4KCQkJPC9uYXY+CgkJCTxpbWcgc3JjPSJyZXNvdXJjZXMvaW1hZ2VzL1Rva3lvc2hpcF9UYWxrX2ljb24uc3ZnIiBoZWlnaHQ9IjEwMCIKCQkJCXdpZHRoPSIxMDAiPgoJCTwvZGl2PgoKCgk8L2Rpdj4KCgk8ZGl2IGNsYXNzPSJjb250YWluZXIgdGhlbWUtc2hvd2Nhc2UiIHJvbGU9Im1haW4iPgoKCQk8ZGl2IGNsYXNzPSJwYWdlLWhlYWRlciI+CgkJCTxoMz5SZXNldCBCbGFiIERhdGE8L2gzPgoJCTwvZGl2PgoJCTxkaXYgY2xhc3M9InJvdyI+CgkJCTxkaXYgY2xhc3M9ImNvbC1tZC0xMiI+CgoJCQkJPGRpdiBjbGFzcz0icGFuZWwgcGFuZWwtZGVmYXVsdCI+CgkJCQkJPGRpdiBjbGFzcz0icGFuZWwtaGVhZGluZyI+CgkJCQkJCTxoMyBjbGFzcz0icGFuZWwtdGl0bGUiPlRvIHJlc2V0IHRoZSBCbGFiIERhdGEgY29uZmlybSBiZWxvdzwvaDM+CgkJCQkJPC9kaXY+CgkJCQkJPGRpdiBjbGFzcz0icGFuZWwtYm9keSI+CgkJCQkJCTxwPlRoaXMgY2xlYXJzIG91dCBhbGwgZGF0YSBmcm9tIHRoZSBkYXRhYmFzZSBhbmQgcmVpbnN0YXRlcyBhIGtub3duIGdvb2QgZGF0YSBzZXQuPC9wPgoJCQkJCQk8Zm9ybSBtZXRob2Q9IlBPU1QiIGFjdGlvbj0icmVzZXQiPgoJCQkJCQkJPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0icmV0dXJuUGF0aCIgdmFsdWU9IiI+CgkJCQkJCQkKCQkJCQkJCTxociAvPgoJCQkJCQkJPGZpZWxkc2V0PgoJCQkJCQkJCTxpbnB1dCB0eXBlPSJjaGVja2JveCIgaWQ9ImNvbmZpcm0iIG5hbWU9ImNvbmZpcm0iIHZhbHVlPSJDb25maXJtIj4KCQkJCQkJCQk8bGFiZWwgZm9yPSJjb25maXJtIj5SRVFVSVJFRCAtIFllcyBJIHJlYWxpc2UgdGhhdCBJIHdpbGwgbG9zZSBhbGwgZGF0YSBpbiBteSBjdXJyZW50IFZlcmFEZW1vIGluc3RhbmNlLCBpbmNsdWRpbmcgdXNlcnMuPC9sYWJlbD4KCQkJCQkJCTwvZmllbGRzZXQ+CgkJCQkJCQk8aHIgLz4KCQkJCQkJCQoJCQkJCQkJPGJ1dHRvbiB0eXBlPSJzdWJtaXQiIGNsYXNzPSJidG4gYnRuLWRhbmdlciIgaWQ9ImxvZ2luIiBuYW1lPXJlc2V0IHZhbHVlPSJyZXNldCI+UmVzZXQ8L2J1dHRvbj4KCQkJCQkJPC9mb3JtPgoJCQkJCTwvZGl2PgoJCQkJPC9kaXY+CgkJCTwvZGl2PgoJCTwvZGl2PgoJPC9kaXY+Cgk8IS0tIC9jb250YWluZXIgLS0+CgoJPCEtLSBCb290c3RyYXAgY29yZSBKYXZhU2NyaXB0CiAgICA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PSAtLT4KCTwhLS0gUGxhY2VkIGF0IHRoZSBlbmQgb2YgdGhlIGRvY3VtZW50IHNvIHRoZSBwYWdlcyBsb2FkIGZhc3RlciAtLT4KCTxzY3JpcHQgc3JjPSJyZXNvdXJjZXMvanMvanF1ZXJ5LTEuMTEuMi5taW4uanMiPjwvc2NyaXB0PgoJPHNjcmlwdCBzcmM9InJlc291cmNlcy9qcy9ib290c3RyYXAubWluLmpzIj48L3NjcmlwdD4KPC9ib2R5Pgo8L2h0bWw+"
+					},
+					"responseRedirected": "false"
+				}
+			},
+			{
+				"serialNumber": "6137739741323953152",
+				"type": "1049088",
+				"name": {
+					"__cdata": "SQL injection"
+				},
+				"host": {
+					"_ip": "54.208.137.193",
+					"__text": "http://blab-a-gab.examplico.com"
+				},
+				"path": {
+					"__cdata": "/login"
+				},
+				"location": {
+					"__cdata": "/login [user parameter]"
+				},
+				"severity": "High",
+				"confidence": "Certain",
+				"issueBackground": {
+					"__cdata": "<p>SQL injection vulnerabilities arise when user-controllable data is incorporated into database SQL queries in an unsafe manner. An attacker can supply crafted input to break out of the data context in which their input appears and interfere with the structure of the surrounding query.</p><p>A wide range of damaging attacks can often be delivered via SQL injection, including reading or modifying critical application data, interfering with application logic, escalating privileges within the database and taking control of the database server. </p>"
+				},
+				"remediationBackground": {
+					"__cdata": "<p>The most effective way to prevent SQL injection attacks is to use parameterized queries (also known as prepared statements) for all database access. This method uses two steps to incorporate potentially tainted data into SQL queries: first, the application specifies the structure of the query, leaving placeholders for each item of user input; second, the application specifies the contents of each placeholder. Because the structure of the query has already been defined in the first step, it is not possible for malformed data in the second step to interfere with the query structure. You should review the documentation for your database and application platform to determine the appropriate APIs which you can use to perform parameterized queries. It is strongly recommended that you parameterize <i>every</i> variable data item that is incorporated into database queries, even if it is not obviously tainted, to prevent oversights occurring and avoid vulnerabilities being introduced by changes elsewhere within the code base of the application.</p><p>You should be aware that some commonly employed and recommended mitigations for SQL injection vulnerabilities are not always effective: </p><ul><li>One common defense is to double up any single quotation marks appearing within user input before incorporating that input into a SQL query. This defense is designed to prevent malformed data from terminating the string into which it is inserted. However, if the data being incorporated into queries is numeric, then the defense may fail, because numeric data may not be encapsulated within quotes, in which case only a space is required to break out of the data context and interfere with the query. Further, in second-order SQL injection attacks, data that has been safely escaped when initially inserted into the database is subsequently read from the database and then passed back to it again. Quotation marks that have been doubled up initially will return to their original form when the data is reused, allowing the defense to be bypassed.</li><li>Another often cited defense is to use stored procedures for database access. While stored procedures can provide security benefits, they are not guaranteed to prevent SQL injection attacks. The same kinds of vulnerabilities that arise within standard dynamic SQL queries can arise if any SQL is dynamically constructed within stored procedures. Further, even if the procedure is sound, SQL injection can arise if the procedure is invoked in an unsafe manner using user-controllable data.</li></ul>"
+				},
+				"references": {
+					"__cdata": "<ul><li><a href=\"https://support.portswigger.net/customer/portal/articles/1965677-using-burp-to-test-for-injection-flaws\">Using Burp to Test for Injection Flaws</a></li><li><a href=\"http://websec.ca/kb/sql_injection\">SQL Injection Cheat Sheet</a></li><li><a href=\"https://www.owasp.org/index.php/SQL_Injection_Prevention_Cheat_Sheet\">SQL Injection Prevention Cheat Sheet</a></li></ul>"
+				},
+				"vulnerabilityClassifications": {
+					"__cdata": "<ul><li><a href=\"https://cwe.mitre.org/data/definitions/89.html\">CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')</a></li><li><a href=\"https://cwe.mitre.org/data/definitions/94.html\">CWE-94: Improper Control of Generation of Code ('Code Injection')\n</a></li><li><a href=\"https://cwe.mitre.org/data/definitions/116.html\">CWE-116: Improper Encoding or Escaping of Output</a></li></ul>"
+				},
+				"issueDetail": {
+					"__cdata": "The <b>user</b> parameter appears to be vulnerable to SQL injection attacks. A single quote was submitted in the user parameter, and a database error message was returned. Two single quotes were then submitted and the error message disappeared. You should review the contents of the error message, and the application's handling of other input, to confirm whether a vulnerability is present.<br><br>The database appears to be MySQL."
+				},
+				"remediationDetail": {
+					"__cdata": "The application should handle errors gracefully and prevent SQL error messages from being returned in responses. "
+				},
+				"requestresponse": [
+					{
+						"request": {
+							"_method": "POST",
+							"_base64": "true",
+							"__cdata": "UE9TVCAvbG9naW4gSFRUUC8xLjENCkhvc3Q6IGJsYWItYS1nYWIuZXhhbXBsaWNvLmNvbQ0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlDQpBY2NlcHQ6ICovKg0KQWNjZXB0LUxhbmd1YWdlOiBlbg0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKGNvbXBhdGlibGU7IE1TSUUgOS4wOyBXaW5kb3dzIE5UIDYuMTsgV2luNjQ7IHg2NDsgVHJpZGVudC81LjApDQpDb25uZWN0aW9uOiBjbG9zZQ0KUmVmZXJlcjogaHR0cDovL2JsYWItYS1nYWIuZXhhbXBsaWNvLmNvbS9sb2dpbg0KQ29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi94LXd3dy1mb3JtLXVybGVuY29kZWQNCkNvbnRlbnQtTGVuZ3RoOiA5NQ0KQ29va2llOiBKU0VTU0lPTklEPTIyMEVBMDFCRjMxRkREODVDNTYxNUY5RkExMjg1RkRBDQoNCnJlbWVtYmVyPW9uJnBhc3N3b3JkPTU1NS01NTUtMDE5OUBleGFtcGxlLmNvbSZMb2dpbj1Mb2dpbiZ1c2VyPTU1NS01NTUtMDE5OUBleGFtcGxlLmNvbScmdGFyZ2V0PQ=="
+						},
+						"response": {
+							"_base64": "true",
+							"__cdata": "SFRUUC8xLjEgMjAwIA0KRGF0ZTogV2VkLCAwMSBKdWwgMjAyMCAxNzoyMzo1MSBHTVQNClNlcnZlcjogQXBhY2hlLzIuNC40MSAoQW1hem9uKSBPcGVuU1NMLzEuMC4yay1maXBzDQpDb250ZW50LVR5cGU6IHRleHQvaHRtbDtjaGFyc2V0PVVTLUFTQ0lJDQpDb250ZW50LUxhbmd1YWdlOiBlbg0KVmFyeTogQWNjZXB0LUVuY29kaW5nDQpDb250ZW50LUxlbmd0aDogMzMzNw0KQ29ubmVjdGlvbjogY2xvc2UNCg0KCgoKCjwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgo8bWV0YSBjaGFyc2V0PSJ1dGYtOCI+CjxtZXRhIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9ZWRnZSI+CjxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MSI+CjxtZXRhIG5hbWU9ImRlc2NyaXB0aW9uIiBjb250ZW50PSIiPgo8bWV0YSBuYW1lPSJhdXRob3IiIGNvbnRlbnQ9IiI+CjxsaW5rIHJlbD0iaWNvbiIgaHJlZj0iLi4vLi4vZmF2aWNvbi5pY28iPgoKPHRpdGxlPkJsYWIgRmVlZDwvdGl0bGU+Cgo8IS0tIEJvb3RzdHJhcCBjb3JlIENTUyAtLT4KPGxpbmsgaHJlZj0icmVzb3VyY2VzL2Nzcy9ib290c3RyYXAubWluLmNzcyIgcmVsPSJzdHlsZXNoZWV0Ij4KPCEtLSBCb290c3RyYXAgdGhlbWUgLS0+CjxsaW5rIGhyZWY9InJlc291cmNlcy9jc3MvYm9vdHN0cmFwLXRoZW1lLm1pbi5jc3MiIHJlbD0ic3R5bGVzaGVldCI+Cgo8IS0tIEN1c3RvbSBzdHlsZXMgZm9yIHRoaXMgdGVtcGxhdGUgLS0+CjxsaW5rIGhyZWY9InJlc291cmNlcy9jc3MvcHdtLmNzcyIgcmVsPSJzdHlsZXNoZWV0Ij4KCjwhLS0gSFRNTDUgc2hpbSBhbmQgUmVzcG9uZC5qcyBmb3IgSUU4IHN1cHBvcnQgb2YgSFRNTDUgZWxlbWVudHMgYW5kIG1lZGlhIHF1ZXJpZXMgLS0+CjwhLS1baWYgbHQgSUUgOV0+CiAgICAgIDxzY3JpcHQgc3JjPSJodHRwczovL29zcy5tYXhjZG4uY29tL2h0bWw1c2hpdi8zLjcuMi9odG1sNXNoaXYubWluLmpzIj48L3NjcmlwdD4KICAgICAgPHNjcmlwdCBzcmM9Imh0dHBzOi8vb3NzLm1heGNkbi5jb20vcmVzcG9uZC8xLjQuMi9yZXNwb25kLm1pbi5qcyI+PC9zY3JpcHQ+CiAgICA8IVtlbmRpZl0tLT4KPC9oZWFkPgoKPGJvZHkgcm9sZT0iZG9jdW1lbnQiPgoKCTxkaXYgY2xhc3M9ImNvbnRhaW5lciI+CgoJCTxkaXYgY2xhc3M9ImhlYWRlciBjbGVhcmZpeCI+CgkJCTxuYXY+CgkJCQk8dWwgY2xhc3M9Im5hdiBuYXYtcGlsbHMgcHVsbC1yaWdodCI+CgkJCQkJPGxpIHJvbGU9InByZXNlbnRhdGlvbiIgY2xhc3M9ImFjdGl2ZSI+PGEgaHJlZj0iZmVlZCI+RmVlZDwvYT48L2xpPgoJCQkJCTxsaSByb2xlPSJwcmVzZW50YXRpb24iPjxhIGhyZWY9ImJsYWJiZXJzIj5CbGFiYmVyczwvYT48L2xpPgoJCQkJCTxsaSByb2xlPSJwcmVzZW50YXRpb24iPjxhIGhyZWY9InByb2ZpbGUiPlByb2ZpbGU8L2E+PC9saT4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJ0b29scyI+VG9vbHM8L2E+PC9saT4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJsb2dvdXQiPkxvZ291dDwvYT48L2xpPgoJCQkJPC91bD4KCQkJPC9uYXY+CgkJCTxpbWcgc3JjPSJyZXNvdXJjZXMvaW1hZ2VzL1Rva3lvc2hpcF9UYWxrX2ljb24uc3ZnIiBoZWlnaHQ9IjEwMCIKCQkJCXdpZHRoPSIxMDAiPgoJCTwvZGl2PgoKCgk8L2Rpdj4KCgk8ZGl2IGNsYXNzPSJjb250YWluZXIgdGhlbWUtc2hvd2Nhc2UiIHJvbGU9Im1haW4iPgoKCQk8ZGl2IGNsYXNzPSJwYWdlLWhlYWRlciI+CgkJCTxoMz4KCQkJCUhpCgkJCQk1NTUtNTU1LTAxOTlAZXhhbXBsZS5jb20sIHdlbGNvbWUgdG8gQmxhYi1hLUdhZwoJCQk8L2gzPgoJCQk8aDQ+VGhlIGhvbWUgb2Ygb2Ygd2l0dHkgb25lLWxpbmVyczwvaDQ+CgkJPC9kaXY+CgoJCQoKCQk8ZGl2IGNsYXNzPSJyb3ciPgoJCQk8ZGl2IGNsYXNzPSJjb2wtbWQtNiI+CgkJCQk8ZGl2IGNsYXNzPSJkZXRhaWxCb3giPgoJCQkJCTxkaXYgY2xhc3M9InRpdGxlQm94Ij4KCQkJCQkJPGxhYmVsPkJsYWJzIGZvciBZb3U8L2xhYmVsPgoJCQkJCTwvZGl2PgoJCQkJCTxkaXYgaWQ9ImZlZWQiIGNsYXNzPSJhY3Rpb25Cb3giPgoJCQkJCQk8dWwgY2xhc3M9ImNvbW1lbnRMaXN0Ij4KCQkJCQkJCQoJCQkJCQk8L3VsPgoJCQkJCQk8YSBocmVmPSIjIiBvbmNsaWNrPSJnZXRtb3JlKHRoaXMpOyByZXR1cm4gZmFsc2U7Ij5GZXRjaCBtb3JlLi4uPC9hPgoJCQkJCTwvZGl2PgoJCQkJPC9kaXY+CgkJCTwvZGl2PgoJCQk8ZGl2IGNsYXNzPSJjb2wtbWQtNiI+CgkJCQk8ZGl2IGNsYXNzPSJkZXRhaWxCb3giPgoJCQkJCTxkaXYgY2xhc3M9InRpdGxlQm94Ij4KCQkJCQkJPGxhYmVsPllvdXIgQmxhYnM8L2xhYmVsPgoJCQkJCTwvZGl2PgoJCQkJCTxkaXYgY2xhc3M9ImFjdGlvbkJveCI+CgkJCQkJCTxkaXYgY2xhc3M9ImJsYWJiZXIiPgoJCQkJCQkJPGZvcm0gY2xhc3M9ImZvcm0taW5saW5lIiByb2xlPSJmb3JtIiBtZXRob2Q9IlBPU1QiIGFjdGlvbj0iZmVlZCI+CgkJCQkJCQkJPGRpdiBjbGFzcz0iZm9ybS1ncm91cCI+CgkJCQkJCQkJCTxpbnB1dCBjbGFzcz0iZm9ybS1jb250cm9sIiB0eXBlPSJ0ZXh0IgoJCQkJCQkJCQkJcGxhY2Vob2xkZXI9IkJsYWIgc29tZXRoaW5nIG5vdy4uLiIgbmFtZT0iYmxhYiIgLz4KCQkJCQkJCQk8L2Rpdj4KCQkJCQkJCQk8ZGl2IGNsYXNzPSJmb3JtLWdyb3VwIj4KCQkJCQkJCQkJPGJ1dHRvbiBjbGFzcz0iYnRuIGJ0bi1kZWZhdWx0Ij5BZGQ8L2J1dHRvbj4KCQkJCQkJCQk8L2Rpdj4KCQkJCQkJCTwvZm9ybT4KCQkJCQkJPC9kaXY+CgkJCQkJCTx1bCBjbGFzcz0iY29tbWVudExpc3QiPgoJCQkJCQkJCgkJCQkJCTwvdWw+CgkJCQkJPC9kaXY+CgkJCQk8L2Rpdj4KCQkJPC9kaXY+CgkJPC9kaXY+Cgk8L2Rpdj4KCTwhLS0gL2NvbnRhaW5lciAtLT4KCgk8IS0tIEJvb3RzdHJhcCBjb3JlIEphdmFTY3JpcHQKICAgID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09IC0tPgoJPCEtLSBQbGFjZWQgYXQgdGhlIGVuZCBvZiB0aGUgZG9jdW1lbnQgc28gdGhlIHBhZ2VzIGxvYWQgZmFzdGVyIC0tPgoJPHNjcmlwdCBzcmM9InJlc291cmNlcy9qcy9qcXVlcnktMS4xMS4yLm1pbi5qcyI+PC9zY3JpcHQ+Cgk8c2NyaXB0IHNyYz0icmVzb3VyY2VzL2pzL2Jvb3RzdHJhcC5taW4uanMiPjwvc2NyaXB0PgoKCTwhLS0gRmV0Y2ggYWRkaXRpb25hbCBmZWVkIGl0ZW1zIC0tPgoJPHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiPgoJCWZ1bmN0aW9uIGdldG1vcmUob2JqKSB7CgkJCXZhciBjb3VudCA9ICQoIiNmZWVkIGxpIikubGVuZ3RoOwoJCQkkLmdldCgibW9yZWZlZWQiLCB7CgkJCQljb3VudCA6IGNvdW50LAoJCQkJbGVuIDogMTAKCQkJfSwgZnVuY3Rpb24oZGF0YSkgewoJCQkJaWYgKGRhdGEpIHsKCQkJCQkkKCIjZmVlZCB1bCIpLmFwcGVuZChkYXRhKTsKCQkJCX0gZWxzZSB7CgkJCQkJJChvYmopLnJlbW92ZSgpOwoJCQkJfQoJCQl9KTsKCQl9Cgk8L3NjcmlwdD4KPC9ib2R5Pgo8L2h0bWw+Cg=="
+						},
+						"responseRedirected": "false"
+					},
+					{
+						"request": {
+							"_method": "POST",
+							"_base64": "true",
+							"__cdata": "UE9TVCAvbG9naW4gSFRUUC8xLjENCkhvc3Q6IGJsYWItYS1nYWIuZXhhbXBsaWNvLmNvbQ0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlDQpBY2NlcHQ6ICovKg0KQWNjZXB0LUxhbmd1YWdlOiBlbg0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKGNvbXBhdGlibGU7IE1TSUUgOS4wOyBXaW5kb3dzIE5UIDYuMTsgV2luNjQ7IHg2NDsgVHJpZGVudC81LjApDQpDb25uZWN0aW9uOiBjbG9zZQ0KUmVmZXJlcjogaHR0cDovL2JsYWItYS1nYWIuZXhhbXBsaWNvLmNvbS9sb2dpbg0KQ29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi94LXd3dy1mb3JtLXVybGVuY29kZWQNCkNvbnRlbnQtTGVuZ3RoOiA5NQ0KQ29va2llOiBKU0VTU0lPTklEPTIyMEVBMDFCRjMxRkREODVDNTYxNUY5RkExMjg1RkRBDQoNCnJlbWVtYmVyPW9uJnBhc3N3b3JkPTU1NS01NTUtMDE5OUBleGFtcGxlLmNvbSZMb2dpbj1Mb2dpbiZ1c2VyPTU1NS01NTUtMDE5OUBleGFtcGxlLmNvbScnJnRhcmdldD0="
+						},
+						"response": {
+							"_base64": "true",
+							"__cdata": "SFRUUC8xLjEgMjAwIA0KRGF0ZTogV2VkLCAwMSBKdWwgMjAyMCAxNzoyMzo1MyBHTVQNClNlcnZlcjogQXBhY2hlLzIuNC40MSAoQW1hem9uKSBPcGVuU1NMLzEuMC4yay1maXBzDQpDb250ZW50LVR5cGU6IHRleHQvaHRtbDtjaGFyc2V0PVVTLUFTQ0lJDQpDb250ZW50LUxhbmd1YWdlOiBlbg0KVmFyeTogQWNjZXB0LUVuY29kaW5nDQpDb250ZW50LUxlbmd0aDogMzUwNw0KQ29ubmVjdGlvbjogY2xvc2UNCg0KCjwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgo8bWV0YSBjaGFyc2V0PSJ1dGYtOCI+CjxtZXRhIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9ZWRnZSI+CjxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MSI+CjxtZXRhIG5hbWU9ImRlc2NyaXB0aW9uIiBjb250ZW50PSIiPgo8bWV0YSBuYW1lPSJhdXRob3IiIGNvbnRlbnQ9IiI+CjxsaW5rIHJlbD0iaWNvbiIgaHJlZj0iLi4vLi4vZmF2aWNvbi5pY28iPgoKPHRpdGxlPkxvZ2luIHRvIEJsYWI8L3RpdGxlPgoKPCEtLSBCb290c3RyYXAgY29yZSBDU1MgLS0+CjxsaW5rIGhyZWY9InJlc291cmNlcy9jc3MvYm9vdHN0cmFwLm1pbi5jc3MiIHJlbD0ic3R5bGVzaGVldCI+CjwhLS0gQm9vdHN0cmFwIHRoZW1lIC0tPgo8bGluayBocmVmPSJyZXNvdXJjZXMvY3NzL2Jvb3RzdHJhcC10aGVtZS5taW4uY3NzIiByZWw9InN0eWxlc2hlZXQiPgoKPCEtLSBDdXN0b20gc3R5bGVzIGZvciB0aGlzIHRlbXBsYXRlIC0tPgo8bGluayBocmVmPSJyZXNvdXJjZXMvY3NzL3B3bS5jc3MiIHJlbD0ic3R5bGVzaGVldCI+Cgo8IS0tIEhUTUw1IHNoaW0gYW5kIFJlc3BvbmQuanMgZm9yIElFOCBzdXBwb3J0IG9mIEhUTUw1IGVsZW1lbnRzIGFuZCBtZWRpYSBxdWVyaWVzIC0tPgo8IS0tW2lmIGx0IElFIDldPgogICAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9vc3MubWF4Y2RuLmNvbS9odG1sNXNoaXYvMy43LjIvaHRtbDVzaGl2Lm1pbi5qcyI+PC9zY3JpcHQ+CiAgICAgIDxzY3JpcHQgc3JjPSJodHRwczovL29zcy5tYXhjZG4uY29tL3Jlc3BvbmQvMS40LjIvcmVzcG9uZC5taW4uanMiPjwvc2NyaXB0PgogICAgPCFbZW5kaWZdLS0+CjwvaGVhZD4KCjxib2R5IHJvbGU9ImRvY3VtZW50Ij4KCgk8ZGl2IGNsYXNzPSJjb250YWluZXIiPgoKCQk8ZGl2IGNsYXNzPSJoZWFkZXIgY2xlYXJmaXgiPgoJCQk8bmF2PgoJCQkJPHVsIGNsYXNzPSJuYXYgbmF2LXBpbGxzIHB1bGwtcmlnaHQiPgoJCQkJCTxsaSByb2xlPSJwcmVzZW50YXRpb24iPjxhIGhyZWY9InJlc2V0Ij5SZXNldDwvYT48L2xpPgoJCQkJCTxsaSByb2xlPSJwcmVzZW50YXRpb24iPjxhIGhyZWY9ImxvZ2luIiBjbGFzcz0iYWN0aXZlIj5Mb2dpbjwvYT48L2xpPgoJCQkJCTxsaSByb2xlPSJwcmVzZW50YXRpb24iPjxhIGhyZWY9InJlZ2lzdGVyIj5SZWdpc3RlcjwvYT48L2xpPgoJCQkJPC91bD4KCQkJPC9uYXY+CgkJCTxpbWcgc3JjPSJyZXNvdXJjZXMvaW1hZ2VzL1Rva3lvc2hpcF9UYWxrX2ljb24uc3ZnIiBoZWlnaHQ9IjEwMCIKCQkJCXdpZHRoPSIxMDAiPgoJCTwvZGl2PgoKCgk8L2Rpdj4KCgk8ZGl2IGNsYXNzPSJjb250YWluZXIgdGhlbWUtc2hvd2Nhc2UiIHJvbGU9Im1haW4iPgoKCQk8ZGl2IGNsYXNzPSJwYWdlLWhlYWRlciI+CgkJCTxoMz5Mb2dpbjwvaDM+CgkJPC9kaXY+CgoJCQoJCTxkaXYgY2xhc3M9ImFsZXJ0IGFsZXJ0LWRhbmdlciIgcm9sZT0iYWxlcnQiPgoJCQlMb2dpbiBmYWlsZWQuIFBsZWFzZSB0cnkgYWdhaW4uCgkJPC9kaXY+CgoJCQoKCgkJPGRpdiBjbGFzcz0icm93Ij4KCQkJPGRpdiBjbGFzcz0iY29sLW1kLTEyIj4KCgkJCQk8ZGl2IGNsYXNzPSJwYW5lbCBwYW5lbC1kZWZhdWx0Ij4KCQkJCQk8ZGl2IGNsYXNzPSJwYW5lbC1oZWFkaW5nIj4KCQkJCQkJPGgzIGNsYXNzPSJwYW5lbC10aXRsZSI+UGxlYXNlIHByb3ZpZGUgeW91ciB1c2VybmFtZSBhbmQKCQkJCQkJCXBhc3N3b3JkIHRvIGxvZ2luIHRvIEJsYWI8L2gzPgoJCQkJCTwvZGl2PgoJCQkJCTxkaXYgY2xhc3M9InBhbmVsLWJvZHkiPgoJCQkJCQk8Zm9ybSBtZXRob2Q9IlBPU1QiIGFjdGlvbj0iL2xvZ2luIj4KCQkJCQkJCTxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9InRhcmdldCIKCQkJCQkJCQl2YWx1ZT0iIj4KCQkJCQkJCTx0YWJsZSBjbGFzcz0idGFibGUgdGFibGUtY29uZGVuc2VkIj4KCQkJCQkJCQk8dGJvZHk+CgkJCQkJCQkJCTx0cj4KCQkJCQkJCQkJCTx0ZD5Vc2VybmFtZTwvdGQ+CgkJCQkJCQkJCQk8dGQ+PGRpdiBjbGFzcz0iZm9ybS1ncm91cCI+CgkJCQkJCQkJCQkJCTxpbnB1dCB0eXBlPSJ0ZXh0IiBjbGFzcz0iZm9ybS1jb250cm9sIiBuYW1lPSJ1c2VyIgoJCQkJCQkJCQkJCQkJdmFsdWU9Im51bGwiPgoJCQkJCQkJCQkJCTwvZGl2PjxhIGhyZWY9ImphdmFzY3JpcHQ6aGludCgpIj5IaW50PC9hPjwvdGQ+CgkJCQkJCQkJCTwvdHI+CgkJCQkJCQkJCTx0cj4KCQkJCQkJCQkJCTx0ZD5QYXNzd29yZDwvdGQ+CgkJCQkJCQkJCQk8dGQ+PGRpdiBjbGFzcz0iZm9ybS1ncm91cCI+CgkJCQkJCQkJCQkJCTxpbnB1dCB0eXBlPSJ0ZXh0IiBjbGFzcz0iZm9ybS1jb250cm9sIiBuYW1lPSJwYXNzd29yZCIKCQkJCQkJCQkJCQkJCXZhbHVlPSIiPgoJCQkJCQkJCQkJCTwvZGl2PjwvdGQ+CgkJCQkJCQkJCTwvdHI+CgkJCQkJCQkJCTx0cj4KCQkJCQkJCQkJCTx0ZD48L3RkPgoJCQkJCQkJCQkJPHRkPjxpbnB1dCB0eXBlPSJjaGVja2JveCIgbmFtZT0icmVtZW1iZXIiIHZhbHVlPSIxIiAvPgoJCQkJCQkJCQkJPGxhYmVsIGZvcj0icmVtZW1iZXIiPlJlbWVtYmVyIG1lPC9sYWJlbD4KCQkJCQkJCQkJPC90cj4KCQkJCQkJCQkJPHRyPgoJCQkJCQkJCQkJPHRkPjxidXR0b24gdHlwZT0ic3VibWl0IiBjbGFzcz0iYnRuIGJ0bi1wcmltYXJ5IgoJCQkJCQkJCQkJCQlpZD0ibG9naW4iIG5hbWU9IkxvZ2luIiB2YWx1ZT0iTG9naW4iPkxvZ2luPC9idXR0b24+PC90ZD4KCQkJCQkJCQkJCTx0ZD48L3RkPgoJCQkJCQkJCQk8L3RyPgoJCQkJCQkJCTwvdGJvZHk+CgkJCQkJCQk8L3RhYmxlPgoJCQkJCQk8L2Zvcm0+CgkJCQkJPC9kaXY+CgkJCQk8L2Rpdj4KCQkJPC9kaXY+CgkJPC9kaXY+Cgk8L2Rpdj4KCTwhLS0gL2NvbnRhaW5lciAtLT4KCgk8IS0tIEJvb3RzdHJhcCBjb3JlIEphdmFTY3JpcHQKICAgID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09IC0tPgoJPCEtLSBQbGFjZWQgYXQgdGhlIGVuZCBvZiB0aGUgZG9jdW1lbnQgc28gdGhlIHBhZ2VzIGxvYWQgZmFzdGVyIC0tPgoJPHNjcmlwdCBzcmM9InJlc291cmNlcy9qcy9qcXVlcnktMS4xMS4yLm1pbi5qcyI+PC9zY3JpcHQ+Cgk8c2NyaXB0IHNyYz0icmVzb3VyY2VzL2pzL2Jvb3RzdHJhcC5taW4uanMiPjwvc2NyaXB0PgoJPHNjcmlwdD4KCWZ1bmN0aW9uIGhpbnQoKSB7CgkJCgkJZnVuY3Rpb24gYWxlcnRlciAoKSB7CgkJCXdpbmRvdy5hbGVydCh0aGlzLnJlc3BvbnNlVGV4dCk7CgkJfQoKCQl2YXIgb1JlcSA9IG5ldyBYTUxIdHRwUmVxdWVzdCgpOwoJCW9SZXEuYWRkRXZlbnRMaXN0ZW5lcigibG9hZCIsIGFsZXJ0ZXIpOwoJCW9SZXEub3BlbigiR0VUIiwgIi92ZXJhZGVtby9wYXNzd29yZC1oaW50P3VzZXJuYW1lPSIgKyBkb2N1bWVudC5mb3Jtc1swXS51c2VyLnZhbHVlKTsKCQlvUmVxLnNlbmQoKTsKCX0KCTwvc2NyaXB0Pgo8L2JvZHk+CjwvaHRtbD4K"
+						},
+						"responseRedirected": "false"
+					}
+				]
+			},
+			{
+				"serialNumber": "8782842578481908736",
+				"type": "2097920",
+				"name": {
+					"__cdata": "Cross-site scripting (reflected)"
+				},
+				"host": {
+					"_ip": "54.208.137.193",
+					"__text": "http://blab-a-gab.examplico.com"
+				},
+				"path": {
+					"__cdata": "/login"
+				},
+				"location": {
+					"__cdata": "/login [target parameter]"
+				},
+				"severity": "No-Information",
+				"confidence": "Certain",
+				"issueBackground": {
+					"__cdata": "<p>Reflected cross-site scripting vulnerabilities arise when data is copied from a request and echoed into the application's immediate response in an unsafe way. An attacker can use the vulnerability to construct a request that, if issued by another application user, will cause JavaScript code supplied by the attacker to execute within the user's browser in the context of that user's session with the application.</p><p>The attacker-supplied code can perform a wide variety of actions, such as stealing the victim's session token or login credentials, performing arbitrary actions on the victim's behalf, and logging their keystrokes.</p><p>Users can be induced to issue the attacker's crafted request in various ways. For example, the attacker can send a victim a link containing a malicious URL in an email or instant message. They can submit the link to popular web sites that allow content authoring, for example in blog comments. And they can create an innocuous looking web site that causes anyone viewing it to make arbitrary cross-domain requests to the vulnerable application (using either the GET or the POST method).</p><p>The security impact of cross-site scripting vulnerabilities is dependent upon the nature of the vulnerable application, the kinds of data and functionality that it contains, and the other applications that belong to the same domain and organization. If the application is used only to display non-sensitive public content, with no authentication or access control functionality, then a cross-site scripting flaw may be considered low risk. However, if the same application resides on a domain that can access cookies for other more security-critical applications, then the vulnerability could be used to attack those other applications, and so may be considered high risk. Similarly, if the organization that owns the application is a likely target for phishing attacks, then the vulnerability could be leveraged to lend credibility to such attacks, by injecting Trojan functionality into the vulnerable application and exploiting users' trust in the organization in order to capture credentials for other applications that it owns. In many kinds of application, such as those providing online banking functionality, cross-site scripting should always be considered high risk. </p>"
+				},
+				"remediationBackground": {
+					"__cdata": "<p>In most situations where user-controllable data is copied into application responses, cross-site scripting \n  attacks can be prevented using two layers of defenses:</p><ul><li>Input should be validated as strictly as possible on arrival, given the kind of content that \nit is expected to contain. For example, personal names should consist of alphabetical \nand a small range of typographical characters, and be relatively short; a year of birth \nshould consist of exactly four numerals; email addresses should match a well-defined \nregular expression. Input which fails the validation should be rejected, not sanitized.</li><li>User input should be HTML-encoded at any point where it is copied into \napplication responses. All HTML metacharacters, including &lt; &gt; \" ' and =, should be \nreplaced with the corresponding HTML entities (&amp;lt; &amp;gt; etc).</li></ul><p>In cases where the application's functionality allows users to author content using \n  a restricted subset of HTML tags and attributes (for example, blog comments which \n  allow limited formatting and linking), it is necessary to parse the supplied HTML to \n  validate that it does not use any dangerous syntax; this is a non-trivial task.</p>"
+				},
+				"references": {
+					"__cdata": "<ul><li><a href=\"https://support.portswigger.net/customer/portal/articles/1965737-Methodology_XSS.html\">Using Burp to Find XSS issues</a></li></ul>"
+				},
+				"vulnerabilityClassifications": {
+					"__cdata": "<ul><li><a href=\"https://cwe.mitre.org/data/definitions/79.html\">CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</a></li><li><a href=\"https://cwe.mitre.org/data/definitions/80.html\">CWE-80: Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)</a></li><li><a href=\"https://cwe.mitre.org/data/definitions/116.html\">CWE-116: Improper Encoding or Escaping of Output</a></li><li><a href=\"https://cwe.mitre.org/data/definitions/159.html\">CWE-159: Failure to Sanitize Special Element</a></li></ul>"
+				},
+				"issueDetail": {
+					"__cdata": "The value of the <b>target</b> request parameter is copied into the value of an HTML tag attribute which is encapsulated in double quotation marks. The payload <b>e9zr8\"&gt;&lt;script&gt;alert(1)&lt;/script&gt;hpqhq</b> was submitted in the target parameter. This input was echoed unmodified in the application's response.<br><br>This proof-of-concept attack demonstrates that it is possible to inject arbitrary JavaScript into the application's response."
+				},
+				"requestresponse": {
+					"request": {
+						"_method": "POST",
+						"_base64": "true",
+						"__cdata": "UE9TVCAvbG9naW4gSFRUUC8xLjENCkhvc3Q6IGJsYWItYS1nYWIuZXhhbXBsaWNvLmNvbQ0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlDQpBY2NlcHQ6ICovKg0KQWNjZXB0LUxhbmd1YWdlOiBlbg0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKGNvbXBhdGlibGU7IE1TSUUgOS4wOyBXaW5kb3dzIE5UIDYuMTsgV2luNjQ7IHg2NDsgVHJpZGVudC81LjApDQpDb25uZWN0aW9uOiBjbG9zZQ0KUmVmZXJlcjogaHR0cDovL2JsYWItYS1nYWIuZXhhbXBsaWNvLmNvbS9sb2dpbg0KQ29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi94LXd3dy1mb3JtLXVybGVuY29kZWQNCkNvbnRlbnQtTGVuZ3RoOiA5NQ0KQ29va2llOiBKU0VTU0lPTklEPTIyMEVBMDFCRjMxRkREODVDNTYxNUY5RkExMjg1RkRBDQoNCnJlbWVtYmVyPW9uJnBhc3N3b3JkPTU1NS01NTUtMDE5OUBleGFtcGxlLmNvbSZMb2dpbj1Mb2dpbiZ1c2VyPTU1NS01NTUtMDE5OUBleGFtcGxlLmNvbSZ0YXJnZXQ9ZTl6cjglMjIlM2UlM2NzY3JpcHQlM2VhbGVydCgxKSUzYyUyZnNjcmlwdCUzZWhwcWhx"
+					},
+					"response": {
+						"_base64": "true",
+						"__cdata": "SFRUUC8xLjEgMjAwIA0KRGF0ZTogV2VkLCAwMSBKdWwgMjAyMCAxNzoyNDozOCBHTVQNClNlcnZlcjogQXBhY2hlLzIuNC40MSAoQW1hem9uKSBPcGVuU1NMLzEuMC4yay1maXBzDQpDb250ZW50LVR5cGU6IHRleHQvaHRtbDtjaGFyc2V0PVVTLUFTQ0lJDQpDb250ZW50LUxhbmd1YWdlOiBlbg0KVmFyeTogQWNjZXB0LUVuY29kaW5nDQpDb250ZW50LUxlbmd0aDogMzU0NA0KQ29ubmVjdGlvbjogY2xvc2UNCg0KCjwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgo8bWV0YSBjaGFyc2V0PSJ1dGYtOCI+CjxtZXRhIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9ZWRnZSI+CjxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MSI+CjxtZXRhIG5hbWU9ImRlc2NyaXB0aW9uIiBjb250ZW50PSIiPgo8bWV0YSBuYW1lPSJhdXRob3IiIGNvbnRlbnQ9IiI+CjxsaW5rIHJlbD0iaWNvbiIgaHJlZj0iLi4vLi4vZmF2aWNvbi5pY28iPgoKPHRpdGxlPkxvZ2luIHRvIEJsYWI8L3RpdGxlPgoKPCEtLSBCb290c3RyYXAgY29yZSBDU1MgLS0+CjxsaW5rIGhyZWY9InJlc291cmNlcy9jc3MvYm9vdHN0cmFwLm1pbi5jc3MiIHJlbD0ic3R5bGVzaGVldCI+CjwhLS0gQm9vdHN0cmFwIHRoZW1lIC0tPgo8bGluayBocmVmPSJyZXNvdXJjZXMvY3NzL2Jvb3RzdHJhcC10aGVtZS5taW4uY3NzIiByZWw9InN0eWxlc2hlZXQiPgoKPCEtLSBDdXN0b20gc3R5bGVzIGZvciB0aGlzIHRlbXBsYXRlIC0tPgo8bGluayBocmVmPSJyZXNvdXJjZXMvY3NzL3B3bS5jc3MiIHJlbD0ic3R5bGVzaGVldCI+Cgo8IS0tIEhUTUw1IHNoaW0gYW5kIFJlc3BvbmQuanMgZm9yIElFOCBzdXBwb3J0IG9mIEhUTUw1IGVsZW1lbnRzIGFuZCBtZWRpYSBxdWVyaWVzIC0tPgo8IS0tW2lmIGx0IElFIDldPgogICAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9vc3MubWF4Y2RuLmNvbS9odG1sNXNoaXYvMy43LjIvaHRtbDVzaGl2Lm1pbi5qcyI+PC9zY3JpcHQ+CiAgICAgIDxzY3JpcHQgc3JjPSJodHRwczovL29zcy5tYXhjZG4uY29tL3Jlc3BvbmQvMS40LjIvcmVzcG9uZC5taW4uanMiPjwvc2NyaXB0PgogICAgPCFbZW5kaWZdLS0+CjwvaGVhZD4KCjxib2R5IHJvbGU9ImRvY3VtZW50Ij4KCgk8ZGl2IGNsYXNzPSJjb250YWluZXIiPgoKCQk8ZGl2IGNsYXNzPSJoZWFkZXIgY2xlYXJmaXgiPgoJCQk8bmF2PgoJCQkJPHVsIGNsYXNzPSJuYXYgbmF2LXBpbGxzIHB1bGwtcmlnaHQiPgoJCQkJCTxsaSByb2xlPSJwcmVzZW50YXRpb24iPjxhIGhyZWY9InJlc2V0Ij5SZXNldDwvYT48L2xpPgoJCQkJCTxsaSByb2xlPSJwcmVzZW50YXRpb24iPjxhIGhyZWY9ImxvZ2luIiBjbGFzcz0iYWN0aXZlIj5Mb2dpbjwvYT48L2xpPgoJCQkJCTxsaSByb2xlPSJwcmVzZW50YXRpb24iPjxhIGhyZWY9InJlZ2lzdGVyIj5SZWdpc3RlcjwvYT48L2xpPgoJCQkJPC91bD4KCQkJPC9uYXY+CgkJCTxpbWcgc3JjPSJyZXNvdXJjZXMvaW1hZ2VzL1Rva3lvc2hpcF9UYWxrX2ljb24uc3ZnIiBoZWlnaHQ9IjEwMCIKCQkJCXdpZHRoPSIxMDAiPgoJCTwvZGl2PgoKCgk8L2Rpdj4KCgk8ZGl2IGNsYXNzPSJjb250YWluZXIgdGhlbWUtc2hvd2Nhc2UiIHJvbGU9Im1haW4iPgoKCQk8ZGl2IGNsYXNzPSJwYWdlLWhlYWRlciI+CgkJCTxoMz5Mb2dpbjwvaDM+CgkJPC9kaXY+CgoJCQoJCTxkaXYgY2xhc3M9ImFsZXJ0IGFsZXJ0LWRhbmdlciIgcm9sZT0iYWxlcnQiPgoJCQlMb2dpbiBmYWlsZWQuIFBsZWFzZSB0cnkgYWdhaW4uCgkJPC9kaXY+CgoJCQoKCgkJPGRpdiBjbGFzcz0icm93Ij4KCQkJPGRpdiBjbGFzcz0iY29sLW1kLTEyIj4KCgkJCQk8ZGl2IGNsYXNzPSJwYW5lbCBwYW5lbC1kZWZhdWx0Ij4KCQkJCQk8ZGl2IGNsYXNzPSJwYW5lbC1oZWFkaW5nIj4KCQkJCQkJPGgzIGNsYXNzPSJwYW5lbC10aXRsZSI+UGxlYXNlIHByb3ZpZGUgeW91ciB1c2VybmFtZSBhbmQKCQkJCQkJCXBhc3N3b3JkIHRvIGxvZ2luIHRvIEJsYWI8L2gzPgoJCQkJCTwvZGl2PgoJCQkJCTxkaXYgY2xhc3M9InBhbmVsLWJvZHkiPgoJCQkJCQk8Zm9ybSBtZXRob2Q9IlBPU1QiIGFjdGlvbj0iL2xvZ2luIj4KCQkJCQkJCTxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9InRhcmdldCIKCQkJCQkJCQl2YWx1ZT0iZTl6cjgiPjxzY3JpcHQ+YWxlcnQoMSk8L3NjcmlwdD5ocHFocSI+CgkJCQkJCQk8dGFibGUgY2xhc3M9InRhYmxlIHRhYmxlLWNvbmRlbnNlZCI+CgkJCQkJCQkJPHRib2R5PgoJCQkJCQkJCQk8dHI+CgkJCQkJCQkJCQk8dGQ+VXNlcm5hbWU8L3RkPgoJCQkJCQkJCQkJPHRkPjxkaXYgY2xhc3M9ImZvcm0tZ3JvdXAiPgoJCQkJCQkJCQkJCQk8aW5wdXQgdHlwZT0idGV4dCIgY2xhc3M9ImZvcm0tY29udHJvbCIgbmFtZT0idXNlciIKCQkJCQkJCQkJCQkJCXZhbHVlPSJudWxsIj4KCQkJCQkJCQkJCQk8L2Rpdj48YSBocmVmPSJqYXZhc2NyaXB0OmhpbnQoKSI+SGludDwvYT48L3RkPgoJCQkJCQkJCQk8L3RyPgoJCQkJCQkJCQk8dHI+CgkJCQkJCQkJCQk8dGQ+UGFzc3dvcmQ8L3RkPgoJCQkJCQkJCQkJPHRkPjxkaXYgY2xhc3M9ImZvcm0tZ3JvdXAiPgoJCQkJCQkJCQkJCQk8aW5wdXQgdHlwZT0idGV4dCIgY2xhc3M9ImZvcm0tY29udHJvbCIgbmFtZT0icGFzc3dvcmQiCgkJCQkJCQkJCQkJCQl2YWx1ZT0iIj4KCQkJCQkJCQkJCQk8L2Rpdj48L3RkPgoJCQkJCQkJCQk8L3RyPgoJCQkJCQkJCQk8dHI+CgkJCQkJCQkJCQk8dGQ+PC90ZD4KCQkJCQkJCQkJCTx0ZD48aW5wdXQgdHlwZT0iY2hlY2tib3giIG5hbWU9InJlbWVtYmVyIiB2YWx1ZT0iMSIgLz4KCQkJCQkJCQkJCTxsYWJlbCBmb3I9InJlbWVtYmVyIj5SZW1lbWJlciBtZTwvbGFiZWw+CgkJCQkJCQkJCTwvdHI+CgkJCQkJCQkJCTx0cj4KCQkJCQkJCQkJCTx0ZD48YnV0dG9uIHR5cGU9InN1Ym1pdCIgY2xhc3M9ImJ0biBidG4tcHJpbWFyeSIKCQkJCQkJCQkJCQkJaWQ9ImxvZ2luIiBuYW1lPSJMb2dpbiIgdmFsdWU9IkxvZ2luIj5Mb2dpbjwvYnV0dG9uPjwvdGQ+CgkJCQkJCQkJCQk8dGQ+PC90ZD4KCQkJCQkJCQkJPC90cj4KCQkJCQkJCQk8L3Rib2R5PgoJCQkJCQkJPC90YWJsZT4KCQkJCQkJPC9mb3JtPgoJCQkJCTwvZGl2PgoJCQkJPC9kaXY+CgkJCTwvZGl2PgoJCTwvZGl2PgoJPC9kaXY+Cgk8IS0tIC9jb250YWluZXIgLS0+CgoJPCEtLSBCb290c3RyYXAgY29yZSBKYXZhU2NyaXB0CiAgICA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PSAtLT4KCTwhLS0gUGxhY2VkIGF0IHRoZSBlbmQgb2YgdGhlIGRvY3VtZW50IHNvIHRoZSBwYWdlcyBsb2FkIGZhc3RlciAtLT4KCTxzY3JpcHQgc3JjPSJyZXNvdXJjZXMvanMvanF1ZXJ5LTEuMTEuMi5taW4uanMiPjwvc2NyaXB0PgoJPHNjcmlwdCBzcmM9InJlc291cmNlcy9qcy9ib290c3RyYXAubWluLmpzIj48L3NjcmlwdD4KCTxzY3JpcHQ+CglmdW5jdGlvbiBoaW50KCkgewoJCQoJCWZ1bmN0aW9uIGFsZXJ0ZXIgKCkgewoJCQl3aW5kb3cuYWxlcnQodGhpcy5yZXNwb25zZVRleHQpOwoJCX0KCgkJdmFyIG9SZXEgPSBuZXcgWE1MSHR0cFJlcXVlc3QoKTsKCQlvUmVxLmFkZEV2ZW50TGlzdGVuZXIoImxvYWQiLCBhbGVydGVyKTsKCQlvUmVxLm9wZW4oIkdFVCIsICIvdmVyYWRlbW8vcGFzc3dvcmQtaGludD91c2VybmFtZT0iICsgZG9jdW1lbnQuZm9ybXNbMF0udXNlci52YWx1ZSk7CgkJb1JlcS5zZW5kKCk7Cgl9Cgk8L3NjcmlwdD4KPC9ib2R5Pgo8L2h0bWw+Cg=="
+					},
+					"responseRedirected": "false"
+				}
+			},
+			{
+				"serialNumber": "5410932939575115776",
+				"type": "4197376",
+				"name": {
+					"__cdata": "Input returned in response (reflected)"
+				},
+				"host": {
+					"_ip": "54.208.137.193",
+					"__text": "http://blab-a-gab.examplico.com"
+				},
+				"path": {
+					"__cdata": "/login"
+				},
+				"location": {
+					"__cdata": "/login [target parameter]"
+				},
+				"severity": "Information",
+				"confidence": "Certain",
+				"issueBackground": {
+					"__cdata": "<p>Reflection of input arises when data is copied from a request and echoed into the application's immediate response.</p><p>Input being returned in application responses is not a vulnerability in its own right. However, it is a prerequisite for many client-side vulnerabilities, including cross-site scripting, open redirection, content spoofing, and response header injection. Additionally, some server-side vulnerabilities such as SQL injection are often easier to identify and exploit when input is returned in responses. In applications where input retrieval is rare and the environment is resistant to automated testing (for example, due to a web application firewall), it might be worth subjecting instances of it to focused manual testing. </p>"
+				},
+				"vulnerabilityClassifications": {
+					"__cdata": "<ul><li><a href=\"https://cwe.mitre.org/data/definitions/20.html\">CWE-20: Improper Input Validation</a></li><li><a href=\"https://cwe.mitre.org/data/definitions/116.html\">CWE-116: Improper Encoding or Escaping of Output</a></li></ul>"
+				},
+				"issueDetail": {
+					"__cdata": "The value of the <b>target</b> request parameter is copied into the application's response."
+				},
+				"requestresponse": {
+					"request": {
+						"_method": "POST",
+						"_base64": "true",
+						"__cdata": "UE9TVCAvbG9naW4gSFRUUC8xLjENCkhvc3Q6IGJsYWItYS1nYWIuZXhhbXBsaWNvLmNvbQ0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlDQpBY2NlcHQ6ICovKg0KQWNjZXB0LUxhbmd1YWdlOiBlbg0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKGNvbXBhdGlibGU7IE1TSUUgOS4wOyBXaW5kb3dzIE5UIDYuMTsgV2luNjQ7IHg2NDsgVHJpZGVudC81LjApDQpDb25uZWN0aW9uOiBjbG9zZQ0KUmVmZXJlcjogaHR0cDovL2JsYWItYS1nYWIuZXhhbXBsaWNvLmNvbS9sb2dpbg0KQ29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi94LXd3dy1mb3JtLXVybGVuY29kZWQNCkNvbnRlbnQtTGVuZ3RoOiA5NQ0KQ29va2llOiBKU0VTU0lPTklEPTIyMEVBMDFCRjMxRkREODVDNTYxNUY5RkExMjg1RkRBDQoNCnJlbWVtYmVyPW9uJnBhc3N3b3JkPTU1NS01NTUtMDE5OUBleGFtcGxlLmNvbSZMb2dpbj1Mb2dpbiZ1c2VyPTU1NS01NTUtMDE5OUBleGFtcGxlLmNvbSZ0YXJnZXQ9NDd2cjhocXR4dg=="
+					},
+					"response": {
+						"_base64": "true",
+						"__cdata": "SFRUUC8xLjEgMjAwIA0KRGF0ZTogV2VkLCAwMSBKdWwgMjAyMCAxNzoyNDoxNCBHTVQNClNlcnZlcjogQXBhY2hlLzIuNC40MSAoQW1hem9uKSBPcGVuU1NMLzEuMC4yay1maXBzDQpDb250ZW50LVR5cGU6IHRleHQvaHRtbDtjaGFyc2V0PVVTLUFTQ0lJDQpDb250ZW50LUxhbmd1YWdlOiBlbg0KVmFyeTogQWNjZXB0LUVuY29kaW5nDQpDb250ZW50LUxlbmd0aDogMzUxNw0KQ29ubmVjdGlvbjogY2xvc2UNCg0KCjwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgo8bWV0YSBjaGFyc2V0PSJ1dGYtOCI+CjxtZXRhIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9ZWRnZSI+CjxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MSI+CjxtZXRhIG5hbWU9ImRlc2NyaXB0aW9uIiBjb250ZW50PSIiPgo8bWV0YSBuYW1lPSJhdXRob3IiIGNvbnRlbnQ9IiI+CjxsaW5rIHJlbD0iaWNvbiIgaHJlZj0iLi4vLi4vZmF2aWNvbi5pY28iPgoKPHRpdGxlPkxvZ2luIHRvIEJsYWI8L3RpdGxlPgoKPCEtLSBCb290c3RyYXAgY29yZSBDU1MgLS0+CjxsaW5rIGhyZWY9InJlc291cmNlcy9jc3MvYm9vdHN0cmFwLm1pbi5jc3MiIHJlbD0ic3R5bGVzaGVldCI+CjwhLS0gQm9vdHN0cmFwIHRoZW1lIC0tPgo8bGluayBocmVmPSJyZXNvdXJjZXMvY3NzL2Jvb3RzdHJhcC10aGVtZS5taW4uY3NzIiByZWw9InN0eWxlc2hlZXQiPgoKPCEtLSBDdXN0b20gc3R5bGVzIGZvciB0aGlzIHRlbXBsYXRlIC0tPgo8bGluayBocmVmPSJyZXNvdXJjZXMvY3NzL3B3bS5jc3MiIHJlbD0ic3R5bGVzaGVldCI+Cgo8IS0tIEhUTUw1IHNoaW0gYW5kIFJlc3BvbmQuanMgZm9yIElFOCBzdXBwb3J0IG9mIEhUTUw1IGVsZW1lbnRzIGFuZCBtZWRpYSBxdWVyaWVzIC0tPgo8IS0tW2lmIGx0IElFIDldPgogICAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9vc3MubWF4Y2RuLmNvbS9odG1sNXNoaXYvMy43LjIvaHRtbDVzaGl2Lm1pbi5qcyI+PC9zY3JpcHQ+CiAgICAgIDxzY3JpcHQgc3JjPSJodHRwczovL29zcy5tYXhjZG4uY29tL3Jlc3BvbmQvMS40LjIvcmVzcG9uZC5taW4uanMiPjwvc2NyaXB0PgogICAgPCFbZW5kaWZdLS0+CjwvaGVhZD4KCjxib2R5IHJvbGU9ImRvY3VtZW50Ij4KCgk8ZGl2IGNsYXNzPSJjb250YWluZXIiPgoKCQk8ZGl2IGNsYXNzPSJoZWFkZXIgY2xlYXJmaXgiPgoJCQk8bmF2PgoJCQkJPHVsIGNsYXNzPSJuYXYgbmF2LXBpbGxzIHB1bGwtcmlnaHQiPgoJCQkJCTxsaSByb2xlPSJwcmVzZW50YXRpb24iPjxhIGhyZWY9InJlc2V0Ij5SZXNldDwvYT48L2xpPgoJCQkJCTxsaSByb2xlPSJwcmVzZW50YXRpb24iPjxhIGhyZWY9ImxvZ2luIiBjbGFzcz0iYWN0aXZlIj5Mb2dpbjwvYT48L2xpPgoJCQkJCTxsaSByb2xlPSJwcmVzZW50YXRpb24iPjxhIGhyZWY9InJlZ2lzdGVyIj5SZWdpc3RlcjwvYT48L2xpPgoJCQkJPC91bD4KCQkJPC9uYXY+CgkJCTxpbWcgc3JjPSJyZXNvdXJjZXMvaW1hZ2VzL1Rva3lvc2hpcF9UYWxrX2ljb24uc3ZnIiBoZWlnaHQ9IjEwMCIKCQkJCXdpZHRoPSIxMDAiPgoJCTwvZGl2PgoKCgk8L2Rpdj4KCgk8ZGl2IGNsYXNzPSJjb250YWluZXIgdGhlbWUtc2hvd2Nhc2UiIHJvbGU9Im1haW4iPgoKCQk8ZGl2IGNsYXNzPSJwYWdlLWhlYWRlciI+CgkJCTxoMz5Mb2dpbjwvaDM+CgkJPC9kaXY+CgoJCQoJCTxkaXYgY2xhc3M9ImFsZXJ0IGFsZXJ0LWRhbmdlciIgcm9sZT0iYWxlcnQiPgoJCQlMb2dpbiBmYWlsZWQuIFBsZWFzZSB0cnkgYWdhaW4uCgkJPC9kaXY+CgoJCQoKCgkJPGRpdiBjbGFzcz0icm93Ij4KCQkJPGRpdiBjbGFzcz0iY29sLW1kLTEyIj4KCgkJCQk8ZGl2IGNsYXNzPSJwYW5lbCBwYW5lbC1kZWZhdWx0Ij4KCQkJCQk8ZGl2IGNsYXNzPSJwYW5lbC1oZWFkaW5nIj4KCQkJCQkJPGgzIGNsYXNzPSJwYW5lbC10aXRsZSI+UGxlYXNlIHByb3ZpZGUgeW91ciB1c2VybmFtZSBhbmQKCQkJCQkJCXBhc3N3b3JkIHRvIGxvZ2luIHRvIEJsYWI8L2gzPgoJCQkJCTwvZGl2PgoJCQkJCTxkaXYgY2xhc3M9InBhbmVsLWJvZHkiPgoJCQkJCQk8Zm9ybSBtZXRob2Q9IlBPU1QiIGFjdGlvbj0iL2xvZ2luIj4KCQkJCQkJCTxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9InRhcmdldCIKCQkJCQkJCQl2YWx1ZT0iNDd2cjhocXR4diI+CgkJCQkJCQk8dGFibGUgY2xhc3M9InRhYmxlIHRhYmxlLWNvbmRlbnNlZCI+CgkJCQkJCQkJPHRib2R5PgoJCQkJCQkJCQk8dHI+CgkJCQkJCQkJCQk8dGQ+VXNlcm5hbWU8L3RkPgoJCQkJCQkJCQkJPHRkPjxkaXYgY2xhc3M9ImZvcm0tZ3JvdXAiPgoJCQkJCQkJCQkJCQk8aW5wdXQgdHlwZT0idGV4dCIgY2xhc3M9ImZvcm0tY29udHJvbCIgbmFtZT0idXNlciIKCQkJCQkJCQkJCQkJCXZhbHVlPSJudWxsIj4KCQkJCQkJCQkJCQk8L2Rpdj48YSBocmVmPSJqYXZhc2NyaXB0OmhpbnQoKSI+SGludDwvYT48L3RkPgoJCQkJCQkJCQk8L3RyPgoJCQkJCQkJCQk8dHI+CgkJCQkJCQkJCQk8dGQ+UGFzc3dvcmQ8L3RkPgoJCQkJCQkJCQkJPHRkPjxkaXYgY2xhc3M9ImZvcm0tZ3JvdXAiPgoJCQkJCQkJCQkJCQk8aW5wdXQgdHlwZT0idGV4dCIgY2xhc3M9ImZvcm0tY29udHJvbCIgbmFtZT0icGFzc3dvcmQiCgkJCQkJCQkJCQkJCQl2YWx1ZT0iIj4KCQkJCQkJCQkJCQk8L2Rpdj48L3RkPgoJCQkJCQkJCQk8L3RyPgoJCQkJCQkJCQk8dHI+CgkJCQkJCQkJCQk8dGQ+PC90ZD4KCQkJCQkJCQkJCTx0ZD48aW5wdXQgdHlwZT0iY2hlY2tib3giIG5hbWU9InJlbWVtYmVyIiB2YWx1ZT0iMSIgLz4KCQkJCQkJCQkJCTxsYWJlbCBmb3I9InJlbWVtYmVyIj5SZW1lbWJlciBtZTwvbGFiZWw+CgkJCQkJCQkJCTwvdHI+CgkJCQkJCQkJCTx0cj4KCQkJCQkJCQkJCTx0ZD48YnV0dG9uIHR5cGU9InN1Ym1pdCIgY2xhc3M9ImJ0biBidG4tcHJpbWFyeSIKCQkJCQkJCQkJCQkJaWQ9ImxvZ2luIiBuYW1lPSJMb2dpbiIgdmFsdWU9IkxvZ2luIj5Mb2dpbjwvYnV0dG9uPjwvdGQ+CgkJCQkJCQkJCQk8dGQ+PC90ZD4KCQkJCQkJCQkJPC90cj4KCQkJCQkJCQk8L3Rib2R5PgoJCQkJCQkJPC90YWJsZT4KCQkJCQkJPC9mb3JtPgoJCQkJCTwvZGl2PgoJCQkJPC9kaXY+CgkJCTwvZGl2PgoJCTwvZGl2PgoJPC9kaXY+Cgk8IS0tIC9jb250YWluZXIgLS0+CgoJPCEtLSBCb290c3RyYXAgY29yZSBKYXZhU2NyaXB0CiAgICA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PSAtLT4KCTwhLS0gUGxhY2VkIGF0IHRoZSBlbmQgb2YgdGhlIGRvY3VtZW50IHNvIHRoZSBwYWdlcyBsb2FkIGZhc3RlciAtLT4KCTxzY3JpcHQgc3JjPSJyZXNvdXJjZXMvanMvanF1ZXJ5LTEuMTEuMi5taW4uanMiPjwvc2NyaXB0PgoJPHNjcmlwdCBzcmM9InJlc291cmNlcy9qcy9ib290c3RyYXAubWluLmpzIj48L3NjcmlwdD4KCTxzY3JpcHQ+CglmdW5jdGlvbiBoaW50KCkgewoJCQoJCWZ1bmN0aW9uIGFsZXJ0ZXIgKCkgewoJCQl3aW5kb3cuYWxlcnQodGhpcy5yZXNwb25zZVRleHQpOwoJCX0KCgkJdmFyIG9SZXEgPSBuZXcgWE1MSHR0cFJlcXVlc3QoKTsKCQlvUmVxLmFkZEV2ZW50TGlzdGVuZXIoImxvYWQiLCBhbGVydGVyKTsKCQlvUmVxLm9wZW4oIkdFVCIsICIvdmVyYWRlbW8vcGFzc3dvcmQtaGludD91c2VybmFtZT0iICsgZG9jdW1lbnQuZm9ybXNbMF0udXNlci52YWx1ZSk7CgkJb1JlcS5zZW5kKCk7Cgl9Cgk8L3NjcmlwdD4KPC9ib2R5Pgo8L2h0bWw+Cg=="
+					},
+					"responseRedirected": "false"
+				}
+			},
+			{
+				"serialNumber": "4101370992425339904",
+				"type": "2097960",
+				"name": {
+					"__cdata": "Path-relative style sheet import"
+				},
+				"host": {
+					"_ip": "54.208.137.193",
+					"__text": "http://blab-a-gab.examplico.com"
+				},
+				"path": {
+					"__cdata": "/register"
+				},
+				"location": {
+					"__cdata": "/register"
+				},
+				"severity": "Information",
+				"confidence": "Tentative",
+				"issueBackground": {
+					"__cdata": "<p>Path-relative style sheet import vulnerabilities arise when the following conditions hold:</p><ol><li>A response contains a style sheet import that uses a path-relative URL (for example, the page at \"/original-path/file.php\" might import \"styles/main.css\").</li><li>When handling requests, the application or platform tolerates superfluous path-like data following the original filename in the URL (for example, \"/original-path/file.php/extra-junk/\"). When superfluous data is added to the original URL, the application's response still contains a path-relative stylesheet import.</li><li>The response in condition 2 can be made to render in a browser's quirks mode, either because it has a missing or old doctype directive, or because it allows itself to be framed by a page under an attacker's control.</li><li>When a browser requests the style sheet that is imported in the response from the modified URL (using the URL \"/original-path/file.php/extra-junk/styles/main.css\"), the application returns something other than the CSS response that was supposed to be imported. Given the behavior described in condition 2, this will typically be the same response that was originally returned in condition 1.</li><li>An attacker has a means of manipulating some text within the response in condition 4, for example because the application stores and displays some past input, or echoes some text within the current URL.</li></ol><p>Given the above conditions, an attacker can execute CSS injection within the browser of the target user. The attacker can construct a URL that causes the victim's browser to import as CSS a different URL than normal, containing text that the attacker can manipulate.</p><p>Being able to inject arbitrary CSS into the victim's browser may enable various attacks, including:</p><ul><li>Executing arbitrary JavaScript using IE's expression() function.</li><li>Using CSS selectors to read parts of the HTML source, which may include sensitive data such as anti-CSRF tokens.</li><li>Capturing any sensitive data within the URL query string by making a further style sheet import to a URL on the attacker's domain, and monitoring the incoming Referer header.</li></ul>"
+				},
+				"remediationBackground": {
+					"__cdata": "<p>The root cause of the vulnerability can be resolved by not using path-relative URLs in style sheet imports. Aside from this, attacks can also be prevented by implementing all of the following defensive measures: </p><ul><li>Setting the HTTP response header \"X-Frame-Options: deny\" in all responses. One method that an attacker can use to make a page render in quirks mode is to frame it within their own page that is rendered in quirks mode. Setting this header prevents the page from being framed.</li><li>Setting a modern doctype (e.g. \"&lt;!doctype html&gt;\") in all HTML responses. This prevents the page from being rendered in quirks mode (unless it is being framed, as described above).</li><li>Setting the HTTP response header \"X-Content-Type-Options: no sniff\" in all responses. This prevents the browser from processing a non-CSS response as CSS, even if another page loads the response via a style sheet import.</li></ul>"
+				},
+				"references": {
+					"__cdata": "<ul><li><a href=\"http://blog.portswigger.net/2015/02/prssi.html\">Detecting and exploiting path-relative stylesheet import (PRSSI) vulnerabilities</a></li></ul>"
+				},
+				"vulnerabilityClassifications": {
+					"__cdata": "<ul><li><a href=\"https://cwe.mitre.org/data/definitions/16.html\">CWE-16: Configuration</a></li></ul>"
+				},
+				"issueDetail": {
+					"__cdata": "The application may be vulnerable to path-relative style sheet import (PRSSI) attacks. The response contains a path-relative style sheet import, and so condition 1 for an exploitable vulnerability is present (see issue background). The response can also be made to render in a browser's quirks mode. The page does not contain a doctype directive, and so it will always be rendered in quirks mode. Further, the response does not prevent itself from being framed, so an attacker can frame the response within a page that they control, to force it to be rendered in quirks mode. (Note that this technique is IE-specific and due to P3P restrictions might sometimes limit the impact of a successful attack.) This means that condition 3 for an exploitable vulnerability is probably present if condition 2 is present.<br><br>Burp was not able to confirm that the other conditions hold, and you should manually investigate this issue to confirm whether they do hold."
+				},
+				"requestresponse": {
+					"request": {
+						"_method": "GET",
+						"_base64": "true",
+						"__cdata": "R0VUIC9yZWdpc3RlciBIVFRQLzEuMQ0KSG9zdDogYmxhYi1hLWdhYi5leGFtcGxpY28uY29tDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUNCkFjY2VwdDogKi8qDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoY29tcGF0aWJsZTsgTVNJRSA5LjA7IFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0OyBUcmlkZW50LzUuMCkNCkNvbm5lY3Rpb246IGNsb3NlDQpSZWZlcmVyOiBodHRwOi8vYmxhYi1hLWdhYi5leGFtcGxpY28uY29tL2xvZ2luDQpDb29raWU6IEpTRVNTSU9OSUQ9MjIwRUEwMUJGMzFGREQ4NUM1NjE1RjlGQTEyODVGREENCg0K"
+					},
+					"response": {
+						"_base64": "true",
+						"__cdata": "SFRUUC8xLjEgMjAwIA0KRGF0ZTogV2VkLCAwMSBKdWwgMjAyMCAxNzoyMjowOCBHTVQNClNlcnZlcjogQXBhY2hlLzIuNC40MSAoQW1hem9uKSBPcGVuU1NMLzEuMC4yay1maXBzDQpDb250ZW50LVR5cGU6IHRleHQvaHRtbDtjaGFyc2V0PVVTLUFTQ0lJDQpDb250ZW50LUxhbmd1YWdlOiBlbg0KVmFyeTogQWNjZXB0LUVuY29kaW5nDQpDb250ZW50LUxlbmd0aDogMjczMg0KQ29ubmVjdGlvbjogY2xvc2UNCg0KCjwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgo8bWV0YSBjaGFyc2V0PSJ1dGYtOCI+CjxtZXRhIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9ZWRnZSI+CjxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MSI+CjxtZXRhIG5hbWU9ImRlc2NyaXB0aW9uIiBjb250ZW50PSIiPgo8bWV0YSBuYW1lPSJhdXRob3IiIGNvbnRlbnQ9IiI+CjxsaW5rIHJlbD0iaWNvbiIgaHJlZj0iLi4vLi4vZmF2aWNvbi5pY28iPgoKPHRpdGxlPlJlZ2lzdGVyIGZvciBCbGFiPC90aXRsZT4KCjwhLS0gQm9vdHN0cmFwIGNvcmUgQ1NTIC0tPgo8bGluayBocmVmPSJyZXNvdXJjZXMvY3NzL2Jvb3RzdHJhcC5taW4uY3NzIiByZWw9InN0eWxlc2hlZXQiPgo8IS0tIEJvb3RzdHJhcCB0aGVtZSAtLT4KPGxpbmsgaHJlZj0icmVzb3VyY2VzL2Nzcy9ib290c3RyYXAtdGhlbWUubWluLmNzcyIgcmVsPSJzdHlsZXNoZWV0Ij4KCjwhLS0gQ3VzdG9tIHN0eWxlcyBmb3IgdGhpcyB0ZW1wbGF0ZSAtLT4KPGxpbmsgaHJlZj0icmVzb3VyY2VzL2Nzcy9wd20uY3NzIiByZWw9InN0eWxlc2hlZXQiPgoKPCEtLSBIVE1MNSBzaGltIGFuZCBSZXNwb25kLmpzIGZvciBJRTggc3VwcG9ydCBvZiBIVE1MNSBlbGVtZW50cyBhbmQgbWVkaWEgcXVlcmllcyAtLT4KPCEtLVtpZiBsdCBJRSA5XT4KICAgICAgPHNjcmlwdCBzcmM9Imh0dHBzOi8vb3NzLm1heGNkbi5jb20vaHRtbDVzaGl2LzMuNy4yL2h0bWw1c2hpdi5taW4uanMiPjwvc2NyaXB0PgogICAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9vc3MubWF4Y2RuLmNvbS9yZXNwb25kLzEuNC4yL3Jlc3BvbmQubWluLmpzIj48L3NjcmlwdD4KICAgIDwhW2VuZGlmXS0tPgo8L2hlYWQ+Cgo8Ym9keSByb2xlPSJkb2N1bWVudCI+CgoJPGRpdiBjbGFzcz0iY29udGFpbmVyIj4KCgkJPGRpdiBjbGFzcz0iaGVhZGVyIGNsZWFyZml4Ij4KCQkJPG5hdj4KCQkJCTx1bCBjbGFzcz0ibmF2IG5hdi1waWxscyBwdWxsLXJpZ2h0Ij4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJyZXNldCI+UmVzZXQ8L2E+PC9saT4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJsb2dpbiI+TG9naW48L2E+PC9saT4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJyZWdpc3RlciIgY2xhc3M9ImFjdGl2ZSI+UmVnaXN0ZXI8L2E+PC9saT4KCQkJCTwvdWw+CgkJCTwvbmF2PgoJCQk8aW1nIHNyYz0icmVzb3VyY2VzL2ltYWdlcy9Ub2t5b3NoaXBfVGFsa19pY29uLnN2ZyIgaGVpZ2h0PSIxMDAiCgkJCQl3aWR0aD0iMTAwIj4KCQk8L2Rpdj4KCgoJPC9kaXY+CgoJPGRpdiBjbGFzcz0iY29udGFpbmVyIHRoZW1lLXNob3djYXNlIiByb2xlPSJtYWluIj4KCgkJPGRpdiBjbGFzcz0icGFnZS1oZWFkZXIiPgoJCQk8aDM+UmVnaXN0ZXI8L2gzPgoJCTwvZGl2PgoKCQkKCgkJPGRpdiBjbGFzcz0icm93Ij4KCQkJPGRpdiBjbGFzcz0iY29sLW1kLTEyIj4KCgkJCQk8ZGl2IGNsYXNzPSJwYW5lbCBwYW5lbC1kZWZhdWx0Ij4KCQkJCQk8ZGl2IGNsYXNzPSJwYW5lbC1oZWFkaW5nIj4KCQkJCQkJPGgzIGNsYXNzPSJwYW5lbC10aXRsZSI+UGxlYXNlIHByb3ZpZGUgeW91ciB1c2VyIGluZm9ybWF0aW9uCgkJCQkJCQl0byByZWdpc3RlciBmb3IgQmxhYjwvaDM+CgkJCQkJPC9kaXY+CgkJCQkJCgkJCQkJPGRpdiBjbGFzcz0icGFuZWwtYm9keSI+CgkJCQkJCTxmb3JtIG1ldGhvZD0iUE9TVCIgYWN0aW9uPSJyZWdpc3RlciI+CgkJCQkJCQk8aW5wdXQgdHlwZT0iaGlkZGVuIiBuYW1lPSJyZXR1cm5QYXRoIiB2YWx1ZT0iIj4KCQkJCQkJCTx0YWJsZSBjbGFzcz0idGFibGUgdGFibGUtY29uZGVuc2VkIj4KCQkJCQkJCQk8dGJvZHk+CgkJCQkJCQkJCTx0cj4KCQkJCQkJCQkJCTx0ZD5Vc2VybmFtZTwvdGQ+CgkJCQkJCQkJCQk8dGQ+PGRpdiBjbGFzcz0iZm9ybS1ncm91cCI+CgkJCQkJCQkJCQkJCTxpbnB1dCB0eXBlPSJ0ZXh0IiBjbGFzcz0iZm9ybS1jb250cm9sIiBuYW1lPSJ1c2VyIiB2YWx1ZT0iNTU1LTU1NS0wMTk5QGV4YW1wbGUuY29tIj4KCQkJCQkJCQkJCQk8L2Rpdj48L3RkPgoJCQkJCQkJCQk8L3RyPgoJCQkJCQkJCQk8dHI+CgkJCQkJCQkJCQk8dGQ+PGJ1dHRvbiB0eXBlPSJzdWJtaXQiIGNsYXNzPSJidG4gYnRuLXByaW1hcnkiCgkJCQkJCQkJCQkJCWlkPSJsb2dpbiIgbmFtZT0iUmVnaXN0ZXIiIHZhbHVlPSJSZWdpc3RlciI+UmVnaXN0ZXI8L2J1dHRvbj48L3RkPgoJCQkJCQkJCQkJPHRkPjwvdGQ+CgkJCQkJCQkJCTwvdHI+CgkJCQkJCQkJPC90Ym9keT4KCQkJCQkJCTwvdGFibGU+CgkJCQkJCTwvZm9ybT4KCQkJCQk8L2Rpdj4KCQkJCTwvZGl2PgoJCQk8L2Rpdj4KCQk8L2Rpdj4KCTwvZGl2PgoJPCEtLSAvY29udGFpbmVyIC0tPgoKCTwhLS0gQm9vdHN0cmFwIGNvcmUgSmF2YVNjcmlwdAogICAgPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0gLS0+Cgk8IS0tIFBsYWNlZCBhdCB0aGUgZW5kIG9mIHRoZSBkb2N1bWVudCBzbyB0aGUgcGFnZXMgbG9hZCBmYXN0ZXIgLS0+Cgk8c2NyaXB0IHNyYz0icmVzb3VyY2VzL2pzL2pxdWVyeS0xLjExLjIubWluLmpzIj48L3NjcmlwdD4KCTxzY3JpcHQgc3JjPSJyZXNvdXJjZXMvanMvYm9vdHN0cmFwLm1pbi5qcyI+PC9zY3JpcHQ+CjwvYm9keT4KPC9odG1sPgo="
+					},
+					"responseRedirected": "false"
+				}
+			},
+			{
+				"serialNumber": "5616665615238893568",
+				"type": "2097960",
+				"name": {
+					"__cdata": "Path-relative style sheet import"
+				},
+				"host": {
+					"_ip": "54.208.137.193",
+					"__text": "http://blab-a-gab.examplico.com"
+				},
+				"path": {
+					"__cdata": "/reset"
+				},
+				"location": {
+					"__cdata": "/reset"
+				},
+				"severity": "Information",
+				"confidence": "Tentative",
+				"issueBackground": {
+					"__cdata": "<p>Path-relative style sheet import vulnerabilities arise when the following conditions hold:</p><ol><li>A response contains a style sheet import that uses a path-relative URL (for example, the page at \"/original-path/file.php\" might import \"styles/main.css\").</li><li>When handling requests, the application or platform tolerates superfluous path-like data following the original filename in the URL (for example, \"/original-path/file.php/extra-junk/\"). When superfluous data is added to the original URL, the application's response still contains a path-relative stylesheet import.</li><li>The response in condition 2 can be made to render in a browser's quirks mode, either because it has a missing or old doctype directive, or because it allows itself to be framed by a page under an attacker's control.</li><li>When a browser requests the style sheet that is imported in the response from the modified URL (using the URL \"/original-path/file.php/extra-junk/styles/main.css\"), the application returns something other than the CSS response that was supposed to be imported. Given the behavior described in condition 2, this will typically be the same response that was originally returned in condition 1.</li><li>An attacker has a means of manipulating some text within the response in condition 4, for example because the application stores and displays some past input, or echoes some text within the current URL.</li></ol><p>Given the above conditions, an attacker can execute CSS injection within the browser of the target user. The attacker can construct a URL that causes the victim's browser to import as CSS a different URL than normal, containing text that the attacker can manipulate.</p><p>Being able to inject arbitrary CSS into the victim's browser may enable various attacks, including:</p><ul><li>Executing arbitrary JavaScript using IE's expression() function.</li><li>Using CSS selectors to read parts of the HTML source, which may include sensitive data such as anti-CSRF tokens.</li><li>Capturing any sensitive data within the URL query string by making a further style sheet import to a URL on the attacker's domain, and monitoring the incoming Referer header.</li></ul>"
+				},
+				"remediationBackground": {
+					"__cdata": "<p>The root cause of the vulnerability can be resolved by not using path-relative URLs in style sheet imports. Aside from this, attacks can also be prevented by implementing all of the following defensive measures: </p><ul><li>Setting the HTTP response header \"X-Frame-Options: deny\" in all responses. One method that an attacker can use to make a page render in quirks mode is to frame it within their own page that is rendered in quirks mode. Setting this header prevents the page from being framed.</li><li>Setting a modern doctype (e.g. \"&lt;!doctype html&gt;\") in all HTML responses. This prevents the page from being rendered in quirks mode (unless it is being framed, as described above).</li><li>Setting the HTTP response header \"X-Content-Type-Options: no sniff\" in all responses. This prevents the browser from processing a non-CSS response as CSS, even if another page loads the response via a style sheet import.</li></ul>"
+				},
+				"references": {
+					"__cdata": "<ul><li><a href=\"http://blog.portswigger.net/2015/02/prssi.html\">Detecting and exploiting path-relative stylesheet import (PRSSI) vulnerabilities</a></li></ul>"
+				},
+				"vulnerabilityClassifications": {
+					"__cdata": "<ul><li><a href=\"https://cwe.mitre.org/data/definitions/16.html\">CWE-16: Configuration</a></li></ul>"
+				},
+				"issueDetail": {
+					"__cdata": "The application may be vulnerable to path-relative style sheet import (PRSSI) attacks. The response contains a path-relative style sheet import, and so condition 1 for an exploitable vulnerability is present (see issue background). The response can also be made to render in a browser's quirks mode. The page does not contain a doctype directive, and so it will always be rendered in quirks mode. Further, the response does not prevent itself from being framed, so an attacker can frame the response within a page that they control, to force it to be rendered in quirks mode. (Note that this technique is IE-specific and due to P3P restrictions might sometimes limit the impact of a successful attack.) This means that condition 3 for an exploitable vulnerability is probably present if condition 2 is present.<br><br>Burp was not able to confirm that the other conditions hold, and you should manually investigate this issue to confirm whether they do hold."
+				},
+				"requestresponse": {
+					"request": {
+						"_method": "GET",
+						"_base64": "true",
+						"__cdata": "R0VUIC9yZXNldCBIVFRQLzEuMQ0KSG9zdDogYmxhYi1hLWdhYi5leGFtcGxpY28uY29tDQpBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGRlZmxhdGUNCkFjY2VwdDogKi8qDQpBY2NlcHQtTGFuZ3VhZ2U6IGVuDQpVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoY29tcGF0aWJsZTsgTVNJRSA5LjA7IFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0OyBUcmlkZW50LzUuMCkNCkNvbm5lY3Rpb246IGNsb3NlDQpSZWZlcmVyOiBodHRwOi8vYmxhYi1hLWdhYi5leGFtcGxpY28uY29tL2xvZ2luDQpDb29raWU6IEpTRVNTSU9OSUQ9MjIwRUEwMUJGMzFGREQ4NUM1NjE1RjlGQTEyODVGREENCg0K"
+					},
+					"response": {
+						"_base64": "true",
+						"__cdata": "SFRUUC8xLjEgMjAwIA0KRGF0ZTogV2VkLCAwMSBKdWwgMjAyMCAxNzoyNDowMyBHTVQNClNlcnZlcjogQXBhY2hlLzIuNC40MSAoQW1hem9uKSBPcGVuU1NMLzEuMC4yay1maXBzDQpDb250ZW50LVR5cGU6IHRleHQvaHRtbDtjaGFyc2V0PVVTLUFTQ0lJDQpDb250ZW50LUxhbmd1YWdlOiBlbg0KVmFyeTogQWNjZXB0LUVuY29kaW5nDQpDb250ZW50LUxlbmd0aDogMjY4OA0KQ29ubmVjdGlvbjogY2xvc2UNCg0KCgo8IURPQ1RZUEUgaHRtbD4KPGh0bWwgbGFuZz0iZW4iPgo8aGVhZD4KPG1ldGEgY2hhcnNldD0idXRmLTgiPgo8bWV0YSBodHRwLWVxdWl2PSJYLVVBLUNvbXBhdGlibGUiIGNvbnRlbnQ9IklFPWVkZ2UiPgo8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgY29udGVudD0id2lkdGg9ZGV2aWNlLXdpZHRoLCBpbml0aWFsLXNjYWxlPTEiPgo8bWV0YSBuYW1lPSJkZXNjcmlwdGlvbiIgY29udGVudD0iIj4KPG1ldGEgbmFtZT0iYXV0aG9yIiBjb250ZW50PSIiPgo8bGluayByZWw9Imljb24iIGhyZWY9Ii4uLy4uL2Zhdmljb24uaWNvIj4KCjx0aXRsZT5SZXNldCBCbGFiIERhdGE8L3RpdGxlPgoKPCEtLSBCb290c3RyYXAgY29yZSBDU1MgLS0+CjxsaW5rIGhyZWY9InJlc291cmNlcy9jc3MvYm9vdHN0cmFwLm1pbi5jc3MiIHJlbD0ic3R5bGVzaGVldCI+CjwhLS0gQm9vdHN0cmFwIHRoZW1lIC0tPgo8bGluayBocmVmPSJyZXNvdXJjZXMvY3NzL2Jvb3RzdHJhcC10aGVtZS5taW4uY3NzIiByZWw9InN0eWxlc2hlZXQiPgoKPCEtLSBDdXN0b20gc3R5bGVzIGZvciB0aGlzIHRlbXBsYXRlIC0tPgo8bGluayBocmVmPSJyZXNvdXJjZXMvY3NzL3B3bS5jc3MiIHJlbD0ic3R5bGVzaGVldCI+Cgo8IS0tIEhUTUw1IHNoaW0gYW5kIFJlc3BvbmQuanMgZm9yIElFOCBzdXBwb3J0IG9mIEhUTUw1IGVsZW1lbnRzIGFuZCBtZWRpYSBxdWVyaWVzIC0tPgo8IS0tW2lmIGx0IElFIDldPgogICAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9vc3MubWF4Y2RuLmNvbS9odG1sNXNoaXYvMy43LjIvaHRtbDVzaGl2Lm1pbi5qcyI+PC9zY3JpcHQ+CiAgICAgIDxzY3JpcHQgc3JjPSJodHRwczovL29zcy5tYXhjZG4uY29tL3Jlc3BvbmQvMS40LjIvcmVzcG9uZC5taW4uanMiPjwvc2NyaXB0PgogICAgPCFbZW5kaWZdLS0+CjwvaGVhZD4KCjxib2R5IHJvbGU9ImRvY3VtZW50Ij4KCgk8ZGl2IGNsYXNzPSJjb250YWluZXIiPgoKCQk8ZGl2IGNsYXNzPSJoZWFkZXIgY2xlYXJmaXgiPgoJCQk8bmF2PgoJCQkJPHVsIGNsYXNzPSJuYXYgbmF2LXBpbGxzIHB1bGwtcmlnaHQiPgoJCQkJCTxsaSByb2xlPSJwcmVzZW50YXRpb24iPjxhIGhyZWY9InJlc2V0IiBjbGFzcz0iYWN0aXZlIj5SZXNldDwvYT48L2xpPgoJCQkJCTxsaSByb2xlPSJwcmVzZW50YXRpb24iPjxhIGhyZWY9ImxvZ2luIj5Mb2dpbjwvYT48L2xpPgoJCQkJCTxsaSByb2xlPSJwcmVzZW50YXRpb24iPjxhIGhyZWY9InJlZ2lzdGVyIj5SZWdpc3RlcjwvYT48L2xpPgoJCQkJPC91bD4KCQkJPC9uYXY+CgkJCTxpbWcgc3JjPSJyZXNvdXJjZXMvaW1hZ2VzL1Rva3lvc2hpcF9UYWxrX2ljb24uc3ZnIiBoZWlnaHQ9IjEwMCIKCQkJCXdpZHRoPSIxMDAiPgoJCTwvZGl2PgoKCgk8L2Rpdj4KCgk8ZGl2IGNsYXNzPSJjb250YWluZXIgdGhlbWUtc2hvd2Nhc2UiIHJvbGU9Im1haW4iPgoKCQk8ZGl2IGNsYXNzPSJwYWdlLWhlYWRlciI+CgkJCTxoMz5SZXNldCBCbGFiIERhdGE8L2gzPgoJCTwvZGl2PgoJCTxkaXYgY2xhc3M9InJvdyI+CgkJCTxkaXYgY2xhc3M9ImNvbC1tZC0xMiI+CgoJCQkJPGRpdiBjbGFzcz0icGFuZWwgcGFuZWwtZGVmYXVsdCI+CgkJCQkJPGRpdiBjbGFzcz0icGFuZWwtaGVhZGluZyI+CgkJCQkJCTxoMyBjbGFzcz0icGFuZWwtdGl0bGUiPlRvIHJlc2V0IHRoZSBCbGFiIERhdGEgY29uZmlybSBiZWxvdzwvaDM+CgkJCQkJPC9kaXY+CgkJCQkJPGRpdiBjbGFzcz0icGFuZWwtYm9keSI+CgkJCQkJCTxwPlRoaXMgY2xlYXJzIG91dCBhbGwgZGF0YSBmcm9tIHRoZSBkYXRhYmFzZSBhbmQgcmVpbnN0YXRlcyBhIGtub3duIGdvb2QgZGF0YSBzZXQuPC9wPgoJCQkJCQk8Zm9ybSBtZXRob2Q9IlBPU1QiIGFjdGlvbj0icmVzZXQiPgoJCQkJCQkJPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0icmV0dXJuUGF0aCIgdmFsdWU9IiI+CgkJCQkJCQkKCQkJCQkJCTxociAvPgoJCQkJCQkJPGZpZWxkc2V0PgoJCQkJCQkJCTxpbnB1dCB0eXBlPSJjaGVja2JveCIgaWQ9ImNvbmZpcm0iIG5hbWU9ImNvbmZpcm0iIHZhbHVlPSJDb25maXJtIj4KCQkJCQkJCQk8bGFiZWwgZm9yPSJjb25maXJtIj5SRVFVSVJFRCAtIFllcyBJIHJlYWxpc2UgdGhhdCBJIHdpbGwgbG9zZSBhbGwgZGF0YSBpbiBteSBjdXJyZW50IFZlcmFEZW1vIGluc3RhbmNlLCBpbmNsdWRpbmcgdXNlcnMuPC9sYWJlbD4KCQkJCQkJCTwvZmllbGRzZXQ+CgkJCQkJCQk8aHIgLz4KCQkJCQkJCQoJCQkJCQkJPGJ1dHRvbiB0eXBlPSJzdWJtaXQiIGNsYXNzPSJidG4gYnRuLWRhbmdlciIgaWQ9ImxvZ2luIiBuYW1lPXJlc2V0IHZhbHVlPSJyZXNldCI+UmVzZXQ8L2J1dHRvbj4KCQkJCQkJPC9mb3JtPgoJCQkJCTwvZGl2PgoJCQkJPC9kaXY+CgkJCTwvZGl2PgoJCTwvZGl2PgoJPC9kaXY+Cgk8IS0tIC9jb250YWluZXIgLS0+CgoJPCEtLSBCb290c3RyYXAgY29yZSBKYXZhU2NyaXB0CiAgICA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PSAtLT4KCTwhLS0gUGxhY2VkIGF0IHRoZSBlbmQgb2YgdGhlIGRvY3VtZW50IHNvIHRoZSBwYWdlcyBsb2FkIGZhc3RlciAtLT4KCTxzY3JpcHQgc3JjPSJyZXNvdXJjZXMvanMvanF1ZXJ5LTEuMTEuMi5taW4uanMiPjwvc2NyaXB0PgoJPHNjcmlwdCBzcmM9InJlc291cmNlcy9qcy9ib290c3RyYXAubWluLmpzIj48L3NjcmlwdD4KPC9ib2R5Pgo8L2h0bWw+"
+					},
+					"responseRedirected": "false"
+				}
+			},
+			{
+				"serialNumber": "8573327509190202368",
+				"type": "2097920",
+				"name": {
+					"__cdata": "Cross-site scripting (reflected)"
+				},
+				"host": {
+					"_ip": "54.208.137.193",
+					"__text": "http://blab-a-gab.examplico.com"
+				},
+				"path": {
+					"__cdata": "/register"
+				},
+				"location": {
+					"__cdata": "/register [user parameter]"
+				},
+				"severity": "High",
+				"confidence": "Certain",
+				"issueBackground": {
+					"__cdata": "<p>Reflected cross-site scripting vulnerabilities arise when data is copied from a request and echoed into the application's immediate response in an unsafe way. An attacker can use the vulnerability to construct a request that, if issued by another application user, will cause JavaScript code supplied by the attacker to execute within the user's browser in the context of that user's session with the application.</p><p>The attacker-supplied code can perform a wide variety of actions, such as stealing the victim's session token or login credentials, performing arbitrary actions on the victim's behalf, and logging their keystrokes.</p><p>Users can be induced to issue the attacker's crafted request in various ways. For example, the attacker can send a victim a link containing a malicious URL in an email or instant message. They can submit the link to popular web sites that allow content authoring, for example in blog comments. And they can create an innocuous looking web site that causes anyone viewing it to make arbitrary cross-domain requests to the vulnerable application (using either the GET or the POST method).</p><p>The security impact of cross-site scripting vulnerabilities is dependent upon the nature of the vulnerable application, the kinds of data and functionality that it contains, and the other applications that belong to the same domain and organization. If the application is used only to display non-sensitive public content, with no authentication or access control functionality, then a cross-site scripting flaw may be considered low risk. However, if the same application resides on a domain that can access cookies for other more security-critical applications, then the vulnerability could be used to attack those other applications, and so may be considered high risk. Similarly, if the organization that owns the application is a likely target for phishing attacks, then the vulnerability could be leveraged to lend credibility to such attacks, by injecting Trojan functionality into the vulnerable application and exploiting users' trust in the organization in order to capture credentials for other applications that it owns. In many kinds of application, such as those providing online banking functionality, cross-site scripting should always be considered high risk. </p>"
+				},
+				"remediationBackground": {
+					"__cdata": "<p>In most situations where user-controllable data is copied into application responses, cross-site scripting \n  attacks can be prevented using two layers of defenses:</p><ul><li>Input should be validated as strictly as possible on arrival, given the kind of content that \nit is expected to contain. For example, personal names should consist of alphabetical \nand a small range of typographical characters, and be relatively short; a year of birth \nshould consist of exactly four numerals; email addresses should match a well-defined \nregular expression. Input which fails the validation should be rejected, not sanitized.</li><li>User input should be HTML-encoded at any point where it is copied into \napplication responses. All HTML metacharacters, including &lt; &gt; \" ' and =, should be \nreplaced with the corresponding HTML entities (&amp;lt; &amp;gt; etc).</li></ul><p>In cases where the application's functionality allows users to author content using \n  a restricted subset of HTML tags and attributes (for example, blog comments which \n  allow limited formatting and linking), it is necessary to parse the supplied HTML to \n  validate that it does not use any dangerous syntax; this is a non-trivial task.</p>"
+				},
+				"references": {
+					"__cdata": "<ul><li><a href=\"https://support.portswigger.net/customer/portal/articles/1965737-Methodology_XSS.html\">Using Burp to Find XSS issues</a></li></ul>"
+				},
+				"vulnerabilityClassifications": {
+					"__cdata": "<ul><li><a href=\"https://cwe.mitre.org/data/definitions/79.html\">CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</a></li><li><a href=\"https://cwe.mitre.org/data/definitions/80.html\">CWE-80: Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)</a></li><li><a href=\"https://cwe.mitre.org/data/definitions/116.html\">CWE-116: Improper Encoding or Escaping of Output</a></li><li><a href=\"https://cwe.mitre.org/data/definitions/159.html\">CWE-159: Failure to Sanitize Special Element</a></li></ul>"
+				},
+				"issueDetail": {
+					"__cdata": "The value of the <b>user</b> request parameter is copied into the value of an HTML tag attribute which is encapsulated in double quotation marks. The payload <b>fxge7\"&gt;&lt;script&gt;alert(1)&lt;/script&gt;j4ajt</b> was submitted in the user parameter. This input was echoed unmodified in the application's response.<br><br>This proof-of-concept attack demonstrates that it is possible to inject arbitrary JavaScript into the application's response."
+				},
+				"requestresponse": {
+					"request": {
+						"_method": "POST",
+						"_base64": "true",
+						"__cdata": "UE9TVCAvcmVnaXN0ZXIgSFRUUC8xLjENCkhvc3Q6IGJsYWItYS1nYWIuZXhhbXBsaWNvLmNvbQ0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlDQpBY2NlcHQ6ICovKg0KQWNjZXB0LUxhbmd1YWdlOiBlbg0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKGNvbXBhdGlibGU7IE1TSUUgOS4wOyBXaW5kb3dzIE5UIDYuMTsgV2luNjQ7IHg2NDsgVHJpZGVudC81LjApDQpDb25uZWN0aW9uOiBjbG9zZQ0KUmVmZXJlcjogaHR0cDovL2JsYWItYS1nYWIuZXhhbXBsaWNvLmNvbS9yZWdpc3Rlcg0KQ29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi94LXd3dy1mb3JtLXVybGVuY29kZWQNCkNvbnRlbnQtTGVuZ3RoOiA1OQ0KQ29va2llOiBKU0VTU0lPTklEPTIyMEVBMDFCRjMxRkREODVDNTYxNUY5RkExMjg1RkRBDQoNCnJldHVyblBhdGg9JlJlZ2lzdGVyPVJlZ2lzdGVyJnVzZXI9NTU1LTU1NS0wMTk5QGV4YW1wbGUuY29tZnhnZTclMjIlM2UlM2NzY3JpcHQlM2VhbGVydCgxKSUzYyUyZnNjcmlwdCUzZWo0YWp0"
+					},
+					"response": {
+						"_base64": "true",
+						"__cdata": "SFRUUC8xLjEgMjAwIA0KRGF0ZTogV2VkLCAwMSBKdWwgMjAyMCAxNzoyODozNSBHTVQNClNlcnZlcjogQXBhY2hlLzIuNC40MSAoQW1hem9uKSBPcGVuU1NMLzEuMC4yay1maXBzDQpDb250ZW50LVR5cGU6IHRleHQvaHRtbDtjaGFyc2V0PVVTLUFTQ0lJDQpDb250ZW50LUxhbmd1YWdlOiBlbg0KVmFyeTogQWNjZXB0LUVuY29kaW5nDQpDb250ZW50LUxlbmd0aDogMjc2OQ0KQ29ubmVjdGlvbjogY2xvc2UNCg0KCjwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgo8bWV0YSBjaGFyc2V0PSJ1dGYtOCI+CjxtZXRhIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9ZWRnZSI+CjxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MSI+CjxtZXRhIG5hbWU9ImRlc2NyaXB0aW9uIiBjb250ZW50PSIiPgo8bWV0YSBuYW1lPSJhdXRob3IiIGNvbnRlbnQ9IiI+CjxsaW5rIHJlbD0iaWNvbiIgaHJlZj0iLi4vLi4vZmF2aWNvbi5pY28iPgoKPHRpdGxlPlJlZ2lzdGVyIGZvciBCbGFiPC90aXRsZT4KCjwhLS0gQm9vdHN0cmFwIGNvcmUgQ1NTIC0tPgo8bGluayBocmVmPSJyZXNvdXJjZXMvY3NzL2Jvb3RzdHJhcC5taW4uY3NzIiByZWw9InN0eWxlc2hlZXQiPgo8IS0tIEJvb3RzdHJhcCB0aGVtZSAtLT4KPGxpbmsgaHJlZj0icmVzb3VyY2VzL2Nzcy9ib290c3RyYXAtdGhlbWUubWluLmNzcyIgcmVsPSJzdHlsZXNoZWV0Ij4KCjwhLS0gQ3VzdG9tIHN0eWxlcyBmb3IgdGhpcyB0ZW1wbGF0ZSAtLT4KPGxpbmsgaHJlZj0icmVzb3VyY2VzL2Nzcy9wd20uY3NzIiByZWw9InN0eWxlc2hlZXQiPgoKPCEtLSBIVE1MNSBzaGltIGFuZCBSZXNwb25kLmpzIGZvciBJRTggc3VwcG9ydCBvZiBIVE1MNSBlbGVtZW50cyBhbmQgbWVkaWEgcXVlcmllcyAtLT4KPCEtLVtpZiBsdCBJRSA5XT4KICAgICAgPHNjcmlwdCBzcmM9Imh0dHBzOi8vb3NzLm1heGNkbi5jb20vaHRtbDVzaGl2LzMuNy4yL2h0bWw1c2hpdi5taW4uanMiPjwvc2NyaXB0PgogICAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9vc3MubWF4Y2RuLmNvbS9yZXNwb25kLzEuNC4yL3Jlc3BvbmQubWluLmpzIj48L3NjcmlwdD4KICAgIDwhW2VuZGlmXS0tPgo8L2hlYWQ+Cgo8Ym9keSByb2xlPSJkb2N1bWVudCI+CgoJPGRpdiBjbGFzcz0iY29udGFpbmVyIj4KCgkJPGRpdiBjbGFzcz0iaGVhZGVyIGNsZWFyZml4Ij4KCQkJPG5hdj4KCQkJCTx1bCBjbGFzcz0ibmF2IG5hdi1waWxscyBwdWxsLXJpZ2h0Ij4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJyZXNldCI+UmVzZXQ8L2E+PC9saT4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJsb2dpbiI+TG9naW48L2E+PC9saT4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJyZWdpc3RlciIgY2xhc3M9ImFjdGl2ZSI+UmVnaXN0ZXI8L2E+PC9saT4KCQkJCTwvdWw+CgkJCTwvbmF2PgoJCQk8aW1nIHNyYz0icmVzb3VyY2VzL2ltYWdlcy9Ub2t5b3NoaXBfVGFsa19pY29uLnN2ZyIgaGVpZ2h0PSIxMDAiCgkJCQl3aWR0aD0iMTAwIj4KCQk8L2Rpdj4KCgoJPC9kaXY+CgoJPGRpdiBjbGFzcz0iY29udGFpbmVyIHRoZW1lLXNob3djYXNlIiByb2xlPSJtYWluIj4KCgkJPGRpdiBjbGFzcz0icGFnZS1oZWFkZXIiPgoJCQk8aDM+UmVnaXN0ZXI8L2gzPgoJCTwvZGl2PgoKCQkKCgkJPGRpdiBjbGFzcz0icm93Ij4KCQkJPGRpdiBjbGFzcz0iY29sLW1kLTEyIj4KCgkJCQk8ZGl2IGNsYXNzPSJwYW5lbCBwYW5lbC1kZWZhdWx0Ij4KCQkJCQk8ZGl2IGNsYXNzPSJwYW5lbC1oZWFkaW5nIj4KCQkJCQkJPGgzIGNsYXNzPSJwYW5lbC10aXRsZSI+UGxlYXNlIHByb3ZpZGUgeW91ciB1c2VyIGluZm9ybWF0aW9uCgkJCQkJCQl0byByZWdpc3RlciBmb3IgQmxhYjwvaDM+CgkJCQkJPC9kaXY+CgkJCQkJCgkJCQkJPGRpdiBjbGFzcz0icGFuZWwtYm9keSI+CgkJCQkJCTxmb3JtIG1ldGhvZD0iUE9TVCIgYWN0aW9uPSJyZWdpc3RlciI+CgkJCQkJCQk8aW5wdXQgdHlwZT0iaGlkZGVuIiBuYW1lPSJyZXR1cm5QYXRoIiB2YWx1ZT0iIj4KCQkJCQkJCTx0YWJsZSBjbGFzcz0idGFibGUgdGFibGUtY29uZGVuc2VkIj4KCQkJCQkJCQk8dGJvZHk+CgkJCQkJCQkJCTx0cj4KCQkJCQkJCQkJCTx0ZD5Vc2VybmFtZTwvdGQ+CgkJCQkJCQkJCQk8dGQ+PGRpdiBjbGFzcz0iZm9ybS1ncm91cCI+CgkJCQkJCQkJCQkJCTxpbnB1dCB0eXBlPSJ0ZXh0IiBjbGFzcz0iZm9ybS1jb250cm9sIiBuYW1lPSJ1c2VyIiB2YWx1ZT0iNTU1LTU1NS0wMTk5QGV4YW1wbGUuY29tZnhnZTciPjxzY3JpcHQ+YWxlcnQoMSk8L3NjcmlwdD5qNGFqdCI+CgkJCQkJCQkJCQkJPC9kaXY+PC90ZD4KCQkJCQkJCQkJPC90cj4KCQkJCQkJCQkJPHRyPgoJCQkJCQkJCQkJPHRkPjxidXR0b24gdHlwZT0ic3VibWl0IiBjbGFzcz0iYnRuIGJ0bi1wcmltYXJ5IgoJCQkJCQkJCQkJCQlpZD0ibG9naW4iIG5hbWU9IlJlZ2lzdGVyIiB2YWx1ZT0iUmVnaXN0ZXIiPlJlZ2lzdGVyPC9idXR0b24+PC90ZD4KCQkJCQkJCQkJCTx0ZD48L3RkPgoJCQkJCQkJCQk8L3RyPgoJCQkJCQkJCTwvdGJvZHk+CgkJCQkJCQk8L3RhYmxlPgoJCQkJCQk8L2Zvcm0+CgkJCQkJPC9kaXY+CgkJCQk8L2Rpdj4KCQkJPC9kaXY+CgkJPC9kaXY+Cgk8L2Rpdj4KCTwhLS0gL2NvbnRhaW5lciAtLT4KCgk8IS0tIEJvb3RzdHJhcCBjb3JlIEphdmFTY3JpcHQKICAgID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09IC0tPgoJPCEtLSBQbGFjZWQgYXQgdGhlIGVuZCBvZiB0aGUgZG9jdW1lbnQgc28gdGhlIHBhZ2VzIGxvYWQgZmFzdGVyIC0tPgoJPHNjcmlwdCBzcmM9InJlc291cmNlcy9qcy9qcXVlcnktMS4xMS4yLm1pbi5qcyI+PC9zY3JpcHQ+Cgk8c2NyaXB0IHNyYz0icmVzb3VyY2VzL2pzL2Jvb3RzdHJhcC5taW4uanMiPjwvc2NyaXB0Pgo8L2JvZHk+CjwvaHRtbD4K"
+					},
+					"responseRedirected": "false"
+				}
+			},
+			{
+				"serialNumber": "3328385850575006720",
+				"type": "4197376",
+				"name": {
+					"__cdata": "Input returned in response (reflected)"
+				},
+				"host": {
+					"_ip": "54.208.137.193",
+					"__text": "http://blab-a-gab.examplico.com"
+				},
+				"path": {
+					"__cdata": "/register"
+				},
+				"location": {
+					"__cdata": "/register [user parameter]"
+				},
+				"severity": "Information",
+				"confidence": "Certain",
+				"issueBackground": {
+					"__cdata": "<p>Reflection of input arises when data is copied from a request and echoed into the application's immediate response.</p><p>Input being returned in application responses is not a vulnerability in its own right. However, it is a prerequisite for many client-side vulnerabilities, including cross-site scripting, open redirection, content spoofing, and response header injection. Additionally, some server-side vulnerabilities such as SQL injection are often easier to identify and exploit when input is returned in responses. In applications where input retrieval is rare and the environment is resistant to automated testing (for example, due to a web application firewall), it might be worth subjecting instances of it to focused manual testing. </p>"
+				},
+				"vulnerabilityClassifications": {
+					"__cdata": "<ul><li><a href=\"https://cwe.mitre.org/data/definitions/20.html\">CWE-20: Improper Input Validation</a></li><li><a href=\"https://cwe.mitre.org/data/definitions/116.html\">CWE-116: Improper Encoding or Escaping of Output</a></li></ul>"
+				},
+				"issueDetail": {
+					"__cdata": "The value of the <b>user</b> request parameter is copied into the application's response."
+				},
+				"requestresponse": {
+					"request": {
+						"_method": "POST",
+						"_base64": "true",
+						"__cdata": "UE9TVCAvcmVnaXN0ZXIgSFRUUC8xLjENCkhvc3Q6IGJsYWItYS1nYWIuZXhhbXBsaWNvLmNvbQ0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlDQpBY2NlcHQ6ICovKg0KQWNjZXB0LUxhbmd1YWdlOiBlbg0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKGNvbXBhdGlibGU7IE1TSUUgOS4wOyBXaW5kb3dzIE5UIDYuMTsgV2luNjQ7IHg2NDsgVHJpZGVudC81LjApDQpDb25uZWN0aW9uOiBjbG9zZQ0KUmVmZXJlcjogaHR0cDovL2JsYWItYS1nYWIuZXhhbXBsaWNvLmNvbS9yZWdpc3Rlcg0KQ29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi94LXd3dy1mb3JtLXVybGVuY29kZWQNCkNvbnRlbnQtTGVuZ3RoOiA1OQ0KQ29va2llOiBKU0VTU0lPTklEPTIyMEVBMDFCRjMxRkREODVDNTYxNUY5RkExMjg1RkRBDQoNCnJldHVyblBhdGg9JlJlZ2lzdGVyPVJlZ2lzdGVyJnVzZXI9NTU1LTU1NS0wMTk5QGV4YW1wbGUuY29tMTRscWZob3NuMg=="
+					},
+					"response": {
+						"_base64": "true",
+						"__cdata": "SFRUUC8xLjEgMjAwIA0KRGF0ZTogV2VkLCAwMSBKdWwgMjAyMCAxNzoyODoxMSBHTVQNClNlcnZlcjogQXBhY2hlLzIuNC40MSAoQW1hem9uKSBPcGVuU1NMLzEuMC4yay1maXBzDQpDb250ZW50LVR5cGU6IHRleHQvaHRtbDtjaGFyc2V0PVVTLUFTQ0lJDQpDb250ZW50LUxhbmd1YWdlOiBlbg0KVmFyeTogQWNjZXB0LUVuY29kaW5nDQpDb250ZW50LUxlbmd0aDogMjc0Mg0KQ29ubmVjdGlvbjogY2xvc2UNCg0KCjwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgo8bWV0YSBjaGFyc2V0PSJ1dGYtOCI+CjxtZXRhIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9ZWRnZSI+CjxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MSI+CjxtZXRhIG5hbWU9ImRlc2NyaXB0aW9uIiBjb250ZW50PSIiPgo8bWV0YSBuYW1lPSJhdXRob3IiIGNvbnRlbnQ9IiI+CjxsaW5rIHJlbD0iaWNvbiIgaHJlZj0iLi4vLi4vZmF2aWNvbi5pY28iPgoKPHRpdGxlPlJlZ2lzdGVyIGZvciBCbGFiPC90aXRsZT4KCjwhLS0gQm9vdHN0cmFwIGNvcmUgQ1NTIC0tPgo8bGluayBocmVmPSJyZXNvdXJjZXMvY3NzL2Jvb3RzdHJhcC5taW4uY3NzIiByZWw9InN0eWxlc2hlZXQiPgo8IS0tIEJvb3RzdHJhcCB0aGVtZSAtLT4KPGxpbmsgaHJlZj0icmVzb3VyY2VzL2Nzcy9ib290c3RyYXAtdGhlbWUubWluLmNzcyIgcmVsPSJzdHlsZXNoZWV0Ij4KCjwhLS0gQ3VzdG9tIHN0eWxlcyBmb3IgdGhpcyB0ZW1wbGF0ZSAtLT4KPGxpbmsgaHJlZj0icmVzb3VyY2VzL2Nzcy9wd20uY3NzIiByZWw9InN0eWxlc2hlZXQiPgoKPCEtLSBIVE1MNSBzaGltIGFuZCBSZXNwb25kLmpzIGZvciBJRTggc3VwcG9ydCBvZiBIVE1MNSBlbGVtZW50cyBhbmQgbWVkaWEgcXVlcmllcyAtLT4KPCEtLVtpZiBsdCBJRSA5XT4KICAgICAgPHNjcmlwdCBzcmM9Imh0dHBzOi8vb3NzLm1heGNkbi5jb20vaHRtbDVzaGl2LzMuNy4yL2h0bWw1c2hpdi5taW4uanMiPjwvc2NyaXB0PgogICAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9vc3MubWF4Y2RuLmNvbS9yZXNwb25kLzEuNC4yL3Jlc3BvbmQubWluLmpzIj48L3NjcmlwdD4KICAgIDwhW2VuZGlmXS0tPgo8L2hlYWQ+Cgo8Ym9keSByb2xlPSJkb2N1bWVudCI+CgoJPGRpdiBjbGFzcz0iY29udGFpbmVyIj4KCgkJPGRpdiBjbGFzcz0iaGVhZGVyIGNsZWFyZml4Ij4KCQkJPG5hdj4KCQkJCTx1bCBjbGFzcz0ibmF2IG5hdi1waWxscyBwdWxsLXJpZ2h0Ij4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJyZXNldCI+UmVzZXQ8L2E+PC9saT4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJsb2dpbiI+TG9naW48L2E+PC9saT4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJyZWdpc3RlciIgY2xhc3M9ImFjdGl2ZSI+UmVnaXN0ZXI8L2E+PC9saT4KCQkJCTwvdWw+CgkJCTwvbmF2PgoJCQk8aW1nIHNyYz0icmVzb3VyY2VzL2ltYWdlcy9Ub2t5b3NoaXBfVGFsa19pY29uLnN2ZyIgaGVpZ2h0PSIxMDAiCgkJCQl3aWR0aD0iMTAwIj4KCQk8L2Rpdj4KCgoJPC9kaXY+CgoJPGRpdiBjbGFzcz0iY29udGFpbmVyIHRoZW1lLXNob3djYXNlIiByb2xlPSJtYWluIj4KCgkJPGRpdiBjbGFzcz0icGFnZS1oZWFkZXIiPgoJCQk8aDM+UmVnaXN0ZXI8L2gzPgoJCTwvZGl2PgoKCQkKCgkJPGRpdiBjbGFzcz0icm93Ij4KCQkJPGRpdiBjbGFzcz0iY29sLW1kLTEyIj4KCgkJCQk8ZGl2IGNsYXNzPSJwYW5lbCBwYW5lbC1kZWZhdWx0Ij4KCQkJCQk8ZGl2IGNsYXNzPSJwYW5lbC1oZWFkaW5nIj4KCQkJCQkJPGgzIGNsYXNzPSJwYW5lbC10aXRsZSI+UGxlYXNlIHByb3ZpZGUgeW91ciB1c2VyIGluZm9ybWF0aW9uCgkJCQkJCQl0byByZWdpc3RlciBmb3IgQmxhYjwvaDM+CgkJCQkJPC9kaXY+CgkJCQkJCgkJCQkJPGRpdiBjbGFzcz0icGFuZWwtYm9keSI+CgkJCQkJCTxmb3JtIG1ldGhvZD0iUE9TVCIgYWN0aW9uPSJyZWdpc3RlciI+CgkJCQkJCQk8aW5wdXQgdHlwZT0iaGlkZGVuIiBuYW1lPSJyZXR1cm5QYXRoIiB2YWx1ZT0iIj4KCQkJCQkJCTx0YWJsZSBjbGFzcz0idGFibGUgdGFibGUtY29uZGVuc2VkIj4KCQkJCQkJCQk8dGJvZHk+CgkJCQkJCQkJCTx0cj4KCQkJCQkJCQkJCTx0ZD5Vc2VybmFtZTwvdGQ+CgkJCQkJCQkJCQk8dGQ+PGRpdiBjbGFzcz0iZm9ybS1ncm91cCI+CgkJCQkJCQkJCQkJCTxpbnB1dCB0eXBlPSJ0ZXh0IiBjbGFzcz0iZm9ybS1jb250cm9sIiBuYW1lPSJ1c2VyIiB2YWx1ZT0iNTU1LTU1NS0wMTk5QGV4YW1wbGUuY29tMTRscWZob3NuMiI+CgkJCQkJCQkJCQkJPC9kaXY+PC90ZD4KCQkJCQkJCQkJPC90cj4KCQkJCQkJCQkJPHRyPgoJCQkJCQkJCQkJPHRkPjxidXR0b24gdHlwZT0ic3VibWl0IiBjbGFzcz0iYnRuIGJ0bi1wcmltYXJ5IgoJCQkJCQkJCQkJCQlpZD0ibG9naW4iIG5hbWU9IlJlZ2lzdGVyIiB2YWx1ZT0iUmVnaXN0ZXIiPlJlZ2lzdGVyPC9idXR0b24+PC90ZD4KCQkJCQkJCQkJCTx0ZD48L3RkPgoJCQkJCQkJCQk8L3RyPgoJCQkJCQkJCTwvdGJvZHk+CgkJCQkJCQk8L3RhYmxlPgoJCQkJCQk8L2Zvcm0+CgkJCQkJPC9kaXY+CgkJCQk8L2Rpdj4KCQkJPC9kaXY+CgkJPC9kaXY+Cgk8L2Rpdj4KCTwhLS0gL2NvbnRhaW5lciAtLT4KCgk8IS0tIEJvb3RzdHJhcCBjb3JlIEphdmFTY3JpcHQKICAgID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09IC0tPgoJPCEtLSBQbGFjZWQgYXQgdGhlIGVuZCBvZiB0aGUgZG9jdW1lbnQgc28gdGhlIHBhZ2VzIGxvYWQgZmFzdGVyIC0tPgoJPHNjcmlwdCBzcmM9InJlc291cmNlcy9qcy9qcXVlcnktMS4xMS4yLm1pbi5qcyI+PC9zY3JpcHQ+Cgk8c2NyaXB0IHNyYz0icmVzb3VyY2VzL2pzL2Jvb3RzdHJhcC5taW4uanMiPjwvc2NyaXB0Pgo8L2JvZHk+CjwvaHRtbD4K"
+					},
+					"responseRedirected": "false"
+				}
+			},
+			{
+				"serialNumber": "5259095745982204928",
+				"type": "5245344",
+				"name": {
+					"__cdata": "Frameable response (potential Clickjacking)"
+				},
+				"host": {
+					"_ip": "54.208.137.193",
+					"__text": "http://blab-a-gab.examplico.com"
+				},
+				"path": {
+					"__cdata": "/register-finish"
+				},
+				"location": {
+					"__cdata": "/register-finish"
+				},
+				"severity": "Information",
+				"confidence": "Firm",
+				"issueBackground": {
+					"__cdata": "<p>If a page fails to set an appropriate X-Frame-Options or Content-Security-Policy HTTP header, it might be possible for a page controlled by an attacker to load it within an iframe. This may enable a clickjacking attack, in which the attacker's page overlays the target application's interface with a different interface provided by the attacker. By inducing victim users to perform actions such as mouse clicks and keystrokes, the attacker can cause them to unwittingly carry out actions within the application that is being targeted. This technique allows the attacker to circumvent defenses against cross-site request forgery, and may result in unauthorized actions.</p><p>Note that some applications attempt to prevent these attacks from within the HTML page itself, using \"framebusting\" code. However, this type of defense is normally ineffective and can usually be circumvented by a skilled attacker.</p><p>You should determine whether any functions accessible within frameable pages can be used by application users to perform any sensitive actions within the application. </p>"
+				},
+				"remediationBackground": {
+					"__cdata": "<p>To effectively prevent framing attacks, the application should return a response header with the name <b>X-Frame-Options</b> and the value <b>DENY</b> to prevent framing altogether, or the value <b>SAMEORIGIN</b> to allow framing only by pages on the same origin as the response itself. Note that the SAMEORIGIN header can be partially bypassed if the application itself can be made to frame untrusted websites.</p>"
+				},
+				"references": {
+					"__cdata": "<ul><li><a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/X-Frame-Options\">X-Frame-Options</a></li></ul>"
+				},
+				"vulnerabilityClassifications": {
+					"__cdata": "<ul><li><a href=\"https://cwe.mitre.org/data/definitions/693.html\">CWE-693: Protection Mechanism Failure</a></li></ul>"
+				},
+				"requestresponse": {
+					"request": {
+						"_method": "GET",
+						"_base64": "true",
+						"__cdata": "R0VUIC9yZWdpc3Rlci1maW5pc2ggSFRUUC8xLjENCkhvc3Q6IGJsYWItYS1nYWIuZXhhbXBsaWNvLmNvbQ0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlDQpBY2NlcHQ6ICovKg0KQWNjZXB0LUxhbmd1YWdlOiBlbg0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKGNvbXBhdGlibGU7IE1TSUUgOS4wOyBXaW5kb3dzIE5UIDYuMTsgV2luNjQ7IHg2NDsgVHJpZGVudC81LjApDQpDb25uZWN0aW9uOiBjbG9zZQ0KQ29va2llOiBKU0VTU0lPTklEPTIyMEVBMDFCRjMxRkREODVDNTYxNUY5RkExMjg1RkRBDQoNCg=="
+					},
+					"response": {
+						"_base64": "true",
+						"__cdata": "SFRUUC8xLjEgMjAwIA0KRGF0ZTogV2VkLCAwMSBKdWwgMjAyMCAxNzoyOToxNyBHTVQNClNlcnZlcjogQXBhY2hlLzIuNC40MSAoQW1hem9uKSBPcGVuU1NMLzEuMC4yay1maXBzDQpDb250ZW50LVR5cGU6IHRleHQvaHRtbDtjaGFyc2V0PVVTLUFTQ0lJDQpDb250ZW50LUxhbmd1YWdlOiBlbg0KVmFyeTogQWNjZXB0LUVuY29kaW5nDQpDb250ZW50LUxlbmd0aDogMzU3NQ0KQ29ubmVjdGlvbjogY2xvc2UNCg0KCjwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgo8bWV0YSBjaGFyc2V0PSJ1dGYtOCI+CjxtZXRhIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9ZWRnZSI+CjxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MSI+CjxtZXRhIG5hbWU9ImRlc2NyaXB0aW9uIiBjb250ZW50PSIiPgo8bWV0YSBuYW1lPSJhdXRob3IiIGNvbnRlbnQ9IiI+CjxsaW5rIHJlbD0iaWNvbiIgaHJlZj0iLi4vLi4vZmF2aWNvbi5pY28iPgoKPHRpdGxlPlJlZ2lzdGVyIGZvciBCbGFiPC90aXRsZT4KCjwhLS0gQm9vdHN0cmFwIGNvcmUgQ1NTIC0tPgo8bGluayBocmVmPSJyZXNvdXJjZXMvY3NzL2Jvb3RzdHJhcC5taW4uY3NzIiByZWw9InN0eWxlc2hlZXQiPgo8IS0tIEJvb3RzdHJhcCB0aGVtZSAtLT4KPGxpbmsgaHJlZj0icmVzb3VyY2VzL2Nzcy9ib290c3RyYXAtdGhlbWUubWluLmNzcyIgcmVsPSJzdHlsZXNoZWV0Ij4KCjwhLS0gQ3VzdG9tIHN0eWxlcyBmb3IgdGhpcyB0ZW1wbGF0ZSAtLT4KPGxpbmsgaHJlZj0icmVzb3VyY2VzL2Nzcy9wd20uY3NzIiByZWw9InN0eWxlc2hlZXQiPgoKPCEtLSBIVE1MNSBzaGltIGFuZCBSZXNwb25kLmpzIGZvciBJRTggc3VwcG9ydCBvZiBIVE1MNSBlbGVtZW50cyBhbmQgbWVkaWEgcXVlcmllcyAtLT4KPCEtLVtpZiBsdCBJRSA5XT4KICAgICAgPHNjcmlwdCBzcmM9Imh0dHBzOi8vb3NzLm1heGNkbi5jb20vaHRtbDVzaGl2LzMuNy4yL2h0bWw1c2hpdi5taW4uanMiPjwvc2NyaXB0PgogICAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9vc3MubWF4Y2RuLmNvbS9yZXNwb25kLzEuNC4yL3Jlc3BvbmQubWluLmpzIj48L3NjcmlwdD4KICAgIDwhW2VuZGlmXS0tPgo8L2hlYWQ+Cgo8Ym9keSByb2xlPSJkb2N1bWVudCI+CgoJPGRpdiBjbGFzcz0iY29udGFpbmVyIj4KCgkJPGRpdiBjbGFzcz0iaGVhZGVyIGNsZWFyZml4Ij4KCQkJPG5hdj4KCQkJCTx1bCBjbGFzcz0ibmF2IG5hdi1waWxscyBwdWxsLXJpZ2h0Ij4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJyZXNldCI+UmVzZXQ8L2E+PC9saT4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJsb2dpbiI+TG9naW48L2E+PC9saT4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJyZWdpc3RlciIgY2xhc3M9ImFjdGl2ZSI+UmVnaXN0ZXI8L2E+PC9saT4KCQkJCTwvdWw+CgkJCTwvbmF2PgoJCQk8aW1nIHNyYz0icmVzb3VyY2VzL2ltYWdlcy9Ub2t5b3NoaXBfVGFsa19pY29uLnN2ZyIgaGVpZ2h0PSIxMDAiCgkJCQl3aWR0aD0iMTAwIj4KCQk8L2Rpdj4KCgoJPC9kaXY+CgoJPGRpdiBjbGFzcz0iY29udGFpbmVyIHRoZW1lLXNob3djYXNlIiByb2xlPSJtYWluIj4KCgkJPGRpdiBjbGFzcz0icGFnZS1oZWFkZXIiPgoJCQk8aDM+UmVnaXN0ZXI8L2gzPgoJCTwvZGl2PgoKCQkKCgkJPGRpdiBjbGFzcz0icm93Ij4KCQkJPGRpdiBjbGFzcz0iY29sLW1kLTEyIj4KCgkJCQk8ZGl2IGNsYXNzPSJwYW5lbCBwYW5lbC1kZWZhdWx0Ij4KCQkJCQk8ZGl2IGNsYXNzPSJwYW5lbC1oZWFkaW5nIj4KCQkJCQkJPGgzIGNsYXNzPSJwYW5lbC10aXRsZSI+UGxlYXNlIHByb3ZpZGUgeW91ciB1c2VyIGluZm9ybWF0aW9uCgkJCQkJCQl0byByZWdpc3RlciBmb3IgQmxhYjwvaDM+CgkJCQkJPC9kaXY+CgkJCQkJPGRpdiBjbGFzcz0icGFuZWwtYm9keSI+CgkJCQkJCTxmb3JtIG1ldGhvZD0iUE9TVCIgYWN0aW9uPSJyZWdpc3Rlci1maW5pc2giPgoJCQkJCQkJPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0icmV0dXJuUGF0aCIgdmFsdWU9IiI+CgkJCQkJCQk8dGFibGUgY2xhc3M9InRhYmxlIHRhYmxlLWNvbmRlbnNlZCI+CgkJCQkJCQkJPHRib2R5PgoJCQkJCQkJCQkJCQkJCQkJCQk8dHI+CgkJCQkJCQkJCQk8dGQ+VXNlcm5hbWU8L3RkPgoJCQkJCQkJCQkJPHRkPjxkaXYgY2xhc3M9ImZvcm0tZ3JvdXAiPgoJCQkJCQkJCQkJCQl5bnAxaGhuNTVzN2xjcDNwYjR3ZWt2dXZkbWpkZTE2d3VvaGc1NUBidXJwY29sbGFib3JhdG9yLm5ldAoJCQkJCQkJCQkJCTwvZGl2PjwvdGQ+CgkJCQkJCQkJCTwvdHI+CgkJCQkJCQkJCTx0cj4KCQkJCQkJCQkJCTx0ZD5QYXNzd29yZDwvdGQ+CgkJCQkJCQkJCQk8dGQ+PGRpdiBjbGFzcz0iZm9ybS1ncm91cCI+CgkJCQkJCQkJCQkJCTxpbnB1dCB0eXBlPSJwYXNzd29yZCIgY2xhc3M9ImZvcm0tY29udHJvbCIgbmFtZT0icGFzc3dvcmQiCgkJCQkJCQkJCQkJCQl2YWx1ZT0iIj4KCQkJCQkJCQkJCQk8L2Rpdj48L3RkPgoJCQkJCQkJCQk8L3RyPgoJCQkJCQkJCQk8dHI+CgkJCQkJCQkJCQk8dGQ+Q29uZmlybSBQYXNzd29yZDwvdGQ+CgkJCQkJCQkJCQk8dGQ+PGRpdiBjbGFzcz0iZm9ybS1ncm91cCI+CgkJCQkJCQkJCQkJCTxpbnB1dCB0eXBlPSJwYXNzd29yZCIgY2xhc3M9ImZvcm0tY29udHJvbCIgbmFtZT0iY3Bhc3N3b3JkIgoJCQkJCQkJCQkJCQkJdmFsdWU9IiI+CgkJCQkJCQkJCQkJPC9kaXY+PC90ZD4KCQkJCQkJCQkJPC90cj4KCQkJCQkJCQkJPHRyPgoJCQkJCQkJCQkJPHRkPlJlYWwgTmFtZTwvdGQ+CgkJCQkJCQkJCQk8dGQ+PGRpdiBjbGFzcz0iZm9ybS1ncm91cCI+CgkJCQkJCQkJCQkJCTxpbnB1dCB0eXBlPSJ0ZXh0IiBjbGFzcz0iZm9ybS1jb250cm9sIiBuYW1lPSJyZWFsTmFtZSIKCQkJCQkJCQkJCQkJCXZhbHVlPSIiPgoJCQkJCQkJCQkJCTwvZGl2PjwvdGQ+CgkJCQkJCQkJCTwvdHI+CgkJCQkJCQkJCTx0cj4KCQkJCQkJCQkJCTx0ZD5CbGFiIE5hbWU8L3RkPgoJCQkJCQkJCQkJPHRkPjxkaXYgY2xhc3M9ImZvcm0tZ3JvdXAiPgoJCQkJCQkJCQkJCQk8aW5wdXQgdHlwZT0idGV4dCIgY2xhc3M9ImZvcm0tY29udHJvbCIgbmFtZT0iYmxhYk5hbWUiCgkJCQkJCQkJCQkJCQl2YWx1ZT0iIj4KCQkJCQkJCQkJCQk8L2Rpdj48L3RkPgoJCQkJCQkJCQk8L3RyPgoJCQkJCQkJCQk8dHI+CgkJCQkJCQkJCQk8dGQ+PGJ1dHRvbiB0eXBlPSJzdWJtaXQiIGNsYXNzPSJidG4gYnRuLXByaW1hcnkiCgkJCQkJCQkJCQkJCWlkPSJsb2dpbiIgbmFtZT0iUmVnaXN0ZXIiIHZhbHVlPSJSZWdpc3RlciI+UmVnaXN0ZXI8L2J1dHRvbj48L3RkPgoJCQkJCQkJCQkJPHRkPjwvdGQ+CgkJCQkJCQkJCTwvdHI+CgkJCQkJCQkJPC90Ym9keT4KCQkJCQkJCTwvdGFibGU+CgkJCQkJCTwvZm9ybT4KCQkJCQk8L2Rpdj4KCQkJCTwvZGl2PgoJCQk8L2Rpdj4KCQk8L2Rpdj4KCTwvZGl2PgoJPCEtLSAvY29udGFpbmVyIC0tPgoKCTwhLS0gQm9vdHN0cmFwIGNvcmUgSmF2YVNjcmlwdAogICAgPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0gLS0+Cgk8IS0tIFBsYWNlZCBhdCB0aGUgZW5kIG9mIHRoZSBkb2N1bWVudCBzbyB0aGUgcGFnZXMgbG9hZCBmYXN0ZXIgLS0+Cgk8c2NyaXB0IHNyYz0icmVzb3VyY2VzL2pzL2pxdWVyeS0xLjExLjIubWluLmpzIj48L3NjcmlwdD4KCTxzY3JpcHQgc3JjPSJyZXNvdXJjZXMvanMvYm9vdHN0cmFwLm1pbi5qcyI+PC9zY3JpcHQ+CjwvYm9keT4KPC9odG1sPgo="
+					},
+					"responseRedirected": "false"
+				}
+			},
+			{
+				"serialNumber": "4879063414428938240",
+				"type": "3145984",
+				"name": {
+					"__cdata": "Cleartext submission of password"
+				},
+				"host": {
+					"_ip": "54.208.137.193",
+					"__text": "http://blab-a-gab.examplico.com"
+				},
+				"path": {
+					"__cdata": "/register-finish"
+				},
+				"location": {
+					"__cdata": "/register-finish"
+				},
+				"severity": "High",
+				"confidence": "Certain",
+				"issueBackground": {
+					"__cdata": "<p>Some applications transmit passwords over unencrypted connections, making them vulnerable to interception. To exploit this vulnerability, an attacker must be suitably positioned to eavesdrop on the victim's network traffic. This scenario typically occurs when a client communicates with the server over an insecure connection such as public Wi-Fi, or a corporate or home network that is shared with a compromised computer. Common defenses such as switched networks are not sufficient to prevent this. An attacker situated in the user's ISP or the application's hosting infrastructure could also perform this attack. Note that an advanced adversary could potentially target any connection made over the Internet's core infrastructure.</p><p>Vulnerabilities that result in the disclosure of users' passwords can result in compromises that are extremely difficult to investigate due to obscured audit trails. Even if the application itself only handles non-sensitive information, exposing passwords puts users who have re-used their password elsewhere at risk.</p>"
+				},
+				"remediationBackground": {
+					"__cdata": "<p>Applications should use transport-level encryption (SSL or TLS) to protect all sensitive communications passing between the client and the server. Communications that should be protected include the login mechanism and related functionality, and any functions where sensitive data can be accessed or privileged actions can be performed. These areas should employ their own session handling mechanism, and the session tokens used should never be transmitted over unencrypted communications. If HTTP cookies are used for transmitting session tokens, then the secure flag should be set to prevent transmission over clear-text HTTP.</p>"
+				},
+				"vulnerabilityClassifications": {
+					"__cdata": "<ul><li><a href=\"https://cwe.mitre.org/data/definitions/319.html\">CWE-319: Cleartext Transmission of Sensitive Information</a></li></ul>"
+				},
+				"issueDetail": {
+					"__cdata": "The page contains a form with the following action URL, which is submitted over clear-text HTTP:<ul><li>http://blab-a-gab.examplico.com/register-finish</li></ul>The form contains the following password fields:<ul><li>password</li><li>cpassword</li></ul>"
+				},
+				"requestresponse": {
+					"request": {
+						"_method": "GET",
+						"_base64": "true",
+						"__cdata": "R0VUIC9yZWdpc3Rlci1maW5pc2ggSFRUUC8xLjENCkhvc3Q6IGJsYWItYS1nYWIuZXhhbXBsaWNvLmNvbQ0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlDQpBY2NlcHQ6ICovKg0KQWNjZXB0LUxhbmd1YWdlOiBlbg0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKGNvbXBhdGlibGU7IE1TSUUgOS4wOyBXaW5kb3dzIE5UIDYuMTsgV2luNjQ7IHg2NDsgVHJpZGVudC81LjApDQpDb25uZWN0aW9uOiBjbG9zZQ0KQ29va2llOiBKU0VTU0lPTklEPTIyMEVBMDFCRjMxRkREODVDNTYxNUY5RkExMjg1RkRBDQoNCg=="
+					},
+					"response": {
+						"_base64": "true",
+						"__cdata": "SFRUUC8xLjEgMjAwIA0KRGF0ZTogV2VkLCAwMSBKdWwgMjAyMCAxNzoyOToxNyBHTVQNClNlcnZlcjogQXBhY2hlLzIuNC40MSAoQW1hem9uKSBPcGVuU1NMLzEuMC4yay1maXBzDQpDb250ZW50LVR5cGU6IHRleHQvaHRtbDtjaGFyc2V0PVVTLUFTQ0lJDQpDb250ZW50LUxhbmd1YWdlOiBlbg0KVmFyeTogQWNjZXB0LUVuY29kaW5nDQpDb250ZW50LUxlbmd0aDogMzU3NQ0KQ29ubmVjdGlvbjogY2xvc2UNCg0KCjwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgo8bWV0YSBjaGFyc2V0PSJ1dGYtOCI+CjxtZXRhIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9ZWRnZSI+CjxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MSI+CjxtZXRhIG5hbWU9ImRlc2NyaXB0aW9uIiBjb250ZW50PSIiPgo8bWV0YSBuYW1lPSJhdXRob3IiIGNvbnRlbnQ9IiI+CjxsaW5rIHJlbD0iaWNvbiIgaHJlZj0iLi4vLi4vZmF2aWNvbi5pY28iPgoKPHRpdGxlPlJlZ2lzdGVyIGZvciBCbGFiPC90aXRsZT4KCjwhLS0gQm9vdHN0cmFwIGNvcmUgQ1NTIC0tPgo8bGluayBocmVmPSJyZXNvdXJjZXMvY3NzL2Jvb3RzdHJhcC5taW4uY3NzIiByZWw9InN0eWxlc2hlZXQiPgo8IS0tIEJvb3RzdHJhcCB0aGVtZSAtLT4KPGxpbmsgaHJlZj0icmVzb3VyY2VzL2Nzcy9ib290c3RyYXAtdGhlbWUubWluLmNzcyIgcmVsPSJzdHlsZXNoZWV0Ij4KCjwhLS0gQ3VzdG9tIHN0eWxlcyBmb3IgdGhpcyB0ZW1wbGF0ZSAtLT4KPGxpbmsgaHJlZj0icmVzb3VyY2VzL2Nzcy9wd20uY3NzIiByZWw9InN0eWxlc2hlZXQiPgoKPCEtLSBIVE1MNSBzaGltIGFuZCBSZXNwb25kLmpzIGZvciBJRTggc3VwcG9ydCBvZiBIVE1MNSBlbGVtZW50cyBhbmQgbWVkaWEgcXVlcmllcyAtLT4KPCEtLVtpZiBsdCBJRSA5XT4KICAgICAgPHNjcmlwdCBzcmM9Imh0dHBzOi8vb3NzLm1heGNkbi5jb20vaHRtbDVzaGl2LzMuNy4yL2h0bWw1c2hpdi5taW4uanMiPjwvc2NyaXB0PgogICAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9vc3MubWF4Y2RuLmNvbS9yZXNwb25kLzEuNC4yL3Jlc3BvbmQubWluLmpzIj48L3NjcmlwdD4KICAgIDwhW2VuZGlmXS0tPgo8L2hlYWQ+Cgo8Ym9keSByb2xlPSJkb2N1bWVudCI+CgoJPGRpdiBjbGFzcz0iY29udGFpbmVyIj4KCgkJPGRpdiBjbGFzcz0iaGVhZGVyIGNsZWFyZml4Ij4KCQkJPG5hdj4KCQkJCTx1bCBjbGFzcz0ibmF2IG5hdi1waWxscyBwdWxsLXJpZ2h0Ij4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJyZXNldCI+UmVzZXQ8L2E+PC9saT4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJsb2dpbiI+TG9naW48L2E+PC9saT4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJyZWdpc3RlciIgY2xhc3M9ImFjdGl2ZSI+UmVnaXN0ZXI8L2E+PC9saT4KCQkJCTwvdWw+CgkJCTwvbmF2PgoJCQk8aW1nIHNyYz0icmVzb3VyY2VzL2ltYWdlcy9Ub2t5b3NoaXBfVGFsa19pY29uLnN2ZyIgaGVpZ2h0PSIxMDAiCgkJCQl3aWR0aD0iMTAwIj4KCQk8L2Rpdj4KCgoJPC9kaXY+CgoJPGRpdiBjbGFzcz0iY29udGFpbmVyIHRoZW1lLXNob3djYXNlIiByb2xlPSJtYWluIj4KCgkJPGRpdiBjbGFzcz0icGFnZS1oZWFkZXIiPgoJCQk8aDM+UmVnaXN0ZXI8L2gzPgoJCTwvZGl2PgoKCQkKCgkJPGRpdiBjbGFzcz0icm93Ij4KCQkJPGRpdiBjbGFzcz0iY29sLW1kLTEyIj4KCgkJCQk8ZGl2IGNsYXNzPSJwYW5lbCBwYW5lbC1kZWZhdWx0Ij4KCQkJCQk8ZGl2IGNsYXNzPSJwYW5lbC1oZWFkaW5nIj4KCQkJCQkJPGgzIGNsYXNzPSJwYW5lbC10aXRsZSI+UGxlYXNlIHByb3ZpZGUgeW91ciB1c2VyIGluZm9ybWF0aW9uCgkJCQkJCQl0byByZWdpc3RlciBmb3IgQmxhYjwvaDM+CgkJCQkJPC9kaXY+CgkJCQkJPGRpdiBjbGFzcz0icGFuZWwtYm9keSI+CgkJCQkJCTxmb3JtIG1ldGhvZD0iUE9TVCIgYWN0aW9uPSJyZWdpc3Rlci1maW5pc2giPgoJCQkJCQkJPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0icmV0dXJuUGF0aCIgdmFsdWU9IiI+CgkJCQkJCQk8dGFibGUgY2xhc3M9InRhYmxlIHRhYmxlLWNvbmRlbnNlZCI+CgkJCQkJCQkJPHRib2R5PgoJCQkJCQkJCQkJCQkJCQkJCQk8dHI+CgkJCQkJCQkJCQk8dGQ+VXNlcm5hbWU8L3RkPgoJCQkJCQkJCQkJPHRkPjxkaXYgY2xhc3M9ImZvcm0tZ3JvdXAiPgoJCQkJCQkJCQkJCQl5bnAxaGhuNTVzN2xjcDNwYjR3ZWt2dXZkbWpkZTE2d3VvaGc1NUBidXJwY29sbGFib3JhdG9yLm5ldAoJCQkJCQkJCQkJCTwvZGl2PjwvdGQ+CgkJCQkJCQkJCTwvdHI+CgkJCQkJCQkJCTx0cj4KCQkJCQkJCQkJCTx0ZD5QYXNzd29yZDwvdGQ+CgkJCQkJCQkJCQk8dGQ+PGRpdiBjbGFzcz0iZm9ybS1ncm91cCI+CgkJCQkJCQkJCQkJCTxpbnB1dCB0eXBlPSJwYXNzd29yZCIgY2xhc3M9ImZvcm0tY29udHJvbCIgbmFtZT0icGFzc3dvcmQiCgkJCQkJCQkJCQkJCQl2YWx1ZT0iIj4KCQkJCQkJCQkJCQk8L2Rpdj48L3RkPgoJCQkJCQkJCQk8L3RyPgoJCQkJCQkJCQk8dHI+CgkJCQkJCQkJCQk8dGQ+Q29uZmlybSBQYXNzd29yZDwvdGQ+CgkJCQkJCQkJCQk8dGQ+PGRpdiBjbGFzcz0iZm9ybS1ncm91cCI+CgkJCQkJCQkJCQkJCTxpbnB1dCB0eXBlPSJwYXNzd29yZCIgY2xhc3M9ImZvcm0tY29udHJvbCIgbmFtZT0iY3Bhc3N3b3JkIgoJCQkJCQkJCQkJCQkJdmFsdWU9IiI+CgkJCQkJCQkJCQkJPC9kaXY+PC90ZD4KCQkJCQkJCQkJPC90cj4KCQkJCQkJCQkJPHRyPgoJCQkJCQkJCQkJPHRkPlJlYWwgTmFtZTwvdGQ+CgkJCQkJCQkJCQk8dGQ+PGRpdiBjbGFzcz0iZm9ybS1ncm91cCI+CgkJCQkJCQkJCQkJCTxpbnB1dCB0eXBlPSJ0ZXh0IiBjbGFzcz0iZm9ybS1jb250cm9sIiBuYW1lPSJyZWFsTmFtZSIKCQkJCQkJCQkJCQkJCXZhbHVlPSIiPgoJCQkJCQkJCQkJCTwvZGl2PjwvdGQ+CgkJCQkJCQkJCTwvdHI+CgkJCQkJCQkJCTx0cj4KCQkJCQkJCQkJCTx0ZD5CbGFiIE5hbWU8L3RkPgoJCQkJCQkJCQkJPHRkPjxkaXYgY2xhc3M9ImZvcm0tZ3JvdXAiPgoJCQkJCQkJCQkJCQk8aW5wdXQgdHlwZT0idGV4dCIgY2xhc3M9ImZvcm0tY29udHJvbCIgbmFtZT0iYmxhYk5hbWUiCgkJCQkJCQkJCQkJCQl2YWx1ZT0iIj4KCQkJCQkJCQkJCQk8L2Rpdj48L3RkPgoJCQkJCQkJCQk8L3RyPgoJCQkJCQkJCQk8dHI+CgkJCQkJCQkJCQk8dGQ+PGJ1dHRvbiB0eXBlPSJzdWJtaXQiIGNsYXNzPSJidG4gYnRuLXByaW1hcnkiCgkJCQkJCQkJCQkJCWlkPSJsb2dpbiIgbmFtZT0iUmVnaXN0ZXIiIHZhbHVlPSJSZWdpc3RlciI+UmVnaXN0ZXI8L2J1dHRvbj48L3RkPgoJCQkJCQkJCQkJPHRkPjwvdGQ+CgkJCQkJCQkJCTwvdHI+CgkJCQkJCQkJPC90Ym9keT4KCQkJCQkJCTwvdGFibGU+CgkJCQkJCTwvZm9ybT4KCQkJCQk8L2Rpdj4KCQkJCTwvZGl2PgoJCQk8L2Rpdj4KCQk8L2Rpdj4KCTwvZGl2PgoJPCEtLSAvY29udGFpbmVyIC0tPgoKCTwhLS0gQm9vdHN0cmFwIGNvcmUgSmF2YVNjcmlwdAogICAgPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0gLS0+Cgk8IS0tIFBsYWNlZCBhdCB0aGUgZW5kIG9mIHRoZSBkb2N1bWVudCBzbyB0aGUgcGFnZXMgbG9hZCBmYXN0ZXIgLS0+Cgk8c2NyaXB0IHNyYz0icmVzb3VyY2VzL2pzL2pxdWVyeS0xLjExLjIubWluLmpzIj48L3NjcmlwdD4KCTxzY3JpcHQgc3JjPSJyZXNvdXJjZXMvanMvYm9vdHN0cmFwLm1pbi5qcyI+PC9zY3JpcHQ+CjwvYm9keT4KPC9odG1sPgo="
+					},
+					"responseRedirected": "false"
+				}
+			},
+			{
+				"serialNumber": "6536676897503130624",
+				"type": "5244928",
+				"name": {
+					"__cdata": "Password field with autocomplete enabled"
+				},
+				"host": {
+					"_ip": "54.208.137.193",
+					"__text": "http://blab-a-gab.examplico.com"
+				},
+				"path": {
+					"__cdata": "/register-finish"
+				},
+				"location": {
+					"__cdata": "/register-finish"
+				},
+				"severity": "Low",
+				"confidence": "Certain",
+				"issueBackground": {
+					"__cdata": "<p>Most browsers have a facility to remember user credentials that are entered into HTML forms. This function can be configured by the user and also by applications that employ user credentials. If the function is enabled, then credentials entered by the user are stored on their local computer and retrieved by the browser on future visits to the same application.</p><p>The stored credentials can be captured by an attacker who gains control over the user's computer. Further, an attacker who finds a separate application vulnerability such as cross-site scripting may be able to exploit this to retrieve a user's browser-stored credentials. </p>"
+				},
+				"remediationBackground": {
+					"__cdata": "<p>To prevent browsers from storing credentials entered into HTML forms, include the attribute <b>autocomplete=\"off\"</b> within the FORM tag (to protect all form fields) or within the relevant INPUT tags (to protect specific individual fields).</p><p>Please note that modern web browsers may ignore this directive. In spite of this there is a chance that not disabling autocomplete may cause problems obtaining PCI compliance.</p>"
+				},
+				"vulnerabilityClassifications": {
+					"__cdata": "<ul><li><a href=\"https://cwe.mitre.org/data/definitions/200.html\">CWE-200: Information Exposure</a></li></ul>"
+				},
+				"issueDetail": {
+					"__cdata": "The page contains a form with the following action URL:<ul><li>http://blab-a-gab.examplico.com/register-finish</li></ul>The form contains the following password fields with autocomplete enabled:<ul><li>password</li><li>cpassword</li></ul>"
+				},
+				"issueDetailItems": {
+					"issueDetailItem": [
+						{
+							"__cdata": "password"
+						},
+						{
+							"__cdata": "cpassword"
+						}
+					]
+				},
+				"requestresponse": {
+					"request": {
+						"_method": "GET",
+						"_base64": "true",
+						"__cdata": "R0VUIC9yZWdpc3Rlci1maW5pc2ggSFRUUC8xLjENCkhvc3Q6IGJsYWItYS1nYWIuZXhhbXBsaWNvLmNvbQ0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlDQpBY2NlcHQ6ICovKg0KQWNjZXB0LUxhbmd1YWdlOiBlbg0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKGNvbXBhdGlibGU7IE1TSUUgOS4wOyBXaW5kb3dzIE5UIDYuMTsgV2luNjQ7IHg2NDsgVHJpZGVudC81LjApDQpDb25uZWN0aW9uOiBjbG9zZQ0KQ29va2llOiBKU0VTU0lPTklEPTIyMEVBMDFCRjMxRkREODVDNTYxNUY5RkExMjg1RkRBDQoNCg=="
+					},
+					"response": {
+						"_base64": "true",
+						"__cdata": "SFRUUC8xLjEgMjAwIA0KRGF0ZTogV2VkLCAwMSBKdWwgMjAyMCAxNzoyOToxNyBHTVQNClNlcnZlcjogQXBhY2hlLzIuNC40MSAoQW1hem9uKSBPcGVuU1NMLzEuMC4yay1maXBzDQpDb250ZW50LVR5cGU6IHRleHQvaHRtbDtjaGFyc2V0PVVTLUFTQ0lJDQpDb250ZW50LUxhbmd1YWdlOiBlbg0KVmFyeTogQWNjZXB0LUVuY29kaW5nDQpDb250ZW50LUxlbmd0aDogMzU3NQ0KQ29ubmVjdGlvbjogY2xvc2UNCg0KCjwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgo8bWV0YSBjaGFyc2V0PSJ1dGYtOCI+CjxtZXRhIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9ZWRnZSI+CjxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MSI+CjxtZXRhIG5hbWU9ImRlc2NyaXB0aW9uIiBjb250ZW50PSIiPgo8bWV0YSBuYW1lPSJhdXRob3IiIGNvbnRlbnQ9IiI+CjxsaW5rIHJlbD0iaWNvbiIgaHJlZj0iLi4vLi4vZmF2aWNvbi5pY28iPgoKPHRpdGxlPlJlZ2lzdGVyIGZvciBCbGFiPC90aXRsZT4KCjwhLS0gQm9vdHN0cmFwIGNvcmUgQ1NTIC0tPgo8bGluayBocmVmPSJyZXNvdXJjZXMvY3NzL2Jvb3RzdHJhcC5taW4uY3NzIiByZWw9InN0eWxlc2hlZXQiPgo8IS0tIEJvb3RzdHJhcCB0aGVtZSAtLT4KPGxpbmsgaHJlZj0icmVzb3VyY2VzL2Nzcy9ib290c3RyYXAtdGhlbWUubWluLmNzcyIgcmVsPSJzdHlsZXNoZWV0Ij4KCjwhLS0gQ3VzdG9tIHN0eWxlcyBmb3IgdGhpcyB0ZW1wbGF0ZSAtLT4KPGxpbmsgaHJlZj0icmVzb3VyY2VzL2Nzcy9wd20uY3NzIiByZWw9InN0eWxlc2hlZXQiPgoKPCEtLSBIVE1MNSBzaGltIGFuZCBSZXNwb25kLmpzIGZvciBJRTggc3VwcG9ydCBvZiBIVE1MNSBlbGVtZW50cyBhbmQgbWVkaWEgcXVlcmllcyAtLT4KPCEtLVtpZiBsdCBJRSA5XT4KICAgICAgPHNjcmlwdCBzcmM9Imh0dHBzOi8vb3NzLm1heGNkbi5jb20vaHRtbDVzaGl2LzMuNy4yL2h0bWw1c2hpdi5taW4uanMiPjwvc2NyaXB0PgogICAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9vc3MubWF4Y2RuLmNvbS9yZXNwb25kLzEuNC4yL3Jlc3BvbmQubWluLmpzIj48L3NjcmlwdD4KICAgIDwhW2VuZGlmXS0tPgo8L2hlYWQ+Cgo8Ym9keSByb2xlPSJkb2N1bWVudCI+CgoJPGRpdiBjbGFzcz0iY29udGFpbmVyIj4KCgkJPGRpdiBjbGFzcz0iaGVhZGVyIGNsZWFyZml4Ij4KCQkJPG5hdj4KCQkJCTx1bCBjbGFzcz0ibmF2IG5hdi1waWxscyBwdWxsLXJpZ2h0Ij4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJyZXNldCI+UmVzZXQ8L2E+PC9saT4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJsb2dpbiI+TG9naW48L2E+PC9saT4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJyZWdpc3RlciIgY2xhc3M9ImFjdGl2ZSI+UmVnaXN0ZXI8L2E+PC9saT4KCQkJCTwvdWw+CgkJCTwvbmF2PgoJCQk8aW1nIHNyYz0icmVzb3VyY2VzL2ltYWdlcy9Ub2t5b3NoaXBfVGFsa19pY29uLnN2ZyIgaGVpZ2h0PSIxMDAiCgkJCQl3aWR0aD0iMTAwIj4KCQk8L2Rpdj4KCgoJPC9kaXY+CgoJPGRpdiBjbGFzcz0iY29udGFpbmVyIHRoZW1lLXNob3djYXNlIiByb2xlPSJtYWluIj4KCgkJPGRpdiBjbGFzcz0icGFnZS1oZWFkZXIiPgoJCQk8aDM+UmVnaXN0ZXI8L2gzPgoJCTwvZGl2PgoKCQkKCgkJPGRpdiBjbGFzcz0icm93Ij4KCQkJPGRpdiBjbGFzcz0iY29sLW1kLTEyIj4KCgkJCQk8ZGl2IGNsYXNzPSJwYW5lbCBwYW5lbC1kZWZhdWx0Ij4KCQkJCQk8ZGl2IGNsYXNzPSJwYW5lbC1oZWFkaW5nIj4KCQkJCQkJPGgzIGNsYXNzPSJwYW5lbC10aXRsZSI+UGxlYXNlIHByb3ZpZGUgeW91ciB1c2VyIGluZm9ybWF0aW9uCgkJCQkJCQl0byByZWdpc3RlciBmb3IgQmxhYjwvaDM+CgkJCQkJPC9kaXY+CgkJCQkJPGRpdiBjbGFzcz0icGFuZWwtYm9keSI+CgkJCQkJCTxmb3JtIG1ldGhvZD0iUE9TVCIgYWN0aW9uPSJyZWdpc3Rlci1maW5pc2giPgoJCQkJCQkJPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0icmV0dXJuUGF0aCIgdmFsdWU9IiI+CgkJCQkJCQk8dGFibGUgY2xhc3M9InRhYmxlIHRhYmxlLWNvbmRlbnNlZCI+CgkJCQkJCQkJPHRib2R5PgoJCQkJCQkJCQkJCQkJCQkJCQk8dHI+CgkJCQkJCQkJCQk8dGQ+VXNlcm5hbWU8L3RkPgoJCQkJCQkJCQkJPHRkPjxkaXYgY2xhc3M9ImZvcm0tZ3JvdXAiPgoJCQkJCQkJCQkJCQl5bnAxaGhuNTVzN2xjcDNwYjR3ZWt2dXZkbWpkZTE2d3VvaGc1NUBidXJwY29sbGFib3JhdG9yLm5ldAoJCQkJCQkJCQkJCTwvZGl2PjwvdGQ+CgkJCQkJCQkJCTwvdHI+CgkJCQkJCQkJCTx0cj4KCQkJCQkJCQkJCTx0ZD5QYXNzd29yZDwvdGQ+CgkJCQkJCQkJCQk8dGQ+PGRpdiBjbGFzcz0iZm9ybS1ncm91cCI+CgkJCQkJCQkJCQkJCTxpbnB1dCB0eXBlPSJwYXNzd29yZCIgY2xhc3M9ImZvcm0tY29udHJvbCIgbmFtZT0icGFzc3dvcmQiCgkJCQkJCQkJCQkJCQl2YWx1ZT0iIj4KCQkJCQkJCQkJCQk8L2Rpdj48L3RkPgoJCQkJCQkJCQk8L3RyPgoJCQkJCQkJCQk8dHI+CgkJCQkJCQkJCQk8dGQ+Q29uZmlybSBQYXNzd29yZDwvdGQ+CgkJCQkJCQkJCQk8dGQ+PGRpdiBjbGFzcz0iZm9ybS1ncm91cCI+CgkJCQkJCQkJCQkJCTxpbnB1dCB0eXBlPSJwYXNzd29yZCIgY2xhc3M9ImZvcm0tY29udHJvbCIgbmFtZT0iY3Bhc3N3b3JkIgoJCQkJCQkJCQkJCQkJdmFsdWU9IiI+CgkJCQkJCQkJCQkJPC9kaXY+PC90ZD4KCQkJCQkJCQkJPC90cj4KCQkJCQkJCQkJPHRyPgoJCQkJCQkJCQkJPHRkPlJlYWwgTmFtZTwvdGQ+CgkJCQkJCQkJCQk8dGQ+PGRpdiBjbGFzcz0iZm9ybS1ncm91cCI+CgkJCQkJCQkJCQkJCTxpbnB1dCB0eXBlPSJ0ZXh0IiBjbGFzcz0iZm9ybS1jb250cm9sIiBuYW1lPSJyZWFsTmFtZSIKCQkJCQkJCQkJCQkJCXZhbHVlPSIiPgoJCQkJCQkJCQkJCTwvZGl2PjwvdGQ+CgkJCQkJCQkJCTwvdHI+CgkJCQkJCQkJCTx0cj4KCQkJCQkJCQkJCTx0ZD5CbGFiIE5hbWU8L3RkPgoJCQkJCQkJCQkJPHRkPjxkaXYgY2xhc3M9ImZvcm0tZ3JvdXAiPgoJCQkJCQkJCQkJCQk8aW5wdXQgdHlwZT0idGV4dCIgY2xhc3M9ImZvcm0tY29udHJvbCIgbmFtZT0iYmxhYk5hbWUiCgkJCQkJCQkJCQkJCQl2YWx1ZT0iIj4KCQkJCQkJCQkJCQk8L2Rpdj48L3RkPgoJCQkJCQkJCQk8L3RyPgoJCQkJCQkJCQk8dHI+CgkJCQkJCQkJCQk8dGQ+PGJ1dHRvbiB0eXBlPSJzdWJtaXQiIGNsYXNzPSJidG4gYnRuLXByaW1hcnkiCgkJCQkJCQkJCQkJCWlkPSJsb2dpbiIgbmFtZT0iUmVnaXN0ZXIiIHZhbHVlPSJSZWdpc3RlciI+UmVnaXN0ZXI8L2J1dHRvbj48L3RkPgoJCQkJCQkJCQkJPHRkPjwvdGQ+CgkJCQkJCQkJCTwvdHI+CgkJCQkJCQkJPC90Ym9keT4KCQkJCQkJCTwvdGFibGU+CgkJCQkJCTwvZm9ybT4KCQkJCQk8L2Rpdj4KCQkJCTwvZGl2PgoJCQk8L2Rpdj4KCQk8L2Rpdj4KCTwvZGl2PgoJPCEtLSAvY29udGFpbmVyIC0tPgoKCTwhLS0gQm9vdHN0cmFwIGNvcmUgSmF2YVNjcmlwdAogICAgPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0gLS0+Cgk8IS0tIFBsYWNlZCBhdCB0aGUgZW5kIG9mIHRoZSBkb2N1bWVudCBzbyB0aGUgcGFnZXMgbG9hZCBmYXN0ZXIgLS0+Cgk8c2NyaXB0IHNyYz0icmVzb3VyY2VzL2pzL2pxdWVyeS0xLjExLjIubWluLmpzIj48L3NjcmlwdD4KCTxzY3JpcHQgc3JjPSJyZXNvdXJjZXMvanMvYm9vdHN0cmFwLm1pbi5qcyI+PC9zY3JpcHQ+CjwvYm9keT4KPC9odG1sPgo="
+					},
+					"responseRedirected": "false"
+				}
+			},
+			{
+				"serialNumber": "595594154273947648",
+				"type": "4197120",
+				"name": {
+					"__cdata": "Input returned in response (stored)"
+				},
+				"host": {
+					"_ip": "54.208.137.193",
+					"__text": "http://blab-a-gab.examplico.com"
+				},
+				"path": {
+					"__cdata": "/register"
+				},
+				"location": {
+					"__cdata": "/register [user parameter]"
+				},
+				"severity": "Information",
+				"confidence": "Certain",
+				"issueBackground": {
+					"__cdata": "<p>Retrieval of stored input arises when user input is stored and later embedded into the application's responses. </p><p>Input being returned in application responses is not a vulnerability in its own right. However, it is a prerequisite for many client-side vulnerabilities, including cross-site scripting, open redirection, content spoofing, and response header injection. Additionally, some server-side vulnerabilities such as SQL injection are often easier to identify and exploit when input is returned in responses. In applications where input retrieval is rare and the environment is resistant to automated testing (for example, due to a web application firewall), it might be worth subjecting instances of it to focused manual testing. </p><p>Vulnerabilities resulting from retrieval of stored input  are typically more serious than the equivalent reflected vulnerabilities because they do not require a separate delivery mechanism in order to reach target users. Depending on the affected functionality, ordinary users may be exploited during normal use of the application. Note that automated detection of stored data retrieval cannot reliably determine whether input that is persisted within the application can be retrieved by any other user, only by authenticated users, or only by the attacker themselves. You should review the functionality in which the vulnerability appears to determine whether the application's behavior can feasibly be used to compromise other application users. </p>"
+				},
+				"vulnerabilityClassifications": {
+					"__cdata": "<ul><li><a href=\"https://cwe.mitre.org/data/definitions/20.html\">CWE-20: Improper Input Validation</a></li><li><a href=\"https://cwe.mitre.org/data/definitions/116.html\">CWE-116: Improper Encoding or Escaping of Output</a></li></ul>"
+				},
+				"issueDetail": {
+					"__cdata": "The value of the <b>user</b> request parameter submitted to the URL /register is copied into the response for the URL /register-finish.<br><br>Burp has captured the first observed location where this stored input is returned. There might be other locations within the application where the same input is returned. To identify all such locations, perform a full crawl of the application and then do a global search for the highlighted value."
+				},
+				"requestresponse": [
+					{
+						"request": {
+							"_method": "POST",
+							"_base64": "true",
+							"__cdata": "UE9TVCAvcmVnaXN0ZXIgSFRUUC8xLjENCkhvc3Q6IGJsYWItYS1nYWIuZXhhbXBsaWNvLmNvbQ0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlDQpBY2NlcHQ6ICovKg0KQWNjZXB0LUxhbmd1YWdlOiBlbg0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKGNvbXBhdGlibGU7IE1TSUUgOS4wOyBXaW5kb3dzIE5UIDYuMTsgV2luNjQ7IHg2NDsgVHJpZGVudC81LjApDQpDb25uZWN0aW9uOiBjbG9zZQ0KUmVmZXJlcjogaHR0cDovL2JsYWItYS1nYWIuZXhhbXBsaWNvLmNvbS9yZWdpc3Rlcg0KQ29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi94LXd3dy1mb3JtLXVybGVuY29kZWQNCkNvbnRlbnQtTGVuZ3RoOiA1OQ0KQ29va2llOiBKU0VTU0lPTklEPTIyMEVBMDFCRjMxRkREODVDNTYxNUY5RkExMjg1RkRBDQoNCnJldHVyblBhdGg9JlJlZ2lzdGVyPVJlZ2lzdGVyJnVzZXI9eW5wMWhobjU1czdsY3AzcGI0d2VrdnV2ZG1qZGUxNnd1b2hnNTVAYnVycGNvbGxhYm9yYXRvci5uZXQ="
+						}
+					},
+					{
+						"request": {
+							"_method": "GET",
+							"_base64": "true",
+							"__cdata": "R0VUIC9yZWdpc3Rlci1maW5pc2ggSFRUUC8xLjENCkhvc3Q6IGJsYWItYS1nYWIuZXhhbXBsaWNvLmNvbQ0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlDQpBY2NlcHQ6ICovKg0KQWNjZXB0LUxhbmd1YWdlOiBlbg0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKGNvbXBhdGlibGU7IE1TSUUgOS4wOyBXaW5kb3dzIE5UIDYuMTsgV2luNjQ7IHg2NDsgVHJpZGVudC81LjApDQpDb25uZWN0aW9uOiBjbG9zZQ0KQ29va2llOiBKU0VTU0lPTklEPTIyMEVBMDFCRjMxRkREODVDNTYxNUY5RkExMjg1RkRBDQoNCg=="
+						},
+						"response": {
+							"_base64": "true",
+							"__cdata": "SFRUUC8xLjEgMjAwIA0KRGF0ZTogV2VkLCAwMSBKdWwgMjAyMCAxNzoyOToxNyBHTVQNClNlcnZlcjogQXBhY2hlLzIuNC40MSAoQW1hem9uKSBPcGVuU1NMLzEuMC4yay1maXBzDQpDb250ZW50LVR5cGU6IHRleHQvaHRtbDtjaGFyc2V0PVVTLUFTQ0lJDQpDb250ZW50LUxhbmd1YWdlOiBlbg0KVmFyeTogQWNjZXB0LUVuY29kaW5nDQpDb250ZW50LUxlbmd0aDogMzU3NQ0KQ29ubmVjdGlvbjogY2xvc2UNCg0KCjwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgo8bWV0YSBjaGFyc2V0PSJ1dGYtOCI+CjxtZXRhIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9ZWRnZSI+CjxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MSI+CjxtZXRhIG5hbWU9ImRlc2NyaXB0aW9uIiBjb250ZW50PSIiPgo8bWV0YSBuYW1lPSJhdXRob3IiIGNvbnRlbnQ9IiI+CjxsaW5rIHJlbD0iaWNvbiIgaHJlZj0iLi4vLi4vZmF2aWNvbi5pY28iPgoKPHRpdGxlPlJlZ2lzdGVyIGZvciBCbGFiPC90aXRsZT4KCjwhLS0gQm9vdHN0cmFwIGNvcmUgQ1NTIC0tPgo8bGluayBocmVmPSJyZXNvdXJjZXMvY3NzL2Jvb3RzdHJhcC5taW4uY3NzIiByZWw9InN0eWxlc2hlZXQiPgo8IS0tIEJvb3RzdHJhcCB0aGVtZSAtLT4KPGxpbmsgaHJlZj0icmVzb3VyY2VzL2Nzcy9ib290c3RyYXAtdGhlbWUubWluLmNzcyIgcmVsPSJzdHlsZXNoZWV0Ij4KCjwhLS0gQ3VzdG9tIHN0eWxlcyBmb3IgdGhpcyB0ZW1wbGF0ZSAtLT4KPGxpbmsgaHJlZj0icmVzb3VyY2VzL2Nzcy9wd20uY3NzIiByZWw9InN0eWxlc2hlZXQiPgoKPCEtLSBIVE1MNSBzaGltIGFuZCBSZXNwb25kLmpzIGZvciBJRTggc3VwcG9ydCBvZiBIVE1MNSBlbGVtZW50cyBhbmQgbWVkaWEgcXVlcmllcyAtLT4KPCEtLVtpZiBsdCBJRSA5XT4KICAgICAgPHNjcmlwdCBzcmM9Imh0dHBzOi8vb3NzLm1heGNkbi5jb20vaHRtbDVzaGl2LzMuNy4yL2h0bWw1c2hpdi5taW4uanMiPjwvc2NyaXB0PgogICAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9vc3MubWF4Y2RuLmNvbS9yZXNwb25kLzEuNC4yL3Jlc3BvbmQubWluLmpzIj48L3NjcmlwdD4KICAgIDwhW2VuZGlmXS0tPgo8L2hlYWQ+Cgo8Ym9keSByb2xlPSJkb2N1bWVudCI+CgoJPGRpdiBjbGFzcz0iY29udGFpbmVyIj4KCgkJPGRpdiBjbGFzcz0iaGVhZGVyIGNsZWFyZml4Ij4KCQkJPG5hdj4KCQkJCTx1bCBjbGFzcz0ibmF2IG5hdi1waWxscyBwdWxsLXJpZ2h0Ij4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJyZXNldCI+UmVzZXQ8L2E+PC9saT4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJsb2dpbiI+TG9naW48L2E+PC9saT4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJyZWdpc3RlciIgY2xhc3M9ImFjdGl2ZSI+UmVnaXN0ZXI8L2E+PC9saT4KCQkJCTwvdWw+CgkJCTwvbmF2PgoJCQk8aW1nIHNyYz0icmVzb3VyY2VzL2ltYWdlcy9Ub2t5b3NoaXBfVGFsa19pY29uLnN2ZyIgaGVpZ2h0PSIxMDAiCgkJCQl3aWR0aD0iMTAwIj4KCQk8L2Rpdj4KCgoJPC9kaXY+CgoJPGRpdiBjbGFzcz0iY29udGFpbmVyIHRoZW1lLXNob3djYXNlIiByb2xlPSJtYWluIj4KCgkJPGRpdiBjbGFzcz0icGFnZS1oZWFkZXIiPgoJCQk8aDM+UmVnaXN0ZXI8L2gzPgoJCTwvZGl2PgoKCQkKCgkJPGRpdiBjbGFzcz0icm93Ij4KCQkJPGRpdiBjbGFzcz0iY29sLW1kLTEyIj4KCgkJCQk8ZGl2IGNsYXNzPSJwYW5lbCBwYW5lbC1kZWZhdWx0Ij4KCQkJCQk8ZGl2IGNsYXNzPSJwYW5lbC1oZWFkaW5nIj4KCQkJCQkJPGgzIGNsYXNzPSJwYW5lbC10aXRsZSI+UGxlYXNlIHByb3ZpZGUgeW91ciB1c2VyIGluZm9ybWF0aW9uCgkJCQkJCQl0byByZWdpc3RlciBmb3IgQmxhYjwvaDM+CgkJCQkJPC9kaXY+CgkJCQkJPGRpdiBjbGFzcz0icGFuZWwtYm9keSI+CgkJCQkJCTxmb3JtIG1ldGhvZD0iUE9TVCIgYWN0aW9uPSJyZWdpc3Rlci1maW5pc2giPgoJCQkJCQkJPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0icmV0dXJuUGF0aCIgdmFsdWU9IiI+CgkJCQkJCQk8dGFibGUgY2xhc3M9InRhYmxlIHRhYmxlLWNvbmRlbnNlZCI+CgkJCQkJCQkJPHRib2R5PgoJCQkJCQkJCQkJCQkJCQkJCQk8dHI+CgkJCQkJCQkJCQk8dGQ+VXNlcm5hbWU8L3RkPgoJCQkJCQkJCQkJPHRkPjxkaXYgY2xhc3M9ImZvcm0tZ3JvdXAiPgoJCQkJCQkJCQkJCQl5bnAxaGhuNTVzN2xjcDNwYjR3ZWt2dXZkbWpkZTE2d3VvaGc1NUBidXJwY29sbGFib3JhdG9yLm5ldAoJCQkJCQkJCQkJCTwvZGl2PjwvdGQ+CgkJCQkJCQkJCTwvdHI+CgkJCQkJCQkJCTx0cj4KCQkJCQkJCQkJCTx0ZD5QYXNzd29yZDwvdGQ+CgkJCQkJCQkJCQk8dGQ+PGRpdiBjbGFzcz0iZm9ybS1ncm91cCI+CgkJCQkJCQkJCQkJCTxpbnB1dCB0eXBlPSJwYXNzd29yZCIgY2xhc3M9ImZvcm0tY29udHJvbCIgbmFtZT0icGFzc3dvcmQiCgkJCQkJCQkJCQkJCQl2YWx1ZT0iIj4KCQkJCQkJCQkJCQk8L2Rpdj48L3RkPgoJCQkJCQkJCQk8L3RyPgoJCQkJCQkJCQk8dHI+CgkJCQkJCQkJCQk8dGQ+Q29uZmlybSBQYXNzd29yZDwvdGQ+CgkJCQkJCQkJCQk8dGQ+PGRpdiBjbGFzcz0iZm9ybS1ncm91cCI+CgkJCQkJCQkJCQkJCTxpbnB1dCB0eXBlPSJwYXNzd29yZCIgY2xhc3M9ImZvcm0tY29udHJvbCIgbmFtZT0iY3Bhc3N3b3JkIgoJCQkJCQkJCQkJCQkJdmFsdWU9IiI+CgkJCQkJCQkJCQkJPC9kaXY+PC90ZD4KCQkJCQkJCQkJPC90cj4KCQkJCQkJCQkJPHRyPgoJCQkJCQkJCQkJPHRkPlJlYWwgTmFtZTwvdGQ+CgkJCQkJCQkJCQk8dGQ+PGRpdiBjbGFzcz0iZm9ybS1ncm91cCI+CgkJCQkJCQkJCQkJCTxpbnB1dCB0eXBlPSJ0ZXh0IiBjbGFzcz0iZm9ybS1jb250cm9sIiBuYW1lPSJyZWFsTmFtZSIKCQkJCQkJCQkJCQkJCXZhbHVlPSIiPgoJCQkJCQkJCQkJCTwvZGl2PjwvdGQ+CgkJCQkJCQkJCTwvdHI+CgkJCQkJCQkJCTx0cj4KCQkJCQkJCQkJCTx0ZD5CbGFiIE5hbWU8L3RkPgoJCQkJCQkJCQkJPHRkPjxkaXYgY2xhc3M9ImZvcm0tZ3JvdXAiPgoJCQkJCQkJCQkJCQk8aW5wdXQgdHlwZT0idGV4dCIgY2xhc3M9ImZvcm0tY29udHJvbCIgbmFtZT0iYmxhYk5hbWUiCgkJCQkJCQkJCQkJCQl2YWx1ZT0iIj4KCQkJCQkJCQkJCQk8L2Rpdj48L3RkPgoJCQkJCQkJCQk8L3RyPgoJCQkJCQkJCQk8dHI+CgkJCQkJCQkJCQk8dGQ+PGJ1dHRvbiB0eXBlPSJzdWJtaXQiIGNsYXNzPSJidG4gYnRuLXByaW1hcnkiCgkJCQkJCQkJCQkJCWlkPSJsb2dpbiIgbmFtZT0iUmVnaXN0ZXIiIHZhbHVlPSJSZWdpc3RlciI+UmVnaXN0ZXI8L2J1dHRvbj48L3RkPgoJCQkJCQkJCQkJPHRkPjwvdGQ+CgkJCQkJCQkJCTwvdHI+CgkJCQkJCQkJPC90Ym9keT4KCQkJCQkJCTwvdGFibGU+CgkJCQkJCTwvZm9ybT4KCQkJCQk8L2Rpdj4KCQkJCTwvZGl2PgoJCQk8L2Rpdj4KCQk8L2Rpdj4KCTwvZGl2PgoJPCEtLSAvY29udGFpbmVyIC0tPgoKCTwhLS0gQm9vdHN0cmFwIGNvcmUgSmF2YVNjcmlwdAogICAgPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0gLS0+Cgk8IS0tIFBsYWNlZCBhdCB0aGUgZW5kIG9mIHRoZSBkb2N1bWVudCBzbyB0aGUgcGFnZXMgbG9hZCBmYXN0ZXIgLS0+Cgk8c2NyaXB0IHNyYz0icmVzb3VyY2VzL2pzL2pxdWVyeS0xLjExLjIubWluLmpzIj48L3NjcmlwdD4KCTxzY3JpcHQgc3JjPSJyZXNvdXJjZXMvanMvYm9vdHN0cmFwLm1pbi5qcyI+PC9zY3JpcHQ+CjwvYm9keT4KPC9odG1sPgo="
+						},
+						"responseRedirected": "false"
+					}
+				]
+			},
+			{
+				"serialNumber": "7466144256831864832",
+				"type": "2097960",
+				"name": {
+					"__cdata": "Path-relative style sheet import"
+				},
+				"host": {
+					"_ip": "54.208.137.193",
+					"__text": "http://blab-a-gab.examplico.com"
+				},
+				"path": {
+					"__cdata": "/register-finish"
+				},
+				"location": {
+					"__cdata": "/register-finish"
+				},
+				"severity": "Information",
+				"confidence": "Tentative",
+				"issueBackground": {
+					"__cdata": "<p>Path-relative style sheet import vulnerabilities arise when the following conditions hold:</p><ol><li>A response contains a style sheet import that uses a path-relative URL (for example, the page at \"/original-path/file.php\" might import \"styles/main.css\").</li><li>When handling requests, the application or platform tolerates superfluous path-like data following the original filename in the URL (for example, \"/original-path/file.php/extra-junk/\"). When superfluous data is added to the original URL, the application's response still contains a path-relative stylesheet import.</li><li>The response in condition 2 can be made to render in a browser's quirks mode, either because it has a missing or old doctype directive, or because it allows itself to be framed by a page under an attacker's control.</li><li>When a browser requests the style sheet that is imported in the response from the modified URL (using the URL \"/original-path/file.php/extra-junk/styles/main.css\"), the application returns something other than the CSS response that was supposed to be imported. Given the behavior described in condition 2, this will typically be the same response that was originally returned in condition 1.</li><li>An attacker has a means of manipulating some text within the response in condition 4, for example because the application stores and displays some past input, or echoes some text within the current URL.</li></ol><p>Given the above conditions, an attacker can execute CSS injection within the browser of the target user. The attacker can construct a URL that causes the victim's browser to import as CSS a different URL than normal, containing text that the attacker can manipulate.</p><p>Being able to inject arbitrary CSS into the victim's browser may enable various attacks, including:</p><ul><li>Executing arbitrary JavaScript using IE's expression() function.</li><li>Using CSS selectors to read parts of the HTML source, which may include sensitive data such as anti-CSRF tokens.</li><li>Capturing any sensitive data within the URL query string by making a further style sheet import to a URL on the attacker's domain, and monitoring the incoming Referer header.</li></ul>"
+				},
+				"remediationBackground": {
+					"__cdata": "<p>The root cause of the vulnerability can be resolved by not using path-relative URLs in style sheet imports. Aside from this, attacks can also be prevented by implementing all of the following defensive measures: </p><ul><li>Setting the HTTP response header \"X-Frame-Options: deny\" in all responses. One method that an attacker can use to make a page render in quirks mode is to frame it within their own page that is rendered in quirks mode. Setting this header prevents the page from being framed.</li><li>Setting a modern doctype (e.g. \"&lt;!doctype html&gt;\") in all HTML responses. This prevents the page from being rendered in quirks mode (unless it is being framed, as described above).</li><li>Setting the HTTP response header \"X-Content-Type-Options: no sniff\" in all responses. This prevents the browser from processing a non-CSS response as CSS, even if another page loads the response via a style sheet import.</li></ul>"
+				},
+				"references": {
+					"__cdata": "<ul><li><a href=\"http://blog.portswigger.net/2015/02/prssi.html\">Detecting and exploiting path-relative stylesheet import (PRSSI) vulnerabilities</a></li></ul>"
+				},
+				"vulnerabilityClassifications": {
+					"__cdata": "<ul><li><a href=\"https://cwe.mitre.org/data/definitions/16.html\">CWE-16: Configuration</a></li></ul>"
+				},
+				"issueDetail": {
+					"__cdata": "The application may be vulnerable to path-relative style sheet import (PRSSI) attacks. The response contains a path-relative style sheet import, and so condition 1 for an exploitable vulnerability is present (see issue background). The response can also be made to render in a browser's quirks mode. The page does not contain a doctype directive, and so it will always be rendered in quirks mode. Further, the response does not prevent itself from being framed, so an attacker can frame the response within a page that they control, to force it to be rendered in quirks mode. (Note that this technique is IE-specific and due to P3P restrictions might sometimes limit the impact of a successful attack.) This means that condition 3 for an exploitable vulnerability is probably present if condition 2 is present.<br><br>Burp was not able to confirm that the other conditions hold, and you should manually investigate this issue to confirm whether they do hold."
+				},
+				"requestresponse": {
+					"request": {
+						"_method": "GET",
+						"_base64": "true",
+						"__cdata": "R0VUIC9yZWdpc3Rlci1maW5pc2ggSFRUUC8xLjENCkhvc3Q6IGJsYWItYS1nYWIuZXhhbXBsaWNvLmNvbQ0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlDQpBY2NlcHQ6ICovKg0KQWNjZXB0LUxhbmd1YWdlOiBlbg0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKGNvbXBhdGlibGU7IE1TSUUgOS4wOyBXaW5kb3dzIE5UIDYuMTsgV2luNjQ7IHg2NDsgVHJpZGVudC81LjApDQpDb25uZWN0aW9uOiBjbG9zZQ0KQ29va2llOiBKU0VTU0lPTklEPTIyMEVBMDFCRjMxRkREODVDNTYxNUY5RkExMjg1RkRBDQoNCg=="
+					},
+					"response": {
+						"_base64": "true",
+						"__cdata": "SFRUUC8xLjEgMjAwIA0KRGF0ZTogV2VkLCAwMSBKdWwgMjAyMCAxNzoyOToxNyBHTVQNClNlcnZlcjogQXBhY2hlLzIuNC40MSAoQW1hem9uKSBPcGVuU1NMLzEuMC4yay1maXBzDQpDb250ZW50LVR5cGU6IHRleHQvaHRtbDtjaGFyc2V0PVVTLUFTQ0lJDQpDb250ZW50LUxhbmd1YWdlOiBlbg0KVmFyeTogQWNjZXB0LUVuY29kaW5nDQpDb250ZW50LUxlbmd0aDogMzU3NQ0KQ29ubmVjdGlvbjogY2xvc2UNCg0KCjwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgo8bWV0YSBjaGFyc2V0PSJ1dGYtOCI+CjxtZXRhIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9ZWRnZSI+CjxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MSI+CjxtZXRhIG5hbWU9ImRlc2NyaXB0aW9uIiBjb250ZW50PSIiPgo8bWV0YSBuYW1lPSJhdXRob3IiIGNvbnRlbnQ9IiI+CjxsaW5rIHJlbD0iaWNvbiIgaHJlZj0iLi4vLi4vZmF2aWNvbi5pY28iPgoKPHRpdGxlPlJlZ2lzdGVyIGZvciBCbGFiPC90aXRsZT4KCjwhLS0gQm9vdHN0cmFwIGNvcmUgQ1NTIC0tPgo8bGluayBocmVmPSJyZXNvdXJjZXMvY3NzL2Jvb3RzdHJhcC5taW4uY3NzIiByZWw9InN0eWxlc2hlZXQiPgo8IS0tIEJvb3RzdHJhcCB0aGVtZSAtLT4KPGxpbmsgaHJlZj0icmVzb3VyY2VzL2Nzcy9ib290c3RyYXAtdGhlbWUubWluLmNzcyIgcmVsPSJzdHlsZXNoZWV0Ij4KCjwhLS0gQ3VzdG9tIHN0eWxlcyBmb3IgdGhpcyB0ZW1wbGF0ZSAtLT4KPGxpbmsgaHJlZj0icmVzb3VyY2VzL2Nzcy9wd20uY3NzIiByZWw9InN0eWxlc2hlZXQiPgoKPCEtLSBIVE1MNSBzaGltIGFuZCBSZXNwb25kLmpzIGZvciBJRTggc3VwcG9ydCBvZiBIVE1MNSBlbGVtZW50cyBhbmQgbWVkaWEgcXVlcmllcyAtLT4KPCEtLVtpZiBsdCBJRSA5XT4KICAgICAgPHNjcmlwdCBzcmM9Imh0dHBzOi8vb3NzLm1heGNkbi5jb20vaHRtbDVzaGl2LzMuNy4yL2h0bWw1c2hpdi5taW4uanMiPjwvc2NyaXB0PgogICAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9vc3MubWF4Y2RuLmNvbS9yZXNwb25kLzEuNC4yL3Jlc3BvbmQubWluLmpzIj48L3NjcmlwdD4KICAgIDwhW2VuZGlmXS0tPgo8L2hlYWQ+Cgo8Ym9keSByb2xlPSJkb2N1bWVudCI+CgoJPGRpdiBjbGFzcz0iY29udGFpbmVyIj4KCgkJPGRpdiBjbGFzcz0iaGVhZGVyIGNsZWFyZml4Ij4KCQkJPG5hdj4KCQkJCTx1bCBjbGFzcz0ibmF2IG5hdi1waWxscyBwdWxsLXJpZ2h0Ij4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJyZXNldCI+UmVzZXQ8L2E+PC9saT4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJsb2dpbiI+TG9naW48L2E+PC9saT4KCQkJCQk8bGkgcm9sZT0icHJlc2VudGF0aW9uIj48YSBocmVmPSJyZWdpc3RlciIgY2xhc3M9ImFjdGl2ZSI+UmVnaXN0ZXI8L2E+PC9saT4KCQkJCTwvdWw+CgkJCTwvbmF2PgoJCQk8aW1nIHNyYz0icmVzb3VyY2VzL2ltYWdlcy9Ub2t5b3NoaXBfVGFsa19pY29uLnN2ZyIgaGVpZ2h0PSIxMDAiCgkJCQl3aWR0aD0iMTAwIj4KCQk8L2Rpdj4KCgoJPC9kaXY+CgoJPGRpdiBjbGFzcz0iY29udGFpbmVyIHRoZW1lLXNob3djYXNlIiByb2xlPSJtYWluIj4KCgkJPGRpdiBjbGFzcz0icGFnZS1oZWFkZXIiPgoJCQk8aDM+UmVnaXN0ZXI8L2gzPgoJCTwvZGl2PgoKCQkKCgkJPGRpdiBjbGFzcz0icm93Ij4KCQkJPGRpdiBjbGFzcz0iY29sLW1kLTEyIj4KCgkJCQk8ZGl2IGNsYXNzPSJwYW5lbCBwYW5lbC1kZWZhdWx0Ij4KCQkJCQk8ZGl2IGNsYXNzPSJwYW5lbC1oZWFkaW5nIj4KCQkJCQkJPGgzIGNsYXNzPSJwYW5lbC10aXRsZSI+UGxlYXNlIHByb3ZpZGUgeW91ciB1c2VyIGluZm9ybWF0aW9uCgkJCQkJCQl0byByZWdpc3RlciBmb3IgQmxhYjwvaDM+CgkJCQkJPC9kaXY+CgkJCQkJPGRpdiBjbGFzcz0icGFuZWwtYm9keSI+CgkJCQkJCTxmb3JtIG1ldGhvZD0iUE9TVCIgYWN0aW9uPSJyZWdpc3Rlci1maW5pc2giPgoJCQkJCQkJPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0icmV0dXJuUGF0aCIgdmFsdWU9IiI+CgkJCQkJCQk8dGFibGUgY2xhc3M9InRhYmxlIHRhYmxlLWNvbmRlbnNlZCI+CgkJCQkJCQkJPHRib2R5PgoJCQkJCQkJCQkJCQkJCQkJCQk8dHI+CgkJCQkJCQkJCQk8dGQ+VXNlcm5hbWU8L3RkPgoJCQkJCQkJCQkJPHRkPjxkaXYgY2xhc3M9ImZvcm0tZ3JvdXAiPgoJCQkJCQkJCQkJCQl5bnAxaGhuNTVzN2xjcDNwYjR3ZWt2dXZkbWpkZTE2d3VvaGc1NUBidXJwY29sbGFib3JhdG9yLm5ldAoJCQkJCQkJCQkJCTwvZGl2PjwvdGQ+CgkJCQkJCQkJCTwvdHI+CgkJCQkJCQkJCTx0cj4KCQkJCQkJCQkJCTx0ZD5QYXNzd29yZDwvdGQ+CgkJCQkJCQkJCQk8dGQ+PGRpdiBjbGFzcz0iZm9ybS1ncm91cCI+CgkJCQkJCQkJCQkJCTxpbnB1dCB0eXBlPSJwYXNzd29yZCIgY2xhc3M9ImZvcm0tY29udHJvbCIgbmFtZT0icGFzc3dvcmQiCgkJCQkJCQkJCQkJCQl2YWx1ZT0iIj4KCQkJCQkJCQkJCQk8L2Rpdj48L3RkPgoJCQkJCQkJCQk8L3RyPgoJCQkJCQkJCQk8dHI+CgkJCQkJCQkJCQk8dGQ+Q29uZmlybSBQYXNzd29yZDwvdGQ+CgkJCQkJCQkJCQk8dGQ+PGRpdiBjbGFzcz0iZm9ybS1ncm91cCI+CgkJCQkJCQkJCQkJCTxpbnB1dCB0eXBlPSJwYXNzd29yZCIgY2xhc3M9ImZvcm0tY29udHJvbCIgbmFtZT0iY3Bhc3N3b3JkIgoJCQkJCQkJCQkJCQkJdmFsdWU9IiI+CgkJCQkJCQkJCQkJPC9kaXY+PC90ZD4KCQkJCQkJCQkJPC90cj4KCQkJCQkJCQkJPHRyPgoJCQkJCQkJCQkJPHRkPlJlYWwgTmFtZTwvdGQ+CgkJCQkJCQkJCQk8dGQ+PGRpdiBjbGFzcz0iZm9ybS1ncm91cCI+CgkJCQkJCQkJCQkJCTxpbnB1dCB0eXBlPSJ0ZXh0IiBjbGFzcz0iZm9ybS1jb250cm9sIiBuYW1lPSJyZWFsTmFtZSIKCQkJCQkJCQkJCQkJCXZhbHVlPSIiPgoJCQkJCQkJCQkJCTwvZGl2PjwvdGQ+CgkJCQkJCQkJCTwvdHI+CgkJCQkJCQkJCTx0cj4KCQkJCQkJCQkJCTx0ZD5CbGFiIE5hbWU8L3RkPgoJCQkJCQkJCQkJPHRkPjxkaXYgY2xhc3M9ImZvcm0tZ3JvdXAiPgoJCQkJCQkJCQkJCQk8aW5wdXQgdHlwZT0idGV4dCIgY2xhc3M9ImZvcm0tY29udHJvbCIgbmFtZT0iYmxhYk5hbWUiCgkJCQkJCQkJCQkJCQl2YWx1ZT0iIj4KCQkJCQkJCQkJCQk8L2Rpdj48L3RkPgoJCQkJCQkJCQk8L3RyPgoJCQkJCQkJCQk8dHI+CgkJCQkJCQkJCQk8dGQ+PGJ1dHRvbiB0eXBlPSJzdWJtaXQiIGNsYXNzPSJidG4gYnRuLXByaW1hcnkiCgkJCQkJCQkJCQkJCWlkPSJsb2dpbiIgbmFtZT0iUmVnaXN0ZXIiIHZhbHVlPSJSZWdpc3RlciI+UmVnaXN0ZXI8L2J1dHRvbj48L3RkPgoJCQkJCQkJCQkJPHRkPjwvdGQ+CgkJCQkJCQkJCTwvdHI+CgkJCQkJCQkJPC90Ym9keT4KCQkJCQkJCTwvdGFibGU+CgkJCQkJCTwvZm9ybT4KCQkJCQk8L2Rpdj4KCQkJCTwvZGl2PgoJCQk8L2Rpdj4KCQk8L2Rpdj4KCTwvZGl2PgoJPCEtLSAvY29udGFpbmVyIC0tPgoKCTwhLS0gQm9vdHN0cmFwIGNvcmUgSmF2YVNjcmlwdAogICAgPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0gLS0+Cgk8IS0tIFBsYWNlZCBhdCB0aGUgZW5kIG9mIHRoZSBkb2N1bWVudCBzbyB0aGUgcGFnZXMgbG9hZCBmYXN0ZXIgLS0+Cgk8c2NyaXB0IHNyYz0icmVzb3VyY2VzL2pzL2pxdWVyeS0xLjExLjIubWluLmpzIj48L3NjcmlwdD4KCTxzY3JpcHQgc3JjPSJyZXNvdXJjZXMvanMvYm9vdHN0cmFwLm1pbi5qcyI+PC9zY3JpcHQ+CjwvYm9keT4KPC9odG1sPgo="
+					},
+					"responseRedirected": "false"
+				}
+			}
+		],
+		"_burpVersion": "1.7.37",
+		"_exportTime": "Wed Jul 01 17:39:48 UTC 2020"
+	}
+}

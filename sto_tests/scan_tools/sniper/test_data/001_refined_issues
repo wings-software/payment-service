@@ -1,0 +1,82 @@
+[
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "issue_name",
+                    "issue_type"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "[*] Saving loot to /usr/share/sniper/loot/nodegoat.herokuapp.com [OK]\n                ____               \n    _________  /  _/___  ___  _____\n   / ___/ __ \\ / // __ \\/ _ \\/ ___/\n  (__  ) / / // // /_/ /  __/ /    \n /____/_/ /_/___/ .___/\\___/_/     \n               /_/                 \n\n + -- --=[http://crowdshield.com\n + -- --=[sniper v4.4 by 1N3\n\n\n====================================================================================\n PINGING HOST \n====================================================================================\nPING nodegoat.herokuapp.com (3.216.88.24) 56(84) bytes of data.\n\n--- nodegoat.herokuapp.com ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n\n====================================================================================\n RUNNING TCP PORT SCAN \n====================================================================================\nStarting Nmap 7.80 ( https://nmap.org ) at 2021-12-15 16:22 UTC\nNmap done: 1 IP address (1 host up) scanned in 25.16 seconds\n====================================================================================\n RUNNING UDP PORT SCAN \n====================================================================================\nStarting Nmap 7.80 ( https://nmap.org ) at 2021-12-15 16:23 UTC\nNmap scan report for nodegoat.herokuapp.com (23.22.52.7)\nHost is up.\nOther addresses for nodegoat.herokuapp.com (not scanned): 3.219.96.23 3.216.88.24 23.22.144.165\nrDNS record for 23.22.52.7: ec2-23-22-52-7.compute-1.amazonaws.com\n\nPORT     STATE         SERVICE\n53/udp   open|filtered domain\n67/udp   open|filtered dhcps\n68/udp   open|filtered dhcpc\n69/udp   open|filtered tftp\n88/udp   open|filtered kerberos-sec\n123/udp  open|filtered ntp\n137/udp  open|filtered netbios-ns\n138/udp  open|filtered netbios-dgm\n139/udp  open|filtered netbios-ssn\n161/udp  open|filtered snmp\n162/udp  open|filtered snmptrap\n389/udp  open|filtered ldap\n520/udp  open|filtered route\n2049/udp open|filtered nfs\n\nNmap done: 1 IP address (1 host up) scanned in 3.15 seconds\n\n====================================================================================\n RUNNING INTRUSIVE SCANS \n====================================================================================\n + -- --=[Port 21 closed... skipping.\n + -- --=[Port 22 closed... skipping.\n + -- --=[Port 23 closed... skipping.\n + -- --=[Port 25 closed... skipping.\n + -- --=[Port 53 closed... skipping.\n + -- --=[Port 67 closed... skipping.\n + -- --=[Port 68 closed... skipping.\n + -- --=[Port 69 closed... skipping.\n + -- --=[Port 79 closed... skipping.\n + -- --=[Port 80 closed... skipping.\n + -- --=[Port 110 closed... skipping.\n + -- --=[Port 111 closed... skipping.\n + -- --=[Port 123 closed... skipping.\n + -- --=[Port 135 closed... skipping.\n + -- --=[Port 139 closed... skipping.\n + -- --=[Port 161 closed... skipping.\n + -- --=[Port 162 closed... skipping.\n + -- --=[Port 389 closed... skipping.\n + -- --=[Port 443 closed... skipping.\n + -- --=[Port 445 closed... skipping.\n + -- --=[Port 512 closed... skipping.\n + -- --=[Port 513 closed... skipping.\n + -- --=[Port 514 closed... skipping.\n + -- --=[Port 623 closed... skipping.\n + -- --=[Port 624 closed... skipping.\n + -- --=[Port 1099 closed... skipping.\n + -- --=[Port 1433 closed... skipping.\n + -- --=[Port 2049 closed... skipping.\n + -- --=[Port 2121 closed... skipping.\n + -- --=[Port 3306 closed... skipping.\n + -- --=[Port 3310 closed... skipping.\n + -- --=[Port 3128 closed... skipping.\n + -- --=[Port 3389 closed... skipping.\n + -- --=[Port 3632 closed... skipping.\n + -- --=[Port 4443 closed... skipping.\n + -- --=[Port 5432 closed... skipping.\n + -- --=[Port 5800 closed... skipping.\n + -- --=[Port 5900 closed... skipping.\n + -- --=[Port 5984 closed... skipping.\n + -- --=[Port 6000 closed... skipping.\n + -- --=[Port 6667 closed... skipping.\n + -- --=[Port 8000 closed... skipping.\n + -- --=[Port 8100 closed... skipping.\n + -- --=[Port 8080 closed... skipping.\n + -- --=[Port 8180 closed... skipping.\n + -- --=[Port 8443 closed... skipping.\n + -- --=[Port 8888 closed... skipping.\n + -- --=[Port 10000 closed... skipping.\n + -- --=[Port 16992 closed... skipping.\n + -- --=[Port 27017 closed... skipping.\n + -- --=[Port 27018 closed... skipping.\n + -- --=[Port 27019 closed... skipping.\n + -- --=[Port 28017 closed... skipping.\n + -- --=[Port 49152 closed... skipping.\n====================================================================================\n SCANNING FOR COMMON VULNERABILITIES \n====================================================================================\n====================================================================================\n SKIPPING FULL NMAP PORT SCAN \n====================================================================================\n====================================================================================\n SKIPPING BRUTE FORCE \n====================================================================================\n====================================================================================\n SCAN COMPLETE! \n====================================================================================\n                ____               \n    _________  /  _/___  ___  _____\n   / ___/ __ \\ / // __ \\/ _ \\/ ___/\n  (__  ) / / // // /_/ /  __/ /    \n /____/_/ /_/___/ .___/\\___/_/     \n               /_/                 \n\n + -- --=[Starting Metasploit service...\n + -- --=[Importing NMap XML files into Metasploit...\n + -- --=[Current reports...\n + -- --=[Generating reports...\n",
+        "issueName": "Sniper Default Report",
+        "issueType": "code[info]",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Sniper Default Report//code[info]",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "sniper",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "Sniper",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    }
+]

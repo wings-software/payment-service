@@ -1,0 +1,4873 @@
+[
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_auditoptions": {
+                            "auditActions": [],
+                            "auditProcessing": false,
+                            "canAudit": false,
+                            "canChallenge": false,
+                            "canEdit": false,
+                            "inAuditMode": false,
+                            "releaseId": 174280,
+                            "vulnId": "forestry"
+                        },
+                        "_raw_parameters": {
+                            "postParameters": [
+                                {
+                                    "decodedValue": null,
+                                    "name": "userName",
+                                    "value": "admiration"
+                                },
+                                {
+                                    "decodedValue": null,
+                                    "name": "rememberUserID",
+                                    "value": "eye"
+                                },
+                                {
+                                    "decodedValue": null,
+                                    "name": "password",
+                                    "value": "march"
+                                },
+                                {
+                                    "decodedValue": "/portal/",
+                                    "name": "RedirectTo",
+                                    "value": "gutter"
+                                }
+                            ],
+                            "queryParameters": [],
+                            "releaseId": 174280,
+                            "vulnId": "forestry"
+                        },
+                        "_raw_recommendations": {
+                            "isStatic": false,
+                            "recommendations": "",
+                            "references": "<br /><b> References: </b><br /><a href=\"https://social.msdn.microsoft.com/Search/en-US?query=HTTPOnly%20Cookie&amp;emptyWatermark=true&amp;ac=5\">https://social.msdn.microsoft.com/Search/en-US?query=HTTPOnly%20Cookie&amp;emptyWatermark=true&amp;ac=5</a>",
+                            "releaseId": 174280,
+                            "tips": "delicate",
+                            "vulnId": "forestry"
+                        },
+                        "_raw_requestresponse": {
+                            "releaseId": 174280,
+                            "responseContent": "morning",
+                            "vulnId": "forestry"
+                        },
+                        "_raw_summary": {
+                            "assignedUser": "(Not Set)",
+                            "auditPending": false,
+                            "auditPendingAuditorStatus": null,
+                            "auditPendingSeverity": null,
+                            "auditPendingSuppression": null,
+                            "auditorStatus": "Pending Review",
+                            "bugLink": "",
+                            "bugSubmitted": false,
+                            "comments": null,
+                            "developerStatus": "Open",
+                            "isSuppressed": false,
+                            "lineNumber": null,
+                            "notes": "first",
+                            "primaryLocation": "plug",
+                            "primaryLocationFull": "plug?test",
+                            "releaseId": 174280,
+                            "severity": "Low",
+                            "vulnId": "forestry"
+                        },
+                        "issue_name": "first_plug",
+                        "primaryLocationFull": "plug?test",
+                        "url": "plug?test",
+                        "vulnId": "forestry"
+                    }
+                ]
+            },
+            {
+                "key": "issue_details",
+                "value": "delicate"
+            },
+            {
+                "key": "raw_severity",
+                "value": "Low"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "ruleId"
+                ]
+            },
+            {
+                "key": "analyzer_name",
+                "value": null
+            },
+            {
+                "key": "recommendations",
+                "value": ""
+            },
+            {
+                "key": "references",
+                "value": "<br /><b> References: </b><br /><a href=\"https://social.msdn.microsoft.com/Search/en-US?query=HTTPOnly%20Cookie&amp;emptyWatermark=true&amp;ac=5\">https://social.msdn.microsoft.com/Search/en-US?query=HTTPOnly%20Cookie&amp;emptyWatermark=true&amp;ac=5</a>"
+            },
+            {
+                "key": "auditor_status",
+                "value": "Pending Review"
+            },
+            {
+                "key": "assigned_user",
+                "value": "(Not Set)"
+            },
+            {
+                "key": "developerStatus",
+                "value": "Open"
+            },
+            {
+                "key": "bugSubmitted",
+                "value": false
+            },
+            {
+                "key": "bugLink",
+                "value": ""
+            },
+            {
+                "key": "releaseId",
+                "value": 174280
+            },
+            {
+                "key": "impact",
+                "value": null
+            },
+            {
+                "key": "probability",
+                "value": null
+            },
+            {
+                "key": "compliance_categories",
+                "value": [
+                    {
+                        "categoryName": "OWASP 2013",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "A6 - Sensitive Data Exposure"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "OWASP 2017",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "A3 - Sensitive Data Exposure"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "OWASP 2014 Mobile Top 10",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "M9 - Improper Session Handling"
+                            },
+                            {
+                                "complianceRule": "M4 - Unintended Data Leakage"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "PCI 3.2",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "6.5.1 - Injection Flaws"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "STIG 4.1",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "APSC-DV-002440 CAT I"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002450 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002460 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002470 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002210 CAT II"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "STIG 4.3",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "APSC-DV-002210 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002440 CAT I"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002450 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002460 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002470 CAT II"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "FISMA",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "AC"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "CWE",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "CWE-284"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "GDPR",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "Indirect Access To Potentially Sensitive Data"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "traces",
+                "value": null
+            },
+            {
+                "key": "category",
+                "value": null
+            },
+            {
+                "key": "rule_id",
+                "value": "11313"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "murder",
+        "issueName": "first_plug",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "11313",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortifyondemand",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "284",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "delicate",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": 3.0,
+        "scanStatus": null,
+        "scanTool": "fortifyondemand",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3.0,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_auditoptions": {
+                            "auditActions": [],
+                            "auditProcessing": false,
+                            "canAudit": false,
+                            "canChallenge": false,
+                            "canEdit": false,
+                            "inAuditMode": false,
+                            "releaseId": 174280,
+                            "vulnId": "document"
+                        },
+                        "_raw_details": {
+                            "analyzerName": null,
+                            "complianceCategories": [],
+                            "confidence": null,
+                            "explanation": "competition",
+                            "impact": null,
+                            "instanceId": "roll",
+                            "isStatic": false,
+                            "probability": null,
+                            "releaseId": 174280,
+                            "ruleId": "11418",
+                            "severity": "High",
+                            "sink": "first",
+                            "source": null,
+                            "summary": "movie",
+                            "vulnId": "document"
+                        },
+                        "_raw_parameters": {
+                            "postParameters": [],
+                            "queryParameters": [
+                                {
+                                    "decodedValue": null,
+                                    "name": "hash",
+                                    "value": "102356354"
+                                }
+                            ],
+                            "releaseId": 174280,
+                            "vulnId": "document"
+                        },
+                        "_raw_recommendations": {
+                            "isStatic": false,
+                            "recommendations": "<br>This is a design flaw in the way the browser scripting is communicating with the server side components. In order to mitigate this vulnerability the way the client side and server side communicate must be changed. There are a coule ways to fix this issue: <br><ul><li>Use HTTP POSTs instead of HTTP GETs.</li><li>Use some form of Response Tainting (to render the response unexecutable)</li></ul>",
+                            "references": "",
+                            "releaseId": 174280,
+                            "tips": "delicate",
+                            "vulnId": "document"
+                        },
+                        "_raw_summary": {
+                            "assignedUser": "(Not Set)",
+                            "auditPending": false,
+                            "auditPendingAuditorStatus": null,
+                            "auditPendingSeverity": null,
+                            "auditPendingSuppression": null,
+                            "auditorStatus": "Pending Review",
+                            "bugLink": "",
+                            "bugSubmitted": false,
+                            "comments": null,
+                            "developerStatus": "Open",
+                            "isSuppressed": false,
+                            "lineNumber": null,
+                            "primaryLocation": "dinner",
+                            "primaryLocationFull": "dinner?test",
+                            "releaseId": 174280,
+                            "severity": "High",
+                            "vulnId": "document"
+                        },
+                        "issue_name": "first_dinner",
+                        "primaryLocationFull": "dinner?test",
+                        "url": "dinner?test",
+                        "vulnId": null
+                    }
+                ]
+            },
+            {
+                "key": "issue_details",
+                "value": "competition"
+            },
+            {
+                "key": "raw_severity",
+                "value": "High"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "ruleId"
+                ]
+            },
+            {
+                "key": "analyzer_name",
+                "value": null
+            },
+            {
+                "key": "recommendations",
+                "value": "<br>This is a design flaw in the way the browser scripting is communicating with the server side components. In order to mitigate this vulnerability the way the client side and server side communicate must be changed. There are a coule ways to fix this issue: <br><ul><li>Use HTTP POSTs instead of HTTP GETs.</li><li>Use some form of Response Tainting (to render the response unexecutable)</li></ul>"
+            },
+            {
+                "key": "references",
+                "value": ""
+            },
+            {
+                "key": "auditor_status",
+                "value": "Pending Review"
+            },
+            {
+                "key": "assigned_user",
+                "value": "(Not Set)"
+            },
+            {
+                "key": "developerStatus",
+                "value": "Open"
+            },
+            {
+                "key": "bugSubmitted",
+                "value": null
+            },
+            {
+                "key": "bugLink",
+                "value": null
+            },
+            {
+                "key": "releaseId",
+                "value": null
+            },
+            {
+                "key": "impact",
+                "value": null
+            },
+            {
+                "key": "probability",
+                "value": null
+            },
+            {
+                "key": "compliance_categories",
+                "value": []
+            },
+            {
+                "key": "traces",
+                "value": null
+            },
+            {
+                "key": "category",
+                "value": null
+            },
+            {
+                "key": "rule_id",
+                "value": "11418"
+            },
+            {
+                "key": "_raw_vulnid",
+                "value": "document"
+            },
+            {
+                "key": "_raw_releaseid",
+                "value": 174280
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "movie",
+        "issueName": "first_dinner",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "11418",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortifyondemand",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "delicate",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": 8.0,
+        "scanStatus": null,
+        "scanTool": "fortifyondemand",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 8.0,
+        "severityCode": "High",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_auditoptions": {
+                            "auditActions": [],
+                            "auditProcessing": false,
+                            "canAudit": false,
+                            "canChallenge": false,
+                            "canEdit": false,
+                            "inAuditMode": false,
+                            "releaseId": 174280,
+                            "vulnId": "withdrawal"
+                        },
+                        "_raw_details": {
+                            "analyzerName": null,
+                            "complianceCategories": [
+                                {
+                                    "categoryName": "PCI 3.2",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "6.5.6 - High Risk Vulnerabilities"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "categoryName": "CWE",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "CWE-352"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "categoryName": "GDPR",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "Indirect Access To Potentially Sensitive Data"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "confidence": null,
+                            "explanation": "diamond",
+                            "impact": null,
+                            "instanceId": "machinery",
+                            "isStatic": false,
+                            "probability": null,
+                            "releaseId": 174280,
+                            "ruleId": "11604",
+                            "severity": "High",
+                            "sink": "first",
+                            "source": null,
+                            "summary": "thrust",
+                            "vulnId": "withdrawal"
+                        },
+                        "_raw_parameters": {
+                            "postParameters": [],
+                            "queryParameters": [
+                                {
+                                    "decodedValue": null,
+                                    "name": "wa",
+                                    "value": "morsel"
+                                },
+                                {
+                                    "decodedValue": null,
+                                    "name": "wtrealm",
+                                    "value": "transition"
+                                },
+                                {
+                                    "decodedValue": "rm=0&id=passive&ru=/portal/",
+                                    "name": "wctx",
+                                    "value": "privilege"
+                                },
+                                {
+                                    "decodedValue": null,
+                                    "name": "wct",
+                                    "value": "experienced"
+                                }
+                            ],
+                            "releaseId": 174280,
+                            "vulnId": "withdrawal"
+                        },
+                        "_raw_requestresponse": {
+                            "releaseId": 174280,
+                            "responseContent": "predict",
+                            "vulnId": "withdrawal"
+                        },
+                        "_raw_summary": {
+                            "assignedUser": "(Not Set)",
+                            "auditPending": false,
+                            "auditPendingAuditorStatus": null,
+                            "auditPendingSeverity": null,
+                            "auditPendingSuppression": null,
+                            "auditorStatus": "Pending Review",
+                            "bugLink": "",
+                            "bugSubmitted": false,
+                            "comments": null,
+                            "developerStatus": "Open",
+                            "isSuppressed": false,
+                            "lineNumber": null,
+                            "notes": "first",
+                            "primaryLocation": "election",
+                            "primaryLocationFull": "election?test",
+                            "releaseId": 174280,
+                            "severity": "High",
+                            "vulnId": "withdrawal"
+                        },
+                        "issue_name": "first_election",
+                        "primaryLocationFull": "election?test",
+                        "url": "election?test",
+                        "vulnId": "withdrawal"
+                    }
+                ]
+            },
+            {
+                "key": "issue_details",
+                "value": "diamond"
+            },
+            {
+                "key": "raw_severity",
+                "value": "High"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "ruleId"
+                ]
+            },
+            {
+                "key": "analyzer_name",
+                "value": null
+            },
+            {
+                "key": "recommendations",
+                "value": "<br>Browser vendors have introduced and adopted a policy-based mitigation technique using the <font>X-Frame-Options</font> header. Developers can use this header to instruct the browser about appropriate actions to perform if their site is included inside an <font>iframe</font>.\nDevelopers must set the <font>X-Frame-Options</font> header to one of the following permitted values:\n<ul><li>DENY<br>\nDeny all attempts to frame the page </li><li>SAMEORIGIN<br>\nThe page can be framed by another page only if it belongs to the same origin as the page being framed</li><li>ALLOW-FROM origin<br>\nDevelopers can specify a list of trusted origins in the origin attribute. Only pages on origin are permitted to load this page inside an <font>iframe</font></li></ul>\nDevelopers must <b>also</b> use client-side frame busting JavaScript as a protection against XFS. This will enable users of older browsers that do not support the X-Frame-Options header to also be protected from clickjacking attacks."
+            },
+            {
+                "key": "references",
+                "value": "<br /><b>HP 2012 Cyber Security Report</b><br /><a href=\"http://www.hpenterprisesecurity.com/collateral/whitepaper/HP2012CyberRiskReport_0313.pdf\">The X-Frame-Options header - a failure to launch</a><br /><br /><b>Server Configuration:</b><br /><a href=\"http://support.microsoft.com/kb/2694329\">IIS</a><br /><a href=\"https://developer.mozilla.org/en-US/docs/HTTP/X-Frame-Options\">Apache, nginx</a><br /><br /><b>Specification:</b><br /><a href=\"http://tools.ietf.org/html/draft-ietf-websec-x-frame-options-01\">X-Frame-Options IETF Draft</a><br /><br /><b>OWASP:</b><br /><a href=\"https://www.owasp.org/index.php/Clickjacking\">Clickjacking</a><br /><br /><b>Frame Busting:</b><br /><a href=\"http://crypto.stanford.edu/~dabo/pubs/papers/framebust.pdf\">Busting Frame Busting: A Study of Clickjacking Vulnerabilities on Popular Sites</a><br /><a href=\"https://www.owasp.org/images/0/0e/OWASP_AppSec_Research_2010_Busting_Frame_Busting_by_Rydstedt.pdf\">OWASP: Busting Frame Busting</a><br /><br />"
+            },
+            {
+                "key": "auditor_status",
+                "value": "Pending Review"
+            },
+            {
+                "key": "assigned_user",
+                "value": "(Not Set)"
+            },
+            {
+                "key": "developerStatus",
+                "value": "Open"
+            },
+            {
+                "key": "bugSubmitted",
+                "value": false
+            },
+            {
+                "key": "bugLink",
+                "value": ""
+            },
+            {
+                "key": "releaseId",
+                "value": 174280
+            },
+            {
+                "key": "impact",
+                "value": null
+            },
+            {
+                "key": "probability",
+                "value": null
+            },
+            {
+                "key": "compliance_categories",
+                "value": [
+                    {
+                        "categoryName": "PCI 3.2",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "6.5.6 - High Risk Vulnerabilities"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "CWE",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "CWE-352"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "GDPR",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "Indirect Access To Potentially Sensitive Data"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "traces",
+                "value": null
+            },
+            {
+                "key": "category",
+                "value": null
+            },
+            {
+                "key": "rule_id",
+                "value": "11604"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "thrust",
+        "issueName": "first_election",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "11604",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortifyondemand",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "352",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": 8.0,
+        "scanStatus": null,
+        "scanTool": "fortifyondemand",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 8.0,
+        "severityCode": "High",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_auditoptions": {
+                            "auditActions": [],
+                            "auditProcessing": false,
+                            "canAudit": false,
+                            "canChallenge": false,
+                            "canEdit": false,
+                            "inAuditMode": false,
+                            "releaseId": 174280,
+                            "vulnId": "guest"
+                        },
+                        "_raw_parameters": {
+                            "postParameters": [],
+                            "queryParameters": [],
+                            "releaseId": 174280,
+                            "vulnId": "guest"
+                        },
+                        "_raw_recommendations": {
+                            "isStatic": false,
+                            "recommendations": "",
+                            "references": "",
+                            "releaseId": 174280,
+                            "tips": "delicate",
+                            "vulnId": "guest"
+                        },
+                        "_raw_requestresponse": {
+                            "releaseId": 174280,
+                            "responseContent": "HTTP/1.1 200 OK\nCache-Control: private\nContent-Type: application/json; charset=utf-8\nVary: Accept-Encoding\nX-UA-Compatible: IE=edge\nDate: Tue, 05 Feb 2019 20:54:47 GMT\nConnection: close\nContent-Length: 16\n\n{\"success\":true}",
+                            "vulnId": "guest"
+                        },
+                        "_raw_summary": {
+                            "assignedUser": "(Not Set)",
+                            "auditPending": false,
+                            "auditPendingAuditorStatus": null,
+                            "auditPendingSeverity": null,
+                            "auditPendingSuppression": null,
+                            "auditorStatus": "Pending Review",
+                            "bugLink": "",
+                            "bugSubmitted": false,
+                            "comments": null,
+                            "developerStatus": "Open",
+                            "isSuppressed": false,
+                            "lineNumber": null,
+                            "primaryLocation": "waffle",
+                            "primaryLocationFull": "waffle?test",
+                            "releaseId": 174280,
+                            "severity": "Critical",
+                            "vulnId": "guest"
+                        },
+                        "issue_name": "first_waffle",
+                        "primaryLocationFull": "waffle?test",
+                        "url": "waffle?test",
+                        "vulnId": null
+                    }
+                ]
+            },
+            {
+                "key": "issue_details",
+                "value": "delicate"
+            },
+            {
+                "key": "raw_severity",
+                "value": "Critical"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "ruleId"
+                ]
+            },
+            {
+                "key": "analyzer_name",
+                "value": null
+            },
+            {
+                "key": "recommendations",
+                "value": ""
+            },
+            {
+                "key": "references",
+                "value": ""
+            },
+            {
+                "key": "auditor_status",
+                "value": "Pending Review"
+            },
+            {
+                "key": "assigned_user",
+                "value": "(Not Set)"
+            },
+            {
+                "key": "developerStatus",
+                "value": "Open"
+            },
+            {
+                "key": "bugSubmitted",
+                "value": null
+            },
+            {
+                "key": "bugLink",
+                "value": null
+            },
+            {
+                "key": "releaseId",
+                "value": null
+            },
+            {
+                "key": "impact",
+                "value": null
+            },
+            {
+                "key": "probability",
+                "value": null
+            },
+            {
+                "key": "compliance_categories",
+                "value": [
+                    {
+                        "categoryName": "OWASP 2013",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "A3 - Cross-Site Scripting (XSS)"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "OWASP 2017",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "A7 - Cross-Site Scripting (XSS)"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "OWASP 2014 Mobile Top 10",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "M7 - Client Side Injection"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "PCI 3.2",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "6.5.7 - Cross-Site Scripting (XSS)"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "STIG 4.1",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "APSC-DV-002490 CAT I"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002560 CAT I"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "STIG 4.3",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "APSC-DV-002490 CAT I"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002560 CAT I"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "FISMA",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "SC"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "CWE",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "CWE-811"
+                            },
+                            {
+                                "complianceRule": "CWE-116"
+                            },
+                            {
+                                "complianceRule": "CWE-80"
+                            },
+                            {
+                                "complianceRule": "CWE-79"
+                            },
+                            {
+                                "complianceRule": "CWE-692"
+                            },
+                            {
+                                "complianceRule": "CWE-87"
+                            },
+                            {
+                                "complianceRule": "CWE-83"
+                            },
+                            {
+                                "complianceRule": "CWE-82"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "GDPR",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "Indirect Access To Potentially Sensitive Data"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "traces",
+                "value": null
+            },
+            {
+                "key": "category",
+                "value": null
+            },
+            {
+                "key": "rule_id",
+                "value": "11755"
+            },
+            {
+                "key": "_raw_screenshots",
+                "value": [
+                    {
+                        "description": null,
+                        "id": 177181,
+                        "name": "screenshot_12-07-2018-06-59-08.png",
+                        "uploadDate": "2018-12-07T06:59:08.18"
+                    },
+                    {
+                        "description": null,
+                        "id": 177182,
+                        "name": "screenshot_12-07-2018-06-59-08.png",
+                        "uploadDate": "2018-12-07T06:59:08.96"
+                    },
+                    {
+                        "description": null,
+                        "id": 182642,
+                        "name": "screenshot_02-05-2019-12-59-37.png",
+                        "uploadDate": "2019-02-05T12:59:37.11"
+                    }
+                ]
+            },
+            {
+                "key": "_raw_vulnid",
+                "value": "guest"
+            },
+            {
+                "key": "_raw_releaseid",
+                "value": 174280
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "delicate",
+        "issueName": "first_waffle",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "11755",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortifyondemand",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "116",
+                "type": "cwe"
+            },
+            {
+                "id": "692",
+                "type": "cwe"
+            },
+            {
+                "id": "79",
+                "type": "cwe"
+            },
+            {
+                "id": "80",
+                "type": "cwe"
+            },
+            {
+                "id": "811",
+                "type": "cwe"
+            },
+            {
+                "id": "82",
+                "type": "cwe"
+            },
+            {
+                "id": "83",
+                "type": "cwe"
+            },
+            {
+                "id": "87",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "delicate",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": 10.0,
+        "scanStatus": null,
+        "scanTool": "fortifyondemand",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 10.0,
+        "severityCode": "Critical",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_auditoptions": {
+                            "auditActions": [],
+                            "auditProcessing": false,
+                            "canAudit": false,
+                            "canChallenge": false,
+                            "canEdit": false,
+                            "inAuditMode": false,
+                            "releaseId": 174280,
+                            "vulnId": "aluminium"
+                        },
+                        "_raw_parameters": {
+                            "postParameters": [],
+                            "queryParameters": [
+                                {
+                                    "decodedValue": null,
+                                    "name": "wa",
+                                    "value": "morsel"
+                                },
+                                {
+                                    "decodedValue": null,
+                                    "name": "wtrealm",
+                                    "value": "transition"
+                                },
+                                {
+                                    "decodedValue": "rm=0&id=passive&ru=/portal/",
+                                    "name": "wctx",
+                                    "value": "privilege"
+                                },
+                                {
+                                    "decodedValue": null,
+                                    "name": "wct",
+                                    "value": "experienced"
+                                }
+                            ],
+                            "releaseId": 174280,
+                            "vulnId": "aluminium"
+                        },
+                        "_raw_recommendations": {
+                            "isStatic": false,
+                            "recommendations": "Configure the web application under test to include Strict Transport Security header in every response generated by an HTTPS-enabled site. Any HTTP version of site on the same domain should permanently redirect to the secure encrypted site. Header should not be added to HTTP response as browsers will ignore it.\n<br><br>\nIt is important to note that this header does not prevent from above mentioned attack scenarios during the very first connection to the site or any connections established after the set period has expired. To prevent such a scenario, the site must be added to the pre-loaded HSTS hosts list embedded in both Google Chrome and Mozilla Firefox browsers.",
+                            "references": "<br /><a href=\"http://tools.ietf.org/html/rfc6797\">http://tools.ietf.org/html/rfc6797</a>",
+                            "releaseId": 174280,
+                            "vulnId": "aluminium"
+                        },
+                        "_raw_requestresponse": {
+                            "releaseId": 174280,
+                            "responseContent": "predict",
+                            "vulnId": "aluminium"
+                        },
+                        "_raw_summary": {
+                            "assignedUser": "(Not Set)",
+                            "auditPending": false,
+                            "auditPendingAuditorStatus": null,
+                            "auditPendingSeverity": null,
+                            "auditPendingSuppression": null,
+                            "auditorStatus": "Pending Review",
+                            "bugLink": "",
+                            "bugSubmitted": false,
+                            "comments": null,
+                            "developerStatus": "Open",
+                            "isSuppressed": false,
+                            "lineNumber": null,
+                            "notes": "first",
+                            "primaryLocation": "election",
+                            "primaryLocationFull": "election?test",
+                            "releaseId": 174280,
+                            "severity": "Low",
+                            "vulnId": "aluminium"
+                        },
+                        "issue_name": "first_election",
+                        "primaryLocationFull": "election?test",
+                        "url": "election?test",
+                        "vulnId": "aluminium"
+                    }
+                ]
+            },
+            {
+                "key": "issue_details",
+                "value": "inch"
+            },
+            {
+                "key": "raw_severity",
+                "value": "Low"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "ruleId"
+                ]
+            },
+            {
+                "key": "analyzer_name",
+                "value": null
+            },
+            {
+                "key": "recommendations",
+                "value": "Configure the web application under test to include Strict Transport Security header in every response generated by an HTTPS-enabled site. Any HTTP version of site on the same domain should permanently redirect to the secure encrypted site. Header should not be added to HTTP response as browsers will ignore it.\n<br><br>\nIt is important to note that this header does not prevent from above mentioned attack scenarios during the very first connection to the site or any connections established after the set period has expired. To prevent such a scenario, the site must be added to the pre-loaded HSTS hosts list embedded in both Google Chrome and Mozilla Firefox browsers."
+            },
+            {
+                "key": "references",
+                "value": "<br /><a href=\"http://tools.ietf.org/html/rfc6797\">http://tools.ietf.org/html/rfc6797</a>"
+            },
+            {
+                "key": "auditor_status",
+                "value": "Pending Review"
+            },
+            {
+                "key": "assigned_user",
+                "value": "(Not Set)"
+            },
+            {
+                "key": "developerStatus",
+                "value": "Open"
+            },
+            {
+                "key": "bugSubmitted",
+                "value": false
+            },
+            {
+                "key": "bugLink",
+                "value": ""
+            },
+            {
+                "key": "releaseId",
+                "value": 174280
+            },
+            {
+                "key": "impact",
+                "value": null
+            },
+            {
+                "key": "probability",
+                "value": null
+            },
+            {
+                "key": "compliance_categories",
+                "value": [
+                    {
+                        "categoryName": "OWASP 2013",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "A6 - Sensitive Data Exposure"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "OWASP 2017",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "A3 - Sensitive Data Exposure"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "PCI 3.2",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "6.5.4 - Insecure Communications"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "STIG 4.1",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "APSC-DV-000160 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-000170 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001940 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001950 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002440 CAT I"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002450 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002460 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002470 CAT II"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "STIG 4.3",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "APSC-DV-000160 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-000170 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001940 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001950 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002440 CAT I"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002450 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002460 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002470 CAT II"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "FISMA",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "SC"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "CWE",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "CWE-319"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "GDPR",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "Insufficient Data Protection"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "traces",
+                "value": null
+            },
+            {
+                "key": "category",
+                "value": null
+            },
+            {
+                "key": "rule_id",
+                "value": "11784"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "hunter",
+        "issueName": "first_election",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "11784",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortifyondemand",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "319",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": 3.0,
+        "scanStatus": null,
+        "scanTool": "fortifyondemand",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3.0,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_auditoptions": {
+                            "auditActions": [],
+                            "auditProcessing": false,
+                            "canAudit": false,
+                            "canChallenge": false,
+                            "canEdit": false,
+                            "inAuditMode": false,
+                            "releaseId": 174280,
+                            "vulnId": "parachute"
+                        },
+                        "_raw_parameters": {
+                            "postParameters": [],
+                            "queryParameters": [],
+                            "releaseId": 174280,
+                            "vulnId": "parachute"
+                        },
+                        "_raw_requestresponse": {
+                            "releaseId": 174280,
+                            "responseContent": "row",
+                            "vulnId": "parachute"
+                        },
+                        "_raw_summary": {
+                            "assignedUser": "(Not Set)",
+                            "auditPending": false,
+                            "auditPendingAuditorStatus": null,
+                            "auditPendingSeverity": null,
+                            "auditPendingSuppression": null,
+                            "auditorStatus": "Pending Review",
+                            "bugLink": "",
+                            "bugSubmitted": false,
+                            "comments": null,
+                            "developerStatus": "Open",
+                            "isSuppressed": false,
+                            "lineNumber": null,
+                            "notes": "first",
+                            "primaryLocation": "waffle",
+                            "primaryLocationFull": "waffle?test",
+                            "releaseId": 174280,
+                            "severity": "High",
+                            "vulnId": "parachute"
+                        },
+                        "issue_name": "first_waffle",
+                        "primaryLocationFull": "waffle?test",
+                        "url": "waffle?test",
+                        "vulnId": "parachute"
+                    }
+                ]
+            },
+            {
+                "key": "issue_details",
+                "value": "thank"
+            },
+            {
+                "key": "raw_severity",
+                "value": "High"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "ruleId"
+                ]
+            },
+            {
+                "key": "analyzer_name",
+                "value": null
+            },
+            {
+                "key": "recommendations",
+                "value": "<br>Disable support for the TLS 1.0 protocol on the server.  Both NIST 800-52  and PCI DSS v3.1 strongly recommend upgrade to the latest version of TLS available, TLS 1.2.    Or, at a minimum an upgrade to TLS 1.1.\n\n<ul><li>For Apache, modify the following lines in the server configuration</li><ul><li>SSLProtocol ALL \u2013SSLv2 -SSLv3 -TLSv1</li></ul><li>For Nginx, modify the following lines in server configuration:</li><ul><li>ssl_protocols TLSv1.1 TLSv1.2;</li></ul><li>For IIS, please refer to Microsoft Knowledge Base Articles:</li><ul><li><a>https://technet.microsoft.com/library/security/3009008</a></li></ul><li>For other servers, please refer to vendor specific documentation.</li></ul>WebInspect has detected conditions that could enable POODLE on the target server.  The vulnerability is implementation dependent. It affects connections using certain TLS implementations that don't properly check the structure of the padding used in TLS packets. This could allow sensitive data transmitted on TLS connection to be leaked to a malicious user. The attack is identified by CVE-2014-8730."
+            },
+            {
+                "key": "references",
+                "value": "<br /><b>OWASP:</b><br /><a href=\"https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet\">Transport Layer Protection Cheat Sheet</a><br /><br /><b>NIST:</b><br /><a href=\"http://www.nist.gov/customcf/get_pdf.cfm?pub_id=915856\">NIST SP 800-52 Revision 1</a><br /><br /><b>PCI Security Standards Council:</b><br /><a href=\"https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-1.pdf\">PCI DSS v3.1</a><br /><a href=\"https://www.pcisecuritystandards.org/documents/Migrating_from_SSL_Early_TLS_Information%20Supplement_v1.pdf\">Migrating from SSL and Early TLS</a><br /><a href=\"https://www.pcisecuritystandards.org/pdfs/15_03_25_PCI_SSC_FAQ_SSL_Protocol_Vulnerability_Revisions_to_PCI_DSS_PAD.pdf\">PCI SSC FAQ on impending revisions to PCI DSS, PA-DSS to address SSL protocol vulnerability</a><br /><br /><b>Microsoft:</b><br /><a href=\"http://support.microsoft.com/kb/187498\">Knowledge Base Article ID: 187498</a><br /><a href=\"http://support.microsoft.com/kb/245030/\">Knowledge Base Article ID: 245030</a><br /><a href=\"http://technet.microsoft.com/en-us/library/dd450371%28WS.10%29.aspx\">Security Guidance for IIS</a><br /><br /><b>Apache:</b><br /><a href=\"http://httpd.apache.org/docs/2.0/ssl/ssl_faq.html\">SSL/TLS Strong Encryption: FAQ</a><br /><br /><b>CVE-2014-8730</b><br /><a href=\"https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-8730\">CVE-2014-8730</a><br /><br /><b>POODLE Vulnerability Expands Beyond SSLv3 to TLS 1.0 and 1.1</b><br /><a href=\"https://www.globalsign.com/en/blog/poodle-vulnerability-expands-beyond-sslv3-to-tls/\">https://www.globalsign.com/en/blog/poodle-vulnerability-expands-beyond-sslv3-to-tls/</a><br /><br /><b>TLS Fallback Signaling Cipher Suite Value (SCSV) for Preventing Protocol Downgrade Attacks</b><br /><a href=\"https://tools.ietf.org/html/draft-ietf-tls-downgrade-scsv-00\">https://tools.ietf.org/html/draft-ietf-tls-downgrade-scsv-00l</a><br />"
+            },
+            {
+                "key": "auditor_status",
+                "value": "Pending Review"
+            },
+            {
+                "key": "assigned_user",
+                "value": "(Not Set)"
+            },
+            {
+                "key": "developerStatus",
+                "value": "Open"
+            },
+            {
+                "key": "bugSubmitted",
+                "value": false
+            },
+            {
+                "key": "bugLink",
+                "value": ""
+            },
+            {
+                "key": "releaseId",
+                "value": 174280
+            },
+            {
+                "key": "impact",
+                "value": null
+            },
+            {
+                "key": "probability",
+                "value": null
+            },
+            {
+                "key": "compliance_categories",
+                "value": [
+                    {
+                        "categoryName": "OWASP 2013",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "A5 - Security Misconfiguration"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "OWASP 2017",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "A6 - Security Misconfiguration"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "PCI 3.2",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "4.1 - Insecure Cardholder Data Transmission"
+                            },
+                            {
+                                "complianceRule": "6.5.4 - Insecure Communications"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "STIG 4.1",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "APSC-DV-000160 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-000170 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001940 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001950 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002440 CAT I"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002450 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002460 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002470 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001620 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001630 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001510 CAT II"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "STIG 4.3",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "APSC-DV-001510 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001620 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001630 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-000160 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-000170 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001940 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001950 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002440 CAT I"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002450 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002460 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002470 CAT II"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "CWE",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "CWE-327"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "GDPR",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "Insufficient Data Protection"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "traces",
+                "value": null
+            },
+            {
+                "key": "category",
+                "value": null
+            },
+            {
+                "key": "rule_id",
+                "value": "11893"
+            },
+            {
+                "key": "_raw_screenshots",
+                "value": [
+                    {
+                        "description": null,
+                        "id": 182623,
+                        "name": "Weak Protocol 1.0.png",
+                        "uploadDate": "2019-02-05T07:37:43.07"
+                    }
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "possible",
+        "issueName": "first_waffle",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "11893",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortifyondemand",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "2014-8730",
+                "type": "cve"
+            },
+            {
+                "id": "327",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "delicate",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": 8.0,
+        "scanStatus": null,
+        "scanTool": "fortifyondemand",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 8.0,
+        "severityCode": "High",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_auditoptions": {
+                            "auditActions": [],
+                            "auditProcessing": false,
+                            "canAudit": false,
+                            "canChallenge": false,
+                            "canEdit": false,
+                            "inAuditMode": false,
+                            "releaseId": 174280,
+                            "vulnId": "strategic"
+                        },
+                        "_raw_parameters": {
+                            "postParameters": [],
+                            "queryParameters": [],
+                            "releaseId": 174280,
+                            "vulnId": "strategic"
+                        },
+                        "_raw_requestresponse": {
+                            "releaseId": 174280,
+                            "responseContent": "row",
+                            "vulnId": "strategic"
+                        },
+                        "_raw_summary": {
+                            "assignedUser": "(Not Set)",
+                            "auditPending": false,
+                            "auditPendingAuditorStatus": null,
+                            "auditPendingSeverity": null,
+                            "auditPendingSuppression": null,
+                            "auditorStatus": "Pending Review",
+                            "bugLink": "",
+                            "bugSubmitted": false,
+                            "comments": null,
+                            "developerStatus": "Open",
+                            "isSuppressed": false,
+                            "lineNumber": null,
+                            "notes": "first",
+                            "primaryLocation": "waffle",
+                            "primaryLocationFull": "waffle?test",
+                            "releaseId": 174280,
+                            "severity": "Critical",
+                            "vulnId": "strategic"
+                        },
+                        "issue_name": "first_waffle",
+                        "primaryLocationFull": "waffle?test",
+                        "url": "waffle?test",
+                        "vulnId": "strategic"
+                    }
+                ]
+            },
+            {
+                "key": "issue_details",
+                "value": "offspring"
+            },
+            {
+                "key": "raw_severity",
+                "value": "Critical"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "ruleId"
+                ]
+            },
+            {
+                "key": "analyzer_name",
+                "value": null
+            },
+            {
+                "key": "recommendations",
+                "value": "Disable support for weak ciphers on the server. Weak ciphers are generally defined as:\n<ul><li>Any cipher with key length less than 128 bits</li><li>Export-class cipher suites</li><li>NULL ciphers</li><li>Ciphers that support unauthenticated modes</li><li>Ciphers assessed at security strenghts below 112 bits</li><li>All RC4 ciphers</li><li>All 64-bit block ciphers</li></ul>\n \nThe following ciphers supported by the server are weak and should be disabled:<br><b><ul><li>TLS_RSA_WITH_3DES_EDE_CBC_SHA (0xa)</li><li>TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA (0xc012)</li></ul></b><br><br>The weak cipher list above also includes ciphers that enable conditions for SWEET32 cipher attacks.  The vulnerability affects all 64-bit block ciphers such as 3DES and Blowfish.  The vulnerability is independent of the number of keys and/or the key length used in the cipher.  It could allow attackers to obtain cleartext data from long-lived encrypted sessions.  The vulnerability is identified by CVE-2016-2183 and CVE-2016-6329. <br><br>The following 64-bit block ciphers should be removed from the target server configuration to prevent SWEET32 attacks:<br> <b><ul><li>TLS_RSA_WITH_3DES_EDE_CBC_SHA (0xa)</li><li>TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA (0xc012)</li></ul></b><br><ul><li>For Apache, modify the following lines in httpd.conf or ssl.conf:</li><ul><li>SSLCipherSuite ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:!NULL:!RC4:!RC2:!DES:!3DES+HIGH:+MEDIUM</li></ul><li>For IIS, please refer to Microsoft Knowledge Base Articles:</li><ul><li>Article ID: 187498</li><li>Article ID: 245030 and</li><li>Security Guidance for IIS</li><li>Article ID: 2868725</li></ul><li>For other servers, please refer to vendor specific documentation.</li></ul><br>\nThe following ciphers supported by the server should provide adequate protection and may be left enabled:<br><b><ul><li>TLS_RSA_WITH_AES_256_CBC_SHA (0x35)</li><li>TLS_RSA_WITH_AES_128_CBC_SHA (0x2f)</li><li>TLS_RSA_WITH_AES_256_CBC_SHA256 (0x3d)</li><li>TLS_RSA_WITH_AES_128_CBC_SHA256 (0x3c)</li><li>TLS_RSA_WITH_AES_256_GCM_SHA384 (0x9d)</li><li>TLS_RSA_WITH_AES_128_GCM_SHA256 (0x9c)</li><li>TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (0xc030)</li><li>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (0xc02f)</li><li>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384 (0xc028)</li><li>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (0xc014)</li><li>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256 (0xc027)</li><li>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (0xc013)</li></ul></b>"
+            },
+            {
+                "key": "references",
+                "value": "<br /><b>OWASP:</b><br /><a href=\"https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet\">Transport Layer Protection Cheat Sheet</a><br /><br /><b>PCI Security Standards Council:</b><br /><a href=\"https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-1.pdf\">PCI DSS v3.1</a><br /><br /><b>CVE</b><br /><a href=\"https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-2566f\">CVE-2013-2566</a><br /><a href=\"https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2183\">CVE-2016-2183</a><br /><a href=\"https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6329\">CVE-2016-6329</a><br /><br /><b>NIST</b><br /><a href=\"http://csrc.nist.gov/publications/nistpubs/800-131A/sp800-131A.pdf\">NIST Special Publication 800-131A</a><br /><br /><b>Microsoft:</b><br /><a href=\"https://support.microsoft.com/en-us/kb/2868725\">Knowledge Base Article ID: 2868725</a><br /><a href=\"http://support.microsoft.com/kb/187498\">Knowledge Base Article ID: 187498</a><br /><a href=\"http://support.microsoft.com/kb/245030/\">Knowledge Base Article ID: 245030</a><br /><a href=\"http://technet.microsoft.com/en-us/library/dd450371%28WS.10%29.aspx\">Security Guidance for IIS</a><br /><br /><b>Apache:</b><br /><a href=\"http://httpd.apache.org/docs/2.0/ssl/ssl_faq.html\">SSL/TLS Strong Encryption: FAQ</a><br /><br /><b>RC4:</b><br /><a href=\"https://www.schneier.com/blog/archives/2013/03/new_rc4_attack.html\">New RC4 Attack</a><br /><br /><b>ACM CCS '16</b><br /><a href=\"http://dl.acm.org/citation.cfm?id=2978423\">On the Practical (In-)Security of 64-bit Block Ciphers: Collision Attacks on HTTP over TLS and OpenVPN</a>"
+            },
+            {
+                "key": "auditor_status",
+                "value": "Pending Review"
+            },
+            {
+                "key": "assigned_user",
+                "value": "(Not Set)"
+            },
+            {
+                "key": "developerStatus",
+                "value": "Open"
+            },
+            {
+                "key": "bugSubmitted",
+                "value": false
+            },
+            {
+                "key": "bugLink",
+                "value": ""
+            },
+            {
+                "key": "releaseId",
+                "value": 174280
+            },
+            {
+                "key": "impact",
+                "value": null
+            },
+            {
+                "key": "probability",
+                "value": null
+            },
+            {
+                "key": "compliance_categories",
+                "value": [
+                    {
+                        "categoryName": "OWASP 2013",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "A5 - Security Misconfiguration"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "OWASP 2017",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "A6 - Security Misconfiguration"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "OWASP 2014 Mobile Top 10",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "M3 - Insufficient Transport Layer Protection"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "PCI 3.2",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "4.1 - Insecure Cardholder Data Transmission"
+                            },
+                            {
+                                "complianceRule": "6.5.4 - Insecure Communications"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "STIG 4.1",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "APSC-DV-002010 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-000160 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-000170 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001940 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001950 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002440 CAT I"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002450 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002460 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002470 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001620 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001630 CAT II"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "STIG 4.3",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "APSC-DV-002010 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001620 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001630 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-000160 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-000170 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001940 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001950 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002440 CAT I"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002450 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002460 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002470 CAT II"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "FISMA",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "SI"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "CWE",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "CWE-327"
+                            },
+                            {
+                                "complianceRule": "CWE-326"
+                            },
+                            {
+                                "complianceRule": "CWE-319"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "GDPR",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "Insufficient Data Protection"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "traces",
+                "value": null
+            },
+            {
+                "key": "category",
+                "value": null
+            },
+            {
+                "key": "rule_id",
+                "value": "12030"
+            },
+            {
+                "key": "_raw_screenshots",
+                "value": [
+                    {
+                        "description": null,
+                        "id": 182621,
+                        "name": "Weak Cipher.png",
+                        "uploadDate": "2019-02-05T07:36:59.69"
+                    }
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": null,
+        "issueName": "first_waffle",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "12030",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortifyondemand",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "2013-2566",
+                "type": "cve"
+            },
+            {
+                "id": "2016-2183",
+                "type": "cve"
+            },
+            {
+                "id": "2016-6329",
+                "type": "cve"
+            },
+            {
+                "id": "319",
+                "type": "cwe"
+            },
+            {
+                "id": "326",
+                "type": "cwe"
+            },
+            {
+                "id": "327",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "ban",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": 10.0,
+        "scanStatus": null,
+        "scanTool": "fortifyondemand",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 10.0,
+        "severityCode": "Critical",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_auditoptions": {
+                            "auditActions": [],
+                            "auditProcessing": false,
+                            "canAudit": false,
+                            "canChallenge": false,
+                            "canEdit": false,
+                            "inAuditMode": false,
+                            "releaseId": 174280,
+                            "vulnId": "noble"
+                        },
+                        "_raw_details": {
+                            "analyzerName": null,
+                            "complianceCategories": [
+                                {
+                                    "categoryName": "FISMA",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "SI"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "categoryName": "CWE",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "CWE-200"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "categoryName": "GDPR",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "Insufficient Data Protection"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "confidence": null,
+                            "explanation": "craftsman",
+                            "impact": null,
+                            "instanceId": "adult",
+                            "isStatic": false,
+                            "probability": null,
+                            "releaseId": 174280,
+                            "ruleId": "12365",
+                            "severity": null,
+                            "sink": "first",
+                            "source": null,
+                            "summary": "frequency",
+                            "vulnId": "noble"
+                        },
+                        "_raw_parameters": {
+                            "postParameters": [],
+                            "queryParameters": [],
+                            "releaseId": 174280,
+                            "vulnId": "noble"
+                        },
+                        "_raw_recommendations": {
+                            "isStatic": false,
+                            "recommendations": "<br>Please refer to your vendor's documentation to check if the TLS_RSA version in use is vulnerable to ROBOT attack. If necessary please apply the required patch from the vendor to protect against this vulnerability.",
+                            "references": "<ol><li><a href=\"https://robotattack.org/\">The ROBOT Attack</a></li><li><a href=\"https://eprint.iacr.org/2017/1189.pdf&#xD;&#xA;\">Return Of Bleichenbacher\u2019s Oracle Threat </a></li></ol>",
+                            "releaseId": 174280,
+                            "tips": "tower",
+                            "vulnId": "noble"
+                        },
+                        "_raw_requestresponse": {
+                            "releaseId": 174280,
+                            "responseContent": "row",
+                            "vulnId": "noble"
+                        },
+                        "_raw_summary": {
+                            "assignedUser": "(Not Set)",
+                            "auditPending": false,
+                            "auditPendingAuditorStatus": null,
+                            "auditPendingSeverity": null,
+                            "auditPendingSuppression": null,
+                            "auditorStatus": "Pending Review",
+                            "bugLink": "",
+                            "bugSubmitted": false,
+                            "comments": null,
+                            "developerStatus": "Open",
+                            "isSuppressed": false,
+                            "lineNumber": null,
+                            "notes": "first",
+                            "primaryLocation": "heir",
+                            "primaryLocationFull": "heir?test",
+                            "releaseId": 174280,
+                            "severity": "Info",
+                            "vulnId": "noble"
+                        },
+                        "issue_name": "first_heir",
+                        "primaryLocationFull": "heir?test",
+                        "url": "heir?test",
+                        "vulnId": "noble"
+                    }
+                ]
+            },
+            {
+                "key": "issue_details",
+                "value": "craftsman"
+            },
+            {
+                "key": "raw_severity",
+                "value": null
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "ruleId"
+                ]
+            },
+            {
+                "key": "analyzer_name",
+                "value": null
+            },
+            {
+                "key": "recommendations",
+                "value": "<br>Please refer to your vendor's documentation to check if the TLS_RSA version in use is vulnerable to ROBOT attack. If necessary please apply the required patch from the vendor to protect against this vulnerability."
+            },
+            {
+                "key": "references",
+                "value": "<ol><li><a href=\"https://robotattack.org/\">The ROBOT Attack</a></li><li><a href=\"https://eprint.iacr.org/2017/1189.pdf&#xD;&#xA;\">Return Of Bleichenbacher\u2019s Oracle Threat </a></li></ol>"
+            },
+            {
+                "key": "auditor_status",
+                "value": "Pending Review"
+            },
+            {
+                "key": "assigned_user",
+                "value": "(Not Set)"
+            },
+            {
+                "key": "developerStatus",
+                "value": "Open"
+            },
+            {
+                "key": "bugSubmitted",
+                "value": false
+            },
+            {
+                "key": "bugLink",
+                "value": ""
+            },
+            {
+                "key": "releaseId",
+                "value": 174280
+            },
+            {
+                "key": "impact",
+                "value": null
+            },
+            {
+                "key": "probability",
+                "value": null
+            },
+            {
+                "key": "compliance_categories",
+                "value": [
+                    {
+                        "categoryName": "FISMA",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "SI"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "CWE",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "CWE-200"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "GDPR",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "Insufficient Data Protection"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "traces",
+                "value": null
+            },
+            {
+                "key": "category",
+                "value": null
+            },
+            {
+                "key": "rule_id",
+                "value": "12365"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "frequency",
+        "issueName": "first_heir",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "12365",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortifyondemand",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "200",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "tower",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": 0.0,
+        "scanStatus": null,
+        "scanTool": "fortifyondemand",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0.0,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_auditoptions": {
+                            "auditActions": [],
+                            "auditProcessing": false,
+                            "canAudit": false,
+                            "canChallenge": false,
+                            "canEdit": false,
+                            "inAuditMode": false,
+                            "releaseId": 174280,
+                            "vulnId": "opposition"
+                        },
+                        "_raw_parameters": {
+                            "postParameters": [],
+                            "queryParameters": [],
+                            "releaseId": 174280,
+                            "vulnId": "opposition"
+                        },
+                        "_raw_requestresponse": {
+                            "releaseId": 174280,
+                            "responseContent": "row",
+                            "vulnId": "opposition"
+                        },
+                        "_raw_summary": {
+                            "assignedUser": "(Not Set)",
+                            "auditPending": false,
+                            "auditPendingAuditorStatus": null,
+                            "auditPendingSeverity": null,
+                            "auditPendingSuppression": null,
+                            "auditorStatus": "Pending Review",
+                            "bugLink": "",
+                            "bugSubmitted": false,
+                            "comments": null,
+                            "developerStatus": "Open",
+                            "isSuppressed": false,
+                            "lineNumber": null,
+                            "notes": "first",
+                            "primaryLocation": "waffle",
+                            "primaryLocationFull": "waffle?test",
+                            "releaseId": 174280,
+                            "severity": "Medium",
+                            "vulnId": "opposition"
+                        },
+                        "issue_name": "first_waffle",
+                        "primaryLocationFull": "waffle?test",
+                        "url": "waffle?test",
+                        "vulnId": "opposition"
+                    }
+                ]
+            },
+            {
+                "key": "issue_details",
+                "value": "dream"
+            },
+            {
+                "key": "raw_severity",
+                "value": "Medium"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "ruleId"
+                ]
+            },
+            {
+                "key": "analyzer_name",
+                "value": null
+            },
+            {
+                "key": "recommendations",
+                "value": "Have a migration plan in place for all sites to exclusively use TLS1.2 and above. \n\nDisable support for the TLS 1.1 protocol on the server. Instead, TLSv1.2 and above should be used. \n<ul><li>\nFor Apache, modify the following lines in the server configuration \n<ul><li>\nSSL Protocol ALL \u2013SSLv2 -SSLv3 -TLSv1 \u2013TLSv1.1\n</li></ul></li><li>\nFor Nginx, modify the following lines in server configuration: \n<ul><li>\nSSL_Protocols TLSv1.2\n</li></ul></li><li>\nFor IIS, please refer to Microsoft Knowledge Base Articles: \n<ul><li>\nhttps://technet.microsoft.com/library/security/3009008\n</li></ul></li></ul>\nFor other servers, please refer to vendor specific documentation."
+            },
+            {
+                "key": "references",
+                "value": "<a href=\"http://csrc.nist.gov/publications/nistpubs/800-131A/sp800-131A.pdf\">NIST Special Publication 800-131A</a><br /><a href=\"http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-52r1.pdf\">NIST Special Publication 800-52r1</a><br />"
+            },
+            {
+                "key": "auditor_status",
+                "value": "Pending Review"
+            },
+            {
+                "key": "assigned_user",
+                "value": "(Not Set)"
+            },
+            {
+                "key": "developerStatus",
+                "value": "Open"
+            },
+            {
+                "key": "bugSubmitted",
+                "value": false
+            },
+            {
+                "key": "bugLink",
+                "value": ""
+            },
+            {
+                "key": "releaseId",
+                "value": 174280
+            },
+            {
+                "key": "impact",
+                "value": null
+            },
+            {
+                "key": "probability",
+                "value": null
+            },
+            {
+                "key": "compliance_categories",
+                "value": [
+                    {
+                        "categoryName": "OWASP 2013",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "A5 - Security Misconfiguration"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "OWASP 2017",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "A6 - Security Misconfiguration"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "PCI 3.2",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "6.5.4 - Insecure Communications"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "STIG 4.1",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "APSC-DV-000160 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-000170 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001940 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001950 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002440 CAT I"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002450 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002460 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002470 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001620 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001630 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001510 CAT II"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "STIG 4.3",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "APSC-DV-001510 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001620 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001630 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-000160 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-000170 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001940 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-001950 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002440 CAT I"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002450 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002460 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002470 CAT II"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "CWE",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "CWE-327"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "GDPR",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "Insufficient Data Protection"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "traces",
+                "value": null
+            },
+            {
+                "key": "category",
+                "value": null
+            },
+            {
+                "key": "rule_id",
+                "value": "12412"
+            },
+            {
+                "key": "_raw_screenshots",
+                "value": [
+                    {
+                        "description": null,
+                        "id": 182624,
+                        "name": "Weak Protocol 1.1.png",
+                        "uploadDate": "2019-02-05T07:38:02.35"
+                    }
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "headline",
+        "issueName": "first_waffle",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "12412",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortifyondemand",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "327",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "split",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": 6.0,
+        "scanStatus": null,
+        "scanTool": "fortifyondemand",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 6.0,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_auditoptions": {
+                            "auditActions": [],
+                            "auditProcessing": false,
+                            "canAudit": false,
+                            "canChallenge": false,
+                            "canEdit": false,
+                            "inAuditMode": false,
+                            "releaseId": 174280,
+                            "vulnId": "compliance"
+                        },
+                        "_raw_details": {
+                            "analyzerName": null,
+                            "complianceCategories": [
+                                {
+                                    "categoryName": "OWASP 2017",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "A6 - Security Misconfiguration"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "categoryName": "PCI 3.2",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "4.1 - Insecure Cardholder Data Transmission"
+                                        },
+                                        {
+                                            "complianceRule": "6.5.4 - Insecure Communications"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "categoryName": "CWE",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "CWE-327"
+                                        },
+                                        {
+                                            "complianceRule": "CWE-326"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "categoryName": "GDPR",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "Insufficient Data Protection"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "confidence": null,
+                            "explanation": "alarm",
+                            "impact": null,
+                            "instanceId": "raw",
+                            "isStatic": false,
+                            "probability": null,
+                            "releaseId": 174280,
+                            "ruleId": "12503",
+                            "severity": "High",
+                            "sink": "first",
+                            "source": null,
+                            "vulnId": "compliance"
+                        },
+                        "_raw_parameters": {
+                            "postParameters": [],
+                            "queryParameters": [],
+                            "releaseId": 174280,
+                            "vulnId": "compliance"
+                        },
+                        "_raw_recommendations": {
+                            "isStatic": false,
+                            "recommendations": "Please refer to your vendor's TLS library documentation and apply the required patch from the vendor to protect against this vulnerability. TLS servers receiving malformed PKCS#1v1.5 ClientKeyExchange messages should continue the TLS handshake and always respond with an identical TLS alert.",
+                            "references": "<p>1.<a href=\"https://robotattack.org/\">The ROBOT Attack</a></p><p>2.<a href=\"https://eprint.iacr.org/2017/1189.pdf\">Return Of Bleichenbacher\u2019s Oracle Threat</a></p><p>3. CVE-2016-6883</p><p>4. CVE-2017-1000385</p><p>5. CVE-2017-13099</p><p>6. CVE-2017-13098</p><p>7. CVE-2018-1388</p>",
+                            "releaseId": 174280,
+                            "tips": "graphic",
+                            "vulnId": "compliance"
+                        },
+                        "_raw_requestresponse": {
+                            "releaseId": 174280,
+                            "responseContent": "speculate",
+                            "vulnId": "compliance"
+                        },
+                        "_raw_summary": {
+                            "assignedUser": "(Not Set)",
+                            "auditPending": false,
+                            "auditPendingAuditorStatus": null,
+                            "auditPendingSeverity": null,
+                            "auditPendingSuppression": null,
+                            "auditorStatus": "Pending Review",
+                            "bugLink": "",
+                            "bugSubmitted": false,
+                            "comments": null,
+                            "developerStatus": "Open",
+                            "isSuppressed": false,
+                            "lineNumber": null,
+                            "notes": "first",
+                            "primaryLocation": "waffle",
+                            "primaryLocationFull": "waffle?test",
+                            "releaseId": 174280,
+                            "severity": "High",
+                            "vulnId": "compliance"
+                        },
+                        "issue_name": "first_waffle",
+                        "primaryLocationFull": "waffle?test",
+                        "url": "waffle?test",
+                        "vulnId": "compliance"
+                    }
+                ]
+            },
+            {
+                "key": "issue_details",
+                "value": "alarm"
+            },
+            {
+                "key": "raw_severity",
+                "value": "High"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "ruleId"
+                ]
+            },
+            {
+                "key": "analyzer_name",
+                "value": null
+            },
+            {
+                "key": "recommendations",
+                "value": "Please refer to your vendor's TLS library documentation and apply the required patch from the vendor to protect against this vulnerability. TLS servers receiving malformed PKCS#1v1.5 ClientKeyExchange messages should continue the TLS handshake and always respond with an identical TLS alert."
+            },
+            {
+                "key": "references",
+                "value": "<p>1.<a href=\"https://robotattack.org/\">The ROBOT Attack</a></p><p>2.<a href=\"https://eprint.iacr.org/2017/1189.pdf\">Return Of Bleichenbacher\u2019s Oracle Threat</a></p><p>3. CVE-2016-6883</p><p>4. CVE-2017-1000385</p><p>5. CVE-2017-13099</p><p>6. CVE-2017-13098</p><p>7. CVE-2018-1388</p>"
+            },
+            {
+                "key": "auditor_status",
+                "value": "Pending Review"
+            },
+            {
+                "key": "assigned_user",
+                "value": "(Not Set)"
+            },
+            {
+                "key": "developerStatus",
+                "value": "Open"
+            },
+            {
+                "key": "bugSubmitted",
+                "value": false
+            },
+            {
+                "key": "bugLink",
+                "value": ""
+            },
+            {
+                "key": "releaseId",
+                "value": 174280
+            },
+            {
+                "key": "impact",
+                "value": null
+            },
+            {
+                "key": "probability",
+                "value": null
+            },
+            {
+                "key": "compliance_categories",
+                "value": [
+                    {
+                        "categoryName": "OWASP 2017",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "A6 - Security Misconfiguration"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "PCI 3.2",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "4.1 - Insecure Cardholder Data Transmission"
+                            },
+                            {
+                                "complianceRule": "6.5.4 - Insecure Communications"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "CWE",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "CWE-327"
+                            },
+                            {
+                                "complianceRule": "CWE-326"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "GDPR",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "Insufficient Data Protection"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "traces",
+                "value": null
+            },
+            {
+                "key": "category",
+                "value": null
+            },
+            {
+                "key": "rule_id",
+                "value": "12503"
+            },
+            {
+                "key": "_raw_screenshots",
+                "value": [
+                    {
+                        "description": null,
+                        "id": 182622,
+                        "name": "Robot Attack.png",
+                        "uploadDate": "2019-02-05T07:37:28.44"
+                    }
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": null,
+        "issueName": "first_waffle",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "12503",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortifyondemand",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "2016-6883",
+                "type": "cve"
+            },
+            {
+                "id": "2017-1000385",
+                "type": "cve"
+            },
+            {
+                "id": "2017-13098",
+                "type": "cve"
+            },
+            {
+                "id": "2017-13099",
+                "type": "cve"
+            },
+            {
+                "id": "2018-1388",
+                "type": "cve"
+            },
+            {
+                "id": "326",
+                "type": "cwe"
+            },
+            {
+                "id": "327",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "graphic",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": 8.0,
+        "scanStatus": null,
+        "scanTool": "fortifyondemand",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 8.0,
+        "severityCode": "High",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_auditoptions": {
+                            "auditActions": [],
+                            "auditProcessing": false,
+                            "canAudit": false,
+                            "canChallenge": false,
+                            "canEdit": false,
+                            "inAuditMode": false,
+                            "releaseId": 174280,
+                            "vulnId": "crosswalk"
+                        },
+                        "_raw_parameters": {
+                            "postParameters": [],
+                            "queryParameters": [],
+                            "releaseId": 174280,
+                            "vulnId": "crosswalk"
+                        },
+                        "_raw_requestresponse": {
+                            "releaseId": 174280,
+                            "responseContent": "wagon",
+                            "vulnId": "crosswalk"
+                        },
+                        "_raw_summary": {
+                            "assignedUser": "(Not Set)",
+                            "auditPending": false,
+                            "auditPendingAuditorStatus": null,
+                            "auditPendingSeverity": null,
+                            "auditPendingSuppression": null,
+                            "auditorStatus": "Pending Review",
+                            "bugLink": "",
+                            "bugSubmitted": false,
+                            "comments": null,
+                            "developerStatus": "Open",
+                            "isSuppressed": false,
+                            "lineNumber": null,
+                            "notes": "first",
+                            "primaryLocation": "arena",
+                            "releaseId": 174280,
+                            "severity": "Low",
+                            "vulnId": "crosswalk"
+                        },
+                        "issue_name": "first_arena",
+                        "primaryLocationFull": null,
+                        "url": null,
+                        "vulnId": "crosswalk"
+                    }
+                ]
+            },
+            {
+                "key": "issue_details",
+                "value": "insist"
+            },
+            {
+                "key": "raw_severity",
+                "value": "Low"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "ruleId"
+                ]
+            },
+            {
+                "key": "analyzer_name",
+                "value": null
+            },
+            {
+                "key": "recommendations",
+                "value": "<br><b>For Security Operations:</b><br>This check is part of unknown application testing.  Unknown application testing seeks to uncover new vulnerabilities in both custom and commercial software.  Because of this, there are no specific patches or descriptions for this issue. If there is no apparent file upload capability on the page, this check may be safely ignored.  You can instruct the scanner to ignore this vulnerability by right-clicking the vulnerability node on the displayed results tree and click \"Ignore Vulnerability.\" \n\n<br><br><b>For QA:</b><br>This issue will need to be resolved in the production code. Notify the appropriate developer of this issue. \n\n<br><br><b>For Development:</b><br>Ensure that the following steps are taken to sanitize the file being received:<br><br><ul><li>Limit the types of files that can be uploaded.  For instance, on an image upload page, any file other than a .jpg should be refused.</li><li>Ensure that the web user has no control whatsoever over the name and location of the uploaded file on the server. </li><li>Never use the name that the user assigns it.  </li><li>Never derive the filename from the web user's username or session ID. </li><li>Do not place the file in a directory accessible by web users.  It is preferable for this location to be outside of the webroot.</li><li>Ensure that strict permissions are set on both the uploaded file and the directory it is located in.</li><li>Do not allow execute permissions on uploaded files.  If possible, deny all permission for all users but the web application user.</li><li>Verify that the uploaded file contains appropriate content.  For instance, an uploaded JPEG should have a standard JPEG file header.</li></ul>"
+            },
+            {
+                "key": "references",
+                "value": ""
+            },
+            {
+                "key": "auditor_status",
+                "value": "Pending Review"
+            },
+            {
+                "key": "assigned_user",
+                "value": "(Not Set)"
+            },
+            {
+                "key": "developerStatus",
+                "value": "Open"
+            },
+            {
+                "key": "bugSubmitted",
+                "value": false
+            },
+            {
+                "key": "bugLink",
+                "value": ""
+            },
+            {
+                "key": "releaseId",
+                "value": 174280
+            },
+            {
+                "key": "impact",
+                "value": null
+            },
+            {
+                "key": "probability",
+                "value": null
+            },
+            {
+                "key": "compliance_categories",
+                "value": [
+                    {
+                        "categoryName": "OWASP 2013",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "A1 - Injection"
+                            },
+                            {
+                                "complianceRule": "A5 - Security Misconfiguration"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "OWASP 2017",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "A1 - Injection"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "PCI 3.2",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "6.5.1 - Injection Flaws"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "STIG 4.1",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "APSC-DV-003300 CAT II"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "STIG 4.3",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "APSC-DV-003300 CAT II"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "FISMA",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "AC"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "CWE",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "CWE-434"
+                            },
+                            {
+                                "complianceRule": "CWE-284"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "GDPR",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "Indirect Access To Potentially Sensitive Data"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "traces",
+                "value": null
+            },
+            {
+                "key": "category",
+                "value": null
+            },
+            {
+                "key": "rule_id",
+                "value": "1351"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "fill",
+        "issueName": "first_arena",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "1351",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortifyondemand",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "284",
+                "type": "cwe"
+            },
+            {
+                "id": "434",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "delicate",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": 3.0,
+        "scanStatus": null,
+        "scanTool": "fortifyondemand",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3.0,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_auditoptions": {
+                            "auditActions": [],
+                            "auditProcessing": false,
+                            "canAudit": false,
+                            "canChallenge": false,
+                            "canEdit": false,
+                            "inAuditMode": false,
+                            "releaseId": 174280,
+                            "vulnId": "add"
+                        },
+                        "_raw_parameters": {
+                            "postParameters": [
+                                {
+                                    "decodedValue": null,
+                                    "name": "userName",
+                                    "value": "admiration"
+                                },
+                                {
+                                    "decodedValue": null,
+                                    "name": "rememberUserID",
+                                    "value": "eye"
+                                },
+                                {
+                                    "decodedValue": null,
+                                    "name": "password",
+                                    "value": "march"
+                                },
+                                {
+                                    "decodedValue": "/portal/",
+                                    "name": "RedirectTo",
+                                    "value": "gutter"
+                                }
+                            ],
+                            "queryParameters": [],
+                            "releaseId": 174280,
+                            "vulnId": "add"
+                        },
+                        "_raw_requestresponse": {
+                            "releaseId": 174280,
+                            "responseContent": "morning",
+                            "vulnId": "add"
+                        },
+                        "_raw_summary": {
+                            "assignedUser": "(Not Set)",
+                            "auditPending": false,
+                            "auditPendingAuditorStatus": null,
+                            "auditPendingSeverity": null,
+                            "auditPendingSuppression": null,
+                            "auditorStatus": "Pending Review",
+                            "bugLink": "",
+                            "bugSubmitted": false,
+                            "comments": null,
+                            "developerStatus": "Open",
+                            "isSuppressed": false,
+                            "lineNumber": null,
+                            "notes": "first",
+                            "primaryLocation": "plug",
+                            "primaryLocationFull": "plug?test",
+                            "releaseId": 174280,
+                            "severity": "Medium",
+                            "vulnId": "add"
+                        },
+                        "issue_name": "first_plug",
+                        "primaryLocationFull": "plug?test",
+                        "url": "plug?test",
+                        "vulnId": "add"
+                    }
+                ]
+            },
+            {
+                "key": "issue_details",
+                "value": "delicate"
+            },
+            {
+                "key": "raw_severity",
+                "value": "Medium"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "ruleId"
+                ]
+            },
+            {
+                "key": "analyzer_name",
+                "value": null
+            },
+            {
+                "key": "recommendations",
+                "value": "<br><b>For Development:</b><br>This issue will ultimately need to be rectified by your Network or Security Operations team. If necessary, implement the change in your development environment.\n<br><br><b>For Security Operations:</b><br><br>IIS 4.0 and 5.0 Fix Information:<br><a href=\"http://support.microsoft.com/default.aspx?scid=kb;en-us;274149\">http://support.microsoft.com/default.aspx?scid=kb;en-us;274149</a><br><br>\nRemediation for IIS 6.x:<br><a href=\"http://www.microsoft.com/technet/prodtechnol/WindowsServer2003/Library/IIS/0d49cbc8-10e1-4fa8-ba61-c34e524a3ae6.mspx?mfr=true\">http://www.microsoft.com/technet/prodtechnol/WindowsServer2003/Library/IIS/0d49cbc8-10e1-4fa8-ba61-c34e524a3ae6.mspx?mfr=true</a><br><a href=\"http://msdn2.microsoft.com/en-us/library/ms998310.aspx\">http://msdn2.microsoft.com/en-us/library/ms998310.aspx</a><br><br>Require SSL for an Authentication Cookie (IIS 7):<br><a href=\"http://technet.microsoft.com/en-us/library/cc771633(WS.10).aspx\">http://technet.microsoft.com/en-us/library/cc771633(WS.10).aspx</a><br><br>AnonymousIdentificationSection Class [IIS 7]:<br><a href=\"http://msdn.microsoft.com/en-us/library/ms689482.aspx\">http://msdn.microsoft.com/en-us/library/ms689482.aspx</a><br><br>Use the following links to remediate this issue on an Apache server:\n\n\n<a href=\"http://search.cpan.org/~jkrasnoo/ApacheCookieEncrypted-0.03/Encrypted.pm\">http://search.cpan.org/~jkrasnoo/ApacheCookieEncrypted-0.03/Encrypted.pm</a><br><a href=\"http://hc.apache.org/httpclient-3.x/apidocs/org/apache/commons/httpclient/class-use/Cookie.html\">\nhttp://hc.apache.org/httpclient-3.x/apidocs/org/apache/commons/httpclient/class-use/Cookie.html</a><br><br><b>For QA:</b><br>This issue will ultimately need to be rectified by your Network or Security Operations team. If necessary, implement the change in your testing environment."
+            },
+            {
+                "key": "references",
+                "value": "<br />General Information:<br /><a href=\"http://www.cookiecentral.com/faq/\">The Unofficial Cookie FAQ</a><br />"
+            },
+            {
+                "key": "auditor_status",
+                "value": "Pending Review"
+            },
+            {
+                "key": "assigned_user",
+                "value": "(Not Set)"
+            },
+            {
+                "key": "developerStatus",
+                "value": "Open"
+            },
+            {
+                "key": "bugSubmitted",
+                "value": false
+            },
+            {
+                "key": "bugLink",
+                "value": ""
+            },
+            {
+                "key": "releaseId",
+                "value": 174280
+            },
+            {
+                "key": "impact",
+                "value": null
+            },
+            {
+                "key": "probability",
+                "value": null
+            },
+            {
+                "key": "compliance_categories",
+                "value": [
+                    {
+                        "categoryName": "OWASP 2013",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "A6 - Sensitive Data Exposure"
+                            },
+                            {
+                                "complianceRule": "A2 - Broken Authentication and Session Management"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "OWASP 2017",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "A3 - Sensitive Data Exposure"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "OWASP 2014 Mobile Top 10",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "M9 - Improper Session Handling"
+                            },
+                            {
+                                "complianceRule": "M4 - Unintended Data Leakage"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "PCI 3.2",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "4.1 - Insecure Cardholder Data Transmission"
+                            },
+                            {
+                                "complianceRule": "6.5.4 - Insecure Communications"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "STIG 4.1",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "APSC-DV-002440 CAT I"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002450 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002460 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002470 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002220 CAT II"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "STIG 4.3",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "APSC-DV-002220 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002440 CAT I"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002450 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002460 CAT II"
+                            },
+                            {
+                                "complianceRule": "APSC-DV-002470 CAT II"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "FISMA",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "SI"
+                            },
+                            {
+                                "complianceRule": "IA"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "CWE",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "CWE-614"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "GDPR",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "Insufficient Data Protection"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "traces",
+                "value": null
+            },
+            {
+                "key": "category",
+                "value": null
+            },
+            {
+                "key": "rule_id",
+                "value": "5584"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": null,
+        "issueName": "first_plug",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "5584",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortifyondemand",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "614",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "delicate",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": 6.0,
+        "scanStatus": null,
+        "scanTool": "fortifyondemand",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 6.0,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_auditoptions": {
+                            "auditActions": [],
+                            "auditProcessing": false,
+                            "canAudit": false,
+                            "canChallenge": false,
+                            "canEdit": false,
+                            "inAuditMode": false,
+                            "releaseId": 174280,
+                            "vulnId": "error"
+                        },
+                        "_raw_details": {
+                            "analyzerName": null,
+                            "complianceCategories": [
+                                {
+                                    "categoryName": "FISMA",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "SI"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "categoryName": "CWE",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "CWE-200"
+                                        },
+                                        {
+                                            "complianceRule": "CWE-642"
+                                        },
+                                        {
+                                            "complianceRule": "CWE-472"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "confidence": null,
+                            "explanation": "dictionary",
+                            "impact": null,
+                            "instanceId": "merit",
+                            "isStatic": false,
+                            "probability": null,
+                            "releaseId": 174280,
+                            "ruleId": "5609",
+                            "severity": null,
+                            "sink": "first",
+                            "source": null,
+                            "summary": "privacy",
+                            "vulnId": "error"
+                        },
+                        "_raw_parameters": {
+                            "postParameters": [],
+                            "queryParameters": [],
+                            "releaseId": 174280,
+                            "vulnId": "error"
+                        },
+                        "_raw_requestresponse": {
+                            "releaseId": 174280,
+                            "responseContent": "wagon",
+                            "vulnId": "error"
+                        },
+                        "_raw_summary": {
+                            "assignedUser": "(Not Set)",
+                            "auditPending": false,
+                            "auditPendingAuditorStatus": null,
+                            "auditPendingSeverity": null,
+                            "auditPendingSuppression": null,
+                            "auditorStatus": "Pending Review",
+                            "bugLink": "",
+                            "bugSubmitted": false,
+                            "comments": null,
+                            "developerStatus": "Open",
+                            "isSuppressed": false,
+                            "lineNumber": null,
+                            "notes": "first",
+                            "primaryLocation": "arena",
+                            "primaryLocationFull": "arena?test",
+                            "releaseId": 174280,
+                            "severity": "Info",
+                            "vulnId": "error"
+                        },
+                        "issue_name": "first_arena",
+                        "primaryLocationFull": "arena?test",
+                        "url": "arena?test",
+                        "vulnId": "error"
+                    }
+                ]
+            },
+            {
+                "key": "issue_details",
+                "value": "dictionary"
+            },
+            {
+                "key": "raw_severity",
+                "value": null
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "ruleId"
+                ]
+            },
+            {
+                "key": "analyzer_name",
+                "value": null
+            },
+            {
+                "key": "recommendations",
+                "value": "<br>Do not rely on hidden form fields as a method of passing sensitive information or maintaining session state.  One workable bypass is to encrypt the hidden values in a form, and then decrypt them when that information is to be utilized by a database operation or a script. From a security standpoint, the best method of temporarily storing information required by different forms is to utilize a session cookie. <br><br>\nWhether hidden or not, if your site utilizes values submitted via a form to construct database queries, do not make the assumption that the data is non-malicious. Instead, utilize the following recommendations to sanitize user supplied input.\n<br><br><ul><li>Stringently define the data type (for instance, a string, an alphanumeric character, etc) that the application will accept. </li><br><br><li>Use what is good instead of what is bad. </li><br><br><li>Validate input for improper characters. </li><br><br><li>Do not display error messages to the end user that provide information (such as table names) that could be utilized in orchestrating an attack. </li><br><br><li>Define the allowed set of characters. For instance, if a field is to receive a number, only let that field accept numbers. </li><br><br><li>Define the maximum and minimum data lengths for what the application will accept. </li><br><br><li>Specify acceptable numeric ranges for input. </li></ul>"
+            },
+            {
+                "key": "references",
+                "value": ""
+            },
+            {
+                "key": "auditor_status",
+                "value": "Pending Review"
+            },
+            {
+                "key": "assigned_user",
+                "value": "(Not Set)"
+            },
+            {
+                "key": "developerStatus",
+                "value": "Open"
+            },
+            {
+                "key": "bugSubmitted",
+                "value": false
+            },
+            {
+                "key": "bugLink",
+                "value": ""
+            },
+            {
+                "key": "releaseId",
+                "value": 174280
+            },
+            {
+                "key": "impact",
+                "value": null
+            },
+            {
+                "key": "probability",
+                "value": null
+            },
+            {
+                "key": "compliance_categories",
+                "value": [
+                    {
+                        "categoryName": "FISMA",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "SI"
+                            }
+                        ]
+                    },
+                    {
+                        "categoryName": "CWE",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "CWE-200"
+                            },
+                            {
+                                "complianceRule": "CWE-642"
+                            },
+                            {
+                                "complianceRule": "CWE-472"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "traces",
+                "value": null
+            },
+            {
+                "key": "category",
+                "value": null
+            },
+            {
+                "key": "rule_id",
+                "value": "5609"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "privacy",
+        "issueName": "first_arena",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "5609",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortifyondemand",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "200",
+                "type": "cwe"
+            },
+            {
+                "id": "472",
+                "type": "cwe"
+            },
+            {
+                "id": "642",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "reduction",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": 0.0,
+        "scanStatus": null,
+        "scanTool": "fortifyondemand",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0.0,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_auditoptions": {
+                            "auditActions": [],
+                            "auditProcessing": false,
+                            "canAudit": false,
+                            "canChallenge": false,
+                            "canEdit": false,
+                            "inAuditMode": false,
+                            "releaseId": 174280,
+                            "vulnId": "single"
+                        },
+                        "_raw_details": {
+                            "analyzerName": null,
+                            "complianceCategories": [
+                                {
+                                    "categoryName": "OWASP 2013",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "A5 - Security Misconfiguration"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "confidence": null,
+                            "explanation": "abuse",
+                            "impact": null,
+                            "instanceId": "reasonable",
+                            "isStatic": false,
+                            "probability": null,
+                            "releaseId": 174280,
+                            "ruleId": "admire",
+                            "severity": "Medium",
+                            "sink": "first",
+                            "source": null,
+                            "summary": "ethnic",
+                            "vulnId": "single"
+                        },
+                        "_raw_parameters": {
+                            "postParameters": [],
+                            "queryParameters": [],
+                            "releaseId": 174280,
+                            "vulnId": "single"
+                        },
+                        "_raw_recommendations": {
+                            "isStatic": false,
+                            "recommendations": "Ensure that all key application functionality is operational and ready for security testing to ensure completeness of coverage.",
+                            "references": "",
+                            "releaseId": 174280,
+                            "tips": "delicate",
+                            "vulnId": "single"
+                        },
+                        "_raw_requestresponse": {
+                            "releaseId": 174280,
+                            "responseContent": "light",
+                            "vulnId": "single"
+                        },
+                        "_raw_summary": {
+                            "assignedUser": "(Not Set)",
+                            "auditPending": false,
+                            "auditPendingAuditorStatus": null,
+                            "auditPendingSeverity": null,
+                            "auditPendingSuppression": null,
+                            "auditorStatus": "Pending Review",
+                            "bugLink": "",
+                            "bugSubmitted": false,
+                            "comments": null,
+                            "developerStatus": "Open",
+                            "isSuppressed": false,
+                            "lineNumber": null,
+                            "notes": "general",
+                            "primaryLocation": "pony",
+                            "primaryLocationFull": "pony?test",
+                            "releaseId": 174280,
+                            "severity": "Medium",
+                            "vulnId": "single"
+                        },
+                        "issue_name": "first_pony",
+                        "primaryLocationFull": "pony?test",
+                        "url": "pony?test",
+                        "vulnId": "single"
+                    }
+                ]
+            },
+            {
+                "key": "issue_details",
+                "value": "abuse"
+            },
+            {
+                "key": "raw_severity",
+                "value": "Medium"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "ruleId"
+                ]
+            },
+            {
+                "key": "analyzer_name",
+                "value": null
+            },
+            {
+                "key": "recommendations",
+                "value": "Ensure that all key application functionality is operational and ready for security testing to ensure completeness of coverage."
+            },
+            {
+                "key": "references",
+                "value": ""
+            },
+            {
+                "key": "auditor_status",
+                "value": "Pending Review"
+            },
+            {
+                "key": "assigned_user",
+                "value": "(Not Set)"
+            },
+            {
+                "key": "developerStatus",
+                "value": "Open"
+            },
+            {
+                "key": "bugSubmitted",
+                "value": false
+            },
+            {
+                "key": "bugLink",
+                "value": ""
+            },
+            {
+                "key": "releaseId",
+                "value": 174280
+            },
+            {
+                "key": "impact",
+                "value": null
+            },
+            {
+                "key": "probability",
+                "value": null
+            },
+            {
+                "key": "compliance_categories",
+                "value": [
+                    {
+                        "categoryName": "OWASP 2013",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "A5 - Security Misconfiguration"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "traces",
+                "value": null
+            },
+            {
+                "key": "category",
+                "value": null
+            },
+            {
+                "key": "rule_id",
+                "value": "admire"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "ethnic",
+        "issueName": "first_pony",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "admire",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortifyondemand",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "delicate",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": 6.0,
+        "scanStatus": null,
+        "scanTool": "fortifyondemand",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 6.0,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_auditoptions": {
+                            "auditActions": [],
+                            "auditProcessing": false,
+                            "canAudit": false,
+                            "canChallenge": false,
+                            "canEdit": false,
+                            "inAuditMode": false,
+                            "releaseId": 174280,
+                            "vulnId": "shaft"
+                        },
+                        "_raw_details": {
+                            "analyzerName": null,
+                            "complianceCategories": [
+                                {
+                                    "categoryName": "OWASP 2013",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "A9 - Using Components with Known Vulnerabilities"
+                                        },
+                                        {
+                                            "complianceRule": "A5 - Security Misconfiguration"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "confidence": null,
+                            "explanation": "lion",
+                            "impact": null,
+                            "instanceId": "exhibition",
+                            "isStatic": false,
+                            "probability": null,
+                            "releaseId": 174280,
+                            "ruleId": "dance",
+                            "severity": "Medium",
+                            "sink": "first",
+                            "source": null,
+                            "summary": "background",
+                            "vulnId": "shaft"
+                        },
+                        "_raw_parameters": {
+                            "postParameters": [],
+                            "queryParameters": [],
+                            "releaseId": 174280,
+                            "vulnId": "shaft"
+                        },
+                        "_raw_recommendations": {
+                            "isStatic": false,
+                            "recommendations": "Employ a patch and vulnerability management  program to keep applications and servers current.  Follow vendor best practice and hardening guides for appropriate server technologies.  Limit or abolish the use of 3rd party scripts and applications.",
+                            "references": "<p><a href=\"http://www.techrepublic.com/article/tech-tip-understand-the-risks-of-obsolete-and-unsupported-software/\">Understanding the risks of obsolete and unsupported software</a></p></br></br><p><a href=\"https://www.owasp.org/index.php/3rd_Party_Javascript_Management_Cheat_Sheet\">OWASP 3rd Party Javascript Management Cheat Sheet</a></p>",
+                            "releaseId": 174280,
+                            "tips": "delicate",
+                            "vulnId": "shaft"
+                        },
+                        "_raw_requestresponse": {
+                            "releaseId": 174280,
+                            "responseContent": "correction",
+                            "vulnId": "shaft"
+                        },
+                        "_raw_summary": {
+                            "assignedUser": "(Not Set)",
+                            "auditPending": false,
+                            "auditPendingAuditorStatus": null,
+                            "auditPendingSeverity": null,
+                            "auditPendingSuppression": null,
+                            "auditorStatus": "Pending Review",
+                            "bugLink": "",
+                            "bugSubmitted": false,
+                            "comments": null,
+                            "developerStatus": "Open",
+                            "isSuppressed": false,
+                            "lineNumber": null,
+                            "notes": "witness",
+                            "primaryLocation": "guilt",
+                            "primaryLocationFull": "heir?test",
+                            "releaseId": 174280,
+                            "severity": "Medium",
+                            "vulnId": "shaft"
+                        },
+                        "issue_name": "first_guilt",
+                        "primaryLocationFull": "heir?test",
+                        "url": "heir?test",
+                        "vulnId": "shaft"
+                    },
+                    {
+                        "_raw_auditoptions": {
+                            "auditActions": [],
+                            "auditProcessing": false,
+                            "canAudit": false,
+                            "canChallenge": false,
+                            "canEdit": false,
+                            "inAuditMode": false,
+                            "releaseId": 174280,
+                            "vulnId": "afford"
+                        },
+                        "_raw_details": {
+                            "analyzerName": null,
+                            "complianceCategories": [
+                                {
+                                    "categoryName": "OWASP 2013",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "A9 - Using Components with Known Vulnerabilities"
+                                        },
+                                        {
+                                            "complianceRule": "A5 - Security Misconfiguration"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "confidence": null,
+                            "explanation": "lion",
+                            "impact": null,
+                            "instanceId": "seminar",
+                            "isStatic": false,
+                            "probability": null,
+                            "releaseId": 174280,
+                            "ruleId": "dance",
+                            "severity": "Medium",
+                            "sink": "first",
+                            "source": null,
+                            "summary": "background",
+                            "vulnId": "afford"
+                        },
+                        "_raw_parameters": {
+                            "postParameters": [],
+                            "queryParameters": [],
+                            "releaseId": 174280,
+                            "vulnId": "afford"
+                        },
+                        "_raw_recommendations": {
+                            "isStatic": false,
+                            "recommendations": "Employ a patch and vulnerability management  program to keep applications and servers current.  Follow vendor best practice and hardening guides for appropriate server technologies.  Limit or abolish the use of 3rd party scripts and applications.",
+                            "references": "<p><a href=\"http://www.techrepublic.com/article/tech-tip-understand-the-risks-of-obsolete-and-unsupported-software/\">Understanding the risks of obsolete and unsupported software</a></p></br></br><p><a href=\"https://www.owasp.org/index.php/3rd_Party_Javascript_Management_Cheat_Sheet\">OWASP 3rd Party Javascript Management Cheat Sheet</a></p>",
+                            "releaseId": 174280,
+                            "tips": "delicate",
+                            "vulnId": "afford"
+                        },
+                        "_raw_requestresponse": {
+                            "releaseId": 174280,
+                            "responseContent": "reckless",
+                            "vulnId": "afford"
+                        },
+                        "_raw_summary": {
+                            "assignedUser": "(Not Set)",
+                            "auditPending": false,
+                            "auditPendingAuditorStatus": null,
+                            "auditPendingSeverity": null,
+                            "auditPendingSuppression": null,
+                            "auditorStatus": "Pending Review",
+                            "bugLink": "",
+                            "bugSubmitted": false,
+                            "comments": null,
+                            "developerStatus": "Open",
+                            "isSuppressed": false,
+                            "lineNumber": null,
+                            "notes": "arrange",
+                            "primaryLocation": "addicted",
+                            "primaryLocationFull": "addicted?test",
+                            "releaseId": 174280,
+                            "severity": "Medium",
+                            "vulnId": "afford"
+                        },
+                        "issue_name": "first_addicted",
+                        "primaryLocationFull": "addicted?test",
+                        "url": "addicted?test",
+                        "vulnId": "afford"
+                    }
+                ]
+            },
+            {
+                "key": "issue_details",
+                "value": "lion"
+            },
+            {
+                "key": "raw_severity",
+                "value": "Medium"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "ruleId"
+                ]
+            },
+            {
+                "key": "analyzer_name",
+                "value": null
+            },
+            {
+                "key": "recommendations",
+                "value": "Employ a patch and vulnerability management  program to keep applications and servers current.  Follow vendor best practice and hardening guides for appropriate server technologies.  Limit or abolish the use of 3rd party scripts and applications."
+            },
+            {
+                "key": "references",
+                "value": "<p><a href=\"http://www.techrepublic.com/article/tech-tip-understand-the-risks-of-obsolete-and-unsupported-software/\">Understanding the risks of obsolete and unsupported software</a></p></br></br><p><a href=\"https://www.owasp.org/index.php/3rd_Party_Javascript_Management_Cheat_Sheet\">OWASP 3rd Party Javascript Management Cheat Sheet</a></p>"
+            },
+            {
+                "key": "auditor_status",
+                "value": "Pending Review"
+            },
+            {
+                "key": "assigned_user",
+                "value": "(Not Set)"
+            },
+            {
+                "key": "developerStatus",
+                "value": "Open"
+            },
+            {
+                "key": "bugSubmitted",
+                "value": false
+            },
+            {
+                "key": "bugLink",
+                "value": ""
+            },
+            {
+                "key": "releaseId",
+                "value": 174280
+            },
+            {
+                "key": "impact",
+                "value": null
+            },
+            {
+                "key": "probability",
+                "value": null
+            },
+            {
+                "key": "compliance_categories",
+                "value": [
+                    {
+                        "categoryName": "OWASP 2013",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "A9 - Using Components with Known Vulnerabilities"
+                            },
+                            {
+                                "complianceRule": "A5 - Security Misconfiguration"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "traces",
+                "value": null
+            },
+            {
+                "key": "category",
+                "value": null
+            },
+            {
+                "key": "rule_id",
+                "value": "dance"
+            },
+            {
+                "key": "_raw_screenshots",
+                "value": [
+                    {
+                        "description": null,
+                        "id": 176952,
+                        "name": "bs_jq.jpg",
+                        "uploadDate": "2018-12-05T21:04:37.71"
+                    },
+                    {
+                        "description": null,
+                        "id": 177163,
+                        "name": "screenshot_12-07-2018-04-13-31.png",
+                        "uploadDate": "2018-12-07T04:13:31.91"
+                    },
+                    {
+                        "description": null,
+                        "id": 177164,
+                        "name": "screenshot_12-07-2018-04-15-14.png",
+                        "uploadDate": "2018-12-07T04:15:14.92"
+                    },
+                    {
+                        "description": null,
+                        "id": 182567,
+                        "name": "screenshot_02-05-2019-00-05-07.png",
+                        "uploadDate": "2019-02-05T00:05:07.24"
+                    }
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "background",
+        "issueName": "first_guilt",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "dance",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortifyondemand",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "delicate",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": 6.0,
+        "scanStatus": null,
+        "scanTool": "fortifyondemand",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 6.0,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_auditoptions": {
+                            "auditActions": [],
+                            "auditProcessing": false,
+                            "canAudit": false,
+                            "canChallenge": false,
+                            "canEdit": false,
+                            "inAuditMode": false,
+                            "releaseId": 174280,
+                            "vulnId": "result"
+                        },
+                        "_raw_details": {
+                            "analyzerName": null,
+                            "complianceCategories": [
+                                {
+                                    "categoryName": "OWASP 2013",
+                                    "complianceItems": [
+                                        {
+                                            "complianceRule": "A1 - Injection"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "confidence": null,
+                            "explanation": "occupation",
+                            "impact": null,
+                            "instanceId": "inject",
+                            "isStatic": false,
+                            "probability": null,
+                            "releaseId": 174280,
+                            "ruleId": "provoke",
+                            "severity": "High",
+                            "sink": "first",
+                            "source": null,
+                            "summary": "realize",
+                            "vulnId": "result"
+                        },
+                        "_raw_parameters": {
+                            "postParameters": [],
+                            "queryParameters": [],
+                            "releaseId": 174280,
+                            "vulnId": "result"
+                        },
+                        "_raw_recommendations": {
+                            "isStatic": false,
+                            "recommendations": "Recommended to use the following best practices to prevent such attacks within the coding:<br><br>Do not use the Host header to construct hyperlinks. If you must, implement input validation and/or whitelist allowed values. <br><br>Disable any configuration that results in the host header being output.",
+                            "references": "<p><a href=\"http://www.skeletonscribe.net/2013/05/practical-http-host-header-attacks.html\">Practical HTTP Host Header Attacks</a></p>\n<p><a href=\"https://www.owasp.org/index.php/Cache_Poisoning\">OWASP Cache Poisoning</a></p>",
+                            "releaseId": 174280,
+                            "tips": "diagram",
+                            "vulnId": "result"
+                        },
+                        "_raw_requestresponse": {
+                            "releaseId": 174280,
+                            "requestContent": "layer",
+                            "responseContent": "relevance",
+                            "vulnId": "result"
+                        },
+                        "_raw_summary": {
+                            "assignedUser": "(Not Set)",
+                            "auditPending": false,
+                            "auditPendingAuditorStatus": null,
+                            "auditPendingSeverity": null,
+                            "auditPendingSuppression": null,
+                            "auditorStatus": "Pending Review",
+                            "bugLink": "",
+                            "bugSubmitted": false,
+                            "comments": null,
+                            "developerStatus": "Open",
+                            "isSuppressed": false,
+                            "lineNumber": null,
+                            "notes": "first",
+                            "primaryLocation": "heir",
+                            "primaryLocationFull": "heir?test",
+                            "releaseId": 174280,
+                            "severity": "High",
+                            "vulnId": "result"
+                        },
+                        "issue_name": "first_heir",
+                        "primaryLocationFull": "heir?test",
+                        "url": "heir?test",
+                        "vulnId": "result"
+                    }
+                ]
+            },
+            {
+                "key": "issue_details",
+                "value": "occupation"
+            },
+            {
+                "key": "raw_severity",
+                "value": "High"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "ruleId"
+                ]
+            },
+            {
+                "key": "analyzer_name",
+                "value": null
+            },
+            {
+                "key": "recommendations",
+                "value": "Recommended to use the following best practices to prevent such attacks within the coding:<br><br>Do not use the Host header to construct hyperlinks. If you must, implement input validation and/or whitelist allowed values. <br><br>Disable any configuration that results in the host header being output."
+            },
+            {
+                "key": "references",
+                "value": "<p><a href=\"http://www.skeletonscribe.net/2013/05/practical-http-host-header-attacks.html\">Practical HTTP Host Header Attacks</a></p>\n<p><a href=\"https://www.owasp.org/index.php/Cache_Poisoning\">OWASP Cache Poisoning</a></p>"
+            },
+            {
+                "key": "auditor_status",
+                "value": "Pending Review"
+            },
+            {
+                "key": "assigned_user",
+                "value": "(Not Set)"
+            },
+            {
+                "key": "developerStatus",
+                "value": "Open"
+            },
+            {
+                "key": "bugSubmitted",
+                "value": false
+            },
+            {
+                "key": "bugLink",
+                "value": ""
+            },
+            {
+                "key": "releaseId",
+                "value": 174280
+            },
+            {
+                "key": "impact",
+                "value": null
+            },
+            {
+                "key": "probability",
+                "value": null
+            },
+            {
+                "key": "compliance_categories",
+                "value": [
+                    {
+                        "categoryName": "OWASP 2013",
+                        "complianceItems": [
+                            {
+                                "complianceRule": "A1 - Injection"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "traces",
+                "value": null
+            },
+            {
+                "key": "category",
+                "value": null
+            },
+            {
+                "key": "rule_id",
+                "value": "provoke"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "realize",
+        "issueName": "first_heir",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "provoke",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortifyondemand",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "diagram",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": 8.0,
+        "scanStatus": null,
+        "scanTool": "fortifyondemand",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 8.0,
+        "severityCode": "High",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    }
+]

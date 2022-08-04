@@ -1,0 +1,2259 @@
+[
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": "30                 response = await client.get(view_path)\n31                 assert response.status == 200\n32 \n",
+                        "file_name": "/code/tests/aiohttp/test_vulnerable_async.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 31,
+                        "line_range": [
+                            31
+                        ]
+                    },
+                    {
+                        "code": "52 \n53                 assert response.status == 200\n54 \n55                 if view_name == \"xss\":\n",
+                        "file_name": "/code/tests/aiohttp/test_vulnerable_async.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 53,
+                        "line_range": [
+                            53,
+                            54
+                        ]
+                    },
+                    {
+                        "code": "56                     text = await response.text()\n57                     assert \"<p>XSS: {}</p>\".format(data) in str(text)\n58 \n",
+                        "file_name": "/code/tests/aiohttp/test_vulnerable_async.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 57,
+                        "line_range": [
+                            57
+                        ]
+                    },
+                    {
+                        "code": "18     response = client.get(view_path)\n19     assert response.status_code == 200\n20 \n",
+                        "file_name": "/code/tests/bottle/test_vulnerable.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 19,
+                        "line_range": [
+                            19
+                        ]
+                    },
+                    {
+                        "code": "36     )\n37     assert response.status_code == 200\n38 \n39     if view_name == \"xss\":\n",
+                        "file_name": "/code/tests/bottle/test_vulnerable.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 37,
+                        "line_range": [
+                            37,
+                            38
+                        ]
+                    },
+                    {
+                        "code": "39     if view_name == \"xss\":\n40         assert \"<p>XSS: {}</p>\".format(DATA.get(view_name)) in str(response.text)\n",
+                        "file_name": "/code/tests/bottle/test_vulnerable.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 40,
+                        "line_range": [
+                            40
+                        ]
+                    },
+                    {
+                        "code": "19     response = client.get(view_path)\n20     assert response.status_code == 200\n21 \n",
+                        "file_name": "/code/tests/django/test_vulnerable.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 20,
+                        "line_range": [
+                            20
+                        ]
+                    },
+                    {
+                        "code": "30     )\n31     assert response.status_code == 200\n32     if view_name == \"xss\":\n",
+                        "file_name": "/code/tests/django/test_vulnerable.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 31,
+                        "line_range": [
+                            31
+                        ]
+                    },
+                    {
+                        "code": "32     if view_name == \"xss\":\n33         assert \"<p>XSS: {}</p>\".format(DATA.get(view_name)) in str(response.content)\n",
+                        "file_name": "/code/tests/django/test_vulnerable.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 33,
+                        "line_range": [
+                            33
+                        ]
+                    },
+                    {
+                        "code": "23     response = client.simulate_get(view_path)\n24     assert response.status_code == 200\n25 \n",
+                        "file_name": "/code/tests/falcon/test_vulnerable.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 24,
+                        "line_range": [
+                            24
+                        ]
+                    },
+                    {
+                        "code": "36     )\n37     assert response.status_code == 200\n38 \n39     if view_name == \"xss\":\n",
+                        "file_name": "/code/tests/falcon/test_vulnerable.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 37,
+                        "line_range": [
+                            37,
+                            38
+                        ]
+                    },
+                    {
+                        "code": "39     if view_name == \"xss\":\n40         assert \"<p>XSS: {}</p>\".format(DATA.get(view_name)) in str(response.content)\n41 \n",
+                        "file_name": "/code/tests/falcon/test_vulnerable.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 40,
+                        "line_range": [
+                            40
+                        ]
+                    },
+                    {
+                        "code": "50     )\n51     assert mocked_trigger.called\n52     assert response.status_code == 200\n",
+                        "file_name": "/code/tests/falcon/test_vulnerable.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 51,
+                        "line_range": [
+                            51
+                        ]
+                    },
+                    {
+                        "code": "51     assert mocked_trigger.called\n52     assert response.status_code == 200\n",
+                        "file_name": "/code/tests/falcon/test_vulnerable.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 52,
+                        "line_range": [
+                            52
+                        ]
+                    },
+                    {
+                        "code": "25     response = client.get(view_path)\n26     assert response.status_code == 200\n27 \n",
+                        "file_name": "/code/tests/fastapi/test_vulnerable.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 26,
+                        "line_range": [
+                            26
+                        ]
+                    },
+                    {
+                        "code": "39 \n40     assert response.status_code == 200\n41 \n42     if view_name == \"xss\":\n",
+                        "file_name": "/code/tests/fastapi/test_vulnerable.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 40,
+                        "line_range": [
+                            40,
+                            41
+                        ]
+                    },
+                    {
+                        "code": "42     if view_name == \"xss\":\n43         assert \"<p>XSS: {}</p>\".format(data) in str(response.text)\n",
+                        "file_name": "/code/tests/fastapi/test_vulnerable.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 43,
+                        "line_range": [
+                            43
+                        ]
+                    },
+                    {
+                        "code": "20     response = client.get(view_path)\n21     assert response.status_code == 200\n22 \n",
+                        "file_name": "/code/tests/flask/test_blueprint.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 21,
+                        "line_range": [
+                            21
+                        ]
+                    },
+                    {
+                        "code": "37     )\n38     assert response.status_code == 200\n39 \n40     if view_name == \"xss\":\n",
+                        "file_name": "/code/tests/flask/test_blueprint.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 38,
+                        "line_range": [
+                            38,
+                            39
+                        ]
+                    },
+                    {
+                        "code": "40     if view_name == \"xss\":\n41         assert \"<p>XSS: {}</p>\".format(data) in str(response.get_data())\n42 \n",
+                        "file_name": "/code/tests/flask/test_blueprint.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 41,
+                        "line_range": [
+                            41
+                        ]
+                    },
+                    {
+                        "code": "48 \n49     assert response.status_code == 200\n",
+                        "file_name": "/code/tests/flask/test_blueprint.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 49,
+                        "line_range": [
+                            49
+                        ]
+                    },
+                    {
+                        "code": "19     response = client.get(view_path)\n20     assert response.status_int == 200\n21 \n",
+                        "file_name": "/code/tests/pyramid/test_vulnerable_routes.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 20,
+                        "line_range": [
+                            20
+                        ]
+                    },
+                    {
+                        "code": "30     )\n31     assert response.status_code == 200\n32 \n33     if view_name == \"xss\":\n",
+                        "file_name": "/code/tests/pyramid/test_vulnerable_routes.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 31,
+                        "line_range": [
+                            31,
+                            32
+                        ]
+                    },
+                    {
+                        "code": "33     if view_name == \"xss\":\n34         assert \"<p>XSS: {}</p>\".format(DATA.get(view_name)) in str(response.text)\n",
+                        "file_name": "/code/tests/pyramid/test_vulnerable_routes.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 34,
+                        "line_range": [
+                            34
+                        ]
+                    },
+                    {
+                        "code": "34             compare = self.good_input[2]\n35         assert compare(result, expected)\n36 \n",
+                        "file_name": "/code/tests/trigger/base_test.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 35,
+                        "line_range": [
+                            35
+                        ]
+                    },
+                    {
+                        "code": "26     def test_exception_caught(self):\n27         assert self.trigger_func(self.exception_input) is None\n28 \n",
+                        "file_name": "/code/tests/trigger/test_pt.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 27,
+                        "line_range": [
+                            27
+                        ]
+                    },
+                    {
+                        "code": "72     def test_good_input(self):\n73         assert self.trigger_func(self.good_input[0], 4) == self.good_input[1]\n74 \n",
+                        "file_name": "/code/tests/trigger/test_pt.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 73,
+                        "line_range": [
+                            73
+                        ]
+                    },
+                    {
+                        "code": "85     def test_good_input(self):\n86         assert self.trigger_func(self.good_input[0], 4) == self.good_input[1]\n87 \n",
+                        "file_name": "/code/tests/trigger/test_pt.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 86,
+                        "line_range": [
+                            86
+                        ]
+                    },
+                    {
+                        "code": "15     def test_exception_caught(self):\n16         assert self.trigger_func(self.exception_input) == \"error\"\n17 \n",
+                        "file_name": "/code/tests/trigger/test_sqli.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 16,
+                        "line_range": [
+                            16
+                        ]
+                    },
+                    {
+                        "code": "9 \n10     assert \"do_nope\" in str(exc)\n",
+                        "file_name": "/code/tests/trigger/test_trigger.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 10,
+                        "line_range": [
+                            10
+                        ]
+                    },
+                    {
+                        "code": "22         self.trigger_func(self.good_input[0])\n23         assert mock_write.called\n24         assert mock_write.call_args_list[0][0][0] == \"foo\"\n",
+                        "file_name": "/code/tests/trigger/test_unsafe_code_exec.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 23,
+                        "line_range": [
+                            23
+                        ]
+                    },
+                    {
+                        "code": "23         assert mock_write.called\n24         assert mock_write.call_args_list[0][0][0] == \"foo\"\n25 \n",
+                        "file_name": "/code/tests/trigger/test_unsafe_code_exec.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 24,
+                        "line_range": [
+                            24
+                        ]
+                    },
+                    {
+                        "code": "57         exec(code)\n58         assert mock_write.called\n59         assert mock_write.call_args_list[0][0][0] == \"foo\"\n",
+                        "file_name": "/code/tests/trigger/test_unsafe_code_exec.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 58,
+                        "line_range": [
+                            58
+                        ]
+                    },
+                    {
+                        "code": "58         assert mock_write.called\n59         assert mock_write.call_args_list[0][0][0] == \"foo\"\n",
+                        "file_name": "/code/tests/trigger/test_unsafe_code_exec.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 59,
+                        "line_range": [
+                            59
+                        ]
+                    },
+                    {
+                        "code": "17     response = client.get(view_path)\n18     assert response.status_int == 200\n19 \n",
+                        "file_name": "/code/tests/wsgi/test_app.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 18,
+                        "line_range": [
+                            18
+                        ]
+                    },
+                    {
+                        "code": "26     )\n27     assert response.status_code == 200\n28 \n29     if view_name == \"xss\":\n",
+                        "file_name": "/code/tests/wsgi/test_app.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 27,
+                        "line_range": [
+                            27,
+                            28
+                        ]
+                    },
+                    {
+                        "code": "29     if view_name == \"xss\":\n30         assert \"<p>XSS: {}</p>\".format(DATA.get(view_name)) in str(response.text)\n31 \n",
+                        "file_name": "/code/tests/wsgi/test_app.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 30,
+                        "line_range": [
+                            30
+                        ]
+                    },
+                    {
+                        "code": "37     response = client.get(path, status=404)\n38     assert response.text == \"The requested page does not exist\"\n",
+                        "file_name": "/code/tests/wsgi/test_app.py",
+                        "issue_description": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                        "line_number": 38,
+                        "line_range": [
+                            38
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "test_id",
+                "value": "B101"
+            },
+            {
+                "key": "test_name",
+                "value": "assert_used"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "test_id",
+                    "test_name"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": "HIGH",
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+        "issueName": "assert_used",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "B101//assert_used",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "bandit",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "LOW",
+        "scanStatus": null,
+        "scanTool": "bandit",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": 3.9,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": "1 def do_exec(code):\n2     exec(code)\n3 \n",
+                        "file_name": "/code/src/vulnpy/trigger/unsafe_code_exec.py",
+                        "issue_description": "Use of exec detected.",
+                        "issue_text": "Use of exec detected.",
+                        "line_number": 2,
+                        "line_range": [
+                            2
+                        ]
+                    },
+                    {
+                        "code": "771             _locs_ = _globs_\n772         exec(\"\"\"exec _code_ in _globs_, _locs_\"\"\")\n773 \n",
+                        "file_name": "/code/src/vulnpy/vendor/six.py",
+                        "issue_description": "Use of exec detected.",
+                        "issue_text": "Use of exec detected.",
+                        "line_number": 772,
+                        "line_range": [
+                            772
+                        ]
+                    },
+                    {
+                        "code": "56         code = self.trigger_func(self.good_input[0])\n57         exec(code)\n58         assert mock_write.called\n",
+                        "file_name": "/code/tests/trigger/test_unsafe_code_exec.py",
+                        "issue_description": "Use of exec detected.",
+                        "issue_text": "Use of exec detected.",
+                        "line_number": 57,
+                        "line_range": [
+                            57
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "test_id",
+                "value": "B102"
+            },
+            {
+                "key": "test_name",
+                "value": "exec_used"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "test_id",
+                    "test_name"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": "HIGH",
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Use of exec detected.",
+        "issueName": "exec_used",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "B102//exec_used",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "bandit",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "MEDIUM",
+        "scanStatus": null,
+        "scanTool": "bandit",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": 6.9,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": "36                         self.trigger(user_input)\n37                     except Exception:\n38                         pass\n",
+                        "file_name": "/code/src/vulnpy/falcon/vulnerable.py",
+                        "issue_description": "Try, Except, Pass detected.",
+                        "issue_text": "Try, Except, Pass detected.",
+                        "line_number": 37,
+                        "line_range": [
+                            37
+                        ]
+                    },
+                    {
+                        "code": "66         execfile(user_input)  # noqa: F821\n67     except Exception:\n68         pass\n",
+                        "file_name": "/code/src/vulnpy/trigger/pt.py",
+                        "issue_description": "Try, Except, Pass detected.",
+                        "issue_text": "Try, Except, Pass detected.",
+                        "line_number": 67,
+                        "line_range": [
+                            67
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "test_id",
+                "value": "B110"
+            },
+            {
+                "key": "test_name",
+                "value": "try_except_pass"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "test_id",
+                    "test_name"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": "HIGH",
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Try, Except, Pass detected.",
+        "issueName": "try_except_pass",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "B110//try_except_pass",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "bandit",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "LOW",
+        "scanStatus": null,
+        "scanTool": "bandit",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": 3.9,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": "7     user_input = io.BytesIO(user_input.encode(\"utf-8\"))\n8     return pickle.load(user_input)\n9 \n",
+                        "file_name": "/code/src/vulnpy/trigger/deserialization.py",
+                        "issue_description": "Pickle library appears to be in use, possible security issue.",
+                        "issue_text": "Pickle library appears to be in use, possible security issue.",
+                        "line_number": 8,
+                        "line_range": [
+                            8
+                        ]
+                    },
+                    {
+                        "code": "11 def do_pickle_loads(user_input):\n12     return pickle.loads(user_input.encode(\"utf-8\"))\n13 \n",
+                        "file_name": "/code/src/vulnpy/trigger/deserialization.py",
+                        "issue_description": "Pickle library appears to be in use, possible security issue.",
+                        "issue_text": "Pickle library appears to be in use, possible security issue.",
+                        "line_number": 12,
+                        "line_range": [
+                            12
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "test_id",
+                "value": "B301"
+            },
+            {
+                "key": "test_name",
+                "value": "blacklist"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "test_id",
+                    "test_name"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": "HIGH",
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Pickle library appears to be in use, possible security issue.",
+        "issueName": "blacklist",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "B301//blacklist",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "bandit",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "MEDIUM",
+        "scanStatus": null,
+        "scanTool": "bandit",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": 6.9,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": "25 \n26         digest = hexlify(md5(user_input).digest()).decode(\"utf8\")\n27 \n",
+                        "file_name": "/code/apps/falcon_app.py",
+                        "issue_description": "Use of insecure MD2, MD4, or MD5 hash function.",
+                        "issue_text": "Use of insecure MD2, MD4, or MD5 hash function.",
+                        "line_number": 26,
+                        "line_range": [
+                            26
+                        ]
+                    },
+                    {
+                        "code": "32     if content:\n33         digest = hexlify(md5(content).digest()).decode(\"utf8\")\n34 \n",
+                        "file_name": "/code/apps/fastapi_app.py",
+                        "issue_description": "Use of insecure MD2, MD4, or MD5 hash function.",
+                        "issue_text": "Use of insecure MD2, MD4, or MD5 hash function.",
+                        "line_number": 33,
+                        "line_range": [
+                            33
+                        ]
+                    },
+                    {
+                        "code": "18 def do_hashlib_md5(user_input):\n19     h = hashlib.md5()\n20     return _hash(h, user_input)\n",
+                        "file_name": "/code/src/vulnpy/trigger/hash.py",
+                        "issue_description": "Use of insecure MD2, MD4, or MD5 hash function.",
+                        "issue_text": "Use of insecure MD2, MD4, or MD5 hash function.",
+                        "line_number": 19,
+                        "line_range": [
+                            19
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "test_id",
+                "value": "B303"
+            },
+            {
+                "key": "test_name",
+                "value": "blacklist"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "test_id",
+                    "test_name"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": "HIGH",
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Use of insecure MD2, MD4, or MD5 hash function.",
+        "issueName": "blacklist",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "B303//blacklist",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "bandit",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "MEDIUM",
+        "scanStatus": null,
+        "scanTool": "bandit",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": 6.9,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": "5 def do_eval(code):\n6     return eval(code)\n7 \n",
+                        "file_name": "/code/src/vulnpy/trigger/unsafe_code_exec.py",
+                        "issue_description": "Use of possibly insecure function - consider using safer ast.literal_eval.",
+                        "issue_text": "Use of possibly insecure function - consider using safer ast.literal_eval.",
+                        "line_number": 6,
+                        "line_range": [
+                            6
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "test_id",
+                "value": "B307"
+            },
+            {
+                "key": "test_name",
+                "value": "blacklist"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "test_id",
+                    "test_name"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": "HIGH",
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Use of possibly insecure function - consider using safer ast.literal_eval.",
+        "issueName": "blacklist",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "B307//blacklist",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "bandit",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "MEDIUM",
+        "scanStatus": null,
+        "scanTool": "bandit",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": 6.9,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": "24     _seed(user_input)\n25     return str(random.random())\n26 \n",
+                        "file_name": "/code/src/vulnpy/trigger/rand.py",
+                        "issue_description": "Standard pseudo-random generators are not suitable for security/cryptographic purposes.",
+                        "issue_text": "Standard pseudo-random generators are not suitable for security/cryptographic purposes.",
+                        "line_number": 25,
+                        "line_range": [
+                            25
+                        ]
+                    },
+                    {
+                        "code": "29     _seed(user_input)\n30     return str(random.randint(0, 100))\n31 \n",
+                        "file_name": "/code/src/vulnpy/trigger/rand.py",
+                        "issue_description": "Standard pseudo-random generators are not suitable for security/cryptographic purposes.",
+                        "issue_text": "Standard pseudo-random generators are not suitable for security/cryptographic purposes.",
+                        "line_number": 30,
+                        "line_range": [
+                            30
+                        ]
+                    },
+                    {
+                        "code": "34     _seed(user_input)\n35     return str(random.randrange(0, 101, 5))\n36 \n",
+                        "file_name": "/code/src/vulnpy/trigger/rand.py",
+                        "issue_description": "Standard pseudo-random generators are not suitable for security/cryptographic purposes.",
+                        "issue_text": "Standard pseudo-random generators are not suitable for security/cryptographic purposes.",
+                        "line_number": 35,
+                        "line_range": [
+                            35
+                        ]
+                    },
+                    {
+                        "code": "39     _seed(user_input)\n40     return str(random.uniform(5.5, 7.5))\n",
+                        "file_name": "/code/src/vulnpy/trigger/rand.py",
+                        "issue_description": "Standard pseudo-random generators are not suitable for security/cryptographic purposes.",
+                        "issue_text": "Standard pseudo-random generators are not suitable for security/cryptographic purposes.",
+                        "line_number": 40,
+                        "line_range": [
+                            40
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "test_id",
+                "value": "B311"
+            },
+            {
+                "key": "test_name",
+                "value": "blacklist"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "test_id",
+                    "test_name"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": "HIGH",
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Standard pseudo-random generators are not suitable for security/cryptographic purposes.",
+        "issueName": "blacklist",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "B311//blacklist",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "bandit",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "LOW",
+        "scanStatus": null,
+        "scanTool": "bandit",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": 3.9,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": "32 def do_xml_etree_elementtree_findall(user_input):\n33     node = ET.fromstring(xml)\n34     return node.findall(user_input)[0][0].text\n",
+                        "file_name": "/code/src/vulnpy/trigger/xpath.py",
+                        "issue_description": "Using xml.etree.ElementTree.fromstring to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.fromstring with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called",
+                        "issue_text": "Using xml.etree.ElementTree.fromstring to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.fromstring with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called",
+                        "line_number": 33,
+                        "line_range": [
+                            33
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "test_id",
+                "value": "B314"
+            },
+            {
+                "key": "test_name",
+                "value": "blacklist"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "test_id",
+                    "test_name"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": "HIGH",
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Using xml.etree.ElementTree.fromstring to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.fromstring with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called",
+        "issueName": "blacklist",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "B314//blacklist",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "bandit",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "MEDIUM",
+        "scanStatus": null,
+        "scanTool": "bandit",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": 6.9,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": "15 def do_xml_sax_parsestring(user_input):\n16     return sax.parseString(user_input, ContentHandler())\n",
+                        "file_name": "/code/src/vulnpy/trigger/xxe.py",
+                        "issue_description": "Using xml.sax.parseString to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.sax.parseString with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called",
+                        "issue_text": "Using xml.sax.parseString to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.sax.parseString with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called",
+                        "line_number": 16,
+                        "line_range": [
+                            16
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "test_id",
+                "value": "B317"
+            },
+            {
+                "key": "test_name",
+                "value": "blacklist"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "test_id",
+                    "test_name"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": "HIGH",
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Using xml.sax.parseString to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.sax.parseString with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called",
+        "issueName": "blacklist",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "B317//blacklist",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "bandit",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "MEDIUM",
+        "scanStatus": null,
+        "scanTool": "bandit",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": 6.9,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": "11 def do_xml_dom_pulldom_parsestring(user_input):\n12     return pulldom.parseString(user_input)\n13 \n",
+                        "file_name": "/code/src/vulnpy/trigger/xxe.py",
+                        "issue_description": "Using xml.dom.pulldom.parseString to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.dom.pulldom.parseString with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called",
+                        "issue_text": "Using xml.dom.pulldom.parseString to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.dom.pulldom.parseString with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called",
+                        "line_number": 12,
+                        "line_range": [
+                            12
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "test_id",
+                "value": "B319"
+            },
+            {
+                "key": "test_name",
+                "value": "blacklist"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "test_id",
+                    "test_name"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": "HIGH",
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Using xml.dom.pulldom.parseString to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.dom.pulldom.parseString with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called",
+        "issueName": "blacklist",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "B319//blacklist",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "bandit",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "MEDIUM",
+        "scanStatus": null,
+        "scanTool": "bandit",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": 6.9,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": "18 \n19 tree = lxml.etree.parse(StringIO(xml))\n20 tree.xpath('/planet[name[text()=\"Kepler\"]]')\n",
+                        "file_name": "/code/src/vulnpy/trigger/xpath.py",
+                        "issue_description": "Using lxml.etree.parse to parse untrusted XML data is known to be vulnerable to XML attacks. Replace lxml.etree.parse with its defusedxml equivalent function.",
+                        "issue_text": "Using lxml.etree.parse to parse untrusted XML data is known to be vulnerable to XML attacks. Replace lxml.etree.parse with its defusedxml equivalent function.",
+                        "line_number": 19,
+                        "line_range": [
+                            19
+                        ]
+                    },
+                    {
+                        "code": "7 def do_lxml_etree_fromstring(user_input):\n8     return etree.fromstring(user_input)\n9 \n",
+                        "file_name": "/code/src/vulnpy/trigger/xxe.py",
+                        "issue_description": "Using lxml.etree.fromstring to parse untrusted XML data is known to be vulnerable to XML attacks. Replace lxml.etree.fromstring with its defusedxml equivalent function.",
+                        "issue_text": "Using lxml.etree.fromstring to parse untrusted XML data is known to be vulnerable to XML attacks. Replace lxml.etree.fromstring with its defusedxml equivalent function.",
+                        "line_number": 8,
+                        "line_range": [
+                            8
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "test_id",
+                "value": "B320"
+            },
+            {
+                "key": "test_name",
+                "value": "blacklist"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "test_id",
+                    "test_name"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": "HIGH",
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Using lxml.etree.parse to parse untrusted XML data is known to be vulnerable to XML attacks. Replace lxml.etree.parse with its defusedxml equivalent function.",
+        "issueName": "blacklist",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "B320//blacklist",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "bandit",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "MEDIUM",
+        "scanStatus": null,
+        "scanTool": "bandit",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": 6.9,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": "1 import io\n2 import pickle\n3 import yaml\n",
+                        "file_name": "/code/src/vulnpy/trigger/deserialization.py",
+                        "issue_description": "Consider possible security implications associated with pickle module.",
+                        "issue_text": "Consider possible security implications associated with pickle module.",
+                        "line_number": 2,
+                        "line_range": [
+                            2
+                        ]
+                    },
+                    {
+                        "code": "1 import pickle\n2 from vulnpy.vendor.six import PY2\n3 \n",
+                        "file_name": "/code/tests/trigger/test_deserialization.py",
+                        "issue_description": "Consider possible security implications associated with pickle module.",
+                        "issue_text": "Consider possible security implications associated with pickle module.",
+                        "line_number": 1,
+                        "line_range": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "test_id",
+                "value": "B403"
+            },
+            {
+                "key": "test_name",
+                "value": "blacklist"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "test_id",
+                    "test_name"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": "HIGH",
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Consider possible security implications associated with pickle module.",
+        "issueName": "blacklist",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "B403//blacklist",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "bandit",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "LOW",
+        "scanStatus": null,
+        "scanTool": "bandit",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": 3.9,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": "1 import os\n2 import subprocess\n3 \n4 \n5 def do_os_system(command):\n",
+                        "file_name": "/code/src/vulnpy/trigger/cmdi.py",
+                        "issue_description": "Consider possible security implications associated with subprocess module.",
+                        "issue_text": "Consider possible security implications associated with subprocess module.",
+                        "line_number": 2,
+                        "line_range": [
+                            2,
+                            3,
+                            4
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "test_id",
+                "value": "B404"
+            },
+            {
+                "key": "test_name",
+                "value": "blacklist"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "test_id",
+                    "test_name"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": "HIGH",
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Consider possible security implications associated with subprocess module.",
+        "issueName": "blacklist",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "B404//blacklist",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "bandit",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "LOW",
+        "scanStatus": null,
+        "scanTool": "bandit",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": 3.9,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": "1 import lxml.etree\n2 import xml.etree.ElementTree as ET\n3 from io import StringIO\n",
+                        "file_name": "/code/src/vulnpy/trigger/xpath.py",
+                        "issue_description": "Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.",
+                        "issue_text": "Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.",
+                        "line_number": 2,
+                        "line_range": [
+                            2
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "test_id",
+                "value": "B405"
+            },
+            {
+                "key": "test_name",
+                "value": "blacklist"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "test_id",
+                    "test_name"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": "HIGH",
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.",
+        "issueName": "blacklist",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "B405//blacklist",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "bandit",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "LOW",
+        "scanStatus": null,
+        "scanTool": "bandit",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": 3.9,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": "2 from xml.dom import pulldom\n3 from xml import sax\n4 from xml.sax.handler import ContentHandler\n",
+                        "file_name": "/code/src/vulnpy/trigger/xxe.py",
+                        "issue_description": "Using sax to parse untrusted XML data is known to be vulnerable to XML attacks. Replace sax with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.",
+                        "issue_text": "Using sax to parse untrusted XML data is known to be vulnerable to XML attacks. Replace sax with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.",
+                        "line_number": 3,
+                        "line_range": [
+                            3
+                        ]
+                    },
+                    {
+                        "code": "3 from xml import sax\n4 from xml.sax.handler import ContentHandler\n5 \n6 \n7 def do_lxml_etree_fromstring(user_input):\n",
+                        "file_name": "/code/src/vulnpy/trigger/xxe.py",
+                        "issue_description": "Using ContentHandler to parse untrusted XML data is known to be vulnerable to XML attacks. Replace ContentHandler with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.",
+                        "issue_text": "Using ContentHandler to parse untrusted XML data is known to be vulnerable to XML attacks. Replace ContentHandler with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.",
+                        "line_number": 4,
+                        "line_range": [
+                            4,
+                            5,
+                            6
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "test_id",
+                "value": "B406"
+            },
+            {
+                "key": "test_name",
+                "value": "blacklist"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "test_id",
+                    "test_name"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": "HIGH",
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Using sax to parse untrusted XML data is known to be vulnerable to XML attacks. Replace sax with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.",
+        "issueName": "blacklist",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "B406//blacklist",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "bandit",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "LOW",
+        "scanStatus": null,
+        "scanTool": "bandit",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": 3.9,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": "1 from lxml import etree\n2 from xml.dom import pulldom\n3 from xml import sax\n",
+                        "file_name": "/code/src/vulnpy/trigger/xxe.py",
+                        "issue_description": "Using pulldom to parse untrusted XML data is known to be vulnerable to XML attacks. Replace pulldom with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.",
+                        "issue_text": "Using pulldom to parse untrusted XML data is known to be vulnerable to XML attacks. Replace pulldom with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.",
+                        "line_number": 2,
+                        "line_range": [
+                            2
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "test_id",
+                "value": "B409"
+            },
+            {
+                "key": "test_name",
+                "value": "blacklist"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "test_id",
+                    "test_name"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": "HIGH",
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Using pulldom to parse untrusted XML data is known to be vulnerable to XML attacks. Replace pulldom with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.",
+        "issueName": "blacklist",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "B409//blacklist",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "bandit",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "LOW",
+        "scanStatus": null,
+        "scanTool": "bandit",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": 3.9,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": "1 import lxml.etree\n2 import xml.etree.ElementTree as ET\n3 from io import StringIO\n",
+                        "file_name": "/code/src/vulnpy/trigger/xpath.py",
+                        "issue_description": "Using lxml.etree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace lxml.etree with the equivalent defusedxml package.",
+                        "issue_text": "Using lxml.etree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace lxml.etree with the equivalent defusedxml package.",
+                        "line_number": 1,
+                        "line_range": [
+                            1
+                        ]
+                    },
+                    {
+                        "code": "1 from lxml import etree\n2 from xml.dom import pulldom\n3 from xml import sax\n",
+                        "file_name": "/code/src/vulnpy/trigger/xxe.py",
+                        "issue_description": "Using etree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace etree with the equivalent defusedxml package.",
+                        "issue_text": "Using etree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace etree with the equivalent defusedxml package.",
+                        "line_number": 1,
+                        "line_range": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "test_id",
+                "value": "B410"
+            },
+            {
+                "key": "test_name",
+                "value": "blacklist"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "test_id",
+                    "test_name"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": "HIGH",
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Using lxml.etree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace lxml.etree with the equivalent defusedxml package.",
+        "issueName": "blacklist",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "B410//blacklist",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "bandit",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "LOW",
+        "scanStatus": null,
+        "scanTool": "bandit",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": 3.9,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": "16     try:\n17         return yaml.load(user_input)\n18     except yaml.constructor.ConstructorError:\n",
+                        "file_name": "/code/src/vulnpy/trigger/deserialization.py",
+                        "issue_description": "Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().",
+                        "issue_text": "Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().",
+                        "line_number": 17,
+                        "line_range": [
+                            17
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "test_id",
+                "value": "B506"
+            },
+            {
+                "key": "test_name",
+                "value": "yaml_load"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "test_id",
+                    "test_name"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": "HIGH",
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().",
+        "issueName": "yaml_load",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "B506//yaml_load",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "bandit",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "MEDIUM",
+        "scanStatus": null,
+        "scanTool": "bandit",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": 6.9,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    }
+]

@@ -1,0 +1,113 @@
+PROFILE,ACCOUNT_NUM,REGION,TITLE_ID,RESULT,SCORED,LEVEL,TITLE_TEXT,NOTES
+prowlerprofile,XXXXXXXXXX,us-east-1,0.0,INFO,Not Scored,Support,Show report generation info,ARN: arn:aws:iam::XXXXXXXXXX:user/XXXX  TIMESTAMP: 2022-01-10T18:29:35+0000
+prowlerprofile,XXXXXXXXXX,us-east-1,1.1,INFO,Scored,Level 1,[check11] Avoid the use of the root account (Scored),Root account last accessed (password key_1 key_2): 2019-11-20T21:38:29+00:00 N/A N/A
+prowlerprofile,XXXXXXXXXX,us-east-1,1.2,FAIL,Scored,Level 1,[check12] Ensure multi-factor authentication (MFA) is enabled for all IAM users that have a console password (Scored),User has Password enabled but MFA disabled
+prowlerprofile,XXXXXXXXXX,us-east-1,1.3,FAIL,Scored,Level 1,[check13] Ensure credentials unused for 90 days or greater are disabled (Scored),User "" has not logged in during the last 90 days 
+prowlerprofile,XXXXXXXXXX,us-east-1,1.3,PASS,Scored,Level 1,[check13] Ensure credentials unused for 90 days or greater are disabled (Scored),User "" found with credentials used in the last 90 days
+prowlerprofile,XXXXXXXXXX,us-east-1,1.3,FAIL,Scored,Level 1,[check13] Ensure credentials unused for 90 days or greater are disabled (Scored),User "" has not logged in during the last 90 days 
+prowlerprofile,XXXXXXXXXX,us-east-1,1.3,PASS,Scored,Level 1,[check13] Ensure credentials unused for 90 days or greater are disabled (Scored),User "" found with credentials used in the last 90 days
+prowlerprofile,XXXXXXXXXX,us-east-1,1.3,PASS,Scored,Level 1,[check13] Ensure credentials unused for 90 days or greater are disabled (Scored),User "" found with credentials used in the last 90 days
+prowlerprofile,XXXXXXXXXX,us-east-1,1.3,PASS,Scored,Level 1,[check13] Ensure credentials unused for 90 days or greater are disabled (Scored),User "" found with credentials used in the last 90 days
+prowlerprofile,XXXXXXXXXX,us-east-1,1.3,FAIL,Scored,Level 1,[check13] Ensure credentials unused for 90 days or greater are disabled (Scored),User "" has not logged in during the last 90 days 
+prowlerprofile,XXXXXXXXXX,us-east-1,1.3,PASS,Scored,Level 1,[check13] Ensure credentials unused for 90 days or greater are disabled (Scored),User "" found with credentials used in the last 90 days
+prowlerprofile,XXXXXXXXXX,us-east-1,1.3,FAIL,Scored,Level 1,[check13] Ensure credentials unused for 90 days or greater are disabled (Scored),User "" has not logged in during the last 90 days 
+prowlerprofile,XXXXXXXXXX,us-east-1,1.3,PASS,Scored,Level 1,[check13] Ensure credentials unused for 90 days or greater are disabled (Scored),User "" found with credentials used in the last 90 days
+prowlerprofile,XXXXXXXXXX,us-east-1,1.3,PASS,Scored,Level 1,[check13] Ensure credentials unused for 90 days or greater are disabled (Scored),User "" found with credentials used in the last 90 days
+prowlerprofile,XXXXXXXXXX,us-east-1,1.3,PASS,Scored,Level 1,[check13] Ensure credentials unused for 90 days or greater are disabled (Scored),User "" found with credentials used in the last 90 days
+prowlerprofile,XXXXXXXXXX,us-east-1,1.3,FAIL,Scored,Level 1,[check13] Ensure credentials unused for 90 days or greater are disabled (Scored),User "" has not logged in during the last 90 days 
+prowlerprofile,XXXXXXXXXX,us-east-1,1.3,PASS,Scored,Level 1,[check13] Ensure credentials unused for 90 days or greater are disabled (Scored),User "" found with credentials used in the last 90 days
+prowlerprofile,XXXXXXXXXX,us-east-1,1.4,FAIL,Scored,Level 1,[check14] Ensure access keys are rotated every 90 days or less (Scored), has not rotated access key1 in over 90 days.
+prowlerprofile,XXXXXXXXXX,us-east-1,1.4,FAIL,Scored,Level 1,[check14] Ensure access keys are rotated every 90 days or less (Scored), has not rotated access key1 in over 90 days.
+prowlerprofile,XXXXXXXXXX,us-east-1,1.4,FAIL,Scored,Level 1,[check14] Ensure access keys are rotated every 90 days or less (Scored), has not rotated access key1 in over 90 days.
+prowlerprofile,XXXXXXXXXX,us-east-1,1.4,FAIL,Scored,Level 1,[check14] Ensure access keys are rotated every 90 days or less (Scored), has not rotated access key1 in over 90 days.
+prowlerprofile,XXXXXXXXXX,us-east-1,1.4,FAIL,Scored,Level 1,[check14] Ensure access keys are rotated every 90 days or less (Scored), has not rotated access key1 in over 90 days.
+prowlerprofile,XXXXXXXXXX,us-east-1,1.4,FAIL,Scored,Level 1,[check14] Ensure access keys are rotated every 90 days or less (Scored), has not rotated access key1 in over 90 days.
+prowlerprofile,XXXXXXXXXX,us-east-1,1.4,FAIL,Scored,Level 1,[check14] Ensure access keys are rotated every 90 days or less (Scored), thanos has not rotated access key1 in over 90 days.
+prowlerprofile,XXXXXXXXXX,us-east-1,1.4,FAIL,Scored,Level 1,[check14] Ensure access keys are rotated every 90 days or less (Scored), has not rotated access key1 in over 90 days.
+prowlerprofile,XXXXXXXXXX,us-east-1,1.4,FAIL,Scored,Level 1,[check14] Ensure access keys are rotated every 90 days or less (Scored), has not rotated access key1 in over 90 days.
+prowlerprofile,XXXXXXXXXX,us-east-1,1.5,PASS,Scored,Level 1,[check15] Ensure IAM password policy requires at least one uppercase letter (Scored),Password Policy requires upper case
+prowlerprofile,XXXXXXXXXX,us-east-1,1.6,PASS,Scored,Level 1,[check16] Ensure IAM password policy require at least one lowercase letter (Scored),Password Policy requires lower case
+prowlerprofile,XXXXXXXXXX,us-east-1,1.7,PASS,Scored,Level 1,[check17] Ensure IAM password policy require at least one symbol (Scored),Password Policy requires symbol
+prowlerprofile,XXXXXXXXXX,us-east-1,1.8,PASS,Scored,Level 1,[check18] Ensure IAM password policy require at least one number (Scored),Password Policy requires number
+prowlerprofile,XXXXXXXXXX,us-east-1,1.9,FAIL,Scored,Level 1,[check19] Ensure IAM password policy requires minimum length of 14 or greater (Scored),Password Policy missing or weak length requirement
+prowlerprofile,XXXXXXXXXX,us-east-1,1.10,FAIL,Scored,Level 1,[check110] Ensure IAM password policy prevents password reuse: 24 or greater (Scored),Password Policy has weak reuse requirement (lower than 24)
+prowlerprofile,XXXXXXXXXX,us-east-1,1.11,FAIL,Scored,Level 1,[check111] Ensure IAM password policy expires passwords within 90 days or less (Scored),Password expiration is set greater than 90 days
+prowlerprofile,XXXXXXXXXX,us-east-1,1.12,PASS,Scored,Level 1,[check112] Ensure no root account access key exists (Scored),No access key 1 found for root
+prowlerprofile,XXXXXXXXXX,us-east-1,1.12,PASS,Scored,Level 1,[check112] Ensure no root account access key exists (Scored),No access key 2 found for root
+prowlerprofile,XXXXXXXXXX,us-east-1,1.13,PASS,Scored,Level 1,[check113] Ensure MFA is enabled for the root account (Scored),Virtual MFA is enabled for root
+prowlerprofile,XXXXXXXXXX,us-east-1,1.14,FAIL,Scored,Level 2,[check114] Ensure hardware MFA is enabled for the root account (Scored),Only Virtual MFA is enabled for root
+prowlerprofile,XXXXXXXXXX,us-east-1,1.15,INFO,Not Scored,Level 1,[check115] Ensure security questions are registered in the AWS account (Not Scored),No command available for check 1.15 
+prowlerprofile,XXXXXXXXXX,us-east-1,1.15,INFO,Not Scored,Level 1,[check115] Ensure security questions are registered in the AWS account (Not Scored),Login to the AWS Console as root & click on the Account 
+prowlerprofile,XXXXXXXXXX,us-east-1,1.17,INFO,Not Scored,Level 1,[check117] Maintain current contact details (Not Scored),See section 1.17 on the CIS Benchmark guide for details 
+prowlerprofile,XXXXXXXXXX,us-east-1,1.18,INFO,Not Scored,Level 1,[check118] Ensure security contact information is registered (Not Scored),No command available for check 1.18 
+prowlerprofile,XXXXXXXXXX,us-east-1,1.18,INFO,Not Scored,Level 1,[check118] Ensure security contact information is registered (Not Scored),See section 1.18 on the CIS Benchmark guide for details 
+prowlerprofile,XXXXXXXXXX,us-east-1,1.19,INFO,Not Scored,Level 2,[check119] Ensure IAM instance roles are used for AWS resource access from instances (Not Scored),No command available for check 1.19 
+prowlerprofile,XXXXXXXXXX,us-east-1,1.19,INFO,Not Scored,Level 2,[check119] Ensure IAM instance roles are used for AWS resource access from instances (Not Scored),See section 1.19 on the CIS Benchmark guide for details 
+prowlerprofile,XXXXXXXXXX,us-east-1,1.20,FAIL,Scored,Level 1,[check120] Ensure a support role has been created to manage incidents with AWS Support (Scored),Support Policy not applied to any Role 
+prowlerprofile,XXXXXXXXXX,us-east-1,1.21,FAIL,Not Scored,Level 1,[check121] Do not setup access keys during initial user setup for all IAM users that have a console password (Not Scored),JSentongo has never used Access Key 1
+prowlerprofile,XXXXXXXXXX,us-east-1,1.21,FAIL,Not Scored,Level 1,[check121] Do not setup access keys during initial user setup for all IAM users that have a console password (Not Scored),zn-dev-new-eks-cluster-minio has never used Access Key 1
+prowlerprofile,XXXXXXXXXX,us-east-1,1.21,PASS,Not Scored,Level 1,[check121] Do not setup access keys during initial user setup for all IAM users that have a console password (Not Scored),No users found with Access Key 2 never used
+prowlerprofile,XXXXXXXXXX,us-east-1,1.22,INFO,Scored,Level 1,[check122] Ensure IAM policies that allow full "*:*" administrative privileges are not created (Scored),Looking for custom policies: (skipping default policies - it may take few seconds...)
+prowlerprofile,XXXXXXXXXX,us-east-1,1.22,PASS,Scored,Level 1,[check122] Ensure IAM policies that allow full "*:*" administrative privileges are not created (Scored),No custom policy found that allow full "*:*" administrative privileges
+prowlerprofile,XXXXXXXXXX,us-east-1,2.1,PASS,Scored,Level 1,[check21] Ensure CloudTrail is enabled in all regions (Scored),dev trail in us-west-2 is enabled for all regions
+prowlerprofile,XXXXXXXXXX,us-east-1,2.2,PASS,Scored,Level 2,[check22] Ensure CloudTrail log file validation is enabled (Scored),dev trail in us-west-2 has log file validation enabled
+prowlerprofile,XXXXXXXXXX,us-east-1,2.3,PASS,Scored,Level 1,[check23] Ensure the S3 bucket CloudTrail logs to is not publicly accessible (Scored),Bucket demo-cloudtrail-dev is set correctly
+prowlerprofile,XXXXXXXXXX,us-east-1,2.4,PASS,Scored,Level 1,[check24] Ensure CloudTrail trails are integrated with CloudWatch Logs (Scored),dev trail has been logging during the last 24h (it is in us-west-2)
+prowlerprofile,XXXXXXXXXX,eu-north-1,2.5,FAIL,Scored,Level 1,[check25] Ensure AWS Config is enabled in all regions (Scored),Region eu-north-1 has AWS Config disabled or not configured
+prowlerprofile,XXXXXXXXXX,ap-south-1,2.5,FAIL,Scored,Level 1,[check25] Ensure AWS Config is enabled in all regions (Scored),Region ap-south-1 has AWS Config disabled or not configured
+prowlerprofile,XXXXXXXXXX,eu-west-3,2.5,FAIL,Scored,Level 1,[check25] Ensure AWS Config is enabled in all regions (Scored),Region eu-west-3 has AWS Config disabled or not configured
+prowlerprofile,XXXXXXXXXX,eu-west-2,2.5,FAIL,Scored,Level 1,[check25] Ensure AWS Config is enabled in all regions (Scored),Region eu-west-2 has AWS Config disabled or not configured
+prowlerprofile,XXXXXXXXXX,eu-west-1,2.5,FAIL,Scored,Level 1,[check25] Ensure AWS Config is enabled in all regions (Scored),Region eu-west-1 has AWS Config disabled or not configured
+prowlerprofile,XXXXXXXXXX,ap-northeast-3,2.5,FAIL,Scored,Level 1,[check25] Ensure AWS Config is enabled in all regions (Scored),Region ap-northeast-3 has AWS Config disabled or not configured
+prowlerprofile,XXXXXXXXXX,ap-northeast-2,2.5,FAIL,Scored,Level 1,[check25] Ensure AWS Config is enabled in all regions (Scored),Region ap-northeast-2 has AWS Config disabled or not configured
+prowlerprofile,XXXXXXXXXX,ap-northeast-1,2.5,FAIL,Scored,Level 1,[check25] Ensure AWS Config is enabled in all regions (Scored),Region ap-northeast-1 has AWS Config disabled or not configured
+prowlerprofile,XXXXXXXXXX,sa-east-1,2.5,FAIL,Scored,Level 1,[check25] Ensure AWS Config is enabled in all regions (Scored),Region sa-east-1 has AWS Config disabled or not configured
+prowlerprofile,XXXXXXXXXX,ca-central-1,2.5,FAIL,Scored,Level 1,[check25] Ensure AWS Config is enabled in all regions (Scored),Region ca-central-1 has AWS Config disabled or not configured
+prowlerprofile,XXXXXXXXXX,ap-southeast-1,2.5,FAIL,Scored,Level 1,[check25] Ensure AWS Config is enabled in all regions (Scored),Region ap-southeast-1 has AWS Config disabled or not configured
+prowlerprofile,XXXXXXXXXX,ap-southeast-2,2.5,FAIL,Scored,Level 1,[check25] Ensure AWS Config is enabled in all regions (Scored),Region ap-southeast-2 has AWS Config disabled or not configured
+prowlerprofile,XXXXXXXXXX,eu-central-1,2.5,FAIL,Scored,Level 1,[check25] Ensure AWS Config is enabled in all regions (Scored),Region eu-central-1 has AWS Config disabled or not configured
+prowlerprofile,XXXXXXXXXX,us-east-1,2.5,FAIL,Scored,Level 1,[check25] Ensure AWS Config is enabled in all regions (Scored),Region us-east-1 has AWS Config disabled or not configured
+prowlerprofile,XXXXXXXXXX,us-east-2,2.5,FAIL,Scored,Level 1,[check25] Ensure AWS Config is enabled in all regions (Scored),Region us-east-2 has AWS Config disabled or not configured
+prowlerprofile,XXXXXXXXXX,us-west-1,2.5,FAIL,Scored,Level 1,[check25] Ensure AWS Config is enabled in all regions (Scored),Region us-west-1 has AWS Config disabled or not configured
+prowlerprofile,XXXXXXXXXX,us-west-2,2.5,PASS,Scored,Level 1,[check25] Ensure AWS Config is enabled in all regions (Scored),Region us-west-2 has AWS Config recorder: ON
+prowlerprofile,XXXXXXXXXX,us-east-1,2.6,PASS,Scored,Level 1,[check26] Ensure S3 bucket access logging is enabled on the CloudTrail S3 bucket (Scored),Bucket access logging enabled in demo-cloudtrail-dev
+prowlerprofile,XXXXXXXXXX,us-east-1,2.7,PASS,Scored,Level 2,[check27] Ensure CloudTrail logs are encrypted at rest using KMS CMKs (Scored),KMS key found for dev
+prowlerprofile,XXXXXXXXXX,eu-north-1,2.8,INFO,Scored,Level 2,[check28] Ensure rotation for customer created CMKs is enabled (Scored),eu-north-1: This region doesn't have ANY encryption keys
+prowlerprofile,XXXXXXXXXX,ap-south-1,2.8,INFO,Scored,Level 2,[check28] Ensure rotation for customer created CMKs is enabled (Scored),ap-south-1: This region doesn't have ANY encryption keys
+prowlerprofile,XXXXXXXXXX,eu-west-3,2.8,INFO,Scored,Level 2,[check28] Ensure rotation for customer created CMKs is enabled (Scored),eu-west-3: This region doesn't have ANY encryption keys
+prowlerprofile,XXXXXXXXXX,eu-west-2,2.8,INFO,Scored,Level 2,[check28] Ensure rotation for customer created CMKs is enabled (Scored),eu-west-2: This region doesn't have ANY encryption keys
+prowlerprofile,XXXXXXXXXX,eu-west-1,2.8,INFO,Scored,Level 2,[check28] Ensure rotation for customer created CMKs is enabled (Scored),eu-west-1: This region doesn't have ANY encryption keys
+prowlerprofile,XXXXXXXXXX,ap-northeast-3,2.8,INFO,Scored,Level 2,[check28] Ensure rotation for customer created CMKs is enabled (Scored),ap-northeast-3: This region doesn't have ANY encryption keys
+prowlerprofile,XXXXXXXXXX,ap-northeast-2,2.8,INFO,Scored,Level 2,[check28] Ensure rotation for customer created CMKs is enabled (Scored),ap-northeast-2: This region doesn't have ANY encryption keys
+prowlerprofile,XXXXXXXXXX,ap-northeast-1,2.8,INFO,Scored,Level 2,[check28] Ensure rotation for customer created CMKs is enabled (Scored),ap-northeast-1: This region doesn't have CUSTOM encryption keys
+prowlerprofile,XXXXXXXXXX,sa-east-1,2.8,INFO,Scored,Level 2,[check28] Ensure rotation for customer created CMKs is enabled (Scored),sa-east-1: This region doesn't have ANY encryption keys
+prowlerprofile,XXXXXXXXXX,ca-central-1,2.8,INFO,Scored,Level 2,[check28] Ensure rotation for customer created CMKs is enabled (Scored),ca-central-1: This region doesn't have ANY encryption keys
+prowlerprofile,XXXXXXXXXX,ap-southeast-1,2.8,INFO,Scored,Level 2,[check28] Ensure rotation for customer created CMKs is enabled (Scored),ap-southeast-1: This region doesn't have ANY encryption keys
+prowlerprofile,XXXXXXXXXX,ap-southeast-2,2.8,INFO,Scored,Level 2,[check28] Ensure rotation for customer created CMKs is enabled (Scored),ap-southeast-2: This region doesn't have ANY encryption keys
+prowlerprofile,XXXXXXXXXX,eu-central-1,2.8,INFO,Scored,Level 2,[check28] Ensure rotation for customer created CMKs is enabled (Scored),eu-central-1: This region doesn't have CUSTOM encryption keys
+prowlerprofile,XXXXXXXXXX,us-east-1,2.8,FAIL,Scored,Level 2,[check28] Ensure rotation for customer created CMKs is enabled (Scored),us-east-1: Key 0993d642-5ad9-4b9d-ae9a-fbb127dd1f4f is not set to rotate!
+prowlerprofile,XXXXXXXXXX,us-east-1,2.8,PASS,Scored,Level 2,[check28] Ensure rotation for customer created CMKs is enabled (Scored),us-east-1: Key 30b1cf9d-00cb-4b45-a382-ba07337f82ac is set correctly
+prowlerprofile,XXXXXXXXXX,us-east-1,2.8,FAIL,Scored,Level 2,[check28] Ensure rotation for customer created CMKs is enabled (Scored),us-east-1: Key 412e2e3c-c976-4440-a7ac-e2217836501b is not set to rotate!
+prowlerprofile,XXXXXXXXXX,us-east-1,2.8,PASS,Scored,Level 2,[check28] Ensure rotation for customer created CMKs is enabled (Scored),us-east-1: Key 7ea6fc2b-f73c-4055-9b8c-05665b6483aa is set correctly
+prowlerprofile,XXXXXXXXXX,us-east-1,2.8,FAIL,Scored,Level 2,[check28] Ensure rotation for customer created CMKs is enabled (Scored),us-east-1: Key ac58f07f-8b16-443a-a10e-639f9f9a98e7 is not set to rotate!
+prowlerprofile,XXXXXXXXXX,us-east-1,2.8,FAIL,Scored,Level 2,[check28] Ensure rotation for customer created CMKs is enabled (Scored),us-east-1: Key db243d2a-7a4b-4ec6-9dfd-0cdf4f034f5a is not set to rotate!
+prowlerprofile,XXXXXXXXXX,us-east-1,2.8,FAIL,Scored,Level 2,[check28] Ensure rotation for customer created CMKs is enabled (Scored),us-east-1: Key e538338c-3dc0-4b70-ab9d-fd1650b000ba is not set to rotate!
+prowlerprofile,XXXXXXXXXX,us-east-2,2.8,INFO,Scored,Level 2,[check28] Ensure rotation for customer created CMKs is enabled (Scored),us-east-2: This region doesn't have CUSTOM encryption keys
+prowlerprofile,XXXXXXXXXX,us-west-1,2.8,INFO,Scored,Level 2,[check28] Ensure rotation for customer created CMKs is enabled (Scored),us-west-1: This region doesn't have CUSTOM encryption keys
+prowlerprofile,XXXXXXXXXX,us-west-2,2.8,PASS,Scored,Level 2,[check28] Ensure rotation for customer created CMKs is enabled (Scored),us-west-2: Key 1421e2a0-61e0-45ca-8d47-eb55ecb9e0d2 is set correctly
+prowlerprofile,XXXXXXXXXX,us-west-2,2.8,FAIL,Scored,Level 2,[check28] Ensure rotation for customer created CMKs is enabled (Scored),us-west-2: Key 3b10333f-965e-42e3-be30-06b153d788d7 is not set to rotate!
+prowlerprofile,XXXXXXXXXX,us-west-2,2.8,PASS,Scored,Level 2,[check28] Ensure rotation for customer created CMKs is enabled (Scored),us-west-2: Key 99fb46c8-d4db-4e53-9154-3cc91fe6a72c is set correctly
+prowlerprofile,XXXXXXXXXX,us-west-2,2.8,PASS,Scored,Level 2,[check28] Ensure rotation for customer created CMKs is enabled (Scored),us-west-2: Key a0fc93da-c6a9-48b8-8bc8-94e523c0385e is set correctly
+prowlerprofile,XXXXXXXXXX,eu-north-1,2.9,FAIL,Scored,Level 2,[check29] Ensure VPC Flow Logging is Enabled in all VPCs (Scored),No VPCFlowLog has been found in Region eu-north-1
+prowlerprofile,XXXXXXXXXX,ap-south-1,2.9,FAIL,Scored,Level 2,[check29] Ensure VPC Flow Logging is Enabled in all VPCs (Scored),No VPCFlowLog has been found in Region ap-south-1
+prowlerprofile,XXXXXXXXXX,eu-west-3,2.9,FAIL,Scored,Level 2,[check29] Ensure VPC Flow Logging is Enabled in all VPCs (Scored),No VPCFlowLog has been found in Region eu-west-3
+prowlerprofile,XXXXXXXXXX,eu-west-2,2.9,FAIL,Scored,Level 2,[check29] Ensure VPC Flow Logging is Enabled in all VPCs (Scored),No VPCFlowLog has been found in Region eu-west-2
+prowlerprofile,XXXXXXXXXX,eu-west-1,2.9,FAIL,Scored,Level 2,[check29] Ensure VPC Flow Logging is Enabled in all VPCs (Scored),No VPCFlowLog has been found in Region eu-west-1
+prowlerprofile,XXXXXXXXXX,ap-northeast-3,2.9,FAIL,Scored,Level 2,[check29] Ensure VPC Flow Logging is Enabled in all VPCs (Scored),No VPCFlowLog has been found in Region ap-northeast-3
+prowlerprofile,XXXXXXXXXX,ap-northeast-2,2.9,FAIL,Scored,Level 2,[check29] Ensure VPC Flow Logging is Enabled in all VPCs (Scored),No VPCFlowLog has been found in Region ap-northeast-2
+prowlerprofile,XXXXXXXXXX,ap-northeast-1,2.9,FAIL,Scored,Level 2,[check29] Ensure VPC Flow Logging is Enabled in all VPCs (Scored),No VPCFlowLog has been found in Region ap-northeast-1
+prowlerprofile,XXXXXXXXXX,sa-east-1,2.9,FAIL,Scored,Level 2,[check29] Ensure VPC Flow Logging is Enabled in all VPCs (Scored),No VPCFlowLog has been found in Region sa-east-1
+prowlerprofile,XXXXXXXXXX,ca-central-1,2.9,FAIL,Scored,Level 2,[check29] Ensure VPC Flow Logging is Enabled in all VPCs (Scored),No VPCFlowLog has been found in Region ca-central-1
+prowlerprofile,XXXXXXXXXX,ap-southeast-1,2.9,FAIL,Scored,Level 2,[check29] Ensure VPC Flow Logging is Enabled in all VPCs (Scored),No VPCFlowLog has been found in Region ap-southeast-1
+prowlerprofile,XXXXXXXXXX,ap-southeast-2,2.9,FAIL,Scored,Level 2,[check29] Ensure VPC Flow Logging is Enabled in all VPCs (Scored),No VPCFlowLog has been found in Region ap-southeast-2
+prowlerprofile,XXXXXXXXXX,eu-central-1,2.9,FAIL,Scored,Level 2,[check29] Ensure VPC Flow Logging is Enabled in all VPCs (Scored),No VPCFlowLog has been found in Region eu-central-1

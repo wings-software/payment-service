@@ -1,0 +1,119 @@
+[
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "issue_detail",
+                "value": ""
+            },
+            {
+                "key": "requests",
+                "value": []
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "issue_name"
+                ]
+            },
+            {
+                "key": "cwes",
+                "value": [
+                    "326"
+                ]
+            },
+            {
+                "key": "_raw_serialnumber",
+                "value": "8801295048214289408"
+            },
+            {
+                "key": "_raw_type",
+                "value": "16777728"
+            },
+            {
+                "key": "_raw_host",
+                "value": {
+                    "#text": "http://blab-a-gab.examplico.com",
+                    "@ip": "54.208.137.193"
+                }
+            },
+            {
+                "key": "_raw_vulnerabilityclassifications",
+                "value": "<ul><li><a href=\"https://cwe.mitre.org/data/definitions/326.html\">CWE-326: Inadequate Encryption Strength</a></li></ul>"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": "Certain",
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": "/",
+        "host": "http://blab-a-gab.examplico.com",
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": "54.208.137.193",
+        "issueDescription": "<p>The application allows users to connect to it over unencrypted connections.  An attacker suitably positioned to view a legitimate user's network traffic could record and monitor their interactions with the application and obtain any information the user supplies. Furthermore, an attacker able to modify traffic could use the application as a platform for attacks against its users and third-party websites. Unencrypted connections have been exploited by ISPs and governments to track users, and to inject adverts and malicious JavaScript. Due to these concerns, web browser vendors are planning to visually flag unencrypted connections as hazardous.</p><p>\nTo exploit this vulnerability, an attacker must be suitably positioned to eavesdrop on the victim's network traffic. This scenario typically occurs when a client communicates with the server over an insecure connection such as public Wi-Fi, or a corporate or home network that is shared with a compromised computer. Common defenses such as switched networks are not sufficient to prevent this. An attacker situated in the user's ISP or the application's hosting infrastructure could also perform this attack. Note that an advanced adversary could potentially target any connection made over the Internet's core infrastructure.\n</p><p>Please note that using a mixture of encrypted and unencrypted communications is an ineffective defense against active attackers, because they can easily remove references to encrypted resources when these references are transmitted over an unencrypted connection.</p>",
+        "issueName": "Unencrypted communications",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Unencrypted communications",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": "<ul><li><a href=\"https://www.chromium.org/Home/chromium-security/marking-http-as-non-secure\">Marking HTTP as non-secure</a></li><li><a href=\"https://wiki.mozilla.org/Security/Server_Side_TLS\">Configuring Server-Side SSL/TLS</a></li><li><a href=\"https://developer.mozilla.org/en-US/docs/Web/Security/HTTP_strict_transport_security\">HTTP Strict Transport Security</a></li></ul>",
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "burp",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "326",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "<p>Applications should use transport-level encryption (SSL/TLS) to protect all communications passing between the client and the server. The Strict-Transport-Security HTTP header should be used to ensure that clients refuse to access the server over an insecure connection.</p>",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "Low",
+        "scanStatus": null,
+        "scanTool": "burp",
+        "scanType": "DAST",
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    }
+]

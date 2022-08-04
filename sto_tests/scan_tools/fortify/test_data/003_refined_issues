@@ -1,0 +1,453 @@
+[
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_href": "https://www.zeronorth.io/api/v1/projectVersions/52/issues/167481",
+                        "_raw_id": 167481,
+                        "friority": "Critical",
+                        "issue_instance_id": "15DEBD225DADCC5C70CE4A46FB2657F2",
+                        "likelihood": 5
+                    }
+                ]
+            },
+            {
+                "key": "project_version_id",
+                "value": 52
+            },
+            {
+                "key": "project_version_name",
+                "value": null
+            },
+            {
+                "key": "revision",
+                "value": 1
+            },
+            {
+                "key": "folder_id",
+                "value": 310
+            },
+            {
+                "key": "folder_guid",
+                "value": "54362046-6cd7-4d09-84db-50958b560180"
+            },
+            {
+                "key": "analyzer",
+                "value": "Data Flow"
+            },
+            {
+                "key": "kingdom",
+                "value": "Input Validation and Representation"
+            },
+            {
+                "key": "class_type",
+                "value": "Cross-Site Scripting"
+            },
+            {
+                "key": "sub_type",
+                "value": "Reflected"
+            },
+            {
+                "key": "reviewed",
+                "value": null
+            },
+            {
+                "key": "external_bug_id",
+                "value": null
+            },
+            {
+                "key": "primary_tag",
+                "value": "Not an Issue"
+            },
+            {
+                "key": "has_attachments",
+                "value": false
+            },
+            {
+                "key": "has_correlated_issues",
+                "value": false
+            },
+            {
+                "key": "found_date",
+                "value": "2021-03-16T15:01:11.000+0000"
+            },
+            {
+                "key": "removed_date",
+                "value": null
+            },
+            {
+                "key": "display_engine_type",
+                "value": "SCA"
+            },
+            {
+                "key": "primary_rule_guid",
+                "value": "D027DAA9-A3BE-49E4-BDBF-3DFF657F84CA"
+            },
+            {
+                "key": "audited",
+                "value": true
+            },
+            {
+                "key": "issue_status",
+                "value": "Reviewed"
+            },
+            {
+                "key": "primary_tag_value_auto_applied",
+                "value": false
+            },
+            {
+                "key": "hasComments",
+                "value": true
+            },
+            {
+                "key": "removed",
+                "value": false
+            },
+            {
+                "key": "suppressed",
+                "value": false
+            },
+            {
+                "key": "hidden",
+                "value": false
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "kingdom",
+                    "class_type",
+                    "sub_type"
+                ]
+            },
+            {
+                "key": "full_file_name",
+                "value": "path/to/fake/file/filter/fakeFile1.java"
+            },
+            {
+                "key": "abstract",
+                "value": null
+            },
+            {
+                "key": "recommendations",
+                "value": null
+            },
+            {
+                "key": "references",
+                "value": []
+            },
+            {
+                "key": "_raw_issuename",
+                "value": "Cross-Site Scripting: Reflected"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": 5,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": "fakeFile1.java",
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": 5,
+        "ip": null,
+        "issueDescription": null,
+        "issueName": "Cross-Site Scripting_Reflected",
+        "issueType": "STATIC",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Input Validation and Representation//Cross-Site Scripting//Reflected",
+        "libraryName": null,
+        "lineNumber": 251,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortify",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": [],
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": 398,
+        "scanSeverity": null,
+        "scanStatus": "UPDATED",
+        "scanTool": "fortify",
+        "scanType": "SCA",
+        "scenarioId": "8207742350716442876",
+        "severity": 4.0,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_href": "https://www.zeronorth.io/api/v1/projectVersions/52/issues/167482",
+                        "_raw_id": 167482,
+                        "friority": "High",
+                        "issue_instance_id": "1E9D068682D934389FD717F205B77F70",
+                        "likelihood": 0.8
+                    },
+                    {
+                        "_href": "https://www.zeronorth.io/api/v1/projectVersions/52/issues/167571",
+                        "_raw_id": 167571,
+                        "friority": "High",
+                        "issue_instance_id": "CD87783AD8C1C699CAE5AA1402F6B146",
+                        "likelihood": 0.8
+                    },
+                    {
+                        "_href": "https://www.zeronorth.io/api/v1/projectVersions/52/issues/167553",
+                        "_raw_id": 167553,
+                        "friority": "Critical",
+                        "issue_instance_id": "A8AC8EDD9F2074CDADA143AF2EADDECC",
+                        "likelihood": 2.8
+                    },
+                    {
+                        "_href": "https://www.zeronorth.io/api/v1/projectVersions/52/issues/167542",
+                        "_raw_id": 167542,
+                        "friority": "High",
+                        "issue_instance_id": "8B09F176768CD9760AB2A1E10F832323",
+                        "likelihood": 0.8
+                    },
+                    {
+                        "_href": "https://www.zeronorth.io/api/v1/projectVersions/52/issues/167580",
+                        "_raw_id": 167580,
+                        "friority": "High",
+                        "issue_instance_id": "D6263E0F1879EC280F67FB5A6A86E00C",
+                        "likelihood": 0.8
+                    },
+                    {
+                        "_href": "https://www.zeronorth.io/api/v1/projectVersions/52/issues/167495",
+                        "_raw_id": 167495,
+                        "friority": "High",
+                        "issue_instance_id": "3DD087B8582685069619AB83057A328E",
+                        "likelihood": 0.8
+                    },
+                    {
+                        "_href": "https://www.zeronorth.io/api/v1/projectVersions/52/issues/167577",
+                        "_raw_id": 167577,
+                        "friority": "High",
+                        "issue_instance_id": "D3033ED741F31800E01CEDC727760272",
+                        "likelihood": 0.8
+                    }
+                ]
+            },
+            {
+                "key": "project_version_id",
+                "value": 52
+            },
+            {
+                "key": "project_version_name",
+                "value": null
+            },
+            {
+                "key": "revision",
+                "value": 0
+            },
+            {
+                "key": "folder_id",
+                "value": 310
+            },
+            {
+                "key": "folder_guid",
+                "value": "54362046-6cd7-4d09-84db-50958b560180"
+            },
+            {
+                "key": "analyzer",
+                "value": "Data Flow"
+            },
+            {
+                "key": "kingdom",
+                "value": "Input Validation and Representation"
+            },
+            {
+                "key": "class_type",
+                "value": "Open Redirect"
+            },
+            {
+                "key": "sub_type",
+                "value": null
+            },
+            {
+                "key": "reviewed",
+                "value": null
+            },
+            {
+                "key": "external_bug_id",
+                "value": null
+            },
+            {
+                "key": "primary_tag",
+                "value": null
+            },
+            {
+                "key": "has_attachments",
+                "value": false
+            },
+            {
+                "key": "has_correlated_issues",
+                "value": false
+            },
+            {
+                "key": "found_date",
+                "value": "2021-03-16T15:01:11.000+0000"
+            },
+            {
+                "key": "removed_date",
+                "value": null
+            },
+            {
+                "key": "display_engine_type",
+                "value": "SCA"
+            },
+            {
+                "key": "primary_rule_guid",
+                "value": "7B5AF271-BDC5-4ABE-A93A-316A14FA9028"
+            },
+            {
+                "key": "audited",
+                "value": false
+            },
+            {
+                "key": "issue_status",
+                "value": "Unreviewed"
+            },
+            {
+                "key": "primary_tag_value_auto_applied",
+                "value": false
+            },
+            {
+                "key": "hasComments",
+                "value": false
+            },
+            {
+                "key": "removed",
+                "value": false
+            },
+            {
+                "key": "suppressed",
+                "value": false
+            },
+            {
+                "key": "hidden",
+                "value": false
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "kingdom",
+                    "class_type"
+                ]
+            },
+            {
+                "key": "full_file_name",
+                "value": "path/to/fake/file/filter/fakeFile1.java"
+            },
+            {
+                "key": "abstract",
+                "value": null
+            },
+            {
+                "key": "recommendations",
+                "value": null
+            },
+            {
+                "key": "references",
+                "value": []
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": 5,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": "fakeFile1.java",
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": 4,
+        "ip": null,
+        "issueDescription": null,
+        "issueName": "Open Redirect",
+        "issueType": "STATIC",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Input Validation and Representation//Open Redirect",
+        "libraryName": null,
+        "lineNumber": 259,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortify",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": [],
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": 398,
+        "scanSeverity": null,
+        "scanStatus": "UPDATED",
+        "scanTool": "fortify",
+        "scanType": "SCA",
+        "scenarioId": "8207742350716442876",
+        "severity": 4.0,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    }
+]
