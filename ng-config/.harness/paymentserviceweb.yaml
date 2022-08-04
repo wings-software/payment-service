@@ -365,7 +365,7 @@ pipeline:
                                               container_tag: local
                                               fail_on_severity: HIGH
                                               customer_artifacts_path: sto_tests/scan_tools/aqua_trivy/test_data
-                                              manual_upload_filename: "005"
+                                              manual_upload_filename: "001"
                                           imagePullPolicy: Always
                                       failureStrategies:
                                           - onFailure:
