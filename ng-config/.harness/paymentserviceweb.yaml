@@ -232,7 +232,7 @@ pipeline:
                                               product_lookup_type: byKey
                                               repository_project: jhttp_isolated
                                               customer_artifacts_path: sto_tests/scan_tools/sonarqube/test_data
-                                              manual_upload_filename: 001_refined_issues
+                                              manual_upload_filename: "001"
                                           imagePullPolicy: Always
                                       when:
                                           stageStatus: Success
