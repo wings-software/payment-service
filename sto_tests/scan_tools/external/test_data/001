@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "key": ["scanTool"],    
+    "commonAttributes": ["issue_description"],
+    "author": "Paul Boss"
+  },
+  "issues": [{
+      "scanTool": "Whitehat",
+      "issueName": "name1",
+      "issueDescription": "a",
+      "fileName": "https://github.com/MSGTech/Aspire.git:dev/wp-content/themes/aspire/template-parts/homepage/homepage-jobs.php",
+      "remediationSteps": "b",
+      "risk": "high",
+      "severity": 80,
+      "status": "open",
+      "referenceIdentifiers": [{
+        "type": "cwe",
+        "id": "79"
+      }]
+    },
+    {
+      "scanTool": "Whitehat",
+      "issueName": "name2",
+      "issueDescription": "c",
+      "fileName": "https://github.com/MSGTech/Aspire.git:dev/wp-content/themes/aspire/template-parts/homepage/homepage-jobs.php",
+      "remediationSteps": "d",
+      "risk": "high",
+      "severity": 70,
+      "status": "open",
+      "referenceIdentifiers": [{
+        "type": "cwe",
+        "id": "79"
+      }]
+    }
+  ]
+}

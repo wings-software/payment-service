@@ -1,0 +1,1466 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE ASSET_DATA_REPORT SYSTEM "https://qualysguard.qg3.apps.qualys.com/asset_data_report.dtd">
+<ASSET_DATA_REPORT>
+  <HEADER>
+    <COMPANY><![CDATA[ZeroNorth]]></COMPANY>
+    <GENERATION_DATETIME>2020-10-21T16:40:56Z</GENERATION_DATETIME>
+    <TEMPLATE><![CDATA[ZeroNorth Template]]></TEMPLATE>
+    <TARGET>
+      <USER_ASSET_GROUPS>
+        <ASSET_GROUP_TITLE><![CDATA[All]]></ASSET_GROUP_TITLE>
+      </USER_ASSET_GROUPS>
+      <COMBINED_IP_LIST>
+        <RANGE>
+          <START>35.196.64.61</START>
+          <END>35.196.64.61</END>
+        </RANGE>
+        <RANGE>
+          <START>65.61.137.117</START>
+          <END>65.61.137.117</END>
+        </RANGE>
+        <RANGE>
+          <START>209.85.143.231</START>
+          <END>209.85.143.231</END>
+        </RANGE>
+      </COMBINED_IP_LIST>
+    </TARGET>
+    <RISK_SCORE_SUMMARY>
+      <TOTAL_VULNERABILITIES>31</TOTAL_VULNERABILITIES>
+      <AVG_SECURITY_RISK>2.0</AVG_SECURITY_RISK>
+      <BUSINESS_RISK>9/100</BUSINESS_RISK>
+    </RISK_SCORE_SUMMARY>
+  </HEADER>
+  <RISK_SCORE_PER_HOST>
+    <HOSTS>
+      <IP_ADDRESS>35.196.64.61</IP_ADDRESS>
+      <TOTAL_VULNERABILITIES>31</TOTAL_VULNERABILITIES>
+      <SECURITY_RISK>2.0</SECURITY_RISK>
+    </HOSTS>
+  </RISK_SCORE_PER_HOST>
+  <HOST_LIST>
+    <HOST>
+      <IP>35.196.64.61</IP>
+      <TRACKING_METHOD>IP</TRACKING_METHOD>
+      <DNS><![CDATA[61.64.196.35.bc.googleusercontent.com]]></DNS>
+      <ASSET_GROUPS>
+        <ASSET_GROUP_TITLE><![CDATA[AssetGroup1]]></ASSET_GROUP_TITLE>
+      </ASSET_GROUPS>
+      <VULN_INFO_LIST>
+        <VULN_INFO>
+          <QID id="qid_38116">38116</QID>
+          <TYPE>Ig</TYPE>
+          <PORT>443</PORT>
+          <SERVICE>http over ssl</SERVICE>
+          <PROTOCOL>tcp</PROTOCOL>
+          <SSL>false</SSL>
+          <RESULT format="table"><![CDATA[CIPHER	KEY-EXCHANGE	AUTHENTICATION	MAC	ENCRYPTION(KEY-STRENGTH)	GRADE
+SSLv2 PROTOCOL IS DISABLED	 	 	 	 	 
+SSLv3 PROTOCOL IS DISABLED	 	 	 	 	 
+TLSv1 PROTOCOL IS DISABLED	 	 	 	 	 
+TLSv1.1 PROTOCOL IS ENABLED	 	 	 	 	 
+TLSv1.1	COMPRESSION METHOD	None	 	 	 
+AES128-SHA	RSA	RSA	SHA1	AES(128)	MEDIUM
+DHE-RSA-AES128-SHA	DH	RSA	SHA1	AES(128)	MEDIUM
+AES256-SHA	RSA	RSA	SHA1	AES(256)	HIGH
+DHE-RSA-AES256-SHA	DH	RSA	SHA1	AES(256)	HIGH
+ECDHE-RSA-AES128-SHA	ECDH	RSA	SHA1	AES(128)	MEDIUM
+ECDHE-RSA-AES256-SHA	ECDH	RSA	SHA1	AES(256)	HIGH
+TLSv1.2 PROTOCOL IS ENABLED	 	 	 	 	 
+TLSv1.2	COMPRESSION METHOD	None	 	 	 
+AES128-SHA	RSA	RSA	SHA1	AES(128)	MEDIUM
+DHE-RSA-AES128-SHA	DH	RSA	SHA1	AES(128)	MEDIUM
+AES256-SHA	RSA	RSA	SHA1	AES(256)	HIGH
+DHE-RSA-AES256-SHA	DH	RSA	SHA1	AES(256)	HIGH
+DHE-RSA-AES128-SHA256	DH	RSA	SHA256	AES(128)	MEDIUM
+DHE-RSA-AES256-SHA256	DH	RSA	SHA256	AES(256)	HIGH
+AES128-GCM-SHA256	RSA	RSA	AEAD	AESGCM(128)	MEDIUM
+AES256-GCM-SHA384	RSA	RSA	AEAD	AESGCM(256)	HIGH
+DHE-RSA-AES128-GCM-SHA256	DH	RSA	AEAD	AESGCM(128)	MEDIUM
+DHE-RSA-AES256-GCM-SHA384	DH	RSA	AEAD	AESGCM(256)	HIGH
+ECDHE-RSA-AES128-SHA	ECDH	RSA	SHA1	AES(128)	MEDIUM
+ECDHE-RSA-AES256-SHA	ECDH	RSA	SHA1	AES(256)	HIGH
+ECDHE-RSA-AES128-SHA256	ECDH	RSA	SHA256	AES(128)	MEDIUM
+ECDHE-RSA-AES256-SHA384	ECDH	RSA	SHA384	AES(256)	HIGH
+ECDHE-RSA-AES128-GCM-SHA256	ECDH	RSA	AEAD	AESGCM(128)	MEDIUM
+ECDHE-RSA-AES256-GCM-SHA384	ECDH	RSA	AEAD	AESGCM(256)	HIGH
+AES128-SHA256	RSA	RSA	SHA256	AES(128)	MEDIUM
+AES256-SHA256	RSA	RSA	SHA256	AES(256)	HIGH
+TLSv1.3 PROTOCOL IS DISABLED]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_38704">38704</QID>
+          <TYPE>Ig</TYPE>
+          <PORT>443</PORT>
+          <SERVICE>http over ssl</SERVICE>
+          <PROTOCOL>tcp</PROTOCOL>
+          <SSL>false</SSL>
+          <RESULT format="table"><![CDATA[NAME	GROUP	KEY-SIZE	FORWARD-SECRET	CLASSICAL-STRENGTH	QUANTUM-STRENGTH
+TLSv1.1	 	 	 	 	 
+RSA	 	2048	no	110	low
+DHE	 	2048	yes	110	low
+ECDHE	secp256r1	256	yes	128	low
+ECDHE	secp521r1	521	yes	260	low
+ECDHE	brainpoolp512r1	512	yes	256	low
+ECDHE	brainpoolp384r1	384	yes	192	low
+ECDHE	secp384r1	384	yes	192	low
+ECDHE	brainpoolp256r1	256	yes	128	low
+ECDHE	secp256k1	256	yes	128	low
+ECDHE	sect571r1	571	yes	285	low
+ECDHE	sect571k1	571	yes	285	low
+ECDHE	sect409k1	409	yes	204	low
+ECDHE	sect409r1	409	yes	204	low
+ECDHE	sect283k1	283	yes	141	low
+ECDHE	sect283r1	283	yes	141	low
+TLSv1.2	 	 	 	 	 
+RSA	 	2048	no	110	low
+DHE	 	2048	yes	110	low
+ECDHE	secp256r1	256	yes	128	low
+ECDHE	secp521r1	521	yes	260	low
+ECDHE	brainpoolp512r1	512	yes	256	low
+ECDHE	brainpoolp384r1	384	yes	192	low
+ECDHE	secp384r1	384	yes	192	low
+ECDHE	brainpoolp256r1	256	yes	128	low
+ECDHE	secp256k1	256	yes	128	low
+ECDHE	sect571r1	571	yes	285	low
+ECDHE	sect571k1	571	yes	285	low
+ECDHE	sect409k1	409	yes	204	low
+ECDHE	sect409r1	409	yes	204	low
+ECDHE	sect283k1	283	yes	141	low
+ECDHE	sect283r1	283	yes	141	low]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_38706">38706</QID>
+          <TYPE>Ig</TYPE>
+          <PORT>443</PORT>
+          <SERVICE>http over ssl</SERVICE>
+          <PROTOCOL>tcp</PROTOCOL>
+          <SSL>false</SSL>
+          <RESULT format="table"><![CDATA[NAME	STATUS
+TLSv1.1	 
+Extended Master Secret	no
+Encrypt Then MAC	no
+Heartbeat	yes
+Truncated HMAC	no
+Cipher priority controlled by	server
+OCSP stapling	no
+SCT extension	no
+TLSv1.2	 
+Extended Master Secret	no
+Encrypt Then MAC	no
+Heartbeat	yes
+Truncated HMAC	no
+Cipher priority controlled by	server
+OCSP stapling	no
+SCT extension	no]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_86002">86002</QID>
+          <TYPE>Ig</TYPE>
+          <PORT>443</PORT>
+          <SERVICE>http over ssl</SERVICE>
+          <PROTOCOL>tcp</PROTOCOL>
+          <SSL>false</SSL>
+          <RESULT format="table"><![CDATA[NAME	VALUE
+(0)CERTIFICATE 0	 
+(0)Version	3 (0x2)
+(0)Serial Number	 05:27:86:c5:55:73:a1:7a:6d:fa:3e:27:27:ae:dd:0e 
+(0)Signature Algorithm	sha256WithRSAEncryption
+(0)ISSUER NAME	 
+countryName	US
+ organizationName	DigiCert Inc
+ organizationalUnitName	www.digicert.com
+ commonName	RapidSSL RSA CA 2018
+(0)SUBJECT NAME	 
+commonName	*.wpengine.com
+(0)Valid From	Jul 1 00:00:00 2019 GMT
+(0)Valid Till	Aug 29 12:00:00 2021 GMT
+(0)Public Key Algorithm	rsaEncryption
+(0)RSA Public Key	(2048 bit)
+(0)	 RSA Public-Key: (2048 bit)
+(0)	 Modulus:
+(0)	 00:99:bd:24:1b:13:e9:52:93:f1:74:e5:f2:13:f0:
+(0)	 bb:c1:e5:3a:b3:cf:55:42:ac:10:e1:5b:1a:5a:d6:
+(0)	 e0:41:0a:c9:f0:42:92:e4:7b:10:b6:53:57:2d:d4:
+(0)	 53:79:be:d6:56:21:d5:db:34:c5:5c:77:6f:54:a2:
+(0)	 fa:7f:4e:9d:78:91:16:f0:06:2e:f7:6b:d8:7e:b0:
+(0)	 ef:dd:fc:28:29:75:be:f6:9d:5c:f9:9a:96:55:53:
+(0)	 26:6c:b1:a8:e5:95:c2:e5:0d:27:20:d7:e1:08:b3:
+(0)	 92:b6:7a:76:96:99:dc:bd:8f:4c:a8:95:df:af:85:
+(0)	 a2:38:88:41:77:2c:a5:93:47:d1:c8:76:5c:4f:27:
+(0)	 08:33:be:bf:e6:47:47:08:bc:b9:6f:cf:79:54:9d:
+(0)	 2b:b5:8a:44:b2:9e:0b:39:ae:4c:ae:de:8c:97:78:
+(0)	 8e:d3:ee:9c:e8:62:84:cc:cf:ca:da:ff:67:73:1b:
+(0)	 17:14:4e:b6:70:51:40:57:6d:42:ee:0c:2b:a8:7b:
+(0)	 13:cc:bc:bb:b1:27:ce:61:1a:34:b9:25:a0:5e:ce:
+(0)	 28:d1:24:1d:6d:c3:a7:ae:aa:31:0d:c3:a2:35:65:
+(0)	 2d:60:75:ea:3b:c2:1c:b8:24:64:3b:94:f0:6c:9c:
+(0)	 d6:2a:7e:53:75:e3:54:e4:0f:b7:43:2d:d9:1d:4f:
+(0)	 ae:cd
+(0)	 Exponent: 65537 (0x10001)
+(0)X509v3 EXTENSIONS	 	
+(0)X509v3 Authority Key Identifier	 keyid:53:CA:17:59:FC:6B:C0:03:21:2F:1A:AE:E4:AA:A8:1C:82:56:DA:75
+(0)X509v3 Subject Key Identifier	 4A:84:6E:99:43:BB:51:FB:31:28:D5:15:E0:B0:E7:95:8A:65:0B:B5
+(0)X509v3 Subject Alternative Name	 DNS:*.wpengine.com, DNS:wpengine.com
+(0)X509v3 Key Usage	critical
+(0)	 Digital Signature, Key Encipherment
+(0)X509v3 Extended Key Usage	 TLS Web Server Authentication, TLS Web Client Authentication
+(0)X509v3 CRL Distribution Points	
+(0)	 Full Name:
+(0)	 URI:http://cdp.rapidssl.com/RapidSSLRSACA2018.crl
+(0)X509v3 Certificate Policies	 Policy: 2.16.840.1.114412.1.2
+(0)	 CPS: https://www.digicert.com/CPS
+(0)	 Policy: 2.23.140.1.2.1
+(0)Authority Information Access	 OCSP - URI:http://status.rapidssl.com
+(0)	 CA Issuers - URI:http://cacerts.rapidssl.com/RapidSSLRSACA2018.crt
+(0)X509v3 Basic Constraints	 CA:FALSE
+(0)CT Precertificate SCTs	 Signed Certificate Timestamp:
+(0)	 Version : v1 (0x0)
+(0)	 Log ID : A4:B9:09:90:B4:18:58:14:87:BB:13:A2:CC:67:70:0A:
+(0)	 3C:35:98:04:F9:1B:DF:B8:E3:77:CD:0E:C8:0D:DC:10
+(0)	 Timestamp : Jul 1 19:41:51.371 2019 GMT
+(0)	 Extensions: none
+(0)	 Signature : ecdsa-with-SHA256
+(0)	 30:45:02:20:3D:7B:71:DD:80:8A:DE:5F:34:1B:52:97:
+(0)	 6F:D5:67:35:11:6F:C6:CD:C1:FD:99:B5:D6:3F:3C:DC:
+(0)	 06:7A:25:B8:02:21:00:FA:BB:12:D3:75:88:48:FC:D8:
+(0)	 80:A8:5E:42:44:56:08:36:35:F8:43:CE:15:9A:E8:C1:
+(0)	 57:65:43:4E:A6:9F:43
+(0)	 Signed Certificate Timestamp:
+(0)	 Version : v1 (0x0)
+(0)	 Log ID : 87:75:BF:E7:59:7C:F8:8C:43:99:5F:BD:F3:6E:FF:56:
+(0)	 8D:47:56:36:FF:4A:B5:60:C1:B4:EA:FF:5E:A0:83:0F
+(0)	 Timestamp : Jul 1 19:41:51.438 2019 GMT
+(0)	 Extensions: none
+(0)	 Signature : ecdsa-with-SHA256
+(0)	 30:45:02:20:64:63:76:4D:38:09:09:D5:C5:82:17:53:
+(0)	 24:6C:CA:12:69:F5:BD:77:10:A6:12:EC:9A:32:4A:02:
+(0)	 35:B0:E3:06:02:21:00:9B:00:A4:0B:B6:01:4A:40:31:
+(0)	 5E:06:BE:81:53:E5:79:4B:37:84:57:CD:0E:88:72:70:
+(0)	 93:3C:C9:47:7F:25:54
+(0)	 Signed Certificate Timestamp:
+(0)	 Version : v1 (0x0)
+(0)	 Log ID : 44:94:65:2E:B0:EE:CE:AF:C4:40:07:D8:A8:FE:28:C0:
+(0)	 DA:E6:82:BE:D8:CB:31:B5:3F:D3:33:96:B5:B6:81:A8
+(0)	 Timestamp : Jul 1 19:41:51.193 2019 GMT
+(0)	 Extensions: none
+(0)	 Signature : ecdsa-with-SHA256
+(0)	 30:46:02:21:00:97:73:02:84:14:A1:13:AA:ED:95:2B:
+(0)	 52:C4:8E:A0:85:FC:DF:C6:68:DA:57:CD:E7:A2:12:18:
+(0)	 CC:7F:FA:06:CE:02:21:00:FA:A5:0B:10:F8:1A:CF:22:
+(0)	 CD:EA:86:FF:B5:4D:F7:54:73:93:5D:79:FF:80:AB:D2:
+(0)	 C9:19:DD:78:3C:98:41:16
+(0)Signature	(256 octets)
+(0)	8b:2b:20:8c:e3:16:87:df:a2:8e:6b:32:52:b1:80:46
+(0)	de:5c:3c:35:63:b5:98:45:74:49:09:bf:db:28:37:15
+(0)	bf:49:7e:22:01:ef:a0:d4:7a:83:ad:c9:64:f9:c3:7f
+(0)	46:fc:2f:ba:b6:5f:6c:d0:62:72:06:dd:d2:d3:dd:d6
+(0)	13:76:85:e6:01:bb:42:24:b7:af:a2:7c:85:24:de:7a
+(0)	b6:9b:17:7a:20:71:51:96:2e:88:c0:51:4b:58:d4:85
+(0)	e7:21:9d:4e:81:12:9e:dc:9d:91:c1:39:16:37:14:dd
+(0)	76:66:be:77:60:91:d8:20:07:15:18:5a:88:37:0d:82
+(0)	c4:63:01:80:ff:6d:c7:4f:dc:8e:58:eb:ff:3a:8e:78
+(0)	81:b6:c0:47:32:f3:fa:4b:ca:ae:8f:85:9c:53:4b:4e
+(0)	bc:c1:4d:25:d7:f2:ec:10:a7:ec:61:37:e8:9e:2a:ba
+(0)	94:84:e8:1a:7b:79:31:14:18:ba:c6:b0:52:56:2b:16
+(0)	17:68:1c:61:c7:7f:03:b4:a7:1b:5e:f1:bc:90:55:b6
+(0)	50:d7:e5:ce:0f:ae:a7:94:05:88:94:7f:8f:82:f7:aa
+(0)	62:be:54:5f:87:6a:36:ca:0c:96:8c:df:0c:29:79:50
+(0)	b6:59:10:aa:12:e7:66:7f:57:58:84:24:a1:d4:d3:5b
+(1)CERTIFICATE 1	 
+(1)Version	3 (0x2)
+(1)Serial Number	 08:a5:a2:46:cd:4b:5c:8c:83:d7:02:b4:bb:ab:53:49 
+(1)Signature Algorithm	sha256WithRSAEncryption
+(1)ISSUER NAME	 
+countryName	US
+ organizationName	DigiCert Inc
+ organizationalUnitName	www.digicert.com
+ commonName	DigiCert Global Root CA
+(1)SUBJECT NAME	 
+countryName	US
+ organizationName	DigiCert Inc
+ organizationalUnitName	www.digicert.com
+ commonName	RapidSSL RSA CA 2018
+(1)Valid From	Nov 6 12:23:33 2017 GMT
+(1)Valid Till	Nov 6 12:23:33 2027 GMT
+(1)Public Key Algorithm	rsaEncryption
+(1)RSA Public Key	(2048 bit)
+(1)	 RSA Public-Key: (2048 bit)
+(1)	 Modulus:
+(1)	 00:e5:2d:a8:8a:11:28:f6:79:e9:7b:3a:33:88:3b:
+(1)	 71:e1:65:8b:2c:29:65:fd:ed:2d:d4:46:1e:98:4e:
+(1)	 67:f8:c8:0f:e6:f8:9a:1c:bc:be:56:91:cf:fa:77:
+(1)	 57:e4:3d:7c:20:d2:2e:b8:05:7c:c0:5a:b6:e8:a1:
+(1)	 79:53:45:8d:21:98:90:a7:a9:8b:b4:85:a3:51:e5:
+(1)	 83:3c:0d:bc:39:ec:a1:4e:58:fd:4c:b9:36:6d:ec:
+(1)	 ad:6e:d1:54:eb:2a:5b:a5:65:25:b6:6b:d8:e5:5f:
+(1)	 27:82:ca:42:ee:71:51:34:28:e9:7e:70:c4:0f:69:
+(1)	 11:c8:9c:ce:f3:2a:0a:30:5c:f8:27:82:44:f0:de:
+(1)	 cd:03:5b:89:c1:41:05:31:4b:c7:2e:cd:2c:70:ba:
+(1)	 0f:66:42:9c:7b:02:11:9b:54:55:d8:0c:66:15:0c:
+(1)	 49:91:d7:fb:60:df:4f:72:49:22:7f:65:e0:9b:76:
+(1)	 f8:f0:16:67:d3:37:f4:a9:7b:12:78:6b:bc:e2:e6:
+(1)	 bd:83:0c:e3:cc:8e:ed:6d:30:63:6b:24:e9:4f:ef:
+(1)	 d7:a5:6b:81:56:fe:9f:bd:aa:c8:e9:b8:a4:28:1f:
+(1)	 39:f4:e4:86:42:ec:3b:dd:75:e0:7a:e1:70:10:f1:
+(1)	 d3:21:1a:14:b6:4c:ee:df:f1:10:f8:bb:70:ce:79:
+(1)	 24:75
+(1)	 Exponent: 65537 (0x10001)
+(1)X509v3 EXTENSIONS	 	
+(1)X509v3 Subject Key Identifier	 53:CA:17:59:FC:6B:C0:03:21:2F:1A:AE:E4:AA:A8:1C:82:56:DA:75
+(1)X509v3 Authority Key Identifier	 keyid:03:DE:50:35:56:D1:4C:BB:66:F0:A3:E2:1B:1B:C3:97:B2:3D:D1:55
+(1)X509v3 Key Usage	critical
+(1)	 Digital Signature, Certificate Sign, CRL Sign
+(1)X509v3 Extended Key Usage	 TLS Web Server Authentication, TLS Web Client Authentication
+(1)X509v3 Basic Constraints	critical
+(1)	 CA:TRUE, pathlen:0
+(1)Authority Information Access	 OCSP - URI:http://ocsp.digicert.com
+(1)X509v3 CRL Distribution Points	
+(1)	 Full Name:
+(1)	 URI:http://crl3.digicert.com/DigiCertGlobalRootCA.crl
+(1)X509v3 Certificate Policies	 Policy: 2.16.840.1.114412.1.2
+(1)	 CPS: https://www.digicert.com/CPS
+(1)	 Policy: 2.16.840.1.114412.1.1
+(1)	 Policy: 2.23.140.1.2.1
+(1)	 Policy: 2.23.140.1.2.2
+(1)Signature	(256 octets)
+(1)	7e:23:c7:f2:ca:35:6e:59:92:51:5c:61:6b:3c:12:36
+(1)	e6:d2:7c:b3:29:e6:42:d8:a3:95:61:1e:cf:f2:07:af
+(1)	2b:2b:25:5a:6e:17:a3:80:52:cc:aa:f6:df:91:6c:27
+(1)	86:85:b7:ac:80:8a:fd:5e:63:4b:59:fd:93:75:f1:b3
+(1)	86:48:64:ad:a0:47:3f:24:4e:28:70:8c:eb:f0:fe:4c
+(1)	83:5d:64:45:81:db:9a:06:27:af:54:71:7a:48:b9:99
+(1)	27:9b:df:d0:c6:c5:3a:49:0f:89:06:86:ce:65:5c:da
+(1)	28:e1:ca:27:52:28:89:c0:a6:aa:1f:bb:e1:d9:b6:ab
+(1)	c9:df:29:30:84:9a:83:cd:c9:52:ac:95:19:cd:ad:58
+(1)	fa:4e:d3:7d:bd:fc:25:aa:da:4a:f2:aa:fe:ba:39:23
+(1)	23:c2:e9:54:cf:47:57:7f:83:87:41:ab:11:ec:23:5f
+(1)	22:bf:b8:29:27:1c:e8:00:65:43:94:43:17:ce:8f:19
+(1)	e1:3a:91:dc:12:42:41:62:07:f7:10:ca:c3:72:ab:48
+(1)	c4:0d:04:e4:7d:ad:a9:8e:6b:96:b4:c0:8d:6c:19:e1
+(1)	15:70:58:7a:37:ee:6c:88:5a:51:b1:2f:d8:53:90:07
+(1)	77:42:6a:ff:85:3e:0e:5e:12:f7:97:4d:5c:8c:9c:6a
+(2)CERTIFICATE 2	 
+(2)Version	3 (0x2)
+(2)Serial Number	 08:3b:e0:56:90:42:46:b1:a1:75:6a:c9:59:91:c7:4a 
+(2)Signature Algorithm	sha1WithRSAEncryption
+(2)ISSUER NAME	 
+countryName	US
+ organizationName	DigiCert Inc
+ organizationalUnitName	www.digicert.com
+ commonName	DigiCert Global Root CA
+(2)SUBJECT NAME	 
+countryName	US
+ organizationName	DigiCert Inc
+ organizationalUnitName	www.digicert.com
+ commonName	DigiCert Global Root CA
+(2)Valid From	Nov 10 00:00:00 2006 GMT
+(2)Valid Till	Nov 10 00:00:00 2031 GMT
+(2)Public Key Algorithm	rsaEncryption
+(2)RSA Public Key	(2048 bit)
+(2)	 RSA Public-Key: (2048 bit)
+(2)	 Modulus:
+(2)	 00:e2:3b:e1:11:72:de:a8:a4:d3:a3:57:aa:50:a2:
+(2)	 8f:0b:77:90:c9:a2:a5:ee:12:ce:96:5b:01:09:20:
+(2)	 cc:01:93:a7:4e:30:b7:53:f7:43:c4:69:00:57:9d:
+(2)	 e2:8d:22:dd:87:06:40:00:81:09:ce:ce:1b:83:bf:
+(2)	 df:cd:3b:71:46:e2:d6:66:c7:05:b3:76:27:16:8f:
+(2)	 7b:9e:1e:95:7d:ee:b7:48:a3:08:da:d6:af:7a:0c:
+(2)	 39:06:65:7f:4a:5d:1f:bc:17:f8:ab:be:ee:28:d7:
+(2)	 74:7f:7a:78:99:59:85:68:6e:5c:23:32:4b:bf:4e:
+(2)	 c0:e8:5a:6d:e3:70:bf:77:10:bf:fc:01:f6:85:d9:
+(2)	 a8:44:10:58:32:a9:75:18:d5:d1:a2:be:47:e2:27:
+(2)	 6a:f4:9a:33:f8:49:08:60:8b:d4:5f:b4:3a:84:bf:
+(2)	 a1:aa:4a:4c:7d:3e:cf:4f:5f:6c:76:5e:a0:4b:37:
+(2)	 91:9e:dc:22:e6:6d:ce:14:1a:8e:6a:cb:fe:cd:b3:
+(2)	 14:64:17:c7:5b:29:9e:32:bf:f2:ee:fa:d3:0b:42:
+(2)	 d4:ab:b7:41:32:da:0c:d4:ef:f8:81:d5:bb:8d:58:
+(2)	 3f:b5:1b:e8:49:28:a2:70:da:31:04:dd:f7:b2:16:
+(2)	 f2:4c:0a:4e:07:a8:ed:4a:3d:5e:b5:7f:a3:90:c3:
+(2)	 af:27
+(2)	 Exponent: 65537 (0x10001)
+(2)X509v3 EXTENSIONS	 	
+(2)X509v3 Key Usage	critical
+(2)	 Digital Signature, Certificate Sign, CRL Sign
+(2)X509v3 Basic Constraints	critical
+(2)	 CA:TRUE
+(2)X509v3 Subject Key Identifier	 03:DE:50:35:56:D1:4C:BB:66:F0:A3:E2:1B:1B:C3:97:B2:3D:D1:55
+(2)X509v3 Authority Key Identifier	 keyid:03:DE:50:35:56:D1:4C:BB:66:F0:A3:E2:1B:1B:C3:97:B2:3D:D1:55
+(2)Signature	(256 octets)
+(2)	cb:9c:37:aa:48:13:12:0a:fa:dd:44:9c:4f:52:b0:f4
+(2)	df:ae:04:f5:79:79:08:a3:24:18:fc:4b:2b:84:c0:2d
+(2)	b9:d5:c7:fe:f4:c1:1f:58:cb:b8:6d:9c:7a:74:e7:98
+(2)	29:ab:11:b5:e3:70:a0:a1:cd:4c:88:99:93:8c:91:70
+(2)	e2:ab:0f:1c:be:93:a9:ff:63:d5:e4:07:60:d3:a3:bf
+(2)	9d:5b:09:f1:d5:8e:e3:53:f4:8e:63:fa:3f:a7:db:b4
+(2)	66:df:62:66:d6:d1:6e:41:8d:f2:2d:b5:ea:77:4a:9f
+(2)	9d:58:e2:2b:59:c0:40:23:ed:2d:28:82:45:3e:79:54
+(2)	92:26:98:e0:80:48:a8:37:ef:f0:d6:79:60:16:de:ac
+(2)	e8:0e:cd:6e:ac:44:17:38:2f:49:da:e1:45:3e:2a:b9
+(2)	36:53:cf:3a:50:06:f7:2e:e8:c4:57:49:6c:61:21:18
+(2)	d5:04:ad:78:3c:2c:3a:80:6b:a7:eb:af:15:14:e9:d8
+(2)	89:c1:b9:38:6c:e2:91:6c:8a:ff:64:b9:77:25:57:30
+(2)	c0:1b:24:a3:e1:dc:e9:df:47:7c:b5:b4:24:08:05:30
+(2)	ec:2d:bd:0b:bf:45:bf:50:b9:a9:f3:eb:98:01:12:ad
+(2)	c8:88:c6:98:34:5f:8d:0a:3c:c6:e9:d5:95:95:6d:de]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_38718">38718</QID>
+          <TYPE>Ig</TYPE>
+          <PORT>443</PORT>
+          <SERVICE>http over ssl</SERVICE>
+          <PROTOCOL>tcp</PROTOCOL>
+          <SSL>false</SSL>
+          <RESULT format="table"><![CDATA[Source	Validated	Name	URL	ID	Time
+Certificate #0	 	CN=*.wpengine.com	 	 	 
+Certificate	yes	Google &apos;Pilot&apos; log	ct.googleapis.com/pilot/	a4b90990b418581487bb13a2cc67700a3c359804f91bdfb8e377cd0ec80ddc10	Mon 01 Jul 2019 07:41:51 PM GMT
+Certificate	yes	DigiCert Log Server 2	ct2.digicert-ct.com/log/	8775bfe7597cf88c43995fbdf36eff568d475636ff4ab560c1b4eaff5ea0830f	Mon 01 Jul 2019 07:41:51 PM GMT
+Certificate	yes	Cloudflare &apos;Nimbus2021&apos; Log	ct.cloudflare.com/logs/nimbus2021/	4494652eb0eeceafc44007d8a8fe28c0dae682bed8cb31b53fd33396b5b681a8	Mon 01 Jul 2019 07:41:51 PM GMT]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_12230">12230</QID>
+          <TYPE>Ig</TYPE>
+          <PORT>443</PORT>
+          <SERVICE>http over ssl</SERVICE>
+          <PROTOCOL>tcp</PROTOCOL>
+          <SSL>false</SSL>
+          <RESULT><![CDATA[GET / HTTP/1.1
+Host: 61.64.196.35.bc.googleusercontent.com
+Connection: Keep-Alive
+
+
+
+HTTP/1.1 404 Not Found
+Server: nginx
+Date: Wed, 20 Nov 2019 16:22:27 GMT
+Content-Type: text/html
+Content-Length: 2082
+Connection: keep-alive
+Keep-Alive: timeout=20
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+ETag: &quot;5dcedca8-822&quot;
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Site Not Configured | 404 Not Found&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;style&gt;
+@import url(//fonts.googleapis.com/css?family=Open+Sans:300);
+
+body {
+color: #000;
+font-family: &apos;Open Sans Regular&apos;, Helvetica, Arial, sans-serif;
+font-size: 16px;
+font-weight: 300;
+line-height: 1.2;
+margin: 50px 25px;
+}
+
+h1 {
+font-size: 200px;
+color: #44BCC8;
+font-weight:300;
+margin:0;
+padding:0;
+}
+
+h2 {
+font-weight:300;
+margin:0;
+padding:0;
+}
+
+hr {
+background:#DFDFDF;
+height: 1px;
+border:0;
+margin: 20px 0 30px;
+}
+
+a {
+color: #44BCC8;
+text-decoration: none;
+
+}   
+
+a:hover {
+text-decoration: underline;
+}
+
+p {
+margin-bottom:40px;
+}
+
+.admin {
+margin-bottom:1em;
+}
+
+.logo {
+font-size: 12px;
+margin-top:20px;
+}
+
+.logo img {
+border : 0;
+outline : none;
+position: relative;
+top: 7px;
+padding-left:5px;
+}
+&lt;/style&gt;
+
+&lt;h1&gt;404&lt;/h1&gt;
+
+&lt;h2&gt;The site you were looking for couldn&apos;t be found.&lt;/h2&gt;
+
+&lt;hr&gt;
+
+&lt;p class=&quot;admin&quot;&gt;
+This domain is successfully pointed at WP Engine, but is not configured for an account on our platform.
+&lt;ul&gt;
+&lt;li&gt;If you just signed up, we&apos;re still likely creating your account.&lt;/li&gt;
+&lt;li&gt;Did you &lt;a href=&quot;http://wpengine.com/support/add-domain-in-user-portal/&quot;&gt;add this domain to your install&lt;/a&gt;?&lt;/li&gt;
+&lt;li&gt;Did you point DNS to the correct &lt;a href=&quot;http://wpengine.com/support/find-ip/&quot;&gt;IP address&lt;/a&gt; or &lt;a href=&quot;http://wpengine.com/support/cname/&quot;&gt;CNAME&lt;/a&gt;?&lt;/li&gt;
+
+&lt;/ul&gt;
+
+If you&apos;ve completed the steps above, or need more help, please &lt;a href=&quot;https://my.wpengine.com/support&quot;&gt;contact us&lt;/a&gt; and we can help get your site up and running in no time.
+&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p class=&quot;logo&quot;&gt;
+Hosted by &lt;a href=&quot;http://www.wpengine.com&quot;&gt;&lt;img height=&quot;25px&quot; src=&quot;http://cdn.wpengine.com/wp-content/themes/genesis-cog1-wpengine/images/logo.png&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_45266">45266</QID>
+          <TYPE>Ig</TYPE>
+          <PORT>443</PORT>
+          <SERVICE>http over ssl</SERVICE>
+          <PROTOCOL>tcp</PROTOCOL>
+          <SSL>false</SSL>
+          <RESULT><![CDATA[Remote Web Server supports HTTP version 1.x on 443 port.GET / HTTP/1.1]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_86001">86001</QID>
+          <TYPE>Ig</TYPE>
+          <PORT>443</PORT>
+          <SERVICE>http over ssl</SERVICE>
+          <PROTOCOL>tcp</PROTOCOL>
+          <SSL>false</SSL>
+          <RESULT format="table"><![CDATA[Server Version	Server Banner
+nginx	nginx]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_38291">38291</QID>
+          <TYPE>Ig</TYPE>
+          <PORT>443</PORT>
+          <SERVICE>http over ssl</SERVICE>
+          <PROTOCOL>tcp</PROTOCOL>
+          <SSL>false</SSL>
+          <RESULT><![CDATA[TLSv1.1 session caching is enabled on the target.
+TLSv1.2 session caching is enabled on the target.]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_42350">42350</QID>
+          <TYPE>Ig</TYPE>
+          <PORT>443</PORT>
+          <SERVICE>http over ssl</SERVICE>
+          <PROTOCOL>tcp</PROTOCOL>
+          <SSL>false</SSL>
+          <RESULT><![CDATA[TLS Secure Renegotiation Extension Status: supported.]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_38597">38597</QID>
+          <TYPE>Ig</TYPE>
+          <PORT>443</PORT>
+          <SERVICE>http over ssl</SERVICE>
+          <PROTOCOL>tcp</PROTOCOL>
+          <SSL>false</SSL>
+          <RESULT format="table"><![CDATA[#table	cols=2
+my version	target version
+0304	0303
+0399	0303
+0400	0303
+0499	0303]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_38047">38047</QID>
+          <TYPE>Ig</TYPE>
+          <PORT>2222</PORT>
+          <SERVICE>ssh</SERVICE>
+          <PROTOCOL>tcp</PROTOCOL>
+          <SSL>false</SSL>
+          <RESULT format="table"><![CDATA[SSH1 supported	no
+SSH2 supported	yes
+Supported key exchange algorithms for SSH2	ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1,rsa1024-sha1
+Supported host key algorithms for SSH2	ssh-rsa
+Supported decryption ciphers for SSH2	aes128-ctr,aes192-ctr,aes256-ctr
+Supported encryption ciphers for SSH2	aes128-ctr,aes192-ctr,aes256-ctr
+Supported decryption macs for SSH2	hmac-sha2-256,hmac-sha2-512
+Supported encryption macs for SSH2	hmac-sha2-256,hmac-sha2-512
+Supported decompression for SSH2	zlib@openssh.com,zlib,none
+Supported compression for SSH2	zlib@openssh.com,zlib,none
+Supported authentication methods for SSH2	publickey,password]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_38050">38050</QID>
+          <TYPE>Ig</TYPE>
+          <PORT>2222</PORT>
+          <SERVICE>ssh</SERVICE>
+          <PROTOCOL>tcp</PROTOCOL>
+          <SSL>false</SSL>
+          <RESULT><![CDATA[SSH-2.0-mod_sftp/0.9.9]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_38739">38739</QID>
+          <TYPE>Vuln</TYPE>
+          <PORT>2222</PORT>
+          <SERVICE>ssh</SERVICE>
+          <PROTOCOL>tcp</PROTOCOL>
+          <SSL>false</SSL>
+          <RESULT format="table"><![CDATA[Type	Name
+key exchange	diffie-hellman-group1-sha1]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+          <VULN_STATUS>New</VULN_STATUS>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_12230">12230</QID>
+          <TYPE>Ig</TYPE>
+          <PORT>80</PORT>
+          <SERVICE>http</SERVICE>
+          <PROTOCOL>tcp</PROTOCOL>
+          <SSL>false</SSL>
+          <RESULT><![CDATA[GET / HTTP/1.1
+Host: 61.64.196.35.bc.googleusercontent.com
+Connection: Keep-Alive
+
+
+
+HTTP/1.1 404 Not Found
+Server: nginx
+Date: Wed, 20 Nov 2019 16:21:35 GMT
+Content-Type: text/html
+Content-Length: 2082
+Connection: keep-alive
+Keep-Alive: timeout=20
+Vary: Accept-Encoding
+ETag: &quot;5dcedca8-822&quot;
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Site Not Configured | 404 Not Found&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;style&gt;
+@import url(//fonts.googleapis.com/css?family=Open+Sans:300);
+
+body {
+color: #000;
+font-family: &apos;Open Sans Regular&apos;, Helvetica, Arial, sans-serif;
+font-size: 16px;
+font-weight: 300;
+line-height: 1.2;
+margin: 50px 25px;
+}
+
+h1 {
+font-size: 200px;
+color: #44BCC8;
+font-weight:300;
+margin:0;
+padding:0;
+}
+
+h2 {
+font-weight:300;
+margin:0;
+padding:0;
+}
+
+hr {
+background:#DFDFDF;
+height: 1px;
+border:0;
+margin: 20px 0 30px;
+}
+
+a {
+color: #44BCC8;
+text-decoration: none;
+
+}   
+
+a:hover {
+text-decoration: underline;
+}
+
+p {
+margin-bottom:40px;
+}
+
+.admin {
+margin-bottom:1em;
+}
+
+.logo {
+font-size: 12px;
+margin-top:20px;
+}
+
+.logo img {
+border : 0;
+outline : none;
+position: relative;
+top: 7px;
+padding-left:5px;
+}
+&lt;/style&gt;
+
+&lt;h1&gt;404&lt;/h1&gt;
+
+&lt;h2&gt;The site you were looking for couldn&apos;t be found.&lt;/h2&gt;
+
+&lt;hr&gt;
+
+&lt;p class=&quot;admin&quot;&gt;
+This domain is successfully pointed at WP Engine, but is not configured for an account on our platform.
+&lt;ul&gt;
+&lt;li&gt;If you just signed up, we&apos;re still likely creating your account.&lt;/li&gt;
+&lt;li&gt;Did you &lt;a href=&quot;http://wpengine.com/support/add-domain-in-user-portal/&quot;&gt;add this domain to your install&lt;/a&gt;?&lt;/li&gt;
+&lt;li&gt;Did you point DNS to the correct &lt;a href=&quot;http://wpengine.com/support/find-ip/&quot;&gt;IP address&lt;/a&gt; or &lt;a href=&quot;http://wpengine.com/support/cname/&quot;&gt;CNAME&lt;/a&gt;?&lt;/li&gt;
+
+&lt;/ul&gt;
+
+If you&apos;ve completed the steps above, or need more help, please &lt;a href=&quot;https://my.wpengine.com/support&quot;&gt;contact us&lt;/a&gt; and we can help get your site up and running in no time.
+&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p class=&quot;logo&quot;&gt;
+Hosted by &lt;a href=&quot;http://www.wpengine.com&quot;&gt;&lt;img height=&quot;25px&quot; src=&quot;http://cdn.wpengine.com/wp-content/themes/genesis-cog1-wpengine/images/logo.png&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_45266">45266</QID>
+          <TYPE>Ig</TYPE>
+          <PORT>80</PORT>
+          <SERVICE>http</SERVICE>
+          <PROTOCOL>tcp</PROTOCOL>
+          <SSL>false</SSL>
+          <RESULT><![CDATA[Remote Web Server supports HTTP version 1.x on 80 port.GET / HTTP/1.1]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_86000">86000</QID>
+          <TYPE>Ig</TYPE>
+          <PORT>80</PORT>
+          <SERVICE>http</SERVICE>
+          <PROTOCOL>tcp</PROTOCOL>
+          <SSL>false</SSL>
+          <RESULT format="table"><![CDATA[Server Version	Server Banner
+nginx	nginx]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_82040">82040</QID>
+          <TYPE>Ig</TYPE>
+          <SSL>false</SSL>
+          <RESULT format="table"><![CDATA[ICMP Reply Type	Triggered By	Additional Information
+Echo (type=0 code=0)	Echo Request	Echo Reply]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_6">6</QID>
+          <TYPE>Ig</TYPE>
+          <SSL>false</SSL>
+          <RESULT format="table"><![CDATA[IP address	Host name
+35.196.64.61	61.64.196.35.bc.googleusercontent.com]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_34011">34011</QID>
+          <TYPE>Ig</TYPE>
+          <SSL>false</SSL>
+          <RESULT><![CDATA[Some of the ports filtered by the firewall are: 20, 21, 22, 23, 25, 53, 111, 135, 445, 1.
+
+Listed below are the ports filtered by the firewall.
+No response has been received when any of these ports are probed.
+1-3,5,7,9,11,13,15,17-25,27,29,31,33,35,37-39,41-79,81-223,242-246,256-265,
+280-282,309,311,318,322-325,344-351,363,369-381,383-442,444-581,587,592-593,
+598,600,606-620,624,627,631,633-637,666-674,700,704-705,707,709-711,729-731,
+740-742,744,747-754,758-765,767,769-777,780-783,786,799-801,860,873,886-888,
+900-901,911,950,954-955,990-993,995-1001,1008,1010-1011,1015,1023-1100,
+1109-1112,1114,1123,1155,1167,1170,1207,1212,1214,1220-1222,1234-1236,
+1241,1243,1245,1248,1269,1313-1314,1337,1344-1625,1636-1774,1776-1815,
+1818-1824,1900-1909,1911-1920,1944-1951,1973,1981,1985-2028,2030,2032-2036,
+2038,2040-2049,2053,2065,2067,2080,2097,2100,2102-2107,2109, and more.
+We have omitted from this list 700 higher ports to keep the report size manageable.]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_45006">45006</QID>
+          <TYPE>Ig</TYPE>
+          <SSL>false</SSL>
+          <RESULT format="table"><![CDATA[Hops	IP	Round Trip Time	Probe	Port
+1	64.39.99.3	0.12ms	ICMP	 
+2	216.52.125.61	0.34ms	ICMP	 
+3	216.52.127.8	0.89ms	ICMP	 
+4	64.95.158.246	0.37ms	ICMP	 
+5	64.95.159.29	0.41ms	ICMP	 
+6	*.*.*.*	0.00ms	Other	80
+7	108.170.246.2	0.59ms	ICMP	 
+8	209.85.240.63	1.23ms	ICMP	 
+9	209.85.255.252	12.82ms	ICMP	 
+10	216.239.35.179	12.40ms	ICMP	 
+11	*.*.*.*	0.00ms	Other	80
+12	*.*.*.*	0.00ms	Other	80
+13	*.*.*.*	0.00ms	Other	80
+14	*.*.*.*	0.00ms	Other	80
+15	*.*.*.*	0.00ms	Other	80
+16	*.*.*.*	0.00ms	Other	80
+17	*.*.*.*	0.00ms	Other	80
+18	*.*.*.*	0.00ms	Other	80
+19	*.*.*.*	0.00ms	Other	80
+20	35.196.64.61	12.64ms	TCP	80]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_45004">45004</QID>
+          <TYPE>Ig</TYPE>
+          <SSL>false</SSL>
+          <RESULT><![CDATA[The network handle is: GOOGLE-CLOUD
+Network description:
+Google LLC]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_45005">45005</QID>
+          <TYPE>Ig</TYPE>
+          <SSL>false</SSL>
+          <RESULT><![CDATA[The ISP network handle is: NET-216-239-35-0-1
+ISP Network description:
+Google LLC GOOGLE-CORP-216-239-35-0]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_42017">42017</QID>
+          <TYPE>Ig</TYPE>
+          <SSL>false</SSL>
+          <RESULT><![CDATA[Service name: SSH on TCP port 2222.]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_82046">82046</QID>
+          <TYPE>Ig</TYPE>
+          <SSL>false</SSL>
+          <RESULT><![CDATA[IP ID changes observed (network order) for port 80: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Duration: 30 milli seconds]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_82045">82045</QID>
+          <TYPE>Ig</TYPE>
+          <SSL>false</SSL>
+          <RESULT><![CDATA[Average change between subsequent TCP initial sequence numbers is 743692305 with a standard deviation of 547277428. These TCP initial sequence numbers were triggered by TCP SYN probes sent to the host at an average rate of 1/(4999 microseconds). The degree of difficulty to exploit the TCP initial sequence number generation scheme is: hard.]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_45039">45039</QID>
+          <TYPE>Ig</TYPE>
+          <SSL>false</SSL>
+          <RESULT format="table"><![CDATA[Host Name	Source
+61.64.196.35.bc.googleusercontent.com	FQDN]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_42416">42416</QID>
+          <TYPE>Ig</TYPE>
+          <SSL>false</SSL>
+          <RESULT><![CDATA[HTTP/1.1 404 Not Found
+Server: nginx
+Date: Wed, 20 Nov 2019 16:27:41 GMT
+Content-Type: text/html
+Transfer-Encoding: chunked
+Connection: keep-alive
+Keep-Alive: timeout=20
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+ETag: W/&quot;5dcedca8-822&quot;
+Content-Encoding: gzip
+
+3d4
+_1F_8B_08_00_00_00_00_00_00_03_9DVMs_DB6_10=[_BFb_AB_1C_D4N_C5_0F)J_DBah_A6_89_ECLr_A8_E3_A9=_D3_E9_11&quot;W$j_10_E0_00_A0e5_F1_7F_EF_82 -_CA_F2!SY_A2H`_F7_ED_BE_B7_D8_95_D3_1F._BE_ACo_FF_BE_BE_84_CA_D6&quot;_9B_A4_C3_17_B2&quot;_9B_00_BDR_CB_AD_C0_EC_86[_84+ea_AD_E4_96_97_AD_C6_02_BE_C1*^u_8B_1FU+_8B4_F2_A6_934_F2_EE_93t_A3_8A}_0Fc_EC_DE_ED_9D_FD_CE_EBFi_0B_AD_16?F_D1VIk_C2R_A9R k_B8 sUG_B91_EF_B6_AC_E6b_7F_FE_A5A_F9_F3_93&amp;y_1D_C7?_BD_9DtX_0E_15_BEv_B7_B9_12J&apos;_F0*_8E_E3_B7_DD_82_03_0C_BCs_023_E7_0E_CE_1D_FE_C4_B2_15L_CF_E6_F0 _C5=Z_9E_B39_BC_D7_9C_899_182_08_0Cj_BE_1Da_18_FE/&amp;_B0_F8_A5y_18-_EE_90_97_95M_E0_F5_10Np_89A_D5_AF._C2_A5__AD_99._B9L_E0M_DC&lt;_C0_F2_CD_00_F1_D8]_BBK_B5_E8 _8Cb-_E3x_B0_1Ch_ADV_1F_D6_EB_DFN_13x_8A_DFG_EA_9F_1AV_14\_96_C3_E3_A3_97_ABZ_8Ec_FD/_04_DD#lX~WjW_EC_E4_D5_C5G_F7_E7_ED_9E_14_18_08l_94.P&apos;_C71_88!_E9_11_93z_07E_BA/_F6_AC_9Ac_DA_16_1FlP`_AE4_B3\_11_88T_12_FB_83_F0H_9F_1E!_A9_D4=_0Ei_9E_F8P_C2_A8]_ADN
+_D1_90_CB_D9!_C7`_A3_ACUu_B2_8A_(Z_C8_8A_9A_CB_97_1D_16X_1FQ
+_85*_D5i_8D_17_CB_01_B7w_B7_AAI_96_CF_F5_F0_CE_BC._07_D9;5!_81^O_D5ZG_06_061:&quot;_CApOV_A3 _DA_F7_FD_BA_0B_00_BF_0E_01_FA_FA_06_02_B76yv0_D3_A8_EFQ_FFT-2jo_EA_E5_C5_D3_CA2_BB_AD_10_8C_1B_05{_D5_C2_0E5_82P_EA_8E_10_89_A4_A6_FA_B5_A2_903_0B_1B_A4g_12=$_F7evP_D0_C3_E8_01_B0_81\0c_CE_A7_9D_B0_D3_CC_0B{[q_03_85_AA_19iMw_A6_CDs4f_DB
+_B1&apos;_96\Z_1A=_CC_C2__D7p)IB_9C_C3_A6_B5_CER_D2$_CA_0F_E3_C9e_C4$_B0_9C_D2_92_16_94$_DD44$_0E_ED_D4_A1_0F_96_B64_EE_CE_FC_AD_E0_D9_E7m_C7_EC_9F_D6X_E2YJ_82i_9B91_9D_11Uc_B9_10_D4_F2wH_99_E4_1AIe&quot;_BEw_A8}_10_E2K #_BC_0B^t_80)_A3&amp;_C2_ED_F9_B4_B2_B6I_A2hG_83_C9_E5_DE_CD;_D36n$FT_9B_C0_F3_0E_E8_DD_D2D
+_DC:_13_D14_A3=_B0#a_AC_F2_81_B94d _D2_88e_EF|_F0q_D8N._B8_B8_BAq_F6_96jG-_A11_B7_DF_97_CF_96_CB&quot;_E0E_FF|_94_80_A62_B8@@_C2~_17@.Y_8D_E4_BE_BEz_FF_C7_E5(_C5^_FA_A8_D3_BE;_1C_DD_D5_8B?_BBwi_D6_8D@Wh_97_B4_B1_D8_18`_1B_EA_F0_B9_8B-_916jE_15_A9PPu_C8_94_19&lt;N_C9PN_F5&gt;|)_ADiF_87_C42R_A1_F5t_98,_A8_C2_90_D3aq_80P_A2_F5_E2v&apos;_BDm:_03_DDJ_E9_CAM_DAK_D2_92_D7_18_F6]_D3_8C_0E_F8K_87_DB5_F3p_B6?)_E3Xm_F6_A7_02_EEvG_D9N_B3_D4_00?Y_CF_A7_EEWd
+F_E7O_0Ey!_8F_E9_ED_9A_C0_11Ci#R_ADF_13_95(_D1pC_CB_E5&quot;_18l#^_B3_926]Za#K
+D&quot;_1C_B8_A4_91_FF_D5_A6_D6u_FF_0B_FC_07_8F_0B_A9_BB&quot;_08_00_00
+0]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_82023">82023</QID>
+          <TYPE>Ig</TYPE>
+          <SSL>false</SSL>
+          <RESULT format="table"><![CDATA[Port	IANA Assigned Ports/Services	Description	Service Detected	OS On Redirected Port
+80	www-http	World Wide Web HTTP	http 	 
+443	https	http protocol over TLS/SSL	http over ssl	 
+2222	unreg-ab2	Allen-Bradley unregistered port	ssh]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_45038">45038</QID>
+          <TYPE>Ig</TYPE>
+          <SSL>false</SSL>
+          <RESULT><![CDATA[Scan duration: 556 seconds
+
+Start time: Wed, Nov 20 2019, 16:18:58 GMT
+
+End time: Wed, Nov 20 2019, 16:28:14 GMT]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+        </VULN_INFO>
+        <VULN_INFO>
+          <QID id="qid_38170">38170</QID>
+          <TYPE>Vuln</TYPE>
+          <PORT>443</PORT>
+          <SERVICE>http over ssl</SERVICE>
+          <PROTOCOL>tcp</PROTOCOL>
+          <SSL>true</SSL>
+          <RESULT><![CDATA[Certificate #0 CN=*.wpengine.com (*.wpengine.com) and IP (35.196.64.61) don&apos;t match
+(wpengine.com) and IP (35.196.64.61) don&apos;t match
+(*.wpengine.com) and IP (35.196.64.61) don&apos;t match]]></RESULT>
+          <FIRST_FOUND>2019-11-20T16:28:14Z</FIRST_FOUND>
+          <LAST_FOUND>2019-11-20T16:28:14Z</LAST_FOUND>
+          <TIMES_FOUND>1</TIMES_FOUND>
+          <VULN_STATUS>New</VULN_STATUS>
+        </VULN_INFO>
+      </VULN_INFO_LIST>
+    </HOST>
+  </HOST_LIST>
+  <GLOSSARY>
+    <VULN_DETAILS_LIST>
+      <VULN_DETAILS id="qid_6">
+        <QID id="qid_6">6</QID>
+        <TITLE><![CDATA[DNS Host Name]]></TITLE>
+        <SEVERITY>1</SEVERITY>
+        <CATEGORY>Information gathering</CATEGORY>
+        <THREAT><![CDATA[The fully qualified domain name of this host, if it was obtained from a DNS server, is displayed in the RESULT section.]]></THREAT>
+        <IMPACT><![CDATA[N/A]]></IMPACT>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <PCI_FLAG>0</PCI_FLAG>
+        <LAST_UPDATE>2018-01-04T17:39:37Z</LAST_UPDATE>
+      </VULN_DETAILS>
+      <VULN_DETAILS id="qid_12230">
+        <QID id="qid_12230">12230</QID>
+        <TITLE><![CDATA[Default Web Page]]></TITLE>
+        <SEVERITY>1</SEVERITY>
+        <CATEGORY>CGI</CATEGORY>
+        <THREAT><![CDATA[The Result section displays the default Web page for the Web server.]]></THREAT>
+        <IMPACT><![CDATA[N/A]]></IMPACT>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <PCI_FLAG>0</PCI_FLAG>
+        <LAST_UPDATE>2019-03-16T03:30:26Z</LAST_UPDATE>
+      </VULN_DETAILS>
+      <VULN_DETAILS id="qid_34011">
+        <QID id="qid_34011">34011</QID>
+        <TITLE><![CDATA[Firewall Detected]]></TITLE>
+        <SEVERITY>1</SEVERITY>
+        <CATEGORY>Firewall</CATEGORY>
+        <THREAT><![CDATA[A packet filtering device protecting this IP was detected. This is likely to be a firewall or a router using access control lists (ACLs).]]></THREAT>
+        <IMPACT><![CDATA[N/A]]></IMPACT>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <PCI_FLAG>0</PCI_FLAG>
+        <LAST_UPDATE>2019-04-22T02:37:57Z</LAST_UPDATE>
+      </VULN_DETAILS>
+      <VULN_DETAILS id="qid_38047">
+        <QID id="qid_38047">38047</QID>
+        <TITLE><![CDATA[SSH daemon information retrieving]]></TITLE>
+        <SEVERITY>1</SEVERITY>
+        <CATEGORY>General remote services</CATEGORY>
+        <THREAT><![CDATA[SSH is a secure protocol, provided it is fully patched, properly configured, and uses FIPS approved algorithms. 
+<P>
+<PRE>
+For Red Hat ES 4:-
+SSH1 supported					yes
+Supported authentification methods for SSH1	RSA,password
+Supported ciphers for SSH1			3des,blowfish
+SSH2 supported					yes
+Supported keys exchange algorithm for SSH2	diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
+Supported decryption ciphers for SSH2		aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,arcfour,aes192-cbc,aes256-cbc,rijndael-cbc@lysator.liu.se,aes128-ctr,aes192-ctr,aes256-ctr
+Supported encryption ciphers for SSH2		aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,arcfour,aes192-cbc,aes256-cbc,rijndael-cbc@lysator.liu.se,aes128-ctr,aes192-ctr,aes256-ctr
+Supported decryption mac for SSH2		hmac-md5,hmac-sha1,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+Supported encryption mac for SSH2		hmac-md5,hmac-sha1,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+Supported authentification methods for SSH2	publickey,gssapi-with-mic,password
+</PRE>]]></THREAT>
+        <IMPACT><![CDATA[Successful exploitation allows an attacker to execute arbitrary commands on the SSH server or otherwise subvert an encrypted SSH channel with arbitrary data.]]></IMPACT>
+        <SOLUTION><![CDATA[SSH version 2 is preferred over SSH version 1.]]></SOLUTION>
+        <PCI_FLAG>0</PCI_FLAG>
+        <LAST_UPDATE>2018-04-04T16:20:22Z</LAST_UPDATE>
+      </VULN_DETAILS>
+      <VULN_DETAILS id="qid_38050">
+        <QID id="qid_38050">38050</QID>
+        <TITLE><![CDATA[SSH Banner]]></TITLE>
+        <SEVERITY>1</SEVERITY>
+        <CATEGORY>General remote services</CATEGORY>
+        <THREAT><![CDATA[]]></THREAT>
+        <IMPACT><![CDATA[]]></IMPACT>
+        <SOLUTION><![CDATA[]]></SOLUTION>
+        <PCI_FLAG>0</PCI_FLAG>
+        <LAST_UPDATE>2003-02-04T17:08:00Z</LAST_UPDATE>
+      </VULN_DETAILS>
+      <VULN_DETAILS id="qid_38116">
+        <QID id="qid_38116">38116</QID>
+        <TITLE><![CDATA[SSL Server Information Retrieval]]></TITLE>
+        <SEVERITY>1</SEVERITY>
+        <CATEGORY>General remote services</CATEGORY>
+        <THREAT><![CDATA[<P>The following is a list of supported SSL ciphers.<P>
+Note: If a cipher is included in this list it means that it was possible to establish a SSL connection using that cipher. There are some web servers setups that allow connections to be established using a LOW grade cipher, only to provide a web page stating that the URL is accessible only through a non-LOW grade cipher. In this case even though LOW grade cipher will be listed here QID 38140 will not be reported.
+<P>]]></THREAT>
+        <IMPACT><![CDATA[N/A]]></IMPACT>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <PCI_FLAG>0</PCI_FLAG>
+        <LAST_UPDATE>2016-05-24T21:02:48Z</LAST_UPDATE>
+      </VULN_DETAILS>
+      <VULN_DETAILS id="qid_38170">
+        <QID id="qid_38170">38170</QID>
+        <TITLE><![CDATA[SSL Certificate - Subject Common Name Does Not Match Server FQDN]]></TITLE>
+        <SEVERITY>2</SEVERITY>
+        <CATEGORY>General remote services</CATEGORY>
+        <THREAT><![CDATA[An SSL Certificate associates an entity (person, organization, host, etc.) with a Public Key. In an SSL connection, the client authenticates the remote server using the server's Certificate and extracts the Public Key in the Certificate to establish the secure connection.
+<P>
+A certificate whose Subject commonName or subjectAltName does not match the server FQDN offers only encryption without authentication.
+<P>
+Please note that a false positive reporting of this vulnerability is possible in the following case:
+<UL>If the common name of the certificate uses a wildcard such as *.somedomainname.com and the reverse DNS resolution of the target IP is not configured. In this case there is no way for Qualys to associate the wildcard common name to the IP. Adding a reverse DNS lookup entry to the target IP will solve this problem.
+</UL>]]></THREAT>
+        <IMPACT><![CDATA[A man-in-the-middle attacker can exploit this vulnerability in tandem with a DNS cache poisoning attack to lure the client to another server, and then steal all the encryption communication.]]></IMPACT>
+        <SOLUTION><![CDATA[Please install a server certificate whose Subject commonName or subjectAltName matches the server FQDN.]]></SOLUTION>
+        <PCI_FLAG>0</PCI_FLAG>
+        <LAST_UPDATE>2019-10-11T16:30:02Z</LAST_UPDATE>
+      </VULN_DETAILS>
+      <VULN_DETAILS id="qid_38291">
+        <QID id="qid_38291">38291</QID>
+        <TITLE><![CDATA[SSL Session Caching Information]]></TITLE>
+        <SEVERITY>1</SEVERITY>
+        <CATEGORY>General remote services</CATEGORY>
+        <THREAT><![CDATA[SSL session is a collection of security parameters that are negotiated by the SSL client and server for each SSL connection. SSL session caching is targeted to reduce the overhead of negotiations in recurring SSL connections. SSL sessions can be reused to resume an earlier connection or to establish multiple simultaneous connections. The client suggests an SSL session to be reused by identifying the session with a Session-ID during SSL handshake. If the server finds it appropriate to reuse the session,  then they both proceed to secure communication with already known security parameters.
+<P>
+This test determines if SSL session caching is enabled on the host.]]></THREAT>
+        <IMPACT><![CDATA[SSL session caching is part of the SSL and TLS protocols and is not a security threat. The result of this test is for informational purposes only.]]></IMPACT>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <PCI_FLAG>0</PCI_FLAG>
+        <LAST_UPDATE>2020-03-19T22:48:23Z</LAST_UPDATE>
+      </VULN_DETAILS>
+      <VULN_DETAILS id="qid_38597">
+        <QID id="qid_38597">38597</QID>
+        <TITLE><![CDATA[SSL/TLS invalid protocol version tolerance]]></TITLE>
+        <SEVERITY>1</SEVERITY>
+        <CATEGORY>General remote services</CATEGORY>
+        <THREAT><![CDATA[SSL/TLS protocols have different version that can be supported by both the client and the server. This test attempts to send invalid protocol versions to the target in order to find out what is the target's behavior. The results section contains a table that indicates what was the target's response to each of our tests.]]></THREAT>
+        <IMPACT><![CDATA[N/A]]></IMPACT>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <PCI_FLAG>0</PCI_FLAG>
+        <LAST_UPDATE>2016-01-29T20:01:36Z</LAST_UPDATE>
+      </VULN_DETAILS>
+      <VULN_DETAILS id="qid_38704">
+        <QID id="qid_38704">38704</QID>
+        <TITLE><![CDATA[SSL/TLS Key Exchange Methods]]></TITLE>
+        <SEVERITY>1</SEVERITY>
+        <CATEGORY>General remote services</CATEGORY>
+        <THREAT><![CDATA[The following is a list of SSL/TLS key exchange methods supported by the server, along with their respective key sizes and strengths.]]></THREAT>
+        <IMPACT><![CDATA[N/A]]></IMPACT>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <PCI_FLAG>0</PCI_FLAG>
+        <LAST_UPDATE>2018-07-12T20:36:58Z</LAST_UPDATE>
+      </VULN_DETAILS>
+      <VULN_DETAILS id="qid_38706">
+        <QID id="qid_38706">38706</QID>
+        <TITLE><![CDATA[SSL/TLS Protocol Properties]]></TITLE>
+        <SEVERITY>1</SEVERITY>
+        <CATEGORY>General remote services</CATEGORY>
+        <THREAT><![CDATA[The following is a list of detected SSL/TLS protocol properties.]]></THREAT>
+        <IMPACT><![CDATA[Items include:<P><UL>
+<LI>Extended Master Secret: indicates whether the extended_master_secret extension is supported or required by the server. This extension enhances security and is recommended. Applicable to TLSv1, TLSv1.1, TLSv1.2, DTLSv1, DTLSv1.2</LI>
+<LI>Encrypt Then MAC: indicates whether the encrypt_then_mac extension is supported or required by the server. This extension enhances the security of non-AEAD ciphers and is recommended. Applicable to TLSv1, TLSv1.1, TLSv1.2, DTLSv1, DTLSv1.2</LI>
+<LI>Heartbeat: indicates whether the heartbeat extension is supported. It is not recommended to enable this, except for DTLS. Applicable to TLSv1, TLSv1.1, TLSv1.2, TLSv1.3, DTLSv1, DTLSv1.2</LI>
+<LI>Truncated HMAC: indicates whether the truncated_hmac extension is supported. This can degrade security and is not recommended. Applicable to TLSv1, TLSv1.1, TLSv1.2, DTLSv1, DTLSv1.2</LI>
+<LI>Cipher priority: indicates whether client, server or both determine the priority of ciphers. Having the server determine the priority is recommended. Applicable to SSLv3, TLSv1, TLSv1.1, TLSv1.2, TLSv1.3, DTLSv1, DTLSv1.2</LI>
+</UL>]]></IMPACT>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <PCI_FLAG>0</PCI_FLAG>
+        <LAST_UPDATE>2018-07-12T20:36:35Z</LAST_UPDATE>
+      </VULN_DETAILS>
+      <VULN_DETAILS id="qid_38718">
+        <QID id="qid_38718">38718</QID>
+        <TITLE><![CDATA[SSL Certificate Transparency Information]]></TITLE>
+        <SEVERITY>1</SEVERITY>
+        <CATEGORY>General remote services</CATEGORY>
+        <THREAT><![CDATA[<P>SSL Certificate Transparency is an industry effort to improve visibility into the process of how certificate authorities issue certificates. It is designed to allow the owners of domain names to find all certificates that have been issued for their domains, and which certificate authorities have issued them. This is done by requiring certificate authorities to publish all issued certificates in public logs. TLS servers can then provide cryptographic evidence to TLS clients that the server certificate has been registered in public logs, thus providing some degree of confidence that the certificate is legitimate. Such cryptographic evidence is referred to as an &quot;SCT Log Proof&quot;.
+<P>The information below lists all validated SCT Log Proofs for server certificates along with information about the public log, where available.]]></THREAT>
+        <IMPACT><![CDATA[N/A]]></IMPACT>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <PCI_FLAG>0</PCI_FLAG>
+        <LAST_UPDATE>2018-08-22T18:04:40Z</LAST_UPDATE>
+      </VULN_DETAILS>
+      <VULN_DETAILS id="qid_38739">
+        <QID id="qid_38739">38739</QID>
+        <TITLE><![CDATA[Deprecated SSH Cryptographic Settings]]></TITLE>
+        <SEVERITY>2</SEVERITY>
+        <CATEGORY>General remote services</CATEGORY>
+        <THREAT><![CDATA[The SSH protocol (Secure Shell) is a method for secure remote login from one computer to another. <P>
+The target is using deprecated SSH cryptographic settings to communicate.]]></THREAT>
+        <IMPACT><![CDATA[A man-in-the-middle attacker may be able to exploit this vulnerability to record the communication to decrypt the session key and even the messages.<P>]]></IMPACT>
+        <SOLUTION><![CDATA[Avoid using deprecated cryptographic settings. <P>
+Use best practices when configuring SSH.<P>
+Refer to <A HREF="https://csrc.nist.gov/publications/detail/nistir/7966/final" TARGET="_blank">Security of Interactive and Automated Access Management Using Secure Shell (SSH)</A> .<P>
+Settings currently considered deprecated:
+<DL>
+ <DT>Ciphers using CFB of OFB</DT>
+ <DD>Very uncommon, and deprecated because of weaknesses compared to newer cipher chaining modes such as CTR or GCM</DD>
+ <DT>RC4 cipher (arcfour, arcfour128, arcfour256)</DT>
+ <DD>The RC4 cipher has a cryptographic bias and is no longer considered secure</DD>
+ <DT>Ciphers with a 64-bit block size (DES, 3DES, Blowfish, IDEA, CAST)</DT>
+ <DD>Ciphers with a 64-bit block size may be vulnerable to birthday attacks (Sweet32)</DD>
+ <DT>Key exchange algorithms using DH group 1 (diffie-hellman-group1-sha1, gss-group1-sha1-*)</DT>
+ <DD>DH group 1 uses a 1024-bit key which is considered too short and vulnerable to Logjam-style attacks</DD>
+ <DT>Key exchange algorithm &quot;rsa1024sha1&quot;</DT>
+ <DD>Very uncommon, and deprecated because of the short RSA key size</DD>
+ <DT>MAC algorithm &quot;umac-32&quot;</DT>
+ <DD>Very uncommon, and deprecated because of the very short MAC length</DD>
+ <DT>Cipher &quot;none&quot;</DT>
+ <DD>This is available only in SSHv1</DD>
+</DL>]]></SOLUTION>
+        <PCI_FLAG>1</PCI_FLAG>
+        <LAST_UPDATE>2019-01-03T10:41:41Z</LAST_UPDATE>
+      </VULN_DETAILS>
+      <VULN_DETAILS id="qid_42017">
+        <QID id="qid_42017">42017</QID>
+        <TITLE><![CDATA[Remote Access or Management Service Detected]]></TITLE>
+        <SEVERITY>3</SEVERITY>
+        <CATEGORY>General remote services</CATEGORY>
+        <THREAT><![CDATA[A remote access or remote management service was detected. If such a service is accessible to malicious users it can be used to carry different type of attacks. Malicious users could try to brute force credentials or collect additional information on the service which could enable them in crafting further attacks. 
+<P>
+The Results section includes information on the remote access service that was found on the target.
+<P>
+Services like Telnet, Rlogin, SSH, windows remote desktop, pcAnywhere, Citrix Management Console, Remote Admin (RAdmin), VNC, OPENVPN and ISAKMP are checked.]]></THREAT>
+        <IMPACT><![CDATA[Consequences vary by the type of attack.]]></IMPACT>
+        <SOLUTION><![CDATA[Expose the remote access or remote management services only to the system administrators or intended users of the system.]]></SOLUTION>
+        <PCI_FLAG>0</PCI_FLAG>
+        <LAST_UPDATE>2019-05-24T03:30:33Z</LAST_UPDATE>
+      </VULN_DETAILS>
+      <VULN_DETAILS id="qid_42350">
+        <QID id="qid_42350">42350</QID>
+        <TITLE><![CDATA[TLS Secure Renegotiation Extension Support Information]]></TITLE>
+        <SEVERITY>1</SEVERITY>
+        <CATEGORY>General remote services</CATEGORY>
+        <THREAT><![CDATA[Secure Socket Layer (SSL) and Transport Layer Security (TLS) renegotiation are vulnerable to an attack in which the attacker forms a TLS connection with the target server, injects content of his choice, and then splices in a new TLS connection from a client. The server treats the client's initial TLS handshake as a renegotiation and thus believes that the initial data transmitted by the attacker is from the same entity as the subsequent client data. TLS protocol was extended to cryptographically tierenegotiations to the TLS connections they are being performed over. This is referred to as TLS secure renegotiation extension. This detection determines whether the TLS secure renegotiation extension is supported by the server or not.]]></THREAT>
+        <IMPACT><![CDATA[N/A]]></IMPACT>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <PCI_FLAG>0</PCI_FLAG>
+        <LAST_UPDATE>2016-03-21T16:40:23Z</LAST_UPDATE>
+      </VULN_DETAILS>
+      <VULN_DETAILS id="qid_42416">
+        <QID id="qid_42416">42416</QID>
+        <TITLE><![CDATA[DEFLATE Data Compression Algorithm Used for HTTPS]]></TITLE>
+        <SEVERITY>3</SEVERITY>
+        <CATEGORY>General remote services</CATEGORY>
+        <THREAT><![CDATA[HTTP data is compressed before it is sent from the server. DEFLATE data compression algorithm uses the LZ77 algorithm which takes advantage of repeated strings to more efficiently compress output.
+<P>
+DEFLATE data compression algorithm is prone to be unsafe as described in the BREACH attack. If an attacker can inject a string into a HTTPS response intended to match another unknown string (the target secret), they can iteratively guess the secret value by monitoring the compressed size of the responses for different guesses. Note: The attacker needs the capability of reading responses received by the user's browser and the capability of cause the victim to send requests from their browser to perform BREACH attack.
+<P>
+This QID detects that the remote HTTP server is using a gzip or DEFLATE (zlib) compression format which is using DEFLATE data compression algorithm.]]></THREAT>
+        <IMPACT><![CDATA[N/A]]></IMPACT>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <PCI_FLAG>0</PCI_FLAG>
+        <LAST_UPDATE>2013-08-10T00:02:05Z</LAST_UPDATE>
+      </VULN_DETAILS>
+      <VULN_DETAILS id="qid_45004">
+        <QID id="qid_45004">45004</QID>
+        <TITLE><![CDATA[Target Network Information]]></TITLE>
+        <SEVERITY>1</SEVERITY>
+        <CATEGORY>Information gathering</CATEGORY>
+        <THREAT><![CDATA[The information shown in the Result section was returned by the network infrastructure responsible for routing traffic from our cloud platform to the target network (where the scanner appliance is located).<P>
+This information was returned from: 1) the WHOIS service, or 2) the infrastructure provided by the closest gateway server to our cloud platform. If your ISP is routing traffic, your ISP's gateway server returned this information.]]></THREAT>
+        <IMPACT><![CDATA[This information can be used by malicious users to gather more information about the network infrastructure that may help in launching attacks against it.]]></IMPACT>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <PCI_FLAG>0</PCI_FLAG>
+        <LAST_UPDATE>2013-08-15T21:12:37Z</LAST_UPDATE>
+      </VULN_DETAILS>
+      <VULN_DETAILS id="qid_45005">
+        <QID id="qid_45005">45005</QID>
+        <TITLE><![CDATA[Internet Service Provider]]></TITLE>
+        <SEVERITY>1</SEVERITY>
+        <CATEGORY>Information gathering</CATEGORY>
+        <THREAT><![CDATA[The information shown in the Result section was returned by the network infrastructure responsible for routing traffic from our cloud platform to the target network (where the scanner appliance is located). 
+
+<P>This information was returned from: 1) the WHOIS service, or 2) the infrastructure provided by the closest gateway server to our cloud platform. If your ISP is routing traffic, your ISP's gateway server returned this information.]]></THREAT>
+        <IMPACT><![CDATA[This information can be used by malicious users to gather more information about the network infrastructure that may aid in launching further attacks against it.]]></IMPACT>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <PCI_FLAG>0</PCI_FLAG>
+        <LAST_UPDATE>2013-09-27T19:31:33Z</LAST_UPDATE>
+      </VULN_DETAILS>
+      <VULN_DETAILS id="qid_45006">
+        <QID id="qid_45006">45006</QID>
+        <TITLE><![CDATA[Traceroute]]></TITLE>
+        <SEVERITY>1</SEVERITY>
+        <CATEGORY>Information gathering</CATEGORY>
+        <THREAT><![CDATA[Traceroute describes the path in realtime from the scanner to the remote host being contacted. It reports the IP addresses of all the routers in between.]]></THREAT>
+        <IMPACT><![CDATA[]]></IMPACT>
+        <SOLUTION><![CDATA[]]></SOLUTION>
+        <PCI_FLAG>0</PCI_FLAG>
+        <LAST_UPDATE>2003-05-09T18:28:51Z</LAST_UPDATE>
+      </VULN_DETAILS>
+      <VULN_DETAILS id="qid_45038">
+        <QID id="qid_45038">45038</QID>
+        <TITLE><![CDATA[Host Scan Time]]></TITLE>
+        <SEVERITY>1</SEVERITY>
+        <CATEGORY>Information gathering</CATEGORY>
+        <THREAT><![CDATA[The Host Scan Time is the period of time it takes the scanning engine to perform the vulnerability assessment of a single target host. The Host Scan Time for this host is reported in the Result section below. 
+<P>
+The Host Scan Time does not have a direct correlation to the Duration time as displayed in the Report Summary section of a scan results report. The Duration is the period of time it takes the service to perform a scan task. The Duration includes the time it takes the service to scan all hosts, which may involve parallel scanning. It also includes the time it takes for a scanner appliance to pick up the scan task and transfer the results back to the service's Secure Operating Center. Further, when a scan task is distributed across multiple scanners, the Duration includes the time it takes to perform parallel host scanning on all scanners.
+<P>
+For host running the Qualys Windows agent this QID reports the time taken by the agent to collect the host metadata used for the most recent assessment scan.]]></THREAT>
+        <IMPACT><![CDATA[N/A]]></IMPACT>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <PCI_FLAG>0</PCI_FLAG>
+        <LAST_UPDATE>2016-03-18T21:41:40Z</LAST_UPDATE>
+      </VULN_DETAILS>
+      <VULN_DETAILS id="qid_45039">
+        <QID id="qid_45039">45039</QID>
+        <TITLE><![CDATA[Host Names Found]]></TITLE>
+        <SEVERITY>1</SEVERITY>
+        <CATEGORY>Information gathering</CATEGORY>
+        <THREAT><![CDATA[The following host names were discovered for this computer using various methods such as DNS look up, NetBIOS query, and SQL server name query.]]></THREAT>
+        <IMPACT><![CDATA[N/A]]></IMPACT>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <PCI_FLAG>0</PCI_FLAG>
+        <LAST_UPDATE>2020-08-27T03:28:53Z</LAST_UPDATE>
+      </VULN_DETAILS>
+      <VULN_DETAILS id="qid_45266">
+        <QID id="qid_45266">45266</QID>
+        <TITLE><![CDATA[Web Server HTTP Protocol Versions]]></TITLE>
+        <SEVERITY>2</SEVERITY>
+        <CATEGORY>Information gathering</CATEGORY>
+        <THREAT><![CDATA[This QID lists supported HTTP protocol (HTTP 1.x or HTTP 2) from remote web server.]]></THREAT>
+        <IMPACT><![CDATA[N/A]]></IMPACT>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <PCI_FLAG>0</PCI_FLAG>
+        <LAST_UPDATE>2017-04-24T10:47:04Z</LAST_UPDATE>
+      </VULN_DETAILS>
+      <VULN_DETAILS id="qid_82023">
+        <QID id="qid_82023">82023</QID>
+        <TITLE><![CDATA[Open TCP Services List]]></TITLE>
+        <SEVERITY>1</SEVERITY>
+        <CATEGORY>TCP/IP</CATEGORY>
+        <THREAT><![CDATA[The port scanner enables unauthorized users with the appropriate tools to draw a map of all services on this host that can be accessed from the Internet.  The test was carried out with a &quot;stealth&quot; port scanner so that the server does not log real connections.
+<P>
+The Results section displays the port number (Port), the default service listening on the port (IANA Assigned Ports/Services), the description of the service (Description) and the service that the scanner detected using service discovery (Service Detected).]]></THREAT>
+        <IMPACT><![CDATA[Unauthorized users can exploit this information to test vulnerabilities in each of the open services.]]></IMPACT>
+        <SOLUTION><![CDATA[Shut down any unknown or unused service on the list.  If you have difficulty figuring out which service is provided by which process or program, contact your provider's support team.  For more information about commercial and open-source Intrusion Detection Systems available for detecting port scanners of this kind, visit the <A HREF="http://www.cert.org" TARGET="_blank">CERT Web site</A>.]]></SOLUTION>
+        <PCI_FLAG>0</PCI_FLAG>
+        <LAST_UPDATE>2009-06-15T18:32:21Z</LAST_UPDATE>
+      </VULN_DETAILS>
+      <VULN_DETAILS id="qid_82040">
+        <QID id="qid_82040">82040</QID>
+        <TITLE><![CDATA[ICMP Replies Received]]></TITLE>
+        <SEVERITY>1</SEVERITY>
+        <CATEGORY>TCP/IP</CATEGORY>
+        <THREAT><![CDATA[ICMP (Internet Control and Error Message Protocol) is a protocol encapsulated in IP packets. ICMP's principal purpose is to provide a protocol layer that informs gateways of the inter-connectivity and accessibility of other gateways or hosts. 
+<P>
+We have sent the following types of packets to trigger the host to send us ICMP replies: 
+<P>
+Echo Request (to trigger Echo Reply)<br>
+Timestamp Request (to trigger Timestamp Reply)<br>
+Address Mask Request (to trigger Address Mask Reply)<br>
+UDP Packet (to trigger Port Unreachable Reply)<br>
+IP Packet with Protocol >= 250 (to trigger Protocol Unreachable Reply)
+<P>
+Listed in the "Result" section are the ICMP replies that we have received.]]></THREAT>
+        <IMPACT><![CDATA[]]></IMPACT>
+        <SOLUTION><![CDATA[]]></SOLUTION>
+        <PCI_FLAG>0</PCI_FLAG>
+        <LAST_UPDATE>2003-01-16T20:14:30Z</LAST_UPDATE>
+      </VULN_DETAILS>
+      <VULN_DETAILS id="qid_82045">
+        <QID id="qid_82045">82045</QID>
+        <TITLE><![CDATA[Degree of Randomness of TCP Initial Sequence Numbers]]></TITLE>
+        <SEVERITY>1</SEVERITY>
+        <CATEGORY>TCP/IP</CATEGORY>
+        <THREAT><![CDATA[TCP Initial Sequence Numbers (ISNs) obtained in the SYNACK replies from the host are analyzed to determine how random they are. The average change between subsequent ISNs and the standard deviation from the average are displayed in the RESULT section. Also included is the degree of difficulty for exploitation of the TCP ISN generation scheme used by the host.]]></THREAT>
+        <IMPACT><![CDATA[N/A]]></IMPACT>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <PCI_FLAG>0</PCI_FLAG>
+        <LAST_UPDATE>2004-11-19T21:53:59Z</LAST_UPDATE>
+      </VULN_DETAILS>
+      <VULN_DETAILS id="qid_82046">
+        <QID id="qid_82046">82046</QID>
+        <TITLE><![CDATA[IP ID Values Randomness]]></TITLE>
+        <SEVERITY>1</SEVERITY>
+        <CATEGORY>TCP/IP</CATEGORY>
+        <THREAT><![CDATA[The values for the identification (ID) field in IP headers in IP packets from the host are analyzed to determine how random they are. The changes between subsequent ID values for either the network byte ordering or the host byte ordering, whichever is smaller, are displayed in the RESULT section along with the duration taken to send the probes. When incremental values are used, as is the case for TCP/IP implementation in many operating systems, these changes reflect the network load of the host at the time this test was conducted.
+<P>
+Please note that for reliability reasons only the network traffic from open TCP ports is analyzed.]]></THREAT>
+        <IMPACT><![CDATA[N/A]]></IMPACT>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <PCI_FLAG>0</PCI_FLAG>
+        <LAST_UPDATE>2006-07-27T21:45:19Z</LAST_UPDATE>
+      </VULN_DETAILS>
+      <VULN_DETAILS id="qid_86000">
+        <QID id="qid_86000">86000</QID>
+        <TITLE><![CDATA[Web Server Version]]></TITLE>
+        <SEVERITY>1</SEVERITY>
+        <CATEGORY>Web server</CATEGORY>
+        <THREAT><![CDATA[N/A]]></THREAT>
+        <IMPACT><![CDATA[N/A]]></IMPACT>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <PCI_FLAG>0</PCI_FLAG>
+        <LAST_UPDATE>2016-10-26T03:30:31Z</LAST_UPDATE>
+      </VULN_DETAILS>
+      <VULN_DETAILS id="qid_86001">
+        <QID id="qid_86001">86001</QID>
+        <TITLE><![CDATA[SSL Web Server Version]]></TITLE>
+        <SEVERITY>1</SEVERITY>
+        <CATEGORY>Web server</CATEGORY>
+        <THREAT><![CDATA[]]></THREAT>
+        <IMPACT><![CDATA[]]></IMPACT>
+        <SOLUTION><![CDATA[]]></SOLUTION>
+        <PCI_FLAG>0</PCI_FLAG>
+        <LAST_UPDATE>1999-01-01T08:00:00Z</LAST_UPDATE>
+      </VULN_DETAILS>
+      <VULN_DETAILS id="qid_86002">
+        <QID id="qid_86002">86002</QID>
+        <TITLE><![CDATA[SSL Certificate - Information]]></TITLE>
+        <SEVERITY>1</SEVERITY>
+        <CATEGORY>Web server</CATEGORY>
+        <THREAT><![CDATA[SSL certificate information is provided in the Results section.]]></THREAT>
+        <IMPACT><![CDATA[N/A]]></IMPACT>
+        <SOLUTION><![CDATA[N/A]]></SOLUTION>
+        <PCI_FLAG>0</PCI_FLAG>
+        <LAST_UPDATE>2020-03-07T22:23:33Z</LAST_UPDATE>
+      </VULN_DETAILS>
+    </VULN_DETAILS_LIST>
+  </GLOSSARY>
+  <APPENDICES>
+    <NO_RESULTS>
+      <IP_LIST>
+        <RANGE>
+          <START>65.61.137.117</START>
+          <END>65.61.137.117</END>
+        </RANGE>
+        <RANGE>
+          <START>209.85.143.231</START>
+          <END>209.85.143.231</END>
+        </RANGE>
+      </IP_LIST>
+    </NO_RESULTS>
+    <TEMPLATE_DETAILS>
+      <FILTER_SUMMARY>
+        Status:New, Active, Re-Opened
+        Display non-running kernels:
+        Off
+        Exclude non-running kernels:
+        Off
+        Exclude non-running services:
+        Off
+        Exclude QIDs not exploitable due to configuration:
+        Off
+        Vulnerabilities:
+        State:Active
+        Potential Vulnerabilities:
+        State:Active
+        Information Gathered:
+        State:Active
+        Included Operating Systems:
+        All Operating Systems
+      </FILTER_SUMMARY>
+    </TEMPLATE_DETAILS>
+  </APPENDICES>
+</ASSET_DATA_REPORT>
+<!-- CONFIDENTIAL AND PROPRIETARY INFORMATION. Qualys provides the QualysGuard Service "As Is," without any warranty of any kind. Qualys makes no warranty that the information contained in this report is complete or error-free. Copyright 2020, Qualys, Inc. //--> 

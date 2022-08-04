@@ -1,0 +1,1857 @@
+[
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_creationtime": "2020-08-19T09:25:20.670288Z",
+                        "_raw_cvssscore": 9.8,
+                        "_raw_disclosuretime": "2019-04-22T16:29:00Z",
+                        "_raw_from": [
+                            "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                            "meta-common-packages@meta",
+                            "apparmor/libapparmor1@2.13.2-10"
+                        ],
+                        "_raw_identifiers": {
+                            "ALTERNATIVE": [],
+                            "CVE": [
+                                "CVE-2016-1585"
+                            ],
+                            "CWE": [
+                                "CWE-254"
+                            ]
+                        },
+                        "_raw_modificationtime": "2021-05-09T12:30:27.173616Z",
+                        "_raw_name": "apparmor/libapparmor1",
+                        "_raw_publicationtime": "2018-06-27T16:16:11.500686Z",
+                        "_raw_references": [
+                            {
+                                "title": "Debian Security Tracker",
+                                "url": "https://security-tracker.debian.org/tracker/CVE-2016-1585"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://bugs.launchpad.net/apparmor/%2Bbug/1597017"
+                            },
+                            {
+                                "title": "MLIST",
+                                "url": "https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E"
+                            },
+                            {
+                                "title": "Ubuntu CVE Tracker",
+                                "url": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2016-1585"
+                            }
+                        ],
+                        "_raw_semver": {
+                            "vulnerable": [
+                                "*"
+                            ]
+                        },
+                        "_raw_severity": "low",
+                        "cvss": 9,
+                        "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+                        "introduced_through": "docker-image|contrastsecuritydemo/nodegoat@1.3.0 -> meta-common-packages@meta -> apparmor/libapparmor1@2.13.2-10",
+                        "is_unresolved": true,
+                        "is_upgradable": false,
+                        "issue_description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `apparmor` package. </i>\n\nIn all versions of AppArmor mount rules are accidentally widened when compiled.\n## Remediation\nThere is no fixed version for `Debian:10` `apparmor`.\n## References\n- [Debian Security Tracker](https://security-tracker.debian.org/tracker/CVE-2016-1585)\n- [MISC](https://bugs.launchpad.net/apparmor/+bug/1597017)\n- [MLIST](https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E)\n- [Ubuntu CVE Tracker](http://people.ubuntu.com/~ubuntu-security/cve/CVE-2016-1585)\n",
+                        "known_problems": "SNYK-DEBIAN10-APPARMOR-345761",
+                        "reference_identifiers": [
+                            {
+                                "id": "2016-1585",
+                                "type": "cve"
+                            },
+                            {
+                                "id": "254",
+                                "type": "cwe"
+                            }
+                        ],
+                        "remediation_steps": "No remediation available for Security Features",
+                        "severity": 9,
+                        "title": "Security Features",
+                        "upgrade_path": ""
+                    }
+                ]
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "library_name",
+                    "current_version"
+                ]
+            },
+            {
+                "key": "package_name",
+                "value": "apparmor"
+            },
+            {
+                "key": "package_version",
+                "value": "2.13.2-10"
+            },
+            {
+                "key": "package_manager",
+                "value": "debian:10"
+            },
+            {
+                "key": "language",
+                "value": "linux"
+            },
+            {
+                "key": "fixed_in",
+                "value": "no fixed version"
+            },
+            {
+                "key": "exploit",
+                "value": "Not Defined"
+            },
+            {
+                "key": "is_patchable",
+                "value": false
+            },
+            {
+                "key": "social_trend_alert",
+                "value": false
+            },
+            {
+                "key": "_raw_credit",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "key": "_raw_patches",
+                "value": []
+            },
+            {
+                "key": "_raw_nvdseverity",
+                "value": "critical"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": "2.13.2-10",
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `apparmor` package. </i>\n\nIn all versions of AppArmor mount rules are accidentally widened when compiled.\n## Remediation\nThere is no fixed version for `Debian:10` `apparmor`.\n## References\n- [Debian Security Tracker](https://security-tracker.debian.org/tracker/CVE-2016-1585)\n- [MISC](https://bugs.launchpad.net/apparmor/+bug/1597017)\n- [MLIST](https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E)\n- [Ubuntu CVE Tracker](http://people.ubuntu.com/~ubuntu-security/cve/CVE-2016-1585)\n",
+        "issueName": "apparmor//2.13.2-10",
+        "issueType": "Container",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "apparmor//2.13.2-10",
+        "libraryName": "apparmor",
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "snyk",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "2016-1585",
+                "type": "cve"
+            },
+            {
+                "id": "254",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "snyk",
+        "scanType": "SCA",
+        "scenarioId": "8207742350716442876",
+        "severity": 9,
+        "severityCode": "Critical",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_creationtime": "2020-12-10T03:10:24.252539Z",
+                        "_raw_cvssscore": 5.7,
+                        "_raw_disclosuretime": "2020-12-10T04:15:00Z",
+                        "_raw_from": [
+                            "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                            "apt/libapt-pkg5.0@1.8.2.1"
+                        ],
+                        "_raw_identifiers": {
+                            "ALTERNATIVE": [],
+                            "CVE": [
+                                "CVE-2020-27350"
+                            ],
+                            "CWE": [
+                                "CWE-190"
+                            ]
+                        },
+                        "_raw_modificationtime": "2021-06-19T15:13:18.413399Z",
+                        "_raw_name": "apt/libapt-pkg5.0",
+                        "_raw_publicationtime": "2020-12-10T03:10:23.901831Z",
+                        "_raw_references": [
+                            {
+                                "title": "ADVISORY",
+                                "url": "https://security-tracker.debian.org/tracker/CVE-2020-27350"
+                            },
+                            {
+                                "title": "CONFIRM",
+                                "url": "https://bugs.launchpad.net/bugs/1899193"
+                            },
+                            {
+                                "title": "CONFIRM",
+                                "url": "https://security.netapp.com/advisory/ntap-20210108-0005/"
+                            },
+                            {
+                                "title": "DEBIAN",
+                                "url": "https://www.debian.org/security/2020/dsa-4808"
+                            },
+                            {
+                                "title": "UBUNTU",
+                                "url": "https://usn.ubuntu.com/usn/usn-4667-1"
+                            }
+                        ],
+                        "_raw_relativeimportance": "not yet assigned",
+                        "_raw_semver": {
+                            "vulnerable": [
+                                "<1.8.2.2"
+                            ]
+                        },
+                        "_raw_severity": "medium",
+                        "cvss": 5,
+                        "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:L/I:L/A:L",
+                        "introduced_through": "docker-image|contrastsecuritydemo/nodegoat@1.3.0 -> apt/libapt-pkg5.0@1.8.2.1",
+                        "is_unresolved": true,
+                        "is_upgradable": false,
+                        "issue_description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `apt` package. </i>\n<i> See `Remediation` section below for `Debian:10` relevant versions. </i>\n\nAPT had several integer overflows and underflows while parsing .deb packages, aka GHSL-2020-168 GHSL-2020-169, in files apt-pkg/contrib/extracttar.cc, apt-pkg/deb/debfile.cc, and apt-pkg/contrib/arfile.cc. This issue affects: apt 1.2.32ubuntu0 versions prior to 1.2.32ubuntu0.2; 1.6.12ubuntu0 versions prior to 1.6.12ubuntu0.2; 2.0.2ubuntu0 versions prior to 2.0.2ubuntu0.2; 2.1.10ubuntu0 versions prior to 2.1.10ubuntu0.1;\n## Remediation\nUpgrade `Debian:10` `apt` to version 1.8.2.2 or higher.\n## References\n- [ADVISORY](https://security-tracker.debian.org/tracker/CVE-2020-27350)\n- [CONFIRM](https://bugs.launchpad.net/bugs/1899193)\n- [CONFIRM](https://security.netapp.com/advisory/ntap-20210108-0005/)\n- [DEBIAN](https://www.debian.org/security/2020/dsa-4808)\n- [UBUNTU](https://usn.ubuntu.com/usn/usn-4667-1)\n",
+                        "known_problems": "SNYK-DEBIAN10-APT-1049974",
+                        "reference_identifiers": [
+                            {
+                                "id": "2020-27350",
+                                "type": "cve"
+                            },
+                            {
+                                "id": "190",
+                                "type": "cwe"
+                            }
+                        ],
+                        "remediation_steps": "No remediation available for Integer Overflow or Wraparound",
+                        "severity": 5,
+                        "title": "Integer Overflow or Wraparound",
+                        "upgrade_path": ""
+                    },
+                    {
+                        "_raw_creationtime": "2020-08-19T09:26:56.580359Z",
+                        "_raw_cvssscore": 3.7,
+                        "_raw_disclosuretime": "2019-11-26T00:15:00Z",
+                        "_raw_from": [
+                            "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                            "apt/libapt-pkg5.0@1.8.2.1"
+                        ],
+                        "_raw_identifiers": {
+                            "ALTERNATIVE": [],
+                            "CVE": [
+                                "CVE-2011-3374"
+                            ],
+                            "CWE": [
+                                "CWE-347"
+                            ]
+                        },
+                        "_raw_modificationtime": "2021-06-19T15:13:17.124789Z",
+                        "_raw_name": "apt/libapt-pkg5.0",
+                        "_raw_publicationtime": "2018-06-27T16:20:45.037549Z",
+                        "_raw_references": [
+                            {
+                                "title": "Debian Bug Report",
+                                "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=642480"
+                            },
+                            {
+                                "title": "Debian Security Tracker",
+                                "url": "https://security-tracker.debian.org/tracker/CVE-2011-3374"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://people.canonical.com/~ubuntu-security/cve/2011/CVE-2011-3374.html"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://seclists.org/fulldisclosure/2011/Sep/221"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://snyk.io/vuln/SNYK-LINUX-APT-116518"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://ubuntu.com/security/CVE-2011-3374"
+                            },
+                            {
+                                "title": "RedHat CVE Database",
+                                "url": "https://access.redhat.com/security/cve/cve-2011-3374"
+                            }
+                        ],
+                        "_raw_relativeimportance": "unimportant",
+                        "_raw_semver": {
+                            "vulnerable": [
+                                "*"
+                            ]
+                        },
+                        "_raw_severity": "low",
+                        "cvss": 3,
+                        "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+                        "introduced_through": "docker-image|contrastsecuritydemo/nodegoat@1.3.0 -> apt/libapt-pkg5.0@1.8.2.1",
+                        "is_unresolved": true,
+                        "is_upgradable": false,
+                        "issue_description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `apt` package. </i>\n\nIt was found that apt-key in apt, all versions, do not correctly validate gpg keys with the master keyring, leading to a potential man-in-the-middle attack.\n## Remediation\nThere is no fixed version for `Debian:10` `apt`.\n## References\n- [Debian Bug Report](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=642480)\n- [Debian Security Tracker](https://security-tracker.debian.org/tracker/CVE-2011-3374)\n- [MISC](https://people.canonical.com/~ubuntu-security/cve/2011/CVE-2011-3374.html)\n- [MISC](https://seclists.org/fulldisclosure/2011/Sep/221)\n- [MISC](https://snyk.io/vuln/SNYK-LINUX-APT-116518)\n- [MISC](https://ubuntu.com/security/CVE-2011-3374)\n- [RedHat CVE Database](https://access.redhat.com/security/cve/cve-2011-3374)\n",
+                        "known_problems": "SNYK-DEBIAN10-APT-407502",
+                        "reference_identifiers": [
+                            {
+                                "id": "2011-3374",
+                                "type": "cve"
+                            },
+                            {
+                                "id": "347",
+                                "type": "cwe"
+                            }
+                        ],
+                        "remediation_steps": "No remediation available for Improper Verification of Cryptographic Signature",
+                        "severity": 3,
+                        "title": "Improper Verification of Cryptographic Signature",
+                        "upgrade_path": ""
+                    },
+                    {
+                        "_raw_creationtime": "2020-12-10T03:10:24.252539Z",
+                        "_raw_cvssscore": 5.7,
+                        "_raw_disclosuretime": "2020-12-10T04:15:00Z",
+                        "_raw_from": [
+                            "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                            "apt@1.8.2.1",
+                            "apt/libapt-pkg5.0@1.8.2.1"
+                        ],
+                        "_raw_identifiers": {
+                            "ALTERNATIVE": [],
+                            "CVE": [
+                                "CVE-2020-27350"
+                            ],
+                            "CWE": [
+                                "CWE-190"
+                            ]
+                        },
+                        "_raw_modificationtime": "2021-06-19T15:13:18.413399Z",
+                        "_raw_name": "apt/libapt-pkg5.0",
+                        "_raw_publicationtime": "2020-12-10T03:10:23.901831Z",
+                        "_raw_references": [
+                            {
+                                "title": "ADVISORY",
+                                "url": "https://security-tracker.debian.org/tracker/CVE-2020-27350"
+                            },
+                            {
+                                "title": "CONFIRM",
+                                "url": "https://bugs.launchpad.net/bugs/1899193"
+                            },
+                            {
+                                "title": "CONFIRM",
+                                "url": "https://security.netapp.com/advisory/ntap-20210108-0005/"
+                            },
+                            {
+                                "title": "DEBIAN",
+                                "url": "https://www.debian.org/security/2020/dsa-4808"
+                            },
+                            {
+                                "title": "UBUNTU",
+                                "url": "https://usn.ubuntu.com/usn/usn-4667-1"
+                            }
+                        ],
+                        "_raw_relativeimportance": "not yet assigned",
+                        "_raw_semver": {
+                            "vulnerable": [
+                                "<1.8.2.2"
+                            ]
+                        },
+                        "_raw_severity": "medium",
+                        "cvss": 5,
+                        "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:L/I:L/A:L",
+                        "introduced_through": "docker-image|contrastsecuritydemo/nodegoat@1.3.0 -> apt@1.8.2.1 -> apt/libapt-pkg5.0@1.8.2.1",
+                        "is_unresolved": true,
+                        "is_upgradable": false,
+                        "issue_description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `apt` package. </i>\n<i> See `Remediation` section below for `Debian:10` relevant versions. </i>\n\nAPT had several integer overflows and underflows while parsing .deb packages, aka GHSL-2020-168 GHSL-2020-169, in files apt-pkg/contrib/extracttar.cc, apt-pkg/deb/debfile.cc, and apt-pkg/contrib/arfile.cc. This issue affects: apt 1.2.32ubuntu0 versions prior to 1.2.32ubuntu0.2; 1.6.12ubuntu0 versions prior to 1.6.12ubuntu0.2; 2.0.2ubuntu0 versions prior to 2.0.2ubuntu0.2; 2.1.10ubuntu0 versions prior to 2.1.10ubuntu0.1;\n## Remediation\nUpgrade `Debian:10` `apt` to version 1.8.2.2 or higher.\n## References\n- [ADVISORY](https://security-tracker.debian.org/tracker/CVE-2020-27350)\n- [CONFIRM](https://bugs.launchpad.net/bugs/1899193)\n- [CONFIRM](https://security.netapp.com/advisory/ntap-20210108-0005/)\n- [DEBIAN](https://www.debian.org/security/2020/dsa-4808)\n- [UBUNTU](https://usn.ubuntu.com/usn/usn-4667-1)\n",
+                        "known_problems": "SNYK-DEBIAN10-APT-1049974",
+                        "reference_identifiers": [
+                            {
+                                "id": "2020-27350",
+                                "type": "cve"
+                            },
+                            {
+                                "id": "190",
+                                "type": "cwe"
+                            }
+                        ],
+                        "remediation_steps": "No remediation available for Integer Overflow or Wraparound",
+                        "severity": 5,
+                        "title": "Integer Overflow or Wraparound",
+                        "upgrade_path": ""
+                    },
+                    {
+                        "_raw_creationtime": "2020-08-19T09:26:56.580359Z",
+                        "_raw_cvssscore": 3.7,
+                        "_raw_disclosuretime": "2019-11-26T00:15:00Z",
+                        "_raw_from": [
+                            "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                            "apt@1.8.2.1",
+                            "apt/libapt-pkg5.0@1.8.2.1"
+                        ],
+                        "_raw_identifiers": {
+                            "ALTERNATIVE": [],
+                            "CVE": [
+                                "CVE-2011-3374"
+                            ],
+                            "CWE": [
+                                "CWE-347"
+                            ]
+                        },
+                        "_raw_modificationtime": "2021-06-19T15:13:17.124789Z",
+                        "_raw_name": "apt/libapt-pkg5.0",
+                        "_raw_publicationtime": "2018-06-27T16:20:45.037549Z",
+                        "_raw_references": [
+                            {
+                                "title": "Debian Bug Report",
+                                "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=642480"
+                            },
+                            {
+                                "title": "Debian Security Tracker",
+                                "url": "https://security-tracker.debian.org/tracker/CVE-2011-3374"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://people.canonical.com/~ubuntu-security/cve/2011/CVE-2011-3374.html"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://seclists.org/fulldisclosure/2011/Sep/221"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://snyk.io/vuln/SNYK-LINUX-APT-116518"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://ubuntu.com/security/CVE-2011-3374"
+                            },
+                            {
+                                "title": "RedHat CVE Database",
+                                "url": "https://access.redhat.com/security/cve/cve-2011-3374"
+                            }
+                        ],
+                        "_raw_relativeimportance": "unimportant",
+                        "_raw_semver": {
+                            "vulnerable": [
+                                "*"
+                            ]
+                        },
+                        "_raw_severity": "low",
+                        "cvss": 3,
+                        "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+                        "introduced_through": "docker-image|contrastsecuritydemo/nodegoat@1.3.0 -> apt@1.8.2.1 -> apt/libapt-pkg5.0@1.8.2.1",
+                        "is_unresolved": true,
+                        "is_upgradable": false,
+                        "issue_description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `apt` package. </i>\n\nIt was found that apt-key in apt, all versions, do not correctly validate gpg keys with the master keyring, leading to a potential man-in-the-middle attack.\n## Remediation\nThere is no fixed version for `Debian:10` `apt`.\n## References\n- [Debian Bug Report](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=642480)\n- [Debian Security Tracker](https://security-tracker.debian.org/tracker/CVE-2011-3374)\n- [MISC](https://people.canonical.com/~ubuntu-security/cve/2011/CVE-2011-3374.html)\n- [MISC](https://seclists.org/fulldisclosure/2011/Sep/221)\n- [MISC](https://snyk.io/vuln/SNYK-LINUX-APT-116518)\n- [MISC](https://ubuntu.com/security/CVE-2011-3374)\n- [RedHat CVE Database](https://access.redhat.com/security/cve/cve-2011-3374)\n",
+                        "known_problems": "SNYK-DEBIAN10-APT-407502",
+                        "reference_identifiers": [
+                            {
+                                "id": "2011-3374",
+                                "type": "cve"
+                            },
+                            {
+                                "id": "347",
+                                "type": "cwe"
+                            }
+                        ],
+                        "remediation_steps": "No remediation available for Improper Verification of Cryptographic Signature",
+                        "severity": 3,
+                        "title": "Improper Verification of Cryptographic Signature",
+                        "upgrade_path": ""
+                    },
+                    {
+                        "_raw_creationtime": "2020-12-10T03:10:24.252539Z",
+                        "_raw_cvssscore": 5.7,
+                        "_raw_disclosuretime": "2020-12-10T04:15:00Z",
+                        "_raw_from": [
+                            "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                            "apt@1.8.2.1"
+                        ],
+                        "_raw_identifiers": {
+                            "ALTERNATIVE": [],
+                            "CVE": [
+                                "CVE-2020-27350"
+                            ],
+                            "CWE": [
+                                "CWE-190"
+                            ]
+                        },
+                        "_raw_modificationtime": "2021-06-19T15:13:18.413399Z",
+                        "_raw_publicationtime": "2020-12-10T03:10:23.901831Z",
+                        "_raw_references": [
+                            {
+                                "title": "ADVISORY",
+                                "url": "https://security-tracker.debian.org/tracker/CVE-2020-27350"
+                            },
+                            {
+                                "title": "CONFIRM",
+                                "url": "https://bugs.launchpad.net/bugs/1899193"
+                            },
+                            {
+                                "title": "CONFIRM",
+                                "url": "https://security.netapp.com/advisory/ntap-20210108-0005/"
+                            },
+                            {
+                                "title": "DEBIAN",
+                                "url": "https://www.debian.org/security/2020/dsa-4808"
+                            },
+                            {
+                                "title": "UBUNTU",
+                                "url": "https://usn.ubuntu.com/usn/usn-4667-1"
+                            }
+                        ],
+                        "_raw_relativeimportance": "not yet assigned",
+                        "_raw_semver": {
+                            "vulnerable": [
+                                "<1.8.2.2"
+                            ]
+                        },
+                        "_raw_severity": "medium",
+                        "cvss": 5,
+                        "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:L/I:L/A:L",
+                        "introduced_through": "docker-image|contrastsecuritydemo/nodegoat@1.3.0 -> apt@1.8.2.1",
+                        "is_unresolved": false,
+                        "is_upgradable": true,
+                        "issue_description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `apt` package. </i>\n<i> See `Remediation` section below for `Debian:10` relevant versions. </i>\n\nAPT had several integer overflows and underflows while parsing .deb packages, aka GHSL-2020-168 GHSL-2020-169, in files apt-pkg/contrib/extracttar.cc, apt-pkg/deb/debfile.cc, and apt-pkg/contrib/arfile.cc. This issue affects: apt 1.2.32ubuntu0 versions prior to 1.2.32ubuntu0.2; 1.6.12ubuntu0 versions prior to 1.6.12ubuntu0.2; 2.0.2ubuntu0 versions prior to 2.0.2ubuntu0.2; 2.1.10ubuntu0 versions prior to 2.1.10ubuntu0.1;\n## Remediation\nUpgrade `Debian:10` `apt` to version 1.8.2.2 or higher.\n## References\n- [ADVISORY](https://security-tracker.debian.org/tracker/CVE-2020-27350)\n- [CONFIRM](https://bugs.launchpad.net/bugs/1899193)\n- [CONFIRM](https://security.netapp.com/advisory/ntap-20210108-0005/)\n- [DEBIAN](https://www.debian.org/security/2020/dsa-4808)\n- [UBUNTU](https://usn.ubuntu.com/usn/usn-4667-1)\n",
+                        "known_problems": "SNYK-DEBIAN10-APT-1049974",
+                        "reference_identifiers": [
+                            {
+                                "id": "2020-27350",
+                                "type": "cve"
+                            },
+                            {
+                                "id": "190",
+                                "type": "cwe"
+                            }
+                        ],
+                        "remediation_steps": "Upgrade apt from v1.8.2.1 -> no fixed version",
+                        "severity": 5,
+                        "title": "Integer Overflow or Wraparound",
+                        "upgrade_path": "apt@1.8.2.2"
+                    },
+                    {
+                        "_raw_creationtime": "2020-08-19T09:26:56.580359Z",
+                        "_raw_cvssscore": 3.7,
+                        "_raw_disclosuretime": "2019-11-26T00:15:00Z",
+                        "_raw_from": [
+                            "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                            "apt@1.8.2.1"
+                        ],
+                        "_raw_identifiers": {
+                            "ALTERNATIVE": [],
+                            "CVE": [
+                                "CVE-2011-3374"
+                            ],
+                            "CWE": [
+                                "CWE-347"
+                            ]
+                        },
+                        "_raw_modificationtime": "2021-06-19T15:13:17.124789Z",
+                        "_raw_publicationtime": "2018-06-27T16:20:45.037549Z",
+                        "_raw_references": [
+                            {
+                                "title": "Debian Bug Report",
+                                "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=642480"
+                            },
+                            {
+                                "title": "Debian Security Tracker",
+                                "url": "https://security-tracker.debian.org/tracker/CVE-2011-3374"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://people.canonical.com/~ubuntu-security/cve/2011/CVE-2011-3374.html"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://seclists.org/fulldisclosure/2011/Sep/221"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://snyk.io/vuln/SNYK-LINUX-APT-116518"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://ubuntu.com/security/CVE-2011-3374"
+                            },
+                            {
+                                "title": "RedHat CVE Database",
+                                "url": "https://access.redhat.com/security/cve/cve-2011-3374"
+                            }
+                        ],
+                        "_raw_relativeimportance": "unimportant",
+                        "_raw_semver": {
+                            "vulnerable": [
+                                "*"
+                            ]
+                        },
+                        "_raw_severity": "low",
+                        "cvss": 3,
+                        "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+                        "introduced_through": "docker-image|contrastsecuritydemo/nodegoat@1.3.0 -> apt@1.8.2.1",
+                        "is_unresolved": true,
+                        "is_upgradable": false,
+                        "issue_description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `apt` package. </i>\n\nIt was found that apt-key in apt, all versions, do not correctly validate gpg keys with the master keyring, leading to a potential man-in-the-middle attack.\n## Remediation\nThere is no fixed version for `Debian:10` `apt`.\n## References\n- [Debian Bug Report](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=642480)\n- [Debian Security Tracker](https://security-tracker.debian.org/tracker/CVE-2011-3374)\n- [MISC](https://people.canonical.com/~ubuntu-security/cve/2011/CVE-2011-3374.html)\n- [MISC](https://seclists.org/fulldisclosure/2011/Sep/221)\n- [MISC](https://snyk.io/vuln/SNYK-LINUX-APT-116518)\n- [MISC](https://ubuntu.com/security/CVE-2011-3374)\n- [RedHat CVE Database](https://access.redhat.com/security/cve/cve-2011-3374)\n",
+                        "known_problems": "SNYK-DEBIAN10-APT-407502",
+                        "reference_identifiers": [
+                            {
+                                "id": "2011-3374",
+                                "type": "cve"
+                            },
+                            {
+                                "id": "347",
+                                "type": "cwe"
+                            }
+                        ],
+                        "remediation_steps": "No remediation available for Improper Verification of Cryptographic Signature",
+                        "severity": 3,
+                        "title": "Improper Verification of Cryptographic Signature",
+                        "upgrade_path": ""
+                    }
+                ]
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "library_name",
+                    "current_version"
+                ]
+            },
+            {
+                "key": "package_name",
+                "value": "apt"
+            },
+            {
+                "key": "package_version",
+                "value": "1.8.2.1"
+            },
+            {
+                "key": "package_manager",
+                "value": "debian:10"
+            },
+            {
+                "key": "language",
+                "value": "linux"
+            },
+            {
+                "key": "fixed_in",
+                "value": "no fixed version"
+            },
+            {
+                "key": "exploit",
+                "value": "Not Defined"
+            },
+            {
+                "key": "is_patchable",
+                "value": false
+            },
+            {
+                "key": "social_trend_alert",
+                "value": false
+            },
+            {
+                "key": "_raw_credit",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "key": "_raw_patches",
+                "value": []
+            },
+            {
+                "key": "_raw_nearestfixedinversion",
+                "value": "1.8.2.2"
+            },
+            {
+                "key": "_raw_upgradepath",
+                "value": [
+                    false,
+                    "apt@1.8.2.2"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": "1.8.2.1",
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `apt` package. </i>\n<i> See `Remediation` section below for `Debian:10` relevant versions. </i>\n\nAPT had several integer overflows and underflows while parsing .deb packages, aka GHSL-2020-168 GHSL-2020-169, in files apt-pkg/contrib/extracttar.cc, apt-pkg/deb/debfile.cc, and apt-pkg/contrib/arfile.cc. This issue affects: apt 1.2.32ubuntu0 versions prior to 1.2.32ubuntu0.2; 1.6.12ubuntu0 versions prior to 1.6.12ubuntu0.2; 2.0.2ubuntu0 versions prior to 2.0.2ubuntu0.2; 2.1.10ubuntu0 versions prior to 2.1.10ubuntu0.1;\n## Remediation\nUpgrade `Debian:10` `apt` to version 1.8.2.2 or higher.\n## References\n- [ADVISORY](https://security-tracker.debian.org/tracker/CVE-2020-27350)\n- [CONFIRM](https://bugs.launchpad.net/bugs/1899193)\n- [CONFIRM](https://security.netapp.com/advisory/ntap-20210108-0005/)\n- [DEBIAN](https://www.debian.org/security/2020/dsa-4808)\n- [UBUNTU](https://usn.ubuntu.com/usn/usn-4667-1)\n",
+        "issueName": "apt//1.8.2.1",
+        "issueType": "Container",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "apt//1.8.2.1",
+        "libraryName": "apt",
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "snyk",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "2020-27350",
+                "type": "cve"
+            },
+            {
+                "id": "190",
+                "type": "cwe"
+            },
+            {
+                "id": "2011-3374",
+                "type": "cve"
+            },
+            {
+                "id": "347",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "snyk",
+        "scanType": "SCA",
+        "scenarioId": "8207742350716442876",
+        "severity": 5,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_creationtime": "2021-02-16T03:10:44.912274Z",
+                        "_raw_cvssscore": 7.8,
+                        "_raw_disclosuretime": "2021-02-17T22:15:00Z",
+                        "_raw_from": [
+                            "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                            "gtk+3.0/libgtk-3-0@3.24.5-1",
+                            "cups/libcups2@2.2.10-6+deb10u3",
+                            "avahi/libavahi-client3@0.7-4+b1",
+                            "avahi/libavahi-common3@0.7-4+b1",
+                            "avahi/libavahi-common-data@0.7-4+b1"
+                        ],
+                        "_raw_identifiers": {
+                            "ALTERNATIVE": [],
+                            "CVE": [
+                                "CVE-2021-26720"
+                            ],
+                            "CWE": [
+                                "CWE-59"
+                            ]
+                        },
+                        "_raw_modificationtime": "2021-05-09T12:30:27.173616Z",
+                        "_raw_name": "avahi/libavahi-common-data",
+                        "_raw_publicationtime": "2021-02-16T03:10:44.804823Z",
+                        "_raw_references": [
+                            {
+                                "title": "ADVISORY",
+                                "url": "https://security-tracker.debian.org/tracker/CVE-2021-26720"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=982796"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://bugs.launchpad.net/ubuntu/%2Bsource/avahi/%2Bbug/1870824"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://bugzilla.suse.com/show_bug.cgi?id=1180827"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://metadata.ftp-master.debian.org/changelogs/main/a/avahi/avahi_0.8-4_changelog"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://packages.debian.org/bullseye/avahi-daemon"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://packages.debian.org/buster/avahi-daemon"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://packages.debian.org/sid/avahi-daemon"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://www.openwall.com/lists/oss-security/2021/02/15/2"
+                            }
+                        ],
+                        "_raw_relativeimportance": "not yet assigned",
+                        "_raw_semver": {
+                            "vulnerable": [
+                                "<0.7-4+deb10u1"
+                            ]
+                        },
+                        "_raw_severity": "high",
+                        "cvss": 7,
+                        "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+                        "introduced_through": "docker-image|contrastsecuritydemo/nodegoat@1.3.0 -> gtk+3.0/libgtk-3-0@3.24.5-1 -> cups/libcups2@2.2.10-6+deb10u3 -> avahi/libavahi-client3@0.7-4+b1 -> avahi/libavahi-common3@0.7-4+b1 -> avahi/libavahi-common-data@0.7-4+b1",
+                        "is_unresolved": true,
+                        "is_upgradable": false,
+                        "issue_description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `avahi` package. </i>\n<i> See `Remediation` section below for `Debian:10` relevant versions. </i>\n\navahi-daemon-check-dns.sh in the Debian avahi package through 0.8-4 is executed as root via /etc/network/if-up.d/avahi-daemon, and allows a local attacker to cause a denial of service or create arbitrary empty files via a symlink attack on files under /run/avahi-daemon. NOTE: this only affects the packaging for Debian GNU/Linux (used indirectly by SUSE), not the upstream Avahi product.\n## Remediation\nUpgrade `Debian:10` `avahi` to version 0.7-4+deb10u1 or higher.\n## References\n- [ADVISORY](https://security-tracker.debian.org/tracker/CVE-2021-26720)\n- [MISC](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=982796)\n- [MISC](https://bugs.launchpad.net/ubuntu/+source/avahi/+bug/1870824)\n- [MISC](https://bugzilla.suse.com/show_bug.cgi?id=1180827)\n- [MISC](https://metadata.ftp-master.debian.org/changelogs/main/a/avahi/avahi_0.8-4_changelog)\n- [MISC](https://packages.debian.org/bullseye/avahi-daemon)\n- [MISC](https://packages.debian.org/buster/avahi-daemon)\n- [MISC](https://packages.debian.org/sid/avahi-daemon)\n- [MISC](https://www.openwall.com/lists/oss-security/2021/02/15/2)\n",
+                        "known_problems": "SNYK-DEBIAN10-AVAHI-1075017",
+                        "reference_identifiers": [
+                            {
+                                "id": "2021-26720",
+                                "type": "cve"
+                            },
+                            {
+                                "id": "59",
+                                "type": "cwe"
+                            }
+                        ],
+                        "remediation_steps": "No remediation available for Link Following",
+                        "severity": 7,
+                        "title": "Link Following",
+                        "upgrade_path": ""
+                    },
+                    {
+                        "_raw_creationtime": "2021-03-28T03:11:13.879264Z",
+                        "_raw_cvssscore": 5.5,
+                        "_raw_disclosuretime": "2021-06-02T16:15:00Z",
+                        "_raw_from": [
+                            "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                            "gtk+3.0/libgtk-3-0@3.24.5-1",
+                            "cups/libcups2@2.2.10-6+deb10u3",
+                            "avahi/libavahi-client3@0.7-4+b1",
+                            "avahi/libavahi-common3@0.7-4+b1",
+                            "avahi/libavahi-common-data@0.7-4+b1"
+                        ],
+                        "_raw_identifiers": {
+                            "ALTERNATIVE": [],
+                            "CVE": [
+                                "CVE-2021-3468"
+                            ],
+                            "CWE": [
+                                "CWE-835"
+                            ]
+                        },
+                        "_raw_modificationtime": "2021-06-04T15:13:27.282977Z",
+                        "_raw_name": "avahi/libavahi-common-data",
+                        "_raw_publicationtime": "2021-03-28T03:11:13.670318Z",
+                        "_raw_references": [
+                            {
+                                "title": "ADVISORY",
+                                "url": "https://security-tracker.debian.org/tracker/CVE-2021-3468"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1939614"
+                            }
+                        ],
+                        "_raw_relativeimportance": "not yet assigned",
+                        "_raw_semver": {
+                            "vulnerable": [
+                                "*"
+                            ]
+                        },
+                        "_raw_severity": "medium",
+                        "cvss": 5,
+                        "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+                        "introduced_through": "docker-image|contrastsecuritydemo/nodegoat@1.3.0 -> gtk+3.0/libgtk-3-0@3.24.5-1 -> cups/libcups2@2.2.10-6+deb10u3 -> avahi/libavahi-client3@0.7-4+b1 -> avahi/libavahi-common3@0.7-4+b1 -> avahi/libavahi-common-data@0.7-4+b1",
+                        "is_unresolved": true,
+                        "is_upgradable": false,
+                        "issue_description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `avahi` package. </i>\n\nA flaw was found in avahi in versions 0.6 up to 0.8. The event used to signal the termination of the client connection on the avahi Unix socket is not correctly handled in the client_work function, allowing a local attacker to trigger an infinite loop. The highest threat from this vulnerability is to the availability of the avahi service, which becomes unresponsive after this flaw is triggered.\n## Remediation\nThere is no fixed version for `Debian:10` `avahi`.\n## References\n- [ADVISORY](https://security-tracker.debian.org/tracker/CVE-2021-3468)\n- [MISC](https://bugzilla.redhat.com/show_bug.cgi?id=1939614)\n",
+                        "known_problems": "SNYK-DEBIAN10-AVAHI-1089437",
+                        "reference_identifiers": [
+                            {
+                                "id": "2021-3468",
+                                "type": "cve"
+                            },
+                            {
+                                "id": "835",
+                                "type": "cwe"
+                            }
+                        ],
+                        "remediation_steps": "No remediation available for Loop with Unreachable Exit Condition ('Infinite Loop')",
+                        "severity": 5,
+                        "title": "Loop with Unreachable Exit Condition ('Infinite Loop')",
+                        "upgrade_path": ""
+                    },
+                    {
+                        "_raw_creationtime": "2020-08-19T09:25:26.010326Z",
+                        "_raw_cvssscore": 9.1,
+                        "_raw_from": [
+                            "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                            "gtk+3.0/libgtk-3-0@3.24.5-1",
+                            "cups/libcups2@2.2.10-6+deb10u3",
+                            "avahi/libavahi-client3@0.7-4+b1",
+                            "avahi/libavahi-common3@0.7-4+b1",
+                            "avahi/libavahi-common-data@0.7-4+b1"
+                        ],
+                        "_raw_identifiers": {
+                            "ALTERNATIVE": [],
+                            "CVE": [
+                                "CVE-2017-6519"
+                            ],
+                            "CWE": [
+                                "CWE-346"
+                            ]
+                        },
+                        "_raw_modificationtime": "2021-05-09T12:30:27.173616Z",
+                        "_raw_name": "avahi/libavahi-common-data",
+                        "_raw_publicationtime": "2017-05-01T01:59:00Z",
+                        "_raw_references": [
+                            {
+                                "title": "CVE Details",
+                                "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-6519"
+                            },
+                            {
+                                "title": "Debian Security Tracker",
+                                "url": "https://security-tracker.debian.org/tracker/CVE-2017-6519"
+                            },
+                            {
+                                "title": "GitHub Issue",
+                                "url": "https://github.com/lathiat/avahi/issues/203"
+                            },
+                            {
+                                "title": "GitHub Issue",
+                                "url": "https://github.com/lathiat/avahi/issues/203%23issuecomment-449536790"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://www.secfu.net/advisories"
+                            },
+                            {
+                                "title": "MLIST",
+                                "url": "https://lists.apache.org/thread.html/r1b103833cb5bc8466e24ff0ecc5e75b45a705334ab6a444e64e840a0@%3Cissues.bookkeeper.apache.org%3E"
+                            },
+                            {
+                                "title": "RedHat Bugzilla Bug",
+                                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1426712"
+                            },
+                            {
+                                "title": "Ubuntu CVE Tracker",
+                                "url": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2017-6519"
+                            },
+                            {
+                                "title": "Ubuntu Security Advisory",
+                                "url": "https://usn.ubuntu.com/3876-1/"
+                            },
+                            {
+                                "title": "Ubuntu Security Advisory",
+                                "url": "https://usn.ubuntu.com/3876-2/"
+                            }
+                        ],
+                        "_raw_relativeimportance": "unimportant",
+                        "_raw_semver": {
+                            "vulnerable": [
+                                "*"
+                            ]
+                        },
+                        "_raw_severity": "low",
+                        "cvss": 9,
+                        "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+                        "introduced_through": "docker-image|contrastsecuritydemo/nodegoat@1.3.0 -> gtk+3.0/libgtk-3-0@3.24.5-1 -> cups/libcups2@2.2.10-6+deb10u3 -> avahi/libavahi-client3@0.7-4+b1 -> avahi/libavahi-common3@0.7-4+b1 -> avahi/libavahi-common-data@0.7-4+b1",
+                        "is_unresolved": true,
+                        "is_upgradable": false,
+                        "issue_description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `avahi` package. </i>\n\navahi-daemon in Avahi through 0.6.32 and 0.7 inadvertently responds to IPv6 unicast queries with source addresses that are not on-link, which allows remote attackers to cause a denial of service (traffic amplification) and may cause information leakage by obtaining potentially sensitive  information from the responding device via port-5353 UDP packets.  NOTE: this may overlap CVE-2015-2809.\n## Remediation\nThere is no fixed version for `Debian:10` `avahi`.\n## References\n- [CVE Details](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-6519)\n- [Debian Security Tracker](https://security-tracker.debian.org/tracker/CVE-2017-6519)\n- [GitHub Issue](https://github.com/lathiat/avahi/issues/203)\n- [GitHub Issue](https://github.com/lathiat/avahi/issues/203#issuecomment-449536790)\n- [MISC](https://www.secfu.net/advisories)\n- [MLIST](https://lists.apache.org/thread.html/r1b103833cb5bc8466e24ff0ecc5e75b45a705334ab6a444e64e840a0@%3Cissues.bookkeeper.apache.org%3E)\n- [RedHat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=1426712)\n- [Ubuntu CVE Tracker](http://people.ubuntu.com/~ubuntu-security/cve/CVE-2017-6519)\n- [Ubuntu Security Advisory](https://usn.ubuntu.com/3876-1/)\n- [Ubuntu Security Advisory](https://usn.ubuntu.com/3876-2/)\n",
+                        "known_problems": "SNYK-DEBIAN10-AVAHI-330424",
+                        "reference_identifiers": [
+                            {
+                                "id": "2015-2809",
+                                "type": "cve"
+                            },
+                            {
+                                "id": "2017-6519",
+                                "type": "cve"
+                            },
+                            {
+                                "id": "346",
+                                "type": "cwe"
+                            }
+                        ],
+                        "remediation_steps": "No remediation available for Origin Validation Error",
+                        "severity": 9,
+                        "title": "Origin Validation Error",
+                        "upgrade_path": ""
+                    },
+                    {
+                        "_raw_creationtime": "2021-02-16T03:10:44.912274Z",
+                        "_raw_cvssscore": 7.8,
+                        "_raw_disclosuretime": "2021-02-17T22:15:00Z",
+                        "_raw_from": [
+                            "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                            "gtk+3.0/libgtk-3-0@3.24.5-1",
+                            "cups/libcups2@2.2.10-6+deb10u3",
+                            "avahi/libavahi-common3@0.7-4+b1"
+                        ],
+                        "_raw_identifiers": {
+                            "ALTERNATIVE": [],
+                            "CVE": [
+                                "CVE-2021-26720"
+                            ],
+                            "CWE": [
+                                "CWE-59"
+                            ]
+                        },
+                        "_raw_modificationtime": "2021-05-09T12:30:27.173616Z",
+                        "_raw_name": "avahi/libavahi-common3",
+                        "_raw_publicationtime": "2021-02-16T03:10:44.804823Z",
+                        "_raw_references": [
+                            {
+                                "title": "ADVISORY",
+                                "url": "https://security-tracker.debian.org/tracker/CVE-2021-26720"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=982796"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://bugs.launchpad.net/ubuntu/%2Bsource/avahi/%2Bbug/1870824"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://bugzilla.suse.com/show_bug.cgi?id=1180827"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://metadata.ftp-master.debian.org/changelogs/main/a/avahi/avahi_0.8-4_changelog"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://packages.debian.org/bullseye/avahi-daemon"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://packages.debian.org/buster/avahi-daemon"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://packages.debian.org/sid/avahi-daemon"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://www.openwall.com/lists/oss-security/2021/02/15/2"
+                            }
+                        ],
+                        "_raw_relativeimportance": "not yet assigned",
+                        "_raw_semver": {
+                            "vulnerable": [
+                                "<0.7-4+deb10u1"
+                            ]
+                        },
+                        "_raw_severity": "high",
+                        "cvss": 7,
+                        "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+                        "introduced_through": "docker-image|contrastsecuritydemo/nodegoat@1.3.0 -> gtk+3.0/libgtk-3-0@3.24.5-1 -> cups/libcups2@2.2.10-6+deb10u3 -> avahi/libavahi-common3@0.7-4+b1",
+                        "is_unresolved": true,
+                        "is_upgradable": false,
+                        "issue_description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `avahi` package. </i>\n<i> See `Remediation` section below for `Debian:10` relevant versions. </i>\n\navahi-daemon-check-dns.sh in the Debian avahi package through 0.8-4 is executed as root via /etc/network/if-up.d/avahi-daemon, and allows a local attacker to cause a denial of service or create arbitrary empty files via a symlink attack on files under /run/avahi-daemon. NOTE: this only affects the packaging for Debian GNU/Linux (used indirectly by SUSE), not the upstream Avahi product.\n## Remediation\nUpgrade `Debian:10` `avahi` to version 0.7-4+deb10u1 or higher.\n## References\n- [ADVISORY](https://security-tracker.debian.org/tracker/CVE-2021-26720)\n- [MISC](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=982796)\n- [MISC](https://bugs.launchpad.net/ubuntu/+source/avahi/+bug/1870824)\n- [MISC](https://bugzilla.suse.com/show_bug.cgi?id=1180827)\n- [MISC](https://metadata.ftp-master.debian.org/changelogs/main/a/avahi/avahi_0.8-4_changelog)\n- [MISC](https://packages.debian.org/bullseye/avahi-daemon)\n- [MISC](https://packages.debian.org/buster/avahi-daemon)\n- [MISC](https://packages.debian.org/sid/avahi-daemon)\n- [MISC](https://www.openwall.com/lists/oss-security/2021/02/15/2)\n",
+                        "known_problems": "SNYK-DEBIAN10-AVAHI-1075017",
+                        "reference_identifiers": [
+                            {
+                                "id": "2021-26720",
+                                "type": "cve"
+                            },
+                            {
+                                "id": "59",
+                                "type": "cwe"
+                            }
+                        ],
+                        "remediation_steps": "No remediation available for Link Following",
+                        "severity": 7,
+                        "title": "Link Following",
+                        "upgrade_path": ""
+                    },
+                    {
+                        "_raw_creationtime": "2021-03-28T03:11:13.879264Z",
+                        "_raw_cvssscore": 5.5,
+                        "_raw_disclosuretime": "2021-06-02T16:15:00Z",
+                        "_raw_from": [
+                            "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                            "gtk+3.0/libgtk-3-0@3.24.5-1",
+                            "cups/libcups2@2.2.10-6+deb10u3",
+                            "avahi/libavahi-common3@0.7-4+b1"
+                        ],
+                        "_raw_identifiers": {
+                            "ALTERNATIVE": [],
+                            "CVE": [
+                                "CVE-2021-3468"
+                            ],
+                            "CWE": [
+                                "CWE-835"
+                            ]
+                        },
+                        "_raw_modificationtime": "2021-06-04T15:13:27.282977Z",
+                        "_raw_name": "avahi/libavahi-common3",
+                        "_raw_publicationtime": "2021-03-28T03:11:13.670318Z",
+                        "_raw_references": [
+                            {
+                                "title": "ADVISORY",
+                                "url": "https://security-tracker.debian.org/tracker/CVE-2021-3468"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1939614"
+                            }
+                        ],
+                        "_raw_relativeimportance": "not yet assigned",
+                        "_raw_semver": {
+                            "vulnerable": [
+                                "*"
+                            ]
+                        },
+                        "_raw_severity": "medium",
+                        "cvss": 5,
+                        "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+                        "introduced_through": "docker-image|contrastsecuritydemo/nodegoat@1.3.0 -> gtk+3.0/libgtk-3-0@3.24.5-1 -> cups/libcups2@2.2.10-6+deb10u3 -> avahi/libavahi-common3@0.7-4+b1",
+                        "is_unresolved": true,
+                        "is_upgradable": false,
+                        "issue_description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `avahi` package. </i>\n\nA flaw was found in avahi in versions 0.6 up to 0.8. The event used to signal the termination of the client connection on the avahi Unix socket is not correctly handled in the client_work function, allowing a local attacker to trigger an infinite loop. The highest threat from this vulnerability is to the availability of the avahi service, which becomes unresponsive after this flaw is triggered.\n## Remediation\nThere is no fixed version for `Debian:10` `avahi`.\n## References\n- [ADVISORY](https://security-tracker.debian.org/tracker/CVE-2021-3468)\n- [MISC](https://bugzilla.redhat.com/show_bug.cgi?id=1939614)\n",
+                        "known_problems": "SNYK-DEBIAN10-AVAHI-1089437",
+                        "reference_identifiers": [
+                            {
+                                "id": "2021-3468",
+                                "type": "cve"
+                            },
+                            {
+                                "id": "835",
+                                "type": "cwe"
+                            }
+                        ],
+                        "remediation_steps": "No remediation available for Loop with Unreachable Exit Condition ('Infinite Loop')",
+                        "severity": 5,
+                        "title": "Loop with Unreachable Exit Condition ('Infinite Loop')",
+                        "upgrade_path": ""
+                    },
+                    {
+                        "_raw_creationtime": "2020-08-19T09:25:26.010326Z",
+                        "_raw_cvssscore": 9.1,
+                        "_raw_from": [
+                            "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                            "gtk+3.0/libgtk-3-0@3.24.5-1",
+                            "cups/libcups2@2.2.10-6+deb10u3",
+                            "avahi/libavahi-common3@0.7-4+b1"
+                        ],
+                        "_raw_identifiers": {
+                            "ALTERNATIVE": [],
+                            "CVE": [
+                                "CVE-2017-6519"
+                            ],
+                            "CWE": [
+                                "CWE-346"
+                            ]
+                        },
+                        "_raw_modificationtime": "2021-05-09T12:30:27.173616Z",
+                        "_raw_name": "avahi/libavahi-common3",
+                        "_raw_publicationtime": "2017-05-01T01:59:00Z",
+                        "_raw_references": [
+                            {
+                                "title": "CVE Details",
+                                "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-6519"
+                            },
+                            {
+                                "title": "Debian Security Tracker",
+                                "url": "https://security-tracker.debian.org/tracker/CVE-2017-6519"
+                            },
+                            {
+                                "title": "GitHub Issue",
+                                "url": "https://github.com/lathiat/avahi/issues/203"
+                            },
+                            {
+                                "title": "GitHub Issue",
+                                "url": "https://github.com/lathiat/avahi/issues/203%23issuecomment-449536790"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://www.secfu.net/advisories"
+                            },
+                            {
+                                "title": "MLIST",
+                                "url": "https://lists.apache.org/thread.html/r1b103833cb5bc8466e24ff0ecc5e75b45a705334ab6a444e64e840a0@%3Cissues.bookkeeper.apache.org%3E"
+                            },
+                            {
+                                "title": "RedHat Bugzilla Bug",
+                                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1426712"
+                            },
+                            {
+                                "title": "Ubuntu CVE Tracker",
+                                "url": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2017-6519"
+                            },
+                            {
+                                "title": "Ubuntu Security Advisory",
+                                "url": "https://usn.ubuntu.com/3876-1/"
+                            },
+                            {
+                                "title": "Ubuntu Security Advisory",
+                                "url": "https://usn.ubuntu.com/3876-2/"
+                            }
+                        ],
+                        "_raw_relativeimportance": "unimportant",
+                        "_raw_semver": {
+                            "vulnerable": [
+                                "*"
+                            ]
+                        },
+                        "_raw_severity": "low",
+                        "cvss": 9,
+                        "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+                        "introduced_through": "docker-image|contrastsecuritydemo/nodegoat@1.3.0 -> gtk+3.0/libgtk-3-0@3.24.5-1 -> cups/libcups2@2.2.10-6+deb10u3 -> avahi/libavahi-common3@0.7-4+b1",
+                        "is_unresolved": true,
+                        "is_upgradable": false,
+                        "issue_description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `avahi` package. </i>\n\navahi-daemon in Avahi through 0.6.32 and 0.7 inadvertently responds to IPv6 unicast queries with source addresses that are not on-link, which allows remote attackers to cause a denial of service (traffic amplification) and may cause information leakage by obtaining potentially sensitive  information from the responding device via port-5353 UDP packets.  NOTE: this may overlap CVE-2015-2809.\n## Remediation\nThere is no fixed version for `Debian:10` `avahi`.\n## References\n- [CVE Details](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-6519)\n- [Debian Security Tracker](https://security-tracker.debian.org/tracker/CVE-2017-6519)\n- [GitHub Issue](https://github.com/lathiat/avahi/issues/203)\n- [GitHub Issue](https://github.com/lathiat/avahi/issues/203#issuecomment-449536790)\n- [MISC](https://www.secfu.net/advisories)\n- [MLIST](https://lists.apache.org/thread.html/r1b103833cb5bc8466e24ff0ecc5e75b45a705334ab6a444e64e840a0@%3Cissues.bookkeeper.apache.org%3E)\n- [RedHat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=1426712)\n- [Ubuntu CVE Tracker](http://people.ubuntu.com/~ubuntu-security/cve/CVE-2017-6519)\n- [Ubuntu Security Advisory](https://usn.ubuntu.com/3876-1/)\n- [Ubuntu Security Advisory](https://usn.ubuntu.com/3876-2/)\n",
+                        "known_problems": "SNYK-DEBIAN10-AVAHI-330424",
+                        "reference_identifiers": [
+                            {
+                                "id": "2015-2809",
+                                "type": "cve"
+                            },
+                            {
+                                "id": "2017-6519",
+                                "type": "cve"
+                            },
+                            {
+                                "id": "346",
+                                "type": "cwe"
+                            }
+                        ],
+                        "remediation_steps": "No remediation available for Origin Validation Error",
+                        "severity": 9,
+                        "title": "Origin Validation Error",
+                        "upgrade_path": ""
+                    },
+                    {
+                        "_raw_creationtime": "2021-02-16T03:10:44.912274Z",
+                        "_raw_cvssscore": 7.8,
+                        "_raw_disclosuretime": "2021-02-17T22:15:00Z",
+                        "_raw_from": [
+                            "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                            "gtk+3.0/libgtk-3-0@3.24.5-1",
+                            "cups/libcups2@2.2.10-6+deb10u3",
+                            "avahi/libavahi-client3@0.7-4+b1",
+                            "avahi/libavahi-common3@0.7-4+b1"
+                        ],
+                        "_raw_identifiers": {
+                            "ALTERNATIVE": [],
+                            "CVE": [
+                                "CVE-2021-26720"
+                            ],
+                            "CWE": [
+                                "CWE-59"
+                            ]
+                        },
+                        "_raw_modificationtime": "2021-05-09T12:30:27.173616Z",
+                        "_raw_name": "avahi/libavahi-common3",
+                        "_raw_publicationtime": "2021-02-16T03:10:44.804823Z",
+                        "_raw_references": [
+                            {
+                                "title": "ADVISORY",
+                                "url": "https://security-tracker.debian.org/tracker/CVE-2021-26720"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=982796"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://bugs.launchpad.net/ubuntu/%2Bsource/avahi/%2Bbug/1870824"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://bugzilla.suse.com/show_bug.cgi?id=1180827"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://metadata.ftp-master.debian.org/changelogs/main/a/avahi/avahi_0.8-4_changelog"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://packages.debian.org/bullseye/avahi-daemon"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://packages.debian.org/buster/avahi-daemon"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://packages.debian.org/sid/avahi-daemon"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://www.openwall.com/lists/oss-security/2021/02/15/2"
+                            }
+                        ],
+                        "_raw_relativeimportance": "not yet assigned",
+                        "_raw_semver": {
+                            "vulnerable": [
+                                "<0.7-4+deb10u1"
+                            ]
+                        },
+                        "_raw_severity": "high",
+                        "cvss": 7,
+                        "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+                        "introduced_through": "docker-image|contrastsecuritydemo/nodegoat@1.3.0 -> gtk+3.0/libgtk-3-0@3.24.5-1 -> cups/libcups2@2.2.10-6+deb10u3 -> avahi/libavahi-client3@0.7-4+b1 -> avahi/libavahi-common3@0.7-4+b1",
+                        "is_unresolved": true,
+                        "is_upgradable": false,
+                        "issue_description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `avahi` package. </i>\n<i> See `Remediation` section below for `Debian:10` relevant versions. </i>\n\navahi-daemon-check-dns.sh in the Debian avahi package through 0.8-4 is executed as root via /etc/network/if-up.d/avahi-daemon, and allows a local attacker to cause a denial of service or create arbitrary empty files via a symlink attack on files under /run/avahi-daemon. NOTE: this only affects the packaging for Debian GNU/Linux (used indirectly by SUSE), not the upstream Avahi product.\n## Remediation\nUpgrade `Debian:10` `avahi` to version 0.7-4+deb10u1 or higher.\n## References\n- [ADVISORY](https://security-tracker.debian.org/tracker/CVE-2021-26720)\n- [MISC](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=982796)\n- [MISC](https://bugs.launchpad.net/ubuntu/+source/avahi/+bug/1870824)\n- [MISC](https://bugzilla.suse.com/show_bug.cgi?id=1180827)\n- [MISC](https://metadata.ftp-master.debian.org/changelogs/main/a/avahi/avahi_0.8-4_changelog)\n- [MISC](https://packages.debian.org/bullseye/avahi-daemon)\n- [MISC](https://packages.debian.org/buster/avahi-daemon)\n- [MISC](https://packages.debian.org/sid/avahi-daemon)\n- [MISC](https://www.openwall.com/lists/oss-security/2021/02/15/2)\n",
+                        "known_problems": "SNYK-DEBIAN10-AVAHI-1075017",
+                        "reference_identifiers": [
+                            {
+                                "id": "2021-26720",
+                                "type": "cve"
+                            },
+                            {
+                                "id": "59",
+                                "type": "cwe"
+                            }
+                        ],
+                        "remediation_steps": "No remediation available for Link Following",
+                        "severity": 7,
+                        "title": "Link Following",
+                        "upgrade_path": ""
+                    },
+                    {
+                        "_raw_creationtime": "2021-03-28T03:11:13.879264Z",
+                        "_raw_cvssscore": 5.5,
+                        "_raw_disclosuretime": "2021-06-02T16:15:00Z",
+                        "_raw_from": [
+                            "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                            "gtk+3.0/libgtk-3-0@3.24.5-1",
+                            "cups/libcups2@2.2.10-6+deb10u3",
+                            "avahi/libavahi-client3@0.7-4+b1",
+                            "avahi/libavahi-common3@0.7-4+b1"
+                        ],
+                        "_raw_identifiers": {
+                            "ALTERNATIVE": [],
+                            "CVE": [
+                                "CVE-2021-3468"
+                            ],
+                            "CWE": [
+                                "CWE-835"
+                            ]
+                        },
+                        "_raw_modificationtime": "2021-06-04T15:13:27.282977Z",
+                        "_raw_name": "avahi/libavahi-common3",
+                        "_raw_publicationtime": "2021-03-28T03:11:13.670318Z",
+                        "_raw_references": [
+                            {
+                                "title": "ADVISORY",
+                                "url": "https://security-tracker.debian.org/tracker/CVE-2021-3468"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1939614"
+                            }
+                        ],
+                        "_raw_relativeimportance": "not yet assigned",
+                        "_raw_semver": {
+                            "vulnerable": [
+                                "*"
+                            ]
+                        },
+                        "_raw_severity": "medium",
+                        "cvss": 5,
+                        "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+                        "introduced_through": "docker-image|contrastsecuritydemo/nodegoat@1.3.0 -> gtk+3.0/libgtk-3-0@3.24.5-1 -> cups/libcups2@2.2.10-6+deb10u3 -> avahi/libavahi-client3@0.7-4+b1 -> avahi/libavahi-common3@0.7-4+b1",
+                        "is_unresolved": true,
+                        "is_upgradable": false,
+                        "issue_description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `avahi` package. </i>\n\nA flaw was found in avahi in versions 0.6 up to 0.8. The event used to signal the termination of the client connection on the avahi Unix socket is not correctly handled in the client_work function, allowing a local attacker to trigger an infinite loop. The highest threat from this vulnerability is to the availability of the avahi service, which becomes unresponsive after this flaw is triggered.\n## Remediation\nThere is no fixed version for `Debian:10` `avahi`.\n## References\n- [ADVISORY](https://security-tracker.debian.org/tracker/CVE-2021-3468)\n- [MISC](https://bugzilla.redhat.com/show_bug.cgi?id=1939614)\n",
+                        "known_problems": "SNYK-DEBIAN10-AVAHI-1089437",
+                        "reference_identifiers": [
+                            {
+                                "id": "2021-3468",
+                                "type": "cve"
+                            },
+                            {
+                                "id": "835",
+                                "type": "cwe"
+                            }
+                        ],
+                        "remediation_steps": "No remediation available for Loop with Unreachable Exit Condition ('Infinite Loop')",
+                        "severity": 5,
+                        "title": "Loop with Unreachable Exit Condition ('Infinite Loop')",
+                        "upgrade_path": ""
+                    },
+                    {
+                        "_raw_creationtime": "2020-08-19T09:25:26.010326Z",
+                        "_raw_cvssscore": 9.1,
+                        "_raw_from": [
+                            "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                            "gtk+3.0/libgtk-3-0@3.24.5-1",
+                            "cups/libcups2@2.2.10-6+deb10u3",
+                            "avahi/libavahi-client3@0.7-4+b1",
+                            "avahi/libavahi-common3@0.7-4+b1"
+                        ],
+                        "_raw_identifiers": {
+                            "ALTERNATIVE": [],
+                            "CVE": [
+                                "CVE-2017-6519"
+                            ],
+                            "CWE": [
+                                "CWE-346"
+                            ]
+                        },
+                        "_raw_modificationtime": "2021-05-09T12:30:27.173616Z",
+                        "_raw_name": "avahi/libavahi-common3",
+                        "_raw_publicationtime": "2017-05-01T01:59:00Z",
+                        "_raw_references": [
+                            {
+                                "title": "CVE Details",
+                                "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-6519"
+                            },
+                            {
+                                "title": "Debian Security Tracker",
+                                "url": "https://security-tracker.debian.org/tracker/CVE-2017-6519"
+                            },
+                            {
+                                "title": "GitHub Issue",
+                                "url": "https://github.com/lathiat/avahi/issues/203"
+                            },
+                            {
+                                "title": "GitHub Issue",
+                                "url": "https://github.com/lathiat/avahi/issues/203%23issuecomment-449536790"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://www.secfu.net/advisories"
+                            },
+                            {
+                                "title": "MLIST",
+                                "url": "https://lists.apache.org/thread.html/r1b103833cb5bc8466e24ff0ecc5e75b45a705334ab6a444e64e840a0@%3Cissues.bookkeeper.apache.org%3E"
+                            },
+                            {
+                                "title": "RedHat Bugzilla Bug",
+                                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1426712"
+                            },
+                            {
+                                "title": "Ubuntu CVE Tracker",
+                                "url": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2017-6519"
+                            },
+                            {
+                                "title": "Ubuntu Security Advisory",
+                                "url": "https://usn.ubuntu.com/3876-1/"
+                            },
+                            {
+                                "title": "Ubuntu Security Advisory",
+                                "url": "https://usn.ubuntu.com/3876-2/"
+                            }
+                        ],
+                        "_raw_relativeimportance": "unimportant",
+                        "_raw_semver": {
+                            "vulnerable": [
+                                "*"
+                            ]
+                        },
+                        "_raw_severity": "low",
+                        "cvss": 9,
+                        "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+                        "introduced_through": "docker-image|contrastsecuritydemo/nodegoat@1.3.0 -> gtk+3.0/libgtk-3-0@3.24.5-1 -> cups/libcups2@2.2.10-6+deb10u3 -> avahi/libavahi-client3@0.7-4+b1 -> avahi/libavahi-common3@0.7-4+b1",
+                        "is_unresolved": true,
+                        "is_upgradable": false,
+                        "issue_description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `avahi` package. </i>\n\navahi-daemon in Avahi through 0.6.32 and 0.7 inadvertently responds to IPv6 unicast queries with source addresses that are not on-link, which allows remote attackers to cause a denial of service (traffic amplification) and may cause information leakage by obtaining potentially sensitive  information from the responding device via port-5353 UDP packets.  NOTE: this may overlap CVE-2015-2809.\n## Remediation\nThere is no fixed version for `Debian:10` `avahi`.\n## References\n- [CVE Details](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-6519)\n- [Debian Security Tracker](https://security-tracker.debian.org/tracker/CVE-2017-6519)\n- [GitHub Issue](https://github.com/lathiat/avahi/issues/203)\n- [GitHub Issue](https://github.com/lathiat/avahi/issues/203#issuecomment-449536790)\n- [MISC](https://www.secfu.net/advisories)\n- [MLIST](https://lists.apache.org/thread.html/r1b103833cb5bc8466e24ff0ecc5e75b45a705334ab6a444e64e840a0@%3Cissues.bookkeeper.apache.org%3E)\n- [RedHat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=1426712)\n- [Ubuntu CVE Tracker](http://people.ubuntu.com/~ubuntu-security/cve/CVE-2017-6519)\n- [Ubuntu Security Advisory](https://usn.ubuntu.com/3876-1/)\n- [Ubuntu Security Advisory](https://usn.ubuntu.com/3876-2/)\n",
+                        "known_problems": "SNYK-DEBIAN10-AVAHI-330424",
+                        "reference_identifiers": [
+                            {
+                                "id": "2015-2809",
+                                "type": "cve"
+                            },
+                            {
+                                "id": "2017-6519",
+                                "type": "cve"
+                            },
+                            {
+                                "id": "346",
+                                "type": "cwe"
+                            }
+                        ],
+                        "remediation_steps": "No remediation available for Origin Validation Error",
+                        "severity": 9,
+                        "title": "Origin Validation Error",
+                        "upgrade_path": ""
+                    },
+                    {
+                        "_raw_creationtime": "2021-02-16T03:10:44.912274Z",
+                        "_raw_cvssscore": 7.8,
+                        "_raw_disclosuretime": "2021-02-17T22:15:00Z",
+                        "_raw_from": [
+                            "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                            "gtk+3.0/libgtk-3-0@3.24.5-1",
+                            "cups/libcups2@2.2.10-6+deb10u3",
+                            "avahi/libavahi-client3@0.7-4+b1"
+                        ],
+                        "_raw_identifiers": {
+                            "ALTERNATIVE": [],
+                            "CVE": [
+                                "CVE-2021-26720"
+                            ],
+                            "CWE": [
+                                "CWE-59"
+                            ]
+                        },
+                        "_raw_modificationtime": "2021-05-09T12:30:27.173616Z",
+                        "_raw_name": "avahi/libavahi-client3",
+                        "_raw_publicationtime": "2021-02-16T03:10:44.804823Z",
+                        "_raw_references": [
+                            {
+                                "title": "ADVISORY",
+                                "url": "https://security-tracker.debian.org/tracker/CVE-2021-26720"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=982796"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://bugs.launchpad.net/ubuntu/%2Bsource/avahi/%2Bbug/1870824"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://bugzilla.suse.com/show_bug.cgi?id=1180827"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://metadata.ftp-master.debian.org/changelogs/main/a/avahi/avahi_0.8-4_changelog"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://packages.debian.org/bullseye/avahi-daemon"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://packages.debian.org/buster/avahi-daemon"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://packages.debian.org/sid/avahi-daemon"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://www.openwall.com/lists/oss-security/2021/02/15/2"
+                            }
+                        ],
+                        "_raw_relativeimportance": "not yet assigned",
+                        "_raw_semver": {
+                            "vulnerable": [
+                                "<0.7-4+deb10u1"
+                            ]
+                        },
+                        "_raw_severity": "high",
+                        "cvss": 7,
+                        "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+                        "introduced_through": "docker-image|contrastsecuritydemo/nodegoat@1.3.0 -> gtk+3.0/libgtk-3-0@3.24.5-1 -> cups/libcups2@2.2.10-6+deb10u3 -> avahi/libavahi-client3@0.7-4+b1",
+                        "is_unresolved": true,
+                        "is_upgradable": false,
+                        "issue_description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `avahi` package. </i>\n<i> See `Remediation` section below for `Debian:10` relevant versions. </i>\n\navahi-daemon-check-dns.sh in the Debian avahi package through 0.8-4 is executed as root via /etc/network/if-up.d/avahi-daemon, and allows a local attacker to cause a denial of service or create arbitrary empty files via a symlink attack on files under /run/avahi-daemon. NOTE: this only affects the packaging for Debian GNU/Linux (used indirectly by SUSE), not the upstream Avahi product.\n## Remediation\nUpgrade `Debian:10` `avahi` to version 0.7-4+deb10u1 or higher.\n## References\n- [ADVISORY](https://security-tracker.debian.org/tracker/CVE-2021-26720)\n- [MISC](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=982796)\n- [MISC](https://bugs.launchpad.net/ubuntu/+source/avahi/+bug/1870824)\n- [MISC](https://bugzilla.suse.com/show_bug.cgi?id=1180827)\n- [MISC](https://metadata.ftp-master.debian.org/changelogs/main/a/avahi/avahi_0.8-4_changelog)\n- [MISC](https://packages.debian.org/bullseye/avahi-daemon)\n- [MISC](https://packages.debian.org/buster/avahi-daemon)\n- [MISC](https://packages.debian.org/sid/avahi-daemon)\n- [MISC](https://www.openwall.com/lists/oss-security/2021/02/15/2)\n",
+                        "known_problems": "SNYK-DEBIAN10-AVAHI-1075017",
+                        "reference_identifiers": [
+                            {
+                                "id": "2021-26720",
+                                "type": "cve"
+                            },
+                            {
+                                "id": "59",
+                                "type": "cwe"
+                            }
+                        ],
+                        "remediation_steps": "No remediation available for Link Following",
+                        "severity": 7,
+                        "title": "Link Following",
+                        "upgrade_path": ""
+                    },
+                    {
+                        "_raw_creationtime": "2021-03-28T03:11:13.879264Z",
+                        "_raw_cvssscore": 5.5,
+                        "_raw_disclosuretime": "2021-06-02T16:15:00Z",
+                        "_raw_from": [
+                            "docker-image|contrastsecuritydemo/nodegoat@1.3.0",
+                            "gtk+3.0/libgtk-3-0@3.24.5-1",
+                            "cups/libcups2@2.2.10-6+deb10u3",
+                            "avahi/libavahi-client3@0.7-4+b1"
+                        ],
+                        "_raw_identifiers": {
+                            "ALTERNATIVE": [],
+                            "CVE": [
+                                "CVE-2021-3468"
+                            ],
+                            "CWE": [
+                                "CWE-835"
+                            ]
+                        },
+                        "_raw_modificationtime": "2021-06-04T15:13:27.282977Z",
+                        "_raw_name": "avahi/libavahi-client3",
+                        "_raw_publicationtime": "2021-03-28T03:11:13.670318Z",
+                        "_raw_references": [
+                            {
+                                "title": "ADVISORY",
+                                "url": "https://security-tracker.debian.org/tracker/CVE-2021-3468"
+                            },
+                            {
+                                "title": "MISC",
+                                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1939614"
+                            }
+                        ],
+                        "_raw_relativeimportance": "not yet assigned",
+                        "_raw_semver": {
+                            "vulnerable": [
+                                "*"
+                            ]
+                        },
+                        "_raw_severity": "medium",
+                        "cvss": 5,
+                        "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+                        "introduced_through": "docker-image|contrastsecuritydemo/nodegoat@1.3.0 -> gtk+3.0/libgtk-3-0@3.24.5-1 -> cups/libcups2@2.2.10-6+deb10u3 -> avahi/libavahi-client3@0.7-4+b1",
+                        "is_unresolved": true,
+                        "is_upgradable": false,
+                        "issue_description": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `avahi` package. </i>\n\nA flaw was found in avahi in versions 0.6 up to 0.8. The event used to signal the termination of the client connection on the avahi Unix socket is not correctly handled in the client_work function, allowing a local attacker to trigger an infinite loop. The highest threat from this vulnerability is to the availability of the avahi service, which becomes unresponsive after this flaw is triggered.\n## Remediation\nThere is no fixed version for `Debian:10` `avahi`.\n## References\n- [ADVISORY](https://security-tracker.debian.org/tracker/CVE-2021-3468)\n- [MISC](https://bugzilla.redhat.com/show_bug.cgi?id=1939614)\n",
+                        "known_problems": "SNYK-DEBIAN10-AVAHI-1089437",
+                        "reference_identifiers": [
+                            {
+                                "id": "2021-3468",
+                                "type": "cve"
+                            },
+                            {
+                                "id": "835",
+                                "type": "cwe"
+                            }
+                        ],
+                        "remediation_steps": "No remediation available for Loop with Unreachable Exit Condition ('Infinite Loop')",
+                        "severity": 5,
+                        "title": "Loop with Unreachable Exit Condition ('Infinite Loop')",
+                        "upgrade_path": ""
+                    }
+                ]
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "library_name",
+                    "current_version"
+                ]
+            },
+            {
+                "key": "package_name",
+                "value": "avahi"
+            },
+            {
+                "key": "package_version",
+                "value": "0.7-4+b1"
+            },
+            {
+                "key": "package_manager",
+                "value": "debian:10"
+            },
+            {
+                "key": "language",
+                "value": "linux"
+            },
+            {
+                "key": "fixed_in",
+                "value": "no fixed version"
+            },
+            {
+                "key": "exploit",
+                "value": "Not Defined"
+            },
+            {
+                "key": "is_patchable",
+                "value": false
+            },
+            {
+                "key": "social_trend_alert",
+                "value": false
+            },
+            {
+                "key": "_raw_credit",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "key": "_raw_patches",
+                "value": []
+            },
+            {
+                "key": "_raw_nearestfixedinversion",
+                "value": "0.7-4+deb10u1"
+            },
+            {
+                "key": "_raw_nvdseverity",
+                "value": "critical"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": "0.7-4+b1",
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "## NVD Description\n<i> **Note:** </i>\n<i> Versions mentioned in the description apply to the upstream `avahi` package. </i>\n<i> See `Remediation` section below for `Debian:10` relevant versions. </i>\n\navahi-daemon-check-dns.sh in the Debian avahi package through 0.8-4 is executed as root via /etc/network/if-up.d/avahi-daemon, and allows a local attacker to cause a denial of service or create arbitrary empty files via a symlink attack on files under /run/avahi-daemon. NOTE: this only affects the packaging for Debian GNU/Linux (used indirectly by SUSE), not the upstream Avahi product.\n## Remediation\nUpgrade `Debian:10` `avahi` to version 0.7-4+deb10u1 or higher.\n## References\n- [ADVISORY](https://security-tracker.debian.org/tracker/CVE-2021-26720)\n- [MISC](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=982796)\n- [MISC](https://bugs.launchpad.net/ubuntu/+source/avahi/+bug/1870824)\n- [MISC](https://bugzilla.suse.com/show_bug.cgi?id=1180827)\n- [MISC](https://metadata.ftp-master.debian.org/changelogs/main/a/avahi/avahi_0.8-4_changelog)\n- [MISC](https://packages.debian.org/bullseye/avahi-daemon)\n- [MISC](https://packages.debian.org/buster/avahi-daemon)\n- [MISC](https://packages.debian.org/sid/avahi-daemon)\n- [MISC](https://www.openwall.com/lists/oss-security/2021/02/15/2)\n",
+        "issueName": "avahi//0.7-4+b1",
+        "issueType": "Container",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "avahi//0.7-4+b1",
+        "libraryName": "avahi",
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "snyk",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "2021-26720",
+                "type": "cve"
+            },
+            {
+                "id": "59",
+                "type": "cwe"
+            },
+            {
+                "id": "2021-3468",
+                "type": "cve"
+            },
+            {
+                "id": "835",
+                "type": "cwe"
+            },
+            {
+                "id": "2015-2809",
+                "type": "cve"
+            },
+            {
+                "id": "2017-6519",
+                "type": "cve"
+            },
+            {
+                "id": "346",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "snyk",
+        "scanType": "SCA",
+        "scenarioId": "8207742350716442876",
+        "severity": 9,
+        "severityCode": "Critical",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    }
+]

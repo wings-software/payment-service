@@ -1,0 +1,133 @@
+[*] Saving loot to /usr/share/sniper/loot/nodegoat.herokuapp.com [OK]
+                ____               
+    _________  /  _/___  ___  _____
+   / ___/ __ \ / // __ \/ _ \/ ___/
+  (__  ) / / // // /_/ /  __/ /    
+ /____/_/ /_/___/ .___/\___/_/     
+               /_/                 
+
+ + -- --=[http://crowdshield.com
+ + -- --=[sniper v4.4 by 1N3
+
+
+====================================================================================
+ PINGING HOST 
+====================================================================================
+PING nodegoat.herokuapp.com (3.216.88.24) 56(84) bytes of data.
+
+--- nodegoat.herokuapp.com ping statistics ---
+1 packets transmitted, 0 received, 100% packet loss, time 0ms
+
+
+====================================================================================
+ RUNNING TCP PORT SCAN 
+====================================================================================
+Starting Nmap 7.80 ( https://nmap.org ) at 2021-12-15 16:22 UTC
+Nmap done: 1 IP address (1 host up) scanned in 25.16 seconds
+====================================================================================
+ RUNNING UDP PORT SCAN 
+====================================================================================
+Starting Nmap 7.80 ( https://nmap.org ) at 2021-12-15 16:23 UTC
+Nmap scan report for nodegoat.herokuapp.com (23.22.52.7)
+Host is up.
+Other addresses for nodegoat.herokuapp.com (not scanned): 3.219.96.23 3.216.88.24 23.22.144.165
+rDNS record for 23.22.52.7: ec2-23-22-52-7.compute-1.amazonaws.com
+
+PORT     STATE         SERVICE
+53/udp   open|filtered domain
+67/udp   open|filtered dhcps
+68/udp   open|filtered dhcpc
+69/udp   open|filtered tftp
+88/udp   open|filtered kerberos-sec
+123/udp  open|filtered ntp
+137/udp  open|filtered netbios-ns
+138/udp  open|filtered netbios-dgm
+139/udp  open|filtered netbios-ssn
+161/udp  open|filtered snmp
+162/udp  open|filtered snmptrap
+389/udp  open|filtered ldap
+520/udp  open|filtered route
+2049/udp open|filtered nfs
+
+Nmap done: 1 IP address (1 host up) scanned in 3.15 seconds
+
+====================================================================================
+ RUNNING INTRUSIVE SCANS 
+====================================================================================
+ + -- --=[Port 21 closed... skipping.
+ + -- --=[Port 22 closed... skipping.
+ + -- --=[Port 23 closed... skipping.
+ + -- --=[Port 25 closed... skipping.
+ + -- --=[Port 53 closed... skipping.
+ + -- --=[Port 67 closed... skipping.
+ + -- --=[Port 68 closed... skipping.
+ + -- --=[Port 69 closed... skipping.
+ + -- --=[Port 79 closed... skipping.
+ + -- --=[Port 80 closed... skipping.
+ + -- --=[Port 110 closed... skipping.
+ + -- --=[Port 111 closed... skipping.
+ + -- --=[Port 123 closed... skipping.
+ + -- --=[Port 135 closed... skipping.
+ + -- --=[Port 139 closed... skipping.
+ + -- --=[Port 161 closed... skipping.
+ + -- --=[Port 162 closed... skipping.
+ + -- --=[Port 389 closed... skipping.
+ + -- --=[Port 443 closed... skipping.
+ + -- --=[Port 445 closed... skipping.
+ + -- --=[Port 512 closed... skipping.
+ + -- --=[Port 513 closed... skipping.
+ + -- --=[Port 514 closed... skipping.
+ + -- --=[Port 623 closed... skipping.
+ + -- --=[Port 624 closed... skipping.
+ + -- --=[Port 1099 closed... skipping.
+ + -- --=[Port 1433 closed... skipping.
+ + -- --=[Port 2049 closed... skipping.
+ + -- --=[Port 2121 closed... skipping.
+ + -- --=[Port 3306 closed... skipping.
+ + -- --=[Port 3310 closed... skipping.
+ + -- --=[Port 3128 closed... skipping.
+ + -- --=[Port 3389 closed... skipping.
+ + -- --=[Port 3632 closed... skipping.
+ + -- --=[Port 4443 closed... skipping.
+ + -- --=[Port 5432 closed... skipping.
+ + -- --=[Port 5800 closed... skipping.
+ + -- --=[Port 5900 closed... skipping.
+ + -- --=[Port 5984 closed... skipping.
+ + -- --=[Port 6000 closed... skipping.
+ + -- --=[Port 6667 closed... skipping.
+ + -- --=[Port 8000 closed... skipping.
+ + -- --=[Port 8100 closed... skipping.
+ + -- --=[Port 8080 closed... skipping.
+ + -- --=[Port 8180 closed... skipping.
+ + -- --=[Port 8443 closed... skipping.
+ + -- --=[Port 8888 closed... skipping.
+ + -- --=[Port 10000 closed... skipping.
+ + -- --=[Port 16992 closed... skipping.
+ + -- --=[Port 27017 closed... skipping.
+ + -- --=[Port 27018 closed... skipping.
+ + -- --=[Port 27019 closed... skipping.
+ + -- --=[Port 28017 closed... skipping.
+ + -- --=[Port 49152 closed... skipping.
+====================================================================================
+ SCANNING FOR COMMON VULNERABILITIES 
+====================================================================================
+====================================================================================
+ SKIPPING FULL NMAP PORT SCAN 
+====================================================================================
+====================================================================================
+ SKIPPING BRUTE FORCE 
+====================================================================================
+====================================================================================
+ SCAN COMPLETE! 
+====================================================================================
+                ____               
+    _________  /  _/___  ___  _____
+   / ___/ __ \ / // __ \/ _ \/ ___/
+  (__  ) / / // // /_/ /  __/ /    
+ /____/_/ /_/___/ .___/\___/_/     
+               /_/                 
+
+ + -- --=[Starting Metasploit service...
+ + -- --=[Importing NMap XML files into Metasploit...
+ + -- --=[Current reports...
+ + -- --=[Generating reports...

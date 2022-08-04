@@ -1,0 +1,1581 @@
+[
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_from": [
+                            "owasp-nodejs-goat@1.3.0",
+                            "mongodb@2.2.36",
+                            "mongodb-core@2.1.20",
+                            "bson@1.0.9"
+                        ],
+                        "_raw_upgradepath": [
+                            false,
+                            "mongodb@3.1.3",
+                            "mongodb-core@3.1.2",
+                            "bson@1.1.4"
+                        ],
+                        "introduced_through": "owasp-nodejs-goat@1.3.0 -> mongodb@2.2.36 -> mongodb-core@2.1.20 -> bson@1.0.9",
+                        "upgrade_path": "mongodb@3.1.3 -> mongodb-core@3.1.2 -> bson@1.1.4"
+                    }
+                ]
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "library_name",
+                    "current_version"
+                ]
+            },
+            {
+                "key": "package_name",
+                "value": "bson"
+            },
+            {
+                "key": "package_version",
+                "value": "1.0.9"
+            },
+            {
+                "key": "package_manager",
+                "value": "npm"
+            },
+            {
+                "key": "language",
+                "value": "js"
+            },
+            {
+                "key": "fixed_in",
+                "value": "bson v1.1.4"
+            },
+            {
+                "key": "title",
+                "value": "Internal Property Tampering"
+            },
+            {
+                "key": "exploit",
+                "value": "Unproven"
+            },
+            {
+                "key": "is_upgradable",
+                "value": true
+            },
+            {
+                "key": "is_patchable",
+                "value": false
+            },
+            {
+                "key": "is_unresolved",
+                "value": false
+            },
+            {
+                "key": "known_problems",
+                "value": "SNYK-JS-BSON-561052"
+            },
+            {
+                "key": "social_trend_alert",
+                "value": false
+            },
+            {
+                "key": "_raw_alternativeids",
+                "value": []
+            },
+            {
+                "key": "_raw_creationtime",
+                "value": "2020-03-24T15:37:36.850403Z"
+            },
+            {
+                "key": "_raw_credit",
+                "value": [
+                    "xiaofen9"
+                ]
+            },
+            {
+                "key": "_raw_cvssscore",
+                "value": 8.1
+            },
+            {
+                "key": "_raw_disclosuretime",
+                "value": "2020-03-24T15:35:27Z"
+            },
+            {
+                "key": "_raw_fixedin",
+                "value": [
+                    "1.1.4"
+                ]
+            },
+            {
+                "key": "_raw_identifiers",
+                "value": {
+                    "CVE": [
+                        "CVE-2019-2391",
+                        "CVE-2020-7610"
+                    ],
+                    "CWE": [
+                        "CWE-642"
+                    ],
+                    "GHSA": [
+                        "GHSA-v8w9-2789-6hhr"
+                    ]
+                }
+            },
+            {
+                "key": "_raw_modificationtime",
+                "value": "2020-06-12T14:37:02.649274Z"
+            },
+            {
+                "key": "_raw_publicationtime",
+                "value": "2020-03-24T17:18:18Z"
+            },
+            {
+                "key": "_raw_references",
+                "value": [
+                    {
+                        "title": "GitHub Commit",
+                        "url": "https://github.com/mongodb/js-bson/commit/3809c1313a7b2a8001065f0271199df9fa3d16a8"
+                    },
+                    {
+                        "title": "Release Note",
+                        "url": "https://github.com/mongodb/js-bson/releases/tag/v1.1.4"
+                    }
+                ]
+            },
+            {
+                "key": "_raw_semver",
+                "value": {
+                    "vulnerable": [
+                        ">=1.0.0 <1.1.4"
+                    ]
+                }
+            },
+            {
+                "key": "_raw_severity",
+                "value": "high"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": "1.0.9",
+        "customerId": "4503657098653210424",
+        "cvss": 8,
+        "cvssVector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "## Overview\n[bson](https://www.npmjs.com/package/bson) is a BSON Parser for node and browser.\n\nAffected versions of this package are vulnerable to Internal Property Tampering. The package will ignore an unknown value for an object's `_bsotype`, leading to cases where an object is serialized as a document rather than the intended BSON type.\n## Remediation\nUpgrade `bson` to version 1.1.4 or higher.\n## References\n- [GitHub Commit](https://github.com/mongodb/js-bson/commit/3809c1313a7b2a8001065f0271199df9fa3d16a8)\n- [Release Note](https://github.com/mongodb/js-bson/releases/tag/v1.1.4)\n",
+        "issueName": "bson//1.0.9",
+        "issueType": "Open Source",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "bson//1.0.9",
+        "libraryName": "bson",
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "snyk",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "2019-2391",
+                "type": "cve"
+            },
+            {
+                "id": "2020-7610",
+                "type": "cve"
+            },
+            {
+                "id": "642",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "owasp-nodejs-goat@1.3.0 has an issue in bson@1.0.9 from direct dependency mongodb@2.2.36, try upgrading to mongodb@3.1.3 instead.",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "snyk",
+        "scanType": "SCA",
+        "scenarioId": "8207742350716442876",
+        "severity": 8,
+        "severityCode": "High",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_from": [
+                            "owasp-nodejs-goat@1.3.0",
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "glob-parent@3.1.0"
+                        ],
+                        "introduced_through": "owasp-nodejs-goat@1.3.0 -> forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> glob-parent@3.1.0",
+                        "upgrade_path": ""
+                    }
+                ]
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "library_name",
+                    "current_version"
+                ]
+            },
+            {
+                "key": "package_name",
+                "value": "glob-parent"
+            },
+            {
+                "key": "package_version",
+                "value": "3.1.0"
+            },
+            {
+                "key": "package_manager",
+                "value": "npm"
+            },
+            {
+                "key": "language",
+                "value": "js"
+            },
+            {
+                "key": "fixed_in",
+                "value": "glob-parent v5.1.2"
+            },
+            {
+                "key": "title",
+                "value": "Regular Expression Denial of Service (ReDoS)"
+            },
+            {
+                "key": "exploit",
+                "value": "Not Defined"
+            },
+            {
+                "key": "is_upgradable",
+                "value": false
+            },
+            {
+                "key": "is_patchable",
+                "value": false
+            },
+            {
+                "key": "is_unresolved",
+                "value": true
+            },
+            {
+                "key": "known_problems",
+                "value": "SNYK-JS-GLOBPARENT-1016905"
+            },
+            {
+                "key": "social_trend_alert",
+                "value": false
+            },
+            {
+                "key": "_raw_alternativeids",
+                "value": []
+            },
+            {
+                "key": "_raw_creationtime",
+                "value": "2020-10-09T09:34:22.716485Z"
+            },
+            {
+                "key": "_raw_credit",
+                "value": [
+                    "Yeting Li"
+                ]
+            },
+            {
+                "key": "_raw_cvssscore",
+                "value": 5.3
+            },
+            {
+                "key": "_raw_disclosuretime",
+                "value": "2021-01-12T12:42:32Z"
+            },
+            {
+                "key": "_raw_fixedin",
+                "value": [
+                    "5.1.2"
+                ]
+            },
+            {
+                "key": "_raw_identifiers",
+                "value": {
+                    "CVE": [
+                        "CVE-2020-28469"
+                    ],
+                    "CWE": [
+                        "CWE-400"
+                    ],
+                    "GHSA": [
+                        "GHSA-ww39-953v-wcq6"
+                    ]
+                }
+            },
+            {
+                "key": "_raw_modificationtime",
+                "value": "2021-03-07T15:12:57.015710Z"
+            },
+            {
+                "key": "_raw_publicationtime",
+                "value": "2021-01-12T15:00:42Z"
+            },
+            {
+                "key": "_raw_references",
+                "value": [
+                    {
+                        "title": "GitHub PR",
+                        "url": "https://github.com/gulpjs/glob-parent/pull/36"
+                    },
+                    {
+                        "title": "GitHub Release",
+                        "url": "https://github.com/gulpjs/glob-parent/releases/tag/v5.1.2"
+                    }
+                ]
+            },
+            {
+                "key": "_raw_semver",
+                "value": {
+                    "vulnerable": [
+                        "<5.1.2"
+                    ]
+                }
+            },
+            {
+                "key": "_raw_severity",
+                "value": "medium"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": "3.1.0",
+        "customerId": "4503657098653210424",
+        "cvss": 5,
+        "cvssVector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "## Overview\n[glob-parent](https://www.npmjs.com/package/glob-parent) is a package that helps extracting the non-magic parent path from a glob string.\n\nAffected versions of this package are vulnerable to Regular Expression Denial of Service (ReDoS). The `enclosure` regex used to check for strings ending in enclosure containing path separator.\r\n\r\n### PoC by Yeting Li\r\n```\r\nvar globParent = require(\"glob-parent\")\r\nfunction build_attack(n) {\r\nvar ret = \"{\"\r\nfor (var i = 0; i < n; i++) {\r\nret += \"/\"\r\n}\r\n\r\nreturn ret;\r\n}\r\n\r\nglobParent(build_attack(5000));\r\n```\n\n## Details\n\nDenial of Service (DoS) describes a family of attacks, all aimed at making a system inaccessible to its original and legitimate users. There are many types of DoS attacks, ranging from trying to clog the network pipes to the system by generating a large volume of traffic from many machines (a Distributed Denial of Service - DDoS - attack) to sending crafted requests that cause a system to crash or take a disproportional amount of time to process.\n\nThe Regular expression Denial of Service (ReDoS) is a type of Denial of Service attack. Regular expressions are incredibly powerful, but they aren't very intuitive and can ultimately end up making it easy for attackers to take your site down.\n\nLet\u2019s take the following regular expression as an example:\n```js\nregex = /A(B|C+)+D/\n```\n\nThis regular expression accomplishes the following:\n- `A` The string must start with the letter 'A'\n- `(B|C+)+` The string must then follow the letter A with either the letter 'B' or some number of occurrences of the letter 'C' (the `+` matches one or more times). The `+` at the end of this section states that we can look for one or more matches of this section.\n- `D` Finally, we ensure this section of the string ends with a 'D'\n\nThe expression would match inputs such as `ABBD`, `ABCCCCD`, `ABCBCCCD` and `ACCCCCD`\n\nIt most cases, it doesn't take very long for a regex engine to find a match:\n\n```bash\n$ time node -e '/A(B|C+)+D/.test(\"ACCCCCCCCCCCCCCCCCCCCCCCCCCCCD\")'\n0.04s user 0.01s system 95% cpu 0.052 total\n\n$ time node -e '/A(B|C+)+D/.test(\"ACCCCCCCCCCCCCCCCCCCCCCCCCCCCX\")'\n1.79s user 0.02s system 99% cpu 1.812 total\n```\n\nThe entire process of testing it against a 30 characters long string takes around ~52ms. But when given an invalid string, it takes nearly two seconds to complete the test, over ten times as long as it took to test a valid string. The dramatic difference is due to the way regular expressions get evaluated.\n\nMost Regex engines will work very similarly (with minor differences). The engine will match the first possible way to accept the current character and proceed to the next one. If it then fails to match the next one, it will backtrack and see if there was another way to digest the previous character. If it goes too far down the rabbit hole only to find out the string doesn\u2019t match in the end, and if many characters have multiple valid regex paths, the number of backtracking steps can become very large, resulting in what is known as _catastrophic backtracking_.\n\nLet's look at how our expression runs into this problem, using a shorter string: \"ACCCX\". While it seems fairly straightforward, there are still four different ways that the engine could match those three C's:\n1. CCC\n2. CC+C\n3. C+CC\n4. C+C+C.\n\nThe engine has to try each of those combinations to see if any of them potentially match against the expression. When you combine that with the other steps the engine must take, we can use [RegEx 101 debugger](https://regex101.com/debugger) to see the engine has to take a total of 38 steps before it can determine the string doesn't match.\n\nFrom there, the number of steps the engine must use to validate a string just continues to grow.\n\n| String | Number of C's | Number of steps |\n| -------|-------------:| -----:|\n| ACCCX | 3 | 38\n| ACCCCX | 4 | 71\n| ACCCCCX | 5 | 136\n| ACCCCCCCCCCCCCCX | 14 | 65,553\n\n\nBy the time the string includes 14 C's, the engine has to take over 65,000 steps just to see if the string is valid. These extreme situations can cause them to work very slowly (exponentially related to input size, as shown above), allowing an attacker to exploit this and can cause the service to excessively consume CPU, resulting in a Denial of Service.\n\n## Remediation\nUpgrade `glob-parent` to version 5.1.2 or higher.\n## References\n- [GitHub PR](https://github.com/gulpjs/glob-parent/pull/36)\n- [GitHub Release](https://github.com/gulpjs/glob-parent/releases/tag/v5.1.2)\n",
+        "issueName": "glob-parent//3.1.0",
+        "issueType": "Open Source",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "glob-parent//3.1.0",
+        "libraryName": "glob-parent",
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "snyk",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "2020-28469",
+                "type": "cve"
+            },
+            {
+                "id": "400",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "No remediation available for Regular Expression Denial of Service (ReDoS)",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "snyk",
+        "scanType": "SCA",
+        "scenarioId": "8207742350716442876",
+        "severity": 5,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_from": [
+                            "owasp-nodejs-goat@1.3.0",
+                            "helmet@2.3.0",
+                            "helmet-csp@1.2.2"
+                        ],
+                        "_raw_upgradepath": [
+                            false,
+                            "helmet@3.21.1",
+                            "helmet-csp@2.9.2"
+                        ],
+                        "introduced_through": "owasp-nodejs-goat@1.3.0 -> helmet@2.3.0 -> helmet-csp@1.2.2",
+                        "upgrade_path": "helmet@3.21.1 -> helmet-csp@2.9.2"
+                    }
+                ]
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "library_name",
+                    "current_version"
+                ]
+            },
+            {
+                "key": "package_name",
+                "value": "helmet-csp"
+            },
+            {
+                "key": "package_version",
+                "value": "1.2.2"
+            },
+            {
+                "key": "package_manager",
+                "value": "npm"
+            },
+            {
+                "key": "language",
+                "value": "js"
+            },
+            {
+                "key": "fixed_in",
+                "value": "helmet-csp v2.9.2"
+            },
+            {
+                "key": "title",
+                "value": "Configuration Override"
+            },
+            {
+                "key": "exploit",
+                "value": "Not Defined"
+            },
+            {
+                "key": "is_upgradable",
+                "value": true
+            },
+            {
+                "key": "is_patchable",
+                "value": false
+            },
+            {
+                "key": "is_unresolved",
+                "value": false
+            },
+            {
+                "key": "known_problems",
+                "value": "SNYK-JS-HELMETCSP-469436"
+            },
+            {
+                "key": "social_trend_alert",
+                "value": false
+            },
+            {
+                "key": "_raw_alternativeids",
+                "value": []
+            },
+            {
+                "key": "_raw_creationtime",
+                "value": "2019-09-29T08:46:54.888284Z"
+            },
+            {
+                "key": "_raw_credit",
+                "value": [
+                    "William Durand"
+                ]
+            },
+            {
+                "key": "_raw_cvssscore",
+                "value": 6.5
+            },
+            {
+                "key": "_raw_disclosuretime",
+                "value": "2019-09-20T23:03:16Z"
+            },
+            {
+                "key": "_raw_fixedin",
+                "value": [
+                    "2.9.2"
+                ]
+            },
+            {
+                "key": "_raw_identifiers",
+                "value": {
+                    "CVE": [],
+                    "CWE": [
+                        "CWE-16"
+                    ],
+                    "GHSA": [
+                        "GHSA-c3m8-x3cg-qm2c"
+                    ],
+                    "NSP": [
+                        1176
+                    ]
+                }
+            },
+            {
+                "key": "_raw_modificationtime",
+                "value": "2020-06-12T14:36:55.603877Z"
+            },
+            {
+                "key": "_raw_publicationtime",
+                "value": "2019-09-29T08:51:55Z"
+            },
+            {
+                "key": "_raw_references",
+                "value": [
+                    {
+                        "title": "GitHub Commit",
+                        "url": "https://github.com/helmetjs/csp/commit/67a69baafa8198a154f0505a0cf0875f76f6186a"
+                    },
+                    {
+                        "title": "NPM Security Advisory",
+                        "url": "https://www.npmjs.com/advisories/1176"
+                    }
+                ]
+            },
+            {
+                "key": "_raw_semver",
+                "value": {
+                    "vulnerable": [
+                        ">=1.2.2 <2.9.2"
+                    ]
+                }
+            },
+            {
+                "key": "_raw_severity",
+                "value": "medium"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": "1.2.2",
+        "customerId": "4503657098653210424",
+        "cvss": 6,
+        "cvssVector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "## Overview\n[helmet-csp](https://www.npmjs.com/package/helmet-csp) is a Content Security Policy that helps prevent unwanted content being injected into your webpages.\n\nAffected versions of this package are vulnerable to Configuration Override affecting the application's Content Security Policy (CSP). It's browser sniffing for Firefox deletes the `default-src` CSP policy, which is the fallback policy. This allows an attacker to remove an application's default CSP.\n## Remediation\nUpgrade `helmet-csp` to version 2.9.2 or higher.\n## References\n- [GitHub Commit](https://github.com/helmetjs/csp/commit/67a69baafa8198a154f0505a0cf0875f76f6186a)\n- [NPM Security Advisory](https://www.npmjs.com/advisories/1176)\n",
+        "issueName": "helmet-csp//1.2.2",
+        "issueType": "Open Source",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "helmet-csp//1.2.2",
+        "libraryName": "helmet-csp",
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "snyk",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "16",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "owasp-nodejs-goat@1.3.0 has an issue in helmet-csp@1.2.2 from direct dependency helmet@2.3.0, try upgrading to helmet@3.21.1 instead.",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "snyk",
+        "scanType": "SCA",
+        "scenarioId": "8207742350716442876",
+        "severity": 6,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_from": [
+                            "owasp-nodejs-goat@1.3.0",
+                            "forever@2.0.0",
+                            "nconf@0.10.0",
+                            "ini@1.3.5"
+                        ],
+                        "_raw_upgradepath": [
+                            false,
+                            "forever@2.0.0",
+                            "nconf@0.10.0",
+                            "ini@1.3.6"
+                        ],
+                        "introduced_through": "owasp-nodejs-goat@1.3.0 -> forever@2.0.0 -> nconf@0.10.0 -> ini@1.3.5",
+                        "upgrade_path": "forever@2.0.0 -> nconf@0.10.0 -> ini@1.3.6"
+                    },
+                    {
+                        "_raw_from": [
+                            "owasp-nodejs-goat@1.3.0",
+                            "forever@2.0.0",
+                            "flatiron@0.4.3",
+                            "broadway@0.3.6",
+                            "nconf@0.6.9",
+                            "ini@1.3.5"
+                        ],
+                        "_raw_upgradepath": [
+                            false,
+                            "forever@2.0.0",
+                            "flatiron@0.4.3",
+                            "broadway@0.3.6",
+                            "nconf@0.6.9",
+                            "ini@1.3.6"
+                        ],
+                        "introduced_through": "owasp-nodejs-goat@1.3.0 -> forever@2.0.0 -> flatiron@0.4.3 -> broadway@0.3.6 -> nconf@0.6.9 -> ini@1.3.5",
+                        "upgrade_path": "forever@2.0.0 -> flatiron@0.4.3 -> broadway@0.3.6 -> nconf@0.6.9 -> ini@1.3.6"
+                    },
+                    {
+                        "_raw_from": [
+                            "owasp-nodejs-goat@1.3.0",
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "broadway@0.3.6",
+                            "nconf@0.6.9",
+                            "ini@1.3.5"
+                        ],
+                        "_raw_upgradepath": [
+                            false,
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "broadway@0.3.6",
+                            "nconf@0.6.9",
+                            "ini@1.3.6"
+                        ],
+                        "introduced_through": "owasp-nodejs-goat@1.3.0 -> forever@2.0.0 -> forever-monitor@2.0.0 -> broadway@0.3.6 -> nconf@0.6.9 -> ini@1.3.5",
+                        "upgrade_path": "forever@2.0.0 -> forever-monitor@2.0.0 -> broadway@0.3.6 -> nconf@0.6.9 -> ini@1.3.6"
+                    },
+                    {
+                        "_raw_from": [
+                            "owasp-nodejs-goat@1.3.0",
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "fsevents@1.2.9",
+                            "node-pre-gyp@0.12.0",
+                            "rc@1.2.8",
+                            "ini@1.3.5"
+                        ],
+                        "_raw_upgradepath": [
+                            false,
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "fsevents@1.2.9",
+                            "node-pre-gyp@0.12.0",
+                            "rc@1.2.8",
+                            "ini@1.3.6"
+                        ],
+                        "introduced_through": "owasp-nodejs-goat@1.3.0 -> forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> fsevents@1.2.9 -> node-pre-gyp@0.12.0 -> rc@1.2.8 -> ini@1.3.5",
+                        "upgrade_path": "forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> fsevents@1.2.9 -> node-pre-gyp@0.12.0 -> rc@1.2.8 -> ini@1.3.6"
+                    }
+                ]
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "library_name",
+                    "current_version"
+                ]
+            },
+            {
+                "key": "package_name",
+                "value": "ini"
+            },
+            {
+                "key": "package_version",
+                "value": "1.3.5"
+            },
+            {
+                "key": "package_manager",
+                "value": "npm"
+            },
+            {
+                "key": "language",
+                "value": "js"
+            },
+            {
+                "key": "fixed_in",
+                "value": "ini v1.3.6"
+            },
+            {
+                "key": "title",
+                "value": "Prototype Pollution"
+            },
+            {
+                "key": "exploit",
+                "value": "Proof of Concept"
+            },
+            {
+                "key": "is_upgradable",
+                "value": true
+            },
+            {
+                "key": "is_patchable",
+                "value": false
+            },
+            {
+                "key": "is_unresolved",
+                "value": false
+            },
+            {
+                "key": "known_problems",
+                "value": "SNYK-JS-INI-1048974"
+            },
+            {
+                "key": "social_trend_alert",
+                "value": false
+            },
+            {
+                "key": "_raw_alternativeids",
+                "value": []
+            },
+            {
+                "key": "_raw_creationtime",
+                "value": "2020-12-08T15:34:07.743781Z"
+            },
+            {
+                "key": "_raw_credit",
+                "value": [
+                    "Eugene Lim",
+                    "Government Technology Agency Cyber Security Group"
+                ]
+            },
+            {
+                "key": "_raw_cvssscore",
+                "value": 7.3
+            },
+            {
+                "key": "_raw_disclosuretime",
+                "value": "2020-12-08T13:02:04Z"
+            },
+            {
+                "key": "_raw_fixedin",
+                "value": [
+                    "1.3.6"
+                ]
+            },
+            {
+                "key": "_raw_identifiers",
+                "value": {
+                    "CVE": [
+                        "CVE-2020-7788"
+                    ],
+                    "CWE": [
+                        "CWE-400"
+                    ],
+                    "GHSA": [
+                        "GHSA-qqgx-2p2h-9c37"
+                    ]
+                }
+            },
+            {
+                "key": "_raw_modificationtime",
+                "value": "2020-12-10T18:09:23.069283Z"
+            },
+            {
+                "key": "_raw_publicationtime",
+                "value": "2020-12-10T18:08:38Z"
+            },
+            {
+                "key": "_raw_references",
+                "value": [
+                    {
+                        "title": "Eugene Lim - Research Blog Post",
+                        "url": "https://medium.com/csg-govtech/supply-chain-pollution-discovering-a-16-million-download-week-node-js-2fa4d2c27cf7"
+                    },
+                    {
+                        "title": "GitHub Commit",
+                        "url": "https://github.com/npm/ini/commit/56d2805e07ccd94e2ba0984ac9240ff02d44b6f1"
+                    }
+                ]
+            },
+            {
+                "key": "_raw_semver",
+                "value": {
+                    "vulnerable": [
+                        "<1.3.6"
+                    ]
+                }
+            },
+            {
+                "key": "_raw_severity",
+                "value": "high"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": "1.3.5",
+        "customerId": "4503657098653210424",
+        "cvss": 7,
+        "cvssVector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L/E:P",
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "## Overview\n[ini](https://www.npmjs.org/package/ini) is an An ini encoder/decoder for node\n\nAffected versions of this package are vulnerable to Prototype Pollution. If an attacker submits a malicious INI file to an application that parses it with `ini.parse`, they will pollute the prototype on the application. This can be exploited further depending on the context.\r\n\r\n## PoC by Eugene Lim\r\n\r\npayload.ini\r\n```\r\n[__proto__]\r\npolluted = \"polluted\"\r\n```\r\n\r\npoc.js:\r\n```\r\nvar fs = require('fs')\r\nvar ini = require('ini')\r\n\r\nvar parsed = ini.parse(fs.readFileSync('./payload.ini', 'utf-8'))\r\nconsole.log(parsed)\r\nconsole.log(parsed.__proto__)\r\nconsole.log(polluted)\r\n```\r\n\r\n```\r\n> node poc.js\r\n{}\r\n{ polluted: 'polluted' }\r\n{ polluted: 'polluted' }\r\npolluted\r\n```\n\n## Details\n\nPrototype Pollution is a vulnerability affecting JavaScript. Prototype Pollution refers to the ability to inject properties into existing JavaScript language construct prototypes, such as objects. JavaScript allows all Object attributes to be altered, including their magical attributes such as `_proto_`, `constructor` and `prototype`. An attacker manipulates these attributes to overwrite, or pollute, a JavaScript application object prototype of the base object by injecting other values.  Properties on the `Object.prototype` are then inherited by all the JavaScript objects through the prototype chain. When that happens, this leads to either denial of service by triggering JavaScript exceptions, or it tampers with the application source code to force the code path that the attacker injects, thereby leading to remote code execution.\n\nThere are two main ways in which the pollution of prototypes occurs:\n\n-   Unsafe `Object` recursive merge\n    \n-   Property definition by path\n    \n\n### Unsafe Object recursive merge\n\nThe logic of a vulnerable recursive merge function follows the following high-level model:\n```\nmerge (target, source)\n\n  foreach property of source\n\n    if property exists and is an object on both the target and the source\n\n      merge(target[property], source[property])\n\n    else\n\n      target[property] = source[property]\n```\n<br>  \n\nWhen the source object contains a property named `_proto_` defined with `Object.defineProperty()` , the condition that checks if the property exists and is an object on both the target and the source passes and the merge recurses with the target, being the prototype of `Object` and the source of `Object` as defined by the attacker. Properties are then copied on the `Object` prototype.\n\nClone operations are a special sub-class of unsafe recursive merges, which occur when a recursive merge is conducted on an empty object: `merge({},source)`.\n\n`lodash` and `Hoek` are examples of libraries susceptible to recursive merge attacks.\n\n### Property definition by path\n\nThere are a few JavaScript libraries that use an API to define property values on an object based on a given path. The function that is generally affected contains this signature: `theFunction(object, path, value)`\n\nIf the attacker can control the value of \u201cpath\u201d, they can set this value to `_proto_.myValue`. `myValue` is then assigned to the prototype of the class of the object.\n\n## Types of attacks\n\nThere are a few methods by which Prototype Pollution can be manipulated:\n\n| Type |Origin  |Short description |\n|--|--|--|\n| **Denial of service (DoS)**|Client  |This is the most likely attack. <br>DoS occurs when `Object` holds generic functions that are implicitly called for various operations (for example, `toString` and `valueOf`). <br> The attacker pollutes `Object.prototype.someattr` and alters its state to an unexpected value such as `Int` or `Object`. In this case, the code fails and is likely to cause a denial of service.  <br>**For example:** if an attacker pollutes `Object.prototype.toString` by defining it as an integer, if the codebase at any point was reliant on `someobject.toString()` it would fail. |\n |**Remote Code Execution**|Client|Remote code execution is generally only possible in cases where the codebase evaluates a specific attribute of an object, and then executes that evaluation.<br>**For example:** `eval(someobject.someattr)`. In this case, if the attacker pollutes `Object.prototype.someattr` they are likely to be able to leverage this in order to execute code.|\n|**Property Injection**|Client|The attacker pollutes properties that the codebase relies on for their informative value, including security properties such as cookies or tokens.<br>  **For example:** if a codebase checks privileges for `someuser.isAdmin`, then when the attacker pollutes `Object.prototype.isAdmin` and sets it to equal `true`, they can then achieve admin privileges.|\n\n## Affected environments\n\nThe following environments are susceptible to a Prototype Pollution attack:\n\n-   Application server\n    \n-   Web server\n    \n\n## How to prevent\n\n1.  Freeze the prototype\u2014 use `Object.freeze (Object.prototype)`.\n    \n2.  Require schema validation of JSON input.\n    \n3.  Avoid using unsafe recursive merge functions.\n    \n4.  Consider using objects without prototypes (for example, `Object.create(null)`), breaking the prototype chain and preventing pollution.\n    \n5.  As a best practice use `Map` instead of `Object`.\n\n### For more information on this vulnerability type:\n\n[Arteau, Oliver. \u201cJavaScript prototype pollution attack in NodeJS application.\u201d GitHub, 26 May 2018](https://github.com/HoLyVieR/prototype-pollution-nsec18/blob/master/paper/JavaScript_prototype_pollution_attack_in_NodeJS.pdf)\n\n## Remediation\nUpgrade `ini` to version 1.3.6 or higher.\n## References\n- [Eugene Lim - Research Blog Post](https://medium.com/csg-govtech/supply-chain-pollution-discovering-a-16-million-download-week-node-js-2fa4d2c27cf7)\n- [GitHub Commit](https://github.com/npm/ini/commit/56d2805e07ccd94e2ba0984ac9240ff02d44b6f1)\n",
+        "issueName": "ini//1.3.5",
+        "issueType": "Open Source",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "ini//1.3.5",
+        "libraryName": "ini",
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "snyk",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "2020-7788",
+                "type": "cve"
+            },
+            {
+                "id": "400",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "owasp-nodejs-goat@1.3.0 has an issue in ini@1.3.5 from direct dependency forever@2.0.0",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "snyk",
+        "scanType": "SCA",
+        "scenarioId": "8207742350716442876",
+        "severity": 7,
+        "severityCode": "High",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_from": [
+                            "owasp-nodejs-goat@1.3.0",
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "anymatch@2.0.0",
+                            "micromatch@3.1.10",
+                            "kind-of@6.0.2"
+                        ],
+                        "_raw_upgradepath": [
+                            false,
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "anymatch@2.0.0",
+                            "micromatch@3.1.10",
+                            "kind-of@6.0.3"
+                        ],
+                        "introduced_through": "owasp-nodejs-goat@1.3.0 -> forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> anymatch@2.0.0 -> micromatch@3.1.10 -> kind-of@6.0.2",
+                        "upgrade_path": "forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> anymatch@2.0.0 -> micromatch@3.1.10 -> kind-of@6.0.3"
+                    },
+                    {
+                        "_raw_from": [
+                            "owasp-nodejs-goat@1.3.0",
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "readdirp@2.2.1",
+                            "micromatch@3.1.10",
+                            "kind-of@6.0.2"
+                        ],
+                        "_raw_upgradepath": [
+                            false,
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "readdirp@2.2.1",
+                            "micromatch@3.1.10",
+                            "kind-of@6.0.3"
+                        ],
+                        "introduced_through": "owasp-nodejs-goat@1.3.0 -> forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> readdirp@2.2.1 -> micromatch@3.1.10 -> kind-of@6.0.2",
+                        "upgrade_path": "forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> readdirp@2.2.1 -> micromatch@3.1.10 -> kind-of@6.0.3"
+                    },
+                    {
+                        "_raw_from": [
+                            "owasp-nodejs-goat@1.3.0",
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "anymatch@2.0.0",
+                            "micromatch@3.1.10",
+                            "nanomatch@1.2.13",
+                            "kind-of@6.0.2"
+                        ],
+                        "_raw_upgradepath": [
+                            false,
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "anymatch@2.0.0",
+                            "micromatch@3.1.10",
+                            "nanomatch@1.2.13",
+                            "kind-of@6.0.3"
+                        ],
+                        "introduced_through": "owasp-nodejs-goat@1.3.0 -> forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> anymatch@2.0.0 -> micromatch@3.1.10 -> nanomatch@1.2.13 -> kind-of@6.0.2",
+                        "upgrade_path": "forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> anymatch@2.0.0 -> micromatch@3.1.10 -> nanomatch@1.2.13 -> kind-of@6.0.3"
+                    },
+                    {
+                        "_raw_from": [
+                            "owasp-nodejs-goat@1.3.0",
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "readdirp@2.2.1",
+                            "micromatch@3.1.10",
+                            "nanomatch@1.2.13",
+                            "kind-of@6.0.2"
+                        ],
+                        "_raw_upgradepath": [
+                            false,
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "readdirp@2.2.1",
+                            "micromatch@3.1.10",
+                            "nanomatch@1.2.13",
+                            "kind-of@6.0.3"
+                        ],
+                        "introduced_through": "owasp-nodejs-goat@1.3.0 -> forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> readdirp@2.2.1 -> micromatch@3.1.10 -> nanomatch@1.2.13 -> kind-of@6.0.2",
+                        "upgrade_path": "forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> readdirp@2.2.1 -> micromatch@3.1.10 -> nanomatch@1.2.13 -> kind-of@6.0.3"
+                    },
+                    {
+                        "_raw_from": [
+                            "owasp-nodejs-goat@1.3.0",
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "braces@2.3.2",
+                            "snapdragon-node@2.1.1",
+                            "define-property@1.0.0",
+                            "is-descriptor@1.0.2",
+                            "kind-of@6.0.2"
+                        ],
+                        "_raw_upgradepath": [
+                            false,
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "braces@2.3.2",
+                            "snapdragon-node@2.1.1",
+                            "define-property@1.0.0",
+                            "is-descriptor@1.0.2",
+                            "kind-of@6.0.3"
+                        ],
+                        "introduced_through": "owasp-nodejs-goat@1.3.0 -> forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> braces@2.3.2 -> snapdragon-node@2.1.1 -> define-property@1.0.0 -> is-descriptor@1.0.2 -> kind-of@6.0.2",
+                        "upgrade_path": "forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> braces@2.3.2 -> snapdragon-node@2.1.1 -> define-property@1.0.0 -> is-descriptor@1.0.2 -> kind-of@6.0.3"
+                    },
+                    {
+                        "_raw_from": [
+                            "owasp-nodejs-goat@1.3.0",
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "braces@2.3.2",
+                            "to-regex@3.0.2",
+                            "define-property@2.0.2",
+                            "is-descriptor@1.0.2",
+                            "kind-of@6.0.2"
+                        ],
+                        "_raw_upgradepath": [
+                            false,
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "braces@2.3.2",
+                            "to-regex@3.0.2",
+                            "define-property@2.0.2",
+                            "is-descriptor@1.0.2",
+                            "kind-of@6.0.3"
+                        ],
+                        "introduced_through": "owasp-nodejs-goat@1.3.0 -> forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> braces@2.3.2 -> to-regex@3.0.2 -> define-property@2.0.2 -> is-descriptor@1.0.2 -> kind-of@6.0.2",
+                        "upgrade_path": "forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> braces@2.3.2 -> to-regex@3.0.2 -> define-property@2.0.2 -> is-descriptor@1.0.2 -> kind-of@6.0.3"
+                    },
+                    {
+                        "_raw_from": [
+                            "owasp-nodejs-goat@1.3.0",
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "anymatch@2.0.0",
+                            "micromatch@3.1.10",
+                            "define-property@2.0.2",
+                            "is-descriptor@1.0.2",
+                            "kind-of@6.0.2"
+                        ],
+                        "_raw_upgradepath": [
+                            false,
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "anymatch@2.0.0",
+                            "micromatch@3.1.10",
+                            "define-property@2.0.2",
+                            "is-descriptor@1.0.2",
+                            "kind-of@6.0.3"
+                        ],
+                        "introduced_through": "owasp-nodejs-goat@1.3.0 -> forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> anymatch@2.0.0 -> micromatch@3.1.10 -> define-property@2.0.2 -> is-descriptor@1.0.2 -> kind-of@6.0.2",
+                        "upgrade_path": "forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> anymatch@2.0.0 -> micromatch@3.1.10 -> define-property@2.0.2 -> is-descriptor@1.0.2 -> kind-of@6.0.3"
+                    },
+                    {
+                        "_raw_from": [
+                            "owasp-nodejs-goat@1.3.0",
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "readdirp@2.2.1",
+                            "micromatch@3.1.10",
+                            "define-property@2.0.2",
+                            "is-descriptor@1.0.2",
+                            "kind-of@6.0.2"
+                        ],
+                        "_raw_upgradepath": [
+                            false,
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "readdirp@2.2.1",
+                            "micromatch@3.1.10",
+                            "define-property@2.0.2",
+                            "is-descriptor@1.0.2",
+                            "kind-of@6.0.3"
+                        ],
+                        "introduced_through": "owasp-nodejs-goat@1.3.0 -> forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> readdirp@2.2.1 -> micromatch@3.1.10 -> define-property@2.0.2 -> is-descriptor@1.0.2 -> kind-of@6.0.2",
+                        "upgrade_path": "forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> readdirp@2.2.1 -> micromatch@3.1.10 -> define-property@2.0.2 -> is-descriptor@1.0.2 -> kind-of@6.0.3"
+                    },
+                    {
+                        "_raw_from": [
+                            "owasp-nodejs-goat@1.3.0",
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "braces@2.3.2",
+                            "snapdragon-node@2.1.1",
+                            "define-property@1.0.0",
+                            "is-descriptor@1.0.2",
+                            "is-accessor-descriptor@1.0.0",
+                            "kind-of@6.0.2"
+                        ],
+                        "_raw_upgradepath": [
+                            false,
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "braces@2.3.2",
+                            "snapdragon-node@2.1.1",
+                            "define-property@1.0.0",
+                            "is-descriptor@1.0.2",
+                            "is-accessor-descriptor@1.0.0",
+                            "kind-of@6.0.3"
+                        ],
+                        "introduced_through": "owasp-nodejs-goat@1.3.0 -> forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> braces@2.3.2 -> snapdragon-node@2.1.1 -> define-property@1.0.0 -> is-descriptor@1.0.2 -> is-accessor-descriptor@1.0.0 -> kind-of@6.0.2",
+                        "upgrade_path": "forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> braces@2.3.2 -> snapdragon-node@2.1.1 -> define-property@1.0.0 -> is-descriptor@1.0.2 -> is-accessor-descriptor@1.0.0 -> kind-of@6.0.3"
+                    },
+                    {
+                        "_raw_from": [
+                            "owasp-nodejs-goat@1.3.0",
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "braces@2.3.2",
+                            "to-regex@3.0.2",
+                            "define-property@2.0.2",
+                            "is-descriptor@1.0.2",
+                            "is-accessor-descriptor@1.0.0",
+                            "kind-of@6.0.2"
+                        ],
+                        "_raw_upgradepath": [
+                            false,
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "braces@2.3.2",
+                            "to-regex@3.0.2",
+                            "define-property@2.0.2",
+                            "is-descriptor@1.0.2",
+                            "is-accessor-descriptor@1.0.0",
+                            "kind-of@6.0.3"
+                        ],
+                        "introduced_through": "owasp-nodejs-goat@1.3.0 -> forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> braces@2.3.2 -> to-regex@3.0.2 -> define-property@2.0.2 -> is-descriptor@1.0.2 -> is-accessor-descriptor@1.0.0 -> kind-of@6.0.2",
+                        "upgrade_path": "forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> braces@2.3.2 -> to-regex@3.0.2 -> define-property@2.0.2 -> is-descriptor@1.0.2 -> is-accessor-descriptor@1.0.0 -> kind-of@6.0.3"
+                    },
+                    {
+                        "_raw_from": [
+                            "owasp-nodejs-goat@1.3.0",
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "anymatch@2.0.0",
+                            "micromatch@3.1.10",
+                            "define-property@2.0.2",
+                            "is-descriptor@1.0.2",
+                            "is-accessor-descriptor@1.0.0",
+                            "kind-of@6.0.2"
+                        ],
+                        "_raw_upgradepath": [
+                            false,
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "anymatch@2.0.0",
+                            "micromatch@3.1.10",
+                            "define-property@2.0.2",
+                            "is-descriptor@1.0.2",
+                            "is-accessor-descriptor@1.0.0",
+                            "kind-of@6.0.3"
+                        ],
+                        "introduced_through": "owasp-nodejs-goat@1.3.0 -> forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> anymatch@2.0.0 -> micromatch@3.1.10 -> define-property@2.0.2 -> is-descriptor@1.0.2 -> is-accessor-descriptor@1.0.0 -> kind-of@6.0.2",
+                        "upgrade_path": "forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> anymatch@2.0.0 -> micromatch@3.1.10 -> define-property@2.0.2 -> is-descriptor@1.0.2 -> is-accessor-descriptor@1.0.0 -> kind-of@6.0.3"
+                    },
+                    {
+                        "_raw_from": [
+                            "owasp-nodejs-goat@1.3.0",
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "readdirp@2.2.1",
+                            "micromatch@3.1.10",
+                            "define-property@2.0.2",
+                            "is-descriptor@1.0.2",
+                            "is-accessor-descriptor@1.0.0",
+                            "kind-of@6.0.2"
+                        ],
+                        "_raw_upgradepath": [
+                            false,
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "readdirp@2.2.1",
+                            "micromatch@3.1.10",
+                            "define-property@2.0.2",
+                            "is-descriptor@1.0.2",
+                            "is-accessor-descriptor@1.0.0",
+                            "kind-of@6.0.3"
+                        ],
+                        "introduced_through": "owasp-nodejs-goat@1.3.0 -> forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> readdirp@2.2.1 -> micromatch@3.1.10 -> define-property@2.0.2 -> is-descriptor@1.0.2 -> is-accessor-descriptor@1.0.0 -> kind-of@6.0.2",
+                        "upgrade_path": "forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> readdirp@2.2.1 -> micromatch@3.1.10 -> define-property@2.0.2 -> is-descriptor@1.0.2 -> is-accessor-descriptor@1.0.0 -> kind-of@6.0.3"
+                    },
+                    {
+                        "_raw_from": [
+                            "owasp-nodejs-goat@1.3.0",
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "braces@2.3.2",
+                            "snapdragon-node@2.1.1",
+                            "define-property@1.0.0",
+                            "is-descriptor@1.0.2",
+                            "is-data-descriptor@1.0.0",
+                            "kind-of@6.0.2"
+                        ],
+                        "_raw_upgradepath": [
+                            false,
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "braces@2.3.2",
+                            "snapdragon-node@2.1.1",
+                            "define-property@1.0.0",
+                            "is-descriptor@1.0.2",
+                            "is-data-descriptor@1.0.0",
+                            "kind-of@6.0.3"
+                        ],
+                        "introduced_through": "owasp-nodejs-goat@1.3.0 -> forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> braces@2.3.2 -> snapdragon-node@2.1.1 -> define-property@1.0.0 -> is-descriptor@1.0.2 -> is-data-descriptor@1.0.0 -> kind-of@6.0.2",
+                        "upgrade_path": "forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> braces@2.3.2 -> snapdragon-node@2.1.1 -> define-property@1.0.0 -> is-descriptor@1.0.2 -> is-data-descriptor@1.0.0 -> kind-of@6.0.3"
+                    },
+                    {
+                        "_raw_from": [
+                            "owasp-nodejs-goat@1.3.0",
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "braces@2.3.2",
+                            "to-regex@3.0.2",
+                            "define-property@2.0.2",
+                            "is-descriptor@1.0.2",
+                            "is-data-descriptor@1.0.0",
+                            "kind-of@6.0.2"
+                        ],
+                        "_raw_upgradepath": [
+                            false,
+                            "forever@2.0.0",
+                            "forever-monitor@2.0.0",
+                            "chokidar@2.1.8",
+                            "braces@2.3.2",
+                            "to-regex@3.0.2",
+                            "define-property@2.0.2",
+                            "is-descriptor@1.0.2",
+                            "is-data-descriptor@1.0.0",
+                            "kind-of@6.0.3"
+                        ],
+                        "introduced_through": "owasp-nodejs-goat@1.3.0 -> forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> braces@2.3.2 -> to-regex@3.0.2 -> define-property@2.0.2 -> is-descriptor@1.0.2 -> is-data-descriptor@1.0.0 -> kind-of@6.0.2",
+                        "upgrade_path": "forever@2.0.0 -> forever-monitor@2.0.0 -> chokidar@2.1.8 -> braces@2.3.2 -> to-regex@3.0.2 -> define-property@2.0.2 -> is-descriptor@1.0.2 -> is-data-descriptor@1.0.0 -> kind-of@6.0.3"
+                    }
+                ]
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "library_name",
+                    "current_version"
+                ]
+            },
+            {
+                "key": "package_name",
+                "value": "kind-of"
+            },
+            {
+                "key": "package_version",
+                "value": "6.0.2"
+            },
+            {
+                "key": "package_manager",
+                "value": "npm"
+            },
+            {
+                "key": "language",
+                "value": "js"
+            },
+            {
+                "key": "fixed_in",
+                "value": "kind-of v6.0.3"
+            },
+            {
+                "key": "title",
+                "value": "Validation Bypass"
+            },
+            {
+                "key": "exploit",
+                "value": "Proof of Concept"
+            },
+            {
+                "key": "is_upgradable",
+                "value": true
+            },
+            {
+                "key": "is_patchable",
+                "value": false
+            },
+            {
+                "key": "is_unresolved",
+                "value": false
+            },
+            {
+                "key": "known_problems",
+                "value": "SNYK-JS-KINDOF-537849"
+            },
+            {
+                "key": "social_trend_alert",
+                "value": false
+            },
+            {
+                "key": "_raw_alternativeids",
+                "value": []
+            },
+            {
+                "key": "_raw_creationtime",
+                "value": "2019-12-16T14:21:14.675101Z"
+            },
+            {
+                "key": "_raw_credit",
+                "value": [
+                    "Feng Xiao"
+                ]
+            },
+            {
+                "key": "_raw_cvssscore",
+                "value": 3.7
+            },
+            {
+                "key": "_raw_disclosuretime",
+                "value": "2019-12-16T14:31:14Z"
+            },
+            {
+                "key": "_raw_fixedin",
+                "value": [
+                    "6.0.3"
+                ]
+            },
+            {
+                "key": "_raw_functions",
+                "value": [
+                    {
+                        "functionId": {
+                            "className": null,
+                            "filePath": "index.js",
+                            "functionName": "ctorName"
+                        },
+                        "version": [
+                            ">=6.0.0 <6.0.3"
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "_raw_functions_new",
+                "value": [
+                    {
+                        "functionId": {
+                            "filePath": "index.js",
+                            "functionName": "ctorName"
+                        },
+                        "version": [
+                            ">=6.0.0 <6.0.3"
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "_raw_identifiers",
+                "value": {
+                    "CVE": [
+                        "CVE-2019-20149"
+                    ],
+                    "CWE": [
+                        "CWE-20"
+                    ],
+                    "GHSA": [
+                        "GHSA-6c8f-qphg-qjgp"
+                    ],
+                    "NSP": [
+                        1490
+                    ]
+                }
+            },
+            {
+                "key": "_raw_modificationtime",
+                "value": "2020-06-12T14:36:55.567043Z"
+            },
+            {
+                "key": "_raw_publicationtime",
+                "value": "2020-01-19T14:31:13Z"
+            },
+            {
+                "key": "_raw_references",
+                "value": [
+                    {
+                        "title": "GitHub Issue",
+                        "url": "https://github.com/jonschlinkert/kind-of/issues/30"
+                    },
+                    {
+                        "title": "GitHub PR",
+                        "url": "https://github.com/jonschlinkert/kind-of/pull/31"
+                    }
+                ]
+            },
+            {
+                "key": "_raw_semver",
+                "value": {
+                    "vulnerable": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            },
+            {
+                "key": "_raw_severity",
+                "value": "low"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": "6.0.2",
+        "customerId": "4503657098653210424",
+        "cvss": 3,
+        "cvssVector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N/E:P/RL:O/RC:C",
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "## Overview\n[kind-of](https://github.com/jonschlinkert/kind-of) is a package that gets the native type of a value.\n\nAffected versions of this package are vulnerable to Validation Bypass. It leverages the built-in constructor of unsafe user-input to detect type information. However, a crafted payload can overwrite this built in attribute to manipulate the type detection result.\r\n\r\n## PoC by Feng Xiao\r\n```\r\nvar kindOf = require('kind-of');\r\n\r\n\r\nvar user_input = {\r\n  user: 'barney',\r\n  age: 36,\r\n  active: true,\r\n  \"constructor\":{\"name\":\"Symbol\"}\r\n};\r\nconsole.log(kindOf(user_input));\r\n```\n## Remediation\nUpgrade `kind-of` to version 6.0.3 or higher.\n## References\n- [GitHub Issue](https://github.com/jonschlinkert/kind-of/issues/30)\n- [GitHub PR](https://github.com/jonschlinkert/kind-of/pull/31)\n",
+        "issueName": "kind-of//6.0.2",
+        "issueType": "Open Source",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "kind-of//6.0.2",
+        "libraryName": "kind-of",
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "snyk",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "2019-20149",
+                "type": "cve"
+            },
+            {
+                "id": "20",
+                "type": "cwe"
+            },
+            {
+                "id": "6",
+                "type": "ghsa"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "owasp-nodejs-goat@1.3.0 has an issue in kind-of@6.0.2 from direct dependency forever@2.0.0",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "snyk",
+        "scanType": "SCA",
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    }
+]

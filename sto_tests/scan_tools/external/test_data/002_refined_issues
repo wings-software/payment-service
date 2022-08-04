@@ -1,0 +1,213 @@
+[
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "issue_name": "name1",
+                        "reference_identifiers": [
+                            {
+                                "id": "792",
+                                "type": "cwe"
+                            }
+                        ],
+                        "remediation_steps": "b",
+                        "severity": 80
+                    },
+                    {
+                        "issue_name": "name3",
+                        "reference_identifiers": [
+                            {
+                                "id": "79",
+                                "type": "cwe"
+                            }
+                        ],
+                        "remediation_steps": "d",
+                        "severity": 70
+                    }
+                ]
+            },
+            {
+                "key": "risk",
+                "value": "high"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "scanTool"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": "https://github.com/MSGTech/Aspire.git:dev/wp-content/themes/aspire/template-parts/homepage/homepage-jobs.php",
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "line number: 1. What is the difference",
+        "issueName": "name1",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Whitehat",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "external",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "792",
+                "type": "cwe"
+            },
+            {
+                "id": "79",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "Whitehat",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 80,
+        "severityCode": "Critical",
+        "status": "open",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "issue_name": "name2",
+                        "reference_identifiers": [
+                            {
+                                "id": "79",
+                                "type": "cwe"
+                            }
+                        ],
+                        "remediation_steps": "d",
+                        "severity": 70
+                    }
+                ]
+            },
+            {
+                "key": "risk",
+                "value": "high"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "scanTool"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": "https://github.com/MSGTech/Aspire.git:dev/wp-content/themes/aspire/template-parts/homepage/homepage-jobs.php",
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "line number: 1. What is the difference",
+        "issueName": "name2",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Whitehat2",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "external",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "79",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "Whitehat2",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 70,
+        "severityCode": "Critical",
+        "status": "open",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    }
+]

@@ -1,0 +1,1242 @@
+[
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "vuln_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150081"
+            },
+            {
+                "key": "vuln_id",
+                "value": "7795812"
+            },
+            {
+                "key": "id",
+                "value": "7795812"
+            },
+            {
+                "key": "first_detected",
+                "value": "09 May 2019 09:10PM GMT-0700"
+            },
+            {
+                "key": "last_detected",
+                "value": "14 Jul 2019 07:08PM GMT-0700"
+            },
+            {
+                "key": "group",
+                "value": "INFO"
+            },
+            {
+                "key": "owasp",
+                "value": "A6"
+            },
+            {
+                "key": "wasc",
+                "value": "WASC-15"
+            },
+            {
+                "key": "description",
+                "value": "The X-Frame-Options header is not set in the HTTP response, meaning the page can potentially be loaded into an attacker-controlled frame. This could lead to clickjacking, where an attacker adds an invisible layer on top of the legitimate page to trick users into clicking on a malicious link or taking a harmful action."
+            },
+            {
+                "key": "cvss_base",
+                "value": "5.0"
+            },
+            {
+                "key": "cvss_temporal",
+                "value": "4.1"
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_unique_id",
+                "value": "8f416861-a416-befd-e053-a02410acaab3"
+            },
+            {
+                "key": "_raw_access_path",
+                "value": {
+                    "URL": "https://www.rodanandfields.com/ca"
+                }
+            },
+            {
+                "key": "_raw_authentication",
+                "value": "Not Required"
+            },
+            {
+                "key": "_raw_ajax",
+                "value": "false"
+            },
+            {
+                "key": "_raw_times_detected",
+                "value": "4"
+            },
+            {
+                "key": "_raw_payloads",
+                "value": {
+                    "PAYLOAD": {
+                        "NUM": "1",
+                        "PAYLOAD": "N/A",
+                        "REQUEST": {
+                            "HEADERS": {
+                                "HEADER": [
+                                    {
+                                        "key": "Host",
+                                        "value": "www.rodanandfields.com"
+                                    },
+                                    {
+                                        "key": "User-Agent",
+                                        "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/601.4.4 (KHTML, like Gecko) Version/9.0.3 Safari/601.4.4"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "*/*"
+                                    }
+                                ]
+                            },
+                            "METHOD": "GET",
+                            "URL": "https://www.rodanandfields.com/_Incapsula_Resource?CWUDNSAI=21&xinfo=3-72586369-0%200NNN%20RT%281563156585368%205%29%20q%280%20-1%20-1%200%29%20r%280%20-1%29%20B15%284%2c200%2c0%29%20U5&incident_id=480001530199237855-289752607082154387&edet=15&cinfo=04000000"
+                        },
+                        "RESPONSE": {
+                            "CONTENTS": {
+                                "#text": "VGhlIHJlc3BvbnNlIGZvciB0aGlzIHJlcXVlc3QgZWl0aGVyIGRpZCBub3QgaGF2ZSBhbiAiWC1GUkFNRS1PUFRJT05TIiBoZWFkZXIgcHJlc2VudCBvciB3YXMgbm90IHNldCB0byBERU5ZIG9yIFNBTUVPUklHSU4K",
+                                "@base64": "true"
+                            }
+                        }
+                    }
+                }
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Without an X-Frame-Options response header, clickjacking may be possible. However, if the application properly uses the Content-Security-Policy \"frame-ancestors\" directive, then modern web browsers would stop the page from being framed and prevent clickjacking.",
+        "issueName": "X-Frame-Options header is not set",
+        "issueType": "Potential Vulnerability",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150081//7795812",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "693",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "The X-Frame-Options allows three values: DENY, SAMEORIGIN and ALLOW-FROM. It is recommended to use DENY, which prevents all domains from framing the page or SAMEORIGIN, which allows framing only by the same site. DENY and SAMEORGIN are supported by all browsers. Using ALLOW-FROM is not recommended because not all browsers support it.<P>\n\nNote: To avoid a common X-Frame-Options implementation mistake, see <A HREF=\"https://blog.qualys.com/securitylabs/2015/10/20/clickjacking-a-common-implementation-mistake-that-can-put-your-websites-in-danger\" TARGET=\"_blank\">https://blog.qualys.com/securitylabs/2015/10/20/clickjacking-a-common-implementation-mistake-that-can-put-your-websites-in-danger</A>.<P>\n\nIt is also recommended to use the Content-Security-Policy \"frame-ancestors directive\". For more information, see the <A HREF=\"https://cheatsheetseries.owasp.org/cheatsheets/Clickjacking_Defense_Cheat_Sheet.html\" TARGET=\"_blank\">OWASP Clickjacking Defense Cheat Sheet</A>",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": "ACTIVE",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": "https://www.rodanandfields.com/_Incapsula_Resource?CWUDNSAI=21&xinfo=5-101018338-0%200NNN%20RT%281563156582964%208%29%20q%280%20-1%20-1%20-1%29%20r%280%20-1%29%20B15%284%2C200%2C0%29%20U5&incident_id=480001530199237855-405551728610511253&edet=15&cinfo=04000000",
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "vuln_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150122"
+            },
+            {
+                "key": "vuln_id",
+                "value": "7795816"
+            },
+            {
+                "key": "id",
+                "value": "7795816"
+            },
+            {
+                "key": "first_detected",
+                "value": "09 May 2019 09:10PM GMT-0700"
+            },
+            {
+                "key": "last_detected",
+                "value": "14 Jul 2019 07:08PM GMT-0700"
+            },
+            {
+                "key": "group",
+                "value": "INFO"
+            },
+            {
+                "key": "owasp",
+                "value": "A3"
+            },
+            {
+                "key": "wasc",
+                "value": "WASC-4"
+            },
+            {
+                "key": "description",
+                "value": "The cookie does not contain the \"secure\" attribute."
+            },
+            {
+                "key": "cvss_base",
+                "value": "6.4"
+            },
+            {
+                "key": "cvss_temporal",
+                "value": "5.8"
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_unique_id",
+                "value": "8f416861-a418-befd-e053-a02410acaab3"
+            },
+            {
+                "key": "_raw_param",
+                "value": "visid_incap_1147811, ___utmvc, incap_ses_480_1147811"
+            },
+            {
+                "key": "_raw_authentication",
+                "value": "Not Required"
+            },
+            {
+                "key": "_raw_ajax",
+                "value": "false"
+            },
+            {
+                "key": "_raw_times_detected",
+                "value": "4"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Cookies with the \"secure\" attribute are only permitted to be sent via HTTPS. Cookies sent via HTTP expose an unsuspecting user to sniffing attacks that could lead to user impersonation or compromise of the application account.",
+        "issueName": "Cookie Does Not Contain The \"secure\" Attribute",
+        "issueType": "Confirmed Vulnerability",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150122//7795816",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "614",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "If the associated risk of a compromised account is high, apply the \"secure\" attribute to cookies and force all sensitive requests to be sent via HTTPS.",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "2",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "ACTIVE",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": "https://www.rodanandfields.com/ca",
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "vuln_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150122"
+            },
+            {
+                "key": "vuln_id",
+                "value": "7795822"
+            },
+            {
+                "key": "id",
+                "value": "7795822"
+            },
+            {
+                "key": "first_detected",
+                "value": "09 May 2019 09:10PM GMT-0700"
+            },
+            {
+                "key": "last_detected",
+                "value": "14 Jul 2019 07:08PM GMT-0700"
+            },
+            {
+                "key": "group",
+                "value": "INFO"
+            },
+            {
+                "key": "owasp",
+                "value": "A3"
+            },
+            {
+                "key": "wasc",
+                "value": "WASC-4"
+            },
+            {
+                "key": "description",
+                "value": "The cookie does not contain the \"secure\" attribute."
+            },
+            {
+                "key": "cvss_base",
+                "value": "6.4"
+            },
+            {
+                "key": "cvss_temporal",
+                "value": "5.8"
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_unique_id",
+                "value": "8f416861-a41b-befd-e053-a02410acaab3"
+            },
+            {
+                "key": "_raw_param",
+                "value": "___utmvmBRuFDLcB, ___utmvaBRuFDLcB, ___utmvbBRuFDLcB"
+            },
+            {
+                "key": "_raw_authentication",
+                "value": "Not Required"
+            },
+            {
+                "key": "_raw_ajax",
+                "value": "false"
+            },
+            {
+                "key": "_raw_times_detected",
+                "value": "4"
+            },
+            {
+                "key": "_raw_payloads",
+                "value": {
+                    "PAYLOAD": {
+                        "NUM": "1",
+                        "PAYLOAD": "N/A",
+                        "REQUEST": {
+                            "HEADERS": {
+                                "HEADER": [
+                                    {
+                                        "key": "Host",
+                                        "value": "www.rodanandfields.com"
+                                    },
+                                    {
+                                        "key": "User-Agent",
+                                        "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/601.4.4 (KHTML, like Gecko) Version/9.0.3 Safari/601.4.4"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "*/*"
+                                    }
+                                ]
+                            },
+                            "METHOD": "GET",
+                            "URL": "https://www.rodanandfields.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3"
+                        },
+                        "RESPONSE": {
+                            "CONTENTS": {
+                                "#text": "X19fdXRtdm1CUnVGRExjQj1qY1h5UHlRd05GbzsgZXhwaXJlcz1Nb24gSnVsIDE1IDAyOjI0OjQ4IDIwMTk7IHBhdGg9LzsgZG9tYWluPXd3dy5yb2RhbmFuZGZpZWxkcy5jb207IG1heC1hZ2U9NTY5Cl9fX3V0bXZhQlJ1RkRMY0I9ZkxMAWVwZHU7IGV4cGlyZXM9TW9uIEp1bCAxNSAwMjoyNDo0OCAyMDE5OyBwYXRoPS87IGRvbWFpbj13d3cucm9kYW5hbmRmaWVsZHMuY29tOyBtYXgtYWdlPTU2OQpfX191dG12YkJSdUZETGNCPW1aVCBYVGlPWWFsaDogQnROOyBleHBpcmVzPU1vbiBKdWwgMTUgMDI6MjQ6NDggMjAxOTsgcGF0aD0vOyBkb21haW49d3d3LnJvZGFuYW5kZmllbGRzLmNvbTsgbWF4LWFnZT01Njk=",
+                                "@base64": "true"
+                            }
+                        }
+                    }
+                }
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Cookies with the \"secure\" attribute are only permitted to be sent via HTTPS. Cookies sent via HTTP expose an unsuspecting user to sniffing attacks that could lead to user impersonation or compromise of the application account.",
+        "issueName": "Cookie Does Not Contain The \"secure\" Attribute",
+        "issueType": "Confirmed Vulnerability",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150122//7795822",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "614",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "If the associated risk of a compromised account is high, apply the \"secure\" attribute to cookies and force all sensitive requests to be sent via HTTPS.",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "2",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "ACTIVE",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": "https://www.rodanandfields.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3",
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "vuln_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150123"
+            },
+            {
+                "key": "vuln_id",
+                "value": "7795814"
+            },
+            {
+                "key": "id",
+                "value": "7795814"
+            },
+            {
+                "key": "first_detected",
+                "value": "09 May 2019 09:10PM GMT-0700"
+            },
+            {
+                "key": "last_detected",
+                "value": "14 Jul 2019 07:08PM GMT-0700"
+            },
+            {
+                "key": "group",
+                "value": "INFO"
+            },
+            {
+                "key": "owasp",
+                "value": "A3"
+            },
+            {
+                "key": "wasc",
+                "value": "WASC-4"
+            },
+            {
+                "key": "description",
+                "value": "The cookie does not contain the \"HTTPOnly\" attribute."
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_unique_id",
+                "value": "8f416861-a417-befd-e053-a02410acaab3"
+            },
+            {
+                "key": "_raw_param",
+                "value": "visid_incap_1147811, ___utmvc, incap_ses_480_1147811"
+            },
+            {
+                "key": "_raw_authentication",
+                "value": "Not Required"
+            },
+            {
+                "key": "_raw_ajax",
+                "value": "false"
+            },
+            {
+                "key": "_raw_times_detected",
+                "value": "4"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Cookies without the \"HTTPOnly\" attribute are permitted to be accessed via JavaScript. Cross-site scripting attacks can steal cookies which could lead to user impersonation or compromise of the application account.",
+        "issueName": "Cookie Does Not Contain The \"HTTPOnly\" Attribute",
+        "issueType": "Confirmed Vulnerability",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150123//7795814",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "1004",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "If the associated risk of a compromised account is high, apply the \"HTTPOnly\" attribute to cookies.",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "2",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "ACTIVE",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": "https://www.rodanandfields.com/ca",
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "vuln_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150123"
+            },
+            {
+                "key": "vuln_id",
+                "value": "7795820"
+            },
+            {
+                "key": "id",
+                "value": "7795820"
+            },
+            {
+                "key": "first_detected",
+                "value": "09 May 2019 09:10PM GMT-0700"
+            },
+            {
+                "key": "last_detected",
+                "value": "14 Jul 2019 07:08PM GMT-0700"
+            },
+            {
+                "key": "group",
+                "value": "INFO"
+            },
+            {
+                "key": "owasp",
+                "value": "A3"
+            },
+            {
+                "key": "wasc",
+                "value": "WASC-4"
+            },
+            {
+                "key": "description",
+                "value": "The cookie does not contain the \"HTTPOnly\" attribute."
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_unique_id",
+                "value": "8f416861-a41a-befd-e053-a02410acaab3"
+            },
+            {
+                "key": "_raw_param",
+                "value": "___utmvmBRuFDLcB, ___utmvaBRuFDLcB, ___utmvbBRuFDLcB"
+            },
+            {
+                "key": "_raw_authentication",
+                "value": "Not Required"
+            },
+            {
+                "key": "_raw_ajax",
+                "value": "false"
+            },
+            {
+                "key": "_raw_times_detected",
+                "value": "4"
+            },
+            {
+                "key": "_raw_payloads",
+                "value": {
+                    "PAYLOAD": {
+                        "NUM": "1",
+                        "PAYLOAD": "N/A",
+                        "REQUEST": {
+                            "HEADERS": {
+                                "HEADER": [
+                                    {
+                                        "key": "Host",
+                                        "value": "www.rodanandfields.com"
+                                    },
+                                    {
+                                        "key": "User-Agent",
+                                        "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/601.4.4 (KHTML, like Gecko) Version/9.0.3 Safari/601.4.4"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "*/*"
+                                    }
+                                ]
+                            },
+                            "METHOD": "GET",
+                            "URL": "https://www.rodanandfields.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3"
+                        },
+                        "RESPONSE": {
+                            "CONTENTS": {
+                                "#text": "X19fdXRtdm1CUnVGRExjQj1qY1h5UHlRd05GbzsgZXhwaXJlcz1Nb24gSnVsIDE1IDAyOjI0OjQ4IDIwMTk7IHBhdGg9LzsgZG9tYWluPXd3dy5yb2RhbmFuZGZpZWxkcy5jb207IG1heC1hZ2U9NTY5Cl9fX3V0bXZhQlJ1RkRMY0I9ZkxMAWVwZHU7IGV4cGlyZXM9TW9uIEp1bCAxNSAwMjoyNDo0OCAyMDE5OyBwYXRoPS87IGRvbWFpbj13d3cucm9kYW5hbmRmaWVsZHMuY29tOyBtYXgtYWdlPTU2OQpfX191dG12YkJSdUZETGNCPW1aVCBYVGlPWWFsaDogQnROOyBleHBpcmVzPU1vbiBKdWwgMTUgMDI6MjQ6NDggMjAxOTsgcGF0aD0vOyBkb21haW49d3d3LnJvZGFuYW5kZmllbGRzLmNvbTsgbWF4LWFnZT01Njk=",
+                                "@base64": "true"
+                            }
+                        }
+                    }
+                }
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Cookies without the \"HTTPOnly\" attribute are permitted to be accessed via JavaScript. Cross-site scripting attacks can steal cookies which could lead to user impersonation or compromise of the application account.",
+        "issueName": "Cookie Does Not Contain The \"HTTPOnly\" Attribute",
+        "issueType": "Confirmed Vulnerability",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150123//7795820",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "1004",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "If the associated risk of a compromised account is high, apply the \"HTTPOnly\" attribute to cookies.",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "2",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "ACTIVE",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": "https://www.rodanandfields.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3",
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "vuln_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150124"
+            },
+            {
+                "key": "vuln_id",
+                "value": "7795810"
+            },
+            {
+                "key": "id",
+                "value": "7795810"
+            },
+            {
+                "key": "first_detected",
+                "value": "09 May 2019 09:10PM GMT-0700"
+            },
+            {
+                "key": "last_detected",
+                "value": "14 Jul 2019 07:08PM GMT-0700"
+            },
+            {
+                "key": "group",
+                "value": "INFO"
+            },
+            {
+                "key": "owasp",
+                "value": "A6"
+            },
+            {
+                "key": "wasc",
+                "value": "WASC-15"
+            },
+            {
+                "key": "description",
+                "value": "The web page can be framed. This means that clickjacking attacks against users are possible."
+            },
+            {
+                "key": "cvss_base",
+                "value": "6.4"
+            },
+            {
+                "key": "cvss_temporal",
+                "value": "5.8"
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_unique_id",
+                "value": "8f416861-a415-befd-e053-a02410acaab3"
+            },
+            {
+                "key": "_raw_authentication",
+                "value": "Not Required"
+            },
+            {
+                "key": "_raw_ajax",
+                "value": "false"
+            },
+            {
+                "key": "_raw_times_detected",
+                "value": "4"
+            },
+            {
+                "key": "_raw_payloads",
+                "value": {
+                    "PAYLOAD": {
+                        "NUM": "1",
+                        "PAYLOAD": "N/A",
+                        "REQUEST": {
+                            "HEADERS": {
+                                "HEADER": [
+                                    {
+                                        "key": "Host",
+                                        "value": "www.rodanandfields.com"
+                                    },
+                                    {
+                                        "key": "User-Agent",
+                                        "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/601.4.4 (KHTML, like Gecko) Version/9.0.3 Safari/601.4.4"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "*/*"
+                                    }
+                                ]
+                            },
+                            "METHOD": "GET",
+                            "URL": "https://www.rodanandfields.com/_Incapsula_Resource?CWUDNSAI=21&xinfo=3-72586369-0%200NNN%20RT%281563156585368%205%29%20q%280%20-1%20-1%200%29%20r%280%20-1%29%20B15%284%2c200%2c0%29%20U5&incident_id=480001530199237855-289752607082154387&edet=15&cinfo=04000000"
+                        },
+                        "RESPONSE": {
+                            "CONTENTS": {
+                                "#text": "VGhlIFVSSSB3YXMgZnJhbWVkLgo=",
+                                "@base64": "true"
+                            }
+                        }
+                    }
+                }
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "With clickjacking, an attacker can trick a victim user into clicking an invisible frame on the web page, thereby causing the victim to take an action they did not intend to take.",
+        "issueName": "Clickjacking - Framable Page",
+        "issueType": "Confirmed Vulnerability",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150124//7795810",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "451",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "Clickjacking prevention mechanisms include:<BR>\n- X-Frame-Options: This HTTP response header can be used to prevent framing of web pages.<BR>\n- Content-Security-Policy: The 'frame-ancestors' directive can be used to prevent framing of web pages.<BR>\n- Framekiller JavaScript code designed to prevent a malicious user from framing the page. This method is not recommended due to its unreliability.<P>\n\nSee the <A HREF=\"https://cheatsheetseries.owasp.org/cheatsheets/Clickjacking_Defense_Cheat_Sheet.html\" TARGET=\"_blank\">OWASP Clickjacking Defense Cheat Sheet</A> for more information.",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "3",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 6,
+        "severityCode": "Medium",
+        "status": "ACTIVE",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": "https://www.rodanandfields.com/_Incapsula_Resource?CWUDNSAI=21&xinfo=5-101018338-0%200NNN%20RT%281563156582964%208%29%20q%280%20-1%20-1%20-1%29%20r%280%20-1%29%20B15%284%2C200%2C0%29%20U5&incident_id=480001530199237855-405551728610511253&edet=15&cinfo=04000000",
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "vuln_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150124"
+            },
+            {
+                "key": "vuln_id",
+                "value": "7795818"
+            },
+            {
+                "key": "id",
+                "value": "7795818"
+            },
+            {
+                "key": "first_detected",
+                "value": "09 May 2019 09:10PM GMT-0700"
+            },
+            {
+                "key": "last_detected",
+                "value": "14 Jul 2019 07:08PM GMT-0700"
+            },
+            {
+                "key": "group",
+                "value": "INFO"
+            },
+            {
+                "key": "owasp",
+                "value": "A6"
+            },
+            {
+                "key": "wasc",
+                "value": "WASC-15"
+            },
+            {
+                "key": "description",
+                "value": "The web page can be framed. This means that clickjacking attacks against users are possible."
+            },
+            {
+                "key": "cvss_base",
+                "value": "6.4"
+            },
+            {
+                "key": "cvss_temporal",
+                "value": "5.8"
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_unique_id",
+                "value": "8f416861-a419-befd-e053-a02410acaab3"
+            },
+            {
+                "key": "_raw_authentication",
+                "value": "Not Required"
+            },
+            {
+                "key": "_raw_ajax",
+                "value": "false"
+            },
+            {
+                "key": "_raw_times_detected",
+                "value": "4"
+            },
+            {
+                "key": "_raw_payloads",
+                "value": {
+                    "PAYLOAD": {
+                        "NUM": "1",
+                        "PAYLOAD": "N/A",
+                        "REQUEST": {
+                            "HEADERS": {
+                                "HEADER": [
+                                    {
+                                        "key": "Host",
+                                        "value": "www.rodanandfields.com"
+                                    },
+                                    {
+                                        "key": "User-Agent",
+                                        "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/601.4.4 (KHTML, like Gecko) Version/9.0.3 Safari/601.4.4"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "*/*"
+                                    }
+                                ]
+                            },
+                            "METHOD": "GET",
+                            "URL": "https://www.rodanandfields.com/ca"
+                        },
+                        "RESPONSE": {
+                            "CONTENTS": {
+                                "#text": "VGhlIFVSSSB3YXMgZnJhbWVkLgo=",
+                                "@base64": "true"
+                            }
+                        }
+                    }
+                }
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "With clickjacking, an attacker can trick a victim user into clicking an invisible frame on the web page, thereby causing the victim to take an action they did not intend to take.",
+        "issueName": "Clickjacking - Framable Page",
+        "issueType": "Confirmed Vulnerability",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150124//7795818",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "451",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "Clickjacking prevention mechanisms include:<BR>\n- X-Frame-Options: This HTTP response header can be used to prevent framing of web pages.<BR>\n- Content-Security-Policy: The 'frame-ancestors' directive can be used to prevent framing of web pages.<BR>\n- Framekiller JavaScript code designed to prevent a malicious user from framing the page. This method is not recommended due to its unreliability.<P>\n\nSee the <A HREF=\"https://cheatsheetseries.owasp.org/cheatsheets/Clickjacking_Defense_Cheat_Sheet.html\" TARGET=\"_blank\">OWASP Clickjacking Defense Cheat Sheet</A> for more information.",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "3",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 6,
+        "severityCode": "Medium",
+        "status": "ACTIVE",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": "https://www.rodanandfields.com/ca",
+        "vulnerabilityDetails": null
+    }
+]

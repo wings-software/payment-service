@@ -1,0 +1,771 @@
+[
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "issue_description": "\n        Target Host: nodegoat.herokuapp.com\n        Target Port: 80\n        Target Banner: Cowboy\n        Target IP: 34.226.45.47\n        Site IP: http://34.226.45.47:80/\n        Site Name: http://nodegoat.herokuapp.com:80/\n        Scan IP Link: http://34.226.45.47:80/login/\n        Scan Name Link: http://nodegoat.herokuapp.com:80/login/\n        Scan URI: /login/\n        Method: GET\n        Host Header: nodegoat.herokuapp.com\n        Description: /login/: This might be interesting...\n        OSDVDB: OSDVB-3092",
+                        "issue_name": "/login/: This might be interesting..."
+                    }
+                ]
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "nikto_id",
+                    "port"
+                ]
+            },
+            {
+                "key": "nikto_id",
+                "value": "001736"
+            },
+            {
+                "key": "_raw_@method",
+                "value": "GET"
+            },
+            {
+                "key": "_raw_uri",
+                "value": "/login/"
+            },
+            {
+                "key": "_raw_namelink",
+                "value": "http://nodegoat.herokuapp.com:80/login/"
+            },
+            {
+                "key": "_raw_iplink",
+                "value": "http://34.226.45.47:80/login/"
+            },
+            {
+                "key": "_raw_@siteip",
+                "value": "http://34.226.45.47:80/"
+            },
+            {
+                "key": "_raw_@sitename",
+                "value": "http://nodegoat.herokuapp.com:80/"
+            },
+            {
+                "key": "_raw_@targetbanner",
+                "value": "Cowboy"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": "3092",
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": "nodegoat.herokuapp.com",
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": "34.226.45.47",
+        "issueDescription": "\n        Target Host: nodegoat.herokuapp.com\n        Target Port: 80\n        Target Banner: Cowboy\n        Target IP: 34.226.45.47\n        Site IP: http://34.226.45.47:80/\n        Site Name: http://nodegoat.herokuapp.com:80/\n        Scan IP Link: http://34.226.45.47:80/login/\n        Scan Name Link: http://nodegoat.herokuapp.com:80/login/\n        Scan URI: /login/\n        Method: GET\n        Host Header: nodegoat.herokuapp.com\n        Description: /login/: This might be interesting...\n        OSDVDB: OSDVB-3092",
+        "issueName": "/login/: This might be interesting...",
+        "issueType": "Web scan",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "001736//80",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": "http://osvdb.org/3092",
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": "80",
+        "product": "nikto",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "nikto",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 10,
+        "severityCode": "Critical",
+        "status": "Detection",
+        "tags": [],
+        "target": "nodegoat.herokuapp.com",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "issue_description": "\n        Target Host: nodegoat.herokuapp.com\n        Target Port: 80\n        Target Banner: Cowboy\n        Target IP: 34.226.45.47\n        Site IP: http://34.226.45.47:80/\n        Site Name: http://nodegoat.herokuapp.com:80/\n        Scan IP Link: http://34.226.45.47:80/\n        Scan Name Link: http://nodegoat.herokuapp.com:80/\n        Scan URI: /\n        Method: GET\n        Host Header: nodegoat.herokuapp.com\n        Description: The X-XSS-Protection header is not defined. This header can hint to the user agent to protect against some forms of XSS\n        OSDVDB: OSDVB-0",
+                        "issue_name": "The X-XSS-Protection header is not defined. This header can hint to the user agent to protect against some forms of XSS"
+                    }
+                ]
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "nikto_id",
+                    "port"
+                ]
+            },
+            {
+                "key": "nikto_id",
+                "value": "999102"
+            },
+            {
+                "key": "_raw_@method",
+                "value": "GET"
+            },
+            {
+                "key": "_raw_uri",
+                "value": "/"
+            },
+            {
+                "key": "_raw_namelink",
+                "value": "http://nodegoat.herokuapp.com:80/"
+            },
+            {
+                "key": "_raw_iplink",
+                "value": "http://34.226.45.47:80/"
+            },
+            {
+                "key": "_raw_@targetbanner",
+                "value": "Cowboy"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": "0",
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": "nodegoat.herokuapp.com",
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": "34.226.45.47",
+        "issueDescription": "\n        Target Host: nodegoat.herokuapp.com\n        Target Port: 80\n        Target Banner: Cowboy\n        Target IP: 34.226.45.47\n        Site IP: http://34.226.45.47:80/\n        Site Name: http://nodegoat.herokuapp.com:80/\n        Scan IP Link: http://34.226.45.47:80/\n        Scan Name Link: http://nodegoat.herokuapp.com:80/\n        Scan URI: /\n        Method: GET\n        Host Header: nodegoat.herokuapp.com\n        Description: The X-XSS-Protection header is not defined. This header can hint to the user agent to protect against some forms of XSS\n        OSDVDB: OSDVB-0",
+        "issueName": "The X-XSS-Protection header is not defined. This header can hint to the user agent to protect against some forms of XSS",
+        "issueType": "Web scan",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "999102//80",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": "http://osvdb.org/0",
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": "80",
+        "product": "nikto",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "nikto",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 6,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "nodegoat.herokuapp.com",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "issue_description": "\n        Target Host: nodegoat.herokuapp.com\n        Target Port: 80\n        Target Banner: Cowboy\n        Target IP: 34.226.45.47\n        Site IP: http://34.226.45.47:80/\n        Site Name: http://nodegoat.herokuapp.com:80/\n        Scan IP Link: http://34.226.45.47:80/\n        Scan Name Link: http://nodegoat.herokuapp.com:80/\n        Scan URI: /\n        Method: GET\n        Host Header: nodegoat.herokuapp.com\n        Description: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type\n        OSDVDB: OSDVB-0",
+                        "issue_name": "The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type"
+                    }
+                ]
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "nikto_id",
+                    "port"
+                ]
+            },
+            {
+                "key": "nikto_id",
+                "value": "999103"
+            },
+            {
+                "key": "_raw_@method",
+                "value": "GET"
+            },
+            {
+                "key": "_raw_uri",
+                "value": "/"
+            },
+            {
+                "key": "_raw_namelink",
+                "value": "http://nodegoat.herokuapp.com:80/"
+            },
+            {
+                "key": "_raw_iplink",
+                "value": "http://34.226.45.47:80/"
+            },
+            {
+                "key": "_raw_@targetbanner",
+                "value": "Cowboy"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": "0",
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": "nodegoat.herokuapp.com",
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": "34.226.45.47",
+        "issueDescription": "\n        Target Host: nodegoat.herokuapp.com\n        Target Port: 80\n        Target Banner: Cowboy\n        Target IP: 34.226.45.47\n        Site IP: http://34.226.45.47:80/\n        Site Name: http://nodegoat.herokuapp.com:80/\n        Scan IP Link: http://34.226.45.47:80/\n        Scan Name Link: http://nodegoat.herokuapp.com:80/\n        Scan URI: /\n        Method: GET\n        Host Header: nodegoat.herokuapp.com\n        Description: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type\n        OSDVDB: OSDVB-0",
+        "issueName": "The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type",
+        "issueType": "Web scan",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "999103//80",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": "http://osvdb.org/0",
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": "80",
+        "product": "nikto",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "nikto",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 6,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "nodegoat.herokuapp.com",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "issue_description": "\n        Target Host: nodegoat.herokuapp.com\n        Target Port: 80\n        Target Banner: Cowboy\n        Target IP: 34.226.45.47\n        Site IP: http://34.226.45.47:80/\n        Site Name: http://nodegoat.herokuapp.com:80/\n        Scan IP Link: http://34.226.45.47:80/\n        Scan Name Link: http://nodegoat.herokuapp.com:80/\n        Scan URI: /\n        Method: GET\n        Host Header: nodegoat.herokuapp.com\n        Description: The anti-clickjacking X-Frame-Options header is not present.\n        OSDVDB: OSDVB-0",
+                        "issue_name": "The anti-clickjacking X-Frame-Options header is not present."
+                    }
+                ]
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "nikto_id",
+                    "port"
+                ]
+            },
+            {
+                "key": "nikto_id",
+                "value": "999957"
+            },
+            {
+                "key": "_raw_@method",
+                "value": "GET"
+            },
+            {
+                "key": "_raw_uri",
+                "value": "/"
+            },
+            {
+                "key": "_raw_namelink",
+                "value": "http://nodegoat.herokuapp.com:80/"
+            },
+            {
+                "key": "_raw_iplink",
+                "value": "http://34.226.45.47:80/"
+            },
+            {
+                "key": "_raw_@targetbanner",
+                "value": "Cowboy"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": "0",
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": "nodegoat.herokuapp.com",
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": "34.226.45.47",
+        "issueDescription": "\n        Target Host: nodegoat.herokuapp.com\n        Target Port: 80\n        Target Banner: Cowboy\n        Target IP: 34.226.45.47\n        Site IP: http://34.226.45.47:80/\n        Site Name: http://nodegoat.herokuapp.com:80/\n        Scan IP Link: http://34.226.45.47:80/\n        Scan Name Link: http://nodegoat.herokuapp.com:80/\n        Scan URI: /\n        Method: GET\n        Host Header: nodegoat.herokuapp.com\n        Description: The anti-clickjacking X-Frame-Options header is not present.\n        OSDVDB: OSDVB-0",
+        "issueName": "The anti-clickjacking X-Frame-Options header is not present.",
+        "issueType": "Web scan",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "999957//80",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": "http://osvdb.org/0",
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": "80",
+        "product": "nikto",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "nikto",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 6,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "nodegoat.herokuapp.com",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "issue_description": "\n        Target Host: nodegoat.herokuapp.com\n        Target Port: 80\n        Target Banner: Cowboy\n        Target IP: 34.226.45.47\n        Site IP: http://34.226.45.47:80/\n        Site Name: http://nodegoat.herokuapp.com:80/\n        Scan IP Link: http://34.226.45.47:80/favicon.ico\n        Scan Name Link: http://nodegoat.herokuapp.com:80/favicon.ico\n        Scan URI: /favicon.ico\n        Method: GET\n        Host Header: nodegoat.herokuapp.com\n        Description: Server leaks inodes via ETags, header found with file /favicon.ico, fields: 0x51a06 0xzKhF24g/pW1Cvky7McwSt/aOdFM\n        OSDVDB: OSDVB-0",
+                        "issue_name": "Server leaks inodes via ETags, header found with file /favicon.ico, fields: 0x51a06 0xzKhF24g/pW1Cvky7McwSt/aOdFM"
+                    }
+                ]
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "nikto_id",
+                    "port"
+                ]
+            },
+            {
+                "key": "nikto_id",
+                "value": "999984"
+            },
+            {
+                "key": "_raw_@method",
+                "value": "GET"
+            },
+            {
+                "key": "_raw_uri",
+                "value": "/favicon.ico"
+            },
+            {
+                "key": "_raw_namelink",
+                "value": "http://nodegoat.herokuapp.com:80/favicon.ico"
+            },
+            {
+                "key": "_raw_iplink",
+                "value": "http://34.226.45.47:80/favicon.ico"
+            },
+            {
+                "key": "_raw_@siteip",
+                "value": "http://34.226.45.47:80/"
+            },
+            {
+                "key": "_raw_@sitename",
+                "value": "http://nodegoat.herokuapp.com:80/"
+            },
+            {
+                "key": "_raw_@targetbanner",
+                "value": "Cowboy"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": "0",
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": "nodegoat.herokuapp.com",
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": "34.226.45.47",
+        "issueDescription": "\n        Target Host: nodegoat.herokuapp.com\n        Target Port: 80\n        Target Banner: Cowboy\n        Target IP: 34.226.45.47\n        Site IP: http://34.226.45.47:80/\n        Site Name: http://nodegoat.herokuapp.com:80/\n        Scan IP Link: http://34.226.45.47:80/favicon.ico\n        Scan Name Link: http://nodegoat.herokuapp.com:80/favicon.ico\n        Scan URI: /favicon.ico\n        Method: GET\n        Host Header: nodegoat.herokuapp.com\n        Description: Server leaks inodes via ETags, header found with file /favicon.ico, fields: 0x51a06 0xzKhF24g/pW1Cvky7McwSt/aOdFM\n        OSDVDB: OSDVB-0",
+        "issueName": "Server leaks inodes via ETags, header found with file /favicon.ico, fields: 0x51a06 0xzKhF24g/pW1Cvky7McwSt/aOdFM",
+        "issueType": "Web scan",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "999984//80",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": "http://osvdb.org/0",
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": "80",
+        "product": "nikto",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "nikto",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 6,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "nodegoat.herokuapp.com",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "issue_description": "\n        Target Host: nodegoat.herokuapp.com\n        Target Port: 80\n        Target Banner: Cowboy\n        Target IP: 34.226.45.47\n        Site IP: http://34.226.45.47:80/\n        Site Name: http://nodegoat.herokuapp.com:80/\n        Scan IP Link: http://34.226.45.47:80/\n        Scan Name Link: http://nodegoat.herokuapp.com:80/\n        Scan URI: /\n        Method: GET\n        Host Header: nodegoat.herokuapp.com\n        Description: Retrieved via header: 1.1 vegur\n        OSDVDB: OSDVB-0",
+                        "issue_name": "Retrieved via header: 1.1 vegur"
+                    },
+                    {
+                        "issue_description": "\n        Target Host: nodegoat.herokuapp.com\n        Target Port: 80\n        Target Banner: Cowboy\n        Target IP: 34.226.45.47\n        Site IP: http://34.226.45.47:80/\n        Site Name: http://nodegoat.herokuapp.com:80/\n        Scan IP Link: http://34.226.45.47:80/\n        Scan Name Link: http://nodegoat.herokuapp.com:80/\n        Scan URI: /\n        Method: GET\n        Host Header: nodegoat.herokuapp.com\n        Description: Retrieved x-powered-by header: Express\n        OSDVDB: OSDVB-0",
+                        "issue_name": "Retrieved x-powered-by header: Express"
+                    }
+                ]
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "nikto_id",
+                    "port"
+                ]
+            },
+            {
+                "key": "nikto_id",
+                "value": "999986"
+            },
+            {
+                "key": "_raw_@method",
+                "value": "GET"
+            },
+            {
+                "key": "_raw_uri",
+                "value": "/"
+            },
+            {
+                "key": "_raw_namelink",
+                "value": "http://nodegoat.herokuapp.com:80/"
+            },
+            {
+                "key": "_raw_iplink",
+                "value": "http://34.226.45.47:80/"
+            },
+            {
+                "key": "_raw_@targetbanner",
+                "value": "Cowboy"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": "0",
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": "nodegoat.herokuapp.com",
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": "34.226.45.47",
+        "issueDescription": "\n        Target Host: nodegoat.herokuapp.com\n        Target Port: 80\n        Target Banner: Cowboy\n        Target IP: 34.226.45.47\n        Site IP: http://34.226.45.47:80/\n        Site Name: http://nodegoat.herokuapp.com:80/\n        Scan IP Link: http://34.226.45.47:80/\n        Scan Name Link: http://nodegoat.herokuapp.com:80/\n        Scan URI: /\n        Method: GET\n        Host Header: nodegoat.herokuapp.com\n        Description: Retrieved via header: 1.1 vegur\n        OSDVDB: OSDVB-0",
+        "issueName": "Retrieved via header: 1.1 vegur",
+        "issueType": "Web scan",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "999986//80",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": "http://osvdb.org/0",
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": "80",
+        "product": "nikto",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "nikto",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 6,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "nodegoat.herokuapp.com",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "issue_description": "\n        Target Host: nodegoat.herokuapp.com\n        Target Port: 80\n        Target Banner: Cowboy\n        Target IP: 34.226.45.47\n        Site IP: http://34.226.45.47:80/\n        Site Name: http://nodegoat.herokuapp.com:80/\n        Scan IP Link: http://34.226.45.47:80/\n        Scan Name Link: http://nodegoat.herokuapp.com:80/\n        Scan URI: /\n        Method: OPTIONS\n        Host Header: nodegoat.herokuapp.com\n        Description: Allowed HTTP Methods: GET, HEAD\n        OSDVDB: OSDVB-0",
+                        "issue_name": "Allowed HTTP Methods: GET, HEAD"
+                    }
+                ]
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "nikto_id",
+                    "port"
+                ]
+            },
+            {
+                "key": "nikto_id",
+                "value": "999990"
+            },
+            {
+                "key": "_raw_@method",
+                "value": "OPTIONS"
+            },
+            {
+                "key": "_raw_uri",
+                "value": "/"
+            },
+            {
+                "key": "_raw_namelink",
+                "value": "http://nodegoat.herokuapp.com:80/"
+            },
+            {
+                "key": "_raw_iplink",
+                "value": "http://34.226.45.47:80/"
+            },
+            {
+                "key": "_raw_@targetbanner",
+                "value": "Cowboy"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": "0",
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": "nodegoat.herokuapp.com",
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": "34.226.45.47",
+        "issueDescription": "\n        Target Host: nodegoat.herokuapp.com\n        Target Port: 80\n        Target Banner: Cowboy\n        Target IP: 34.226.45.47\n        Site IP: http://34.226.45.47:80/\n        Site Name: http://nodegoat.herokuapp.com:80/\n        Scan IP Link: http://34.226.45.47:80/\n        Scan Name Link: http://nodegoat.herokuapp.com:80/\n        Scan URI: /\n        Method: OPTIONS\n        Host Header: nodegoat.herokuapp.com\n        Description: Allowed HTTP Methods: GET, HEAD\n        OSDVDB: OSDVB-0",
+        "issueName": "Allowed HTTP Methods: GET, HEAD",
+        "issueType": "Web scan",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "999990//80",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": "http://osvdb.org/0",
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": "80",
+        "product": "nikto",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "nikto",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 6,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "nodegoat.herokuapp.com",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    }
+]

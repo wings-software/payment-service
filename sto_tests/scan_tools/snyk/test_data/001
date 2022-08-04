@@ -1,0 +1,3066 @@
+{
+    "vulnerabilities": [
+        {
+            "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+            "alternativeIds": [],
+            "creationTime": "2020-03-24T15:37:36.850403Z",
+            "credit": [
+                "xiaofen9"
+            ],
+            "cvssScore": 8.1,
+            "description": "## Overview\n[bson](https://www.npmjs.com/package/bson) is a BSON Parser for node and browser.\n\nAffected versions of this package are vulnerable to Internal Property Tampering. The package will ignore an unknown value for an object's `_bsotype`, leading to cases where an object is serialized as a document rather than the intended BSON type.\n## Remediation\nUpgrade `bson` to version 1.1.4 or higher.\n## References\n- [GitHub Commit](https://github.com/mongodb/js-bson/commit/3809c1313a7b2a8001065f0271199df9fa3d16a8)\n- [Release Note](https://github.com/mongodb/js-bson/releases/tag/v1.1.4)\n",
+            "disclosureTime": "2020-03-24T15:35:27Z",
+            "exploit": "Unproven",
+            "fixedIn": [
+                "1.1.4"
+            ],
+            "functions": [],
+            "functions_new": [],
+            "id": "SNYK-JS-BSON-561052",
+            "identifiers": {
+                "CVE": [
+                    "CVE-2019-2391",
+                    "CVE-2020-7610"
+                ],
+                "CWE": [
+                    "CWE-642"
+                ],
+                "GHSA": [
+                    "GHSA-v8w9-2789-6hhr"
+                ]
+            },
+            "language": "js",
+            "modificationTime": "2020-06-12T14:37:02.649274Z",
+            "moduleName": "bson",
+            "packageManager": "npm",
+            "packageName": "bson",
+            "patches": [],
+            "proprietary": false,
+            "publicationTime": "2020-03-24T17:18:18Z",
+            "references": [
+                {
+                    "title": "GitHub Commit",
+                    "url": "https://github.com/mongodb/js-bson/commit/3809c1313a7b2a8001065f0271199df9fa3d16a8"
+                },
+                {
+                    "title": "Release Note",
+                    "url": "https://github.com/mongodb/js-bson/releases/tag/v1.1.4"
+                }
+            ],
+            "semver": {
+                "vulnerable": [
+                    ">=1.0.0 <1.1.4"
+                ]
+            },
+            "severity": "high",
+            "severityWithCritical": "high",
+            "socialTrendAlert": false,
+            "title": "Internal Property Tampering",
+            "from": [
+                "owasp-nodejs-goat@1.3.0",
+                "mongodb@2.2.36",
+                "mongodb-core@2.1.20",
+                "bson@1.0.9"
+            ],
+            "upgradePath": [
+                false,
+                "mongodb@3.1.3",
+                "mongodb-core@3.1.2",
+                "bson@1.1.4"
+            ],
+            "isUpgradable": true,
+            "isPatchable": false,
+            "name": "bson",
+            "version": "1.0.9"
+        },
+        {
+            "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+            "alternativeIds": [],
+            "creationTime": "2020-10-09T09:34:22.716485Z",
+            "credit": [
+                "Yeting Li"
+            ],
+            "cvssScore": 5.3,
+            "description": "## Overview\n[glob-parent](https://www.npmjs.com/package/glob-parent) is a package that helps extracting the non-magic parent path from a glob string.\n\nAffected versions of this package are vulnerable to Regular Expression Denial of Service (ReDoS). The `enclosure` regex used to check for strings ending in enclosure containing path separator.\r\n\r\n### PoC by Yeting Li\r\n```\r\nvar globParent = require(\"glob-parent\")\r\nfunction build_attack(n) {\r\nvar ret = \"{\"\r\nfor (var i = 0; i < n; i++) {\r\nret += \"/\"\r\n}\r\n\r\nreturn ret;\r\n}\r\n\r\nglobParent(build_attack(5000));\r\n```\n\n## Details\n\nDenial of Service (DoS) describes a family of attacks, all aimed at making a system inaccessible to its original and legitimate users. There are many types of DoS attacks, ranging from trying to clog the network pipes to the system by generating a large volume of traffic from many machines (a Distributed Denial of Service - DDoS - attack) to sending crafted requests that cause a system to crash or take a disproportional amount of time to process.\n\nThe Regular expression Denial of Service (ReDoS) is a type of Denial of Service attack. Regular expressions are incredibly powerful, but they aren't very intuitive and can ultimately end up making it easy for attackers to take your site down.\n\nLet’s take the following regular expression as an example:\n```js\nregex = /A(B|C+)+D/\n```\n\nThis regular expression accomplishes the following:\n- `A` The string must start with the letter 'A'\n- `(B|C+)+` The string must then follow the letter A with either the letter 'B' or some number of occurrences of the letter 'C' (the `+` matches one or more times). The `+` at the end of this section states that we can look for one or more matches of this section.\n- `D` Finally, we ensure this section of the string ends with a 'D'\n\nThe expression would match inputs such as `ABBD`, `ABCCCCD`, `ABCBCCCD` and `ACCCCCD`\n\nIt most cases, it doesn't take very long for a regex engine to find a match:\n\n```bash\n$ time node -e '/A(B|C+)+D/.test(\"ACCCCCCCCCCCCCCCCCCCCCCCCCCCCD\")'\n0.04s user 0.01s system 95% cpu 0.052 total\n\n$ time node -e '/A(B|C+)+D/.test(\"ACCCCCCCCCCCCCCCCCCCCCCCCCCCCX\")'\n1.79s user 0.02s system 99% cpu 1.812 total\n```\n\nThe entire process of testing it against a 30 characters long string takes around ~52ms. But when given an invalid string, it takes nearly two seconds to complete the test, over ten times as long as it took to test a valid string. The dramatic difference is due to the way regular expressions get evaluated.\n\nMost Regex engines will work very similarly (with minor differences). The engine will match the first possible way to accept the current character and proceed to the next one. If it then fails to match the next one, it will backtrack and see if there was another way to digest the previous character. If it goes too far down the rabbit hole only to find out the string doesn’t match in the end, and if many characters have multiple valid regex paths, the number of backtracking steps can become very large, resulting in what is known as _catastrophic backtracking_.\n\nLet's look at how our expression runs into this problem, using a shorter string: \"ACCCX\". While it seems fairly straightforward, there are still four different ways that the engine could match those three C's:\n1. CCC\n2. CC+C\n3. C+CC\n4. C+C+C.\n\nThe engine has to try each of those combinations to see if any of them potentially match against the expression. When you combine that with the other steps the engine must take, we can use [RegEx 101 debugger](https://regex101.com/debugger) to see the engine has to take a total of 38 steps before it can determine the string doesn't match.\n\nFrom there, the number of steps the engine must use to validate a string just continues to grow.\n\n| String | Number of C's | Number of steps |\n| -------|-------------:| -----:|\n| ACCCX | 3 | 38\n| ACCCCX | 4 | 71\n| ACCCCCX | 5 | 136\n| ACCCCCCCCCCCCCCX | 14 | 65,553\n\n\nBy the time the string includes 14 C's, the engine has to take over 65,000 steps just to see if the string is valid. These extreme situations can cause them to work very slowly (exponentially related to input size, as shown above), allowing an attacker to exploit this and can cause the service to excessively consume CPU, resulting in a Denial of Service.\n\n## Remediation\nUpgrade `glob-parent` to version 5.1.2 or higher.\n## References\n- [GitHub PR](https://github.com/gulpjs/glob-parent/pull/36)\n- [GitHub Release](https://github.com/gulpjs/glob-parent/releases/tag/v5.1.2)\n",
+            "disclosureTime": "2021-01-12T12:42:32Z",
+            "exploit": "Not Defined",
+            "fixedIn": [
+                "5.1.2"
+            ],
+            "functions": [],
+            "functions_new": [],
+            "id": "SNYK-JS-GLOBPARENT-1016905",
+            "identifiers": {
+                "CVE": [
+                    "CVE-2020-28469"
+                ],
+                "CWE": [
+                    "CWE-400"
+                ],
+                "GHSA": [
+                    "GHSA-ww39-953v-wcq6"
+                ]
+            },
+            "language": "js",
+            "modificationTime": "2021-03-07T15:12:57.015710Z",
+            "moduleName": "glob-parent",
+            "packageManager": "npm",
+            "packageName": "glob-parent",
+            "patches": [],
+            "proprietary": true,
+            "publicationTime": "2021-01-12T15:00:42Z",
+            "references": [
+                {
+                    "title": "GitHub PR",
+                    "url": "https://github.com/gulpjs/glob-parent/pull/36"
+                },
+                {
+                    "title": "GitHub Release",
+                    "url": "https://github.com/gulpjs/glob-parent/releases/tag/v5.1.2"
+                }
+            ],
+            "semver": {
+                "vulnerable": [
+                    "<5.1.2"
+                ]
+            },
+            "severity": "medium",
+            "severityWithCritical": "medium",
+            "socialTrendAlert": false,
+            "title": "Regular Expression Denial of Service (ReDoS)",
+            "from": [
+                "owasp-nodejs-goat@1.3.0",
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "glob-parent@3.1.0"
+            ],
+            "upgradePath": [],
+            "isUpgradable": false,
+            "isPatchable": false,
+            "name": "glob-parent",
+            "version": "3.1.0"
+        },
+        {
+            "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+            "alternativeIds": [],
+            "creationTime": "2019-09-29T08:46:54.888284Z",
+            "credit": [
+                "William Durand"
+            ],
+            "cvssScore": 6.5,
+            "description": "## Overview\n[helmet-csp](https://www.npmjs.com/package/helmet-csp) is a Content Security Policy that helps prevent unwanted content being injected into your webpages.\n\nAffected versions of this package are vulnerable to Configuration Override affecting the application's Content Security Policy (CSP). It's browser sniffing for Firefox deletes the `default-src` CSP policy, which is the fallback policy. This allows an attacker to remove an application's default CSP.\n## Remediation\nUpgrade `helmet-csp` to version 2.9.2 or higher.\n## References\n- [GitHub Commit](https://github.com/helmetjs/csp/commit/67a69baafa8198a154f0505a0cf0875f76f6186a)\n- [NPM Security Advisory](https://www.npmjs.com/advisories/1176)\n",
+            "disclosureTime": "2019-09-20T23:03:16Z",
+            "exploit": "Not Defined",
+            "fixedIn": [
+                "2.9.2"
+            ],
+            "functions": [],
+            "functions_new": [],
+            "id": "SNYK-JS-HELMETCSP-469436",
+            "identifiers": {
+                "CVE": [],
+                "CWE": [
+                    "CWE-16"
+                ],
+                "GHSA": [
+                    "GHSA-c3m8-x3cg-qm2c"
+                ],
+                "NSP": [
+                    1176
+                ]
+            },
+            "language": "js",
+            "modificationTime": "2020-06-12T14:36:55.603877Z",
+            "moduleName": "helmet-csp",
+            "packageManager": "npm",
+            "packageName": "helmet-csp",
+            "patches": [],
+            "proprietary": false,
+            "publicationTime": "2019-09-29T08:51:55Z",
+            "references": [
+                {
+                    "title": "GitHub Commit",
+                    "url": "https://github.com/helmetjs/csp/commit/67a69baafa8198a154f0505a0cf0875f76f6186a"
+                },
+                {
+                    "title": "NPM Security Advisory",
+                    "url": "https://www.npmjs.com/advisories/1176"
+                }
+            ],
+            "semver": {
+                "vulnerable": [
+                    ">=1.2.2 <2.9.2"
+                ]
+            },
+            "severity": "medium",
+            "severityWithCritical": "medium",
+            "socialTrendAlert": false,
+            "title": "Configuration Override",
+            "from": [
+                "owasp-nodejs-goat@1.3.0",
+                "helmet@2.3.0",
+                "helmet-csp@1.2.2"
+            ],
+            "upgradePath": [
+                false,
+                "helmet@3.21.1",
+                "helmet-csp@2.9.2"
+            ],
+            "isUpgradable": true,
+            "isPatchable": false,
+            "name": "helmet-csp",
+            "version": "1.2.2"
+        },
+        {
+            "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L/E:P",
+            "alternativeIds": [],
+            "creationTime": "2020-12-08T15:34:07.743781Z",
+            "credit": [
+                "Eugene Lim",
+                "Government Technology Agency Cyber Security Group"
+            ],
+            "cvssScore": 7.3,
+            "description": "## Overview\n[ini](https://www.npmjs.org/package/ini) is an An ini encoder/decoder for node\n\nAffected versions of this package are vulnerable to Prototype Pollution. If an attacker submits a malicious INI file to an application that parses it with `ini.parse`, they will pollute the prototype on the application. This can be exploited further depending on the context.\r\n\r\n## PoC by Eugene Lim\r\n\r\npayload.ini\r\n```\r\n[__proto__]\r\npolluted = \"polluted\"\r\n```\r\n\r\npoc.js:\r\n```\r\nvar fs = require('fs')\r\nvar ini = require('ini')\r\n\r\nvar parsed = ini.parse(fs.readFileSync('./payload.ini', 'utf-8'))\r\nconsole.log(parsed)\r\nconsole.log(parsed.__proto__)\r\nconsole.log(polluted)\r\n```\r\n\r\n```\r\n> node poc.js\r\n{}\r\n{ polluted: 'polluted' }\r\n{ polluted: 'polluted' }\r\npolluted\r\n```\n\n## Details\n\nPrototype Pollution is a vulnerability affecting JavaScript. Prototype Pollution refers to the ability to inject properties into existing JavaScript language construct prototypes, such as objects. JavaScript allows all Object attributes to be altered, including their magical attributes such as `_proto_`, `constructor` and `prototype`. An attacker manipulates these attributes to overwrite, or pollute, a JavaScript application object prototype of the base object by injecting other values.  Properties on the `Object.prototype` are then inherited by all the JavaScript objects through the prototype chain. When that happens, this leads to either denial of service by triggering JavaScript exceptions, or it tampers with the application source code to force the code path that the attacker injects, thereby leading to remote code execution.\n\nThere are two main ways in which the pollution of prototypes occurs:\n\n-   Unsafe `Object` recursive merge\n    \n-   Property definition by path\n    \n\n### Unsafe Object recursive merge\n\nThe logic of a vulnerable recursive merge function follows the following high-level model:\n```\nmerge (target, source)\n\n  foreach property of source\n\n    if property exists and is an object on both the target and the source\n\n      merge(target[property], source[property])\n\n    else\n\n      target[property] = source[property]\n```\n<br>  \n\nWhen the source object contains a property named `_proto_` defined with `Object.defineProperty()` , the condition that checks if the property exists and is an object on both the target and the source passes and the merge recurses with the target, being the prototype of `Object` and the source of `Object` as defined by the attacker. Properties are then copied on the `Object` prototype.\n\nClone operations are a special sub-class of unsafe recursive merges, which occur when a recursive merge is conducted on an empty object: `merge({},source)`.\n\n`lodash` and `Hoek` are examples of libraries susceptible to recursive merge attacks.\n\n### Property definition by path\n\nThere are a few JavaScript libraries that use an API to define property values on an object based on a given path. The function that is generally affected contains this signature: `theFunction(object, path, value)`\n\nIf the attacker can control the value of “path”, they can set this value to `_proto_.myValue`. `myValue` is then assigned to the prototype of the class of the object.\n\n## Types of attacks\n\nThere are a few methods by which Prototype Pollution can be manipulated:\n\n| Type |Origin  |Short description |\n|--|--|--|\n| **Denial of service (DoS)**|Client  |This is the most likely attack. <br>DoS occurs when `Object` holds generic functions that are implicitly called for various operations (for example, `toString` and `valueOf`). <br> The attacker pollutes `Object.prototype.someattr` and alters its state to an unexpected value such as `Int` or `Object`. In this case, the code fails and is likely to cause a denial of service.  <br>**For example:** if an attacker pollutes `Object.prototype.toString` by defining it as an integer, if the codebase at any point was reliant on `someobject.toString()` it would fail. |\n |**Remote Code Execution**|Client|Remote code execution is generally only possible in cases where the codebase evaluates a specific attribute of an object, and then executes that evaluation.<br>**For example:** `eval(someobject.someattr)`. In this case, if the attacker pollutes `Object.prototype.someattr` they are likely to be able to leverage this in order to execute code.|\n|**Property Injection**|Client|The attacker pollutes properties that the codebase relies on for their informative value, including security properties such as cookies or tokens.<br>  **For example:** if a codebase checks privileges for `someuser.isAdmin`, then when the attacker pollutes `Object.prototype.isAdmin` and sets it to equal `true`, they can then achieve admin privileges.|\n\n## Affected environments\n\nThe following environments are susceptible to a Prototype Pollution attack:\n\n-   Application server\n    \n-   Web server\n    \n\n## How to prevent\n\n1.  Freeze the prototype— use `Object.freeze (Object.prototype)`.\n    \n2.  Require schema validation of JSON input.\n    \n3.  Avoid using unsafe recursive merge functions.\n    \n4.  Consider using objects without prototypes (for example, `Object.create(null)`), breaking the prototype chain and preventing pollution.\n    \n5.  As a best practice use `Map` instead of `Object`.\n\n### For more information on this vulnerability type:\n\n[Arteau, Oliver. “JavaScript prototype pollution attack in NodeJS application.” GitHub, 26 May 2018](https://github.com/HoLyVieR/prototype-pollution-nsec18/blob/master/paper/JavaScript_prototype_pollution_attack_in_NodeJS.pdf)\n\n## Remediation\nUpgrade `ini` to version 1.3.6 or higher.\n## References\n- [Eugene Lim - Research Blog Post](https://medium.com/csg-govtech/supply-chain-pollution-discovering-a-16-million-download-week-node-js-2fa4d2c27cf7)\n- [GitHub Commit](https://github.com/npm/ini/commit/56d2805e07ccd94e2ba0984ac9240ff02d44b6f1)\n",
+            "disclosureTime": "2020-12-08T13:02:04Z",
+            "exploit": "Proof of Concept",
+            "fixedIn": [
+                "1.3.6"
+            ],
+            "functions": [],
+            "functions_new": [],
+            "id": "SNYK-JS-INI-1048974",
+            "identifiers": {
+                "CVE": [
+                    "CVE-2020-7788"
+                ],
+                "CWE": [
+                    "CWE-400"
+                ],
+                "GHSA": [
+                    "GHSA-qqgx-2p2h-9c37"
+                ]
+            },
+            "language": "js",
+            "modificationTime": "2020-12-10T18:09:23.069283Z",
+            "moduleName": "ini",
+            "packageManager": "npm",
+            "packageName": "ini",
+            "patches": [],
+            "proprietary": true,
+            "publicationTime": "2020-12-10T18:08:38Z",
+            "references": [
+                {
+                    "title": "Eugene Lim - Research Blog Post",
+                    "url": "https://medium.com/csg-govtech/supply-chain-pollution-discovering-a-16-million-download-week-node-js-2fa4d2c27cf7"
+                },
+                {
+                    "title": "GitHub Commit",
+                    "url": "https://github.com/npm/ini/commit/56d2805e07ccd94e2ba0984ac9240ff02d44b6f1"
+                }
+            ],
+            "semver": {
+                "vulnerable": [
+                    "<1.3.6"
+                ]
+            },
+            "severity": "high",
+            "severityWithCritical": "high",
+            "socialTrendAlert": false,
+            "title": "Prototype Pollution",
+            "from": [
+                "owasp-nodejs-goat@1.3.0",
+                "forever@2.0.0",
+                "nconf@0.10.0",
+                "ini@1.3.5"
+            ],
+            "upgradePath": [
+                false,
+                "forever@2.0.0",
+                "nconf@0.10.0",
+                "ini@1.3.6"
+            ],
+            "isUpgradable": true,
+            "isPatchable": false,
+            "name": "ini",
+            "version": "1.3.5"
+        },
+        {
+            "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L/E:P",
+            "alternativeIds": [],
+            "creationTime": "2020-12-08T15:34:07.743781Z",
+            "credit": [
+                "Eugene Lim",
+                "Government Technology Agency Cyber Security Group"
+            ],
+            "cvssScore": 7.3,
+            "description": "## Overview\n[ini](https://www.npmjs.org/package/ini) is an An ini encoder/decoder for node\n\nAffected versions of this package are vulnerable to Prototype Pollution. If an attacker submits a malicious INI file to an application that parses it with `ini.parse`, they will pollute the prototype on the application. This can be exploited further depending on the context.\r\n\r\n## PoC by Eugene Lim\r\n\r\npayload.ini\r\n```\r\n[__proto__]\r\npolluted = \"polluted\"\r\n```\r\n\r\npoc.js:\r\n```\r\nvar fs = require('fs')\r\nvar ini = require('ini')\r\n\r\nvar parsed = ini.parse(fs.readFileSync('./payload.ini', 'utf-8'))\r\nconsole.log(parsed)\r\nconsole.log(parsed.__proto__)\r\nconsole.log(polluted)\r\n```\r\n\r\n```\r\n> node poc.js\r\n{}\r\n{ polluted: 'polluted' }\r\n{ polluted: 'polluted' }\r\npolluted\r\n```\n\n## Details\n\nPrototype Pollution is a vulnerability affecting JavaScript. Prototype Pollution refers to the ability to inject properties into existing JavaScript language construct prototypes, such as objects. JavaScript allows all Object attributes to be altered, including their magical attributes such as `_proto_`, `constructor` and `prototype`. An attacker manipulates these attributes to overwrite, or pollute, a JavaScript application object prototype of the base object by injecting other values.  Properties on the `Object.prototype` are then inherited by all the JavaScript objects through the prototype chain. When that happens, this leads to either denial of service by triggering JavaScript exceptions, or it tampers with the application source code to force the code path that the attacker injects, thereby leading to remote code execution.\n\nThere are two main ways in which the pollution of prototypes occurs:\n\n-   Unsafe `Object` recursive merge\n    \n-   Property definition by path\n    \n\n### Unsafe Object recursive merge\n\nThe logic of a vulnerable recursive merge function follows the following high-level model:\n```\nmerge (target, source)\n\n  foreach property of source\n\n    if property exists and is an object on both the target and the source\n\n      merge(target[property], source[property])\n\n    else\n\n      target[property] = source[property]\n```\n<br>  \n\nWhen the source object contains a property named `_proto_` defined with `Object.defineProperty()` , the condition that checks if the property exists and is an object on both the target and the source passes and the merge recurses with the target, being the prototype of `Object` and the source of `Object` as defined by the attacker. Properties are then copied on the `Object` prototype.\n\nClone operations are a special sub-class of unsafe recursive merges, which occur when a recursive merge is conducted on an empty object: `merge({},source)`.\n\n`lodash` and `Hoek` are examples of libraries susceptible to recursive merge attacks.\n\n### Property definition by path\n\nThere are a few JavaScript libraries that use an API to define property values on an object based on a given path. The function that is generally affected contains this signature: `theFunction(object, path, value)`\n\nIf the attacker can control the value of “path”, they can set this value to `_proto_.myValue`. `myValue` is then assigned to the prototype of the class of the object.\n\n## Types of attacks\n\nThere are a few methods by which Prototype Pollution can be manipulated:\n\n| Type |Origin  |Short description |\n|--|--|--|\n| **Denial of service (DoS)**|Client  |This is the most likely attack. <br>DoS occurs when `Object` holds generic functions that are implicitly called for various operations (for example, `toString` and `valueOf`). <br> The attacker pollutes `Object.prototype.someattr` and alters its state to an unexpected value such as `Int` or `Object`. In this case, the code fails and is likely to cause a denial of service.  <br>**For example:** if an attacker pollutes `Object.prototype.toString` by defining it as an integer, if the codebase at any point was reliant on `someobject.toString()` it would fail. |\n |**Remote Code Execution**|Client|Remote code execution is generally only possible in cases where the codebase evaluates a specific attribute of an object, and then executes that evaluation.<br>**For example:** `eval(someobject.someattr)`. In this case, if the attacker pollutes `Object.prototype.someattr` they are likely to be able to leverage this in order to execute code.|\n|**Property Injection**|Client|The attacker pollutes properties that the codebase relies on for their informative value, including security properties such as cookies or tokens.<br>  **For example:** if a codebase checks privileges for `someuser.isAdmin`, then when the attacker pollutes `Object.prototype.isAdmin` and sets it to equal `true`, they can then achieve admin privileges.|\n\n## Affected environments\n\nThe following environments are susceptible to a Prototype Pollution attack:\n\n-   Application server\n    \n-   Web server\n    \n\n## How to prevent\n\n1.  Freeze the prototype— use `Object.freeze (Object.prototype)`.\n    \n2.  Require schema validation of JSON input.\n    \n3.  Avoid using unsafe recursive merge functions.\n    \n4.  Consider using objects without prototypes (for example, `Object.create(null)`), breaking the prototype chain and preventing pollution.\n    \n5.  As a best practice use `Map` instead of `Object`.\n\n### For more information on this vulnerability type:\n\n[Arteau, Oliver. “JavaScript prototype pollution attack in NodeJS application.” GitHub, 26 May 2018](https://github.com/HoLyVieR/prototype-pollution-nsec18/blob/master/paper/JavaScript_prototype_pollution_attack_in_NodeJS.pdf)\n\n## Remediation\nUpgrade `ini` to version 1.3.6 or higher.\n## References\n- [Eugene Lim - Research Blog Post](https://medium.com/csg-govtech/supply-chain-pollution-discovering-a-16-million-download-week-node-js-2fa4d2c27cf7)\n- [GitHub Commit](https://github.com/npm/ini/commit/56d2805e07ccd94e2ba0984ac9240ff02d44b6f1)\n",
+            "disclosureTime": "2020-12-08T13:02:04Z",
+            "exploit": "Proof of Concept",
+            "fixedIn": [
+                "1.3.6"
+            ],
+            "functions": [],
+            "functions_new": [],
+            "id": "SNYK-JS-INI-1048974",
+            "identifiers": {
+                "CVE": [
+                    "CVE-2020-7788"
+                ],
+                "CWE": [
+                    "CWE-400"
+                ],
+                "GHSA": [
+                    "GHSA-qqgx-2p2h-9c37"
+                ]
+            },
+            "language": "js",
+            "modificationTime": "2020-12-10T18:09:23.069283Z",
+            "moduleName": "ini",
+            "packageManager": "npm",
+            "packageName": "ini",
+            "patches": [],
+            "proprietary": true,
+            "publicationTime": "2020-12-10T18:08:38Z",
+            "references": [
+                {
+                    "title": "Eugene Lim - Research Blog Post",
+                    "url": "https://medium.com/csg-govtech/supply-chain-pollution-discovering-a-16-million-download-week-node-js-2fa4d2c27cf7"
+                },
+                {
+                    "title": "GitHub Commit",
+                    "url": "https://github.com/npm/ini/commit/56d2805e07ccd94e2ba0984ac9240ff02d44b6f1"
+                }
+            ],
+            "semver": {
+                "vulnerable": [
+                    "<1.3.6"
+                ]
+            },
+            "severity": "high",
+            "severityWithCritical": "high",
+            "socialTrendAlert": false,
+            "title": "Prototype Pollution",
+            "from": [
+                "owasp-nodejs-goat@1.3.0",
+                "forever@2.0.0",
+                "flatiron@0.4.3",
+                "broadway@0.3.6",
+                "nconf@0.6.9",
+                "ini@1.3.5"
+            ],
+            "upgradePath": [
+                false,
+                "forever@2.0.0",
+                "flatiron@0.4.3",
+                "broadway@0.3.6",
+                "nconf@0.6.9",
+                "ini@1.3.6"
+            ],
+            "isUpgradable": true,
+            "isPatchable": false,
+            "name": "ini",
+            "version": "1.3.5"
+        },
+        {
+            "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L/E:P",
+            "alternativeIds": [],
+            "creationTime": "2020-12-08T15:34:07.743781Z",
+            "credit": [
+                "Eugene Lim",
+                "Government Technology Agency Cyber Security Group"
+            ],
+            "cvssScore": 7.3,
+            "description": "## Overview\n[ini](https://www.npmjs.org/package/ini) is an An ini encoder/decoder for node\n\nAffected versions of this package are vulnerable to Prototype Pollution. If an attacker submits a malicious INI file to an application that parses it with `ini.parse`, they will pollute the prototype on the application. This can be exploited further depending on the context.\r\n\r\n## PoC by Eugene Lim\r\n\r\npayload.ini\r\n```\r\n[__proto__]\r\npolluted = \"polluted\"\r\n```\r\n\r\npoc.js:\r\n```\r\nvar fs = require('fs')\r\nvar ini = require('ini')\r\n\r\nvar parsed = ini.parse(fs.readFileSync('./payload.ini', 'utf-8'))\r\nconsole.log(parsed)\r\nconsole.log(parsed.__proto__)\r\nconsole.log(polluted)\r\n```\r\n\r\n```\r\n> node poc.js\r\n{}\r\n{ polluted: 'polluted' }\r\n{ polluted: 'polluted' }\r\npolluted\r\n```\n\n## Details\n\nPrototype Pollution is a vulnerability affecting JavaScript. Prototype Pollution refers to the ability to inject properties into existing JavaScript language construct prototypes, such as objects. JavaScript allows all Object attributes to be altered, including their magical attributes such as `_proto_`, `constructor` and `prototype`. An attacker manipulates these attributes to overwrite, or pollute, a JavaScript application object prototype of the base object by injecting other values.  Properties on the `Object.prototype` are then inherited by all the JavaScript objects through the prototype chain. When that happens, this leads to either denial of service by triggering JavaScript exceptions, or it tampers with the application source code to force the code path that the attacker injects, thereby leading to remote code execution.\n\nThere are two main ways in which the pollution of prototypes occurs:\n\n-   Unsafe `Object` recursive merge\n    \n-   Property definition by path\n    \n\n### Unsafe Object recursive merge\n\nThe logic of a vulnerable recursive merge function follows the following high-level model:\n```\nmerge (target, source)\n\n  foreach property of source\n\n    if property exists and is an object on both the target and the source\n\n      merge(target[property], source[property])\n\n    else\n\n      target[property] = source[property]\n```\n<br>  \n\nWhen the source object contains a property named `_proto_` defined with `Object.defineProperty()` , the condition that checks if the property exists and is an object on both the target and the source passes and the merge recurses with the target, being the prototype of `Object` and the source of `Object` as defined by the attacker. Properties are then copied on the `Object` prototype.\n\nClone operations are a special sub-class of unsafe recursive merges, which occur when a recursive merge is conducted on an empty object: `merge({},source)`.\n\n`lodash` and `Hoek` are examples of libraries susceptible to recursive merge attacks.\n\n### Property definition by path\n\nThere are a few JavaScript libraries that use an API to define property values on an object based on a given path. The function that is generally affected contains this signature: `theFunction(object, path, value)`\n\nIf the attacker can control the value of “path”, they can set this value to `_proto_.myValue`. `myValue` is then assigned to the prototype of the class of the object.\n\n## Types of attacks\n\nThere are a few methods by which Prototype Pollution can be manipulated:\n\n| Type |Origin  |Short description |\n|--|--|--|\n| **Denial of service (DoS)**|Client  |This is the most likely attack. <br>DoS occurs when `Object` holds generic functions that are implicitly called for various operations (for example, `toString` and `valueOf`). <br> The attacker pollutes `Object.prototype.someattr` and alters its state to an unexpected value such as `Int` or `Object`. In this case, the code fails and is likely to cause a denial of service.  <br>**For example:** if an attacker pollutes `Object.prototype.toString` by defining it as an integer, if the codebase at any point was reliant on `someobject.toString()` it would fail. |\n |**Remote Code Execution**|Client|Remote code execution is generally only possible in cases where the codebase evaluates a specific attribute of an object, and then executes that evaluation.<br>**For example:** `eval(someobject.someattr)`. In this case, if the attacker pollutes `Object.prototype.someattr` they are likely to be able to leverage this in order to execute code.|\n|**Property Injection**|Client|The attacker pollutes properties that the codebase relies on for their informative value, including security properties such as cookies or tokens.<br>  **For example:** if a codebase checks privileges for `someuser.isAdmin`, then when the attacker pollutes `Object.prototype.isAdmin` and sets it to equal `true`, they can then achieve admin privileges.|\n\n## Affected environments\n\nThe following environments are susceptible to a Prototype Pollution attack:\n\n-   Application server\n    \n-   Web server\n    \n\n## How to prevent\n\n1.  Freeze the prototype— use `Object.freeze (Object.prototype)`.\n    \n2.  Require schema validation of JSON input.\n    \n3.  Avoid using unsafe recursive merge functions.\n    \n4.  Consider using objects without prototypes (for example, `Object.create(null)`), breaking the prototype chain and preventing pollution.\n    \n5.  As a best practice use `Map` instead of `Object`.\n\n### For more information on this vulnerability type:\n\n[Arteau, Oliver. “JavaScript prototype pollution attack in NodeJS application.” GitHub, 26 May 2018](https://github.com/HoLyVieR/prototype-pollution-nsec18/blob/master/paper/JavaScript_prototype_pollution_attack_in_NodeJS.pdf)\n\n## Remediation\nUpgrade `ini` to version 1.3.6 or higher.\n## References\n- [Eugene Lim - Research Blog Post](https://medium.com/csg-govtech/supply-chain-pollution-discovering-a-16-million-download-week-node-js-2fa4d2c27cf7)\n- [GitHub Commit](https://github.com/npm/ini/commit/56d2805e07ccd94e2ba0984ac9240ff02d44b6f1)\n",
+            "disclosureTime": "2020-12-08T13:02:04Z",
+            "exploit": "Proof of Concept",
+            "fixedIn": [
+                "1.3.6"
+            ],
+            "functions": [],
+            "functions_new": [],
+            "id": "SNYK-JS-INI-1048974",
+            "identifiers": {
+                "CVE": [
+                    "CVE-2020-7788"
+                ],
+                "CWE": [
+                    "CWE-400"
+                ],
+                "GHSA": [
+                    "GHSA-qqgx-2p2h-9c37"
+                ]
+            },
+            "language": "js",
+            "modificationTime": "2020-12-10T18:09:23.069283Z",
+            "moduleName": "ini",
+            "packageManager": "npm",
+            "packageName": "ini",
+            "patches": [],
+            "proprietary": true,
+            "publicationTime": "2020-12-10T18:08:38Z",
+            "references": [
+                {
+                    "title": "Eugene Lim - Research Blog Post",
+                    "url": "https://medium.com/csg-govtech/supply-chain-pollution-discovering-a-16-million-download-week-node-js-2fa4d2c27cf7"
+                },
+                {
+                    "title": "GitHub Commit",
+                    "url": "https://github.com/npm/ini/commit/56d2805e07ccd94e2ba0984ac9240ff02d44b6f1"
+                }
+            ],
+            "semver": {
+                "vulnerable": [
+                    "<1.3.6"
+                ]
+            },
+            "severity": "high",
+            "severityWithCritical": "high",
+            "socialTrendAlert": false,
+            "title": "Prototype Pollution",
+            "from": [
+                "owasp-nodejs-goat@1.3.0",
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "broadway@0.3.6",
+                "nconf@0.6.9",
+                "ini@1.3.5"
+            ],
+            "upgradePath": [
+                false,
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "broadway@0.3.6",
+                "nconf@0.6.9",
+                "ini@1.3.6"
+            ],
+            "isUpgradable": true,
+            "isPatchable": false,
+            "name": "ini",
+            "version": "1.3.5"
+        },
+        {
+            "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L/E:P",
+            "alternativeIds": [],
+            "creationTime": "2020-12-08T15:34:07.743781Z",
+            "credit": [
+                "Eugene Lim",
+                "Government Technology Agency Cyber Security Group"
+            ],
+            "cvssScore": 7.3,
+            "description": "## Overview\n[ini](https://www.npmjs.org/package/ini) is an An ini encoder/decoder for node\n\nAffected versions of this package are vulnerable to Prototype Pollution. If an attacker submits a malicious INI file to an application that parses it with `ini.parse`, they will pollute the prototype on the application. This can be exploited further depending on the context.\r\n\r\n## PoC by Eugene Lim\r\n\r\npayload.ini\r\n```\r\n[__proto__]\r\npolluted = \"polluted\"\r\n```\r\n\r\npoc.js:\r\n```\r\nvar fs = require('fs')\r\nvar ini = require('ini')\r\n\r\nvar parsed = ini.parse(fs.readFileSync('./payload.ini', 'utf-8'))\r\nconsole.log(parsed)\r\nconsole.log(parsed.__proto__)\r\nconsole.log(polluted)\r\n```\r\n\r\n```\r\n> node poc.js\r\n{}\r\n{ polluted: 'polluted' }\r\n{ polluted: 'polluted' }\r\npolluted\r\n```\n\n## Details\n\nPrototype Pollution is a vulnerability affecting JavaScript. Prototype Pollution refers to the ability to inject properties into existing JavaScript language construct prototypes, such as objects. JavaScript allows all Object attributes to be altered, including their magical attributes such as `_proto_`, `constructor` and `prototype`. An attacker manipulates these attributes to overwrite, or pollute, a JavaScript application object prototype of the base object by injecting other values.  Properties on the `Object.prototype` are then inherited by all the JavaScript objects through the prototype chain. When that happens, this leads to either denial of service by triggering JavaScript exceptions, or it tampers with the application source code to force the code path that the attacker injects, thereby leading to remote code execution.\n\nThere are two main ways in which the pollution of prototypes occurs:\n\n-   Unsafe `Object` recursive merge\n    \n-   Property definition by path\n    \n\n### Unsafe Object recursive merge\n\nThe logic of a vulnerable recursive merge function follows the following high-level model:\n```\nmerge (target, source)\n\n  foreach property of source\n\n    if property exists and is an object on both the target and the source\n\n      merge(target[property], source[property])\n\n    else\n\n      target[property] = source[property]\n```\n<br>  \n\nWhen the source object contains a property named `_proto_` defined with `Object.defineProperty()` , the condition that checks if the property exists and is an object on both the target and the source passes and the merge recurses with the target, being the prototype of `Object` and the source of `Object` as defined by the attacker. Properties are then copied on the `Object` prototype.\n\nClone operations are a special sub-class of unsafe recursive merges, which occur when a recursive merge is conducted on an empty object: `merge({},source)`.\n\n`lodash` and `Hoek` are examples of libraries susceptible to recursive merge attacks.\n\n### Property definition by path\n\nThere are a few JavaScript libraries that use an API to define property values on an object based on a given path. The function that is generally affected contains this signature: `theFunction(object, path, value)`\n\nIf the attacker can control the value of “path”, they can set this value to `_proto_.myValue`. `myValue` is then assigned to the prototype of the class of the object.\n\n## Types of attacks\n\nThere are a few methods by which Prototype Pollution can be manipulated:\n\n| Type |Origin  |Short description |\n|--|--|--|\n| **Denial of service (DoS)**|Client  |This is the most likely attack. <br>DoS occurs when `Object` holds generic functions that are implicitly called for various operations (for example, `toString` and `valueOf`). <br> The attacker pollutes `Object.prototype.someattr` and alters its state to an unexpected value such as `Int` or `Object`. In this case, the code fails and is likely to cause a denial of service.  <br>**For example:** if an attacker pollutes `Object.prototype.toString` by defining it as an integer, if the codebase at any point was reliant on `someobject.toString()` it would fail. |\n |**Remote Code Execution**|Client|Remote code execution is generally only possible in cases where the codebase evaluates a specific attribute of an object, and then executes that evaluation.<br>**For example:** `eval(someobject.someattr)`. In this case, if the attacker pollutes `Object.prototype.someattr` they are likely to be able to leverage this in order to execute code.|\n|**Property Injection**|Client|The attacker pollutes properties that the codebase relies on for their informative value, including security properties such as cookies or tokens.<br>  **For example:** if a codebase checks privileges for `someuser.isAdmin`, then when the attacker pollutes `Object.prototype.isAdmin` and sets it to equal `true`, they can then achieve admin privileges.|\n\n## Affected environments\n\nThe following environments are susceptible to a Prototype Pollution attack:\n\n-   Application server\n    \n-   Web server\n    \n\n## How to prevent\n\n1.  Freeze the prototype— use `Object.freeze (Object.prototype)`.\n    \n2.  Require schema validation of JSON input.\n    \n3.  Avoid using unsafe recursive merge functions.\n    \n4.  Consider using objects without prototypes (for example, `Object.create(null)`), breaking the prototype chain and preventing pollution.\n    \n5.  As a best practice use `Map` instead of `Object`.\n\n### For more information on this vulnerability type:\n\n[Arteau, Oliver. “JavaScript prototype pollution attack in NodeJS application.” GitHub, 26 May 2018](https://github.com/HoLyVieR/prototype-pollution-nsec18/blob/master/paper/JavaScript_prototype_pollution_attack_in_NodeJS.pdf)\n\n## Remediation\nUpgrade `ini` to version 1.3.6 or higher.\n## References\n- [Eugene Lim - Research Blog Post](https://medium.com/csg-govtech/supply-chain-pollution-discovering-a-16-million-download-week-node-js-2fa4d2c27cf7)\n- [GitHub Commit](https://github.com/npm/ini/commit/56d2805e07ccd94e2ba0984ac9240ff02d44b6f1)\n",
+            "disclosureTime": "2020-12-08T13:02:04Z",
+            "exploit": "Proof of Concept",
+            "fixedIn": [
+                "1.3.6"
+            ],
+            "functions": [],
+            "functions_new": [],
+            "id": "SNYK-JS-INI-1048974",
+            "identifiers": {
+                "CVE": [
+                    "CVE-2020-7788"
+                ],
+                "CWE": [
+                    "CWE-400"
+                ],
+                "GHSA": [
+                    "GHSA-qqgx-2p2h-9c37"
+                ]
+            },
+            "language": "js",
+            "modificationTime": "2020-12-10T18:09:23.069283Z",
+            "moduleName": "ini",
+            "packageManager": "npm",
+            "packageName": "ini",
+            "patches": [],
+            "proprietary": true,
+            "publicationTime": "2020-12-10T18:08:38Z",
+            "references": [
+                {
+                    "title": "Eugene Lim - Research Blog Post",
+                    "url": "https://medium.com/csg-govtech/supply-chain-pollution-discovering-a-16-million-download-week-node-js-2fa4d2c27cf7"
+                },
+                {
+                    "title": "GitHub Commit",
+                    "url": "https://github.com/npm/ini/commit/56d2805e07ccd94e2ba0984ac9240ff02d44b6f1"
+                }
+            ],
+            "semver": {
+                "vulnerable": [
+                    "<1.3.6"
+                ]
+            },
+            "severity": "high",
+            "severityWithCritical": "high",
+            "socialTrendAlert": false,
+            "title": "Prototype Pollution",
+            "from": [
+                "owasp-nodejs-goat@1.3.0",
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "fsevents@1.2.9",
+                "node-pre-gyp@0.12.0",
+                "rc@1.2.8",
+                "ini@1.3.5"
+            ],
+            "upgradePath": [
+                false,
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "fsevents@1.2.9",
+                "node-pre-gyp@0.12.0",
+                "rc@1.2.8",
+                "ini@1.3.6"
+            ],
+            "isUpgradable": true,
+            "isPatchable": false,
+            "name": "ini",
+            "version": "1.3.5"
+        },
+        {
+            "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N/E:P/RL:O/RC:C",
+            "alternativeIds": [],
+            "creationTime": "2019-12-16T14:21:14.675101Z",
+            "credit": [
+                "Feng Xiao"
+            ],
+            "cvssScore": 3.7,
+            "description": "## Overview\n[kind-of](https://github.com/jonschlinkert/kind-of) is a package that gets the native type of a value.\n\nAffected versions of this package are vulnerable to Validation Bypass. It leverages the built-in constructor of unsafe user-input to detect type information. However, a crafted payload can overwrite this built in attribute to manipulate the type detection result.\r\n\r\n## PoC by Feng Xiao\r\n```\r\nvar kindOf = require('kind-of');\r\n\r\n\r\nvar user_input = {\r\n  user: 'barney',\r\n  age: 36,\r\n  active: true,\r\n  \"constructor\":{\"name\":\"Symbol\"}\r\n};\r\nconsole.log(kindOf(user_input));\r\n```\n## Remediation\nUpgrade `kind-of` to version 6.0.3 or higher.\n## References\n- [GitHub Issue](https://github.com/jonschlinkert/kind-of/issues/30)\n- [GitHub PR](https://github.com/jonschlinkert/kind-of/pull/31)\n",
+            "disclosureTime": "2019-12-16T14:31:14Z",
+            "exploit": "Proof of Concept",
+            "fixedIn": [
+                "6.0.3"
+            ],
+            "functions": [
+                {
+                    "functionId": {
+                        "className": null,
+                        "filePath": "index.js",
+                        "functionName": "ctorName"
+                    },
+                    "version": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            ],
+            "functions_new": [
+                {
+                    "functionId": {
+                        "filePath": "index.js",
+                        "functionName": "ctorName"
+                    },
+                    "version": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            ],
+            "id": "SNYK-JS-KINDOF-537849",
+            "identifiers": {
+                "CVE": [
+                    "CVE-2019-20149"
+                ],
+                "CWE": [
+                    "CWE-20"
+                ],
+                "GHSA": [
+                    "GHSA-6c8f-qphg-qjgp"
+                ],
+                "NSP": [
+                    1490
+                ]
+            },
+            "language": "js",
+            "modificationTime": "2020-06-12T14:36:55.567043Z",
+            "moduleName": "kind-of",
+            "packageManager": "npm",
+            "packageName": "kind-of",
+            "patches": [],
+            "proprietary": false,
+            "publicationTime": "2020-01-19T14:31:13Z",
+            "references": [
+                {
+                    "title": "GitHub Issue",
+                    "url": "https://github.com/jonschlinkert/kind-of/issues/30"
+                },
+                {
+                    "title": "GitHub PR",
+                    "url": "https://github.com/jonschlinkert/kind-of/pull/31"
+                }
+            ],
+            "semver": {
+                "vulnerable": [
+                    ">=6.0.0 <6.0.3"
+                ]
+            },
+            "severity": "low",
+            "severityWithCritical": "low",
+            "socialTrendAlert": false,
+            "title": "Validation Bypass",
+            "from": [
+                "owasp-nodejs-goat@1.3.0",
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "anymatch@2.0.0",
+                "micromatch@3.1.10",
+                "kind-of@6.0.2"
+            ],
+            "upgradePath": [
+                false,
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "anymatch@2.0.0",
+                "micromatch@3.1.10",
+                "kind-of@6.0.3"
+            ],
+            "isUpgradable": true,
+            "isPatchable": false,
+            "name": "kind-of",
+            "version": "6.0.2"
+        },
+        {
+            "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N/E:P/RL:O/RC:C",
+            "alternativeIds": [],
+            "creationTime": "2019-12-16T14:21:14.675101Z",
+            "credit": [
+                "Feng Xiao"
+            ],
+            "cvssScore": 3.7,
+            "description": "## Overview\n[kind-of](https://github.com/jonschlinkert/kind-of) is a package that gets the native type of a value.\n\nAffected versions of this package are vulnerable to Validation Bypass. It leverages the built-in constructor of unsafe user-input to detect type information. However, a crafted payload can overwrite this built in attribute to manipulate the type detection result.\r\n\r\n## PoC by Feng Xiao\r\n```\r\nvar kindOf = require('kind-of');\r\n\r\n\r\nvar user_input = {\r\n  user: 'barney',\r\n  age: 36,\r\n  active: true,\r\n  \"constructor\":{\"name\":\"Symbol\"}\r\n};\r\nconsole.log(kindOf(user_input));\r\n```\n## Remediation\nUpgrade `kind-of` to version 6.0.3 or higher.\n## References\n- [GitHub Issue](https://github.com/jonschlinkert/kind-of/issues/30)\n- [GitHub PR](https://github.com/jonschlinkert/kind-of/pull/31)\n",
+            "disclosureTime": "2019-12-16T14:31:14Z",
+            "exploit": "Proof of Concept",
+            "fixedIn": [
+                "6.0.3"
+            ],
+            "functions": [
+                {
+                    "functionId": {
+                        "className": null,
+                        "filePath": "index.js",
+                        "functionName": "ctorName"
+                    },
+                    "version": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            ],
+            "functions_new": [
+                {
+                    "functionId": {
+                        "filePath": "index.js",
+                        "functionName": "ctorName"
+                    },
+                    "version": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            ],
+            "id": "SNYK-JS-KINDOF-537849",
+            "identifiers": {
+                "CVE": [
+                    "CVE-2019-20149"
+                ],
+                "CWE": [
+                    "CWE-20"
+                ],
+                "GHSA": [
+                    "GHSA-6c8f-qphg-qjgp"
+                ],
+                "NSP": [
+                    1490
+                ]
+            },
+            "language": "js",
+            "modificationTime": "2020-06-12T14:36:55.567043Z",
+            "moduleName": "kind-of",
+            "packageManager": "npm",
+            "packageName": "kind-of",
+            "patches": [],
+            "proprietary": false,
+            "publicationTime": "2020-01-19T14:31:13Z",
+            "references": [
+                {
+                    "title": "GitHub Issue",
+                    "url": "https://github.com/jonschlinkert/kind-of/issues/30"
+                },
+                {
+                    "title": "GitHub PR",
+                    "url": "https://github.com/jonschlinkert/kind-of/pull/31"
+                }
+            ],
+            "semver": {
+                "vulnerable": [
+                    ">=6.0.0 <6.0.3"
+                ]
+            },
+            "severity": "low",
+            "severityWithCritical": "low",
+            "socialTrendAlert": false,
+            "title": "Validation Bypass",
+            "from": [
+                "owasp-nodejs-goat@1.3.0",
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "readdirp@2.2.1",
+                "micromatch@3.1.10",
+                "kind-of@6.0.2"
+            ],
+            "upgradePath": [
+                false,
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "readdirp@2.2.1",
+                "micromatch@3.1.10",
+                "kind-of@6.0.3"
+            ],
+            "isUpgradable": true,
+            "isPatchable": false,
+            "name": "kind-of",
+            "version": "6.0.2"
+        },
+        {
+            "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N/E:P/RL:O/RC:C",
+            "alternativeIds": [],
+            "creationTime": "2019-12-16T14:21:14.675101Z",
+            "credit": [
+                "Feng Xiao"
+            ],
+            "cvssScore": 3.7,
+            "description": "## Overview\n[kind-of](https://github.com/jonschlinkert/kind-of) is a package that gets the native type of a value.\n\nAffected versions of this package are vulnerable to Validation Bypass. It leverages the built-in constructor of unsafe user-input to detect type information. However, a crafted payload can overwrite this built in attribute to manipulate the type detection result.\r\n\r\n## PoC by Feng Xiao\r\n```\r\nvar kindOf = require('kind-of');\r\n\r\n\r\nvar user_input = {\r\n  user: 'barney',\r\n  age: 36,\r\n  active: true,\r\n  \"constructor\":{\"name\":\"Symbol\"}\r\n};\r\nconsole.log(kindOf(user_input));\r\n```\n## Remediation\nUpgrade `kind-of` to version 6.0.3 or higher.\n## References\n- [GitHub Issue](https://github.com/jonschlinkert/kind-of/issues/30)\n- [GitHub PR](https://github.com/jonschlinkert/kind-of/pull/31)\n",
+            "disclosureTime": "2019-12-16T14:31:14Z",
+            "exploit": "Proof of Concept",
+            "fixedIn": [
+                "6.0.3"
+            ],
+            "functions": [
+                {
+                    "functionId": {
+                        "className": null,
+                        "filePath": "index.js",
+                        "functionName": "ctorName"
+                    },
+                    "version": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            ],
+            "functions_new": [
+                {
+                    "functionId": {
+                        "filePath": "index.js",
+                        "functionName": "ctorName"
+                    },
+                    "version": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            ],
+            "id": "SNYK-JS-KINDOF-537849",
+            "identifiers": {
+                "CVE": [
+                    "CVE-2019-20149"
+                ],
+                "CWE": [
+                    "CWE-20"
+                ],
+                "GHSA": [
+                    "GHSA-6c8f-qphg-qjgp"
+                ],
+                "NSP": [
+                    1490
+                ]
+            },
+            "language": "js",
+            "modificationTime": "2020-06-12T14:36:55.567043Z",
+            "moduleName": "kind-of",
+            "packageManager": "npm",
+            "packageName": "kind-of",
+            "patches": [],
+            "proprietary": false,
+            "publicationTime": "2020-01-19T14:31:13Z",
+            "references": [
+                {
+                    "title": "GitHub Issue",
+                    "url": "https://github.com/jonschlinkert/kind-of/issues/30"
+                },
+                {
+                    "title": "GitHub PR",
+                    "url": "https://github.com/jonschlinkert/kind-of/pull/31"
+                }
+            ],
+            "semver": {
+                "vulnerable": [
+                    ">=6.0.0 <6.0.3"
+                ]
+            },
+            "severity": "low",
+            "severityWithCritical": "low",
+            "socialTrendAlert": false,
+            "title": "Validation Bypass",
+            "from": [
+                "owasp-nodejs-goat@1.3.0",
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "anymatch@2.0.0",
+                "micromatch@3.1.10",
+                "nanomatch@1.2.13",
+                "kind-of@6.0.2"
+            ],
+            "upgradePath": [
+                false,
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "anymatch@2.0.0",
+                "micromatch@3.1.10",
+                "nanomatch@1.2.13",
+                "kind-of@6.0.3"
+            ],
+            "isUpgradable": true,
+            "isPatchable": false,
+            "name": "kind-of",
+            "version": "6.0.2"
+        },
+        {
+            "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N/E:P/RL:O/RC:C",
+            "alternativeIds": [],
+            "creationTime": "2019-12-16T14:21:14.675101Z",
+            "credit": [
+                "Feng Xiao"
+            ],
+            "cvssScore": 3.7,
+            "description": "## Overview\n[kind-of](https://github.com/jonschlinkert/kind-of) is a package that gets the native type of a value.\n\nAffected versions of this package are vulnerable to Validation Bypass. It leverages the built-in constructor of unsafe user-input to detect type information. However, a crafted payload can overwrite this built in attribute to manipulate the type detection result.\r\n\r\n## PoC by Feng Xiao\r\n```\r\nvar kindOf = require('kind-of');\r\n\r\n\r\nvar user_input = {\r\n  user: 'barney',\r\n  age: 36,\r\n  active: true,\r\n  \"constructor\":{\"name\":\"Symbol\"}\r\n};\r\nconsole.log(kindOf(user_input));\r\n```\n## Remediation\nUpgrade `kind-of` to version 6.0.3 or higher.\n## References\n- [GitHub Issue](https://github.com/jonschlinkert/kind-of/issues/30)\n- [GitHub PR](https://github.com/jonschlinkert/kind-of/pull/31)\n",
+            "disclosureTime": "2019-12-16T14:31:14Z",
+            "exploit": "Proof of Concept",
+            "fixedIn": [
+                "6.0.3"
+            ],
+            "functions": [
+                {
+                    "functionId": {
+                        "className": null,
+                        "filePath": "index.js",
+                        "functionName": "ctorName"
+                    },
+                    "version": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            ],
+            "functions_new": [
+                {
+                    "functionId": {
+                        "filePath": "index.js",
+                        "functionName": "ctorName"
+                    },
+                    "version": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            ],
+            "id": "SNYK-JS-KINDOF-537849",
+            "identifiers": {
+                "CVE": [
+                    "CVE-2019-20149"
+                ],
+                "CWE": [
+                    "CWE-20"
+                ],
+                "GHSA": [
+                    "GHSA-6c8f-qphg-qjgp"
+                ],
+                "NSP": [
+                    1490
+                ]
+            },
+            "language": "js",
+            "modificationTime": "2020-06-12T14:36:55.567043Z",
+            "moduleName": "kind-of",
+            "packageManager": "npm",
+            "packageName": "kind-of",
+            "patches": [],
+            "proprietary": false,
+            "publicationTime": "2020-01-19T14:31:13Z",
+            "references": [
+                {
+                    "title": "GitHub Issue",
+                    "url": "https://github.com/jonschlinkert/kind-of/issues/30"
+                },
+                {
+                    "title": "GitHub PR",
+                    "url": "https://github.com/jonschlinkert/kind-of/pull/31"
+                }
+            ],
+            "semver": {
+                "vulnerable": [
+                    ">=6.0.0 <6.0.3"
+                ]
+            },
+            "severity": "low",
+            "severityWithCritical": "low",
+            "socialTrendAlert": false,
+            "title": "Validation Bypass",
+            "from": [
+                "owasp-nodejs-goat@1.3.0",
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "readdirp@2.2.1",
+                "micromatch@3.1.10",
+                "nanomatch@1.2.13",
+                "kind-of@6.0.2"
+            ],
+            "upgradePath": [
+                false,
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "readdirp@2.2.1",
+                "micromatch@3.1.10",
+                "nanomatch@1.2.13",
+                "kind-of@6.0.3"
+            ],
+            "isUpgradable": true,
+            "isPatchable": false,
+            "name": "kind-of",
+            "version": "6.0.2"
+        },
+        {
+            "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N/E:P/RL:O/RC:C",
+            "alternativeIds": [],
+            "creationTime": "2019-12-16T14:21:14.675101Z",
+            "credit": [
+                "Feng Xiao"
+            ],
+            "cvssScore": 3.7,
+            "description": "## Overview\n[kind-of](https://github.com/jonschlinkert/kind-of) is a package that gets the native type of a value.\n\nAffected versions of this package are vulnerable to Validation Bypass. It leverages the built-in constructor of unsafe user-input to detect type information. However, a crafted payload can overwrite this built in attribute to manipulate the type detection result.\r\n\r\n## PoC by Feng Xiao\r\n```\r\nvar kindOf = require('kind-of');\r\n\r\n\r\nvar user_input = {\r\n  user: 'barney',\r\n  age: 36,\r\n  active: true,\r\n  \"constructor\":{\"name\":\"Symbol\"}\r\n};\r\nconsole.log(kindOf(user_input));\r\n```\n## Remediation\nUpgrade `kind-of` to version 6.0.3 or higher.\n## References\n- [GitHub Issue](https://github.com/jonschlinkert/kind-of/issues/30)\n- [GitHub PR](https://github.com/jonschlinkert/kind-of/pull/31)\n",
+            "disclosureTime": "2019-12-16T14:31:14Z",
+            "exploit": "Proof of Concept",
+            "fixedIn": [
+                "6.0.3"
+            ],
+            "functions": [
+                {
+                    "functionId": {
+                        "className": null,
+                        "filePath": "index.js",
+                        "functionName": "ctorName"
+                    },
+                    "version": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            ],
+            "functions_new": [
+                {
+                    "functionId": {
+                        "filePath": "index.js",
+                        "functionName": "ctorName"
+                    },
+                    "version": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            ],
+            "id": "SNYK-JS-KINDOF-537849",
+            "identifiers": {
+                "CVE": [
+                    "CVE-2019-20149"
+                ],
+                "CWE": [
+                    "CWE-20"
+                ],
+                "GHSA": [
+                    "GHSA-6c8f-qphg-qjgp"
+                ],
+                "NSP": [
+                    1490
+                ]
+            },
+            "language": "js",
+            "modificationTime": "2020-06-12T14:36:55.567043Z",
+            "moduleName": "kind-of",
+            "packageManager": "npm",
+            "packageName": "kind-of",
+            "patches": [],
+            "proprietary": false,
+            "publicationTime": "2020-01-19T14:31:13Z",
+            "references": [
+                {
+                    "title": "GitHub Issue",
+                    "url": "https://github.com/jonschlinkert/kind-of/issues/30"
+                },
+                {
+                    "title": "GitHub PR",
+                    "url": "https://github.com/jonschlinkert/kind-of/pull/31"
+                }
+            ],
+            "semver": {
+                "vulnerable": [
+                    ">=6.0.0 <6.0.3"
+                ]
+            },
+            "severity": "low",
+            "severityWithCritical": "low",
+            "socialTrendAlert": false,
+            "title": "Validation Bypass",
+            "from": [
+                "owasp-nodejs-goat@1.3.0",
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "braces@2.3.2",
+                "snapdragon-node@2.1.1",
+                "define-property@1.0.0",
+                "is-descriptor@1.0.2",
+                "kind-of@6.0.2"
+            ],
+            "upgradePath": [
+                false,
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "braces@2.3.2",
+                "snapdragon-node@2.1.1",
+                "define-property@1.0.0",
+                "is-descriptor@1.0.2",
+                "kind-of@6.0.3"
+            ],
+            "isUpgradable": true,
+            "isPatchable": false,
+            "name": "kind-of",
+            "version": "6.0.2"
+        },
+        {
+            "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N/E:P/RL:O/RC:C",
+            "alternativeIds": [],
+            "creationTime": "2019-12-16T14:21:14.675101Z",
+            "credit": [
+                "Feng Xiao"
+            ],
+            "cvssScore": 3.7,
+            "description": "## Overview\n[kind-of](https://github.com/jonschlinkert/kind-of) is a package that gets the native type of a value.\n\nAffected versions of this package are vulnerable to Validation Bypass. It leverages the built-in constructor of unsafe user-input to detect type information. However, a crafted payload can overwrite this built in attribute to manipulate the type detection result.\r\n\r\n## PoC by Feng Xiao\r\n```\r\nvar kindOf = require('kind-of');\r\n\r\n\r\nvar user_input = {\r\n  user: 'barney',\r\n  age: 36,\r\n  active: true,\r\n  \"constructor\":{\"name\":\"Symbol\"}\r\n};\r\nconsole.log(kindOf(user_input));\r\n```\n## Remediation\nUpgrade `kind-of` to version 6.0.3 or higher.\n## References\n- [GitHub Issue](https://github.com/jonschlinkert/kind-of/issues/30)\n- [GitHub PR](https://github.com/jonschlinkert/kind-of/pull/31)\n",
+            "disclosureTime": "2019-12-16T14:31:14Z",
+            "exploit": "Proof of Concept",
+            "fixedIn": [
+                "6.0.3"
+            ],
+            "functions": [
+                {
+                    "functionId": {
+                        "className": null,
+                        "filePath": "index.js",
+                        "functionName": "ctorName"
+                    },
+                    "version": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            ],
+            "functions_new": [
+                {
+                    "functionId": {
+                        "filePath": "index.js",
+                        "functionName": "ctorName"
+                    },
+                    "version": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            ],
+            "id": "SNYK-JS-KINDOF-537849",
+            "identifiers": {
+                "CVE": [
+                    "CVE-2019-20149"
+                ],
+                "CWE": [
+                    "CWE-20"
+                ],
+                "GHSA": [
+                    "GHSA-6c8f-qphg-qjgp"
+                ],
+                "NSP": [
+                    1490
+                ]
+            },
+            "language": "js",
+            "modificationTime": "2020-06-12T14:36:55.567043Z",
+            "moduleName": "kind-of",
+            "packageManager": "npm",
+            "packageName": "kind-of",
+            "patches": [],
+            "proprietary": false,
+            "publicationTime": "2020-01-19T14:31:13Z",
+            "references": [
+                {
+                    "title": "GitHub Issue",
+                    "url": "https://github.com/jonschlinkert/kind-of/issues/30"
+                },
+                {
+                    "title": "GitHub PR",
+                    "url": "https://github.com/jonschlinkert/kind-of/pull/31"
+                }
+            ],
+            "semver": {
+                "vulnerable": [
+                    ">=6.0.0 <6.0.3"
+                ]
+            },
+            "severity": "low",
+            "severityWithCritical": "low",
+            "socialTrendAlert": false,
+            "title": "Validation Bypass",
+            "from": [
+                "owasp-nodejs-goat@1.3.0",
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "braces@2.3.2",
+                "to-regex@3.0.2",
+                "define-property@2.0.2",
+                "is-descriptor@1.0.2",
+                "kind-of@6.0.2"
+            ],
+            "upgradePath": [
+                false,
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "braces@2.3.2",
+                "to-regex@3.0.2",
+                "define-property@2.0.2",
+                "is-descriptor@1.0.2",
+                "kind-of@6.0.3"
+            ],
+            "isUpgradable": true,
+            "isPatchable": false,
+            "name": "kind-of",
+            "version": "6.0.2"
+        },
+        {
+            "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N/E:P/RL:O/RC:C",
+            "alternativeIds": [],
+            "creationTime": "2019-12-16T14:21:14.675101Z",
+            "credit": [
+                "Feng Xiao"
+            ],
+            "cvssScore": 3.7,
+            "description": "## Overview\n[kind-of](https://github.com/jonschlinkert/kind-of) is a package that gets the native type of a value.\n\nAffected versions of this package are vulnerable to Validation Bypass. It leverages the built-in constructor of unsafe user-input to detect type information. However, a crafted payload can overwrite this built in attribute to manipulate the type detection result.\r\n\r\n## PoC by Feng Xiao\r\n```\r\nvar kindOf = require('kind-of');\r\n\r\n\r\nvar user_input = {\r\n  user: 'barney',\r\n  age: 36,\r\n  active: true,\r\n  \"constructor\":{\"name\":\"Symbol\"}\r\n};\r\nconsole.log(kindOf(user_input));\r\n```\n## Remediation\nUpgrade `kind-of` to version 6.0.3 or higher.\n## References\n- [GitHub Issue](https://github.com/jonschlinkert/kind-of/issues/30)\n- [GitHub PR](https://github.com/jonschlinkert/kind-of/pull/31)\n",
+            "disclosureTime": "2019-12-16T14:31:14Z",
+            "exploit": "Proof of Concept",
+            "fixedIn": [
+                "6.0.3"
+            ],
+            "functions": [
+                {
+                    "functionId": {
+                        "className": null,
+                        "filePath": "index.js",
+                        "functionName": "ctorName"
+                    },
+                    "version": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            ],
+            "functions_new": [
+                {
+                    "functionId": {
+                        "filePath": "index.js",
+                        "functionName": "ctorName"
+                    },
+                    "version": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            ],
+            "id": "SNYK-JS-KINDOF-537849",
+            "identifiers": {
+                "CVE": [
+                    "CVE-2019-20149"
+                ],
+                "CWE": [
+                    "CWE-20"
+                ],
+                "GHSA": [
+                    "GHSA-6c8f-qphg-qjgp"
+                ],
+                "NSP": [
+                    1490
+                ]
+            },
+            "language": "js",
+            "modificationTime": "2020-06-12T14:36:55.567043Z",
+            "moduleName": "kind-of",
+            "packageManager": "npm",
+            "packageName": "kind-of",
+            "patches": [],
+            "proprietary": false,
+            "publicationTime": "2020-01-19T14:31:13Z",
+            "references": [
+                {
+                    "title": "GitHub Issue",
+                    "url": "https://github.com/jonschlinkert/kind-of/issues/30"
+                },
+                {
+                    "title": "GitHub PR",
+                    "url": "https://github.com/jonschlinkert/kind-of/pull/31"
+                }
+            ],
+            "semver": {
+                "vulnerable": [
+                    ">=6.0.0 <6.0.3"
+                ]
+            },
+            "severity": "low",
+            "severityWithCritical": "low",
+            "socialTrendAlert": false,
+            "title": "Validation Bypass",
+            "from": [
+                "owasp-nodejs-goat@1.3.0",
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "anymatch@2.0.0",
+                "micromatch@3.1.10",
+                "define-property@2.0.2",
+                "is-descriptor@1.0.2",
+                "kind-of@6.0.2"
+            ],
+            "upgradePath": [
+                false,
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "anymatch@2.0.0",
+                "micromatch@3.1.10",
+                "define-property@2.0.2",
+                "is-descriptor@1.0.2",
+                "kind-of@6.0.3"
+            ],
+            "isUpgradable": true,
+            "isPatchable": false,
+            "name": "kind-of",
+            "version": "6.0.2"
+        },
+        {
+            "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N/E:P/RL:O/RC:C",
+            "alternativeIds": [],
+            "creationTime": "2019-12-16T14:21:14.675101Z",
+            "credit": [
+                "Feng Xiao"
+            ],
+            "cvssScore": 3.7,
+            "description": "## Overview\n[kind-of](https://github.com/jonschlinkert/kind-of) is a package that gets the native type of a value.\n\nAffected versions of this package are vulnerable to Validation Bypass. It leverages the built-in constructor of unsafe user-input to detect type information. However, a crafted payload can overwrite this built in attribute to manipulate the type detection result.\r\n\r\n## PoC by Feng Xiao\r\n```\r\nvar kindOf = require('kind-of');\r\n\r\n\r\nvar user_input = {\r\n  user: 'barney',\r\n  age: 36,\r\n  active: true,\r\n  \"constructor\":{\"name\":\"Symbol\"}\r\n};\r\nconsole.log(kindOf(user_input));\r\n```\n## Remediation\nUpgrade `kind-of` to version 6.0.3 or higher.\n## References\n- [GitHub Issue](https://github.com/jonschlinkert/kind-of/issues/30)\n- [GitHub PR](https://github.com/jonschlinkert/kind-of/pull/31)\n",
+            "disclosureTime": "2019-12-16T14:31:14Z",
+            "exploit": "Proof of Concept",
+            "fixedIn": [
+                "6.0.3"
+            ],
+            "functions": [
+                {
+                    "functionId": {
+                        "className": null,
+                        "filePath": "index.js",
+                        "functionName": "ctorName"
+                    },
+                    "version": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            ],
+            "functions_new": [
+                {
+                    "functionId": {
+                        "filePath": "index.js",
+                        "functionName": "ctorName"
+                    },
+                    "version": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            ],
+            "id": "SNYK-JS-KINDOF-537849",
+            "identifiers": {
+                "CVE": [
+                    "CVE-2019-20149"
+                ],
+                "CWE": [
+                    "CWE-20"
+                ],
+                "GHSA": [
+                    "GHSA-6c8f-qphg-qjgp"
+                ],
+                "NSP": [
+                    1490
+                ]
+            },
+            "language": "js",
+            "modificationTime": "2020-06-12T14:36:55.567043Z",
+            "moduleName": "kind-of",
+            "packageManager": "npm",
+            "packageName": "kind-of",
+            "patches": [],
+            "proprietary": false,
+            "publicationTime": "2020-01-19T14:31:13Z",
+            "references": [
+                {
+                    "title": "GitHub Issue",
+                    "url": "https://github.com/jonschlinkert/kind-of/issues/30"
+                },
+                {
+                    "title": "GitHub PR",
+                    "url": "https://github.com/jonschlinkert/kind-of/pull/31"
+                }
+            ],
+            "semver": {
+                "vulnerable": [
+                    ">=6.0.0 <6.0.3"
+                ]
+            },
+            "severity": "low",
+            "severityWithCritical": "low",
+            "socialTrendAlert": false,
+            "title": "Validation Bypass",
+            "from": [
+                "owasp-nodejs-goat@1.3.0",
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "readdirp@2.2.1",
+                "micromatch@3.1.10",
+                "define-property@2.0.2",
+                "is-descriptor@1.0.2",
+                "kind-of@6.0.2"
+            ],
+            "upgradePath": [
+                false,
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "readdirp@2.2.1",
+                "micromatch@3.1.10",
+                "define-property@2.0.2",
+                "is-descriptor@1.0.2",
+                "kind-of@6.0.3"
+            ],
+            "isUpgradable": true,
+            "isPatchable": false,
+            "name": "kind-of",
+            "version": "6.0.2"
+        },
+        {
+            "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N/E:P/RL:O/RC:C",
+            "alternativeIds": [],
+            "creationTime": "2019-12-16T14:21:14.675101Z",
+            "credit": [
+                "Feng Xiao"
+            ],
+            "cvssScore": 3.7,
+            "description": "## Overview\n[kind-of](https://github.com/jonschlinkert/kind-of) is a package that gets the native type of a value.\n\nAffected versions of this package are vulnerable to Validation Bypass. It leverages the built-in constructor of unsafe user-input to detect type information. However, a crafted payload can overwrite this built in attribute to manipulate the type detection result.\r\n\r\n## PoC by Feng Xiao\r\n```\r\nvar kindOf = require('kind-of');\r\n\r\n\r\nvar user_input = {\r\n  user: 'barney',\r\n  age: 36,\r\n  active: true,\r\n  \"constructor\":{\"name\":\"Symbol\"}\r\n};\r\nconsole.log(kindOf(user_input));\r\n```\n## Remediation\nUpgrade `kind-of` to version 6.0.3 or higher.\n## References\n- [GitHub Issue](https://github.com/jonschlinkert/kind-of/issues/30)\n- [GitHub PR](https://github.com/jonschlinkert/kind-of/pull/31)\n",
+            "disclosureTime": "2019-12-16T14:31:14Z",
+            "exploit": "Proof of Concept",
+            "fixedIn": [
+                "6.0.3"
+            ],
+            "functions": [
+                {
+                    "functionId": {
+                        "className": null,
+                        "filePath": "index.js",
+                        "functionName": "ctorName"
+                    },
+                    "version": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            ],
+            "functions_new": [
+                {
+                    "functionId": {
+                        "filePath": "index.js",
+                        "functionName": "ctorName"
+                    },
+                    "version": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            ],
+            "id": "SNYK-JS-KINDOF-537849",
+            "identifiers": {
+                "CVE": [
+                    "CVE-2019-20149"
+                ],
+                "CWE": [
+                    "CWE-20"
+                ],
+                "GHSA": [
+                    "GHSA-6c8f-qphg-qjgp"
+                ],
+                "NSP": [
+                    1490
+                ]
+            },
+            "language": "js",
+            "modificationTime": "2020-06-12T14:36:55.567043Z",
+            "moduleName": "kind-of",
+            "packageManager": "npm",
+            "packageName": "kind-of",
+            "patches": [],
+            "proprietary": false,
+            "publicationTime": "2020-01-19T14:31:13Z",
+            "references": [
+                {
+                    "title": "GitHub Issue",
+                    "url": "https://github.com/jonschlinkert/kind-of/issues/30"
+                },
+                {
+                    "title": "GitHub PR",
+                    "url": "https://github.com/jonschlinkert/kind-of/pull/31"
+                }
+            ],
+            "semver": {
+                "vulnerable": [
+                    ">=6.0.0 <6.0.3"
+                ]
+            },
+            "severity": "low",
+            "severityWithCritical": "low",
+            "socialTrendAlert": false,
+            "title": "Validation Bypass",
+            "from": [
+                "owasp-nodejs-goat@1.3.0",
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "braces@2.3.2",
+                "snapdragon-node@2.1.1",
+                "define-property@1.0.0",
+                "is-descriptor@1.0.2",
+                "is-accessor-descriptor@1.0.0",
+                "kind-of@6.0.2"
+            ],
+            "upgradePath": [
+                false,
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "braces@2.3.2",
+                "snapdragon-node@2.1.1",
+                "define-property@1.0.0",
+                "is-descriptor@1.0.2",
+                "is-accessor-descriptor@1.0.0",
+                "kind-of@6.0.3"
+            ],
+            "isUpgradable": true,
+            "isPatchable": false,
+            "name": "kind-of",
+            "version": "6.0.2"
+        },
+        {
+            "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N/E:P/RL:O/RC:C",
+            "alternativeIds": [],
+            "creationTime": "2019-12-16T14:21:14.675101Z",
+            "credit": [
+                "Feng Xiao"
+            ],
+            "cvssScore": 3.7,
+            "description": "## Overview\n[kind-of](https://github.com/jonschlinkert/kind-of) is a package that gets the native type of a value.\n\nAffected versions of this package are vulnerable to Validation Bypass. It leverages the built-in constructor of unsafe user-input to detect type information. However, a crafted payload can overwrite this built in attribute to manipulate the type detection result.\r\n\r\n## PoC by Feng Xiao\r\n```\r\nvar kindOf = require('kind-of');\r\n\r\n\r\nvar user_input = {\r\n  user: 'barney',\r\n  age: 36,\r\n  active: true,\r\n  \"constructor\":{\"name\":\"Symbol\"}\r\n};\r\nconsole.log(kindOf(user_input));\r\n```\n## Remediation\nUpgrade `kind-of` to version 6.0.3 or higher.\n## References\n- [GitHub Issue](https://github.com/jonschlinkert/kind-of/issues/30)\n- [GitHub PR](https://github.com/jonschlinkert/kind-of/pull/31)\n",
+            "disclosureTime": "2019-12-16T14:31:14Z",
+            "exploit": "Proof of Concept",
+            "fixedIn": [
+                "6.0.3"
+            ],
+            "functions": [
+                {
+                    "functionId": {
+                        "className": null,
+                        "filePath": "index.js",
+                        "functionName": "ctorName"
+                    },
+                    "version": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            ],
+            "functions_new": [
+                {
+                    "functionId": {
+                        "filePath": "index.js",
+                        "functionName": "ctorName"
+                    },
+                    "version": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            ],
+            "id": "SNYK-JS-KINDOF-537849",
+            "identifiers": {
+                "CVE": [
+                    "CVE-2019-20149"
+                ],
+                "CWE": [
+                    "CWE-20"
+                ],
+                "GHSA": [
+                    "GHSA-6c8f-qphg-qjgp"
+                ],
+                "NSP": [
+                    1490
+                ]
+            },
+            "language": "js",
+            "modificationTime": "2020-06-12T14:36:55.567043Z",
+            "moduleName": "kind-of",
+            "packageManager": "npm",
+            "packageName": "kind-of",
+            "patches": [],
+            "proprietary": false,
+            "publicationTime": "2020-01-19T14:31:13Z",
+            "references": [
+                {
+                    "title": "GitHub Issue",
+                    "url": "https://github.com/jonschlinkert/kind-of/issues/30"
+                },
+                {
+                    "title": "GitHub PR",
+                    "url": "https://github.com/jonschlinkert/kind-of/pull/31"
+                }
+            ],
+            "semver": {
+                "vulnerable": [
+                    ">=6.0.0 <6.0.3"
+                ]
+            },
+            "severity": "low",
+            "severityWithCritical": "low",
+            "socialTrendAlert": false,
+            "title": "Validation Bypass",
+            "from": [
+                "owasp-nodejs-goat@1.3.0",
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "braces@2.3.2",
+                "to-regex@3.0.2",
+                "define-property@2.0.2",
+                "is-descriptor@1.0.2",
+                "is-accessor-descriptor@1.0.0",
+                "kind-of@6.0.2"
+            ],
+            "upgradePath": [
+                false,
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "braces@2.3.2",
+                "to-regex@3.0.2",
+                "define-property@2.0.2",
+                "is-descriptor@1.0.2",
+                "is-accessor-descriptor@1.0.0",
+                "kind-of@6.0.3"
+            ],
+            "isUpgradable": true,
+            "isPatchable": false,
+            "name": "kind-of",
+            "version": "6.0.2"
+        },
+        {
+            "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N/E:P/RL:O/RC:C",
+            "alternativeIds": [],
+            "creationTime": "2019-12-16T14:21:14.675101Z",
+            "credit": [
+                "Feng Xiao"
+            ],
+            "cvssScore": 3.7,
+            "description": "## Overview\n[kind-of](https://github.com/jonschlinkert/kind-of) is a package that gets the native type of a value.\n\nAffected versions of this package are vulnerable to Validation Bypass. It leverages the built-in constructor of unsafe user-input to detect type information. However, a crafted payload can overwrite this built in attribute to manipulate the type detection result.\r\n\r\n## PoC by Feng Xiao\r\n```\r\nvar kindOf = require('kind-of');\r\n\r\n\r\nvar user_input = {\r\n  user: 'barney',\r\n  age: 36,\r\n  active: true,\r\n  \"constructor\":{\"name\":\"Symbol\"}\r\n};\r\nconsole.log(kindOf(user_input));\r\n```\n## Remediation\nUpgrade `kind-of` to version 6.0.3 or higher.\n## References\n- [GitHub Issue](https://github.com/jonschlinkert/kind-of/issues/30)\n- [GitHub PR](https://github.com/jonschlinkert/kind-of/pull/31)\n",
+            "disclosureTime": "2019-12-16T14:31:14Z",
+            "exploit": "Proof of Concept",
+            "fixedIn": [
+                "6.0.3"
+            ],
+            "functions": [
+                {
+                    "functionId": {
+                        "className": null,
+                        "filePath": "index.js",
+                        "functionName": "ctorName"
+                    },
+                    "version": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            ],
+            "functions_new": [
+                {
+                    "functionId": {
+                        "filePath": "index.js",
+                        "functionName": "ctorName"
+                    },
+                    "version": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            ],
+            "id": "SNYK-JS-KINDOF-537849",
+            "identifiers": {
+                "CVE": [
+                    "CVE-2019-20149"
+                ],
+                "CWE": [
+                    "CWE-20"
+                ],
+                "GHSA": [
+                    "GHSA-6c8f-qphg-qjgp"
+                ],
+                "NSP": [
+                    1490
+                ]
+            },
+            "language": "js",
+            "modificationTime": "2020-06-12T14:36:55.567043Z",
+            "moduleName": "kind-of",
+            "packageManager": "npm",
+            "packageName": "kind-of",
+            "patches": [],
+            "proprietary": false,
+            "publicationTime": "2020-01-19T14:31:13Z",
+            "references": [
+                {
+                    "title": "GitHub Issue",
+                    "url": "https://github.com/jonschlinkert/kind-of/issues/30"
+                },
+                {
+                    "title": "GitHub PR",
+                    "url": "https://github.com/jonschlinkert/kind-of/pull/31"
+                }
+            ],
+            "semver": {
+                "vulnerable": [
+                    ">=6.0.0 <6.0.3"
+                ]
+            },
+            "severity": "low",
+            "severityWithCritical": "low",
+            "socialTrendAlert": false,
+            "title": "Validation Bypass",
+            "from": [
+                "owasp-nodejs-goat@1.3.0",
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "anymatch@2.0.0",
+                "micromatch@3.1.10",
+                "define-property@2.0.2",
+                "is-descriptor@1.0.2",
+                "is-accessor-descriptor@1.0.0",
+                "kind-of@6.0.2"
+            ],
+            "upgradePath": [
+                false,
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "anymatch@2.0.0",
+                "micromatch@3.1.10",
+                "define-property@2.0.2",
+                "is-descriptor@1.0.2",
+                "is-accessor-descriptor@1.0.0",
+                "kind-of@6.0.3"
+            ],
+            "isUpgradable": true,
+            "isPatchable": false,
+            "name": "kind-of",
+            "version": "6.0.2"
+        },
+        {
+            "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N/E:P/RL:O/RC:C",
+            "alternativeIds": [],
+            "creationTime": "2019-12-16T14:21:14.675101Z",
+            "credit": [
+                "Feng Xiao"
+            ],
+            "cvssScore": 3.7,
+            "description": "## Overview\n[kind-of](https://github.com/jonschlinkert/kind-of) is a package that gets the native type of a value.\n\nAffected versions of this package are vulnerable to Validation Bypass. It leverages the built-in constructor of unsafe user-input to detect type information. However, a crafted payload can overwrite this built in attribute to manipulate the type detection result.\r\n\r\n## PoC by Feng Xiao\r\n```\r\nvar kindOf = require('kind-of');\r\n\r\n\r\nvar user_input = {\r\n  user: 'barney',\r\n  age: 36,\r\n  active: true,\r\n  \"constructor\":{\"name\":\"Symbol\"}\r\n};\r\nconsole.log(kindOf(user_input));\r\n```\n## Remediation\nUpgrade `kind-of` to version 6.0.3 or higher.\n## References\n- [GitHub Issue](https://github.com/jonschlinkert/kind-of/issues/30)\n- [GitHub PR](https://github.com/jonschlinkert/kind-of/pull/31)\n",
+            "disclosureTime": "2019-12-16T14:31:14Z",
+            "exploit": "Proof of Concept",
+            "fixedIn": [
+                "6.0.3"
+            ],
+            "functions": [
+                {
+                    "functionId": {
+                        "className": null,
+                        "filePath": "index.js",
+                        "functionName": "ctorName"
+                    },
+                    "version": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            ],
+            "functions_new": [
+                {
+                    "functionId": {
+                        "filePath": "index.js",
+                        "functionName": "ctorName"
+                    },
+                    "version": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            ],
+            "id": "SNYK-JS-KINDOF-537849",
+            "identifiers": {
+                "CVE": [
+                    "CVE-2019-20149"
+                ],
+                "CWE": [
+                    "CWE-20"
+                ],
+                "GHSA": [
+                    "GHSA-6c8f-qphg-qjgp"
+                ],
+                "NSP": [
+                    1490
+                ]
+            },
+            "language": "js",
+            "modificationTime": "2020-06-12T14:36:55.567043Z",
+            "moduleName": "kind-of",
+            "packageManager": "npm",
+            "packageName": "kind-of",
+            "patches": [],
+            "proprietary": false,
+            "publicationTime": "2020-01-19T14:31:13Z",
+            "references": [
+                {
+                    "title": "GitHub Issue",
+                    "url": "https://github.com/jonschlinkert/kind-of/issues/30"
+                },
+                {
+                    "title": "GitHub PR",
+                    "url": "https://github.com/jonschlinkert/kind-of/pull/31"
+                }
+            ],
+            "semver": {
+                "vulnerable": [
+                    ">=6.0.0 <6.0.3"
+                ]
+            },
+            "severity": "low",
+            "severityWithCritical": "low",
+            "socialTrendAlert": false,
+            "title": "Validation Bypass",
+            "from": [
+                "owasp-nodejs-goat@1.3.0",
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "readdirp@2.2.1",
+                "micromatch@3.1.10",
+                "define-property@2.0.2",
+                "is-descriptor@1.0.2",
+                "is-accessor-descriptor@1.0.0",
+                "kind-of@6.0.2"
+            ],
+            "upgradePath": [
+                false,
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "readdirp@2.2.1",
+                "micromatch@3.1.10",
+                "define-property@2.0.2",
+                "is-descriptor@1.0.2",
+                "is-accessor-descriptor@1.0.0",
+                "kind-of@6.0.3"
+            ],
+            "isUpgradable": true,
+            "isPatchable": false,
+            "name": "kind-of",
+            "version": "6.0.2"
+        },
+        {
+            "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N/E:P/RL:O/RC:C",
+            "alternativeIds": [],
+            "creationTime": "2019-12-16T14:21:14.675101Z",
+            "credit": [
+                "Feng Xiao"
+            ],
+            "cvssScore": 3.7,
+            "description": "## Overview\n[kind-of](https://github.com/jonschlinkert/kind-of) is a package that gets the native type of a value.\n\nAffected versions of this package are vulnerable to Validation Bypass. It leverages the built-in constructor of unsafe user-input to detect type information. However, a crafted payload can overwrite this built in attribute to manipulate the type detection result.\r\n\r\n## PoC by Feng Xiao\r\n```\r\nvar kindOf = require('kind-of');\r\n\r\n\r\nvar user_input = {\r\n  user: 'barney',\r\n  age: 36,\r\n  active: true,\r\n  \"constructor\":{\"name\":\"Symbol\"}\r\n};\r\nconsole.log(kindOf(user_input));\r\n```\n## Remediation\nUpgrade `kind-of` to version 6.0.3 or higher.\n## References\n- [GitHub Issue](https://github.com/jonschlinkert/kind-of/issues/30)\n- [GitHub PR](https://github.com/jonschlinkert/kind-of/pull/31)\n",
+            "disclosureTime": "2019-12-16T14:31:14Z",
+            "exploit": "Proof of Concept",
+            "fixedIn": [
+                "6.0.3"
+            ],
+            "functions": [
+                {
+                    "functionId": {
+                        "className": null,
+                        "filePath": "index.js",
+                        "functionName": "ctorName"
+                    },
+                    "version": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            ],
+            "functions_new": [
+                {
+                    "functionId": {
+                        "filePath": "index.js",
+                        "functionName": "ctorName"
+                    },
+                    "version": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            ],
+            "id": "SNYK-JS-KINDOF-537849",
+            "identifiers": {
+                "CVE": [
+                    "CVE-2019-20149"
+                ],
+                "CWE": [
+                    "CWE-20"
+                ],
+                "GHSA": [
+                    "GHSA-6c8f-qphg-qjgp"
+                ],
+                "NSP": [
+                    1490
+                ]
+            },
+            "language": "js",
+            "modificationTime": "2020-06-12T14:36:55.567043Z",
+            "moduleName": "kind-of",
+            "packageManager": "npm",
+            "packageName": "kind-of",
+            "patches": [],
+            "proprietary": false,
+            "publicationTime": "2020-01-19T14:31:13Z",
+            "references": [
+                {
+                    "title": "GitHub Issue",
+                    "url": "https://github.com/jonschlinkert/kind-of/issues/30"
+                },
+                {
+                    "title": "GitHub PR",
+                    "url": "https://github.com/jonschlinkert/kind-of/pull/31"
+                }
+            ],
+            "semver": {
+                "vulnerable": [
+                    ">=6.0.0 <6.0.3"
+                ]
+            },
+            "severity": "low",
+            "severityWithCritical": "low",
+            "socialTrendAlert": false,
+            "title": "Validation Bypass",
+            "from": [
+                "owasp-nodejs-goat@1.3.0",
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "braces@2.3.2",
+                "snapdragon-node@2.1.1",
+                "define-property@1.0.0",
+                "is-descriptor@1.0.2",
+                "is-data-descriptor@1.0.0",
+                "kind-of@6.0.2"
+            ],
+            "upgradePath": [
+                false,
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "braces@2.3.2",
+                "snapdragon-node@2.1.1",
+                "define-property@1.0.0",
+                "is-descriptor@1.0.2",
+                "is-data-descriptor@1.0.0",
+                "kind-of@6.0.3"
+            ],
+            "isUpgradable": true,
+            "isPatchable": false,
+            "name": "kind-of",
+            "version": "6.0.2"
+        },
+        {
+            "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N/E:P/RL:O/RC:C",
+            "alternativeIds": [],
+            "creationTime": "2019-12-16T14:21:14.675101Z",
+            "credit": [
+                "Feng Xiao"
+            ],
+            "cvssScore": 3.7,
+            "description": "## Overview\n[kind-of](https://github.com/jonschlinkert/kind-of) is a package that gets the native type of a value.\n\nAffected versions of this package are vulnerable to Validation Bypass. It leverages the built-in constructor of unsafe user-input to detect type information. However, a crafted payload can overwrite this built in attribute to manipulate the type detection result.\r\n\r\n## PoC by Feng Xiao\r\n```\r\nvar kindOf = require('kind-of');\r\n\r\n\r\nvar user_input = {\r\n  user: 'barney',\r\n  age: 36,\r\n  active: true,\r\n  \"constructor\":{\"name\":\"Symbol\"}\r\n};\r\nconsole.log(kindOf(user_input));\r\n```\n## Remediation\nUpgrade `kind-of` to version 6.0.3 or higher.\n## References\n- [GitHub Issue](https://github.com/jonschlinkert/kind-of/issues/30)\n- [GitHub PR](https://github.com/jonschlinkert/kind-of/pull/31)\n",
+            "disclosureTime": "2019-12-16T14:31:14Z",
+            "exploit": "Proof of Concept",
+            "fixedIn": [
+                "6.0.3"
+            ],
+            "functions": [
+                {
+                    "functionId": {
+                        "className": null,
+                        "filePath": "index.js",
+                        "functionName": "ctorName"
+                    },
+                    "version": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            ],
+            "functions_new": [
+                {
+                    "functionId": {
+                        "filePath": "index.js",
+                        "functionName": "ctorName"
+                    },
+                    "version": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                }
+            ],
+            "id": "SNYK-JS-KINDOF-537849",
+            "identifiers": {
+                "CVE": [
+                    "CVE-2019-20149"
+                ],
+                "CWE": [
+                    "CWE-20"
+                ],
+                "GHSA": [
+                    "GHSA-6c8f-qphg-qjgp"
+                ],
+                "NSP": [
+                    1490
+                ]
+            },
+            "language": "js",
+            "modificationTime": "2020-06-12T14:36:55.567043Z",
+            "moduleName": "kind-of",
+            "packageManager": "npm",
+            "packageName": "kind-of",
+            "patches": [],
+            "proprietary": false,
+            "publicationTime": "2020-01-19T14:31:13Z",
+            "references": [
+                {
+                    "title": "GitHub Issue",
+                    "url": "https://github.com/jonschlinkert/kind-of/issues/30"
+                },
+                {
+                    "title": "GitHub PR",
+                    "url": "https://github.com/jonschlinkert/kind-of/pull/31"
+                }
+            ],
+            "semver": {
+                "vulnerable": [
+                    ">=6.0.0 <6.0.3"
+                ]
+            },
+            "severity": "low",
+            "severityWithCritical": "low",
+            "socialTrendAlert": false,
+            "title": "Validation Bypass",
+            "from": [
+                "owasp-nodejs-goat@1.3.0",
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "braces@2.3.2",
+                "to-regex@3.0.2",
+                "define-property@2.0.2",
+                "is-descriptor@1.0.2",
+                "is-data-descriptor@1.0.0",
+                "kind-of@6.0.2"
+            ],
+            "upgradePath": [
+                false,
+                "forever@2.0.0",
+                "forever-monitor@2.0.0",
+                "chokidar@2.1.8",
+                "braces@2.3.2",
+                "to-regex@3.0.2",
+                "define-property@2.0.2",
+                "is-descriptor@1.0.2",
+                "is-data-descriptor@1.0.0",
+                "kind-of@6.0.3"
+            ],
+            "isUpgradable": true,
+            "isPatchable": false,
+            "name": "kind-of",
+            "version": "6.0.2"
+        }
+    ],
+    "ok": false,
+    "dependencyCount": 380,
+    "org": "zeronorth",
+    "policy": "# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.\nversion: v1.21.5\nignore: {}\npatch: {}\n",
+    "isPrivate": true,
+    "licensesPolicy": {
+        "severities": {},
+        "orgLicenseRules": {
+            "AGPL-1.0": {
+                "licenseType": "AGPL-1.0",
+                "severity": "high",
+                "instructions": ""
+            },
+            "AGPL-3.0": {
+                "licenseType": "AGPL-3.0",
+                "severity": "high",
+                "instructions": ""
+            },
+            "Artistic-1.0": {
+                "licenseType": "Artistic-1.0",
+                "severity": "medium",
+                "instructions": ""
+            },
+            "Artistic-2.0": {
+                "licenseType": "Artistic-2.0",
+                "severity": "medium",
+                "instructions": ""
+            },
+            "CDDL-1.0": {
+                "licenseType": "CDDL-1.0",
+                "severity": "medium",
+                "instructions": ""
+            },
+            "CPOL-1.02": {
+                "licenseType": "CPOL-1.02",
+                "severity": "high",
+                "instructions": ""
+            },
+            "EPL-1.0": {
+                "licenseType": "EPL-1.0",
+                "severity": "medium",
+                "instructions": ""
+            },
+            "GPL-2.0": {
+                "licenseType": "GPL-2.0",
+                "severity": "high",
+                "instructions": ""
+            },
+            "GPL-3.0": {
+                "licenseType": "GPL-3.0",
+                "severity": "high",
+                "instructions": ""
+            },
+            "LGPL-2.0": {
+                "licenseType": "LGPL-2.0",
+                "severity": "medium",
+                "instructions": ""
+            },
+            "LGPL-2.1": {
+                "licenseType": "LGPL-2.1",
+                "severity": "medium",
+                "instructions": ""
+            },
+            "LGPL-3.0": {
+                "licenseType": "LGPL-3.0",
+                "severity": "medium",
+                "instructions": ""
+            },
+            "MPL-1.1": {
+                "licenseType": "MPL-1.1",
+                "severity": "medium",
+                "instructions": ""
+            },
+            "MPL-2.0": {
+                "licenseType": "MPL-2.0",
+                "severity": "medium",
+                "instructions": ""
+            },
+            "MS-RL": {
+                "licenseType": "MS-RL",
+                "severity": "medium",
+                "instructions": ""
+            },
+            "SimPL-2.0": {
+                "licenseType": "SimPL-2.0",
+                "severity": "high",
+                "instructions": ""
+            }
+        }
+    },
+    "packageManager": "npm",
+    "ignoreSettings": null,
+    "summary": "168 vulnerable dependency paths",
+    "remediation": {
+        "unresolved": [
+            {
+                "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+                "alternativeIds": [],
+                "creationTime": "2020-10-09T09:34:22.716485Z",
+                "credit": [
+                    "Yeting Li"
+                ],
+                "cvssScore": 5.3,
+                "description": "## Overview\n[glob-parent](https://www.npmjs.com/package/glob-parent) is a package that helps extracting the non-magic parent path from a glob string.\n\nAffected versions of this package are vulnerable to Regular Expression Denial of Service (ReDoS). The `enclosure` regex used to check for strings ending in enclosure containing path separator.\r\n\r\n### PoC by Yeting Li\r\n```\r\nvar globParent = require(\"glob-parent\")\r\nfunction build_attack(n) {\r\nvar ret = \"{\"\r\nfor (var i = 0; i < n; i++) {\r\nret += \"/\"\r\n}\r\n\r\nreturn ret;\r\n}\r\n\r\nglobParent(build_attack(5000));\r\n```\n\n## Details\n\nDenial of Service (DoS) describes a family of attacks, all aimed at making a system inaccessible to its original and legitimate users. There are many types of DoS attacks, ranging from trying to clog the network pipes to the system by generating a large volume of traffic from many machines (a Distributed Denial of Service - DDoS - attack) to sending crafted requests that cause a system to crash or take a disproportional amount of time to process.\n\nThe Regular expression Denial of Service (ReDoS) is a type of Denial of Service attack. Regular expressions are incredibly powerful, but they aren't very intuitive and can ultimately end up making it easy for attackers to take your site down.\n\nLet’s take the following regular expression as an example:\n```js\nregex = /A(B|C+)+D/\n```\n\nThis regular expression accomplishes the following:\n- `A` The string must start with the letter 'A'\n- `(B|C+)+` The string must then follow the letter A with either the letter 'B' or some number of occurrences of the letter 'C' (the `+` matches one or more times). The `+` at the end of this section states that we can look for one or more matches of this section.\n- `D` Finally, we ensure this section of the string ends with a 'D'\n\nThe expression would match inputs such as `ABBD`, `ABCCCCD`, `ABCBCCCD` and `ACCCCCD`\n\nIt most cases, it doesn't take very long for a regex engine to find a match:\n\n```bash\n$ time node -e '/A(B|C+)+D/.test(\"ACCCCCCCCCCCCCCCCCCCCCCCCCCCCD\")'\n0.04s user 0.01s system 95% cpu 0.052 total\n\n$ time node -e '/A(B|C+)+D/.test(\"ACCCCCCCCCCCCCCCCCCCCCCCCCCCCX\")'\n1.79s user 0.02s system 99% cpu 1.812 total\n```\n\nThe entire process of testing it against a 30 characters long string takes around ~52ms. But when given an invalid string, it takes nearly two seconds to complete the test, over ten times as long as it took to test a valid string. The dramatic difference is due to the way regular expressions get evaluated.\n\nMost Regex engines will work very similarly (with minor differences). The engine will match the first possible way to accept the current character and proceed to the next one. If it then fails to match the next one, it will backtrack and see if there was another way to digest the previous character. If it goes too far down the rabbit hole only to find out the string doesn’t match in the end, and if many characters have multiple valid regex paths, the number of backtracking steps can become very large, resulting in what is known as _catastrophic backtracking_.\n\nLet's look at how our expression runs into this problem, using a shorter string: \"ACCCX\". While it seems fairly straightforward, there are still four different ways that the engine could match those three C's:\n1. CCC\n2. CC+C\n3. C+CC\n4. C+C+C.\n\nThe engine has to try each of those combinations to see if any of them potentially match against the expression. When you combine that with the other steps the engine must take, we can use [RegEx 101 debugger](https://regex101.com/debugger) to see the engine has to take a total of 38 steps before it can determine the string doesn't match.\n\nFrom there, the number of steps the engine must use to validate a string just continues to grow.\n\n| String | Number of C's | Number of steps |\n| -------|-------------:| -----:|\n| ACCCX | 3 | 38\n| ACCCCX | 4 | 71\n| ACCCCCX | 5 | 136\n| ACCCCCCCCCCCCCCX | 14 | 65,553\n\n\nBy the time the string includes 14 C's, the engine has to take over 65,000 steps just to see if the string is valid. These extreme situations can cause them to work very slowly (exponentially related to input size, as shown above), allowing an attacker to exploit this and can cause the service to excessively consume CPU, resulting in a Denial of Service.\n\n## Remediation\nUpgrade `glob-parent` to version 5.1.2 or higher.\n## References\n- [GitHub PR](https://github.com/gulpjs/glob-parent/pull/36)\n- [GitHub Release](https://github.com/gulpjs/glob-parent/releases/tag/v5.1.2)\n",
+                "disclosureTime": "2021-01-12T12:42:32Z",
+                "exploit": "Not Defined",
+                "fixedIn": [
+                    "5.1.2"
+                ],
+                "functions": [],
+                "functions_new": [],
+                "id": "SNYK-JS-GLOBPARENT-1016905",
+                "identifiers": {
+                    "CVE": [
+                        "CVE-2020-28469"
+                    ],
+                    "CWE": [
+                        "CWE-400"
+                    ],
+                    "GHSA": [
+                        "GHSA-ww39-953v-wcq6"
+                    ]
+                },
+                "language": "js",
+                "modificationTime": "2021-03-07T15:12:57.015710Z",
+                "moduleName": "glob-parent",
+                "packageManager": "npm",
+                "packageName": "glob-parent",
+                "patches": [],
+                "proprietary": true,
+                "publicationTime": "2021-01-12T15:00:42Z",
+                "references": [
+                    {
+                        "title": "GitHub PR",
+                        "url": "https://github.com/gulpjs/glob-parent/pull/36"
+                    },
+                    {
+                        "title": "GitHub Release",
+                        "url": "https://github.com/gulpjs/glob-parent/releases/tag/v5.1.2"
+                    }
+                ],
+                "semver": {
+                    "vulnerable": [
+                        "<5.1.2"
+                    ]
+                },
+                "severity": "medium",
+                "severityWithCritical": "medium",
+                "socialTrendAlert": false,
+                "title": "Regular Expression Denial of Service (ReDoS)",
+                "from": [
+                    "owasp-nodejs-goat@1.3.0",
+                    "forever@2.0.0",
+                    "forever-monitor@2.0.0",
+                    "chokidar@2.1.8",
+                    "glob-parent@3.1.0"
+                ],
+                "upgradePath": [],
+                "isUpgradable": false,
+                "isPatchable": false,
+                "isPinnable": false,
+                "name": "glob-parent",
+                "version": "3.1.0"
+            },
+            {
+                "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L/E:P",
+                "alternativeIds": [],
+                "creationTime": "2020-12-08T15:34:07.743781Z",
+                "credit": [
+                    "Eugene Lim",
+                    "Government Technology Agency Cyber Security Group"
+                ],
+                "cvssScore": 7.3,
+                "description": "## Overview\n[ini](https://www.npmjs.org/package/ini) is an An ini encoder/decoder for node\n\nAffected versions of this package are vulnerable to Prototype Pollution. If an attacker submits a malicious INI file to an application that parses it with `ini.parse`, they will pollute the prototype on the application. This can be exploited further depending on the context.\r\n\r\n## PoC by Eugene Lim\r\n\r\npayload.ini\r\n```\r\n[__proto__]\r\npolluted = \"polluted\"\r\n```\r\n\r\npoc.js:\r\n```\r\nvar fs = require('fs')\r\nvar ini = require('ini')\r\n\r\nvar parsed = ini.parse(fs.readFileSync('./payload.ini', 'utf-8'))\r\nconsole.log(parsed)\r\nconsole.log(parsed.__proto__)\r\nconsole.log(polluted)\r\n```\r\n\r\n```\r\n> node poc.js\r\n{}\r\n{ polluted: 'polluted' }\r\n{ polluted: 'polluted' }\r\npolluted\r\n```\n\n## Details\n\nPrototype Pollution is a vulnerability affecting JavaScript. Prototype Pollution refers to the ability to inject properties into existing JavaScript language construct prototypes, such as objects. JavaScript allows all Object attributes to be altered, including their magical attributes such as `_proto_`, `constructor` and `prototype`. An attacker manipulates these attributes to overwrite, or pollute, a JavaScript application object prototype of the base object by injecting other values.  Properties on the `Object.prototype` are then inherited by all the JavaScript objects through the prototype chain. When that happens, this leads to either denial of service by triggering JavaScript exceptions, or it tampers with the application source code to force the code path that the attacker injects, thereby leading to remote code execution.\n\nThere are two main ways in which the pollution of prototypes occurs:\n\n-   Unsafe `Object` recursive merge\n    \n-   Property definition by path\n    \n\n### Unsafe Object recursive merge\n\nThe logic of a vulnerable recursive merge function follows the following high-level model:\n```\nmerge (target, source)\n\n  foreach property of source\n\n    if property exists and is an object on both the target and the source\n\n      merge(target[property], source[property])\n\n    else\n\n      target[property] = source[property]\n```\n<br>  \n\nWhen the source object contains a property named `_proto_` defined with `Object.defineProperty()` , the condition that checks if the property exists and is an object on both the target and the source passes and the merge recurses with the target, being the prototype of `Object` and the source of `Object` as defined by the attacker. Properties are then copied on the `Object` prototype.\n\nClone operations are a special sub-class of unsafe recursive merges, which occur when a recursive merge is conducted on an empty object: `merge({},source)`.\n\n`lodash` and `Hoek` are examples of libraries susceptible to recursive merge attacks.\n\n### Property definition by path\n\nThere are a few JavaScript libraries that use an API to define property values on an object based on a given path. The function that is generally affected contains this signature: `theFunction(object, path, value)`\n\nIf the attacker can control the value of “path”, they can set this value to `_proto_.myValue`. `myValue` is then assigned to the prototype of the class of the object.\n\n## Types of attacks\n\nThere are a few methods by which Prototype Pollution can be manipulated:\n\n| Type |Origin  |Short description |\n|--|--|--|\n| **Denial of service (DoS)**|Client  |This is the most likely attack. <br>DoS occurs when `Object` holds generic functions that are implicitly called for various operations (for example, `toString` and `valueOf`). <br> The attacker pollutes `Object.prototype.someattr` and alters its state to an unexpected value such as `Int` or `Object`. In this case, the code fails and is likely to cause a denial of service.  <br>**For example:** if an attacker pollutes `Object.prototype.toString` by defining it as an integer, if the codebase at any point was reliant on `someobject.toString()` it would fail. |\n |**Remote Code Execution**|Client|Remote code execution is generally only possible in cases where the codebase evaluates a specific attribute of an object, and then executes that evaluation.<br>**For example:** `eval(someobject.someattr)`. In this case, if the attacker pollutes `Object.prototype.someattr` they are likely to be able to leverage this in order to execute code.|\n|**Property Injection**|Client|The attacker pollutes properties that the codebase relies on for their informative value, including security properties such as cookies or tokens.<br>  **For example:** if a codebase checks privileges for `someuser.isAdmin`, then when the attacker pollutes `Object.prototype.isAdmin` and sets it to equal `true`, they can then achieve admin privileges.|\n\n## Affected environments\n\nThe following environments are susceptible to a Prototype Pollution attack:\n\n-   Application server\n    \n-   Web server\n    \n\n## How to prevent\n\n1.  Freeze the prototype— use `Object.freeze (Object.prototype)`.\n    \n2.  Require schema validation of JSON input.\n    \n3.  Avoid using unsafe recursive merge functions.\n    \n4.  Consider using objects without prototypes (for example, `Object.create(null)`), breaking the prototype chain and preventing pollution.\n    \n5.  As a best practice use `Map` instead of `Object`.\n\n### For more information on this vulnerability type:\n\n[Arteau, Oliver. “JavaScript prototype pollution attack in NodeJS application.” GitHub, 26 May 2018](https://github.com/HoLyVieR/prototype-pollution-nsec18/blob/master/paper/JavaScript_prototype_pollution_attack_in_NodeJS.pdf)\n\n## Remediation\nUpgrade `ini` to version 1.3.6 or higher.\n## References\n- [Eugene Lim - Research Blog Post](https://medium.com/csg-govtech/supply-chain-pollution-discovering-a-16-million-download-week-node-js-2fa4d2c27cf7)\n- [GitHub Commit](https://github.com/npm/ini/commit/56d2805e07ccd94e2ba0984ac9240ff02d44b6f1)\n",
+                "disclosureTime": "2020-12-08T13:02:04Z",
+                "exploit": "Proof of Concept",
+                "fixedIn": [
+                    "1.3.6"
+                ],
+                "functions": [],
+                "functions_new": [],
+                "id": "SNYK-JS-INI-1048974",
+                "identifiers": {
+                    "CVE": [
+                        "CVE-2020-7788"
+                    ],
+                    "CWE": [
+                        "CWE-400"
+                    ],
+                    "GHSA": [
+                        "GHSA-qqgx-2p2h-9c37"
+                    ]
+                },
+                "language": "js",
+                "modificationTime": "2020-12-10T18:09:23.069283Z",
+                "moduleName": "ini",
+                "packageManager": "npm",
+                "packageName": "ini",
+                "patches": [],
+                "proprietary": true,
+                "publicationTime": "2020-12-10T18:08:38Z",
+                "references": [
+                    {
+                        "title": "Eugene Lim - Research Blog Post",
+                        "url": "https://medium.com/csg-govtech/supply-chain-pollution-discovering-a-16-million-download-week-node-js-2fa4d2c27cf7"
+                    },
+                    {
+                        "title": "GitHub Commit",
+                        "url": "https://github.com/npm/ini/commit/56d2805e07ccd94e2ba0984ac9240ff02d44b6f1"
+                    }
+                ],
+                "semver": {
+                    "vulnerable": [
+                        "<1.3.6"
+                    ]
+                },
+                "severity": "high",
+                "severityWithCritical": "high",
+                "socialTrendAlert": false,
+                "title": "Prototype Pollution",
+                "from": [
+                    "owasp-nodejs-goat@1.3.0",
+                    "forever@2.0.0",
+                    "forever-monitor@2.0.0",
+                    "chokidar@2.1.8",
+                    "fsevents@1.2.9",
+                    "node-pre-gyp@0.12.0",
+                    "rc@1.2.8",
+                    "ini@1.3.5"
+                ],
+                "upgradePath": [
+                    false,
+                    "forever@2.0.0",
+                    "forever-monitor@2.0.0",
+                    "chokidar@2.1.8",
+                    "fsevents@1.2.9",
+                    "node-pre-gyp@0.12.0",
+                    "rc@1.2.8",
+                    "ini@1.3.6"
+                ],
+                "isUpgradable": true,
+                "isPatchable": false,
+                "isPinnable": false,
+                "name": "ini",
+                "version": "1.3.5"
+            },
+            {
+                "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N/E:P/RL:O/RC:C",
+                "alternativeIds": [],
+                "creationTime": "2019-12-16T14:21:14.675101Z",
+                "credit": [
+                    "Feng Xiao"
+                ],
+                "cvssScore": 3.7,
+                "description": "## Overview\n[kind-of](https://github.com/jonschlinkert/kind-of) is a package that gets the native type of a value.\n\nAffected versions of this package are vulnerable to Validation Bypass. It leverages the built-in constructor of unsafe user-input to detect type information. However, a crafted payload can overwrite this built in attribute to manipulate the type detection result.\r\n\r\n## PoC by Feng Xiao\r\n```\r\nvar kindOf = require('kind-of');\r\n\r\n\r\nvar user_input = {\r\n  user: 'barney',\r\n  age: 36,\r\n  active: true,\r\n  \"constructor\":{\"name\":\"Symbol\"}\r\n};\r\nconsole.log(kindOf(user_input));\r\n```\n## Remediation\nUpgrade `kind-of` to version 6.0.3 or higher.\n## References\n- [GitHub Issue](https://github.com/jonschlinkert/kind-of/issues/30)\n- [GitHub PR](https://github.com/jonschlinkert/kind-of/pull/31)\n",
+                "disclosureTime": "2019-12-16T14:31:14Z",
+                "exploit": "Proof of Concept",
+                "fixedIn": [
+                    "6.0.3"
+                ],
+                "functions": [
+                    {
+                        "functionId": {
+                            "className": null,
+                            "filePath": "index.js",
+                            "functionName": "ctorName"
+                        },
+                        "version": [
+                            ">=6.0.0 <6.0.3"
+                        ]
+                    }
+                ],
+                "functions_new": [
+                    {
+                        "functionId": {
+                            "filePath": "index.js",
+                            "functionName": "ctorName"
+                        },
+                        "version": [
+                            ">=6.0.0 <6.0.3"
+                        ]
+                    }
+                ],
+                "id": "SNYK-JS-KINDOF-537849",
+                "identifiers": {
+                    "CVE": [
+                        "CVE-2019-20149"
+                    ],
+                    "CWE": [
+                        "CWE-20"
+                    ],
+                    "GHSA": [
+                        "GHSA-6c8f-qphg-qjgp"
+                    ],
+                    "NSP": [
+                        1490
+                    ]
+                },
+                "language": "js",
+                "modificationTime": "2020-06-12T14:36:55.567043Z",
+                "moduleName": "kind-of",
+                "packageManager": "npm",
+                "packageName": "kind-of",
+                "patches": [],
+                "proprietary": false,
+                "publicationTime": "2020-01-19T14:31:13Z",
+                "references": [
+                    {
+                        "title": "GitHub Issue",
+                        "url": "https://github.com/jonschlinkert/kind-of/issues/30"
+                    },
+                    {
+                        "title": "GitHub PR",
+                        "url": "https://github.com/jonschlinkert/kind-of/pull/31"
+                    }
+                ],
+                "semver": {
+                    "vulnerable": [
+                        ">=6.0.0 <6.0.3"
+                    ]
+                },
+                "severity": "low",
+                "severityWithCritical": "low",
+                "socialTrendAlert": false,
+                "title": "Validation Bypass",
+                "from": [
+                    "owasp-nodejs-goat@1.3.0",
+                    "forever@2.0.0",
+                    "forever-monitor@2.0.0",
+                    "chokidar@2.1.8",
+                    "readdirp@2.2.1",
+                    "micromatch@3.1.10",
+                    "extglob@2.0.4",
+                    "expand-brackets@2.1.4",
+                    "snapdragon@0.8.2",
+                    "base@0.11.2",
+                    "define-property@1.0.0",
+                    "is-descriptor@1.0.2",
+                    "is-data-descriptor@1.0.0",
+                    "kind-of@6.0.2"
+                ],
+                "upgradePath": [
+                    false,
+                    "forever@2.0.0",
+                    "forever-monitor@2.0.0",
+                    "chokidar@2.1.8",
+                    "readdirp@2.2.1",
+                    "micromatch@3.1.10",
+                    "extglob@2.0.4",
+                    "expand-brackets@2.1.4",
+                    "snapdragon@0.8.2",
+                    "base@0.11.2",
+                    "define-property@1.0.0",
+                    "is-descriptor@1.0.2",
+                    "is-data-descriptor@1.0.0",
+                    "kind-of@6.0.3"
+                ],
+                "isUpgradable": true,
+                "isPatchable": false,
+                "isPinnable": false,
+                "name": "kind-of",
+                "version": "6.0.2"
+            },
+            {
+                "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L/E:P/RL:O/RC:C",
+                "alternativeIds": [],
+                "creationTime": "2020-03-11T08:25:47.093051Z",
+                "credit": [
+                    "Snyk Security Team"
+                ],
+                "cvssScore": 5.6,
+                "description": "## Overview\n[minimist](https://www.npmjs.com/package/minimist) is a parse argument options module.\n\nAffected versions of this package are vulnerable to Prototype Pollution. The library could be tricked into adding or modifying properties of `Object.prototype` using a `constructor` or `__proto__` payload.\r\n\r\n## PoC by Snyk\r\n```\r\nrequire('minimist')('--__proto__.injected0 value0'.split(' '));\r\nconsole.log(({}).injected0 === 'value0'); // true\r\n\r\nrequire('minimist')('--constructor.prototype.injected1 value1'.split(' '));\r\nconsole.log(({}).injected1 === 'value1'); // true\r\n```\n\n## Details\n\nPrototype Pollution is a vulnerability affecting JavaScript. Prototype Pollution refers to the ability to inject properties into existing JavaScript language construct prototypes, such as objects. JavaScript allows all Object attributes to be altered, including their magical attributes such as `_proto_`, `constructor` and `prototype`. An attacker manipulates these attributes to overwrite, or pollute, a JavaScript application object prototype of the base object by injecting other values.  Properties on the `Object.prototype` are then inherited by all the JavaScript objects through the prototype chain. When that happens, this leads to either denial of service by triggering JavaScript exceptions, or it tampers with the application source code to force the code path that the attacker injects, thereby leading to remote code execution.\n\nThere are two main ways in which the pollution of prototypes occurs:\n\n-   Unsafe `Object` recursive merge\n    \n-   Property definition by path\n    \n\n### Unsafe Object recursive merge\n\nThe logic of a vulnerable recursive merge function follows the following high-level model:\n```\nmerge (target, source)\n\n  foreach property of source\n\n    if property exists and is an object on both the target and the source\n\n      merge(target[property], source[property])\n\n    else\n\n      target[property] = source[property]\n```\n<br>  \n\nWhen the source object contains a property named `_proto_` defined with `Object.defineProperty()` , the condition that checks if the property exists and is an object on both the target and the source passes and the merge recurses with the target, being the prototype of `Object` and the source of `Object` as defined by the attacker. Properties are then copied on the `Object` prototype.\n\nClone operations are a special sub-class of unsafe recursive merges, which occur when a recursive merge is conducted on an empty object: `merge({},source)`.\n\n`lodash` and `Hoek` are examples of libraries susceptible to recursive merge attacks.\n\n### Property definition by path\n\nThere are a few JavaScript libraries that use an API to define property values on an object based on a given path. The function that is generally affected contains this signature: `theFunction(object, path, value)`\n\nIf the attacker can control the value of “path”, they can set this value to `_proto_.myValue`. `myValue` is then assigned to the prototype of the class of the object.\n\n## Types of attacks\n\nThere are a few methods by which Prototype Pollution can be manipulated:\n\n| Type |Origin  |Short description |\n|--|--|--|\n| **Denial of service (DoS)**|Client  |This is the most likely attack. <br>DoS occurs when `Object` holds generic functions that are implicitly called for various operations (for example, `toString` and `valueOf`). <br> The attacker pollutes `Object.prototype.someattr` and alters its state to an unexpected value such as `Int` or `Object`. In this case, the code fails and is likely to cause a denial of service.  <br>**For example:** if an attacker pollutes `Object.prototype.toString` by defining it as an integer, if the codebase at any point was reliant on `someobject.toString()` it would fail. |\n |**Remote Code Execution**|Client|Remote code execution is generally only possible in cases where the codebase evaluates a specific attribute of an object, and then executes that evaluation.<br>**For example:** `eval(someobject.someattr)`. In this case, if the attacker pollutes `Object.prototype.someattr` they are likely to be able to leverage this in order to execute code.|\n|**Property Injection**|Client|The attacker pollutes properties that the codebase relies on for their informative value, including security properties such as cookies or tokens.<br>  **For example:** if a codebase checks privileges for `someuser.isAdmin`, then when the attacker pollutes `Object.prototype.isAdmin` and sets it to equal `true`, they can then achieve admin privileges.|\n\n## Affected environments\n\nThe following environments are susceptible to a Prototype Pollution attack:\n\n-   Application server\n    \n-   Web server\n    \n\n## How to prevent\n\n1.  Freeze the prototype— use `Object.freeze (Object.prototype)`.\n    \n2.  Require schema validation of JSON input.\n    \n3.  Avoid using unsafe recursive merge functions.\n    \n4.  Consider using objects without prototypes (for example, `Object.create(null)`), breaking the prototype chain and preventing pollution.\n    \n5.  As a best practice use `Map` instead of `Object`.\n\n### For more information on this vulnerability type:\n\n[Arteau, Oliver. “JavaScript prototype pollution attack in NodeJS application.” GitHub, 26 May 2018](https://github.com/HoLyVieR/prototype-pollution-nsec18/blob/master/paper/JavaScript_prototype_pollution_attack_in_NodeJS.pdf)\n\n## Remediation\nUpgrade `minimist` to version 0.2.1, 1.2.3 or higher.\n## References\n- [Command Injection PoC](https://gist.github.com/Kirill89/47feb345b09bf081317f08dd43403a8a)\n- [GitHub Fix Commit #1](https://github.com/substack/minimist/commit/63e7ed05aa4b1889ec2f3b196426db4500cbda94)\n- [GitHub Fix Commit #2](https://github.com/substack/minimist/commit/38a4d1caead72ef99e824bb420a2528eec03d9ab)\n- [Snyk Research Blog](https://snyk.io/blog/prototype-pollution-minimist/)\n",
+                "disclosureTime": "2020-03-10T08:22:24Z",
+                "exploit": "Proof of Concept",
+                "fixedIn": [
+                    "0.2.1",
+                    "1.2.3"
+                ],
+                "functions": [
+                    {
+                        "functionId": {
+                            "className": null,
+                            "filePath": "index.js",
+                            "functionName": "setKey"
+                        },
+                        "version": [
+                            "<0.2.1",
+                            ">=1.0.0 <1.1.1"
+                        ]
+                    },
+                    {
+                        "functionId": {
+                            "className": null,
+                            "filePath": "index.js",
+                            "functionName": "module.exports.setKey"
+                        },
+                        "version": [
+                            "<0.2.1",
+                            ">=1.1.1 <1.2.3"
+                        ]
+                    }
+                ],
+                "functions_new": [
+                    {
+                        "functionId": {
+                            "filePath": "index.js",
+                            "functionName": "setKey"
+                        },
+                        "version": [
+                            "<0.2.1",
+                            ">=1.0.0 <1.1.1"
+                        ]
+                    },
+                    {
+                        "functionId": {
+                            "filePath": "index.js",
+                            "functionName": "module.exports.setKey"
+                        },
+                        "version": [
+                            "<0.2.1",
+                            ">=1.1.1 <1.2.3"
+                        ]
+                    }
+                ],
+                "id": "SNYK-JS-MINIMIST-559764",
+                "identifiers": {
+                    "CVE": [
+                        "CVE-2020-7598"
+                    ],
+                    "CWE": [
+                        "CWE-400"
+                    ],
+                    "GHSA": [
+                        "GHSA-vh95-rmgr-6w4m"
+                    ],
+                    "NSP": [
+                        1179
+                    ]
+                },
+                "language": "js",
+                "modificationTime": "2020-12-20T09:48:43.878574Z",
+                "moduleName": "minimist",
+                "packageManager": "npm",
+                "packageName": "minimist",
+                "patches": [],
+                "proprietary": true,
+                "publicationTime": "2020-03-11T08:22:19Z",
+                "references": [
+                    {
+                        "title": "Command Injection PoC",
+                        "url": "https://gist.github.com/Kirill89/47feb345b09bf081317f08dd43403a8a"
+                    },
+                    {
+                        "title": "GitHub Fix Commit #1",
+                        "url": "https://github.com/substack/minimist/commit/63e7ed05aa4b1889ec2f3b196426db4500cbda94"
+                    },
+                    {
+                        "title": "GitHub Fix Commit #2",
+                        "url": "https://github.com/substack/minimist/commit/38a4d1caead72ef99e824bb420a2528eec03d9ab"
+                    },
+                    {
+                        "title": "Snyk Research Blog",
+                        "url": "https://snyk.io/blog/prototype-pollution-minimist/"
+                    }
+                ],
+                "semver": {
+                    "vulnerable": [
+                        "<0.2.1",
+                        ">=1.0.0 <1.2.3"
+                    ]
+                },
+                "severity": "medium",
+                "severityWithCritical": "medium",
+                "socialTrendAlert": false,
+                "title": "Prototype Pollution",
+                "from": [
+                    "owasp-nodejs-goat@1.3.0",
+                    "forever@2.0.0",
+                    "forever-monitor@2.0.0",
+                    "chokidar@2.1.8",
+                    "fsevents@1.2.9",
+                    "node-pre-gyp@0.12.0",
+                    "rc@1.2.8",
+                    "minimist@1.2.0"
+                ],
+                "upgradePath": [
+                    false,
+                    "forever@2.0.0",
+                    "forever-monitor@2.0.0",
+                    "chokidar@2.1.8",
+                    "fsevents@1.2.9",
+                    "node-pre-gyp@0.12.0",
+                    "rc@1.2.8",
+                    "minimist@1.2.3"
+                ],
+                "isUpgradable": true,
+                "isPatchable": false,
+                "isPinnable": false,
+                "name": "minimist",
+                "version": "1.2.0"
+            },
+            {
+                "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L/E:P/RL:O/RC:C",
+                "alternativeIds": [],
+                "creationTime": "2019-06-20T09:34:56.241544Z",
+                "credit": [
+                    "Snyk Security Team"
+                ],
+                "cvssScore": 7.3,
+                "description": "## Overview\n[mixin-deep](https://www.npmjs.com/package/mixin-deep) is a package that deeply mixes the properties of objects into the first object.\n\nAffected versions of this package are vulnerable to Prototype Pollution. The function `mixin-deep` could be tricked into adding or modifying properties of `Object.prototype` using a `constructor` payload.\r\n\r\n## PoC by Snyk\r\n```\r\nconst mixin = require('mixin-deep');\r\nconst payload = '{\"constructor\": {\"prototype\": {\"a0\": true}}}'\r\n\r\nfunction check() {\r\n    mixin({}, JSON.parse(payload));\r\n    if (({})[`a0`] === true) {\r\n          console.log(`Vulnerable to Prototype Pollution via ${payload}`)\r\n  }\r\n}\r\n\r\ncheck();\r\n```\n\n## Details\n\nDenial of Service (DoS) describes a family of attacks, all aimed at making a system inaccessible to its original and legitimate users. There are many types of DoS attacks, ranging from trying to clog the network pipes to the system by generating a large volume of traffic from many machines (a Distributed Denial of Service - DDoS - attack) to sending crafted requests that cause a system to crash or take a disproportional amount of time to process.\n\nThe Regular expression Denial of Service (ReDoS) is a type of Denial of Service attack. Regular expressions are incredibly powerful, but they aren't very intuitive and can ultimately end up making it easy for attackers to take your site down.\n\nLet’s take the following regular expression as an example:\n```js\nregex = /A(B|C+)+D/\n```\n\nThis regular expression accomplishes the following:\n- `A` The string must start with the letter 'A'\n- `(B|C+)+` The string must then follow the letter A with either the letter 'B' or some number of occurrences of the letter 'C' (the `+` matches one or more times). The `+` at the end of this section states that we can look for one or more matches of this section.\n- `D` Finally, we ensure this section of the string ends with a 'D'\n\nThe expression would match inputs such as `ABBD`, `ABCCCCD`, `ABCBCCCD` and `ACCCCCD`\n\nIt most cases, it doesn't take very long for a regex engine to find a match:\n\n```bash\n$ time node -e '/A(B|C+)+D/.test(\"ACCCCCCCCCCCCCCCCCCCCCCCCCCCCD\")'\n0.04s user 0.01s system 95% cpu 0.052 total\n\n$ time node -e '/A(B|C+)+D/.test(\"ACCCCCCCCCCCCCCCCCCCCCCCCCCCCX\")'\n1.79s user 0.02s system 99% cpu 1.812 total\n```\n\nThe entire process of testing it against a 30 characters long string takes around ~52ms. But when given an invalid string, it takes nearly two seconds to complete the test, over ten times as long as it took to test a valid string. The dramatic difference is due to the way regular expressions get evaluated.\n\nMost Regex engines will work very similarly (with minor differences). The engine will match the first possible way to accept the current character and proceed to the next one. If it then fails to match the next one, it will backtrack and see if there was another way to digest the previous character. If it goes too far down the rabbit hole only to find out the string doesn’t match in the end, and if many characters have multiple valid regex paths, the number of backtracking steps can become very large, resulting in what is known as _catastrophic backtracking_.\n\nLet's look at how our expression runs into this problem, using a shorter string: \"ACCCX\". While it seems fairly straightforward, there are still four different ways that the engine could match those three C's:\n1. CCC\n2. CC+C\n3. C+CC\n4. C+C+C.\n\nThe engine has to try each of those combinations to see if any of them potentially match against the expression. When you combine that with the other steps the engine must take, we can use [RegEx 101 debugger](https://regex101.com/debugger) to see the engine has to take a total of 38 steps before it can determine the string doesn't match.\n\nFrom there, the number of steps the engine must use to validate a string just continues to grow.\n\n| String | Number of C's | Number of steps |\n| -------|-------------:| -----:|\n| ACCCX | 3 | 38\n| ACCCCX | 4 | 71\n| ACCCCCX | 5 | 136\n| ACCCCCCCCCCCCCCX | 14 | 65,553\n\n\nBy the time the string includes 14 C's, the engine has to take over 65,000 steps just to see if the string is valid. These extreme situations can cause them to work very slowly (exponentially related to input size, as shown above), allowing an attacker to exploit this and can cause the service to excessively consume CPU, resulting in a Denial of Service.\n\n## Remediation\nUpgrade `mixin-deep` to version 2.0.1, 1.3.2 or higher.\n## References\n- [GitHub Commit](https://github.com/jonschlinkert/mixin-deep/commit/8f464c8ce9761a8c9c2b3457eaeee9d404fa7af9)\n",
+                "disclosureTime": "2019-06-19T09:34:10Z",
+                "exploit": "Proof of Concept",
+                "fixedIn": [
+                    "2.0.1",
+                    "1.3.2"
+                ],
+                "functions": [
+                    {
+                        "functionId": {
+                            "className": null,
+                            "filePath": "index.js",
+                            "functionName": "module.exports.copy"
+                        },
+                        "version": [
+                            "<1.1.1"
+                        ]
+                    },
+                    {
+                        "functionId": {
+                            "className": null,
+                            "filePath": "index.js",
+                            "functionName": "copy"
+                        },
+                        "version": [
+                            ">=1.1.1 <2.0.0"
+                        ]
+                    },
+                    {
+                        "functionId": {
+                            "className": null,
+                            "filePath": "index.js",
+                            "functionName": "mixinDeep"
+                        },
+                        "version": [
+                            ">=2.0.0 <2.0.1"
+                        ]
+                    }
+                ],
+                "functions_new": [
+                    {
+                        "functionId": {
+                            "filePath": "index.js",
+                            "functionName": "module.exports.copy"
+                        },
+                        "version": [
+                            "<1.1.1"
+                        ]
+                    },
+                    {
+                        "functionId": {
+                            "filePath": "index.js",
+                            "functionName": "copy"
+                        },
+                        "version": [
+                            ">=1.1.1 <2.0.0"
+                        ]
+                    },
+                    {
+                        "functionId": {
+                            "filePath": "index.js",
+                            "functionName": "mixinDeep"
+                        },
+                        "version": [
+                            ">=2.0.0 <2.0.1"
+                        ]
+                    }
+                ],
+                "id": "SNYK-JS-MIXINDEEP-450212",
+                "identifiers": {
+                    "CVE": [
+                        "CVE-2019-10746"
+                    ],
+                    "CWE": [
+                        "CWE-400"
+                    ],
+                    "GHSA": [
+                        "GHSA-fhjf-83wg-r2j9"
+                    ],
+                    "NSP": [
+                        1013
+                    ]
+                },
+                "language": "js",
+                "modificationTime": "2020-06-12T14:37:00.759386Z",
+                "moduleName": "mixin-deep",
+                "packageManager": "npm",
+                "packageName": "mixin-deep",
+                "patches": [],
+                "proprietary": true,
+                "publicationTime": "2019-06-20T09:34:08Z",
+                "references": [
+                    {
+                        "title": "GitHub Commit",
+                        "url": "https://github.com/jonschlinkert/mixin-deep/commit/8f464c8ce9761a8c9c2b3457eaeee9d404fa7af9"
+                    }
+                ],
+                "semver": {
+                    "vulnerable": [
+                        ">=2.0.0 <2.0.1",
+                        "<1.3.2"
+                    ]
+                },
+                "severity": "high",
+                "severityWithCritical": "high",
+                "socialTrendAlert": false,
+                "title": "Prototype Pollution",
+                "from": [
+                    "owasp-nodejs-goat@1.3.0",
+                    "forever@2.0.0",
+                    "forever-monitor@2.0.0",
+                    "chokidar@2.1.8",
+                    "readdirp@2.2.1",
+                    "micromatch@3.1.10",
+                    "extglob@2.0.4",
+                    "expand-brackets@2.1.4",
+                    "snapdragon@0.8.2",
+                    "base@0.11.2",
+                    "mixin-deep@1.3.1"
+                ],
+                "upgradePath": [
+                    false,
+                    "forever@2.0.0",
+                    "forever-monitor@2.0.0",
+                    "chokidar@2.1.8",
+                    "readdirp@2.2.1",
+                    "micromatch@3.1.10",
+                    "extglob@2.0.4",
+                    "expand-brackets@2.1.4",
+                    "snapdragon@0.8.2",
+                    "base@0.11.2",
+                    "mixin-deep@1.3.2"
+                ],
+                "isUpgradable": true,
+                "isPatchable": false,
+                "isPinnable": false,
+                "name": "mixin-deep",
+                "version": "1.3.1"
+            },
+            {
+                "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L/E:P/RL:O/RC:C",
+                "alternativeIds": [],
+                "creationTime": "2019-06-20T09:40:41.272349Z",
+                "credit": [
+                    "Jon Schlinkert"
+                ],
+                "cvssScore": 7.3,
+                "description": "## Overview\n[set-value](https://www.npmjs.com/package/set-value) is a package that creates nested values and any intermediaries using dot notation ('a.b.c') paths.\n\nAffected versions of this package are vulnerable to Prototype Pollution. The function `set-value` could be tricked into adding or modifying properties of `Object.prototype` using any of the `constructor`, `prototype` and `_proto_` payloads.\r\n\r\n## PoC by Snyk\r\n```\r\nconst setFn = require('set-value');\r\nconst paths = [\r\n  'constructor.prototype.a0',\r\n  '__proto__.a1',\r\n];\r\n\r\nfunction check() {\r\n  for (const p of paths) {\r\n      setFn({}, p, true);\r\n  }\r\n  for (let i = 0; i < paths.length; i++) {\r\n      if (({})[`a${i}`] === true) {\r\n          console.log(`Yes with ${paths[i]}`);\r\n      }\r\n  }\r\n}\r\n\r\ncheck();\r\n\r\n```\n\n## Details\n\nDenial of Service (DoS) describes a family of attacks, all aimed at making a system inaccessible to its original and legitimate users. There are many types of DoS attacks, ranging from trying to clog the network pipes to the system by generating a large volume of traffic from many machines (a Distributed Denial of Service - DDoS - attack) to sending crafted requests that cause a system to crash or take a disproportional amount of time to process.\n\nThe Regular expression Denial of Service (ReDoS) is a type of Denial of Service attack. Regular expressions are incredibly powerful, but they aren't very intuitive and can ultimately end up making it easy for attackers to take your site down.\n\nLet’s take the following regular expression as an example:\n```js\nregex = /A(B|C+)+D/\n```\n\nThis regular expression accomplishes the following:\n- `A` The string must start with the letter 'A'\n- `(B|C+)+` The string must then follow the letter A with either the letter 'B' or some number of occurrences of the letter 'C' (the `+` matches one or more times). The `+` at the end of this section states that we can look for one or more matches of this section.\n- `D` Finally, we ensure this section of the string ends with a 'D'\n\nThe expression would match inputs such as `ABBD`, `ABCCCCD`, `ABCBCCCD` and `ACCCCCD`\n\nIt most cases, it doesn't take very long for a regex engine to find a match:\n\n```bash\n$ time node -e '/A(B|C+)+D/.test(\"ACCCCCCCCCCCCCCCCCCCCCCCCCCCCD\")'\n0.04s user 0.01s system 95% cpu 0.052 total\n\n$ time node -e '/A(B|C+)+D/.test(\"ACCCCCCCCCCCCCCCCCCCCCCCCCCCCX\")'\n1.79s user 0.02s system 99% cpu 1.812 total\n```\n\nThe entire process of testing it against a 30 characters long string takes around ~52ms. But when given an invalid string, it takes nearly two seconds to complete the test, over ten times as long as it took to test a valid string. The dramatic difference is due to the way regular expressions get evaluated.\n\nMost Regex engines will work very similarly (with minor differences). The engine will match the first possible way to accept the current character and proceed to the next one. If it then fails to match the next one, it will backtrack and see if there was another way to digest the previous character. If it goes too far down the rabbit hole only to find out the string doesn’t match in the end, and if many characters have multiple valid regex paths, the number of backtracking steps can become very large, resulting in what is known as _catastrophic backtracking_.\n\nLet's look at how our expression runs into this problem, using a shorter string: \"ACCCX\". While it seems fairly straightforward, there are still four different ways that the engine could match those three C's:\n1. CCC\n2. CC+C\n3. C+CC\n4. C+C+C.\n\nThe engine has to try each of those combinations to see if any of them potentially match against the expression. When you combine that with the other steps the engine must take, we can use [RegEx 101 debugger](https://regex101.com/debugger) to see the engine has to take a total of 38 steps before it can determine the string doesn't match.\n\nFrom there, the number of steps the engine must use to validate a string just continues to grow.\n\n| String | Number of C's | Number of steps |\n| -------|-------------:| -----:|\n| ACCCX | 3 | 38\n| ACCCCX | 4 | 71\n| ACCCCCX | 5 | 136\n| ACCCCCCCCCCCCCCX | 14 | 65,553\n\n\nBy the time the string includes 14 C's, the engine has to take over 65,000 steps just to see if the string is valid. These extreme situations can cause them to work very slowly (exponentially related to input size, as shown above), allowing an attacker to exploit this and can cause the service to excessively consume CPU, resulting in a Denial of Service.\n\n## Remediation\nUpgrade `set-value` to version 2.0.1, 3.0.1 or higher.\n## References\n- [GitHub Commit](https://github.com/jonschlinkert/set-value/commit/95e9d9923f8a8b4a01da1ea138fcc39ec7b6b15f)\n- [NPM Security Advisory](https://nodesecurity.io/advisories/1012)\n",
+                "disclosureTime": "2019-06-19T09:38:54Z",
+                "exploit": "Proof of Concept",
+                "fixedIn": [
+                    "2.0.1",
+                    "3.0.1"
+                ],
+                "functions": [
+                    {
+                        "functionId": {
+                            "className": null,
+                            "filePath": "index.js",
+                            "functionName": "create"
+                        },
+                        "version": [
+                            "<0.3.0"
+                        ]
+                    },
+                    {
+                        "functionId": {
+                            "className": null,
+                            "filePath": "index.js",
+                            "functionName": "module.exports"
+                        },
+                        "version": [
+                            ">=0.3.0 <3.0.0"
+                        ]
+                    },
+                    {
+                        "functionId": {
+                            "className": null,
+                            "filePath": "index.js",
+                            "functionName": "set"
+                        },
+                        "version": [
+                            ">=3.0.0 <3.0.1"
+                        ]
+                    }
+                ],
+                "functions_new": [
+                    {
+                        "functionId": {
+                            "filePath": "index.js",
+                            "functionName": "create"
+                        },
+                        "version": [
+                            "<0.3.0"
+                        ]
+                    },
+                    {
+                        "functionId": {
+                            "filePath": "index.js",
+                            "functionName": "module.exports"
+                        },
+                        "version": [
+                            ">=0.3.0 <3.0.0"
+                        ]
+                    },
+                    {
+                        "functionId": {
+                            "filePath": "index.js",
+                            "functionName": "set"
+                        },
+                        "version": [
+                            ">=3.0.0 <3.0.1"
+                        ]
+                    }
+                ],
+                "id": "SNYK-JS-SETVALUE-450213",
+                "identifiers": {
+                    "CVE": [
+                        "CVE-2019-10747"
+                    ],
+                    "CWE": [
+                        "CWE-400"
+                    ],
+                    "GHSA": [
+                        "GHSA-4g88-fppr-53pp"
+                    ],
+                    "NSP": [
+                        1012
+                    ]
+                },
+                "language": "js",
+                "modificationTime": "2020-06-12T14:37:03.345163Z",
+                "moduleName": "set-value",
+                "packageManager": "npm",
+                "packageName": "set-value",
+                "patches": [],
+                "proprietary": true,
+                "publicationTime": "2019-06-20T09:38:53Z",
+                "references": [
+                    {
+                        "title": "GitHub Commit",
+                        "url": "https://github.com/jonschlinkert/set-value/commit/95e9d9923f8a8b4a01da1ea138fcc39ec7b6b15f"
+                    },
+                    {
+                        "title": "NPM Security Advisory",
+                        "url": "https://nodesecurity.io/advisories/1012"
+                    }
+                ],
+                "semver": {
+                    "vulnerable": [
+                        "<2.0.1",
+                        ">=3.0.0 <3.0.1"
+                    ]
+                },
+                "severity": "high",
+                "severityWithCritical": "high",
+                "socialTrendAlert": false,
+                "title": "Prototype Pollution",
+                "from": [
+                    "owasp-nodejs-goat@1.3.0",
+                    "forever@2.0.0",
+                    "forever-monitor@2.0.0",
+                    "chokidar@2.1.8",
+                    "readdirp@2.2.1",
+                    "micromatch@3.1.10",
+                    "extglob@2.0.4",
+                    "expand-brackets@2.1.4",
+                    "snapdragon@0.8.2",
+                    "base@0.11.2",
+                    "cache-base@1.0.1",
+                    "union-value@1.0.0",
+                    "set-value@0.4.3"
+                ],
+                "upgradePath": [
+                    false,
+                    "forever@2.0.0",
+                    "forever-monitor@2.0.0",
+                    "chokidar@2.1.8",
+                    "readdirp@2.2.1",
+                    "micromatch@3.1.10",
+                    "extglob@2.0.4",
+                    "expand-brackets@2.1.4",
+                    "snapdragon@0.8.2",
+                    "base@0.11.2",
+                    "cache-base@1.0.1",
+                    "union-value@1.0.1",
+                    "set-value@2.0.1"
+                ],
+                "isUpgradable": true,
+                "isPatchable": false,
+                "isPinnable": false,
+                "name": "set-value",
+                "version": "0.4.3"
+            },
+            {
+                "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L/E:P",
+                "alternativeIds": [],
+                "creationTime": "2020-10-25T14:27:16.715665Z",
+                "credit": [
+                    "po6ix"
+                ],
+                "cvssScore": 7.3,
+                "description": "## Overview\n[y18n](https://www.npmjs.com/package/y18n) is a the bare-bones internationalization library used by yargs\n\nAffected versions of this package are vulnerable to Prototype Pollution. PoC by po6ix:\r\n```\r\nconst y18n = require('y18n')();\r\n \r\ny18n.setLocale('__proto__');\r\ny18n.updateLocale({polluted: true});\r\n\r\nconsole.log(polluted); // true\r\n```\n\n## Details\n\nPrototype Pollution is a vulnerability affecting JavaScript. Prototype Pollution refers to the ability to inject properties into existing JavaScript language construct prototypes, such as objects. JavaScript allows all Object attributes to be altered, including their magical attributes such as `_proto_`, `constructor` and `prototype`. An attacker manipulates these attributes to overwrite, or pollute, a JavaScript application object prototype of the base object by injecting other values.  Properties on the `Object.prototype` are then inherited by all the JavaScript objects through the prototype chain. When that happens, this leads to either denial of service by triggering JavaScript exceptions, or it tampers with the application source code to force the code path that the attacker injects, thereby leading to remote code execution.\n\nThere are two main ways in which the pollution of prototypes occurs:\n\n-   Unsafe `Object` recursive merge\n    \n-   Property definition by path\n    \n\n### Unsafe Object recursive merge\n\nThe logic of a vulnerable recursive merge function follows the following high-level model:\n```\nmerge (target, source)\n\n  foreach property of source\n\n    if property exists and is an object on both the target and the source\n\n      merge(target[property], source[property])\n\n    else\n\n      target[property] = source[property]\n```\n<br>  \n\nWhen the source object contains a property named `_proto_` defined with `Object.defineProperty()` , the condition that checks if the property exists and is an object on both the target and the source passes and the merge recurses with the target, being the prototype of `Object` and the source of `Object` as defined by the attacker. Properties are then copied on the `Object` prototype.\n\nClone operations are a special sub-class of unsafe recursive merges, which occur when a recursive merge is conducted on an empty object: `merge({},source)`.\n\n`lodash` and `Hoek` are examples of libraries susceptible to recursive merge attacks.\n\n### Property definition by path\n\nThere are a few JavaScript libraries that use an API to define property values on an object based on a given path. The function that is generally affected contains this signature: `theFunction(object, path, value)`\n\nIf the attacker can control the value of “path”, they can set this value to `_proto_.myValue`. `myValue` is then assigned to the prototype of the class of the object.\n\n## Types of attacks\n\nThere are a few methods by which Prototype Pollution can be manipulated:\n\n| Type |Origin  |Short description |\n|--|--|--|\n| **Denial of service (DoS)**|Client  |This is the most likely attack. <br>DoS occurs when `Object` holds generic functions that are implicitly called for various operations (for example, `toString` and `valueOf`). <br> The attacker pollutes `Object.prototype.someattr` and alters its state to an unexpected value such as `Int` or `Object`. In this case, the code fails and is likely to cause a denial of service.  <br>**For example:** if an attacker pollutes `Object.prototype.toString` by defining it as an integer, if the codebase at any point was reliant on `someobject.toString()` it would fail. |\n |**Remote Code Execution**|Client|Remote code execution is generally only possible in cases where the codebase evaluates a specific attribute of an object, and then executes that evaluation.<br>**For example:** `eval(someobject.someattr)`. In this case, if the attacker pollutes `Object.prototype.someattr` they are likely to be able to leverage this in order to execute code.|\n|**Property Injection**|Client|The attacker pollutes properties that the codebase relies on for their informative value, including security properties such as cookies or tokens.<br>  **For example:** if a codebase checks privileges for `someuser.isAdmin`, then when the attacker pollutes `Object.prototype.isAdmin` and sets it to equal `true`, they can then achieve admin privileges.|\n\n## Affected environments\n\nThe following environments are susceptible to a Prototype Pollution attack:\n\n-   Application server\n    \n-   Web server\n    \n\n## How to prevent\n\n1.  Freeze the prototype— use `Object.freeze (Object.prototype)`.\n    \n2.  Require schema validation of JSON input.\n    \n3.  Avoid using unsafe recursive merge functions.\n    \n4.  Consider using objects without prototypes (for example, `Object.create(null)`), breaking the prototype chain and preventing pollution.\n    \n5.  As a best practice use `Map` instead of `Object`.\n\n### For more information on this vulnerability type:\n\n[Arteau, Oliver. “JavaScript prototype pollution attack in NodeJS application.” GitHub, 26 May 2018](https://github.com/HoLyVieR/prototype-pollution-nsec18/blob/master/paper/JavaScript_prototype_pollution_attack_in_NodeJS.pdf)\n\n## Remediation\nUpgrade `y18n` to version 3.2.2, 4.0.1, 5.0.5 or higher.\n## References\n- [GitHub Issue](https://github.com/yargs/y18n/issues/96)\n- [GitHub PR](https://github.com/yargs/y18n/pull/108)\n",
+                "disclosureTime": "2020-10-25T14:24:22Z",
+                "exploit": "Proof of Concept",
+                "fixedIn": [
+                    "3.2.2",
+                    "4.0.1",
+                    "5.0.5"
+                ],
+                "functions": [],
+                "functions_new": [],
+                "id": "SNYK-JS-Y18N-1021887",
+                "identifiers": {
+                    "CVE": [
+                        "CVE-2020-7774"
+                    ],
+                    "CWE": [
+                        "CWE-400"
+                    ],
+                    "GHSA": [
+                        "GHSA-c4w7-xm78-47vh"
+                    ]
+                },
+                "language": "js",
+                "modificationTime": "2021-01-05T15:29:00.943111Z",
+                "moduleName": "y18n",
+                "packageManager": "npm",
+                "packageName": "y18n",
+                "patches": [],
+                "proprietary": false,
+                "publicationTime": "2020-11-10T15:27:28Z",
+                "references": [
+                    {
+                        "title": "GitHub Issue",
+                        "url": "https://github.com/yargs/y18n/issues/96"
+                    },
+                    {
+                        "title": "GitHub PR",
+                        "url": "https://github.com/yargs/y18n/pull/108"
+                    }
+                ],
+                "semver": {
+                    "vulnerable": [
+                        "<3.2.2",
+                        ">=4.0.0 <4.0.1",
+                        ">=5.0.0 <5.0.5"
+                    ]
+                },
+                "severity": "high",
+                "severityWithCritical": "high",
+                "socialTrendAlert": false,
+                "title": "Prototype Pollution",
+                "from": [
+                    "owasp-nodejs-goat@1.3.0",
+                    "forever@2.0.0",
+                    "nconf@0.10.0",
+                    "yargs@3.32.0",
+                    "y18n@3.2.1"
+                ],
+                "upgradePath": [
+                    false,
+                    "forever@2.0.0",
+                    "nconf@0.10.0",
+                    "yargs@3.32.0",
+                    "y18n@3.2.2"
+                ],
+                "isUpgradable": true,
+                "isPatchable": false,
+                "isPinnable": false,
+                "name": "y18n",
+                "version": "3.2.1"
+            },
+            {
+                "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:L/I:N/A:N",
+                "alternativeIds": [
+                    "SNYK-JS-UTILE-12182"
+                ],
+                "creationTime": "2018-07-23T19:21:17.566000Z",
+                "credit": [
+                    "ChALkeR"
+                ],
+                "cvssScore": 2.2,
+                "description": "## Overview\n[utile](https://www.npmjs.com/package/utile) is a drop-in replacement for util with some additional advantageous functions.\n\nAffected versions of this package are vulnerable to Uninitialized Memory Exposure. A malicious user could extract sensitive data from uninitialized memory or to cause a DoS by passing in a large number, in setups where typed user input can be passed.\n\n**Note** Uninitialized Memory Exposure impacts only Node.js 6.x or lower, Denial of Service impacts any Node.js version.\n\n## Details\nThe Buffer class on Node.js is a mutable array of binary data, and can be initialized with a string, array or number.\r\n```js\r\nconst buf1 = new Buffer([1,2,3]);\r\n// creates a buffer containing [01, 02, 03]\r\nconst buf2 = new Buffer('test');\r\n// creates a buffer containing ASCII bytes [74, 65, 73, 74]\r\nconst buf3 = new Buffer(10);\r\n// creates a buffer of length 10\r\n```\r\n\r\nThe first two variants simply create a binary representation of the value it received. The last one, however, pre-allocates a buffer of the specified size, making it a useful buffer, especially when reading data from a stream.\r\nWhen using the number constructor of Buffer, it will allocate the memory, but will not fill it with zeros. Instead, the allocated buffer will hold whatever was in memory at the time. If the buffer is not `zeroed` by using `buf.fill(0)`, it may leak sensitive information like keys, source code, and system info.\n\n\n## Remediation\nThere is no fix version for `utile`.\n\n## References\n- [HackerOne Report](https://hackerone.com/reports/321701)\n",
+                "disclosureTime": "2018-06-14T19:21:17.566000Z",
+                "exploit": "Not Defined",
+                "fixedIn": [],
+                "functions": [
+                    {
+                        "functionId": {
+                            "className": null,
+                            "filePath": "lib/base64.js",
+                            "functionName": "base64.decode"
+                        },
+                        "version": [
+                            ">0.0.6 <=0.3.0"
+                        ]
+                    },
+                    {
+                        "functionId": {
+                            "className": null,
+                            "filePath": "lib/base64.js",
+                            "functionName": "base64.encode"
+                        },
+                        "version": [
+                            ">0.0.6 <=0.3.0"
+                        ]
+                    }
+                ],
+                "functions_new": [
+                    {
+                        "functionId": {
+                            "filePath": "lib/base64.js",
+                            "functionName": "base64.decode"
+                        },
+                        "version": [
+                            ">0.0.6 <=0.3.0"
+                        ]
+                    },
+                    {
+                        "functionId": {
+                            "filePath": "lib/base64.js",
+                            "functionName": "base64.encode"
+                        },
+                        "version": [
+                            ">0.0.6 <=0.3.0"
+                        ]
+                    }
+                ],
+                "id": "npm:utile:20180614",
+                "identifiers": {
+                    "ALTERNATIVE": [
+                        "SNYK-JS-UTILE-12182"
+                    ],
+                    "CVE": [],
+                    "CWE": [
+                        "CWE-399"
+                    ]
+                },
+                "language": "js",
+                "modificationTime": "2019-05-21T08:15:11.559382Z",
+                "moduleName": "utile",
+                "packageManager": "npm",
+                "packageName": "utile",
+                "patches": [],
+                "proprietary": false,
+                "publicationTime": "2018-07-24T15:14:13.765000Z",
+                "references": [
+                    {
+                        "title": "HackerOne Report",
+                        "url": "https://hackerone.com/reports/321701"
+                    }
+                ],
+                "semver": {
+                    "vulnerable": [
+                        "*"
+                    ]
+                },
+                "severity": "low",
+                "severityWithCritical": "low",
+                "socialTrendAlert": false,
+                "title": "Uninitialized Memory Exposure",
+                "from": [
+                    "owasp-nodejs-goat@1.3.0",
+                    "forever@2.0.0",
+                    "forever-monitor@2.0.0",
+                    "utile@0.3.0"
+                ],
+                "upgradePath": [],
+                "isUpgradable": false,
+                "isPatchable": false,
+                "isPinnable": false,
+                "name": "utile",
+                "version": "0.3.0"
+            }
+        ],
+        "upgrade": {
+            "helmet@2.3.0": {
+                "upgradeTo": "helmet@3.21.1",
+                "upgrades": [
+                    "helmet-csp@1.2.2",
+                    "debug@2.2.0",
+                    "ms@0.7.1"
+                ],
+                "vulns": [
+                    "SNYK-JS-HELMETCSP-469436",
+                    "npm:debug:20170905",
+                    "npm:ms:20170412"
+                ]
+            },
+            "marked@0.3.9": {
+                "upgradeTo": "marked@1.1.1",
+                "upgrades": [
+                    "marked@0.3.9",
+                    "marked@0.3.9",
+                    "marked@0.3.9",
+                    "marked@0.3.9"
+                ],
+                "vulns": [
+                    "SNYK-JS-MARKED-584281",
+                    "SNYK-JS-MARKED-174116",
+                    "SNYK-JS-MARKED-451540",
+                    "npm:marked:20180225"
+                ]
+            },
+            "mongodb@2.2.36": {
+                "upgradeTo": "mongodb@3.1.13",
+                "upgrades": [
+                    "mongodb@2.2.36",
+                    "bson@1.0.9"
+                ],
+                "vulns": [
+                    "SNYK-JS-MONGODB-473855",
+                    "SNYK-JS-BSON-561052"
+                ]
+            },
+            "underscore@1.9.1": {
+                "upgradeTo": "underscore@1.12.1",
+                "upgrades": [
+                    "underscore@1.9.1"
+                ],
+                "vulns": [
+                    "SNYK-JS-UNDERSCORE-1080984"
+                ]
+            }
+        },
+        "patch": {
+            "npm:uglify-js:20151024": {
+                "paths": [
+                    {
+                        "swig > uglify-js": {
+                            "patched": "2021-08-03T16:51:55.106Z"
+                        }
+                    }
+                ]
+            }
+        },
+        "ignore": {},
+        "pin": {}
+    },
+    "filesystemPolicy": false,
+    "filtered": {
+        "ignore": [],
+        "patch": []
+    },
+    "uniqueCount": 19,
+    "projectName": "owasp-nodejs-goat",
+    "displayTargetFile": "package-lock.json",
+    "path": "/Users/andrewmollohan/ZN/testable/NodeGoat"
+}

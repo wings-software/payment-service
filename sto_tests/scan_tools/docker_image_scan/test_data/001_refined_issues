@@ -1,0 +1,1473 @@
+[
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_cve_fixed_version": "",
+                        "_raw_cve_link": "https://security-tracker.debian.org/tracker/CVE-2019-12900",
+                        "_raw_cve_severity_nr": 4,
+                        "_raw_metadata": {
+                            "NVD": {
+                                "CVSSv2": {
+                                    "PublishedDateTime": "2019-06-19T23:15Z",
+                                    "Score": 7.5,
+                                    "Vectors": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+                                },
+                                "CVSSv3": {
+                                    "ExploitabilityScore": 3.9,
+                                    "ImpactScore": 5.9,
+                                    "Score": 9.8,
+                                    "Vectors": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+                                }
+                            }
+                        },
+                        "cve": "2019-12900",
+                        "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+                        "image_layer_id": "sha256:5e6ec7f28fb77f84f64b8c29fcb0a746260563f5858315e3e9fcc4aee2844840",
+                        "issue_description": "BZ2_decompress in decompress.c in bzip2 through 1.0.6 has an out-of-bounds write when there are many selectors.",
+                        "issue_name": "CVE-2019-12900",
+                        "reference_identifiers": [
+                            {
+                                "id": "2019-12900",
+                                "type": "cve"
+                            }
+                        ],
+                        "scan_severity": "High",
+                        "severity": 9.8
+                    }
+                ]
+            },
+            {
+                "key": "image_namespaces",
+                "value": "debian:9"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "library_name"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": "1.0.6-8.1",
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "BZ2_decompress in decompress.c in bzip2 through 1.0.6 has an out-of-bounds write when there are many selectors.",
+        "issueName": "CVE-2019-12900",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "bzip2",
+        "libraryName": "bzip2",
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "docker_image_scan",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "2019-12900",
+                "type": "cve"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "docker_image_scan",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 9.8,
+        "severityCode": "Critical",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_cve_fixed_version": "2.24-11+deb9u4",
+                        "_raw_cve_link": "https://security-tracker.debian.org/tracker/CVE-2017-16997",
+                        "_raw_cve_severity_nr": 5,
+                        "_raw_metadata": {
+                            "NVD": {
+                                "CVSSv2": {
+                                    "PublishedDateTime": "2017-12-18T01:29Z",
+                                    "Score": 9.3,
+                                    "Vectors": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+                                },
+                                "CVSSv3": {
+                                    "ExploitabilityScore": 1.8,
+                                    "ImpactScore": 5.9,
+                                    "Score": 7.8,
+                                    "Vectors": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+                                }
+                            }
+                        },
+                        "cve": "2017-16997",
+                        "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+                        "image_layer_id": "sha256:5e6ec7f28fb77f84f64b8c29fcb0a746260563f5858315e3e9fcc4aee2844840",
+                        "issue_description": "elf/dl-load.c in the GNU C Library (aka glibc or libc6) 2.19 through 2.26 mishandles RPATH and RUNPATH containing $ORIGIN for a privileged (setuid or AT_SECURE) program, which allows local users to gain privileges via a Trojan horse library in the current working directory, related to the fillin_rpath and decompose_rpath functions. This is associated with misinterpretion of an empty RPATH/RUNPATH token as the \"./\" directory. NOTE: this configuration of RPATH/RUNPATH for a privileged program is apparently very uncommon; most likely, no such program is shipped with any common Linux distribution.",
+                        "issue_name": "CVE-2017-16997",
+                        "reference_identifiers": [
+                            {
+                                "id": "2017-16997",
+                                "type": "cve"
+                            }
+                        ],
+                        "scan_severity": "Critical",
+                        "severity": 7.8
+                    },
+                    {
+                        "_raw_cve_fixed_version": "2.24-11+deb9u4",
+                        "_raw_cve_link": "https://security-tracker.debian.org/tracker/CVE-2017-16997",
+                        "_raw_cve_severity_nr": 5,
+                        "_raw_metadata": {
+                            "NVD": {
+                                "CVSSv2": {
+                                    "PublishedDateTime": "2017-12-18T01:29Z",
+                                    "Score": 9.3,
+                                    "Vectors": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+                                },
+                                "CVSSv3": {
+                                    "ExploitabilityScore": 1.8,
+                                    "ImpactScore": 5.9,
+                                    "Score": 7.8,
+                                    "Vectors": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+                                }
+                            }
+                        },
+                        "cve": "2017-16997",
+                        "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+                        "image_layer_id": "sha256:1cf4e4a3f53407278434f4de7f127f62c89a691ff5862fbdd936a2b8aa3d3e54",
+                        "issue_description": "elf/dl-load.c in the GNU C Library (aka glibc or libc6) 2.19 through 2.26 mishandles RPATH and RUNPATH containing $ORIGIN for a privileged (setuid or AT_SECURE) program, which allows local users to gain privileges via a Trojan horse library in the current working directory, related to the fillin_rpath and decompose_rpath functions. This is associated with misinterpretion of an empty RPATH/RUNPATH token as the \"./\" directory. NOTE: this configuration of RPATH/RUNPATH for a privileged program is apparently very uncommon; most likely, no such program is shipped with any common Linux distribution.",
+                        "issue_name": "CVE-2017-16997",
+                        "reference_identifiers": [
+                            {
+                                "id": "2017-16997",
+                                "type": "cve"
+                            }
+                        ],
+                        "scan_severity": "Critical",
+                        "severity": 7.8
+                    },
+                    {
+                        "_raw_cve_fixed_version": "2.24-11+deb9u4",
+                        "_raw_cve_link": "https://security-tracker.debian.org/tracker/CVE-2017-16997",
+                        "_raw_cve_severity_nr": 5,
+                        "_raw_metadata": {
+                            "NVD": {
+                                "CVSSv2": {
+                                    "PublishedDateTime": "2017-12-18T01:29Z",
+                                    "Score": 9.3,
+                                    "Vectors": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+                                },
+                                "CVSSv3": {
+                                    "ExploitabilityScore": 1.8,
+                                    "ImpactScore": 5.9,
+                                    "Score": 7.8,
+                                    "Vectors": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+                                }
+                            }
+                        },
+                        "cve": "2017-16997",
+                        "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+                        "image_layer_id": "sha256:1904df3245457cd0042438c35e356f8ac4d2944468a88d16a60ab2535089b73f",
+                        "issue_description": "elf/dl-load.c in the GNU C Library (aka glibc or libc6) 2.19 through 2.26 mishandles RPATH and RUNPATH containing $ORIGIN for a privileged (setuid or AT_SECURE) program, which allows local users to gain privileges via a Trojan horse library in the current working directory, related to the fillin_rpath and decompose_rpath functions. This is associated with misinterpretion of an empty RPATH/RUNPATH token as the \"./\" directory. NOTE: this configuration of RPATH/RUNPATH for a privileged program is apparently very uncommon; most likely, no such program is shipped with any common Linux distribution.",
+                        "issue_name": "CVE-2017-16997",
+                        "reference_identifiers": [
+                            {
+                                "id": "2017-16997",
+                                "type": "cve"
+                            }
+                        ],
+                        "scan_severity": "Critical",
+                        "severity": 7.8
+                    },
+                    {
+                        "_raw_cve_fixed_version": "2.24-11+deb9u4",
+                        "_raw_cve_link": "https://security-tracker.debian.org/tracker/CVE-2017-16997",
+                        "_raw_cve_severity_nr": 5,
+                        "_raw_metadata": {
+                            "NVD": {
+                                "CVSSv2": {
+                                    "PublishedDateTime": "2017-12-18T01:29Z",
+                                    "Score": 9.3,
+                                    "Vectors": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+                                },
+                                "CVSSv3": {
+                                    "ExploitabilityScore": 1.8,
+                                    "ImpactScore": 5.9,
+                                    "Score": 7.8,
+                                    "Vectors": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+                                }
+                            }
+                        },
+                        "cve": "2017-16997",
+                        "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+                        "image_layer_id": "sha256:0320947fb5296dc5c3100777a7784a0a346781a487410084a9858d6cbdd5a15d",
+                        "issue_description": "elf/dl-load.c in the GNU C Library (aka glibc or libc6) 2.19 through 2.26 mishandles RPATH and RUNPATH containing $ORIGIN for a privileged (setuid or AT_SECURE) program, which allows local users to gain privileges via a Trojan horse library in the current working directory, related to the fillin_rpath and decompose_rpath functions. This is associated with misinterpretion of an empty RPATH/RUNPATH token as the \"./\" directory. NOTE: this configuration of RPATH/RUNPATH for a privileged program is apparently very uncommon; most likely, no such program is shipped with any common Linux distribution.",
+                        "issue_name": "CVE-2017-16997",
+                        "reference_identifiers": [
+                            {
+                                "id": "2017-16997",
+                                "type": "cve"
+                            }
+                        ],
+                        "scan_severity": "Critical",
+                        "severity": 7.8
+                    },
+                    {
+                        "_raw_cve_fixed_version": "2.24-11+deb9u4",
+                        "_raw_cve_link": "https://security-tracker.debian.org/tracker/CVE-2017-16997",
+                        "_raw_cve_severity_nr": 5,
+                        "_raw_metadata": {
+                            "NVD": {
+                                "CVSSv2": {
+                                    "PublishedDateTime": "2017-12-18T01:29Z",
+                                    "Score": 9.3,
+                                    "Vectors": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+                                },
+                                "CVSSv3": {
+                                    "ExploitabilityScore": 1.8,
+                                    "ImpactScore": 5.9,
+                                    "Score": 7.8,
+                                    "Vectors": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+                                }
+                            }
+                        },
+                        "cve": "2017-16997",
+                        "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+                        "image_layer_id": "sha256:0a126fb8ec285a7d09f65c30e3efe29c34bf2a3d6693b6a4f085bef95dff38d6",
+                        "issue_description": "elf/dl-load.c in the GNU C Library (aka glibc or libc6) 2.19 through 2.26 mishandles RPATH and RUNPATH containing $ORIGIN for a privileged (setuid or AT_SECURE) program, which allows local users to gain privileges via a Trojan horse library in the current working directory, related to the fillin_rpath and decompose_rpath functions. This is associated with misinterpretion of an empty RPATH/RUNPATH token as the \"./\" directory. NOTE: this configuration of RPATH/RUNPATH for a privileged program is apparently very uncommon; most likely, no such program is shipped with any common Linux distribution.",
+                        "issue_name": "CVE-2017-16997",
+                        "reference_identifiers": [
+                            {
+                                "id": "2017-16997",
+                                "type": "cve"
+                            }
+                        ],
+                        "scan_severity": "Critical",
+                        "severity": 7.8
+                    },
+                    {
+                        "_raw_cve_fixed_version": "2.24-11+deb9u4",
+                        "_raw_cve_link": "https://security-tracker.debian.org/tracker/CVE-2017-16997",
+                        "_raw_cve_severity_nr": 5,
+                        "_raw_metadata": {
+                            "NVD": {
+                                "CVSSv2": {
+                                    "PublishedDateTime": "2017-12-18T01:29Z",
+                                    "Score": 9.3,
+                                    "Vectors": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+                                },
+                                "CVSSv3": {
+                                    "ExploitabilityScore": 1.8,
+                                    "ImpactScore": 5.9,
+                                    "Score": 7.8,
+                                    "Vectors": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+                                }
+                            }
+                        },
+                        "cve": "2017-16997",
+                        "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+                        "image_layer_id": "sha256:e6d9d96381c87548e53d7208685354f13680702fded8c281c7ab1454e0a18a34",
+                        "issue_description": "elf/dl-load.c in the GNU C Library (aka glibc or libc6) 2.19 through 2.26 mishandles RPATH and RUNPATH containing $ORIGIN for a privileged (setuid or AT_SECURE) program, which allows local users to gain privileges via a Trojan horse library in the current working directory, related to the fillin_rpath and decompose_rpath functions. This is associated with misinterpretion of an empty RPATH/RUNPATH token as the \"./\" directory. NOTE: this configuration of RPATH/RUNPATH for a privileged program is apparently very uncommon; most likely, no such program is shipped with any common Linux distribution.",
+                        "issue_name": "CVE-2017-16997",
+                        "reference_identifiers": [
+                            {
+                                "id": "2017-16997",
+                                "type": "cve"
+                            }
+                        ],
+                        "scan_severity": "Critical",
+                        "severity": 7.8
+                    },
+                    {
+                        "_raw_cve_fixed_version": "2.24-11+deb9u4",
+                        "_raw_cve_link": "https://security-tracker.debian.org/tracker/CVE-2017-16997",
+                        "_raw_cve_severity_nr": 5,
+                        "_raw_metadata": {
+                            "NVD": {
+                                "CVSSv2": {
+                                    "PublishedDateTime": "2017-12-18T01:29Z",
+                                    "Score": 9.3,
+                                    "Vectors": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+                                },
+                                "CVSSv3": {
+                                    "ExploitabilityScore": 1.8,
+                                    "ImpactScore": 5.9,
+                                    "Score": 7.8,
+                                    "Vectors": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+                                }
+                            }
+                        },
+                        "cve": "2017-16997",
+                        "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+                        "image_layer_id": "sha256:885c4a7593298a6f2a7259b39b786f47bdabc2addfab90b46ab218812a542452",
+                        "issue_description": "elf/dl-load.c in the GNU C Library (aka glibc or libc6) 2.19 through 2.26 mishandles RPATH and RUNPATH containing $ORIGIN for a privileged (setuid or AT_SECURE) program, which allows local users to gain privileges via a Trojan horse library in the current working directory, related to the fillin_rpath and decompose_rpath functions. This is associated with misinterpretion of an empty RPATH/RUNPATH token as the \"./\" directory. NOTE: this configuration of RPATH/RUNPATH for a privileged program is apparently very uncommon; most likely, no such program is shipped with any common Linux distribution.",
+                        "issue_name": "CVE-2017-16997",
+                        "reference_identifiers": [
+                            {
+                                "id": "2017-16997",
+                                "type": "cve"
+                            }
+                        ],
+                        "scan_severity": "Critical",
+                        "severity": 7.8
+                    },
+                    {
+                        "_raw_cve_fixed_version": "2.24-11+deb9u4",
+                        "_raw_cve_link": "https://security-tracker.debian.org/tracker/CVE-2017-16997",
+                        "_raw_cve_severity_nr": 5,
+                        "_raw_metadata": {
+                            "NVD": {
+                                "CVSSv2": {
+                                    "PublishedDateTime": "2017-12-18T01:29Z",
+                                    "Score": 9.3,
+                                    "Vectors": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+                                },
+                                "CVSSv3": {
+                                    "ExploitabilityScore": 1.8,
+                                    "ImpactScore": 5.9,
+                                    "Score": 7.8,
+                                    "Vectors": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+                                }
+                            }
+                        },
+                        "cve": "2017-16997",
+                        "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+                        "image_layer_id": "sha256:5d9d21aca48025a2d2b48c19e6b5c17e1ac8b087599024c8c6eb030ab796c14e",
+                        "issue_description": "elf/dl-load.c in the GNU C Library (aka glibc or libc6) 2.19 through 2.26 mishandles RPATH and RUNPATH containing $ORIGIN for a privileged (setuid or AT_SECURE) program, which allows local users to gain privileges via a Trojan horse library in the current working directory, related to the fillin_rpath and decompose_rpath functions. This is associated with misinterpretion of an empty RPATH/RUNPATH token as the \"./\" directory. NOTE: this configuration of RPATH/RUNPATH for a privileged program is apparently very uncommon; most likely, no such program is shipped with any common Linux distribution.",
+                        "issue_name": "CVE-2017-16997",
+                        "reference_identifiers": [
+                            {
+                                "id": "2017-16997",
+                                "type": "cve"
+                            }
+                        ],
+                        "scan_severity": "Critical",
+                        "severity": 7.8
+                    },
+                    {
+                        "_raw_cve_fixed_version": "2.24-11+deb9u4",
+                        "_raw_cve_link": "https://security-tracker.debian.org/tracker/CVE-2017-16997",
+                        "_raw_cve_severity_nr": 5,
+                        "_raw_metadata": {
+                            "NVD": {
+                                "CVSSv2": {
+                                    "PublishedDateTime": "2017-12-18T01:29Z",
+                                    "Score": 9.3,
+                                    "Vectors": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+                                },
+                                "CVSSv3": {
+                                    "ExploitabilityScore": 1.8,
+                                    "ImpactScore": 5.9,
+                                    "Score": 7.8,
+                                    "Vectors": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+                                }
+                            }
+                        },
+                        "cve": "2017-16997",
+                        "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+                        "image_layer_id": "sha256:970a9918b2406d2a54489bbf1ee03d81101d7d2edd784fee4c3faa32a100ce22",
+                        "issue_description": "elf/dl-load.c in the GNU C Library (aka glibc or libc6) 2.19 through 2.26 mishandles RPATH and RUNPATH containing $ORIGIN for a privileged (setuid or AT_SECURE) program, which allows local users to gain privileges via a Trojan horse library in the current working directory, related to the fillin_rpath and decompose_rpath functions. This is associated with misinterpretion of an empty RPATH/RUNPATH token as the \"./\" directory. NOTE: this configuration of RPATH/RUNPATH for a privileged program is apparently very uncommon; most likely, no such program is shipped with any common Linux distribution.",
+                        "issue_name": "CVE-2017-16997",
+                        "reference_identifiers": [
+                            {
+                                "id": "2017-16997",
+                                "type": "cve"
+                            }
+                        ],
+                        "scan_severity": "Critical",
+                        "severity": 7.8
+                    },
+                    {
+                        "_raw_cve_fixed_version": "",
+                        "_raw_cve_link": "https://security-tracker.debian.org/tracker/CVE-2021-33574",
+                        "_raw_cve_severity_nr": 4,
+                        "_raw_metadata": {
+                            "NVD": {
+                                "CVSSv2": {
+                                    "PublishedDateTime": "2021-05-25T22:15Z",
+                                    "Score": 7.5,
+                                    "Vectors": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+                                },
+                                "CVSSv3": {
+                                    "ExploitabilityScore": 3.9,
+                                    "ImpactScore": 5.9,
+                                    "Score": 9.8,
+                                    "Vectors": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+                                }
+                            }
+                        },
+                        "cve": "2021-33574",
+                        "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+                        "image_layer_id": "sha256:5e6ec7f28fb77f84f64b8c29fcb0a746260563f5858315e3e9fcc4aee2844840",
+                        "issue_description": "The mq_notify function in the GNU C Library (aka glibc) versions 2.32 and 2.33 has a use-after-free. It may use the notification thread attributes object (passed through its struct sigevent parameter) after it has been freed by the caller, leading to a denial of service (application crash) or possibly unspecified other impact.",
+                        "issue_name": "CVE-2021-33574",
+                        "reference_identifiers": [
+                            {
+                                "id": "2021-33574",
+                                "type": "cve"
+                            }
+                        ],
+                        "scan_severity": "High",
+                        "severity": 9.8
+                    },
+                    {
+                        "_raw_cve_fixed_version": "",
+                        "_raw_cve_link": "https://security-tracker.debian.org/tracker/CVE-2018-1000001",
+                        "_raw_cve_severity_nr": 4,
+                        "_raw_metadata": {
+                            "NVD": {
+                                "CVSSv2": {
+                                    "PublishedDateTime": "2018-01-31T14:29Z",
+                                    "Score": 7.2,
+                                    "Vectors": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+                                },
+                                "CVSSv3": {
+                                    "ExploitabilityScore": 1.8,
+                                    "ImpactScore": 5.9,
+                                    "Score": 7.8,
+                                    "Vectors": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+                                }
+                            }
+                        },
+                        "cve": "2018-1000001",
+                        "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+                        "image_layer_id": "sha256:5e6ec7f28fb77f84f64b8c29fcb0a746260563f5858315e3e9fcc4aee2844840",
+                        "issue_description": "In glibc 2.26 and earlier there is confusion in the usage of getcwd() by realpath() which can be used to write before the destination buffer leading to a buffer underflow and potential code execution.",
+                        "issue_name": "CVE-2018-1000001",
+                        "reference_identifiers": [
+                            {
+                                "id": "2018-1000001",
+                                "type": "cve"
+                            }
+                        ],
+                        "scan_severity": "High",
+                        "severity": 7.8
+                    },
+                    {
+                        "_raw_cve_fixed_version": "",
+                        "_raw_cve_link": "https://security-tracker.debian.org/tracker/CVE-2019-9169",
+                        "_raw_cve_severity_nr": 4,
+                        "_raw_metadata": {
+                            "NVD": {
+                                "CVSSv2": {
+                                    "PublishedDateTime": "2019-02-26T02:29Z",
+                                    "Score": 7.5,
+                                    "Vectors": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+                                },
+                                "CVSSv3": {
+                                    "ExploitabilityScore": 3.9,
+                                    "ImpactScore": 5.9,
+                                    "Score": 9.8,
+                                    "Vectors": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+                                }
+                            }
+                        },
+                        "cve": "2019-9169",
+                        "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+                        "image_layer_id": "sha256:5e6ec7f28fb77f84f64b8c29fcb0a746260563f5858315e3e9fcc4aee2844840",
+                        "issue_description": "In the GNU C Library (aka glibc or libc6) through 2.29, proceed_next_node in posix/regexec.c has a heap-based buffer over-read via an attempted case-insensitive regular-expression match.",
+                        "issue_name": "CVE-2019-9169",
+                        "reference_identifiers": [
+                            {
+                                "id": "2019-9169",
+                                "type": "cve"
+                            }
+                        ],
+                        "scan_severity": "High",
+                        "severity": 9.8
+                    },
+                    {
+                        "_raw_cve_fixed_version": "",
+                        "_raw_cve_link": "https://security-tracker.debian.org/tracker/CVE-2018-6485",
+                        "_raw_cve_severity_nr": 4,
+                        "_raw_metadata": {
+                            "NVD": {
+                                "CVSSv2": {
+                                    "PublishedDateTime": "2018-02-01T14:29Z",
+                                    "Score": 7.5,
+                                    "Vectors": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+                                },
+                                "CVSSv3": {
+                                    "ExploitabilityScore": 3.9,
+                                    "ImpactScore": 5.9,
+                                    "Score": 9.8,
+                                    "Vectors": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+                                }
+                            }
+                        },
+                        "cve": "2018-6485",
+                        "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+                        "image_layer_id": "sha256:5e6ec7f28fb77f84f64b8c29fcb0a746260563f5858315e3e9fcc4aee2844840",
+                        "issue_description": "An integer overflow in the implementation of the posix_memalign in memalign functions in the GNU C Library (aka glibc or libc6) 2.26 and earlier could cause these functions to return a pointer to a heap area that is too small, potentially leading to heap corruption.",
+                        "issue_name": "CVE-2018-6485",
+                        "reference_identifiers": [
+                            {
+                                "id": "2018-6485",
+                                "type": "cve"
+                            }
+                        ],
+                        "scan_severity": "High",
+                        "severity": 9.8
+                    }
+                ]
+            },
+            {
+                "key": "image_namespaces",
+                "value": "debian:9"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "library_name"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": "2.24-11+deb9u3",
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "elf/dl-load.c in the GNU C Library (aka glibc or libc6) 2.19 through 2.26 mishandles RPATH and RUNPATH containing $ORIGIN for a privileged (setuid or AT_SECURE) program, which allows local users to gain privileges via a Trojan horse library in the current working directory, related to the fillin_rpath and decompose_rpath functions. This is associated with misinterpretion of an empty RPATH/RUNPATH token as the \"./\" directory. NOTE: this configuration of RPATH/RUNPATH for a privileged program is apparently very uncommon; most likely, no such program is shipped with any common Linux distribution.",
+        "issueName": "CVE-2017-16997",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "glibc",
+        "libraryName": "glibc",
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "docker_image_scan",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "2017-16997",
+                "type": "cve"
+            },
+            {
+                "id": "2021-33574",
+                "type": "cve"
+            },
+            {
+                "id": "2018-1000001",
+                "type": "cve"
+            },
+            {
+                "id": "2019-9169",
+                "type": "cve"
+            },
+            {
+                "id": "2018-6485",
+                "type": "cve"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "docker_image_scan",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 9.8,
+        "severityCode": "Critical",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_cve_fixed_version": "0.0~r131-2+deb9u1",
+                        "_raw_cve_link": "https://security-tracker.debian.org/tracker/CVE-2021-3520",
+                        "_raw_cve_severity_nr": 4,
+                        "_raw_metadata": {
+                            "NVD": {
+                                "CVSSv2": {
+                                    "PublishedDateTime": "2021-06-02T13:15Z",
+                                    "Score": 7.5,
+                                    "Vectors": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+                                },
+                                "CVSSv3": {
+                                    "ExploitabilityScore": 3.9,
+                                    "ImpactScore": 5.9,
+                                    "Score": 9.8,
+                                    "Vectors": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+                                }
+                            }
+                        },
+                        "cve": "2021-3520",
+                        "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+                        "image_layer_id": "sha256:5e6ec7f28fb77f84f64b8c29fcb0a746260563f5858315e3e9fcc4aee2844840",
+                        "issue_description": "There's a flaw in lz4. An attacker who submits a crafted file to an application linked with lz4 may be able to trigger an integer overflow, leading to calling of memmove() on a negative size argument, causing an out-of-bounds write and/or a crash. The greatest impact of this flaw is to availability, with some potential impact to confidentiality and integrity as well.",
+                        "issue_name": "CVE-2021-3520",
+                        "reference_identifiers": [
+                            {
+                                "id": "2021-3520",
+                                "type": "cve"
+                            }
+                        ],
+                        "scan_severity": "High",
+                        "severity": 9.8
+                    }
+                ]
+            },
+            {
+                "key": "image_namespaces",
+                "value": "debian:9"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "library_name"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": "0.0~r131-2",
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "There's a flaw in lz4. An attacker who submits a crafted file to an application linked with lz4 may be able to trigger an integer overflow, leading to calling of memmove() on a negative size argument, causing an out-of-bounds write and/or a crash. The greatest impact of this flaw is to availability, with some potential impact to confidentiality and integrity as well.",
+        "issueName": "CVE-2021-3520",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "lz4",
+        "libraryName": "lz4",
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "docker_image_scan",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "2021-3520",
+                "type": "cve"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "docker_image_scan",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 9.8,
+        "severityCode": "Critical",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_cve_fixed_version": "2:3.26.2-1.1+deb9u2",
+                        "_raw_cve_link": "https://security-tracker.debian.org/tracker/CVE-2019-17006",
+                        "_raw_cve_severity_nr": 5,
+                        "_raw_metadata": {
+                            "NVD": {
+                                "CVSSv2": {
+                                    "PublishedDateTime": "2020-10-22T21:15Z",
+                                    "Score": 10,
+                                    "Vectors": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+                                },
+                                "CVSSv3": {
+                                    "ExploitabilityScore": 3.9,
+                                    "ImpactScore": 5.9,
+                                    "Score": 9.8,
+                                    "Vectors": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+                                }
+                            }
+                        },
+                        "cve": "2019-17006",
+                        "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+                        "image_layer_id": "sha256:0320947fb5296dc5c3100777a7784a0a346781a487410084a9858d6cbdd5a15d",
+                        "issue_description": "In Network Security Services (NSS) before 3.46, several cryptographic primitives had missing length checks. In cases where the application calling the library did not perform a sanity check on the inputs it could result in a crash due to a buffer overflow.",
+                        "issue_name": "CVE-2019-17006",
+                        "reference_identifiers": [
+                            {
+                                "id": "2019-17006",
+                                "type": "cve"
+                            }
+                        ],
+                        "scan_severity": "Critical",
+                        "severity": 9.8
+                    },
+                    {
+                        "_raw_cve_fixed_version": "2:3.26.2-1.1+deb9u2",
+                        "_raw_cve_link": "https://security-tracker.debian.org/tracker/CVE-2019-17006",
+                        "_raw_cve_severity_nr": 5,
+                        "_raw_metadata": {
+                            "NVD": {
+                                "CVSSv2": {
+                                    "PublishedDateTime": "2020-10-22T21:15Z",
+                                    "Score": 10,
+                                    "Vectors": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+                                },
+                                "CVSSv3": {
+                                    "ExploitabilityScore": 3.9,
+                                    "ImpactScore": 5.9,
+                                    "Score": 9.8,
+                                    "Vectors": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+                                }
+                            }
+                        },
+                        "cve": "2019-17006",
+                        "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+                        "image_layer_id": "sha256:e6d9d96381c87548e53d7208685354f13680702fded8c281c7ab1454e0a18a34",
+                        "issue_description": "In Network Security Services (NSS) before 3.46, several cryptographic primitives had missing length checks. In cases where the application calling the library did not perform a sanity check on the inputs it could result in a crash due to a buffer overflow.",
+                        "issue_name": "CVE-2019-17006",
+                        "reference_identifiers": [
+                            {
+                                "id": "2019-17006",
+                                "type": "cve"
+                            }
+                        ],
+                        "scan_severity": "Critical",
+                        "severity": 9.8
+                    },
+                    {
+                        "_raw_cve_fixed_version": "2:3.26.2-1.1+deb9u2",
+                        "_raw_cve_link": "https://security-tracker.debian.org/tracker/CVE-2019-17006",
+                        "_raw_cve_severity_nr": 5,
+                        "_raw_metadata": {
+                            "NVD": {
+                                "CVSSv2": {
+                                    "PublishedDateTime": "2020-10-22T21:15Z",
+                                    "Score": 10,
+                                    "Vectors": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+                                },
+                                "CVSSv3": {
+                                    "ExploitabilityScore": 3.9,
+                                    "ImpactScore": 5.9,
+                                    "Score": 9.8,
+                                    "Vectors": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+                                }
+                            }
+                        },
+                        "cve": "2019-17006",
+                        "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+                        "image_layer_id": "sha256:885c4a7593298a6f2a7259b39b786f47bdabc2addfab90b46ab218812a542452",
+                        "issue_description": "In Network Security Services (NSS) before 3.46, several cryptographic primitives had missing length checks. In cases where the application calling the library did not perform a sanity check on the inputs it could result in a crash due to a buffer overflow.",
+                        "issue_name": "CVE-2019-17006",
+                        "reference_identifiers": [
+                            {
+                                "id": "2019-17006",
+                                "type": "cve"
+                            }
+                        ],
+                        "scan_severity": "Critical",
+                        "severity": 9.8
+                    },
+                    {
+                        "_raw_cve_fixed_version": "2:3.26.2-1.1+deb9u2",
+                        "_raw_cve_link": "https://security-tracker.debian.org/tracker/CVE-2019-17006",
+                        "_raw_cve_severity_nr": 5,
+                        "_raw_metadata": {
+                            "NVD": {
+                                "CVSSv2": {
+                                    "PublishedDateTime": "2020-10-22T21:15Z",
+                                    "Score": 10,
+                                    "Vectors": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+                                },
+                                "CVSSv3": {
+                                    "ExploitabilityScore": 3.9,
+                                    "ImpactScore": 5.9,
+                                    "Score": 9.8,
+                                    "Vectors": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+                                }
+                            }
+                        },
+                        "cve": "2019-17006",
+                        "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+                        "image_layer_id": "sha256:970a9918b2406d2a54489bbf1ee03d81101d7d2edd784fee4c3faa32a100ce22",
+                        "issue_description": "In Network Security Services (NSS) before 3.46, several cryptographic primitives had missing length checks. In cases where the application calling the library did not perform a sanity check on the inputs it could result in a crash due to a buffer overflow.",
+                        "issue_name": "CVE-2019-17006",
+                        "reference_identifiers": [
+                            {
+                                "id": "2019-17006",
+                                "type": "cve"
+                            }
+                        ],
+                        "scan_severity": "Critical",
+                        "severity": 9.8
+                    }
+                ]
+            },
+            {
+                "key": "image_namespaces",
+                "value": "debian:9"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "library_name"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": "2:3.26.2-1.1+deb9u1",
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "In Network Security Services (NSS) before 3.46, several cryptographic primitives had missing length checks. In cases where the application calling the library did not perform a sanity check on the inputs it could result in a crash due to a buffer overflow.",
+        "issueName": "CVE-2019-17006",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "nss",
+        "libraryName": "nss",
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "docker_image_scan",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "2019-17006",
+                "type": "cve"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "docker_image_scan",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 9.8,
+        "severityCode": "Critical",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_cve_fixed_version": "5.24.1-3+deb9u7",
+                        "_raw_cve_link": "https://security-tracker.debian.org/tracker/CVE-2020-10878",
+                        "_raw_cve_severity_nr": 4,
+                        "_raw_metadata": {
+                            "NVD": {
+                                "CVSSv2": {
+                                    "PublishedDateTime": "2020-06-05T14:15Z",
+                                    "Score": 7.5,
+                                    "Vectors": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+                                },
+                                "CVSSv3": {
+                                    "ExploitabilityScore": 3.9,
+                                    "ImpactScore": 4.7,
+                                    "Score": 8.6,
+                                    "Vectors": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H"
+                                }
+                            }
+                        },
+                        "cve": "2020-10878",
+                        "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H",
+                        "image_layer_id": "sha256:5e6ec7f28fb77f84f64b8c29fcb0a746260563f5858315e3e9fcc4aee2844840",
+                        "issue_description": "Perl before 5.30.3 has an integer overflow related to mishandling of a \"PL_regkind[OP(n)] == NOTHING\" situation. A crafted regular expression could lead to malformed bytecode with a possibility of instruction injection.",
+                        "issue_name": "CVE-2020-10878",
+                        "reference_identifiers": [
+                            {
+                                "id": "2020-10878",
+                                "type": "cve"
+                            }
+                        ],
+                        "scan_severity": "High",
+                        "severity": 8.6
+                    }
+                ]
+            },
+            {
+                "key": "image_namespaces",
+                "value": "debian:9"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "library_name"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": "5.24.1-3+deb9u5",
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Perl before 5.30.3 has an integer overflow related to mishandling of a \"PL_regkind[OP(n)] == NOTHING\" situation. A crafted regular expression could lead to malformed bytecode with a possibility of instruction injection.",
+        "issueName": "CVE-2020-10878",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "perl",
+        "libraryName": "perl",
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "docker_image_scan",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "2020-10878",
+                "type": "cve"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "docker_image_scan",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 8.6,
+        "severityCode": "High",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_cve_fixed_version": "1:4.4-4.1+deb9u1",
+                        "_raw_cve_link": "https://security-tracker.debian.org/tracker/CVE-2017-12424",
+                        "_raw_cve_severity_nr": 4,
+                        "_raw_metadata": {
+                            "NVD": {
+                                "CVSSv2": {
+                                    "PublishedDateTime": "2017-08-04T09:29Z",
+                                    "Score": 7.5,
+                                    "Vectors": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+                                },
+                                "CVSSv3": {
+                                    "ExploitabilityScore": 3.9,
+                                    "ImpactScore": 5.9,
+                                    "Score": 9.8,
+                                    "Vectors": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+                                }
+                            }
+                        },
+                        "cve": "2017-12424",
+                        "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+                        "image_layer_id": "sha256:5e6ec7f28fb77f84f64b8c29fcb0a746260563f5858315e3e9fcc4aee2844840",
+                        "issue_description": "In shadow before 4.5, the newusers tool could be made to manipulate internal data structures in ways unintended by the authors. Malformed input may lead to crashes (with a buffer overflow or other memory corruption) or other unspecified behaviors. This crosses a privilege boundary in, for example, certain web-hosting environments in which a Control Panel allows an unprivileged user account to create subaccounts.",
+                        "issue_name": "CVE-2017-12424",
+                        "reference_identifiers": [
+                            {
+                                "id": "2017-12424",
+                                "type": "cve"
+                            }
+                        ],
+                        "scan_severity": "High",
+                        "severity": 9.8
+                    }
+                ]
+            },
+            {
+                "key": "image_namespaces",
+                "value": "debian:9"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "library_name"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": "1:4.4-4.1",
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "In shadow before 4.5, the newusers tool could be made to manipulate internal data structures in ways unintended by the authors. Malformed input may lead to crashes (with a buffer overflow or other memory corruption) or other unspecified behaviors. This crosses a privilege boundary in, for example, certain web-hosting environments in which a Control Panel allows an unprivileged user account to create subaccounts.",
+        "issueName": "CVE-2017-12424",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "shadow",
+        "libraryName": "shadow",
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "docker_image_scan",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "2017-12424",
+                "type": "cve"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "docker_image_scan",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 9.8,
+        "severityCode": "Critical",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_cve_fixed_version": "232-25+deb9u10",
+                        "_raw_cve_link": "https://security-tracker.debian.org/tracker/CVE-2018-15686",
+                        "_raw_cve_severity_nr": 4,
+                        "_raw_metadata": {
+                            "NVD": {
+                                "CVSSv2": {
+                                    "PublishedDateTime": "2018-10-26T14:29Z",
+                                    "Score": 7.2,
+                                    "Vectors": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+                                },
+                                "CVSSv3": {
+                                    "ExploitabilityScore": 1.8,
+                                    "ImpactScore": 5.9,
+                                    "Score": 7.8,
+                                    "Vectors": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+                                }
+                            }
+                        },
+                        "cve": "2018-15686",
+                        "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+                        "image_layer_id": "sha256:5e6ec7f28fb77f84f64b8c29fcb0a746260563f5858315e3e9fcc4aee2844840",
+                        "issue_description": "A vulnerability in unit_deserialize of systemd allows an attacker to supply arbitrary state across systemd re-execution via NotifyAccess. This can be used to improperly influence systemd execution and possibly lead to root privilege escalation. Affected releases are systemd versions up to and including 239.",
+                        "issue_name": "CVE-2018-15686",
+                        "reference_identifiers": [
+                            {
+                                "id": "2018-15686",
+                                "type": "cve"
+                            }
+                        ],
+                        "scan_severity": "High",
+                        "severity": 7.8
+                    }
+                ]
+            },
+            {
+                "key": "image_namespaces",
+                "value": "debian:9"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "library_name"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": "232-25+deb9u8",
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "A vulnerability in unit_deserialize of systemd allows an attacker to supply arbitrary state across systemd re-execution via NotifyAccess. This can be used to improperly influence systemd execution and possibly lead to root privilege escalation. Affected releases are systemd versions up to and including 239.",
+        "issueName": "CVE-2018-15686",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "systemd",
+        "libraryName": "systemd",
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "docker_image_scan",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "2018-15686",
+                "type": "cve"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "docker_image_scan",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 7.8,
+        "severityCode": "High",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_cve_fixed_version": "",
+                        "_raw_cve_link": "https://security-tracker.debian.org/tracker/CVE-2016-2779",
+                        "_raw_cve_severity_nr": 4,
+                        "_raw_metadata": {
+                            "NVD": {
+                                "CVSSv2": {
+                                    "PublishedDateTime": "2017-02-07T15:59Z",
+                                    "Score": 7.2,
+                                    "Vectors": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+                                },
+                                "CVSSv3": {
+                                    "ExploitabilityScore": 1.8,
+                                    "ImpactScore": 5.9,
+                                    "Score": 7.8,
+                                    "Vectors": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+                                }
+                            }
+                        },
+                        "cve": "2016-2779",
+                        "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+                        "image_layer_id": "sha256:5e6ec7f28fb77f84f64b8c29fcb0a746260563f5858315e3e9fcc4aee2844840",
+                        "issue_description": "runuser in util-linux allows local users to escape to the parent session via a crafted TIOCSTI ioctl call, which pushes characters to the terminal's input buffer.",
+                        "issue_name": "CVE-2016-2779",
+                        "reference_identifiers": [
+                            {
+                                "id": "2016-2779",
+                                "type": "cve"
+                            }
+                        ],
+                        "scan_severity": "High",
+                        "severity": 7.8
+                    }
+                ]
+            },
+            {
+                "key": "image_namespaces",
+                "value": "debian:9"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "library_name"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": "2.29.2-1+deb9u1",
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "runuser in util-linux allows local users to escape to the parent session via a crafted TIOCSTI ioctl call, which pushes characters to the terminal's input buffer.",
+        "issueName": "CVE-2016-2779",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "util-linux",
+        "libraryName": "util-linux",
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "docker_image_scan",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "2016-2779",
+                "type": "cve"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "docker_image_scan",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 7.8,
+        "severityCode": "High",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    }
+]

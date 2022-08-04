@@ -1,0 +1,1887 @@
+{
+    "errors": [],
+    "generated_at": "2021-11-12T13:26:25Z",
+    "metrics": {
+        "/code/apps/__init__.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 0,
+            "nosec": 0
+        },
+        "/code/apps/aiohttp_app.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 13,
+            "nosec": 0
+        },
+        "/code/apps/bottle_app.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 22,
+            "nosec": 0
+        },
+        "/code/apps/django_app.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 29,
+            "nosec": 0
+        },
+        "/code/apps/falcon_app.py": {
+            "CONFIDENCE.HIGH": 1,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 1,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 56,
+            "nosec": 0
+        },
+        "/code/apps/fastapi_app.py": {
+            "CONFIDENCE.HIGH": 1,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 1,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 53,
+            "nosec": 0
+        },
+        "/code/apps/flask_app.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 13,
+            "nosec": 0
+        },
+        "/code/apps/flask_two_apps.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 23,
+            "nosec": 0
+        },
+        "/code/apps/pyramid_app.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 19,
+            "nosec": 0
+        },
+        "/code/apps/wsgi_app.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 28,
+            "nosec": 0
+        },
+        "/code/apps/wsgi_two_apps.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 15,
+            "nosec": 0
+        },
+        "/code/setup.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 92,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/__init__.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 0,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/aiohttp/__init__.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 1,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/aiohttp/vulnerable_routes.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 44,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/bottle/__init__.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 1,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/bottle/vulnerable_routes.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 42,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/common/__init__.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 1,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/common/templating.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 20,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/django/__init__.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 1,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/django/vulnerable.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 49,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/falcon/__init__.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 1,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/falcon/vulnerable.py": {
+            "CONFIDENCE.HIGH": 1,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 1,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 86,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/fastapi/__init__.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 1,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/fastapi/vulnerable.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 36,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/flask/__init__.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 1,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/flask/blueprint.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 48,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/pyramid/__init__.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 0,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/pyramid/vulnerable_routes.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 67,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/trigger/__init__.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 17,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/trigger/cmdi.py": {
+            "CONFIDENCE.HIGH": 1,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 1,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 10,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/trigger/deserialization.py": {
+            "CONFIDENCE.HIGH": 4,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 1,
+            "SEVERITY.MEDIUM": 3,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 19,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/trigger/hash.py": {
+            "CONFIDENCE.HIGH": 1,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 1,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 20,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/trigger/parameter_pollution.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 3,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/trigger/pt.py": {
+            "CONFIDENCE.HIGH": 1,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 1,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 52,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/trigger/rand.py": {
+            "CONFIDENCE.HIGH": 4,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 4,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 27,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/trigger/redos.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 61,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/trigger/sqli.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 40,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/trigger/ssrf.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 108,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/trigger/unsafe_code_exec.py": {
+            "CONFIDENCE.HIGH": 2,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 2,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 6,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/trigger/util.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 44,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/trigger/xpath.py": {
+            "CONFIDENCE.HIGH": 4,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 2,
+            "SEVERITY.MEDIUM": 2,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 26,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/trigger/xss.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 3,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/trigger/xxe.py": {
+            "CONFIDENCE.HIGH": 7,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 4,
+            "SEVERITY.MEDIUM": 3,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 10,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/vendor/__init__.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 0,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/vendor/six.py": {
+            "CONFIDENCE.HIGH": 1,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 1,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 793,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/wsgi/__init__.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 1,
+            "nosec": 0
+        },
+        "/code/src/vulnpy/wsgi/app.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 76,
+            "nosec": 0
+        },
+        "/code/tests/__init__.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 25,
+            "nosec": 0
+        },
+        "/code/tests/aiohttp/__init__.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 0,
+            "nosec": 0
+        },
+        "/code/tests/aiohttp/test_vulnerable_async.py": {
+            "CONFIDENCE.HIGH": 3,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 3,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 42,
+            "nosec": 0
+        },
+        "/code/tests/bottle/__init__.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 0,
+            "nosec": 0
+        },
+        "/code/tests/bottle/test_vulnerable.py": {
+            "CONFIDENCE.HIGH": 3,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 3,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 30,
+            "nosec": 0
+        },
+        "/code/tests/conftest.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 3,
+            "nosec": 0
+        },
+        "/code/tests/django/__init__.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 0,
+            "nosec": 0
+        },
+        "/code/tests/django/test_vulnerable.py": {
+            "CONFIDENCE.HIGH": 3,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 3,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 26,
+            "nosec": 0
+        },
+        "/code/tests/falcon/__init__.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 0,
+            "nosec": 0
+        },
+        "/code/tests/falcon/test_vulnerable.py": {
+            "CONFIDENCE.HIGH": 5,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 5,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 38,
+            "nosec": 0
+        },
+        "/code/tests/fastapi/__init__.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 0,
+            "nosec": 0
+        },
+        "/code/tests/fastapi/test_vulnerable.py": {
+            "CONFIDENCE.HIGH": 3,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 3,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 29,
+            "nosec": 0
+        },
+        "/code/tests/flask/__init__.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 0,
+            "nosec": 0
+        },
+        "/code/tests/flask/test_blueprint.py": {
+            "CONFIDENCE.HIGH": 4,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 4,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 33,
+            "nosec": 0
+        },
+        "/code/tests/pyramid/__init__.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 0,
+            "nosec": 0
+        },
+        "/code/tests/pyramid/test_vulnerable_routes.py": {
+            "CONFIDENCE.HIGH": 3,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 3,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 26,
+            "nosec": 0
+        },
+        "/code/tests/trigger/__init__.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 0,
+            "nosec": 0
+        },
+        "/code/tests/trigger/base_test.py": {
+            "CONFIDENCE.HIGH": 1,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 1,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 31,
+            "nosec": 0
+        },
+        "/code/tests/trigger/samples/sample.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 1,
+            "nosec": 0
+        },
+        "/code/tests/trigger/test_cmdi.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 22,
+            "nosec": 0
+        },
+        "/code/tests/trigger/test_deserialization.py": {
+            "CONFIDENCE.HIGH": 1,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 1,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 43,
+            "nosec": 0
+        },
+        "/code/tests/trigger/test_hash.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 25,
+            "nosec": 0
+        },
+        "/code/tests/trigger/test_pt.py": {
+            "CONFIDENCE.HIGH": 3,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 3,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 75,
+            "nosec": 0
+        },
+        "/code/tests/trigger/test_rand.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 35,
+            "nosec": 0
+        },
+        "/code/tests/trigger/test_redos.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 5,
+            "nosec": 0
+        },
+        "/code/tests/trigger/test_sqli.py": {
+            "CONFIDENCE.HIGH": 1,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 1,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 26,
+            "nosec": 0
+        },
+        "/code/tests/trigger/test_ssrf.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 106,
+            "nosec": 0
+        },
+        "/code/tests/trigger/test_trigger.py": {
+            "CONFIDENCE.HIGH": 1,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 1,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 6,
+            "nosec": 0
+        },
+        "/code/tests/trigger/test_unsafe_code_exec.py": {
+            "CONFIDENCE.HIGH": 5,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 4,
+            "SEVERITY.MEDIUM": 1,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 44,
+            "nosec": 0
+        },
+        "/code/tests/trigger/test_xpath.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 32,
+            "nosec": 0
+        },
+        "/code/tests/trigger/test_xss.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 11,
+            "nosec": 0
+        },
+        "/code/tests/wsgi/__init__.py": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 0,
+            "nosec": 0
+        },
+        "/code/tests/wsgi/test_app.py": {
+            "CONFIDENCE.HIGH": 4,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 4,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 27,
+            "nosec": 0
+        },
+        "_totals": {
+            "CONFIDENCE.HIGH": 68,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 53,
+            "SEVERITY.MEDIUM": 15,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 2819,
+            "nosec": 0
+        }
+    },
+    "results": [
+        {
+            "code": "25 \n26         digest = hexlify(md5(user_input).digest()).decode(\"utf8\")\n27 \n",
+            "filename": "/code/apps/falcon_app.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "MEDIUM",
+            "issue_text": "Use of insecure MD2, MD4, or MD5 hash function.",
+            "line_number": 26,
+            "line_range": [
+                26
+            ],
+            "test_id": "B303",
+            "test_name": "blacklist"
+        },
+        {
+            "code": "32     if content:\n33         digest = hexlify(md5(content).digest()).decode(\"utf8\")\n34 \n",
+            "filename": "/code/apps/fastapi_app.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "MEDIUM",
+            "issue_text": "Use of insecure MD2, MD4, or MD5 hash function.",
+            "line_number": 33,
+            "line_range": [
+                33
+            ],
+            "test_id": "B303",
+            "test_name": "blacklist"
+        },
+        {
+            "code": "36                         self.trigger(user_input)\n37                     except Exception:\n38                         pass\n",
+            "filename": "/code/src/vulnpy/falcon/vulnerable.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Try, Except, Pass detected.",
+            "line_number": 37,
+            "line_range": [
+                37
+            ],
+            "test_id": "B110",
+            "test_name": "try_except_pass"
+        },
+        {
+            "code": "1 import os\n2 import subprocess\n3 \n4 \n5 def do_os_system(command):\n",
+            "filename": "/code/src/vulnpy/trigger/cmdi.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Consider possible security implications associated with subprocess module.",
+            "line_number": 2,
+            "line_range": [
+                2,
+                3,
+                4
+            ],
+            "test_id": "B404",
+            "test_name": "blacklist"
+        },
+        {
+            "code": "1 import io\n2 import pickle\n3 import yaml\n",
+            "filename": "/code/src/vulnpy/trigger/deserialization.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Consider possible security implications associated with pickle module.",
+            "line_number": 2,
+            "line_range": [
+                2
+            ],
+            "test_id": "B403",
+            "test_name": "blacklist"
+        },
+        {
+            "code": "7     user_input = io.BytesIO(user_input.encode(\"utf-8\"))\n8     return pickle.load(user_input)\n9 \n",
+            "filename": "/code/src/vulnpy/trigger/deserialization.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "MEDIUM",
+            "issue_text": "Pickle library appears to be in use, possible security issue.",
+            "line_number": 8,
+            "line_range": [
+                8
+            ],
+            "test_id": "B301",
+            "test_name": "blacklist"
+        },
+        {
+            "code": "11 def do_pickle_loads(user_input):\n12     return pickle.loads(user_input.encode(\"utf-8\"))\n13 \n",
+            "filename": "/code/src/vulnpy/trigger/deserialization.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "MEDIUM",
+            "issue_text": "Pickle library appears to be in use, possible security issue.",
+            "line_number": 12,
+            "line_range": [
+                12
+            ],
+            "test_id": "B301",
+            "test_name": "blacklist"
+        },
+        {
+            "code": "16     try:\n17         return yaml.load(user_input)\n18     except yaml.constructor.ConstructorError:\n",
+            "filename": "/code/src/vulnpy/trigger/deserialization.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "MEDIUM",
+            "issue_text": "Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().",
+            "line_number": 17,
+            "line_range": [
+                17
+            ],
+            "test_id": "B506",
+            "test_name": "yaml_load"
+        },
+        {
+            "code": "18 def do_hashlib_md5(user_input):\n19     h = hashlib.md5()\n20     return _hash(h, user_input)\n",
+            "filename": "/code/src/vulnpy/trigger/hash.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "MEDIUM",
+            "issue_text": "Use of insecure MD2, MD4, or MD5 hash function.",
+            "line_number": 19,
+            "line_range": [
+                19
+            ],
+            "test_id": "B303",
+            "test_name": "blacklist"
+        },
+        {
+            "code": "66         execfile(user_input)  # noqa: F821\n67     except Exception:\n68         pass\n",
+            "filename": "/code/src/vulnpy/trigger/pt.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Try, Except, Pass detected.",
+            "line_number": 67,
+            "line_range": [
+                67
+            ],
+            "test_id": "B110",
+            "test_name": "try_except_pass"
+        },
+        {
+            "code": "24     _seed(user_input)\n25     return str(random.random())\n26 \n",
+            "filename": "/code/src/vulnpy/trigger/rand.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Standard pseudo-random generators are not suitable for security/cryptographic purposes.",
+            "line_number": 25,
+            "line_range": [
+                25
+            ],
+            "test_id": "B311",
+            "test_name": "blacklist"
+        },
+        {
+            "code": "29     _seed(user_input)\n30     return str(random.randint(0, 100))\n31 \n",
+            "filename": "/code/src/vulnpy/trigger/rand.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Standard pseudo-random generators are not suitable for security/cryptographic purposes.",
+            "line_number": 30,
+            "line_range": [
+                30
+            ],
+            "test_id": "B311",
+            "test_name": "blacklist"
+        },
+        {
+            "code": "34     _seed(user_input)\n35     return str(random.randrange(0, 101, 5))\n36 \n",
+            "filename": "/code/src/vulnpy/trigger/rand.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Standard pseudo-random generators are not suitable for security/cryptographic purposes.",
+            "line_number": 35,
+            "line_range": [
+                35
+            ],
+            "test_id": "B311",
+            "test_name": "blacklist"
+        },
+        {
+            "code": "39     _seed(user_input)\n40     return str(random.uniform(5.5, 7.5))\n",
+            "filename": "/code/src/vulnpy/trigger/rand.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Standard pseudo-random generators are not suitable for security/cryptographic purposes.",
+            "line_number": 40,
+            "line_range": [
+                40
+            ],
+            "test_id": "B311",
+            "test_name": "blacklist"
+        },
+        {
+            "code": "1 def do_exec(code):\n2     exec(code)\n3 \n",
+            "filename": "/code/src/vulnpy/trigger/unsafe_code_exec.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "MEDIUM",
+            "issue_text": "Use of exec detected.",
+            "line_number": 2,
+            "line_range": [
+                2
+            ],
+            "test_id": "B102",
+            "test_name": "exec_used"
+        },
+        {
+            "code": "5 def do_eval(code):\n6     return eval(code)\n7 \n",
+            "filename": "/code/src/vulnpy/trigger/unsafe_code_exec.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "MEDIUM",
+            "issue_text": "Use of possibly insecure function - consider using safer ast.literal_eval.",
+            "line_number": 6,
+            "line_range": [
+                6
+            ],
+            "test_id": "B307",
+            "test_name": "blacklist"
+        },
+        {
+            "code": "1 import lxml.etree\n2 import xml.etree.ElementTree as ET\n3 from io import StringIO\n",
+            "filename": "/code/src/vulnpy/trigger/xpath.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Using lxml.etree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace lxml.etree with the equivalent defusedxml package.",
+            "line_number": 1,
+            "line_range": [
+                1
+            ],
+            "test_id": "B410",
+            "test_name": "blacklist"
+        },
+        {
+            "code": "1 import lxml.etree\n2 import xml.etree.ElementTree as ET\n3 from io import StringIO\n",
+            "filename": "/code/src/vulnpy/trigger/xpath.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.",
+            "line_number": 2,
+            "line_range": [
+                2
+            ],
+            "test_id": "B405",
+            "test_name": "blacklist"
+        },
+        {
+            "code": "18 \n19 tree = lxml.etree.parse(StringIO(xml))\n20 tree.xpath('/planet[name[text()=\"Kepler\"]]')\n",
+            "filename": "/code/src/vulnpy/trigger/xpath.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "MEDIUM",
+            "issue_text": "Using lxml.etree.parse to parse untrusted XML data is known to be vulnerable to XML attacks. Replace lxml.etree.parse with its defusedxml equivalent function.",
+            "line_number": 19,
+            "line_range": [
+                19
+            ],
+            "test_id": "B320",
+            "test_name": "blacklist"
+        },
+        {
+            "code": "32 def do_xml_etree_elementtree_findall(user_input):\n33     node = ET.fromstring(xml)\n34     return node.findall(user_input)[0][0].text\n",
+            "filename": "/code/src/vulnpy/trigger/xpath.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "MEDIUM",
+            "issue_text": "Using xml.etree.ElementTree.fromstring to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.fromstring with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called",
+            "line_number": 33,
+            "line_range": [
+                33
+            ],
+            "test_id": "B314",
+            "test_name": "blacklist"
+        },
+        {
+            "code": "1 from lxml import etree\n2 from xml.dom import pulldom\n3 from xml import sax\n",
+            "filename": "/code/src/vulnpy/trigger/xxe.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Using etree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace etree with the equivalent defusedxml package.",
+            "line_number": 1,
+            "line_range": [
+                1
+            ],
+            "test_id": "B410",
+            "test_name": "blacklist"
+        },
+        {
+            "code": "1 from lxml import etree\n2 from xml.dom import pulldom\n3 from xml import sax\n",
+            "filename": "/code/src/vulnpy/trigger/xxe.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Using pulldom to parse untrusted XML data is known to be vulnerable to XML attacks. Replace pulldom with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.",
+            "line_number": 2,
+            "line_range": [
+                2
+            ],
+            "test_id": "B409",
+            "test_name": "blacklist"
+        },
+        {
+            "code": "2 from xml.dom import pulldom\n3 from xml import sax\n4 from xml.sax.handler import ContentHandler\n",
+            "filename": "/code/src/vulnpy/trigger/xxe.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Using sax to parse untrusted XML data is known to be vulnerable to XML attacks. Replace sax with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.",
+            "line_number": 3,
+            "line_range": [
+                3
+            ],
+            "test_id": "B406",
+            "test_name": "blacklist"
+        },
+        {
+            "code": "3 from xml import sax\n4 from xml.sax.handler import ContentHandler\n5 \n6 \n7 def do_lxml_etree_fromstring(user_input):\n",
+            "filename": "/code/src/vulnpy/trigger/xxe.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Using ContentHandler to parse untrusted XML data is known to be vulnerable to XML attacks. Replace ContentHandler with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.",
+            "line_number": 4,
+            "line_range": [
+                4,
+                5,
+                6
+            ],
+            "test_id": "B406",
+            "test_name": "blacklist"
+        },
+        {
+            "code": "7 def do_lxml_etree_fromstring(user_input):\n8     return etree.fromstring(user_input)\n9 \n",
+            "filename": "/code/src/vulnpy/trigger/xxe.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "MEDIUM",
+            "issue_text": "Using lxml.etree.fromstring to parse untrusted XML data is known to be vulnerable to XML attacks. Replace lxml.etree.fromstring with its defusedxml equivalent function.",
+            "line_number": 8,
+            "line_range": [
+                8
+            ],
+            "test_id": "B320",
+            "test_name": "blacklist"
+        },
+        {
+            "code": "11 def do_xml_dom_pulldom_parsestring(user_input):\n12     return pulldom.parseString(user_input)\n13 \n",
+            "filename": "/code/src/vulnpy/trigger/xxe.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "MEDIUM",
+            "issue_text": "Using xml.dom.pulldom.parseString to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.dom.pulldom.parseString with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called",
+            "line_number": 12,
+            "line_range": [
+                12
+            ],
+            "test_id": "B319",
+            "test_name": "blacklist"
+        },
+        {
+            "code": "15 def do_xml_sax_parsestring(user_input):\n16     return sax.parseString(user_input, ContentHandler())\n",
+            "filename": "/code/src/vulnpy/trigger/xxe.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "MEDIUM",
+            "issue_text": "Using xml.sax.parseString to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.sax.parseString with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called",
+            "line_number": 16,
+            "line_range": [
+                16
+            ],
+            "test_id": "B317",
+            "test_name": "blacklist"
+        },
+        {
+            "code": "771             _locs_ = _globs_\n772         exec(\"\"\"exec _code_ in _globs_, _locs_\"\"\")\n773 \n",
+            "filename": "/code/src/vulnpy/vendor/six.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "MEDIUM",
+            "issue_text": "Use of exec detected.",
+            "line_number": 772,
+            "line_range": [
+                772
+            ],
+            "test_id": "B102",
+            "test_name": "exec_used"
+        },
+        {
+            "code": "30                 response = await client.get(view_path)\n31                 assert response.status == 200\n32 \n",
+            "filename": "/code/tests/aiohttp/test_vulnerable_async.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 31,
+            "line_range": [
+                31
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "52 \n53                 assert response.status == 200\n54 \n55                 if view_name == \"xss\":\n",
+            "filename": "/code/tests/aiohttp/test_vulnerable_async.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 53,
+            "line_range": [
+                53,
+                54
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "56                     text = await response.text()\n57                     assert \"<p>XSS: {}</p>\".format(data) in str(text)\n58 \n",
+            "filename": "/code/tests/aiohttp/test_vulnerable_async.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 57,
+            "line_range": [
+                57
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "18     response = client.get(view_path)\n19     assert response.status_code == 200\n20 \n",
+            "filename": "/code/tests/bottle/test_vulnerable.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 19,
+            "line_range": [
+                19
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "36     )\n37     assert response.status_code == 200\n38 \n39     if view_name == \"xss\":\n",
+            "filename": "/code/tests/bottle/test_vulnerable.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 37,
+            "line_range": [
+                37,
+                38
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "39     if view_name == \"xss\":\n40         assert \"<p>XSS: {}</p>\".format(DATA.get(view_name)) in str(response.text)\n",
+            "filename": "/code/tests/bottle/test_vulnerable.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 40,
+            "line_range": [
+                40
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "19     response = client.get(view_path)\n20     assert response.status_code == 200\n21 \n",
+            "filename": "/code/tests/django/test_vulnerable.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 20,
+            "line_range": [
+                20
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "30     )\n31     assert response.status_code == 200\n32     if view_name == \"xss\":\n",
+            "filename": "/code/tests/django/test_vulnerable.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 31,
+            "line_range": [
+                31
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "32     if view_name == \"xss\":\n33         assert \"<p>XSS: {}</p>\".format(DATA.get(view_name)) in str(response.content)\n",
+            "filename": "/code/tests/django/test_vulnerable.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 33,
+            "line_range": [
+                33
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "23     response = client.simulate_get(view_path)\n24     assert response.status_code == 200\n25 \n",
+            "filename": "/code/tests/falcon/test_vulnerable.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 24,
+            "line_range": [
+                24
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "36     )\n37     assert response.status_code == 200\n38 \n39     if view_name == \"xss\":\n",
+            "filename": "/code/tests/falcon/test_vulnerable.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 37,
+            "line_range": [
+                37,
+                38
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "39     if view_name == \"xss\":\n40         assert \"<p>XSS: {}</p>\".format(DATA.get(view_name)) in str(response.content)\n41 \n",
+            "filename": "/code/tests/falcon/test_vulnerable.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 40,
+            "line_range": [
+                40
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "50     )\n51     assert mocked_trigger.called\n52     assert response.status_code == 200\n",
+            "filename": "/code/tests/falcon/test_vulnerable.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 51,
+            "line_range": [
+                51
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "51     assert mocked_trigger.called\n52     assert response.status_code == 200\n",
+            "filename": "/code/tests/falcon/test_vulnerable.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 52,
+            "line_range": [
+                52
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "25     response = client.get(view_path)\n26     assert response.status_code == 200\n27 \n",
+            "filename": "/code/tests/fastapi/test_vulnerable.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 26,
+            "line_range": [
+                26
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "39 \n40     assert response.status_code == 200\n41 \n42     if view_name == \"xss\":\n",
+            "filename": "/code/tests/fastapi/test_vulnerable.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 40,
+            "line_range": [
+                40,
+                41
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "42     if view_name == \"xss\":\n43         assert \"<p>XSS: {}</p>\".format(data) in str(response.text)\n",
+            "filename": "/code/tests/fastapi/test_vulnerable.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 43,
+            "line_range": [
+                43
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "20     response = client.get(view_path)\n21     assert response.status_code == 200\n22 \n",
+            "filename": "/code/tests/flask/test_blueprint.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 21,
+            "line_range": [
+                21
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "37     )\n38     assert response.status_code == 200\n39 \n40     if view_name == \"xss\":\n",
+            "filename": "/code/tests/flask/test_blueprint.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 38,
+            "line_range": [
+                38,
+                39
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "40     if view_name == \"xss\":\n41         assert \"<p>XSS: {}</p>\".format(data) in str(response.get_data())\n42 \n",
+            "filename": "/code/tests/flask/test_blueprint.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 41,
+            "line_range": [
+                41
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "48 \n49     assert response.status_code == 200\n",
+            "filename": "/code/tests/flask/test_blueprint.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 49,
+            "line_range": [
+                49
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "19     response = client.get(view_path)\n20     assert response.status_int == 200\n21 \n",
+            "filename": "/code/tests/pyramid/test_vulnerable_routes.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 20,
+            "line_range": [
+                20
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "30     )\n31     assert response.status_code == 200\n32 \n33     if view_name == \"xss\":\n",
+            "filename": "/code/tests/pyramid/test_vulnerable_routes.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 31,
+            "line_range": [
+                31,
+                32
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "33     if view_name == \"xss\":\n34         assert \"<p>XSS: {}</p>\".format(DATA.get(view_name)) in str(response.text)\n",
+            "filename": "/code/tests/pyramid/test_vulnerable_routes.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 34,
+            "line_range": [
+                34
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "34             compare = self.good_input[2]\n35         assert compare(result, expected)\n36 \n",
+            "filename": "/code/tests/trigger/base_test.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 35,
+            "line_range": [
+                35
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "1 import pickle\n2 from vulnpy.vendor.six import PY2\n3 \n",
+            "filename": "/code/tests/trigger/test_deserialization.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Consider possible security implications associated with pickle module.",
+            "line_number": 1,
+            "line_range": [
+                1
+            ],
+            "test_id": "B403",
+            "test_name": "blacklist"
+        },
+        {
+            "code": "26     def test_exception_caught(self):\n27         assert self.trigger_func(self.exception_input) is None\n28 \n",
+            "filename": "/code/tests/trigger/test_pt.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 27,
+            "line_range": [
+                27
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "72     def test_good_input(self):\n73         assert self.trigger_func(self.good_input[0], 4) == self.good_input[1]\n74 \n",
+            "filename": "/code/tests/trigger/test_pt.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 73,
+            "line_range": [
+                73
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "85     def test_good_input(self):\n86         assert self.trigger_func(self.good_input[0], 4) == self.good_input[1]\n87 \n",
+            "filename": "/code/tests/trigger/test_pt.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 86,
+            "line_range": [
+                86
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "15     def test_exception_caught(self):\n16         assert self.trigger_func(self.exception_input) == \"error\"\n17 \n",
+            "filename": "/code/tests/trigger/test_sqli.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 16,
+            "line_range": [
+                16
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "9 \n10     assert \"do_nope\" in str(exc)\n",
+            "filename": "/code/tests/trigger/test_trigger.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 10,
+            "line_range": [
+                10
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "22         self.trigger_func(self.good_input[0])\n23         assert mock_write.called\n24         assert mock_write.call_args_list[0][0][0] == \"foo\"\n",
+            "filename": "/code/tests/trigger/test_unsafe_code_exec.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 23,
+            "line_range": [
+                23
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "23         assert mock_write.called\n24         assert mock_write.call_args_list[0][0][0] == \"foo\"\n25 \n",
+            "filename": "/code/tests/trigger/test_unsafe_code_exec.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 24,
+            "line_range": [
+                24
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "56         code = self.trigger_func(self.good_input[0])\n57         exec(code)\n58         assert mock_write.called\n",
+            "filename": "/code/tests/trigger/test_unsafe_code_exec.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "MEDIUM",
+            "issue_text": "Use of exec detected.",
+            "line_number": 57,
+            "line_range": [
+                57
+            ],
+            "test_id": "B102",
+            "test_name": "exec_used"
+        },
+        {
+            "code": "57         exec(code)\n58         assert mock_write.called\n59         assert mock_write.call_args_list[0][0][0] == \"foo\"\n",
+            "filename": "/code/tests/trigger/test_unsafe_code_exec.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 58,
+            "line_range": [
+                58
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "58         assert mock_write.called\n59         assert mock_write.call_args_list[0][0][0] == \"foo\"\n",
+            "filename": "/code/tests/trigger/test_unsafe_code_exec.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 59,
+            "line_range": [
+                59
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "17     response = client.get(view_path)\n18     assert response.status_int == 200\n19 \n",
+            "filename": "/code/tests/wsgi/test_app.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 18,
+            "line_range": [
+                18
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "26     )\n27     assert response.status_code == 200\n28 \n29     if view_name == \"xss\":\n",
+            "filename": "/code/tests/wsgi/test_app.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 27,
+            "line_range": [
+                27,
+                28
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "29     if view_name == \"xss\":\n30         assert \"<p>XSS: {}</p>\".format(DATA.get(view_name)) in str(response.text)\n31 \n",
+            "filename": "/code/tests/wsgi/test_app.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 30,
+            "line_range": [
+                30
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        },
+        {
+            "code": "37     response = client.get(path, status=404)\n38     assert response.text == \"The requested page does not exist\"\n",
+            "filename": "/code/tests/wsgi/test_app.py",
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+            "line_number": 38,
+            "line_range": [
+                38
+            ],
+            "test_id": "B101",
+            "test_name": "assert_used"
+        }
+    ]
+}

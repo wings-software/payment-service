@@ -1,0 +1,64 @@
+{
+    "meta": {
+      "key": ["scanTool"],    
+      "commonAttributes": ["issueDescription"],
+      "author": "Gabriel Aboy"
+    },
+    "issues": [{
+        "scanTool": "Whitehat",
+        "issueName": "name1",
+        "issueDescription": "line number: 1. What is the difference",
+        "fileName": "https://github.com/MSGTech/Aspire.git:dev/wp-content/themes/aspire/template-parts/homepage/homepage-jobs.php",
+        "remediationSteps": "b",
+        "risk": "high",
+        "severity": 80,
+        "status": "open",
+        "referenceIdentifiers": [{
+          "type": "cwe",
+          "id": "792"
+        }]
+      },
+      {
+        "scanTool": "Whitehat",
+        "issueName": "name1",
+        "issueDescription": "line number: 1. What is the difference",
+        "fileName": "https://github.com/MSGTech/Aspire.git:dev/wp-content/themes/aspire/template-parts/homepage/homepage-jobs.php",
+        "remediationSteps": "b",
+        "risk": "high",
+        "severity": 80,
+        "status": "open",
+        "referenceIdentifiers": [{
+          "type": "cwe",
+          "id": "792"
+        }]
+      },
+      {
+        "scanTool": "Whitehat2",
+        "issueName": "name2",
+        "issueDescription": "line number: 1. What is the difference",
+        "fileName": "https://github.com/MSGTech/Aspire.git:dev/wp-content/themes/aspire/template-parts/homepage/homepage-jobs.php",
+        "remediationSteps": "d",
+        "risk": "high",
+        "severity": 70,
+        "status": "open",
+        "referenceIdentifiers": [{
+          "type": "cwe",
+          "id": "79"
+        }]
+      },
+      {
+        "scanTool": "Whitehat",
+        "issueName": "name3",
+        "issueDescription": "line number: 1. What is the difference",
+        "fileName": "https://github.com/MSGTech/Aspire.git:dev/wp-content/themes/aspire/template-parts/homepage/homepage-jobs.php",
+        "remediationSteps": "d",
+        "risk": "high",
+        "severity": 70,
+        "status": "open",
+        "referenceIdentifiers": [{
+          "type": "cwe",
+          "id": "79"
+        }]
+    }]
+  }
+  

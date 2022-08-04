@@ -1,0 +1,1460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CxXMLResults InitiatorName="ZN pytest" Owner="phayes@zeronorth.io" ScanId="1000349" ProjectId="110" ProjectName="wtw-nodegoat-test-update" TeamFullPathOnReportDate="CxServer\\SP\\Partners\\ZeroNorth" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110" ScanStart="Tuesday, July 14, 2020 7:22:16 PM" Preset="All" ScanTime="00h:00m:00s" LinesOfCodeScanned="27810" FilesScanned="81" ReportCreationTime="Tuesday, July 14, 2020 7:42:36 PM" Team="ZeroNorth" CheckmarxVersion="9.0.0.40085 HF3" ScanComments="Attempt to perform scan on 7/14/2020 7:22:16 PM - No code changes were detected; ZpoI4hXOSlW3hzBKydgMOA" ScanType="Full" SourceOrigin="LocalPath" Visibility="Public">
+   <Query id="2967" categories="PCI DSS v3.2;PCI DSS (3.2) - 6.5.1 - Injection flaws - particularly SQL injection,OWASP Top 10 2013;A1-Injection,FISMA 2014;System And Information Integrity,NIST SP 800-53;SI-10 Information Input Validation (P1),OWASP Top 10 2017;A1-Injection" cweId="94" name="Code_Injection" group="JavaScript_Server_Side_Vulnerabilities" Severity="High" Language="JavaScript" LanguageHash="0935562945055365" LanguageChangeDate="2020-05-19T00:00:00.0000000" SeverityIndex="3" QueryPath="JavaScript\\Cx\\JavaScript Server Side Vulnerabilities\\Code Injection Version:1" QueryVersionCode="84100997">
+      <Result NodeId="10003490012" FileName="app/routes/contributions.js" Status="Recurrent" Line="24" Column="36" FalsePositive="False" Severity="High" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=12" SeverityIndex="3">
+         <Path ResultId="1000349" PathId="12" SimilarityId="1909355528">
+            <PathNode>
+               <FileName>app/routes/contributions.js</FileName>
+               <Line>24</Line>
+               <Column>36</Column>
+               <NodeId>1</NodeId>
+               <Name>preTax</Name>
+               <Type />
+               <Length>6</Length>
+               <Snippet>
+                  <Line>
+                     <Number>24</Number>
+                     <Code>var preTax = eval(req.body.preTax);</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490013" FileName="app/routes/contributions.js" Status="Recurrent" Line="25" Column="38" FalsePositive="False" Severity="High" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=13" SeverityIndex="3">
+         <Path ResultId="1000349" PathId="13" SimilarityId="-1400558328">
+            <PathNode>
+               <FileName>app/routes/contributions.js</FileName>
+               <Line>25</Line>
+               <Column>38</Column>
+               <NodeId>1</NodeId>
+               <Name>afterTax</Name>
+               <Type />
+               <Length>8</Length>
+               <Snippet>
+                  <Line>
+                     <Number>25</Number>
+                     <Code>var afterTax = eval(req.body.afterTax);</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490014" FileName="app/routes/contributions.js" Status="Recurrent" Line="26" Column="34" FalsePositive="False" Severity="High" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=14" SeverityIndex="3">
+         <Path ResultId="1000349" PathId="14" SimilarityId="-1469617400">
+            <PathNode>
+               <FileName>app/routes/contributions.js</FileName>
+               <Line>26</Line>
+               <Column>34</Column>
+               <NodeId>1</NodeId>
+               <Name>roth</Name>
+               <Type />
+               <Length>4</Length>
+               <Snippet>
+                  <Line>
+                     <Number>26</Number>
+                     <Code>var roth = eval(req.body.roth);</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+   </Query>
+   <Query id="2982" categories="PCI DSS v3.2;PCI DSS (3.2) - 6.5.7 - Cross-site scripting (XSS),OWASP Top 10 2013;A3-Cross-Site Scripting (XSS),FISMA 2014;System And Information Integrity,NIST SP 800-53;SI-15 Information Output Filtering (P0),OWASP Top 10 2017;A7-Cross-Site Scripting (XSS)" cweId="79" name="Reflected_XSS" group="JavaScript_Server_Side_Vulnerabilities" Severity="High" Language="JavaScript" LanguageHash="0935562945055365" LanguageChangeDate="2020-05-19T00:00:00.0000000" SeverityIndex="3" QueryPath="JavaScript\\Cx\\JavaScript Server Side Vulnerabilities\\Reflected XSS Version:1" QueryVersionCode="84295637">
+      <Result NodeId="10003490036" FileName="app/routes/session.js" Status="Recurrent" Line="191" Column="30" FalsePositive="False" Severity="High" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=36" SeverityIndex="3">
+         <Path ResultId="1000349" PathId="36" SimilarityId="922606415">
+            <PathNode>
+               <FileName>app/routes/session.js</FileName>
+               <Line>191</Line>
+               <Column>30</Column>
+               <NodeId>1</NodeId>
+               <Name>email</Name>
+               <Type />
+               <Length>5</Length>
+               <Snippet>
+                  <Line>
+                     <Number>191</Number>
+                     <Code>var email = req.body.email;</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/session.js</FileName>
+               <Line>191</Line>
+               <Column>13</Column>
+               <NodeId>2</NodeId>
+               <Name>email</Name>
+               <Type />
+               <Length>5</Length>
+               <Snippet>
+                  <Line>
+                     <Number>191</Number>
+                     <Code>var email = req.body.email;</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/session.js</FileName>
+               <Line>201</Line>
+               <Column>22</Column>
+               <NodeId>3</NodeId>
+               <Name>email</Name>
+               <Type />
+               <Length>5</Length>
+               <Snippet>
+                  <Line>
+                     <Number>201</Number>
+                     <Code>"email": email</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/session.js</FileName>
+               <Line>201</Line>
+               <Column>14</Column>
+               <NodeId>4</NodeId>
+               <Name>email</Name>
+               <Type />
+               <Length>5</Length>
+               <Snippet>
+                  <Line>
+                     <Number>201</Number>
+                     <Code>"email": email</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/session.js</FileName>
+               <Line>199</Line>
+               <Column>13</Column>
+               <NodeId>5</NodeId>
+               <Name>errors</Name>
+               <Type />
+               <Length>6</Length>
+               <Snippet>
+                  <Line>
+                     <Number>199</Number>
+                     <Code>var errors = {</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/session.js</FileName>
+               <Line>243</Line>
+               <Column>23</Column>
+               <NodeId>6</NodeId>
+               <Name>render</Name>
+               <Type />
+               <Length>1</Length>
+               <Snippet>
+                  <Line>
+                     <Number>243</Number>
+                     <Code>return res.render("signup", errors);</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490037" FileName="app/routes/session.js" Status="Recurrent" Line="192" Column="33" FalsePositive="False" Severity="High" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=37" SeverityIndex="3">
+         <Path ResultId="1000349" PathId="37" SimilarityId="-213289391">
+            <PathNode>
+               <FileName>app/routes/session.js</FileName>
+               <Line>192</Line>
+               <Column>33</Column>
+               <NodeId>1</NodeId>
+               <Name>userName</Name>
+               <Type />
+               <Length>8</Length>
+               <Snippet>
+                  <Line>
+                     <Number>192</Number>
+                     <Code>var userName = req.body.userName;</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/session.js</FileName>
+               <Line>192</Line>
+               <Column>13</Column>
+               <NodeId>2</NodeId>
+               <Name>userName</Name>
+               <Type />
+               <Length>8</Length>
+               <Snippet>
+                  <Line>
+                     <Number>192</Number>
+                     <Code>var userName = req.body.userName;</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/session.js</FileName>
+               <Line>200</Line>
+               <Column>25</Column>
+               <NodeId>3</NodeId>
+               <Name>userName</Name>
+               <Type />
+               <Length>8</Length>
+               <Snippet>
+                  <Line>
+                     <Number>200</Number>
+                     <Code>"userName": userName,</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/session.js</FileName>
+               <Line>200</Line>
+               <Column>14</Column>
+               <NodeId>4</NodeId>
+               <Name>userName</Name>
+               <Type />
+               <Length>8</Length>
+               <Snippet>
+                  <Line>
+                     <Number>200</Number>
+                     <Code>"userName": userName,</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/session.js</FileName>
+               <Line>199</Line>
+               <Column>13</Column>
+               <NodeId>5</NodeId>
+               <Name>errors</Name>
+               <Type />
+               <Length>6</Length>
+               <Snippet>
+                  <Line>
+                     <Number>199</Number>
+                     <Code>var errors = {</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/session.js</FileName>
+               <Line>243</Line>
+               <Column>23</Column>
+               <NodeId>6</NodeId>
+               <Name>render</Name>
+               <Type />
+               <Length>1</Length>
+               <Snippet>
+                  <Line>
+                     <Number>243</Number>
+                     <Code>return res.render("signup", errors);</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490038" FileName="app/routes/index.js" Status="Recurrent" Line="80" Column="52" FalsePositive="False" Severity="High" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=38" SeverityIndex="3">
+         <Path ResultId="1000349" PathId="38" SimilarityId="543620674">
+            <PathNode>
+               <FileName>app/routes/index.js</FileName>
+               <Line>80</Line>
+               <Column>52</Column>
+               <NodeId>1</NodeId>
+               <Name>page</Name>
+               <Type />
+               <Length>4</Length>
+               <Snippet>
+                  <Line>
+                     <Number>80</Number>
+                     <Code>return res.render("tutorial/" + req.params.page);</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/index.js</FileName>
+               <Line>80</Line>
+               <Column>19</Column>
+               <NodeId>2</NodeId>
+               <Name>render</Name>
+               <Type />
+               <Length>1</Length>
+               <Snippet>
+                  <Line>
+                     <Number>80</Number>
+                     <Code>return res.render("tutorial/" + req.params.page);</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+   </Query>
+   <Query id="3906" cweId="933" name="Security_Misconfiguration" group="JavaScript_Server_Side_Vulnerabilities" Severity="High" Language="JavaScript" LanguageHash="0935562945055365" LanguageChangeDate="2020-05-19T00:00:00.0000000" SeverityIndex="3" QueryPath="JavaScript\\Cx\\JavaScript Server Side Vulnerabilities\\Security Misconfiguration Version:1" QueryVersionCode="96719279">
+      <Result NodeId="10003490039" FileName="server.js" Status="Recurrent" Line="84" Column="24" FalsePositive="False" Severity="High" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=39" SeverityIndex="3">
+         <Path ResultId="1000349" PathId="39" SimilarityId="1950635198">
+            <PathNode>
+               <FileName>server.js</FileName>
+               <Line>84</Line>
+               <Column>24</Column>
+               <NodeId>1</NodeId>
+               <Name>cookieSecret</Name>
+               <Type />
+               <Length>12</Length>
+               <Snippet>
+                  <Line>
+                     <Number>84</Number>
+                     <Code>secret: config.cookieSecret,</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>server.js</FileName>
+               <Line>84</Line>
+               <Column>9</Column>
+               <NodeId>2</NodeId>
+               <Name>secret</Name>
+               <Type />
+               <Length>6</Length>
+               <Snippet>
+                  <Line>
+                     <Number>84</Number>
+                     <Code>secret: config.cookieSecret,</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>server.js</FileName>
+               <Line>80</Line>
+               <Column>13</Column>
+               <NodeId>3</NodeId>
+               <Name>session</Name>
+               <Type />
+               <Length>7</Length>
+               <Snippet>
+                  <Line>
+                     <Number>80</Number>
+                     <Code>app.use(session({</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490040" FileName="app/data/profile-dao.js" Status="Recurrent" Line="62" Column="24" FalsePositive="False" Severity="High" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=40" SeverityIndex="3">
+         <Path ResultId="1000349" PathId="40" SimilarityId="-1513820430">
+            <PathNode>
+               <FileName>app/data/profile-dao.js</FileName>
+               <Line>62</Line>
+               <Column>24</Column>
+               <NodeId>1</NodeId>
+               <Name>ssn</Name>
+               <Type />
+               <Length>3</Length>
+               <Snippet>
+                  <Line>
+                     <Number>62</Number>
+                     <Code>user.ssn = ssn;</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/data/profile-dao.js</FileName>
+               <Line>62</Line>
+               <Column>18</Column>
+               <NodeId>2</NodeId>
+               <Name>ssn</Name>
+               <Type />
+               <Length>3</Length>
+               <Snippet>
+                  <Line>
+                     <Number>62</Number>
+                     <Code>user.ssn = ssn;</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/data/profile-dao.js</FileName>
+               <Line>81</Line>
+               <Column>23</Column>
+               <NodeId>3</NodeId>
+               <Name>user</Name>
+               <Type />
+               <Length>4</Length>
+               <Snippet>
+                  <Line>
+                     <Number>81</Number>
+                     <Code>$set: user</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/data/profile-dao.js</FileName>
+               <Line>81</Line>
+               <Column>17</Column>
+               <NodeId>4</NodeId>
+               <Name>$set</Name>
+               <Type />
+               <Length>4</Length>
+               <Snippet>
+                  <Line>
+                     <Number>81</Number>
+                     <Code>$set: user</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490041" FileName="app/data/profile-dao.js" Status="Recurrent" Line="65" Column="24" FalsePositive="False" Severity="High" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=41" SeverityIndex="3">
+         <Path ResultId="1000349" PathId="41" SimilarityId="1329889056">
+            <PathNode>
+               <FileName>app/data/profile-dao.js</FileName>
+               <Line>65</Line>
+               <Column>24</Column>
+               <NodeId>1</NodeId>
+               <Name>dob</Name>
+               <Type />
+               <Length>3</Length>
+               <Snippet>
+                  <Line>
+                     <Number>65</Number>
+                     <Code>user.dob = dob;</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/data/profile-dao.js</FileName>
+               <Line>65</Line>
+               <Column>18</Column>
+               <NodeId>2</NodeId>
+               <Name>dob</Name>
+               <Type />
+               <Length>3</Length>
+               <Snippet>
+                  <Line>
+                     <Number>65</Number>
+                     <Code>user.dob = dob;</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/data/profile-dao.js</FileName>
+               <Line>81</Line>
+               <Column>23</Column>
+               <NodeId>3</NodeId>
+               <Name>user</Name>
+               <Type />
+               <Length>4</Length>
+               <Snippet>
+                  <Line>
+                     <Number>81</Number>
+                     <Code>$set: user</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/data/profile-dao.js</FileName>
+               <Line>81</Line>
+               <Column>17</Column>
+               <NodeId>4</NodeId>
+               <Name>$set</Name>
+               <Type />
+               <Length>4</Length>
+               <Snippet>
+                  <Line>
+                     <Number>81</Number>
+                     <Code>$set: user</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+   </Query>
+   <Query id="4005" categories="FISMA 2014;Identification And Authentication,NIST SP 800-53;SC-5 Denial of Service Protection (P1),OWASP Top 10 2017;A1-Injection" cweId="400" name="ReDOS_in_RegExp" group="JavaScript_Server_Side_Vulnerabilities" Severity="Medium" Language="JavaScript" LanguageHash="0935562945055365" LanguageChangeDate="2020-05-19T00:00:00.0000000" SeverityIndex="2" QueryPath="JavaScript\\Cx\\JavaScript Server Side Vulnerabilities\\ReDOS in RegExp Version:1" QueryVersionCode="98101022">
+      <Result NodeId="10003490116" FileName="app/routes/profile.js" Status="Recurrent" Line="49" Column="28" FalsePositive="False" Severity="Medium" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=116" SeverityIndex="2">
+         <Path ResultId="1000349" PathId="116" SimilarityId="788249214">
+            <PathNode>
+               <FileName>app/routes/profile.js</FileName>
+               <Line>49</Line>
+               <Column>28</Column>
+               <NodeId>1</NodeId>
+               <Name>"/([0-9]+)+\\#/"</Name>
+               <Type />
+               <Length>13</Length>
+               <Snippet>
+                  <Line>
+                     <Number>49</Number>
+                     <Code>var regexPattern = /([0-9]+)+\\#/;</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/profile.js</FileName>
+               <Line>49</Line>
+               <Column>28</Column>
+               <NodeId>2</NodeId>
+               <Name>RegExp</Name>
+               <Type />
+               <Length>6</Length>
+               <Snippet>
+                  <Line>
+                     <Number>49</Number>
+                     <Code>var regexPattern = /([0-9]+)+\\#/;</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/profile.js</FileName>
+               <Line>49</Line>
+               <Column>13</Column>
+               <NodeId>3</NodeId>
+               <Name>regexPattern</Name>
+               <Type />
+               <Length>12</Length>
+               <Snippet>
+                  <Line>
+                     <Number>49</Number>
+                     <Code>var regexPattern = /([0-9]+)+\\#/;</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/profile.js</FileName>
+               <Line>51</Line>
+               <Column>42</Column>
+               <NodeId>4</NodeId>
+               <Name>regexPattern</Name>
+               <Type />
+               <Length>12</Length>
+               <Snippet>
+                  <Line>
+                     <Number>51</Number>
+                     <Code>var testComplyWithRequirements = regexPattern.test(bankRouting);</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490117" FileName="app/routes/profile.js" Status="Recurrent" Line="49" Column="28" FalsePositive="False" Severity="Medium" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=117" SeverityIndex="2">
+         <Path ResultId="1000349" PathId="117" SimilarityId="788249214">
+            <PathNode>
+               <FileName>app/routes/profile.js</FileName>
+               <Line>49</Line>
+               <Column>28</Column>
+               <NodeId>1</NodeId>
+               <Name>"/([0-9]+)+\\#/"</Name>
+               <Type />
+               <Length>13</Length>
+               <Snippet>
+                  <Line>
+                     <Number>49</Number>
+                     <Code>var regexPattern = /([0-9]+)+\\#/;</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/profile.js</FileName>
+               <Line>51</Line>
+               <Column>42</Column>
+               <NodeId>2</NodeId>
+               <Name>regexPattern</Name>
+               <Type />
+               <Length>12</Length>
+               <Snippet>
+                  <Line>
+                     <Number>51</Number>
+                     <Code>var testComplyWithRequirements = regexPattern.test(bankRouting);</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/profile.js</FileName>
+               <Line>51</Line>
+               <Column>54</Column>
+               <NodeId>3</NodeId>
+               <Name>test</Name>
+               <Type />
+               <Length>1</Length>
+               <Snippet>
+                  <Line>
+                     <Number>51</Number>
+                     <Code>var testComplyWithRequirements = regexPattern.test(bankRouting);</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490118" FileName="app/assets/vendor/chart/raphael-min.js" Status="Recurrent" Line="640" Column="13" FalsePositive="False" Severity="Medium" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=118" SeverityIndex="2">
+         <Path ResultId="1000349" PathId="118" SimilarityId="-2041329504">
+            <PathNode>
+               <FileName>app/assets/vendor/chart/raphael-min.js</FileName>
+               <Line>640</Line>
+               <Column>13</Column>
+               <NodeId>1</NodeId>
+               <Name>"/([achlmrqstvz])[\\x09\\x0a\\x0b\\x0c\\x0d\\x20\\xa0\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u202f\u205f\u3000\u2028\u2029,]*((-?\\d*\\.?\\d*(?:e[\\-+]?\\d+)?[\\x09\\x0a\\x0b\\x0c\\x0d\\x20\\xa0\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u202f\u205f\u3000\u2028\u2029]*,?[\\x09\\x0a\\x0b\\x0c\\x0d\\x20\\xa0\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u202f\u205f\u3000\u2028\u2029]*)+)/ig"</Name>
+               <Type />
+               <Length>470</Length>
+               <Snippet>
+                  <Line>
+                     <Number>640</Number>
+                     <Code>Z = /([achlmrqstvz])[\\x09\\x0a\\x0b\\x0c\\x0d\\x20\\xa0\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3000\\u2028\\u2029,]*((-?\\d*\\.?\\d*(?:e[\\-+]?\\d+)?[\\x09\\x0a\\x0b\\x0c\\x0d\\x20\\xa0\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3000\\u2028\\u2029]*,?[\\x09\\x0a\\x0b\\x0c\\x0d\\x20\\xa0\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3000\\u2028\\u2029]*)+)/ig,</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/profile.js</FileName>
+               <Line>51</Line>
+               <Column>42</Column>
+               <NodeId>2</NodeId>
+               <Name>regexPattern</Name>
+               <Type />
+               <Length>12</Length>
+               <Snippet>
+                  <Line>
+                     <Number>51</Number>
+                     <Code>var testComplyWithRequirements = regexPattern.test(bankRouting);</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/profile.js</FileName>
+               <Line>51</Line>
+               <Column>54</Column>
+               <NodeId>3</NodeId>
+               <Name>test</Name>
+               <Type />
+               <Length>1</Length>
+               <Snippet>
+                  <Line>
+                     <Number>51</Number>
+                     <Code>var testComplyWithRequirements = regexPattern.test(bankRouting);</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490119" FileName="app/assets/vendor/chart/raphael-min.js" Status="Recurrent" Line="641" Column="13" FalsePositive="False" Severity="Medium" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=119" SeverityIndex="2">
+         <Path ResultId="1000349" PathId="119" SimilarityId="198322441">
+            <PathNode>
+               <FileName>app/assets/vendor/chart/raphael-min.js</FileName>
+               <Line>641</Line>
+               <Column>13</Column>
+               <NodeId>1</NodeId>
+               <Name>"/([rstm])[\\x09\\x0a\\x0b\\x0c\\x0d\\x20\\xa0\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u202f\u205f\u3000\u2028\u2029,]*((-?\\d*\\.?\\d*(?:e[\\-+]?\\d+)?[\\x09\\x0a\\x0b\\x0c\\x0d\\x20\\xa0\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u202f\u205f\u3000\u2028\u2029]*,?[\\x09\\x0a\\x0b\\x0c\\x0d\\x20\\xa0\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u202f\u205f\u3000\u2028\u2029]*)+)/ig"</Name>
+               <Type />
+               <Length>463</Length>
+               <Snippet>
+                  <Line>
+                     <Number>641</Number>
+                     <Code>$ = /([rstm])[\\x09\\x0a\\x0b\\x0c\\x0d\\x20\\xa0\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3000\\u2028\\u2029,]*((-?\\d*\\.?\\d*(?:e[\\-+]?\\d+)?[\\x09\\x0a\\x0b\\x0c\\x0d\\x20\\xa0\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3000\\u2028\\u2029]*,?[\\x09\\x0a\\x0b\\x0c\\x0d\\x20\\xa0\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3000\\u2028\\u2029]*)+)/ig,</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/profile.js</FileName>
+               <Line>51</Line>
+               <Column>42</Column>
+               <NodeId>2</NodeId>
+               <Name>regexPattern</Name>
+               <Type />
+               <Length>12</Length>
+               <Snippet>
+                  <Line>
+                     <Number>51</Number>
+                     <Code>var testComplyWithRequirements = regexPattern.test(bankRouting);</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/profile.js</FileName>
+               <Line>51</Line>
+               <Column>54</Column>
+               <NodeId>3</NodeId>
+               <Name>test</Name>
+               <Type />
+               <Length>1</Length>
+               <Snippet>
+                  <Line>
+                     <Number>51</Number>
+                     <Code>var testComplyWithRequirements = regexPattern.test(bankRouting);</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490120" FileName="app/assets/vendor/chart/raphael-min.js" Status="Recurrent" Line="642" Column="13" FalsePositive="False" Severity="Medium" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=120" SeverityIndex="2">
+         <Path ResultId="1000349" PathId="120" SimilarityId="1443363539">
+            <PathNode>
+               <FileName>app/assets/vendor/chart/raphael-min.js</FileName>
+               <Line>642</Line>
+               <Column>13</Column>
+               <NodeId>1</NodeId>
+               <Name>"/(-?\\d*\\.?\\d*(?:e[\\-+]?\\d+)?)[\\x09\\x0a\\x0b\\x0c\\x0d\\x20\\xa0\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u202f\u205f\u3000\u2028\u2029]*,?[\\x09\\x0a\\x0b\\x0c\\x0d\\x20\\xa0\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u202f\u205f\u3000\u2028\u2029]*/ig"</Name>
+               <Type />
+               <Length>312</Length>
+               <Snippet>
+                  <Line>
+                     <Number>642</Number>
+                     <Code>_ = /(-?\\d*\\.?\\d*(?:e[\\-+]?\\d+)?)[\\x09\\x0a\\x0b\\x0c\\x0d\\x20\\xa0\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3000\\u2028\\u2029]*,?[\\x09\\x0a\\x0b\\x0c\\x0d\\x20\\xa0\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3000\\u2028\\u2029]*/ig,</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/profile.js</FileName>
+               <Line>51</Line>
+               <Column>42</Column>
+               <NodeId>2</NodeId>
+               <Name>regexPattern</Name>
+               <Type />
+               <Length>12</Length>
+               <Snippet>
+                  <Line>
+                     <Number>51</Number>
+                     <Code>var testComplyWithRequirements = regexPattern.test(bankRouting);</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/profile.js</FileName>
+               <Line>51</Line>
+               <Column>54</Column>
+               <NodeId>3</NodeId>
+               <Name>test</Name>
+               <Type />
+               <Length>1</Length>
+               <Snippet>
+                  <Line>
+                     <Number>51</Number>
+                     <Code>var testComplyWithRequirements = regexPattern.test(bankRouting);</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490121" FileName="app/assets/vendor/chart/raphael-min.js" Status="Recurrent" Line="2823" Column="60" FalsePositive="False" Severity="Medium" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=121" SeverityIndex="2">
+         <Path ResultId="1000349" PathId="121" SimilarityId="-1762515285">
+            <PathNode>
+               <FileName>app/assets/vendor/chart/raphael-min.js</FileName>
+               <Line>2823</Line>
+               <Column>60</Column>
+               <NodeId>1</NodeId>
+               <Name>"raphael.*.*."</Name>
+               <Type />
+               <Length>14</Length>
+               <Snippet>
+                  <Line>
+                     <Number>2823</Number>
+                     <Code>b.__set__ &amp;&amp; b.__set__.exclude(this), k.unbind("raphael.*.*." + this.id), this.gradient &amp;&amp; b.defs.removeChild(this.gradient), a._tear(this, b), this.node.parentNode.tagName.toLowerCase() == "a" ? this.node.parentNode.parentNode.removeChild(this.node.parentNode) : this.node.parentNode.removeChild(this.node);</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/profile.js</FileName>
+               <Line>51</Line>
+               <Column>42</Column>
+               <NodeId>2</NodeId>
+               <Name>regexPattern</Name>
+               <Type />
+               <Length>12</Length>
+               <Snippet>
+                  <Line>
+                     <Number>51</Number>
+                     <Code>var testComplyWithRequirements = regexPattern.test(bankRouting);</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/profile.js</FileName>
+               <Line>51</Line>
+               <Column>54</Column>
+               <NodeId>3</NodeId>
+               <Name>test</Name>
+               <Type />
+               <Length>1</Length>
+               <Snippet>
+                  <Line>
+                     <Number>51</Number>
+                     <Code>var testComplyWithRequirements = regexPattern.test(bankRouting);</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490122" FileName="app/assets/vendor/chart/raphael-min.js" Status="Recurrent" Line="3380" Column="82" FalsePositive="False" Severity="Medium" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=122" SeverityIndex="2">
+         <Path ResultId="1000349" PathId="122" SimilarityId="-2079189629">
+            <PathNode>
+               <FileName>app/assets/vendor/chart/raphael-min.js</FileName>
+               <Line>3380</Line>
+               <Column>82</Column>
+               <NodeId>1</NodeId>
+               <Name>"raphael.*.*."</Name>
+               <Type />
+               <Length>14</Length>
+               <Snippet>
+                  <Line>
+                     <Number>3380</Number>
+                     <Code>this.paper.__set__ &amp;&amp; this.paper.__set__.exclude(this), a.eve.unbind("raphael.*.*." + this.id), a._tear(this, this.paper), this.node.parentNode.removeChild(this.node), this.shape &amp;&amp; this.shape.parentNode.removeChild(this.shape);</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/profile.js</FileName>
+               <Line>51</Line>
+               <Column>42</Column>
+               <NodeId>2</NodeId>
+               <Name>regexPattern</Name>
+               <Type />
+               <Length>12</Length>
+               <Snippet>
+                  <Line>
+                     <Number>51</Number>
+                     <Code>var testComplyWithRequirements = regexPattern.test(bankRouting);</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/profile.js</FileName>
+               <Line>51</Line>
+               <Column>54</Column>
+               <NodeId>3</NodeId>
+               <Name>test</Name>
+               <Type />
+               <Length>1</Length>
+               <Snippet>
+                  <Line>
+                     <Number>51</Number>
+                     <Code>var testComplyWithRequirements = regexPattern.test(bankRouting);</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+   </Query>
+   <Query id="3928" categories="FISMA 2014;Identification And Authentication,NIST SP 800-53;SC-4 Information in Shared Resources (P1)" cweId="359" name="Privacy_Violation" group="JavaScript_Server_Side_Vulnerabilities" Severity="Medium" Language="JavaScript" LanguageHash="0935562945055365" LanguageChangeDate="2020-05-19T00:00:00.0000000" SeverityIndex="2" QueryPath="JavaScript\\Cx\\JavaScript Server Side Vulnerabilities\\Privacy Violation Version:1" QueryVersionCode="97025486">
+      <Result NodeId="10003490107" FileName="app/routes/profile.js" Status="Recurrent" Line="37" Column="28" FalsePositive="False" Severity="Medium" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=107" SeverityIndex="2">
+         <Path ResultId="1000349" PathId="107" SimilarityId="-64351315">
+            <PathNode>
+               <FileName>app/routes/profile.js</FileName>
+               <Line>37</Line>
+               <Column>28</Column>
+               <NodeId>1</NodeId>
+               <Name>dob</Name>
+               <Type />
+               <Length>3</Length>
+               <Snippet>
+                  <Line>
+                     <Number>37</Number>
+                     <Code>var dob = req.body.dob;</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/profile.js</FileName>
+               <Line>37</Line>
+               <Column>13</Column>
+               <NodeId>2</NodeId>
+               <Name>dob</Name>
+               <Type />
+               <Length>3</Length>
+               <Snippet>
+                  <Line>
+                     <Number>37</Number>
+                     <Code>var dob = req.body.dob;</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/profile.js</FileName>
+               <Line>60</Line>
+               <Column>17</Column>
+               <NodeId>3</NodeId>
+               <Name>dob</Name>
+               <Type />
+               <Length>3</Length>
+               <Snippet>
+                  <Line>
+                     <Number>60</Number>
+                     <Code>dob,</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/profile.js</FileName>
+               <Line>60</Line>
+               <Column>17</Column>
+               <NodeId>4</NodeId>
+               <Name>dob</Name>
+               <Type />
+               <Length>3</Length>
+               <Snippet>
+                  <Line>
+                     <Number>60</Number>
+                     <Code>dob,</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/profile.js</FileName>
+               <Line>55</Line>
+               <Column>23</Column>
+               <NodeId>5</NodeId>
+               <Name>render</Name>
+               <Type />
+               <Length>1</Length>
+               <Snippet>
+                  <Line>
+                     <Number>55</Number>
+                     <Code>return res.render("profile", {</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490108" FileName="app/routes/profile.js" Status="Recurrent" Line="36" Column="28" FalsePositive="False" Severity="Medium" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=108" SeverityIndex="2">
+         <Path ResultId="1000349" PathId="108" SimilarityId="-1129957235">
+            <PathNode>
+               <FileName>app/routes/profile.js</FileName>
+               <Line>36</Line>
+               <Column>28</Column>
+               <NodeId>1</NodeId>
+               <Name>ssn</Name>
+               <Type />
+               <Length>3</Length>
+               <Snippet>
+                  <Line>
+                     <Number>36</Number>
+                     <Code>var ssn = req.body.ssn;</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/profile.js</FileName>
+               <Line>36</Line>
+               <Column>13</Column>
+               <NodeId>2</NodeId>
+               <Name>ssn</Name>
+               <Type />
+               <Length>3</Length>
+               <Snippet>
+                  <Line>
+                     <Number>36</Number>
+                     <Code>var ssn = req.body.ssn;</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/profile.js</FileName>
+               <Line>59</Line>
+               <Column>17</Column>
+               <NodeId>3</NodeId>
+               <Name>ssn</Name>
+               <Type />
+               <Length>3</Length>
+               <Snippet>
+                  <Line>
+                     <Number>59</Number>
+                     <Code>ssn,</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/profile.js</FileName>
+               <Line>59</Line>
+               <Column>17</Column>
+               <NodeId>4</NodeId>
+               <Name>ssn</Name>
+               <Type />
+               <Length>3</Length>
+               <Snippet>
+                  <Line>
+                     <Number>59</Number>
+                     <Code>ssn,</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/routes/profile.js</FileName>
+               <Line>55</Line>
+               <Column>23</Column>
+               <NodeId>5</NodeId>
+               <Name>render</Name>
+               <Type />
+               <Length>1</Length>
+               <Snippet>
+                  <Line>
+                     <Number>55</Number>
+                     <Code>return res.render("profile", {</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+   </Query>
+   <Query id="4128" categories="FISMA 2014;Configuration Management,NIST SP 800-53;SC-8 Transmission Confidentiality and Integrity (P1)" cweId="311" name="Missing_Encryption_of_Sensitive_Data" group="JavaScript_Server_Side_Vulnerabilities" Severity="Medium" Language="JavaScript" LanguageHash="0935562945055365" LanguageChangeDate="2020-05-19T00:00:00.0000000" SeverityIndex="2" QueryPath="JavaScript\\Cx\\JavaScript Server Side Vulnerabilities\\Missing Encryption of Sensitive Data Version:1" QueryVersionCode="99831386">
+      <Result NodeId="10003490124" FileName="app/data/profile-dao.js" Status="Recurrent" Line="62" Column="18" FalsePositive="False" Severity="Medium" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=124" SeverityIndex="2">
+         <Path ResultId="1000349" PathId="124" SimilarityId="210810059">
+            <PathNode>
+               <FileName>app/data/profile-dao.js</FileName>
+               <Line>62</Line>
+               <Column>18</Column>
+               <NodeId>1</NodeId>
+               <Name>ssn</Name>
+               <Type />
+               <Length>3</Length>
+               <Snippet>
+                  <Line>
+                     <Number>62</Number>
+                     <Code>user.ssn = ssn;</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/data/profile-dao.js</FileName>
+               <Line>81</Line>
+               <Column>23</Column>
+               <NodeId>2</NodeId>
+               <Name>user</Name>
+               <Type />
+               <Length>4</Length>
+               <Snippet>
+                  <Line>
+                     <Number>81</Number>
+                     <Code>$set: user</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+            <PathNode>
+               <FileName>app/data/profile-dao.js</FileName>
+               <Line>81</Line>
+               <Column>17</Column>
+               <NodeId>3</NodeId>
+               <Name>$set</Name>
+               <Type />
+               <Length>4</Length>
+               <Snippet>
+                  <Line>
+                     <Number>81</Number>
+                     <Code>$set: user</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490123" FileName="app/routes/benefits.js" Status="Recurrent" Line="14" Column="23" FalsePositive="False" Severity="Low" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=123" SeverityIndex="1">
+         <Path ResultId="1000349" PathId="123" SimilarityId="-829744324">
+            <PathNode>
+               <FileName>app/routes/benefits.js</FileName>
+               <Line>14</Line>
+               <Column>23</Column>
+               <NodeId>1</NodeId>
+               <Name>render</Name>
+               <Type />
+               <Length>1</Length>
+               <Snippet>
+                  <Line>
+                     <Number>14</Number>
+                     <Code>return res.render("benefits", {</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+   </Query>
+   <Query id="2978" cweId="484" name="Omitted_Break_Statement_In_Switch" group="JavaScript_Server_Side_Vulnerabilities" Severity="Information" Language="JavaScript" LanguageHash="0935562945055365" LanguageChangeDate="2020-05-19T00:00:00.0000000" SeverityIndex="0" QueryPath="JavaScript\\Cx\\JavaScript Server Side Vulnerabilities\\Omitted Break Statement In Switch Version:1" QueryVersionCode="84243711">
+      <Result NodeId="10003490021" FileName="app/assets/vendor/chart/raphael-min.js" Status="Recurrent" Line="1100" Column="21" FalsePositive="False" Severity="Information" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=21" SeverityIndex="0">
+         <Path ResultId="1000349" PathId="21" SimilarityId="-469676312">
+            <PathNode>
+               <FileName>app/assets/vendor/chart/raphael-min.js</FileName>
+               <Line>1100</Line>
+               <Column>21</Column>
+               <NodeId>1</NodeId>
+               <Name>case</Name>
+               <Type />
+               <Length>4</Length>
+               <Snippet>
+                  <Line>
+                     <Number>1100</Number>
+                     <Code>case "m":</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490022" FileName="app/assets/vendor/chart/raphael-min.js" Status="Recurrent" Line="1158" Column="21" FalsePositive="False" Severity="Information" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=22" SeverityIndex="0">
+         <Path ResultId="1000349" PathId="22" SimilarityId="-114070680">
+            <PathNode>
+               <FileName>app/assets/vendor/chart/raphael-min.js</FileName>
+               <Line>1158</Line>
+               <Column>21</Column>
+               <NodeId>1</NodeId>
+               <Name>case</Name>
+               <Type />
+               <Length>4</Length>
+               <Snippet>
+                  <Line>
+                     <Number>1158</Number>
+                     <Code>case "M":</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490023" FileName="app/assets/vendor/chart/raphael-min.js" Status="Recurrent" Line="1175" Column="17" FalsePositive="False" Severity="Information" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=23" SeverityIndex="0">
+         <Path ResultId="1000349" PathId="23" SimilarityId="1489370440">
+            <PathNode>
+               <FileName>app/assets/vendor/chart/raphael-min.js</FileName>
+               <Line>1175</Line>
+               <Column>17</Column>
+               <NodeId>1</NodeId>
+               <Name>case</Name>
+               <Type />
+               <Length>4</Length>
+               <Snippet>
+                  <Line>
+                     <Number>1175</Number>
+                     <Code>case "M":</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490024" FileName="app/assets/vendor/chart/raphael-min.js" Status="Recurrent" Line="1325" Column="25" FalsePositive="False" Severity="Information" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=24" SeverityIndex="0">
+         <Path ResultId="1000349" PathId="24" SimilarityId="-449455448">
+            <PathNode>
+               <FileName>app/assets/vendor/chart/raphael-min.js</FileName>
+               <Line>1325</Line>
+               <Column>25</Column>
+               <NodeId>1</NodeId>
+               <Name>case</Name>
+               <Type />
+               <Length>4</Length>
+               <Snippet>
+                  <Line>
+                     <Number>1325</Number>
+                     <Code>case "Z":</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490025" FileName="app/assets/vendor/chart/raphael-min.js" Status="Recurrent" Line="2455" Column="17" FalsePositive="False" Severity="Information" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=25" SeverityIndex="0">
+         <Path ResultId="1000349" PathId="25" SimilarityId="-1162747374">
+            <PathNode>
+               <FileName>app/assets/vendor/chart/raphael-min.js</FileName>
+               <Line>2455</Line>
+               <Column>17</Column>
+               <NodeId>1</NodeId>
+               <Name>case</Name>
+               <Type />
+               <Length>4</Length>
+               <Snippet>
+                  <Line>
+                     <Number>2455</Number>
+                     <Code>case "short":</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490026" FileName="app/assets/vendor/chart/raphael-min.js" Status="Recurrent" Line="2594" Column="21" FalsePositive="False" Severity="Information" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=26" SeverityIndex="0">
+         <Path ResultId="1000349" PathId="26" SimilarityId="295318184">
+            <PathNode>
+               <FileName>app/assets/vendor/chart/raphael-min.js</FileName>
+               <Line>2594</Line>
+               <Column>21</Column>
+               <NodeId>1</NodeId>
+               <Name>case</Name>
+               <Type />
+               <Length>4</Length>
+               <Snippet>
+                  <Line>
+                     <Number>2594</Number>
+                     <Code>case "width":</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490027" FileName="app/assets/vendor/chart/raphael-min.js" Status="Recurrent" Line="2598" Column="21" FalsePositive="False" Severity="Information" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=27" SeverityIndex="0">
+         <Path ResultId="1000349" PathId="27" SimilarityId="-2023003032">
+            <PathNode>
+               <FileName>app/assets/vendor/chart/raphael-min.js</FileName>
+               <Line>2598</Line>
+               <Column>21</Column>
+               <NodeId>1</NodeId>
+               <Name>case</Name>
+               <Type />
+               <Length>4</Length>
+               <Snippet>
+                  <Line>
+                     <Number>2598</Number>
+                     <Code>case "x":</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490028" FileName="app/assets/vendor/chart/raphael-min.js" Status="Recurrent" Line="2600" Column="21" FalsePositive="False" Severity="Information" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=28" SeverityIndex="0">
+         <Path ResultId="1000349" PathId="28" SimilarityId="1460848448">
+            <PathNode>
+               <FileName>app/assets/vendor/chart/raphael-min.js</FileName>
+               <Line>2600</Line>
+               <Column>21</Column>
+               <NodeId>1</NodeId>
+               <Name>case</Name>
+               <Type />
+               <Length>4</Length>
+               <Snippet>
+                  <Line>
+                     <Number>2600</Number>
+                     <Code>case "rx":</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490029" FileName="app/assets/vendor/chart/raphael-min.js" Status="Recurrent" Line="2605" Column="21" FalsePositive="False" Severity="Information" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=29" SeverityIndex="0">
+         <Path ResultId="1000349" PathId="29" SimilarityId="1493964930">
+            <PathNode>
+               <FileName>app/assets/vendor/chart/raphael-min.js</FileName>
+               <Line>2605</Line>
+               <Column>21</Column>
+               <NodeId>1</NodeId>
+               <Name>case</Name>
+               <Type />
+               <Length>4</Length>
+               <Snippet>
+                  <Line>
+                     <Number>2605</Number>
+                     <Code>case "height":</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490030" FileName="app/assets/vendor/chart/raphael-min.js" Status="Recurrent" Line="2609" Column="21" FalsePositive="False" Severity="Information" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=30" SeverityIndex="0">
+         <Path ResultId="1000349" PathId="30" SimilarityId="202740168">
+            <PathNode>
+               <FileName>app/assets/vendor/chart/raphael-min.js</FileName>
+               <Line>2609</Line>
+               <Column>21</Column>
+               <NodeId>1</NodeId>
+               <Name>case</Name>
+               <Type />
+               <Length>4</Length>
+               <Snippet>
+                  <Line>
+                     <Number>2609</Number>
+                     <Code>case "y":</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490031" FileName="app/assets/vendor/chart/raphael-min.js" Status="Recurrent" Line="2611" Column="21" FalsePositive="False" Severity="Information" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=31" SeverityIndex="0">
+         <Path ResultId="1000349" PathId="31" SimilarityId="-644852670">
+            <PathNode>
+               <FileName>app/assets/vendor/chart/raphael-min.js</FileName>
+               <Line>2611</Line>
+               <Column>21</Column>
+               <NodeId>1</NodeId>
+               <Name>case</Name>
+               <Type />
+               <Length>4</Length>
+               <Snippet>
+                  <Line>
+                     <Number>2611</Number>
+                     <Code>case "ry":</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490032" FileName="app/assets/vendor/chart/raphael-min.js" Status="Recurrent" Line="2633" Column="25" FalsePositive="False" Severity="Information" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=32" SeverityIndex="0">
+         <Path ResultId="1000349" PathId="32" SimilarityId="-877116798">
+            <PathNode>
+               <FileName>app/assets/vendor/chart/raphael-min.js</FileName>
+               <Line>2633</Line>
+               <Column>25</Column>
+               <NodeId>1</NodeId>
+               <Name>case</Name>
+               <Type />
+               <Length>4</Length>
+               <Snippet>
+                  <Line>
+                     <Number>2633</Number>
+                     <Code>case "fill":</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490033" FileName="app/assets/vendor/chart/raphael-min.js" Status="Recurrent" Line="2696" Column="25" FalsePositive="False" Severity="Information" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=33" SeverityIndex="0">
+         <Path ResultId="1000349" PathId="33" SimilarityId="1244159688">
+            <PathNode>
+               <FileName>app/assets/vendor/chart/raphael-min.js</FileName>
+               <Line>2696</Line>
+               <Column>25</Column>
+               <NodeId>1</NodeId>
+               <Name>case</Name>
+               <Type />
+               <Length>4</Length>
+               <Snippet>
+                  <Line>
+                     <Number>2696</Number>
+                     <Code>case "opacity":</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490034" FileName="app/assets/vendor/chart/raphael-min.js" Status="Recurrent" Line="2700" Column="25" FalsePositive="False" Severity="Information" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=34" SeverityIndex="0">
+         <Path ResultId="1000349" PathId="34" SimilarityId="1918628222">
+            <PathNode>
+               <FileName>app/assets/vendor/chart/raphael-min.js</FileName>
+               <Line>2700</Line>
+               <Column>25</Column>
+               <NodeId>1</NodeId>
+               <Name>case</Name>
+               <Type />
+               <Length>4</Length>
+               <Snippet>
+                  <Line>
+                     <Number>2700</Number>
+                     <Code>case "fill-opacity":</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490035" FileName="app/assets/vendor/chart/raphael-min.js" Status="Recurrent" Line="3162" Column="13" FalsePositive="False" Severity="Information" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=35" SeverityIndex="0">
+         <Path ResultId="1000349" PathId="35" SimilarityId="1524023272">
+            <PathNode>
+               <FileName>app/assets/vendor/chart/raphael-min.js</FileName>
+               <Line>3162</Line>
+               <Column>13</Column>
+               <NodeId>1</NodeId>
+               <Name>case</Name>
+               <Type />
+               <Length>4</Length>
+               <Snippet>
+                  <Line>
+                     <Number>3162</Number>
+                     <Code>case "short":</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+   </Query>
+   <Query id="2977" cweId="478" name="Missing_Default_Case_In_Switch_Statement" group="JavaScript_Server_Side_Vulnerabilities" Severity="Information" Language="JavaScript" LanguageHash="0935562945055365" LanguageChangeDate="2020-05-19T00:00:00.0000000" SeverityIndex="0" QueryPath="JavaScript\\Cx\\JavaScript Server Side Vulnerabilities\\Missing Default Case In Switch Statement Version:1" QueryVersionCode="84230732">
+      <Result NodeId="10003490016" FileName="app/assets/vendor/chart/raphael-min.js" Status="Recurrent" Line="1300" Column="21" FalsePositive="False" Severity="Information" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=16" SeverityIndex="0">
+         <Path ResultId="1000349" PathId="16" SimilarityId="-707416249">
+            <PathNode>
+               <FileName>app/assets/vendor/chart/raphael-min.js</FileName>
+               <Line>1300</Line>
+               <Column>21</Column>
+               <NodeId>1</NodeId>
+               <Name>switch</Name>
+               <Type />
+               <Length>6</Length>
+               <Snippet>
+                  <Line>
+                     <Number>1300</Number>
+                     <Code>switch (a[0]) {</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490017" FileName="app/assets/vendor/chart/raphael-min.js" Status="Recurrent" Line="1419" Column="13" FalsePositive="False" Severity="Information" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=17" SeverityIndex="0">
+         <Path ResultId="1000349" PathId="17" SimilarityId="-1538177447">
+            <PathNode>
+               <FileName>app/assets/vendor/chart/raphael-min.js</FileName>
+               <Line>1419</Line>
+               <Column>13</Column>
+               <NodeId>1</NodeId>
+               <Name>switch</Name>
+               <Type />
+               <Length>6</Length>
+               <Snippet>
+                  <Line>
+                     <Number>1419</Number>
+                     <Code>switch (b.toLowerCase()) {</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490018" FileName="app/assets/vendor/chart/raphael-min.js" Status="Recurrent" Line="2437" Column="25" FalsePositive="False" Severity="Information" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=18" SeverityIndex="0">
+         <Path ResultId="1000349" PathId="18" SimilarityId="1802856607">
+            <PathNode>
+               <FileName>app/assets/vendor/chart/raphael-min.js</FileName>
+               <Line>2437</Line>
+               <Column>25</Column>
+               <NodeId>1</NodeId>
+               <Name>switch</Name>
+               <Type />
+               <Length>6</Length>
+               <Snippet>
+                  <Line>
+                     <Number>2437</Number>
+                     <Code>while (n--) switch (g[n]) {</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490019" FileName="app/assets/vendor/chart/raphael-min.js" Status="Recurrent" Line="3148" Column="21" FalsePositive="False" Severity="Information" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=19" SeverityIndex="0">
+         <Path ResultId="1000349" PathId="19" SimilarityId="1362923719">
+            <PathNode>
+               <FileName>app/assets/vendor/chart/raphael-min.js</FileName>
+               <Line>3148</Line>
+               <Column>21</Column>
+               <NodeId>1</NodeId>
+               <Name>switch</Name>
+               <Type />
+               <Length>6</Length>
+               <Snippet>
+                  <Line>
+                     <Number>3148</Number>
+                     <Code>while (g--) switch (e[g]) {</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+      <Result NodeId="10003490020" FileName="app/assets/vendor/bootstrap/bootstrap-tour.js" Status="Recurrent" Line="592" Column="9" FalsePositive="False" Severity="Information" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=20" SeverityIndex="0">
+         <Path ResultId="1000349" PathId="20" SimilarityId="-869059517">
+            <PathNode>
+               <FileName>app/assets/vendor/bootstrap/bootstrap-tour.js</FileName>
+               <Line>592</Line>
+               <Column>9</Column>
+               <NodeId>1</NodeId>
+               <Name>switch</Name>
+               <Type />
+               <Length>6</Length>
+               <Snippet>
+                  <Line>
+                     <Number>592</Number>
+                     <Code>switch (e.which) {</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+   </Query>
+   <Query id="2968" cweId="482" name="Comparing_instead_of_Assigning" group="JavaScript_Server_Side_Vulnerabilities" Severity="Information" Language="JavaScript" LanguageHash="0935562945055365" LanguageChangeDate="2020-05-19T00:00:00.0000000" SeverityIndex="0" QueryPath="JavaScript\\Cx\\JavaScript Server Side Vulnerabilities\\Comparing instead of Assigning Version:1" QueryVersionCode="84113966">
+      <Result NodeId="10003490015" FileName="app/assets/vendor/chart/morris-0.4.3.min.js" Status="Recurrent" Line="392" Column="11" FalsePositive="False" Severity="Information" AssignToUser="" state="0" Remark="" DeepLink="https://cxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1000349&amp;projectid=110&amp;pathid=15" SeverityIndex="0">
+         <Path ResultId="1000349" PathId="15" SimilarityId="-1610975281">
+            <PathNode>
+               <FileName>app/assets/vendor/chart/morris-0.4.3.min.js</FileName>
+               <Line>392</Line>
+               <Column>11</Column>
+               <NodeId>1</NodeId>
+               <Name>==</Name>
+               <Type />
+               <Length>3</Length>
+               <Snippet>
+                  <Line>
+                     <Number>392</Number>
+                     <Code>p === void 0 &amp;&amp; (p = t.LABEL_SPECS.second), o &amp;&amp; (p = e.extend({}, p, {</Code>
+                  </Line>
+               </Snippet>
+            </PathNode>
+         </Path>
+      </Result>
+   </Query>
+</CxXMLResults>

@@ -1,0 +1,147 @@
+[
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_component": "cybric.GAfhxG8tQUC5vG-Q6BiEzg.usedfortest__nodegoat:app/views/tutorial/a1.html",
+                        "_raw_creationdate": "2015-01-23T17:35:29+0000",
+                        "_raw_hash": "6ab0aa564cf394eeb36dab86498a17b8",
+                        "_raw_textrange": {
+                            "endLine": 141,
+                            "endOffset": 236,
+                            "startLine": 141,
+                            "startOffset": 103
+                        },
+                        "file_name": "app/views/tutorial/a1.html",
+                        "line_number": 141,
+                        "link": "https://sonarqube8.zeronorth.dev/project/issues?id=cybric.GAfhxG8tQUC5vG-Q6BiEzg.usedfortest__nodegoat&open=AXOcCXfqvUNOgsrUuaET&types=VULNERABILITY",
+                        "scan_id": "AXOcCXfqvUNOgsrUuaET"
+                    },
+                    {
+                        "_raw_component": "cybric.GAfhxG8tQUC5vG-Q6BiEzg.usedfortest__nodegoat:app/views/login.html",
+                        "_raw_creationdate": "2014-11-08T21:10:15+0000",
+                        "_raw_hash": "2a4c08d4fcddef7142cd8f38fbab0f01",
+                        "_raw_textrange": {
+                            "endLine": 46,
+                            "endOffset": 193,
+                            "startLine": 46,
+                            "startOffset": 116
+                        },
+                        "file_name": "app/views/login.html",
+                        "line_number": 46,
+                        "link": "https://sonarqube8.zeronorth.dev/project/issues?id=cybric.GAfhxG8tQUC5vG-Q6BiEzg.usedfortest__nodegoat&open=AXOcCXf1vUNOgsrUuaEf&types=VULNERABILITY",
+                        "scan_id": "AXOcCXf1vUNOgsrUuaEf"
+                    },
+                    {
+                        "_raw_component": "cybric.GAfhxG8tQUC5vG-Q6BiEzg.usedfortest__nodegoat:app/views/tutorial/a1.html",
+                        "_raw_creationdate": "2014-05-06T03:16:19+0000",
+                        "_raw_hash": "a9276f289e2b5885792e12b539d5a7b9",
+                        "_raw_textrange": {
+                            "endLine": 179,
+                            "endOffset": 140,
+                            "startLine": 179,
+                            "startOffset": 32
+                        },
+                        "file_name": "app/views/tutorial/a1.html",
+                        "line_number": 179,
+                        "link": "https://sonarqube8.zeronorth.dev/project/issues?id=cybric.GAfhxG8tQUC5vG-Q6BiEzg.usedfortest__nodegoat&open=AXOcCXfqvUNOgsrUuaEU&types=VULNERABILITY",
+                        "scan_id": "AXOcCXfqvUNOgsrUuaEU"
+                    }
+                ]
+            },
+            {
+                "key": "tracking_severity",
+                "value": "Critical"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "rule"
+                ]
+            },
+            {
+                "key": "_raw_flows",
+                "value": []
+            },
+            {
+                "key": "_raw_tags",
+                "value": [
+                    "phishing"
+                ]
+            },
+            {
+                "key": "_raw_updatedate",
+                "value": "2020-07-29T19:21:27+0000"
+            },
+            {
+                "key": "_raw_organization",
+                "value": "default-organization"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": "kchetan.tech@gmail.com",
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": "1min",
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Add rel=\"noopener noreferrer\" to this link to prevent the original page from being modified by the opened link.",
+        "issueName": "Add rel=\"noopener noreferrer\" to this link to prevent the original page from being modified by the opened link.",
+        "issueType": "VULNERABILITY",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Web:S5148",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": 1,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "sonarqube",
+        "project": "cybric.GAfhxG8tQUC5vG-Q6BiEzg.usedfortest__nodegoat",
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": "Web:S5148",
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "BLOCKER",
+        "scanStatus": "OPEN",
+        "scanTool": "sonarqube",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": 10,
+        "severityCode": "Critical",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    }
+]

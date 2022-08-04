@@ -1,0 +1,1817 @@
+[
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": null,
+                        "confidence": "High",
+                        "file_name": "app/models/application_record.rb",
+                        "fingerprint": "188826df8065758b4ada4ccea65ba01c5445189ddebec4412198c6c90a83c701",
+                        "line_number": 2,
+                        "location": {
+                            "model": "ApplicationRecord",
+                            "type": "model"
+                        },
+                        "render_path": null,
+                        "user_input": null
+                    },
+                    {
+                        "code": null,
+                        "confidence": "High",
+                        "file_name": "app/models/benefits.rb",
+                        "fingerprint": "310689c57d1e1f319662490a2a7f65d06191bc2305dc154fcd74329c97a7081b",
+                        "line_number": 2,
+                        "location": {
+                            "model": "Benefits",
+                            "type": "model"
+                        },
+                        "render_path": null,
+                        "user_input": null
+                    },
+                    {
+                        "code": null,
+                        "confidence": "High",
+                        "file_name": "app/models/message.rb",
+                        "fingerprint": "3864c3270b596669f6bee563480e8ad041770ff3195fdbcc955f04f544c25ed0",
+                        "line_number": 2,
+                        "location": {
+                            "model": "Message",
+                            "type": "model"
+                        },
+                        "render_path": null,
+                        "user_input": null
+                    },
+                    {
+                        "code": null,
+                        "confidence": "High",
+                        "file_name": "app/models/paid_time_off.rb",
+                        "fingerprint": "3a082ab6e0cbf97a537e9a38a09710335acb8916d3807ebf721e6fc9ba838c82",
+                        "line_number": 2,
+                        "location": {
+                            "model": "PaidTimeOff",
+                            "type": "model"
+                        },
+                        "render_path": null,
+                        "user_input": null
+                    },
+                    {
+                        "code": null,
+                        "confidence": "High",
+                        "file_name": "app/models/work_info.rb",
+                        "fingerprint": "55a90d133a3b7177dbf019058a107da989a2f6e28927f07993a9a42cfe344256",
+                        "line_number": 2,
+                        "location": {
+                            "model": "WorkInfo",
+                            "type": "model"
+                        },
+                        "render_path": null,
+                        "user_input": null
+                    },
+                    {
+                        "code": null,
+                        "confidence": "High",
+                        "file_name": "app/models/key_management.rb",
+                        "fingerprint": "567669483790818c87e6d6ed6599a92fb21f65bb7f6ef31d5c937dd43bfa202e",
+                        "line_number": 2,
+                        "location": {
+                            "model": "KeyManagement",
+                            "type": "model"
+                        },
+                        "render_path": null,
+                        "user_input": null
+                    },
+                    {
+                        "code": null,
+                        "confidence": "High",
+                        "file_name": "app/models/pay.rb",
+                        "fingerprint": "752363394d7e497bf66b04f0446737990b96fd87971271e8ed0c6fec77210262",
+                        "line_number": 2,
+                        "location": {
+                            "model": "Pay",
+                            "type": "model"
+                        },
+                        "render_path": null,
+                        "user_input": null
+                    },
+                    {
+                        "code": null,
+                        "confidence": "High",
+                        "file_name": "app/models/schedule.rb",
+                        "fingerprint": "9be66ff95ace0908ada5f8f8c5d11caab4a96234446b352f2948bac82b1924f8",
+                        "line_number": 2,
+                        "location": {
+                            "model": "Schedule",
+                            "type": "model"
+                        },
+                        "render_path": null,
+                        "user_input": null
+                    },
+                    {
+                        "code": null,
+                        "confidence": "High",
+                        "file_name": "app/models/retirement.rb",
+                        "fingerprint": "9fa0aaef1321470ce166661d2b2299dfe9564537037a6f02820d15f7e7c33bcd",
+                        "line_number": 2,
+                        "location": {
+                            "model": "Retirement",
+                            "type": "model"
+                        },
+                        "render_path": null,
+                        "user_input": null
+                    },
+                    {
+                        "code": null,
+                        "confidence": "High",
+                        "file_name": "app/models/analytics.rb",
+                        "fingerprint": "aac20a0b4aaf816d626c712bab2ae3bc34ccdbdde6d25cb4059d1a841ec9a41d",
+                        "line_number": 2,
+                        "location": {
+                            "model": "Analytics",
+                            "type": "model"
+                        },
+                        "render_path": null,
+                        "user_input": null
+                    },
+                    {
+                        "code": null,
+                        "confidence": "High",
+                        "file_name": "app/models/user.rb",
+                        "fingerprint": "b325ae8a4570599cde146875ae86427506befae36a3b4a97ce2223930846fec5",
+                        "line_number": 4,
+                        "location": {
+                            "model": "User",
+                            "type": "model"
+                        },
+                        "render_path": null,
+                        "user_input": null
+                    },
+                    {
+                        "code": null,
+                        "confidence": "High",
+                        "file_name": "app/models/performance.rb",
+                        "fingerprint": "d76ab5c8727be2f483013b16bc5ef4fb515e8f5336f78b2609d87c13664f2862",
+                        "line_number": 2,
+                        "location": {
+                            "model": "Performance",
+                            "type": "model"
+                        },
+                        "render_path": null,
+                        "user_input": null
+                    }
+                ]
+            },
+            {
+                "key": "warning_code",
+                "value": 19
+            },
+            {
+                "key": "check_name",
+                "value": "ModelAttributes"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "issue_type",
+                    "warning_code"
+                ]
+            },
+            {
+                "key": "_raw_message",
+                "value": "Mass assignment is not restricted using `attr_accessible`"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Mass assignment is not restricted using `attr_accessible`\n\n    <header>\n        <h1 class=\"entry-title\">Attribute Restriction</h1>\n    </header>\n    \n    <p>This warning type only applies to Ruby on Rails applications which are not using <a href=\"https://guides.rubyonrails.org/action_controller_overview.html#strong-parameters\">strong parameters</a>.</p>\n\n    <p>Note that disabling mass assignment globally will suppress these warnings.</p>\n\n    <h4 id=\"missing-protection\">Missing Protection</h4>\n\n    <p>This warning comes up if a model does not limit what attributes can be set through <a href=\"https://guides.rubyonrails.org/v3.2.9/security.html#mass-assignment\">mass assignment</a>.</p>\n\n    <p>In particular, this check looks for <code class=\"highlighter-rouge\">attr_accessible</code> inside model definitions. If it is not found, this warning will be issued.</p>\n\n    <h4 id=\"use-of-blacklist\">Use of Blacklist</h4>\n\n    <p>Brakeman also warns on use of <code class=\"highlighter-rouge\">attr_protected</code> - especially since it was found to be <a href=\"https://groups.google.com/d/topic/rubyonrails-security/AFBKNY7VSH8/discussion\">vulnerable to bypass</a>. Warnings for mass assignment on models using <code class=\"highlighter-rouge\">attr_protected</code> will be reported, but at a lower confidence level.</p>\n\n    <h4 id=\"suggested-remediation\">Suggested Remediation</h4>\n\n    <p>For newer Ruby on Rails applications, query parameters should be whitelisted before use via strong parameters.</p>\n\n    <p>For older Ruby on Rails applications, each model should use <code class=\"highlighter-rouge\">attr_accessible</code> to carefully whitelist which attributes may be set via mass assignment, if any.</p>\n    ",
+        "issueName": "Attribute Restriction 19",
+        "issueType": "Attribute Restriction",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Attribute Restriction//19",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": "https://brakemanscanner.org/docs/warning_types/attribute_restriction/",
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "brakeman",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "brakeman",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": null,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": "system(\"cp #{full_file_name} #{data_path}/bak#{Time.zone.now.to_i}_#{file.original_filename}\")",
+                        "confidence": "Medium",
+                        "file_name": "app/models/benefits.rb",
+                        "fingerprint": "b07b623a859b5fda9cd1dbd80aa3d19171cc257c1bce4c6e9204a45e563a85b3",
+                        "line_number": 15,
+                        "location": {
+                            "class": "Benefits",
+                            "method": "Benefits.make_backup",
+                            "type": "method"
+                        },
+                        "render_path": "system(\"cp #{full_file_name} #{data_path}/bak#{Time.zone.now.to_i}_#{file.original_filename}\")",
+                        "user_input": "full_file_name"
+                    }
+                ]
+            },
+            {
+                "key": "warning_code",
+                "value": 14
+            },
+            {
+                "key": "check_name",
+                "value": "Execute"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "issue_type",
+                    "warning_code"
+                ]
+            },
+            {
+                "key": "_raw_message",
+                "value": "Possible command injection"
+            },
+            {
+                "key": "_raw_render_path",
+                "value": null
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Possible command injection\n\n    <header>\n    <h1 class=\"entry-title\">Command Injection</h1>\n    </header>\n\n    <p>Injection is #1 on the 2010 <a href=\"https://www.owasp.org/index.php/Top_10_2010-A1\">OWASP Top Ten</a> web security risks. Command injection occurs when shell commands unsafely include user-manipulatable values.</p>\n\n    <p>There are many ways to run commands in Ruby:</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>`ls #{params[:file]}`\n\n    system(\"ls #{params[:dir]}\")\n\n    exec(\"md5sum #{params[:input]}\")\n    </code></pre></div></div>\n\n    <p>Brakeman will warn on any method like these that uses user input or unsafely interpolates variables.</p>\n\n    <p>See <a href=\"http://guides.rubyonrails.org/security.html#command-line-injection\">the Ruby Security Guide</a> for details.</p>\n    ",
+        "issueName": "Command Injection 14",
+        "issueType": "Command Injection",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Command Injection//14",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": "https://brakemanscanner.org/docs/warning_types/command_injection/",
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "brakeman",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "brakeman",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": null,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": "cookies[:font]",
+                        "confidence": "High",
+                        "file_name": "app/views/layouts/application.html.erb",
+                        "fingerprint": "febb21e45b226bb6bcdc23031091394a3ed80c76357f66b1f348844a7626f4df",
+                        "line_number": 12,
+                        "location": {
+                            "template": "layouts/application",
+                            "type": "template"
+                        },
+                        "render_path": "cookies[:font]",
+                        "user_input": null
+                    }
+                ]
+            },
+            {
+                "key": "warning_code",
+                "value": 2
+            },
+            {
+                "key": "check_name",
+                "value": "CrossSiteScripting"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "issue_type",
+                    "warning_code"
+                ]
+            },
+            {
+                "key": "_raw_render_path",
+                "value": [
+                    {
+                        "class": "AdminController",
+                        "file": "app/controllers/admin_controller.rb",
+                        "line": 9,
+                        "method": "dashboard",
+                        "rendered": {
+                            "file": "app/views/layouts/application.html.erb",
+                            "name": "layouts/application"
+                        },
+                        "type": "controller"
+                    }
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Unescaped cookie value",
+        "issueName": "Cross-Site Scripting 2",
+        "issueType": "Cross-Site Scripting",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Cross-Site Scripting//2",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": "https://brakemanscanner.org/docs/warning_types/cross-site_scripting/",
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "brakeman",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "brakeman",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": null,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": "self.try(params[:graph])",
+                        "confidence": "High",
+                        "file_name": "app/controllers/dashboard_controller.rb",
+                        "fingerprint": "46e6c67ae633f6424618e3efff2f8325e1babfd6fa09da557147c2cad905d052",
+                        "line_number": 16,
+                        "location": {
+                            "class": "DashboardController",
+                            "method": "change_graph",
+                            "type": "method"
+                        },
+                        "render_path": "self.try(params[:graph])",
+                        "user_input": "params[:graph]"
+                    }
+                ]
+            },
+            {
+                "key": "warning_code",
+                "value": 23
+            },
+            {
+                "key": "check_name",
+                "value": "Send"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "issue_type",
+                    "warning_code"
+                ]
+            },
+            {
+                "key": "_raw_message",
+                "value": "User controlled method execution"
+            },
+            {
+                "key": "_raw_render_path",
+                "value": null
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "User controlled method execution\n      \n    <header>\n    <h1 class=\"entry-title\">Dangerous Send</h1>\n    </header>\n\n    <p>Using unfiltered user data to select a Class or Method to be dynamically sent is dangerous.</p>\n\n    <p>It is much safer to whitelist the desired target or method.</p>\n\n    <p>Unsafe use of method:</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>method = params[:method]\n    @result = User.send(method.to_sym)\n    </code></pre></div></div>\n\n    <p>Safe:</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>method = params[:method] == 1 ? :method_a : :method_b\n    @result = User.send(method, *args)\n    </code></pre></div></div>\n\n    <p>Unsafe use of target:</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code><span class=\"n\">table</span> <span class=\"p\">=</span> <span class=\"n\">params</span><span class=\"p\">[:</span><span class=\"n\">table</span><span class=\"p\">]</span>\n    <span class=\"k\">model</span> <span class=\"p\">=</span> <span class=\"n\">table</span><span class=\"p\">.</span><span class=\"n\">classify</span><span class=\"p\">.</span><span class=\"n\">constantize</span>\n    <span class=\"p\">@</span><span class=\"n\">result</span> <span class=\"p\">=</span> <span class=\"k\">model</span><span class=\"p\">.</span><span class=\"nf\">send</span><span class=\"p\">(:</span><span class=\"n\">method</span><span class=\"p\">)</span>\n    </code></pre></div></div>\n\n    <p>Safe:</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>target = params[:target] == 1 ? Account : User\n    @result = target.send(:method, *args)\n    </code></pre></div></div>\n\n    <p>Including user data in the arguments passed to an Object#send is safe, as long as the method can properly handle potentially bad data.</p>\n\n    <p>Safe:</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>args = params[\"args\"] || []\n    @result = User.send(:method, *args)\n    </code></pre></div></div>\n    ",
+        "issueName": "Dangerous Send 23",
+        "issueType": "Dangerous Send",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Dangerous Send//23",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": "https://brakemanscanner.org/docs/warning_types/dangerous_send/",
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "brakeman",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "brakeman",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": null,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": "send_file(params[:type].constantize.new(params[:name]), :disposition => \"attachment\")",
+                        "confidence": "High",
+                        "file_name": "app/controllers/benefit_forms_controller.rb",
+                        "fingerprint": "f63861a0e7ecd271e9f4211fbf6fe843bde57b48d3a11b475a80b27a9abf3759",
+                        "line_number": 12,
+                        "location": {
+                            "class": "BenefitFormsController",
+                            "method": "download",
+                            "type": "method"
+                        },
+                        "render_path": "send_file(params[:type].constantize.new(params[:name]), :disposition => \"attachment\")",
+                        "user_input": "params[:type].constantize.new(params[:name])"
+                    }
+                ]
+            },
+            {
+                "key": "warning_code",
+                "value": 16
+            },
+            {
+                "key": "check_name",
+                "value": "SendFile"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "issue_type",
+                    "warning_code"
+                ]
+            },
+            {
+                "key": "_raw_message",
+                "value": "Parameter value used in file name"
+            },
+            {
+                "key": "_raw_render_path",
+                "value": null
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Parameter value used in file name\n\n    <header>\n    <h1 class=\"entry-title\">File Access</h1>\n    </header>\n\n    <p>Using user input when accessing files (local or remote) will raise a warning in Brakeman.</p>\n\n    <p>For example</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>File.open(\"/tmp/#{cookie[:file]}\")\n    </code></pre></div></div>\n\n    <p>will raise an error like</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>Cookie value used in file name near line 4: File.open(\"/tmp/#{cookie[:file]}\")\n    </code></pre></div></div>\n\n    <p>This type of vulnerability can be used to access arbitrary files on a server (including <code class=\"highlighter-rouge\">/etc/passwd</code>.</p>\n    ",
+        "issueName": "File Access 16",
+        "issueType": "File Access",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "File Access//16",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": "https://brakemanscanner.org/docs/warning_types/file_access/",
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "brakeman",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "brakeman",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": null,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": null,
+                        "confidence": "High",
+                        "file_name": "app/models/user.rb",
+                        "fingerprint": "a21418b38aa77ef73946105fb1c9e3623b7be67a2419b960793871587200cbcc",
+                        "line_number": 13,
+                        "location": {
+                            "model": "User",
+                            "type": "model"
+                        },
+                        "render_path": null,
+                        "user_input": null
+                    }
+                ]
+            },
+            {
+                "key": "warning_code",
+                "value": 30
+            },
+            {
+                "key": "check_name",
+                "value": "ValidationRegex"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "issue_type",
+                    "warning_code"
+                ]
+            },
+            {
+                "key": "_raw_message",
+                "value": "Insufficient validation for `email` using `/.+@.+\\..+/i`. Use `\\A` and `\\z` as anchors"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Insufficient validation for `email` using `/.+@.+\\..+/i`. Use `\\A` and `\\z` as anchors\n\n    <header>\n        <h1 class=\"entry-title\">Format Validation</h1>\n    </header>\n    \n    <p>Calls to <code class=\"highlighter-rouge\">validates_format_of ..., :with =&gt; //</code> which do not use <code class=\"highlighter-rouge\">\\A</code> and <code class=\"highlighter-rouge\">\\z</code> as anchors will cause this warning. Using <code class=\"highlighter-rouge\">^</code> and <code class=\"highlighter-rouge\">$</code> is not sufficient, as they will only match up to a new line. This allows an attacker to put whatever malicious input they would like before or after a new line character.</p>\n\n    <p>See <a href=\"http://guides.rubyonrails.org/security.html#regular-expressions\">the Ruby Security Guide</a> for details.</p>\n    ",
+        "issueName": "Format Validation 30",
+        "issueType": "Format Validation",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Format Validation//30",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": "https://brakemanscanner.org/docs/warning_types/format_validation/",
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "brakeman",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "brakeman",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": null,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": "params.require(:user).permit(:email, :admin, :first_name, :last_name)",
+                        "confidence": "High",
+                        "file_name": "app/controllers/users_controller.rb",
+                        "fingerprint": "753fe10585146c8cd9f3734a7143946da237745ff2b6162b7f5cb333675b080f",
+                        "line_number": 55,
+                        "location": {
+                            "class": "UsersController",
+                            "method": "user_params_without_password",
+                            "type": "method"
+                        },
+                        "render_path": "params.require(:user).permit(:email, :admin, :first_name, :last_name)",
+                        "user_input": ":admin"
+                    }
+                ]
+            },
+            {
+                "key": "warning_code",
+                "value": 105
+            },
+            {
+                "key": "check_name",
+                "value": "PermitAttributes"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "issue_type",
+                    "warning_code"
+                ]
+            },
+            {
+                "key": "_raw_message",
+                "value": "Potentially dangerous key allowed for mass assignment"
+            },
+            {
+                "key": "_raw_render_path",
+                "value": null
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Potentially dangerous key allowed for mass assignment\n\n    <header>\n        <h1 class=\"entry-title\">Mass Assignment</h1>\n    </header>\n    \n    <p>Mass assignment is a feature of Rails which allows an application to create a record from the values of a hash.</p>\n\n    <p>Example:</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>User.new(params[:user])\n    </code></pre></div></div>\n\n    <p>Unfortunately, if there is a user field called <code class=\"highlighter-rouge\">admin</code> which controls administrator access, now any user can make themselves an administrator with a query like</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>?user[admin]=true\n    </code></pre></div></div>\n\n    <h3 id=\"rails-with-strong-parameters\">Rails With Strong Parameters</h3>\n\n    <p>In Rails 4 and newer, protection for mass assignment is on by default.</p>\n\n    <p>Query parameters must be explicitly whitelisted via <code class=\"highlighter-rouge\">permit</code> in order to be used in mass assignment:</p>\n\n    <p>User.new(params.permit(:name, :password))</p>\n\n    <p>Care should be taken to only whitelist values that are safe for a user (or attacker) to set. Foreign keys such as <code class=\"highlighter-rouge\">account_id</code> are likely unsafe, allowing an attacker to manipulate records belonging to other accounts.</p>\n\n    <p>Brakeman will warn on potentially dangerous attributes that are whitelisted.</p>\n\n    <p>Brakeman will also warn about uses of <code class=\"highlighter-rouge\">params.permit!</code>, since that allows everything.</p>\n\n    <h3 id=\"rails-without-strong-parameters\">Rails Without Strong Parameters</h3>\n\n    <p>In older versions of Rails, <code class=\"highlighter-rouge\">attr_accessible</code> and <code class=\"highlighter-rouge\">attr_protected</code> can be used to limit mass assignment.\n    However, Brakeman will warn unless <code class=\"highlighter-rouge\">attr_accessible</code> is used, or mass assignment is completely disabled.</p>\n\n    <p>There are two different mass assignment warnings which can arise. The first is when mass assignment actually occurs, such as the example above. This results in a warning like</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>Unprotected mass assignment near line 61: User.new(params[:user])\n    </code></pre></div></div>\n\n    <p>The other warning is raised whenever a model is found which does not use <code class=\"highlighter-rouge\">attr_accessible</code>. This produces generic warnings like</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>Mass assignment is not restricted using attr_accessible\n    </code></pre></div></div>\n\n    <p>with a list of affected models.</p>\n\n    <p>In Rails 3.1 and newer, mass assignment can easily be disabled:</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>config.active_record.whitelist_attributes = true\n    </code></pre></div></div>\n\n    <p>Unfortunately, it can also easily be bypassed:</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>User.new(params[:user], :without_protection =&gt; true)\n    </code></pre></div></div>\n\n    <p>Brakeman will warn on uses of <code class=\"highlighter-rouge\">without_protection</code>.</p>\n\n    <h3 id=\"more-information\">More Information</h3>\n\n    <p><a href=\"http://edgeguides.rubyonrails.org/action_controller_overview.html#strong-parameters\">Strong Parameters in Rails Security Guide</a>\n    <a href=\"http://guides.rubyonrails.org/v3.2.8/security.html#mass-assignment\">Mass Assignment in Rails Security Guide</a></p>\n    ",
+        "issueName": "Mass Assignment 105",
+        "issueType": "Mass Assignment",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Mass Assignment//105",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": "https://brakemanscanner.org/docs/warning_types/mass_assignment/",
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "brakeman",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "brakeman",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": null,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": "Message.create(message_params)",
+                        "confidence": "Weak",
+                        "file_name": "app/controllers/messages_controller.rb",
+                        "fingerprint": "1e54882bda5fb270388a2a0ee0fcfb1eccbd89cf8c9965e57ca1417313ca7a8f",
+                        "line_number": 26,
+                        "location": {
+                            "class": "MessagesController",
+                            "method": "create",
+                            "type": "method"
+                        },
+                        "render_path": "Message.create(message_params)",
+                        "user_input": null
+                    },
+                    {
+                        "code": "Schedule.new(schedule_params)",
+                        "confidence": "Weak",
+                        "file_name": "app/controllers/schedule_controller.rb",
+                        "fingerprint": "6024d23c00218a79bffa1487df639979a5180700a1c9e4a5f6c992a227c48a0c",
+                        "line_number": 8,
+                        "location": {
+                            "class": "ScheduleController",
+                            "method": "create",
+                            "type": "method"
+                        },
+                        "render_path": "Schedule.new(schedule_params)",
+                        "user_input": null
+                    },
+                    {
+                        "code": "User.new(user_params)",
+                        "confidence": "Weak",
+                        "file_name": "app/controllers/users_controller.rb",
+                        "fingerprint": "f7e7c8cd9a605c70ba900e49db997571a67299fc3aa7fdc1ec7553bfd298d017",
+                        "line_number": 11,
+                        "location": {
+                            "class": "UsersController",
+                            "method": "create",
+                            "type": "method"
+                        },
+                        "render_path": "User.new(user_params)",
+                        "user_input": null
+                    }
+                ]
+            },
+            {
+                "key": "warning_code",
+                "value": 17
+            },
+            {
+                "key": "check_name",
+                "value": "MassAssignment"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "issue_type",
+                    "warning_code"
+                ]
+            },
+            {
+                "key": "_raw_message",
+                "value": "Unprotected mass assignment"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Unprotected mass assignment\n\n    <header>\n        <h1 class=\"entry-title\">Mass Assignment</h1>\n    </header>\n    \n    <p>Mass assignment is a feature of Rails which allows an application to create a record from the values of a hash.</p>\n\n    <p>Example:</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>User.new(params[:user])\n    </code></pre></div></div>\n\n    <p>Unfortunately, if there is a user field called <code class=\"highlighter-rouge\">admin</code> which controls administrator access, now any user can make themselves an administrator with a query like</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>?user[admin]=true\n    </code></pre></div></div>\n\n    <h3 id=\"rails-with-strong-parameters\">Rails With Strong Parameters</h3>\n\n    <p>In Rails 4 and newer, protection for mass assignment is on by default.</p>\n\n    <p>Query parameters must be explicitly whitelisted via <code class=\"highlighter-rouge\">permit</code> in order to be used in mass assignment:</p>\n\n    <p>User.new(params.permit(:name, :password))</p>\n\n    <p>Care should be taken to only whitelist values that are safe for a user (or attacker) to set. Foreign keys such as <code class=\"highlighter-rouge\">account_id</code> are likely unsafe, allowing an attacker to manipulate records belonging to other accounts.</p>\n\n    <p>Brakeman will warn on potentially dangerous attributes that are whitelisted.</p>\n\n    <p>Brakeman will also warn about uses of <code class=\"highlighter-rouge\">params.permit!</code>, since that allows everything.</p>\n\n    <h3 id=\"rails-without-strong-parameters\">Rails Without Strong Parameters</h3>\n\n    <p>In older versions of Rails, <code class=\"highlighter-rouge\">attr_accessible</code> and <code class=\"highlighter-rouge\">attr_protected</code> can be used to limit mass assignment.\n    However, Brakeman will warn unless <code class=\"highlighter-rouge\">attr_accessible</code> is used, or mass assignment is completely disabled.</p>\n\n    <p>There are two different mass assignment warnings which can arise. The first is when mass assignment actually occurs, such as the example above. This results in a warning like</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>Unprotected mass assignment near line 61: User.new(params[:user])\n    </code></pre></div></div>\n\n    <p>The other warning is raised whenever a model is found which does not use <code class=\"highlighter-rouge\">attr_accessible</code>. This produces generic warnings like</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>Mass assignment is not restricted using attr_accessible\n    </code></pre></div></div>\n\n    <p>with a list of affected models.</p>\n\n    <p>In Rails 3.1 and newer, mass assignment can easily be disabled:</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>config.active_record.whitelist_attributes = true\n    </code></pre></div></div>\n\n    <p>Unfortunately, it can also easily be bypassed:</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>User.new(params[:user], :without_protection =&gt; true)\n    </code></pre></div></div>\n\n    <p>Brakeman will warn on uses of <code class=\"highlighter-rouge\">without_protection</code>.</p>\n\n    <h3 id=\"more-information\">More Information</h3>\n\n    <p><a href=\"http://edgeguides.rubyonrails.org/action_controller_overview.html#strong-parameters\">Strong Parameters in Rails Security Guide</a>\n    <a href=\"http://guides.rubyonrails.org/v3.2.8/security.html#mass-assignment\">Mass Assignment in Rails Security Guide</a></p>\n    ",
+        "issueName": "Mass Assignment 17",
+        "issueType": "Mass Assignment",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Mass Assignment//17",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": "https://brakemanscanner.org/docs/warning_types/mass_assignment/",
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "brakeman",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "brakeman",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": null,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": "params.require(:user).permit!",
+                        "confidence": "Medium",
+                        "file_name": "app/controllers/users_controller.rb",
+                        "fingerprint": "9f34c0a29e2cde79abdccddc790291d548128f0e47f75ed53f499da9249b66b8",
+                        "line_number": 50,
+                        "location": {
+                            "class": "UsersController",
+                            "method": "user_params",
+                            "type": "method"
+                        },
+                        "render_path": "params.require(:user).permit!",
+                        "user_input": null
+                    }
+                ]
+            },
+            {
+                "key": "warning_code",
+                "value": 70
+            },
+            {
+                "key": "check_name",
+                "value": "MassAssignment"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "issue_type",
+                    "warning_code"
+                ]
+            },
+            {
+                "key": "_raw_message",
+                "value": "Parameters should be whitelisted for mass assignment"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Parameters should be whitelisted for mass assignment\n\n    <header>\n        <h1 class=\"entry-title\">Mass Assignment</h1>\n    </header>\n    \n    <p>Mass assignment is a feature of Rails which allows an application to create a record from the values of a hash.</p>\n\n    <p>Example:</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>User.new(params[:user])\n    </code></pre></div></div>\n\n    <p>Unfortunately, if there is a user field called <code class=\"highlighter-rouge\">admin</code> which controls administrator access, now any user can make themselves an administrator with a query like</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>?user[admin]=true\n    </code></pre></div></div>\n\n    <h3 id=\"rails-with-strong-parameters\">Rails With Strong Parameters</h3>\n\n    <p>In Rails 4 and newer, protection for mass assignment is on by default.</p>\n\n    <p>Query parameters must be explicitly whitelisted via <code class=\"highlighter-rouge\">permit</code> in order to be used in mass assignment:</p>\n\n    <p>User.new(params.permit(:name, :password))</p>\n\n    <p>Care should be taken to only whitelist values that are safe for a user (or attacker) to set. Foreign keys such as <code class=\"highlighter-rouge\">account_id</code> are likely unsafe, allowing an attacker to manipulate records belonging to other accounts.</p>\n\n    <p>Brakeman will warn on potentially dangerous attributes that are whitelisted.</p>\n\n    <p>Brakeman will also warn about uses of <code class=\"highlighter-rouge\">params.permit!</code>, since that allows everything.</p>\n\n    <h3 id=\"rails-without-strong-parameters\">Rails Without Strong Parameters</h3>\n\n    <p>In older versions of Rails, <code class=\"highlighter-rouge\">attr_accessible</code> and <code class=\"highlighter-rouge\">attr_protected</code> can be used to limit mass assignment.\n    However, Brakeman will warn unless <code class=\"highlighter-rouge\">attr_accessible</code> is used, or mass assignment is completely disabled.</p>\n\n    <p>There are two different mass assignment warnings which can arise. The first is when mass assignment actually occurs, such as the example above. This results in a warning like</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>Unprotected mass assignment near line 61: User.new(params[:user])\n    </code></pre></div></div>\n\n    <p>The other warning is raised whenever a model is found which does not use <code class=\"highlighter-rouge\">attr_accessible</code>. This produces generic warnings like</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>Mass assignment is not restricted using attr_accessible\n    </code></pre></div></div>\n\n    <p>with a list of affected models.</p>\n\n    <p>In Rails 3.1 and newer, mass assignment can easily be disabled:</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>config.active_record.whitelist_attributes = true\n    </code></pre></div></div>\n\n    <p>Unfortunately, it can also easily be bypassed:</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>User.new(params[:user], :without_protection =&gt; true)\n    </code></pre></div></div>\n\n    <p>Brakeman will warn on uses of <code class=\"highlighter-rouge\">without_protection</code>.</p>\n\n    <h3 id=\"more-information\">More Information</h3>\n\n    <p><a href=\"http://edgeguides.rubyonrails.org/action_controller_overview.html#strong-parameters\">Strong Parameters in Rails Security Guide</a>\n    <a href=\"http://guides.rubyonrails.org/v3.2.8/security.html#mass-assignment\">Mass Assignment in Rails Security Guide</a></p>\n    ",
+        "issueName": "Mass Assignment 70",
+        "issueType": "Mass Assignment",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Mass Assignment//70",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": "https://brakemanscanner.org/docs/warning_types/mass_assignment/",
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "brakeman",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "brakeman",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": null,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": null,
+                        "confidence": "High",
+                        "file_name": "Gemfile.lock",
+                        "fingerprint": "d4c4f9fab93a12c4fabb5b5f9541700e94f4948bc1b90a1aea38f1425d8d0dc9",
+                        "line_number": 312,
+                        "location": null,
+                        "render_path": null,
+                        "user_input": null
+                    }
+                ]
+            },
+            {
+                "key": "warning_code",
+                "value": 108
+            },
+            {
+                "key": "check_name",
+                "value": "SprocketsPathTraversal"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "issue_type",
+                    "warning_code"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "sprockets 4.0.0 has a path traversal vulnerability (CVE-2018-3760). Upgrade to sprockets 4.0.0.beta8 or newer",
+        "issueName": "Path Traversal 108",
+        "issueType": "Path Traversal",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Path Traversal//108",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": "https://groups.google.com/d/msg/rubyonrails-security/ft_J--l55fM/7roDfQ50BwAJ",
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "brakeman",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "2018-3760",
+                "type": "cve"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "brakeman",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": null,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": "params[:class].classify.constantize",
+                        "confidence": "High",
+                        "file_name": "app/controllers/api/v1/mobile_controller.rb",
+                        "fingerprint": "71abb51a4f55c73468d91ccb62ff3719fe1d66f20032c8873d274f5c699d92fe",
+                        "line_number": 17,
+                        "location": {
+                            "class": "Api::V1::MobileController",
+                            "method": "index",
+                            "type": "method"
+                        },
+                        "render_path": "params[:class].classify.constantize",
+                        "user_input": "params[:class].classify"
+                    },
+                    {
+                        "code": "params[:class].classify.constantize",
+                        "confidence": "High",
+                        "file_name": "app/controllers/api/v1/mobile_controller.rb",
+                        "fingerprint": "ba6443b7682abc8ba6c4ee8fdf13bbc6cfcd3aa7b7bdfcf812ec99f4e5b7a641",
+                        "line_number": 10,
+                        "location": {
+                            "class": "Api::V1::MobileController",
+                            "method": "show",
+                            "type": "method"
+                        },
+                        "render_path": "params[:class].classify.constantize",
+                        "user_input": "params[:class].classify"
+                    },
+                    {
+                        "code": "params[:type].constantize",
+                        "confidence": "High",
+                        "file_name": "app/controllers/benefit_forms_controller.rb",
+                        "fingerprint": "ff21c7fa4c5ef7f975a711304bcbd91447abe9723c54c59cb8e75a675ef7bf21",
+                        "line_number": 11,
+                        "location": {
+                            "class": "BenefitFormsController",
+                            "method": "download",
+                            "type": "method"
+                        },
+                        "render_path": "params[:type].constantize",
+                        "user_input": "params[:type]"
+                    }
+                ]
+            },
+            {
+                "key": "warning_code",
+                "value": 24
+            },
+            {
+                "key": "check_name",
+                "value": "UnsafeReflection"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "issue_type",
+                    "warning_code"
+                ]
+            },
+            {
+                "key": "_raw_message",
+                "value": "Unsafe reflection method `constantize` called with parameter value"
+            },
+            {
+                "key": "_raw_render_path",
+                "value": null
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Unsafe reflection method `constantize` called with parameter value\n\n    <header>\n        <h1 class=\"entry-title\">Remote Code Execution</h1>\n    </header>\n    \n    <p>Brakeman reports on several cases of remote code execution, in which a user is able to control and execute code in ways unintended by application authors.</p>\n\n    <p>The obvious form of this is the use of <code class=\"highlighter-rouge\">eval</code> with user input.</p>\n\n    <p>However, Brakeman also reports on dangerous uses of <code class=\"highlighter-rouge\">send</code>, <code class=\"highlighter-rouge\">constantize</code>, and other methods which allow creation of arbitrary objects or calling of arbitrary methods.</p>\n    ",
+        "issueName": "Remote Code Execution 24",
+        "issueType": "Remote Code Execution",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Remote Code Execution//24",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": "https://brakemanscanner.org/docs/warning_types/remote_code_execution/",
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "brakeman",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "brakeman",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": null,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": "Marshal.load(Base64.decode64(params[:user]))",
+                        "confidence": "Medium",
+                        "file_name": "app/controllers/password_resets_controller.rb",
+                        "fingerprint": "07f5143982fb589796b35ec8252bef03d1696639ba57242317926977ae7e0d49",
+                        "line_number": 6,
+                        "location": {
+                            "class": "PasswordResetsController",
+                            "method": "reset_password",
+                            "type": "method"
+                        },
+                        "render_path": "Marshal.load(Base64.decode64(params[:user]))",
+                        "user_input": "params[:user]"
+                    }
+                ]
+            },
+            {
+                "key": "warning_code",
+                "value": 25
+            },
+            {
+                "key": "check_name",
+                "value": "Deserialize"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "issue_type",
+                    "warning_code"
+                ]
+            },
+            {
+                "key": "_raw_message",
+                "value": "`Marshal.load` called with parameter value"
+            },
+            {
+                "key": "_raw_render_path",
+                "value": null
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "`Marshal.load` called with parameter value\n  \n    <header>\n    <h1 class=\"entry-title\">Unsafe Deserialization</h1>\n    </header>\n\n    <p>Objects in Ruby may be serialized to strings. The main method for doing so is the built-in <code class=\"highlighter-rouge\">Marshal</code> class. The <code class=\"highlighter-rouge\">YAML</code>, <code class=\"highlighter-rouge\">JSON</code>, and <code class=\"highlighter-rouge\">CSV</code> libraries also have methods for dumping Ruby objects into strings, and then creating objects from those strings.</p>\n\n    <p>Deserialization of arbitrary objects can lead to <a href=\"/docs/warning_types/remote_code_execution\">remote code execution</a>, as was demonstrated with <a href=\"https://groups.google.com/d/msg/rubyonrails-security/61bkgvnSGTQ/nehwjA8tQ8EJ\">CVE-2013-0156</a>.</p>\n\n    <p>Brakeman warns when loading user input with <code class=\"highlighter-rouge\">Marshal</code>, <code class=\"highlighter-rouge\">YAML</code>, or <code class=\"highlighter-rouge\">CSV</code>. <code class=\"highlighter-rouge\">JSON</code> is covered by the checks for <a href=\"https://groups.google.com/d/msg/rubyonrails-security/1h2DR63ViGo/GOUVafeaF1IJ\">CVE-2013-0333</a></p>\n    ",
+        "issueName": "Remote Code Execution 25",
+        "issueType": "Remote Code Execution",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Remote Code Execution//25",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": "https://brakemanscanner.org/docs/warning_types/unsafe_deserialization",
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "brakeman",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "2013-0156",
+                "type": "cve"
+            },
+            {
+                "id": "2013-0333",
+                "type": "cve"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "brakeman",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": null,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": "select(\"#{col}\")",
+                        "confidence": "Medium",
+                        "file_name": "app/models/analytics.rb",
+                        "fingerprint": "27033d08c8870bed7adc52075447f220c78d5e3b2c42ad05dc2c36625a0f5774",
+                        "line_number": 3,
+                        "location": {
+                            "class": "Analytics",
+                            "method": "hits_by_ip",
+                            "type": "method"
+                        },
+                        "render_path": "select(\"#{col}\")",
+                        "user_input": "col"
+                    },
+                    {
+                        "code": "User.where(\"id = '#{params[:user][:id]}'\")",
+                        "confidence": "High",
+                        "file_name": "app/controllers/users_controller.rb",
+                        "fingerprint": "7fe869279cad8ef1a72c671c1dc746b25b5d310aadd645c8555dae1ff1ba0349",
+                        "line_number": 29,
+                        "location": {
+                            "class": "UsersController",
+                            "method": "update",
+                            "type": "method"
+                        },
+                        "render_path": "User.where(\"id = '#{params[:user][:id]}'\")",
+                        "user_input": "params[:user][:id]"
+                    }
+                ]
+            },
+            {
+                "key": "warning_code",
+                "value": 0
+            },
+            {
+                "key": "check_name",
+                "value": "SQL"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "issue_type",
+                    "warning_code"
+                ]
+            },
+            {
+                "key": "_raw_message",
+                "value": "Possible SQL injection"
+            },
+            {
+                "key": "_raw_render_path",
+                "value": null
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Possible SQL injection\n\n    <header>\n    <h1 class=\"entry-title\">SQL Injection</h1>\n    </header>\n\n    <p>Injection is #1 on the 2010 <a href=\"https://www.owasp.org/index.php/Top_10_2010-A1\">OWASP Top Ten</a> web security risks. SQL injection is when a user is able to manipulate a value which is used unsafely inside a SQL query. This can lead to data leaks, data loss, elevation of privilege, and other unpleasant outcomes.</p>\n\n    <p>Brakeman focuses on ActiveRecord methods dealing with building SQL statements.</p>\n\n    <p>A basic (Rails 2.x) example looks like this:</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>User.first(:conditions =&gt; \"username = '#{params[:username]}'\")\n    </code></pre></div></div>\n\n    <p>Brakeman would produce a warning like this:</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>Possible SQL injection near line 30: User.first(:conditions =&gt; (\"username = '#{params[:username]}'\")) \n    </code></pre></div></div>\n\n    <p>The safe way to do this query is to use a parameterized query:</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>User.first(:conditions =&gt; [\"username = ?\", params[:username]])\n    </code></pre></div></div>\n\n    <p>Brakeman also understands the new Rails 3.x way of doing things (and local variables and concatentation):</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>username = params[:user][:name].downcase\n    password = params[:user][:password]\n\n    User.first.where(\"username = '\" + username + \"' AND password = '\" + password + \"'\")\n    </code></pre></div></div>\n\n    <p>This results in this kind of warning:</p>\n\n    <div class=\"highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>Possible SQL injection near line 37:\n    User.first.where(((((\"username = '\" + params[:user][:name].downcase) + \"' AND password = '\") + params[:user][:password]) + \"'\"))\n    </code></pre></div></div>\n\n    <p>See <a href=\"http://guides.rubyonrails.org/security.html#sql-injection\">the Ruby Security Guide</a> for more information and <a href=\"http://rails-sqli.org\">Rails-SQLi.org</a> for many examples of SQL injection in Rails.</p>\n    ",
+        "issueName": "SQL Injection 0",
+        "issueType": "SQL Injection",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "SQL Injection//0",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": "https://brakemanscanner.org/docs/warning_types/sql_injection/",
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "brakeman",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "brakeman",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": null,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": null,
+                        "confidence": "High",
+                        "file_name": "config/initializers/session_store.rb",
+                        "fingerprint": "686c3e9fd57abd6d1e64ec2fbadcc4a786a986c4657af270d73c661a55f2a1ab",
+                        "line_number": 4,
+                        "location": null,
+                        "render_path": null,
+                        "user_input": null
+                    }
+                ]
+            },
+            {
+                "key": "warning_code",
+                "value": 26
+            },
+            {
+                "key": "check_name",
+                "value": "SessionSettings"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "issue_type",
+                    "warning_code"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Session cookies should be set to HTTP only",
+        "issueName": "Session Setting 26",
+        "issueType": "Session Setting",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Session Setting//26",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": "https://brakemanscanner.org/docs/warning_types/session_setting/",
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "brakeman",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "brakeman",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": null,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "code": null,
+                        "confidence": "High",
+                        "file_name": "config/initializers/secret_token.rb",
+                        "fingerprint": "715ad9c0d76f57a6a657192574d528b620176a80fec969e2f63c88eacab0b984",
+                        "line_number": 8,
+                        "location": null,
+                        "render_path": null,
+                        "user_input": null
+                    }
+                ]
+            },
+            {
+                "key": "warning_code",
+                "value": 29
+            },
+            {
+                "key": "check_name",
+                "value": "SessionSettings"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "issue_type",
+                    "warning_code"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Session secret should not be included in version control",
+        "issueName": "Session Setting 29",
+        "issueType": "Session Setting",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Session Setting//29",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": "https://brakemanscanner.org/docs/warning_types/session_setting/",
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "brakeman",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "brakeman",
+        "scanType": "SAST",
+        "scenarioId": "8207742350716442876",
+        "severity": null,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    }
+]

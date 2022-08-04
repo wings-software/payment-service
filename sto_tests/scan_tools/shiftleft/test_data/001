@@ -1,0 +1,4904 @@
+{
+    "ok": true,
+    "response": {
+      "scan": {
+        "id": "2",
+        "internal_id": "sl/orgId/appName/version/ce32c85b9b3f0198d1b400dc42657a3564209ca47714e5538123c890b6266132/scan",
+        "app": "appName",
+        "version": "versionId",
+        "successful": true,
+        "started_at": "2020-07-21T14:30:41.121952Z",
+        "completed_at": "2020-07-21T14:31:31.273889Z",
+        "language": "javascript",
+        "number_of_expressions": 6960
+      },
+      "findings": [
+        {
+          "id": "116",
+          "app": "appName",
+          "type": "secret",
+          "title": "Hardcoded Sensitive Secrets/Credentials",
+          "description": "\n Every application that connects to the Internet utilizes a data, key (or secret) for identification\n of their customers and authorization to third-party services. These keys typically identify the app\n or project that’s making a call to the Application Programming Interface (API) and authorize it for\n access. Typically, an API key gives full access to every operation an API can perform, including writing\n new data or deleting existing data. In order to to assess and mitigate the risks associated with information\n leaks, it’s important to have a deep understanding of how your secrets may be exposed. Even if the repository\n is private, it should never be used to store sensitive keys and secrets. This report analyzes CPG to discover\n references to environment variables and thereafter conducts data-flow analysis to identify if such variables\n are leaked on the log channel without adequate encryption, redaction or obfuscation\n\n ## Recommendation:\n The purpose of obfuscation is to make something harder to understand, usually for the purposes of making it\n more difficult to attack or to copy. Apply effective redaction/obfuscation schemes on data flow paths.\n ",
+          "internal_id": "Secrets/acca9e5c303bc43304fd7684f9ed6924",
+          "severity": "moderate",
+          "owasp_category": "a3-sensitive-data-exposure",
+          "category": "Secret",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:39.805023Z",
+          "details": {
+            "Link": "none",
+            "name": "Secrets",
+            "tags": "IaaS,GitHub,Access Token",
+            "secret": "github format example: { \"oauth_token\": \"1a779fc41c3281fd11e02d2f9ff5425735a6fdde\" }\n\n",
+            "entropy": "0.6081452405753626",
+            "insight": "Secrets/Credentials Leak",
+            "fileName": "src/route/secrets/index.js",
+            "lineNumber": "55"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Access Token"
+            },
+            {
+              "key": "category",
+              "value": "GitHub"
+            },
+            {
+              "key": "category",
+              "value": "IaaS"
+            },
+            {
+              "key": "category",
+              "value": "Secret"
+            },
+            {
+              "key": "entropy",
+              "value": 0.6081452405753626
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "moderate"
+            }
+          ]
+        },
+        {
+          "id": "115",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/d9cf22226440ed7b58eaed9fec96a6cb",
+          "severity": "moderate",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:39.775333Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/message/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "202",
+            "DATA_ELEMENT": "Object.assign({ customerId: policy.customerId, customerUuid: slugid.decode(policy.customerId), knownApplicationVulnerabilities: [], policyId: policy.id, policyUuid: slugid.decode(policy.id), policyType: policyData.policyType || \"orchestratedScan\", loadHistory: policyData.policyType && policyData.policyType === \"historicalDataLoad\", historicalFiles: [], policyName: policyData.name, scenarioId: scenario.id, scenarioName: scenario.name, targetId: target.id, targetName: target.targetName, virtualTargets: targetRecord.data.virtualTargets, virtualTargetRules: virtual_target_rules, issueToVirtualTargetExclusivity: targetRecord.data.issueToVirtualTargetExclusivity, productName: product.name, productConfigurationName: productConfiguration.name, productConfigurationOptions: productConfiguration.options, policyRunOptions: Object.assign(policyRunOptions, policyData.permanentRunOptions), targets: [target], toolsData: toolsData, environment: Object.assign({}, environment, { hasCloning: MessageModelElement.environmentHasCloning(environment.type), cloneTopic: MessageModelElement.environmentCloningTopic(environment.type), secret: { key: environment.secretKey } }), product: product, productConfiguration: productConfiguration, policy: cleanPolicy, jobId: jobId, rulesets: rulesets, tags: tags }, environmentSecret, scenarioSecret, targetSecret)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "moderate"
+            }
+          ]
+        },
+        {
+          "id": "114",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/e08bddf2caedf38465a9b1f35e63428d",
+          "severity": "moderate",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:39.744921Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/handler/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "37",
+            "DATA_ELEMENT": "Object.assign({}, this.model.validation(method), authExtenstion)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "moderate"
+            }
+          ]
+        },
+        {
+          "id": "113",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/f6d810873b089dc8885ed6e479696e7f",
+          "severity": "moderate",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:39.714554Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/tokens/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "114",
+            "DATA_ELEMENT": "me(this).repo.findByQueryParameters(Object.assign({}, query, { userId: userId }), customerId)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "moderate"
+            }
+          ]
+        },
+        {
+          "id": "112",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/473f629c2cc24f79786f0fde45927888",
+          "severity": "moderate",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:39.684025Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/service/jwt/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "194",
+            "DATA_ELEMENT": "customerData = Object.assign({}, customerInfo.data)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "moderate"
+            }
+          ]
+        },
+        {
+          "id": "111",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/460c3eaa0e78a9c013907579bfa6e469",
+          "severity": "moderate",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:39.652638Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/environments/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "241",
+            "DATA_ELEMENT": "_tmp_54.options = Object.assign({}, payload.options)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "moderate"
+            }
+          ]
+        },
+        {
+          "id": "110",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/2777c7f2b0cad34b1d288fa669be5b2d",
+          "severity": "moderate",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:39.6218Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/message/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "194",
+            "DATA_ELEMENT": "cleanPolicy = Object.assign({}, policy)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "moderate"
+            }
+          ]
+        },
+        {
+          "id": "109",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/9b668c25cdb336954f207bf4393ec59e",
+          "severity": "info",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:39.591346Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/targets-internal/target-types.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "349",
+            "DATA_ELEMENT": "Object.assign({ targetKey: this.getInventoryKey(inventory).key }, inventory)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "info"
+            }
+          ]
+        },
+        {
+          "id": "108",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/c12317667fd2137c0f3018c321151f68",
+          "severity": "info",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:39.561354Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/tokens/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "59",
+            "DATA_ELEMENT": "tokenOptions = Object.assign(credentials, { tokenId: res.id, expiresIn: 315532800 })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "info"
+            }
+          ]
+        },
+        {
+          "id": "107",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/fc973ed78901a4b51f587e55c8f9a4fb",
+          "severity": "info",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:39.532354Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/policy-schedules/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "125",
+            "DATA_ELEMENT": "me(this).repo.findByQueryParameters(Object.assign(options), customerId)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "info"
+            }
+          ]
+        },
+        {
+          "id": "106",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/956885fc6285aa132f11ff2567c0af48",
+          "severity": "info",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:39.501305Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/environments/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "212",
+            "DATA_ELEMENT": "_tmp_47.options = Object.assign({}, payload.options, { webhookUrl: \"\" + Runtime.TO_STRING(this.webhookRunEndpoint) + \"/\" + Runtime.TO_STRING(webhookId) + \"/\" + Runtime.TO_STRING(customerId) + \"\" })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "info"
+            }
+          ]
+        },
+        {
+          "id": "105",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/0655f2a4f80f3d11afdb3e33c9dd3d05",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:39.472471Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/message/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "89",
+            "DATA_ELEMENT": "Object.assign({ customerId: environment.customerId, customerUuid: slugid.decode(environment.customerId), jobId: jobId, environmentId: environment.id, environment: { id: environment.id, type: environmentData.type, secret: { key: environmentData.secretKey }, environmentData: environmentData.environmentData, options: environmentData.options } }, environmentSecret)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "104",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/8a33243989bbb275c40690b2cbe32b71",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:39.443709Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/targets-internal/target-types.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "88",
+            "DATA_ELEMENT": "Object.assign(result, { hostname: getIp() })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "103",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/097f2d7d8f3b4f686fc8eed2a18cca45",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:39.413908Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/policies/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "167",
+            "DATA_ELEMENT": "processed = Object.assign({}, super.parseQuery(query))",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "102",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/d4415e09364315ff4aee44bb8697421e",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:39.383684Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/policy-schedules/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "120",
+            "DATA_ELEMENT": "me(this).repo.findByQueryParameters(Object.assign({ policy: { id: policyId } }, options), customerId)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "101",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/daf7abb27c7e16df6ea19ebe4db74325",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:39.354059Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/environments/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "128",
+            "DATA_ELEMENT": "this.messageModel.send(operation.topics(environmentData), Object.assign(message, { options: operation.options })).then(:=>)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "100",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/185d437d7ee104fe853cdb7647baec57",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:39.324671Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/environment-inventories/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "94",
+            "DATA_ELEMENT": "inventoryTargets.add(Object.assign({ key: keyInfo.key }, el))",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "99",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/6717b53a7d9850af9632c2c0151cae53",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:39.29459Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/base-enum/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "24",
+            "DATA_ELEMENT": "data = Object.assign({}, el)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "98",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/8901eecfadb036ff5009f2fad710851f",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:39.177314Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/policies/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "126",
+            "DATA_ELEMENT": "policyScheduleQuery = Object.assign({}, parsedQuery, { limit: 1000 })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "97",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/aeaec5099c3cc34afff8043f326b5340",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:39.067617Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/policy-schedules/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "84",
+            "DATA_ELEMENT": "cronicleData = Object.assign(policyRunParameters(endpoint, access), { title: \"\" + Runtime.TO_STRING(policyId) + \":\" + Runtime.TO_STRING(policy.data.name) + \"\", timezone: resource.timezone, timing: timing, description: resource.description, enabled: resource.isEnabled ? 1 : 0, policyId: policyId, customerId: customerId })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "96",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/a49ec1a03a83e9521f9142e5e1f6a2b3",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:38.947587Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/environments/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "120",
+            "DATA_ELEMENT": "_tmp_18.data = Object.assign(environmentData, { options: operation.options })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "95",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/cd2e9538edd9ac31e8a8126500f3d9a8",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:38.827586Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/secrets/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "175",
+            "DATA_ELEMENT": "newResource = Object.assign(apiResponse.result, payload)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "94",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/e9ae82217181d06d0388329f97f91049",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:38.699585Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/handler/route-validations.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "50",
+            "DATA_ELEMENT": "result.query = Joi.object(Object.assign(method.filter)).unknown().allow(null)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "93",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/590111cc23dd0b00a7050f43864fe35a",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:38.579601Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/synthetic-issues-internal/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "56",
+            "DATA_ELEMENT": "Object.assign(el, { id: id_numeric })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "92",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/aef5ea10dc3fc8fe64dceecd2423b95e",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:38.525579Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/service/id-lookup/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "54",
+            "DATA_ELEMENT": "this.resolved = Object.assign({}, this.resolved, resolvedData)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "91",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/a64055723360a17dbe111005bedf69b9",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:38.495306Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/environments/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "83",
+            "DATA_ELEMENT": "Object.assign({ type: type }, query)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "90",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/ed0fd4f7ff97bc4aea446bbf6bb0b973",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:38.465616Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/product-licenses/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "23",
+            "DATA_ELEMENT": "Object.assign({}, payload, { licenseHash: licenseHash })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "89",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/f0b6bb7599ba6f646a9d4016f7ef3845",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:38.434949Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/user-settings/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "89",
+            "DATA_ELEMENT": "queryForCurrentCustomerUserCombination = Object.assign({ userId: userId, customerId: customerId }, query)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "88",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/d8090534451259f46e69730bc7a535a4",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:38.405057Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/synthetic-issues-internal/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "49",
+            "DATA_ELEMENT": "Object.assign(el, { data: vulnerabilityInfo, id: id_numeric })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "87",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/1d4a95ab948de7e16b3d2dad61903133",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:38.375386Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "test/integration/helpers/jwt.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "47",
+            "DATA_ELEMENT": "getToken(Object.assign({ auth: { universal: [{ role: \"admin\", customerId: customerId }] }, customer: { id: customerId } }, tokenOptions))",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "86",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/c595b3f9e2001c5550b94de29ab81f61",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:38.345323Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/environments/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "37",
+            "DATA_ELEMENT": "newResource = Object.assign({}, environment)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "85",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/e96aba044bee080f7277e5a87e5966cd",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:38.315684Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/policy-groups/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "214",
+            "DATA_ELEMENT": "me(this).repo.replace(res, Object.assign(resource, { mode: mode }), etag, credentials)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "84",
+          "app": "appName",
+          "type": "insight",
+          "title": "Open Redirect",
+          "description": "Untrusted user input in redirect() can result in Open Redirect vulnerability",
+          "internal_id": "Open%20Redirect/dcb37eb1ae80158699fa206422241b3b",
+          "severity": "critical",
+          "owasp_category": "A5-broken-access-control",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:38.285629Z",
+          "details": {
+            "name": "Open Redirect",
+            "tags": "Open Redirect",
+            "insight": "INSIGHT",
+            "fileName": "src/model/accounts/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "587",
+            "DATA_ELEMENT": "src/model/accounts/index.js::program:completeAuthentication",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Open Redirect"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "83",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/ce497d97e11d0dd9013d156a87bc4399",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:38.25471Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/reports/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "1317",
+            "DATA_ELEMENT": "Object.assign(res, { [el.policyId]: el })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "82",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/61283faad0805fb829c42fc633277f0c",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:38.217414Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/license-agreements/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "38",
+            "DATA_ELEMENT": "Object.assign({}, payload, { licenseHash: licenseHash })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "81",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/ee4b8b15ee1469f97cb854a6badc566e",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:38.186671Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/product-configurations/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "81",
+            "DATA_ELEMENT": "this.cleanupVirtual(Object.assign(newResource, extension))",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "80",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/043f7a8ea91e50a51838c000db760c32",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:38.155229Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/auth0/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "167",
+            "DATA_ELEMENT": "Object.assign({}, tokenInfo, userResponse.result)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "79",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/ef2da5602979276fa2265a1a94c3cbb8",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:38.12484Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/policy-groups/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "84",
+            "DATA_ELEMENT": "Object.assign({ policyCreationJobId: job.id }, discoveryResult)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "78",
+          "app": "appName",
+          "type": "insight",
+          "title": "Open Redirect",
+          "description": "Untrusted user input in redirect() can result in Open Redirect vulnerability",
+          "internal_id": "Open%20Redirect/9ea191d1513aa64392fd091a168aaa14",
+          "severity": "critical",
+          "owasp_category": "A5-broken-access-control",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:38.094147Z",
+          "details": {
+            "name": "Open Redirect",
+            "tags": "Open Redirect",
+            "insight": "INSIGHT",
+            "fileName": "src/model/accounts/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "285",
+            "DATA_ELEMENT": "src/model/accounts/index.js::program:authorizeOpenid",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Open Redirect"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "77",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/afc3dba432d4c052860cda3460a2fb9a",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:38.063644Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/reports/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "1273",
+            "DATA_ELEMENT": "Object.assign(res, { [el.policyId]: el })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "76",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/e9d3bd5793d5a44fb1066934eda4f52a",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:38.032965Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "test/integration/products.spec.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "97",
+            "DATA_ELEMENT": "updatePayload = Object.assign({}, product.data, { name: \"test\" })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "75",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/757b784bf27b68549599ba634d7a4601",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:38.00257Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/product-configurations/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "26",
+            "DATA_ELEMENT": "newResource = Object.assign({}, item)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "74",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/89728569a978ade198a2533aedfef000",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.973277Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/override-suggestions/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "126",
+            "DATA_ELEMENT": "listMeta = Object.assign(listMeta, { totalCount: totalCount })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "73",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/6105131097354bf5503f20d893a111b1",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.94444Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "test/integration/helpers/data.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "161",
+            "DATA_ELEMENT": "requestData.payload = Object.assign(this.defaultPayload(type)(), payload)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "72",
+          "app": "appName",
+          "type": "insight",
+          "title": "SQLi - SQL Injection",
+          "description": "Untrusted User Input in RAW SQL Query can cause SQL Injection",
+          "internal_id": "SQLi%20-%20SQL%20Injection/5be1c742ae9ea22dee8d44d2eeb5028c",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.913661Z",
+          "details": {
+            "name": "SQLi - SQL Injection",
+            "tags": "SQL Injection",
+            "insight": "INSIGHT",
+            "fileName": "src/model/environments/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "203",
+            "DATA_ELEMENT": "src/model/environments/index.js::program:webhook",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "SQL Injection"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "71",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/dc522148bf5fb5abdb47380d2c253070",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.884162Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/reports/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "1192",
+            "DATA_ELEMENT": "runTimeDeltas.push(Object.assign({ detectionsCount: detectionsCount, detections: detections, remediationsCount: remediationsCount, remediations: remediations }, delta))",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "70",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/191319bf15988b5b11a00fb6590b5b24",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.854913Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/targets/target-types.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "349",
+            "DATA_ELEMENT": "Object.assign({ targetKey: this.getInventoryKey(inventory).key }, inventory)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "69",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/2597028eb37d305f93a9606b4832f04e",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.826127Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/base/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "62",
+            "DATA_ELEMENT": "this.cleanupVirtual(Object.assign(newResource, extension, { customerId: customerId }))",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "68",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/b6150a15e0d70970415a5dc1f4bdf01f",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.796382Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/override-suggestions/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "120",
+            "DATA_ELEMENT": "Object.assign({}, el, resolved)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "67",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/bbbe365962d68224267127cfb180040a",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.762447Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "test/integration/helpers/data.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "140",
+            "DATA_ELEMENT": "requestData = Object.assign({ headers: { Authorization: this.token } }, params)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "66",
+          "app": "appName",
+          "type": "insight",
+          "title": "Detect Unsafe Regular Expression Usage",
+          "description": "Check if the regex is evil or not using the safe-regex module",
+          "internal_id": "Detect%20Unsafe%20Regular%20Expression%20Usage/338b7f182e469066666da289aa805eff",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.733153Z",
+          "details": {
+            "name": "Detect Unsafe Regular Expression Usage",
+            "tags": "REDOS",
+            "insight": "INSIGHT",
+            "fileName": "src/model/common/validate.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "25",
+            "DATA_ELEMENT": "simplifiedIpRegex = new RegExp(`^((${ipOctet})\\\\.){3}((${ipOctet})|((${ipOctet})-(${ipOctet}))|((${ipOctet})/(${ipCidr})))$`)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "REDOS"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "65",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/02b3a6ebda6bb3b9def2c98973ac4340",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.704136Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/reports/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "646",
+            "DATA_ELEMENT": "periodSearchRequest = Object.assign({}, baseSearchRequest)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "64",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/fa139522761f0a2dffc2e2a4ca2affa8",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.668688Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/targets/target-types.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "88",
+            "DATA_ELEMENT": "Object.assign(result, { hostname: getIp() })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "63",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/82bfaead200b8747e8f2ba5d835ffc01",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.639766Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/base/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "46",
+            "DATA_ELEMENT": "newResource = Object.assign({}, resource)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "62",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/bd20cd2a1ab243a4e727e547280dcf76",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.610031Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/override-suggestions/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "35",
+            "DATA_ELEMENT": "data = Object.assign({}, el)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "61",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/aac33b4d7894bc593f93a74d0e3e5ba2",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.579628Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "test/integration/helpers/data.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "105",
+            "DATA_ELEMENT": "requestData.payload = Object.assign(this.defaultPayload(type)(), payload)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "60",
+          "app": "appName",
+          "type": "insight",
+          "title": "Detect Unsafe Regular Expression Usage",
+          "description": "Check if the regex is evil or not using the safe-regex module",
+          "internal_id": "Detect%20Unsafe%20Regular%20Expression%20Usage/bf3af53f066e60b8ad1414d4ff1c9ec5",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.551094Z",
+          "details": {
+            "name": "Detect Unsafe Regular Expression Usage",
+            "tags": "REDOS",
+            "insight": "INSIGHT",
+            "fileName": "src/model/common/validate.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "24",
+            "DATA_ELEMENT": "ipRegex = new RegExp(`^((${ipOctet})\\\\.){3}((${ipOctet})|((${ipOctet})-(${ipOctet}))|(((${ipOctet}),?)+)|((${ipOctet})/(${ipCidr})))$`)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "REDOS"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "59",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/eaed7dc2a6c52d17383042dbca5d9dc9",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.521871Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/reports/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "446",
+            "DATA_ELEMENT": "VerboseESScrollStream(this.esClient, Object.assign(esSearchRequest, { scroll: \"2m\", size: \"10000\" }))",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "58",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/c0197260aaf1289113eb4d32d04c383b",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.493031Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/service/cronicle/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "75",
+            "DATA_ELEMENT": "postData = Object.assign({}, me(this).createEventDefaults, data)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "57",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/564e826953d659fd40f2da98fa74873d",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.464459Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/base/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "22",
+            "DATA_ELEMENT": "_tmp_0.push(Object.assign({}, meta, { totalCount: totalCount }))",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "56",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/d3d189f88c4712bb89bad900a5823160",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.435407Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/common/validate.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "78",
+            "DATA_ELEMENT": "module.exports = Object.assign(commonValidations, { defaultRequest: defaultRequest, wideOpen: wideOpen })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "55",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/3b83c33a634ddc8cb0cd903289042d18",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.40649Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/applications/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "69",
+            "DATA_ELEMENT": "Object.assign({}, payload, { overallImpact: overallImpact })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "54",
+          "app": "appName",
+          "type": "insight",
+          "title": "Detect Unsafe Regular Expression Usage",
+          "description": "Check if the regex is evil or not using the safe-regex module",
+          "internal_id": "Detect%20Unsafe%20Regular%20Expression%20Usage/37584729591f63ecc6e40df2a1eb5475",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.377728Z",
+          "details": {
+            "name": "Detect Unsafe Regular Expression Usage",
+            "tags": "REDOS",
+            "insight": "INSIGHT",
+            "fileName": "src/model/accounts/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "533",
+            "DATA_ELEMENT": "userReadOnlyGroupsRegex = new RegExp(customer.ldapUserReadOnlyGroupsRegex || nonMatchingRegex, i)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "REDOS"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "53",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/0702da058de28892d47507d648db7797",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.349112Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/reports/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "372",
+            "DATA_ELEMENT": "indexMapping = await this.indexMapping(Object.assign({}, requestData, { query: { type: requestType } }))",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "52",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/63647f9a0925868102c92e37705528d2",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.320145Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "test/integration/product-configurations.spec.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "116",
+            "DATA_ELEMENT": "updatePayload = Object.assign({}, productConfiguration.data, { name: \"test\" })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "51",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/bc15087ae538f81962e3973c4da11d6e",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.29094Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/targets/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "410",
+            "DATA_ELEMENT": "newResource = Object.assign(resource, { name: resource.name || getTargetName(resource) })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "50",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/e3ea45213359072283bfd26389b1df19",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.262408Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/synthetic-issues/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "195",
+            "DATA_ELEMENT": "_tmp_42.push(Object.assign({}, newIssue.data, { virtualTargetIds: targetIds }))",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "49",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/87292a0967088349cc726efdc01b0ea7",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.233251Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/dashboard-filters/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "67",
+            "DATA_ELEMENT": "ownedQuery = Object.assign({ userId: userId, shared: false }, query)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "48",
+          "app": "appName",
+          "type": "insight",
+          "title": "Detect Unsafe Regular Expression Usage",
+          "description": "Check if the regex is evil or not using the safe-regex module",
+          "internal_id": "Detect%20Unsafe%20Regular%20Expression%20Usage/609b4e21f9a9009dc7e3efb3624e473a",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.204544Z",
+          "details": {
+            "name": "Detect Unsafe Regular Expression Usage",
+            "tags": "REDOS",
+            "insight": "INSIGHT",
+            "fileName": "src/model/accounts/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "532",
+            "DATA_ELEMENT": "userGroupsRegex = new RegExp(customer.ldapUserGroupsRegex || nonMatchingRegex, i)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "REDOS"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "47",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/bd7526fba1bd92ffa32515a6f323269e",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.175641Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/reports/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "228",
+            "DATA_ELEMENT": "Object.assign({}, requestData, { payload: { must: mustConditions, mustNot: mustNotConditions, queryString: queryString } })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "46",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/d6a98abd3d0a2c29e7c09b3ffdd87a50",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.146924Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/users/backoffice-validate.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "37",
+            "DATA_ELEMENT": "module.exports = Object.assign({}, userValidation, { create: Object.assign({}, { headers: userValidation.create.headers, payload: Object.assign({}, userValidation.create.payload, backOfficeField) }, customerParameters), find: Object.assign({}, userValidation.find, customerParameters), findOne: Object.assign({}, userValidation.findOne, customerParametersWithId), destroy: Object.assign({}, userValidation.destroy, customerParametersWithId), replace: Object.assign({}, { headers: userValidation.replace.headers, payload: Object.assign({}, userValidation.replace.payload, backOfficeField) }, customerParametersWithId) })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "45",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/797779675905c998aa0bb8267ac8a5b8",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.118057Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/accounts/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "655",
+            "DATA_ELEMENT": "Object.assign(requestData.credentials, { customer: customer })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "44",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/b1bd3fc524b1b3e1d0de65d523924bac",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.089419Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/synthetic-issues/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "136",
+            "DATA_ELEMENT": "me(this).syntheticIssueOverrideRepo.insert(Object.assign(payload, { customerId: customerId, targetId: res.data.targetId, key: res.data.key, syntheticIssueId: res.id, value: \"\" + Runtime.TO_STRING(payload.value) + \"\" }), credentials).then(:=>)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "43",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/816e84e10897ea10f250a496ba7c1057",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.06103Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/dashboard-filters/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "66",
+            "DATA_ELEMENT": "sharedQuery = Object.assign({ shared: true }, query)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "42",
+          "app": "appName",
+          "type": "insight",
+          "title": "Detect Unsafe Regular Expression Usage",
+          "description": "Check if the regex is evil or not using the safe-regex module",
+          "internal_id": "Detect%20Unsafe%20Regular%20Expression%20Usage/03ba08911ea776c9b5e6197a58dd31dd",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.032047Z",
+          "details": {
+            "name": "Detect Unsafe Regular Expression Usage",
+            "tags": "REDOS",
+            "insight": "INSIGHT",
+            "fileName": "src/model/accounts/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "531",
+            "DATA_ELEMENT": "adminGroupsRegex = new RegExp(customer.ldapAdminGroupsRegex || nonMatchingRegex, i)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "REDOS"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "41",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/1436398108346282a2f4696edd04760c",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:37.002559Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/reports/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "203",
+            "DATA_ELEMENT": "byLibrary.push(Object.assign({}, { key: key, name: name, version: version, count: values.length, licenseThreat: licenseThreat, severityCode: getSeverity(licenseThreat), licenseTypes: licenseTypes }))",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "40",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/bb54b3fb4ab809343cb29b780b539dd7",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.974163Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/users/backoffice-validate.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "45",
+            "DATA_ELEMENT": "_tmp_10.replace = Object.assign({}, { headers: userValidation.replace.headers, payload: Object.assign({}, userValidation.replace.payload, backOfficeField) }, customerParametersWithId)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "39",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/7643948c8f071239b732aae6ff8050c1",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.945909Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/accounts/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "217",
+            "DATA_ELEMENT": "options = Object.assign({}, searchOptions, { paged: true, sizeLimit: 1000 })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "38",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/b356abfbbb829c580d32112432b29f14",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.917662Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/synthetic-issues/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "57",
+            "DATA_ELEMENT": "Object.assign(el, { id: id_numeric })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "37",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/d7547f37af6efae2fefe2bc86311cee3",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.889403Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/users/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "276",
+            "DATA_ELEMENT": "newResource = Object.assign({}, currentResource.data, resource)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "36",
+          "app": "appName",
+          "type": "insight",
+          "title": "Detect Unsafe Regular Expression Usage",
+          "description": "Check if the regex is evil or not using the safe-regex module",
+          "internal_id": "Detect%20Unsafe%20Regular%20Expression%20Usage/b092c67d9c2ff53efdd196a180467c4f",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.861265Z",
+          "details": {
+            "name": "Detect Unsafe Regular Expression Usage",
+            "tags": "REDOS",
+            "insight": "INSIGHT",
+            "fileName": "src/model/accounts/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "515",
+            "DATA_ELEMENT": "matchingRegex = new RegExp(customer.ldapRegex || nonMatchingRegex, i)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "REDOS"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "35",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/a384e8629c20a6e64cd78544f7c415cd",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.833027Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/reports/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "179",
+            "DATA_ELEMENT": "byLicenseType.push(Object.assign({}, { licensceType: lt, count: items.length, threat: threat, severityCode: getSeverity(threat) }))",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "34",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/e5441f1aa2dee6088b0b55dbc60ea63b",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.803653Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/users/backoffice-validate.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "47",
+            "DATA_ELEMENT": "_tmp_18.payload = Object.assign({}, userValidation.replace.payload, backOfficeField)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "33",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/850b33ef11782cf0a047428bae595304",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.775064Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/accounts/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "163",
+            "DATA_ELEMENT": "tokenOptions = Object.assign(credentials, { assumed: false })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "32",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/bf923f172f2e35baf240bfb58f8bccec",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.747165Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/synthetic-issues/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "50",
+            "DATA_ELEMENT": "Object.assign(el, { data: vulnerabilityInfo, id: id_numeric })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "31",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/1be156f33be03b0449de6ba894384509",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.719006Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/users/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "232",
+            "DATA_ELEMENT": "acceptanceData = Object.assign({}, { acceptedOn: (new Date().toISOString().slice(0, 19)).replace(\"T\", \" \"), licenseAgreement: { id: licenseData.id } })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "30",
+          "app": "appName",
+          "type": "insight",
+          "title": "Detect Unsafe Regular Expression Usage",
+          "description": "Check if the regex is evil or not using the safe-regex module",
+          "internal_id": "Detect%20Unsafe%20Regular%20Expression%20Usage/5b8bea9b6538333d26dd748f7c0324ba",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.690605Z",
+          "details": {
+            "name": "Detect Unsafe Regular Expression Usage",
+            "tags": "REDOS",
+            "insight": "INSIGHT",
+            "fileName": "src/model/accounts/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "505",
+            "DATA_ELEMENT": "backofficeGroupsRegex = new RegExp(me(this).privateLdap.backofficeGroupsRegex || nonMatchingRegex, i)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "REDOS"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "29",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/284f0963d7580016cf8011320cd03395",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.662563Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/targets-internal/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "162",
+            "DATA_ELEMENT": "newResource = Object.assign(resource, { name: resource.name || getTargetName(resource) })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "28",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/a5b09fa5100852a9e80c8a19bb884c2f",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.633984Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/users/backoffice-validate.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "44",
+            "DATA_ELEMENT": "_tmp_10.destroy = Object.assign({}, userValidation.destroy, customerParametersWithId)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "27",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/04a919c9f34524ead815a2b0ac1ff617",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.605932Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/accounts/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "152",
+            "DATA_ELEMENT": "tokenOptions = Object.assign(credentials, { assumed: true })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "26",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/b446360075a091d7fe18040711b82c45",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.577707Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model-element/request/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "52",
+            "DATA_ELEMENT": "extractionResult.payload = Object.assign({}, requestData.payload)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "25",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/ca4c24c65341bd5c57883bfec7479cb9",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.548745Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/users/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "177",
+            "DATA_ELEMENT": "tokens = await me(this).tokenRepo.findByQueryParameters(Object.assign({}, search), customerId)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "24",
+          "app": "appName",
+          "type": "insight",
+          "title": "Detect Unsafe Regular Expression Usage",
+          "description": "Check if the regex is evil or not using the safe-regex module",
+          "internal_id": "Detect%20Unsafe%20Regular%20Expression%20Usage/c6b8bdd4bd35b23c99ad690b12b3f25a",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.519963Z",
+          "details": {
+            "name": "Detect Unsafe Regular Expression Usage",
+            "tags": "REDOS",
+            "insight": "INSIGHT",
+            "fileName": "src/model/accounts/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "385",
+            "DATA_ELEMENT": "userGroupsRegex = new RegExp(openidConnection.data.userGroupsRegex || nonMatchingRegex, i)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "REDOS"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "23",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/f07073afec1eec352dd8f65df8f5c73b",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.490406Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/scenarios/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "182",
+            "DATA_ELEMENT": "_tmp_42.options = Object.assign({}, payload.options)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "22",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/8a9d8e21d28372da3f2f61a51c019f85",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.461688Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/users/backoffice-validate.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "43",
+            "DATA_ELEMENT": "_tmp_10.findOne = Object.assign({}, userValidation.findOne, customerParametersWithId)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "21",
+          "app": "appName",
+          "type": "insight",
+          "title": "Using pseudorandom number generators (PRNGs) is security-sensitive",
+          "description": "When software generates predictable values in a context requiring unpredictability, it may be possible for an attacker to guess the next value that will be generated, and use this guess to impersonate another user or access sensitive information.As the Math.random() function relies on a weak pseudorandom number generator, this function should not be used for security-critical applications or for protecting sensitive data. In such context, a cryptographically strong pseudorandom number generator (CSPRNG) should be used instead.",
+          "internal_id": "Using%20pseudorandom%20number%20generators%20%28PRNGs%29%20is%20security-sensitive/fe84d8a19af714d34efbcce6d659e3e8",
+          "severity": "critical",
+          "owasp_category": "A6-security-misconfiguration",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.432617Z",
+          "details": {
+            "name": "Using pseudorandom number generators (PRNGs) is security-sensitive",
+            "tags": "IDOR",
+            "insight": "INSIGHT",
+            "fileName": "benchmark/shared.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "45",
+            "DATA_ELEMENT": "j = Math.floor(Math.random() * (i + 1))",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "IDOR"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "20",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/d03b56ecee437277ae974d82cb1accb3",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.404059Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model-element/request/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "49",
+            "DATA_ELEMENT": "extractionResult.credentials = Object.assign({}, requestData.credentials)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "19",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/469dd914f68a4ea10eba2a7a9c6658b0",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.374258Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/registration-statuses/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "30",
+            "DATA_ELEMENT": "data = Object.assign({}, jobType)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "18",
+          "app": "appName",
+          "type": "insight",
+          "title": "Detect Unsafe Regular Expression Usage",
+          "description": "Check if the regex is evil or not using the safe-regex module",
+          "internal_id": "Detect%20Unsafe%20Regular%20Expression%20Usage/06a9f714a794e839c925e64bb98bbee2",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.345948Z",
+          "details": {
+            "name": "Detect Unsafe Regular Expression Usage",
+            "tags": "REDOS",
+            "insight": "INSIGHT",
+            "fileName": "src/model/accounts/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "384",
+            "DATA_ELEMENT": "userReadOnlyGroupsRegex = new RegExp(openidConnection.data.userReadOnlyGroupsRegex || nonMatchingRegex, i)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "REDOS"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "17",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/b13ef5cc4444adbdc96694ed36527893",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.316412Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/scenarios/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "170",
+            "DATA_ELEMENT": "this.messageModel.send(operation.topics(scenarioData), Object.assign(message, { options: operation.options })).then(:=>)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "16",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/197032b36d235c20165a4788d81d3ef5",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.28767Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/users/backoffice-validate.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "42",
+            "DATA_ELEMENT": "_tmp_10.find = Object.assign({}, userValidation.find, customerParameters)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "15",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/ffedc37eb0b7fd19f75c4b714bf0ddf3",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.258955Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model-element/request/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "30",
+            "DATA_ELEMENT": "options = Object.assign({}, defaultExtractionSchema, extractionOptions)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "14",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/e5deffb83576f63a2018f07f2115acea",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.228904Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/user-sources/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "30",
+            "DATA_ELEMENT": "data = Object.assign({}, jobType)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "13",
+          "app": "appName",
+          "type": "insight",
+          "title": "Detect Unsafe Regular Expression Usage",
+          "description": "Check if the regex is evil or not using the safe-regex module",
+          "internal_id": "Detect%20Unsafe%20Regular%20Expression%20Usage/01bfbe48dc97e2293dfd30dd66b44720",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.200055Z",
+          "details": {
+            "name": "Detect Unsafe Regular Expression Usage",
+            "tags": "REDOS",
+            "insight": "INSIGHT",
+            "fileName": "src/model/accounts/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "383",
+            "DATA_ELEMENT": "adminGroupsRegex = new RegExp(openidConnection.data.adminGroupsRegex || nonMatchingRegex, i)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "REDOS"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "12",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/47571db0528773ace0e0372bde497cf0",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.171059Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/scenarios/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "111",
+            "DATA_ELEMENT": "Object.assign({}, resource, { productId: productId })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "11",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/cfc195c8386393fe737fc230a32756ae",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.142157Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/users/backoffice-validate.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "38",
+            "DATA_ELEMENT": "_tmp_10.create = Object.assign({}, { headers: userValidation.create.headers, payload: Object.assign({}, userValidation.create.payload, backOfficeField) }, customerParameters)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "10",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/ca391c43bdef4f829d91f29474c1088e",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.113461Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/message/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "225",
+            "DATA_ELEMENT": "_tmp_41.environment = Object.assign({}, environment, { hasCloning: MessageModelElement.environmentHasCloning(environment.type), cloneTopic: MessageModelElement.environmentCloningTopic(environment.type), secret: { key: environment.secretKey } })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "9",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/3a3f0d23ae6efdb6bea4a94821591d31",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.084484Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/dashboard-layouts/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "91",
+            "DATA_ELEMENT": "ownedQuery = Object.assign({ userId: userId, shared: false }, query)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "8",
+          "app": "appName",
+          "type": "insight",
+          "title": "Detect Unsafe Regular Expression Usage",
+          "description": "Check if the regex is evil or not using the safe-regex module",
+          "internal_id": "Detect%20Unsafe%20Regular%20Expression%20Usage/33e2a9cdf5daf5b654409e0ed74e101f",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.055449Z",
+          "details": {
+            "name": "Detect Unsafe Regular Expression Usage",
+            "tags": "REDOS",
+            "insight": "INSIGHT",
+            "fileName": "src/model/accounts/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "63",
+            "DATA_ELEMENT": "template = template.replace(new RegExp(`\\\\{${i}\\\\}`, g), dataStr)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "REDOS"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "7",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/936f131bfe36e7471e65287206fc6221",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:36.026085Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/scenarios/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "35",
+            "DATA_ELEMENT": "newResource = Object.assign({}, scenario)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "6",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/174f07431ad9fa6cd49c886a77090d6f",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:35.995721Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/users/backoffice-validate.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "40",
+            "DATA_ELEMENT": "_tmp_12.payload = Object.assign({}, userValidation.create.payload, backOfficeField)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/f109da858cbebc90b41c5c09d5f2deca",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:35.966967Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/message/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "222",
+            "DATA_ELEMENT": "_tmp_41.policyRunOptions = Object.assign(policyRunOptions, policyData.permanentRunOptions)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/51c5f27fb66503f96abb111a19493340",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:35.937701Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/dashboard-layouts/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "90",
+            "DATA_ELEMENT": "sharedQuery = Object.assign({ shared: true }, query)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/ab4c17865e7d38a573fffd961203d5c0",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:35.907698Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/customers/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "169",
+            "DATA_ELEMENT": "newRecord.data = Object.assign(newRecord.data, { applicationCount: applicationCount, targetCount: targetCount, policyCount: policyCount, userCount: userCount, scanLastThirtyCount: scanLastThirtyCount, customerType: customerType })",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/a5c5955616308dfa89f66469183f0efd",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:35.878256Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/service/jwt/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "228",
+            "DATA_ELEMENT": "_tmp_37.auth = Object.assign({}, auth)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        },
+        {
+          "id": "1",
+          "app": "appName",
+          "type": "insight",
+          "title": "Exfiltration of Data",
+          "description": "Exfiltration happens when an attacker causes a response to include data that it should not have. Web applications and services may produce response bodies that include too much information.",
+          "internal_id": "Exfiltration%20of%20Data/3b2bf6ad9ef3d47675fd46e125b710c7",
+          "severity": "critical",
+          "owasp_category": "A1-injection",
+          "category": "Insight",
+          "version_first_seen": "versionId",
+          "scan_first_seen": "1",
+          "created_at": "2020-07-17T18:30:35.807894Z",
+          "details": {
+            "name": "Exfiltration of Data",
+            "tags": "Exfiltration",
+            "insight": "INSIGHT",
+            "fileName": "src/model/environments/index.js",
+            "DATA_TYPE": "INSIGHTS",
+            "lineNumber": "273",
+            "DATA_ELEMENT": "_tmp_61.options = Object.assign({}, payload.options)",
+            "SINK_CATEGORY": "INSIGHTS"
+          },
+          "tags": [
+            {
+              "key": "category",
+              "value": "Exfiltration"
+            },
+            {
+              "key": "category",
+              "value": "Insight"
+            },
+            {
+              "key": "language",
+              "value": "javascript"
+            },
+            {
+              "key": "severity",
+              "value": "critical"
+            }
+          ]
+        }
+      ],
+      "total_count": 116
+    }
+  }
+  

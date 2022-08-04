@@ -1,0 +1,947 @@
+[
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "issue_id",
+                "value": "1796"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "issue_id"
+                ]
+            },
+            {
+                "key": "aggregated_status",
+                "value": "OPEN"
+            },
+            {
+                "key": "exploitability",
+                "value": "MODERATE"
+            },
+            {
+                "key": "category",
+                "value": "DATA_LOSS_TO_HACKERS"
+            },
+            {
+                "key": "reproduction",
+                "value": ""
+            },
+            {
+                "key": "recommendation",
+                "value": "Ensure two-factor authentication is offered or enforced in your service."
+            },
+            {
+                "key": "aging",
+                "value": ""
+            },
+            {
+                "key": "app_id",
+                "value": ""
+            },
+            {
+                "key": "app_version",
+                "value": " 1.0"
+            },
+            {
+                "key": "app_name",
+                "value": " BitbarIOSSample - PreProd"
+            },
+            {
+                "key": "platform",
+                "value": " IOS"
+            },
+            {
+                "key": "scan_date",
+                "value": " 07/28/2020"
+            },
+            {
+                "key": "package_id",
+                "value": " com.bitbar.testdroid.BitbarIOSSample"
+            },
+            {
+                "key": "release_type",
+                "value": " PRE_PROD"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": "4",
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "The App does not specify a text field marked as a two-factor authentication code input field.  ",
+        "issueName": "Enable Two-Factor Authentication Input Field",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "1796",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "data_theorem",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "Low",
+        "scanStatus": null,
+        "scanTool": "data_theorem",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "OPEN",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "issue_id",
+                "value": "2825"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "issue_id"
+                ]
+            },
+            {
+                "key": "aggregated_status",
+                "value": "OPEN"
+            },
+            {
+                "key": "exploitability",
+                "value": "MODERATE"
+            },
+            {
+                "key": "category",
+                "value": "DATA_LOSS_TO_HACKERS"
+            },
+            {
+                "key": "reproduction",
+                "value": ""
+            },
+            {
+                "key": "recommendation",
+                "value": "Enable ARC within the App's compilation settings: "
+            },
+            {
+                "key": "aging",
+                "value": ""
+            },
+            {
+                "key": "app_id",
+                "value": ""
+            },
+            {
+                "key": "app_version",
+                "value": " 1.0"
+            },
+            {
+                "key": "app_name",
+                "value": " BitbarIOSSample - PreProd"
+            },
+            {
+                "key": "platform",
+                "value": " IOS"
+            },
+            {
+                "key": "scan_date",
+                "value": " 07/28/2020"
+            },
+            {
+                "key": "package_id",
+                "value": " com.bitbar.testdroid.BitbarIOSSample"
+            },
+            {
+                "key": "release_type",
+                "value": " PRE_PROD"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": "5",
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "The App is compiled with Automatic Reference Counting (ARC) disabled.",
+        "issueName": "Automatic Reference Counting (ARC) not Enabled",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "2825",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "data_theorem",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "Medium",
+        "scanStatus": null,
+        "scanTool": "data_theorem",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 6,
+        "severityCode": "Medium",
+        "status": "OPEN",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "issue_id",
+                "value": "796"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "issue_id"
+                ]
+            },
+            {
+                "key": "aggregated_status",
+                "value": "OPEN"
+            },
+            {
+                "key": "exploitability",
+                "value": "MODERATE"
+            },
+            {
+                "key": "category",
+                "value": "DATA_AT_REST_EXPOSURE"
+            },
+            {
+                "key": "reproduction",
+                "value": ""
+            },
+            {
+                "key": "recommendation",
+                "value": "Enable the Data Protection entitlement in the Xcode project configuration of the App."
+            },
+            {
+                "key": "aging",
+                "value": ""
+            },
+            {
+                "key": "app_id",
+                "value": ""
+            },
+            {
+                "key": "app_version",
+                "value": " 1.0"
+            },
+            {
+                "key": "app_name",
+                "value": " BitbarIOSSample - PreProd"
+            },
+            {
+                "key": "platform",
+                "value": " IOS"
+            },
+            {
+                "key": "scan_date",
+                "value": " 07/28/2020"
+            },
+            {
+                "key": "package_id",
+                "value": " com.bitbar.testdroid.BitbarIOSSample"
+            },
+            {
+                "key": "release_type",
+                "value": " PRE_PROD"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": "3",
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "The Data Protection entitlement is not enabled within the Xcode project for the App. ",
+        "issueName": "Enable Data Protection Entitlement",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "796",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "data_theorem",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "Medium",
+        "scanStatus": null,
+        "scanTool": "data_theorem",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 6,
+        "severityCode": "Medium",
+        "status": "OPEN",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "issue_id",
+                "value": "8326"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "issue_id"
+                ]
+            },
+            {
+                "key": "aggregated_status",
+                "value": "OPEN"
+            },
+            {
+                "key": "exploitability",
+                "value": "DIFFICULT"
+            },
+            {
+                "key": "category",
+                "value": "DATA_LOSS_TO_HACKERS"
+            },
+            {
+                "key": "reproduction",
+                "value": ""
+            },
+            {
+                "key": "recommendation",
+                "value": "Recompile the App with the highest iOS SDK version available and do not rely on functionality only present in older SDK versions."
+            },
+            {
+                "key": "aging",
+                "value": ""
+            },
+            {
+                "key": "app_id",
+                "value": ""
+            },
+            {
+                "key": "app_version",
+                "value": " 1.0"
+            },
+            {
+                "key": "app_name",
+                "value": " BitbarIOSSample - PreProd"
+            },
+            {
+                "key": "platform",
+                "value": " IOS"
+            },
+            {
+                "key": "scan_date",
+                "value": " 07/28/2020"
+            },
+            {
+                "key": "package_id",
+                "value": " com.bitbar.testdroid.BitbarIOSSample"
+            },
+            {
+                "key": "release_type",
+                "value": " PRE_PROD"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": "3",
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "The App was compiled with an iOS SDK older than iOS 12.1.",
+        "issueName": "App Store Blocker: App Built with Deprecated iOS SDK",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "8326",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "data_theorem",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "Low",
+        "scanStatus": null,
+        "scanTool": "data_theorem",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "OPEN",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "issue_id",
+                "value": "8532"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "issue_id"
+                ]
+            },
+            {
+                "key": "aggregated_status",
+                "value": "OPEN"
+            },
+            {
+                "key": "exploitability",
+                "value": "MODERATE"
+            },
+            {
+                "key": "category",
+                "value": "DATA_EXPOSURE_TO_THIRD_PARTY_APPS"
+            },
+            {
+                "key": "reproduction",
+                "value": ""
+            },
+            {
+                "key": "recommendation",
+                "value": "If most of the user's keystrokes within the App may contain sensitive data "
+            },
+            {
+                "key": "aging",
+                "value": ""
+            },
+            {
+                "key": "app_id",
+                "value": ""
+            },
+            {
+                "key": "app_version",
+                "value": " 1.0"
+            },
+            {
+                "key": "app_name",
+                "value": " BitbarIOSSample - PreProd"
+            },
+            {
+                "key": "platform",
+                "value": " IOS"
+            },
+            {
+                "key": "scan_date",
+                "value": " 07/28/2020"
+            },
+            {
+                "key": "package_id",
+                "value": " com.bitbar.testdroid.BitbarIOSSample"
+            },
+            {
+                "key": "release_type",
+                "value": " PRE_PROD"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": "4",
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "The App does not disable custom keyboards.",
+        "issueName": "Disable Third-Party Keyboards",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "8532",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "data_theorem",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "Medium",
+        "scanStatus": null,
+        "scanTool": "data_theorem",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 6,
+        "severityCode": "Medium",
+        "status": "OPEN",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "issue_id",
+                "value": "8674"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "issue_id"
+                ]
+            },
+            {
+                "key": "aggregated_status",
+                "value": "OPEN"
+            },
+            {
+                "key": "exploitability",
+                "value": "DIFFICULT"
+            },
+            {
+                "key": "category",
+                "value": "DATA_AT_REST_EXPOSURE"
+            },
+            {
+                "key": "reproduction",
+                "value": ""
+            },
+            {
+                "key": "recommendation",
+                "value": "Leverage the system APIs which inform the App about changes in the available screen space  such as `traitCollectionDidChange:`  and layout the App's UI accordingly. "
+            },
+            {
+                "key": "aging",
+                "value": ""
+            },
+            {
+                "key": "app_id",
+                "value": ""
+            },
+            {
+                "key": "app_version",
+                "value": " 1.0"
+            },
+            {
+                "key": "app_name",
+                "value": " BitbarIOSSample - PreProd"
+            },
+            {
+                "key": "platform",
+                "value": " IOS"
+            },
+            {
+                "key": "scan_date",
+                "value": " 07/28/2020"
+            },
+            {
+                "key": "package_id",
+                "value": " com.bitbar.testdroid.BitbarIOSSample"
+            },
+            {
+                "key": "release_type",
+                "value": " PRE_PROD"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": "1",
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": " all Apps must use an Xcode storyboard to provide the App's launch screen  and must use the Auto Layout APIs to provide an adaptive UI.",
+        "issueName": "App Store Blocker - App Must Adapt to Different Screen Sizes",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "8674",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "data_theorem",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "Low",
+        "scanStatus": null,
+        "scanTool": "data_theorem",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "OPEN",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "issue_id",
+                "value": "8871"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "issue_id"
+                ]
+            },
+            {
+                "key": "aggregated_status",
+                "value": "OPEN"
+            },
+            {
+                "key": "exploitability",
+                "value": "DIFFICULT"
+            },
+            {
+                "key": "category",
+                "value": "DATA_LOSS_TO_HACKERS"
+            },
+            {
+                "key": "reproduction",
+                "value": ""
+            },
+            {
+                "key": "recommendation",
+                "value": "Automate the process of generating secure passwords and inputting login credentials for your users."
+            },
+            {
+                "key": "aging",
+                "value": ""
+            },
+            {
+                "key": "app_id",
+                "value": ""
+            },
+            {
+                "key": "app_version",
+                "value": " 1.0"
+            },
+            {
+                "key": "app_name",
+                "value": " BitbarIOSSample - PreProd"
+            },
+            {
+                "key": "platform",
+                "value": " IOS"
+            },
+            {
+                "key": "scan_date",
+                "value": " 07/28/2020"
+            },
+            {
+                "key": "package_id",
+                "value": " com.bitbar.testdroid.BitbarIOSSample"
+            },
+            {
+                "key": "release_type",
+                "value": " PRE_PROD"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": "3",
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "The App does not specify text fields marked as username and password input fields.",
+        "issueName": "Enable System-Managed Login Input Fields",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "8871",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "data_theorem",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "Low",
+        "scanStatus": null,
+        "scanTool": "data_theorem",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "OPEN",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    }
+]

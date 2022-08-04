@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<!DOCTYPE niktoscan SYSTEM "/opt/nikto/program/docs/nikto.dtd">
+<niktoscan hoststest="0" options="-nointeractive -host nodegoat.herokuapp.com -output /tmp/niktout.xml -Format xml" version="2.1.6" scanstart="Wed Jun 17 17:33:13 2020" scanend="Thu Jan  1 00:00:00 1970" scanelapsed=" seconds" nxmlversion="1.2">
+
+    <scandetails targetip="34.226.45.47" targethostname="nodegoat.herokuapp.com" targetport="80" targetbanner="Cowboy" starttime="2020-06-17 17:33:14" sitename="http://nodegoat.herokuapp.com:80/" siteip="http://34.226.45.47:80/" hostheader="nodegoat.herokuapp.com" errors="0" checks="6934">
+
+
+        <item id="999986" osvdbid="0" osvdblink="http://osvdb.org/0" method="GET">
+            <description><![CDATA[Retrieved via header: 1.1 vegur]]></description>
+            <uri><![CDATA[/]]></uri>
+            <namelink><![CDATA[http://nodegoat.herokuapp.com:80/]]></namelink>
+            <iplink><![CDATA[http://34.226.45.47:80/]]></iplink>
+        </item>
+
+        <item id="999986" osvdbid="0" osvdblink="http://osvdb.org/0" method="GET">
+            <description><![CDATA[Retrieved x-powered-by header: Express]]></description>
+            <uri><![CDATA[/]]></uri>
+            <namelink><![CDATA[http://nodegoat.herokuapp.com:80/]]></namelink>
+            <iplink><![CDATA[http://34.226.45.47:80/]]></iplink>
+        </item>
+
+        <item id="999957" osvdbid="0" osvdblink="http://osvdb.org/0" method="GET">
+            <description><![CDATA[The anti-clickjacking X-Frame-Options header is not present.]]></description>
+            <uri><![CDATA[/]]></uri>
+            <namelink><![CDATA[http://nodegoat.herokuapp.com:80/]]></namelink>
+            <iplink><![CDATA[http://34.226.45.47:80/]]></iplink>
+        </item>
+
+        <item id="999102" osvdbid="0" osvdblink="http://osvdb.org/0" method="GET">
+            <description><![CDATA[The X-XSS-Protection header is not defined. This header can hint to the user agent to protect against some forms of XSS]]></description>
+            <uri><![CDATA[/]]></uri>
+            <namelink><![CDATA[http://nodegoat.herokuapp.com:80/]]></namelink>
+            <iplink><![CDATA[http://34.226.45.47:80/]]></iplink>
+        </item>
+
+        <item id="999103" osvdbid="0" osvdblink="http://osvdb.org/0" method="GET">
+            <description><![CDATA[The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type]]></description>
+            <uri><![CDATA[/]]></uri>
+            <namelink><![CDATA[http://nodegoat.herokuapp.com:80/]]></namelink>
+            <iplink><![CDATA[http://34.226.45.47:80/]]></iplink>
+        </item>
+
+        <item id="999984" osvdbid="0" osvdblink="http://osvdb.org/0" method="GET">
+            <description><![CDATA[Server leaks inodes via ETags, header found with file /favicon.ico, fields: 0x51a06 0xzKhF24g/pW1Cvky7McwSt/aOdFM ]]></description>
+            <uri><![CDATA[/favicon.ico]]></uri>
+            <namelink><![CDATA[http://nodegoat.herokuapp.com:80/favicon.ico]]></namelink>
+            <iplink><![CDATA[http://34.226.45.47:80/favicon.ico]]></iplink>
+        </item>
+
+        <item id="999990" osvdbid="0" osvdblink="http://osvdb.org/0" method="OPTIONS">
+            <description><![CDATA[Allowed HTTP Methods: GET, HEAD ]]></description>
+            <uri><![CDATA[/]]></uri>
+            <namelink><![CDATA[http://nodegoat.herokuapp.com:80/]]></namelink>
+            <iplink><![CDATA[http://34.226.45.47:80/]]></iplink>
+        </item>
+
+        <item id="001736" osvdbid="3092" osvdblink="http://osvdb.org/3092" method="GET">
+            <description><![CDATA[/login/: This might be interesting...]]></description>
+            <uri><![CDATA[/login/]]></uri>
+            <namelink><![CDATA[http://nodegoat.herokuapp.com:80/login/]]></namelink>
+            <iplink><![CDATA[http://34.226.45.47:80/login/]]></iplink>
+        </item>
+
+        <statistics elapsed="634" itemsfound="8" itemstested="6934" endtime="2020-06-17 17:43:48" />
+    </scandetails>
+
+
+</niktoscan>

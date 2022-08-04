@@ -1,0 +1,4123 @@
+[
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_service": "http over ssl",
+                        "port": "443"
+                    },
+                    {
+                        "_raw_service": "http",
+                        "port": "80"
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_12230"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "12230",
+                    "@id": "qid_12230"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Ig"
+            },
+            {
+                "key": "_raw_protocol",
+                "value": "tcp"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "false"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "The Result section displays the default Web page for the Web server. N/A",
+        "issueName": "Default Web Page",
+        "issueType": "CGI",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_12230",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_result": "Some of the ports filtered by the firewall are: 20, 21, 22, 23, 25, 53, 111, 135, 445, 1.\n\nListed below are the ports filtered by the firewall.\nNo response has been received when any of these ports are probed.\n1-3,5,7,9,11,13,15,17-25,27,29,31,33,35,37-39,41-79,81-223,242-246,256-265,\n280-282,309,311,318,322-325,344-351,363,369-381,383-442,444-581,587,592-593,\n598,600,606-620,624,627,631,633-637,666-674,700,704-705,707,709-711,729-731,\n740-742,744,747-754,758-765,767,769-777,780-783,786,799-801,860,873,886-888,\n900-901,911,950,954-955,990-993,995-1001,1008,1010-1011,1015,1023-1100,\n1109-1112,1114,1123,1155,1167,1170,1207,1212,1214,1220-1222,1234-1236,\n1241,1243,1245,1248,1269,1313-1314,1337,1344-1625,1636-1774,1776-1815,\n1818-1824,1900-1909,1911-1920,1944-1951,1973,1981,1985-2028,2030,2032-2036,\n2038,2040-2049,2053,2065,2067,2080,2097,2100,2102-2107,2109, and more.\nWe have omitted from this list 700 higher ports to keep the report size manageable.",
+                        "port": null
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_34011"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "34011",
+                    "@id": "qid_34011"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Ig"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "false"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "A packet filtering device protecting this IP was detected. This is likely to be a firewall or a router using access control lists (ACLs). N/A",
+        "issueName": "Firewall Detected",
+        "issueType": "Firewall",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_34011",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_result": {
+                            "#text": "SSH1 supported\tno\nSSH2 supported\tyes\nSupported key exchange algorithms for SSH2\tecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1,rsa1024-sha1\nSupported host key algorithms for SSH2\tssh-rsa\nSupported decryption ciphers for SSH2\taes128-ctr,aes192-ctr,aes256-ctr\nSupported encryption ciphers for SSH2\taes128-ctr,aes192-ctr,aes256-ctr\nSupported decryption macs for SSH2\thmac-sha2-256,hmac-sha2-512\nSupported encryption macs for SSH2\thmac-sha2-256,hmac-sha2-512\nSupported decompression for SSH2\tzlib@openssh.com,zlib,none\nSupported compression for SSH2\tzlib@openssh.com,zlib,none\nSupported authentication methods for SSH2\tpublickey,password",
+                            "@format": "table"
+                        },
+                        "_raw_service": "ssh",
+                        "port": "2222"
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_38047"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "38047",
+                    "@id": "qid_38047"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Ig"
+            },
+            {
+                "key": "_raw_protocol",
+                "value": "tcp"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "false"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "SSH is a secure protocol, provided it is fully patched, properly configured, and uses FIPS approved algorithms. \n<P>\n<PRE>\nFor Red Hat ES 4:-\nSSH1 supported\t\t\t\t\tyes\nSupported authentification methods for SSH1\tRSA,password\nSupported ciphers for SSH1\t\t\t3des,blowfish\nSSH2 supported\t\t\t\t\tyes\nSupported keys exchange algorithm for SSH2\tdiffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1\nSupported decryption ciphers for SSH2\t\taes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,arcfour,aes192-cbc,aes256-cbc,rijndael-cbc@lysator.liu.se,aes128-ctr,aes192-ctr,aes256-ctr\nSupported encryption ciphers for SSH2\t\taes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,arcfour,aes192-cbc,aes256-cbc,rijndael-cbc@lysator.liu.se,aes128-ctr,aes192-ctr,aes256-ctr\nSupported decryption mac for SSH2\t\thmac-md5,hmac-sha1,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96\nSupported encryption mac for SSH2\t\thmac-md5,hmac-sha1,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96\nSupported authentification methods for SSH2\tpublickey,gssapi-with-mic,password\n</PRE> Successful exploitation allows an attacker to execute arbitrary commands on the SSH server or otherwise subvert an encrypted SSH channel with arbitrary data.",
+        "issueName": "SSH daemon information retrieving",
+        "issueType": "General remote services",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_38047",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "SSH version 2 is preferred over SSH version 1.",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_result": "SSH-2.0-mod_sftp/0.9.9",
+                        "_raw_service": "ssh",
+                        "port": "2222"
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_38050"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "38050",
+                    "@id": "qid_38050"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Ig"
+            },
+            {
+                "key": "_raw_protocol",
+                "value": "tcp"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "false"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "None None",
+        "issueName": "SSH Banner",
+        "issueType": "General remote services",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_38050",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_service": "http over ssl",
+                        "port": "443"
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_38116"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "38116",
+                    "@id": "qid_38116"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Ig"
+            },
+            {
+                "key": "_raw_protocol",
+                "value": "tcp"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "false"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "<P>The following is a list of supported SSL ciphers.<P>\nNote: If a cipher is included in this list it means that it was possible to establish a SSL connection using that cipher. There are some web servers setups that allow connections to be established using a LOW grade cipher, only to provide a web page stating that the URL is accessible only through a non-LOW grade cipher. In this case even though LOW grade cipher will be listed here QID 38140 will not be reported.\n<P> N/A",
+        "issueName": "SSL Server Information Retrieval",
+        "issueType": "General remote services",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_38116",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_result": "Certificate #0 CN=*.wpengine.com (*.wpengine.com) and IP (35.196.64.61) don&apos;t match\n(wpengine.com) and IP (35.196.64.61) don&apos;t match\n(*.wpengine.com) and IP (35.196.64.61) don&apos;t match",
+                        "_raw_service": "http over ssl",
+                        "port": "443"
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_38170"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "38170",
+                    "@id": "qid_38170"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Vuln"
+            },
+            {
+                "key": "_raw_protocol",
+                "value": "tcp"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "true"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            },
+            {
+                "key": "_raw_times_found",
+                "value": "1"
+            },
+            {
+                "key": "_raw_vuln_status",
+                "value": "New"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "An SSL Certificate associates an entity (person, organization, host, etc.) with a Public Key. In an SSL connection, the client authenticates the remote server using the server's Certificate and extracts the Public Key in the Certificate to establish the secure connection.\n<P>\nA certificate whose Subject commonName or subjectAltName does not match the server FQDN offers only encryption without authentication.\n<P>\nPlease note that a false positive reporting of this vulnerability is possible in the following case:\n<UL>If the common name of the certificate uses a wildcard such as *.somedomainname.com and the reverse DNS resolution of the target IP is not configured. In this case there is no way for Qualys to associate the wildcard common name to the IP. Adding a reverse DNS lookup entry to the target IP will solve this problem.\n</UL> A man-in-the-middle attacker can exploit this vulnerability in tandem with a DNS cache poisoning attack to lure the client to another server, and then steal all the encryption communication.",
+        "issueName": "SSL Certificate - Subject Common Name Does Not Match Server FQDN",
+        "issueType": "General remote services",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_38170",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "Please install a server certificate whose Subject commonName or subjectAltName matches the server FQDN.",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "2",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_result": "TLSv1.1 session caching is enabled on the target.\nTLSv1.2 session caching is enabled on the target.",
+                        "_raw_service": "http over ssl",
+                        "port": "443"
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_38291"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "38291",
+                    "@id": "qid_38291"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Ig"
+            },
+            {
+                "key": "_raw_protocol",
+                "value": "tcp"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "false"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "SSL session is a collection of security parameters that are negotiated by the SSL client and server for each SSL connection. SSL session caching is targeted to reduce the overhead of negotiations in recurring SSL connections. SSL sessions can be reused to resume an earlier connection or to establish multiple simultaneous connections. The client suggests an SSL session to be reused by identifying the session with a Session-ID during SSL handshake. If the server finds it appropriate to reuse the session,  then they both proceed to secure communication with already known security parameters.\n<P>\nThis test determines if SSL session caching is enabled on the host. SSL session caching is part of the SSL and TLS protocols and is not a security threat. The result of this test is for informational purposes only.",
+        "issueName": "SSL Session Caching Information",
+        "issueType": "General remote services",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_38291",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_result": {
+                            "#text": "#table\tcols=2\nmy version\ttarget version\n0304\t0303\n0399\t0303\n0400\t0303\n0499\t0303",
+                            "@format": "table"
+                        },
+                        "_raw_service": "http over ssl",
+                        "port": "443"
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_38597"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "38597",
+                    "@id": "qid_38597"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Ig"
+            },
+            {
+                "key": "_raw_protocol",
+                "value": "tcp"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "false"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "SSL/TLS protocols have different version that can be supported by both the client and the server. This test attempts to send invalid protocol versions to the target in order to find out what is the target's behavior. The results section contains a table that indicates what was the target's response to each of our tests. N/A",
+        "issueName": "SSL/TLS invalid protocol version tolerance",
+        "issueType": "General remote services",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_38597",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_service": "http over ssl",
+                        "port": "443"
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_38704"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "38704",
+                    "@id": "qid_38704"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Ig"
+            },
+            {
+                "key": "_raw_protocol",
+                "value": "tcp"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "false"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "The following is a list of SSL/TLS key exchange methods supported by the server, along with their respective key sizes and strengths. N/A",
+        "issueName": "SSL/TLS Key Exchange Methods",
+        "issueType": "General remote services",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_38704",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_result": {
+                            "#text": "NAME\tSTATUS\nTLSv1.1\t \nExtended Master Secret\tno\nEncrypt Then MAC\tno\nHeartbeat\tyes\nTruncated HMAC\tno\nCipher priority controlled by\tserver\nOCSP stapling\tno\nSCT extension\tno\nTLSv1.2\t \nExtended Master Secret\tno\nEncrypt Then MAC\tno\nHeartbeat\tyes\nTruncated HMAC\tno\nCipher priority controlled by\tserver\nOCSP stapling\tno\nSCT extension\tno",
+                            "@format": "table"
+                        },
+                        "_raw_service": "http over ssl",
+                        "port": "443"
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_38706"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "38706",
+                    "@id": "qid_38706"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Ig"
+            },
+            {
+                "key": "_raw_protocol",
+                "value": "tcp"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "false"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "The following is a list of detected SSL/TLS protocol properties. Items include:<P><UL>\n<LI>Extended Master Secret: indicates whether the extended_master_secret extension is supported or required by the server. This extension enhances security and is recommended. Applicable to TLSv1, TLSv1.1, TLSv1.2, DTLSv1, DTLSv1.2</LI>\n<LI>Encrypt Then MAC: indicates whether the encrypt_then_mac extension is supported or required by the server. This extension enhances the security of non-AEAD ciphers and is recommended. Applicable to TLSv1, TLSv1.1, TLSv1.2, DTLSv1, DTLSv1.2</LI>\n<LI>Heartbeat: indicates whether the heartbeat extension is supported. It is not recommended to enable this, except for DTLS. Applicable to TLSv1, TLSv1.1, TLSv1.2, TLSv1.3, DTLSv1, DTLSv1.2</LI>\n<LI>Truncated HMAC: indicates whether the truncated_hmac extension is supported. This can degrade security and is not recommended. Applicable to TLSv1, TLSv1.1, TLSv1.2, DTLSv1, DTLSv1.2</LI>\n<LI>Cipher priority: indicates whether client, server or both determine the priority of ciphers. Having the server determine the priority is recommended. Applicable to SSLv3, TLSv1, TLSv1.1, TLSv1.2, TLSv1.3, DTLSv1, DTLSv1.2</LI>\n</UL>",
+        "issueName": "SSL/TLS Protocol Properties",
+        "issueType": "General remote services",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_38706",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_result": {
+                            "#text": "Source\tValidated\tName\tURL\tID\tTime\nCertificate #0\t \tCN=*.wpengine.com\t \t \t \nCertificate\tyes\tGoogle &apos;Pilot&apos; log\tct.googleapis.com/pilot/\ta4b90990b418581487bb13a2cc67700a3c359804f91bdfb8e377cd0ec80ddc10\tMon 01 Jul 2019 07:41:51 PM GMT\nCertificate\tyes\tDigiCert Log Server 2\tct2.digicert-ct.com/log/\t8775bfe7597cf88c43995fbdf36eff568d475636ff4ab560c1b4eaff5ea0830f\tMon 01 Jul 2019 07:41:51 PM GMT\nCertificate\tyes\tCloudflare &apos;Nimbus2021&apos; Log\tct.cloudflare.com/logs/nimbus2021/\t4494652eb0eeceafc44007d8a8fe28c0dae682bed8cb31b53fd33396b5b681a8\tMon 01 Jul 2019 07:41:51 PM GMT",
+                            "@format": "table"
+                        },
+                        "_raw_service": "http over ssl",
+                        "port": "443"
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_38718"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "38718",
+                    "@id": "qid_38718"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Ig"
+            },
+            {
+                "key": "_raw_protocol",
+                "value": "tcp"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "false"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "<P>SSL Certificate Transparency is an industry effort to improve visibility into the process of how certificate authorities issue certificates. It is designed to allow the owners of domain names to find all certificates that have been issued for their domains, and which certificate authorities have issued them. This is done by requiring certificate authorities to publish all issued certificates in public logs. TLS servers can then provide cryptographic evidence to TLS clients that the server certificate has been registered in public logs, thus providing some degree of confidence that the certificate is legitimate. Such cryptographic evidence is referred to as an &quot;SCT Log Proof&quot;.\n<P>The information below lists all validated SCT Log Proofs for server certificates along with information about the public log, where available. N/A",
+        "issueName": "SSL Certificate Transparency Information",
+        "issueType": "General remote services",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_38718",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_result": {
+                            "#text": "Type\tName\nkey exchange\tdiffie-hellman-group1-sha1",
+                            "@format": "table"
+                        },
+                        "_raw_service": "ssh",
+                        "port": "2222"
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_38739"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "38739",
+                    "@id": "qid_38739"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Vuln"
+            },
+            {
+                "key": "_raw_protocol",
+                "value": "tcp"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "false"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            },
+            {
+                "key": "_raw_times_found",
+                "value": "1"
+            },
+            {
+                "key": "_raw_vuln_status",
+                "value": "New"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "The SSH protocol (Secure Shell) is a method for secure remote login from one computer to another. <P>\nThe target is using deprecated SSH cryptographic settings to communicate. A man-in-the-middle attacker may be able to exploit this vulnerability to record the communication to decrypt the session key and even the messages.<P>",
+        "issueName": "Deprecated SSH Cryptographic Settings",
+        "issueType": "General remote services",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_38739",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "Avoid using deprecated cryptographic settings. <P>\nUse best practices when configuring SSH.<P>\nRefer to <A HREF=\"https://csrc.nist.gov/publications/detail/nistir/7966/final\" TARGET=\"_blank\">Security of Interactive and Automated Access Management Using Secure Shell (SSH)</A> .<P>\nSettings currently considered deprecated:\n<DL>\n <DT>Ciphers using CFB of OFB</DT>\n <DD>Very uncommon, and deprecated because of weaknesses compared to newer cipher chaining modes such as CTR or GCM</DD>\n <DT>RC4 cipher (arcfour, arcfour128, arcfour256)</DT>\n <DD>The RC4 cipher has a cryptographic bias and is no longer considered secure</DD>\n <DT>Ciphers with a 64-bit block size (DES, 3DES, Blowfish, IDEA, CAST)</DT>\n <DD>Ciphers with a 64-bit block size may be vulnerable to birthday attacks (Sweet32)</DD>\n <DT>Key exchange algorithms using DH group 1 (diffie-hellman-group1-sha1, gss-group1-sha1-*)</DT>\n <DD>DH group 1 uses a 1024-bit key which is considered too short and vulnerable to Logjam-style attacks</DD>\n <DT>Key exchange algorithm &quot;rsa1024sha1&quot;</DT>\n <DD>Very uncommon, and deprecated because of the short RSA key size</DD>\n <DT>MAC algorithm &quot;umac-32&quot;</DT>\n <DD>Very uncommon, and deprecated because of the very short MAC length</DD>\n <DT>Cipher &quot;none&quot;</DT>\n <DD>This is available only in SSHv1</DD>\n</DL>",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "2",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_result": "Service name: SSH on TCP port 2222.",
+                        "port": null
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_42017"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "42017",
+                    "@id": "qid_42017"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Ig"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "false"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            },
+            {
+                "key": "_raw_times_found",
+                "value": "1"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "A remote access or remote management service was detected. If such a service is accessible to malicious users it can be used to carry different type of attacks. Malicious users could try to brute force credentials or collect additional information on the service which could enable them in crafting further attacks. \n<P>\nThe Results section includes information on the remote access service that was found on the target.\n<P>\nServices like Telnet, Rlogin, SSH, windows remote desktop, pcAnywhere, Citrix Management Console, Remote Admin (RAdmin), VNC, OPENVPN and ISAKMP are checked. Consequences vary by the type of attack.",
+        "issueName": "Remote Access or Management Service Detected",
+        "issueType": "General remote services",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_42017",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "Expose the remote access or remote management services only to the system administrators or intended users of the system.",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "3",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 6,
+        "severityCode": "Medium",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_result": "TLS Secure Renegotiation Extension Status: supported.",
+                        "_raw_service": "http over ssl",
+                        "port": "443"
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_42350"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "42350",
+                    "@id": "qid_42350"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Ig"
+            },
+            {
+                "key": "_raw_protocol",
+                "value": "tcp"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "false"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Secure Socket Layer (SSL) and Transport Layer Security (TLS) renegotiation are vulnerable to an attack in which the attacker forms a TLS connection with the target server, injects content of his choice, and then splices in a new TLS connection from a client. The server treats the client's initial TLS handshake as a renegotiation and thus believes that the initial data transmitted by the attacker is from the same entity as the subsequent client data. TLS protocol was extended to cryptographically tierenegotiations to the TLS connections they are being performed over. This is referred to as TLS secure renegotiation extension. This detection determines whether the TLS secure renegotiation extension is supported by the server or not. N/A",
+        "issueName": "TLS Secure Renegotiation Extension Support Information",
+        "issueType": "General remote services",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_42350",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "port": null
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_42416"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "42416",
+                    "@id": "qid_42416"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Ig"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "false"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            },
+            {
+                "key": "_raw_times_found",
+                "value": "1"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "HTTP data is compressed before it is sent from the server. DEFLATE data compression algorithm uses the LZ77 algorithm which takes advantage of repeated strings to more efficiently compress output.\n<P>\nDEFLATE data compression algorithm is prone to be unsafe as described in the BREACH attack. If an attacker can inject a string into a HTTPS response intended to match another unknown string (the target secret), they can iteratively guess the secret value by monitoring the compressed size of the responses for different guesses. Note: The attacker needs the capability of reading responses received by the user's browser and the capability of cause the victim to send requests from their browser to perform BREACH attack.\n<P>\nThis QID detects that the remote HTTP server is using a gzip or DEFLATE (zlib) compression format which is using DEFLATE data compression algorithm. N/A",
+        "issueName": "DEFLATE Data Compression Algorithm Used for HTTPS",
+        "issueType": "General remote services",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_42416",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "3",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 6,
+        "severityCode": "Medium",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_result": "The network handle is: GOOGLE-CLOUD\nNetwork description:\nGoogle LLC",
+                        "port": null
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_45004"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "45004",
+                    "@id": "qid_45004"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Ig"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "false"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "The information shown in the Result section was returned by the network infrastructure responsible for routing traffic from our cloud platform to the target network (where the scanner appliance is located).<P>\nThis information was returned from: 1) the WHOIS service, or 2) the infrastructure provided by the closest gateway server to our cloud platform. If your ISP is routing traffic, your ISP's gateway server returned this information. This information can be used by malicious users to gather more information about the network infrastructure that may help in launching attacks against it.",
+        "issueName": "Target Network Information",
+        "issueType": "Information gathering",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_45004",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_result": "The ISP network handle is: NET-216-239-35-0-1\nISP Network description:\nGoogle LLC GOOGLE-CORP-216-239-35-0",
+                        "port": null
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_45005"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "45005",
+                    "@id": "qid_45005"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Ig"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "false"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "The information shown in the Result section was returned by the network infrastructure responsible for routing traffic from our cloud platform to the target network (where the scanner appliance is located). \n\n<P>This information was returned from: 1) the WHOIS service, or 2) the infrastructure provided by the closest gateway server to our cloud platform. If your ISP is routing traffic, your ISP's gateway server returned this information. This information can be used by malicious users to gather more information about the network infrastructure that may aid in launching further attacks against it.",
+        "issueName": "Internet Service Provider",
+        "issueType": "Information gathering",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_45005",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_result": {
+                            "#text": "Hops\tIP\tRound Trip Time\tProbe\tPort\n1\t64.39.99.3\t0.12ms\tICMP\t \n2\t216.52.125.61\t0.34ms\tICMP\t \n3\t216.52.127.8\t0.89ms\tICMP\t \n4\t64.95.158.246\t0.37ms\tICMP\t \n5\t64.95.159.29\t0.41ms\tICMP\t \n6\t*.*.*.*\t0.00ms\tOther\t80\n7\t108.170.246.2\t0.59ms\tICMP\t \n8\t209.85.240.63\t1.23ms\tICMP\t \n9\t209.85.255.252\t12.82ms\tICMP\t \n10\t216.239.35.179\t12.40ms\tICMP\t \n11\t*.*.*.*\t0.00ms\tOther\t80\n12\t*.*.*.*\t0.00ms\tOther\t80\n13\t*.*.*.*\t0.00ms\tOther\t80\n14\t*.*.*.*\t0.00ms\tOther\t80\n15\t*.*.*.*\t0.00ms\tOther\t80\n16\t*.*.*.*\t0.00ms\tOther\t80\n17\t*.*.*.*\t0.00ms\tOther\t80\n18\t*.*.*.*\t0.00ms\tOther\t80\n19\t*.*.*.*\t0.00ms\tOther\t80\n20\t35.196.64.61\t12.64ms\tTCP\t80",
+                            "@format": "table"
+                        },
+                        "port": null
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_45006"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "45006",
+                    "@id": "qid_45006"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Ig"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "false"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Traceroute describes the path in realtime from the scanner to the remote host being contacted. It reports the IP addresses of all the routers in between. None",
+        "issueName": "Traceroute",
+        "issueType": "Information gathering",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_45006",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_result": "Scan duration: 556 seconds\n\nStart time: Wed, Nov 20 2019, 16:18:58 GMT\n\nEnd time: Wed, Nov 20 2019, 16:28:14 GMT",
+                        "port": null
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_45038"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "45038",
+                    "@id": "qid_45038"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Ig"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "false"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "The Host Scan Time is the period of time it takes the scanning engine to perform the vulnerability assessment of a single target host. The Host Scan Time for this host is reported in the Result section below. \n<P>\nThe Host Scan Time does not have a direct correlation to the Duration time as displayed in the Report Summary section of a scan results report. The Duration is the period of time it takes the service to perform a scan task. The Duration includes the time it takes the service to scan all hosts, which may involve parallel scanning. It also includes the time it takes for a scanner appliance to pick up the scan task and transfer the results back to the service's Secure Operating Center. Further, when a scan task is distributed across multiple scanners, the Duration includes the time it takes to perform parallel host scanning on all scanners.\n<P>\nFor host running the Qualys Windows agent this QID reports the time taken by the agent to collect the host metadata used for the most recent assessment scan. N/A",
+        "issueName": "Host Scan Time",
+        "issueType": "Information gathering",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_45038",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_result": {
+                            "#text": "Host Name\tSource\n61.64.196.35.bc.googleusercontent.com\tFQDN",
+                            "@format": "table"
+                        },
+                        "port": null
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_45039"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "45039",
+                    "@id": "qid_45039"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Ig"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "false"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "The following host names were discovered for this computer using various methods such as DNS look up, NetBIOS query, and SQL server name query. N/A",
+        "issueName": "Host Names Found",
+        "issueType": "Information gathering",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_45039",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_result": "Remote Web Server supports HTTP version 1.x on 443 port.GET / HTTP/1.1",
+                        "_raw_service": "http over ssl",
+                        "port": "443"
+                    },
+                    {
+                        "_raw_result": "Remote Web Server supports HTTP version 1.x on 80 port.GET / HTTP/1.1",
+                        "_raw_service": "http",
+                        "port": "80"
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_45266"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "45266",
+                    "@id": "qid_45266"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Ig"
+            },
+            {
+                "key": "_raw_protocol",
+                "value": "tcp"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "false"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            },
+            {
+                "key": "_raw_times_found",
+                "value": "1"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "This QID lists supported HTTP protocol (HTTP 1.x or HTTP 2) from remote web server. N/A",
+        "issueName": "Web Server HTTP Protocol Versions",
+        "issueType": "Information gathering",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_45266",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "2",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_result": {
+                            "#text": "IP address\tHost name\n35.196.64.61\t61.64.196.35.bc.googleusercontent.com",
+                            "@format": "table"
+                        },
+                        "port": null
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_6"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "6",
+                    "@id": "qid_6"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Ig"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "false"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "The fully qualified domain name of this host, if it was obtained from a DNS server, is displayed in the RESULT section. N/A",
+        "issueName": "DNS Host Name",
+        "issueType": "Information gathering",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_6",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_result": {
+                            "#text": "Port\tIANA Assigned Ports/Services\tDescription\tService Detected\tOS On Redirected Port\n80\twww-http\tWorld Wide Web HTTP\thttp \t \n443\thttps\thttp protocol over TLS/SSL\thttp over ssl\t \n2222\tunreg-ab2\tAllen-Bradley unregistered port\tssh",
+                            "@format": "table"
+                        },
+                        "port": null
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_82023"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "82023",
+                    "@id": "qid_82023"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Ig"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "false"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "The port scanner enables unauthorized users with the appropriate tools to draw a map of all services on this host that can be accessed from the Internet.  The test was carried out with a &quot;stealth&quot; port scanner so that the server does not log real connections.\n<P>\nThe Results section displays the port number (Port), the default service listening on the port (IANA Assigned Ports/Services), the description of the service (Description) and the service that the scanner detected using service discovery (Service Detected). Unauthorized users can exploit this information to test vulnerabilities in each of the open services.",
+        "issueName": "Open TCP Services List",
+        "issueType": "TCP/IP",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_82023",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "Shut down any unknown or unused service on the list.  If you have difficulty figuring out which service is provided by which process or program, contact your provider's support team.  For more information about commercial and open-source Intrusion Detection Systems available for detecting port scanners of this kind, visit the <A HREF=\"http://www.cert.org\" TARGET=\"_blank\">CERT Web site</A>.",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_result": {
+                            "#text": "ICMP Reply Type\tTriggered By\tAdditional Information\nEcho (type=0 code=0)\tEcho Request\tEcho Reply",
+                            "@format": "table"
+                        },
+                        "port": null
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_82040"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "82040",
+                    "@id": "qid_82040"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Ig"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "false"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "ICMP (Internet Control and Error Message Protocol) is a protocol encapsulated in IP packets. ICMP's principal purpose is to provide a protocol layer that informs gateways of the inter-connectivity and accessibility of other gateways or hosts. \n<P>\nWe have sent the following types of packets to trigger the host to send us ICMP replies: \n<P>\nEcho Request (to trigger Echo Reply)<br>\nTimestamp Request (to trigger Timestamp Reply)<br>\nAddress Mask Request (to trigger Address Mask Reply)<br>\nUDP Packet (to trigger Port Unreachable Reply)<br>\nIP Packet with Protocol >= 250 (to trigger Protocol Unreachable Reply)\n<P>\nListed in the \"Result\" section are the ICMP replies that we have received. None",
+        "issueName": "ICMP Replies Received",
+        "issueType": "TCP/IP",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_82040",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_result": "Average change between subsequent TCP initial sequence numbers is 743692305 with a standard deviation of 547277428. These TCP initial sequence numbers were triggered by TCP SYN probes sent to the host at an average rate of 1/(4999 microseconds). The degree of difficulty to exploit the TCP initial sequence number generation scheme is: hard.",
+                        "port": null
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_82045"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "82045",
+                    "@id": "qid_82045"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Ig"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "false"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "TCP Initial Sequence Numbers (ISNs) obtained in the SYNACK replies from the host are analyzed to determine how random they are. The average change between subsequent ISNs and the standard deviation from the average are displayed in the RESULT section. Also included is the degree of difficulty for exploitation of the TCP ISN generation scheme used by the host. N/A",
+        "issueName": "Degree of Randomness of TCP Initial Sequence Numbers",
+        "issueType": "TCP/IP",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_82045",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_result": "IP ID changes observed (network order) for port 80: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \nDuration: 30 milli seconds",
+                        "port": null
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_82046"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "82046",
+                    "@id": "qid_82046"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Ig"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "false"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "The values for the identification (ID) field in IP headers in IP packets from the host are analyzed to determine how random they are. The changes between subsequent ID values for either the network byte ordering or the host byte ordering, whichever is smaller, are displayed in the RESULT section along with the duration taken to send the probes. When incremental values are used, as is the case for TCP/IP implementation in many operating systems, these changes reflect the network load of the host at the time this test was conducted.\n<P>\nPlease note that for reliability reasons only the network traffic from open TCP ports is analyzed. N/A",
+        "issueName": "IP ID Values Randomness",
+        "issueType": "TCP/IP",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_82046",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_result": {
+                            "#text": "Server Version\tServer Banner\nnginx\tnginx",
+                            "@format": "table"
+                        },
+                        "_raw_service": "http",
+                        "port": "80"
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_86000"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "86000",
+                    "@id": "qid_86000"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Ig"
+            },
+            {
+                "key": "_raw_protocol",
+                "value": "tcp"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "false"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "N/A N/A",
+        "issueName": "Web Server Version",
+        "issueType": "Web server",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_86000",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_result": {
+                            "#text": "Server Version\tServer Banner\nnginx\tnginx",
+                            "@format": "table"
+                        },
+                        "_raw_service": "http over ssl",
+                        "port": "443"
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_86001"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "86001",
+                    "@id": "qid_86001"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Ig"
+            },
+            {
+                "key": "_raw_protocol",
+                "value": "tcp"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "false"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "None None",
+        "issueName": "SSL Web Server Version",
+        "issueType": "Web server",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_86001",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_raw_service": "http over ssl",
+                        "port": "443"
+                    }
+                ]
+            },
+            {
+                "key": "operatingSystem",
+                "value": null
+            },
+            {
+                "key": "trackingMethod",
+                "value": null
+            },
+            {
+                "key": "RESULT",
+                "value": null
+            },
+            {
+                "key": "lookup_id",
+                "value": "qid_86002"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id"
+                ]
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": null
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "_raw_qid",
+                "value": {
+                    "#text": "86002",
+                    "@id": "qid_86002"
+                }
+            },
+            {
+                "key": "_raw_type",
+                "value": "Ig"
+            },
+            {
+                "key": "_raw_protocol",
+                "value": "tcp"
+            },
+            {
+                "key": "_raw_ssl",
+                "value": "false"
+            },
+            {
+                "key": "_raw_first_found",
+                "value": "2019-11-20T16:28:14Z"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "SSL certificate information is provided in the Results section. N/A",
+        "issueName": "SSL Certificate - Information",
+        "issueType": "Web server",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "qid_86002",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    }
+]

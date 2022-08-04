@@ -1,0 +1,286 @@
+{
+    "totalCount": 5,
+    "items": [
+        {
+            "componentVersion": "https://example.co/api/components/7a777763-ac31-4919-8f49-52e373f3af41/versions/634befbb-a6c9-4ae7-87a3-4636c2f78ce3",
+            "componentName": "jQuery",
+            "componentVersionName": "3.4.1",
+            "componentVersionOriginName": "npmjs",
+            "componentVersionOriginId": "jquery/3.4.1",
+            "license": {
+                "type": "DISJUNCTIVE",
+                "licenses": [
+                    {
+                        "license": "https://example.co/api/licenses/ad705c59-6893-4980-bdbf-0837f1823cc4",
+                        "licenses": [],
+                        "name": "MIT License",
+                        "ownership": "OPEN_SOURCE",
+                        "licenseDisplay": "MIT License",
+                        "codeSharing": "PERMISSIVE"
+                    }
+                ],
+                "licenseDisplay": "MIT License"
+            },
+            "vulnerabilityWithRemediation": {
+                "vulnerabilityName": "BDSA-2020-0686",
+                "description": "It was discovered that jQuery could allow for cross-site scripting (XSS) vulnerabilities to be introduced if `jQuery.htmlPrefilter` method is used. Attackers could exploit XSS vulnerabilities to execute JavaScript code in a target's browser by tricking them into accessing the vulnerable page. This would allow an attacker to steal an administrator's session tokens or execute arbitrary code on their behalf by sending the link to an unsuspecting user or waiting for them to discover it.",
+                "vulnerabilityPublishedDate": "2020-04-14T17:24:19.811Z",
+                "vulnerabilityUpdatedDate": "2020-04-28T14:32:16.776Z",
+                "baseScore": 9.6,
+                "overallScore": 8.3,
+                "exploitabilitySubscore": 2.8,
+                "impactSubscore": 6,
+                "source": "BDSA",
+                "severity": "HIGH",
+                "remediationStatus": "NEW",
+                "cweId": "CWE-80",
+                "remediationCreatedAt": "2020-04-15T16:07:27.689Z",
+                "remediationUpdatedAt": "2020-04-15T16:07:27.689Z"
+            },
+            "_meta": {
+                "allow": [
+                    "GET",
+                    "PUT"
+                ],
+                "href": "https://example.co/api/projects/7637bf63-8137-4b82-a49a-7fa3327042d5/versions/f016ae2c-5b4b-46e4-a727-07f07887e3a2/components/7a777763-ac31-4919-8f49-52e373f3af41/versions/634befbb-a6c9-4ae7-87a3-4636c2f78ce3/vulnerabilities/BDSA-2020-0686/remediation",
+                "links": [
+                    {
+                        "rel": "matched-files",
+                        "href": "https://example.co/api/projects/7637bf63-8137-4b82-a49a-7fa3327042d5/versions/f016ae2c-5b4b-46e4-a727-07f07887e3a2/components/7a777763-ac31-4919-8f49-52e373f3af41/versions/634befbb-a6c9-4ae7-87a3-4636c2f78ce3/origins/3b4ceb05-d110-46a5-b325-4ced0d761858/matched-files"
+                    },
+                    {
+                        "rel": "vulnerabilities",
+                        "href": "https://example.co/api/components/7a777763-ac31-4919-8f49-52e373f3af41/versions/634befbb-a6c9-4ae7-87a3-4636c2f78ce3/origin/3b4ceb05-d110-46a5-b325-4ced0d761858/vulnerabilities"
+                    }
+                ]
+            }
+        },
+        {
+            "componentVersion": "https://example.co/api/components/7a777763-ac31-4919-8f49-52e373f3af41/versions/634befbb-a6c9-4ae7-87a3-4636c2f78ce3",
+            "componentName": "jQuery",
+            "componentVersionName": "3.4.1",
+            "componentVersionOriginName": "npmjs",
+            "componentVersionOriginId": "jquery/3.4.1",
+            "license": {
+                "type": "DISJUNCTIVE",
+                "licenses": [
+                    {
+                        "license": "https://example.co/api/licenses/ad705c59-6893-4980-bdbf-0837f1823cc4",
+                        "licenses": [],
+                        "name": "MIT License",
+                        "ownership": "OPEN_SOURCE",
+                        "licenseDisplay": "MIT License",
+                        "codeSharing": "PERMISSIVE"
+                    }
+                ],
+                "licenseDisplay": "MIT License"
+            },
+            "vulnerabilityWithRemediation": {
+                "vulnerabilityName": "BDSA-2020-0880",
+                "description": "jQuery is vulnerable to cross-site scripting (XSS) due to the improper validation of client-provided input. A remote attacker could execute malicious scripts within the browser of a victim by tricking that victim into opening maliciously crafted web content.",
+                "vulnerabilityPublishedDate": "2020-04-23T14:18:24.409Z",
+                "vulnerabilityUpdatedDate": "2020-04-23T14:18:24.405Z",
+                "baseScore": 9.3,
+                "overallScore": 7.8,
+                "exploitabilitySubscore": 2.8,
+                "impactSubscore": 5.8,
+                "source": "BDSA",
+                "severity": "HIGH",
+                "remediationStatus": "NEW",
+                "cweId": "CWE-79",
+                "remediationCreatedAt": "2020-04-23T16:09:09.153Z",
+                "remediationUpdatedAt": "2020-04-23T16:09:09.153Z"
+            },
+            "_meta": {
+                "allow": [
+                    "GET",
+                    "PUT"
+                ],
+                "href": "https://example.co/api/projects/7637bf63-8137-4b82-a49a-7fa3327042d5/versions/f016ae2c-5b4b-46e4-a727-07f07887e3a2/components/7a777763-ac31-4919-8f49-52e373f3af41/versions/634befbb-a6c9-4ae7-87a3-4636c2f78ce3/vulnerabilities/BDSA-2020-0880/remediation",
+                "links": [
+                    {
+                        "rel": "matched-files",
+                        "href": "https://example.co/api/projects/7637bf63-8137-4b82-a49a-7fa3327042d5/versions/f016ae2c-5b4b-46e4-a727-07f07887e3a2/components/7a777763-ac31-4919-8f49-52e373f3af41/versions/634befbb-a6c9-4ae7-87a3-4636c2f78ce3/origins/3b4ceb05-d110-46a5-b325-4ced0d761858/matched-files"
+                    },
+                    {
+                        "rel": "vulnerabilities",
+                        "href": "https://example.co/api/components/7a777763-ac31-4919-8f49-52e373f3af41/versions/634befbb-a6c9-4ae7-87a3-4636c2f78ce3/origin/3b4ceb05-d110-46a5-b325-4ced0d761858/vulnerabilities"
+                    }
+                ]
+            }
+        },
+        {
+            "componentVersion": "https://example.co/api/components/7a777763-ac31-4919-8f49-52e373f3af41/versions/634befbb-a6c9-4ae7-87a3-4636c2f78ce3",
+            "componentName": "jQuery",
+            "componentVersionName": "3.4.1",
+            "componentVersionOriginName": "npmjs",
+            "componentVersionOriginId": "jquery/3.4.1",
+            "license": {
+                "type": "DISJUNCTIVE",
+                "licenses": [
+                    {
+                        "license": "https://example.co/api/licenses/ad705c59-6893-4980-bdbf-0837f1823cc4",
+                        "licenses": [],
+                        "name": "MIT License",
+                        "ownership": "OPEN_SOURCE",
+                        "licenseDisplay": "MIT License",
+                        "codeSharing": "PERMISSIVE"
+                    }
+                ],
+                "licenseDisplay": "MIT License"
+            },
+            "vulnerabilityWithRemediation": {
+                "vulnerabilityName": "CVE-2020-11022",
+                "description": "In jQuery versions greater than or equal to 1.2 and before 3.5.0, passing HTML from untrusted sources - even after sanitizing it - to one of jQuery's DOM manipulation methods (i.e. .html(), .append(), and others) may execute untrusted code. This problem is patched in jQuery 3.5.0.",
+                "vulnerabilityPublishedDate": "2020-04-29T22:15:00.000Z",
+                "vulnerabilityUpdatedDate": "2020-05-11T10:15:00.000Z",
+                "baseScore": 6.1,
+                "overallScore": 6.1,
+                "exploitabilitySubscore": 2.8,
+                "impactSubscore": 2.7,
+                "source": "NVD",
+                "severity": "MEDIUM",
+                "remediationStatus": "NEW",
+                "cweId": "CWE-79",
+                "remediationCreatedAt": "2020-05-04T16:07:54.400Z",
+                "remediationUpdatedAt": "2020-05-04T16:07:54.400Z"
+            },
+            "_meta": {
+                "allow": [
+                    "GET",
+                    "PUT"
+                ],
+                "href": "https://example.co/api/projects/7637bf63-8137-4b82-a49a-7fa3327042d5/versions/f016ae2c-5b4b-46e4-a727-07f07887e3a2/components/7a777763-ac31-4919-8f49-52e373f3af41/versions/634befbb-a6c9-4ae7-87a3-4636c2f78ce3/vulnerabilities/CVE-2020-11022/remediation",
+                "links": [
+                    {
+                        "rel": "matched-files",
+                        "href": "https://example.co/api/projects/7637bf63-8137-4b82-a49a-7fa3327042d5/versions/f016ae2c-5b4b-46e4-a727-07f07887e3a2/components/7a777763-ac31-4919-8f49-52e373f3af41/versions/634befbb-a6c9-4ae7-87a3-4636c2f78ce3/origins/3b4ceb05-d110-46a5-b325-4ced0d761858/matched-files"
+                    },
+                    {
+                        "rel": "vulnerabilities",
+                        "href": "https://example.co/api/components/7a777763-ac31-4919-8f49-52e373f3af41/versions/634befbb-a6c9-4ae7-87a3-4636c2f78ce3/origin/3b4ceb05-d110-46a5-b325-4ced0d761858/vulnerabilities"
+                    }
+                ]
+            }
+        },
+        {
+            "componentVersion": "https://example.co/api/components/7a777763-ac31-4919-8f49-52e373f3af41/versions/634befbb-a6c9-4ae7-87a3-4636c2f78ce3",
+            "componentName": "jQuery",
+            "componentVersionName": "3.4.1",
+            "componentVersionOriginName": "npmjs",
+            "componentVersionOriginId": "jquery/3.4.1",
+            "license": {
+                "type": "DISJUNCTIVE",
+                "licenses": [
+                    {
+                        "license": "https://example.co/api/licenses/ad705c59-6893-4980-bdbf-0837f1823cc4",
+                        "licenses": [],
+                        "name": "MIT License",
+                        "ownership": "OPEN_SOURCE",
+                        "licenseDisplay": "MIT License",
+                        "codeSharing": "PERMISSIVE"
+                    }
+                ],
+                "licenseDisplay": "MIT License"
+            },
+            "vulnerabilityWithRemediation": {
+                "vulnerabilityName": "CVE-2020-11023",
+                "description": "In jQuery versions greater than or equal to 1.0.3 and before 3.5.0, passing HTML containing  elements from untrusted sources - even after sanitizing it - to one of jQuery's DOM manipulation methods (i.e. .html(), .append(), and others) may execute untrusted code. This problem is patched in jQuery 3.5.0.",
+                "vulnerabilityPublishedDate": "2020-04-29T21:15:00.000Z",
+                "vulnerabilityUpdatedDate": "2020-05-12T12:23:00.000Z",
+                "baseScore": 6.1,
+                "overallScore": 6.1,
+                "exploitabilitySubscore": 2.8,
+                "impactSubscore": 2.7,
+                "source": "NVD",
+                "severity": "MEDIUM",
+                "remediationStatus": "NEW",
+                "cweId": "CWE-79",
+                "remediationCreatedAt": "2020-05-04T16:07:54.400Z",
+                "remediationUpdatedAt": "2020-05-04T16:07:54.400Z"
+            },
+            "_meta": {
+                "allow": [
+                    "GET",
+                    "PUT"
+                ],
+                "href": "https://example.co/api/projects/7637bf63-8137-4b82-a49a-7fa3327042d5/versions/f016ae2c-5b4b-46e4-a727-07f07887e3a2/components/7a777763-ac31-4919-8f49-52e373f3af41/versions/634befbb-a6c9-4ae7-87a3-4636c2f78ce3/vulnerabilities/CVE-2020-11023/remediation",
+                "links": [
+                    {
+                        "rel": "matched-files",
+                        "href": "https://example.co/api/projects/7637bf63-8137-4b82-a49a-7fa3327042d5/versions/f016ae2c-5b4b-46e4-a727-07f07887e3a2/components/7a777763-ac31-4919-8f49-52e373f3af41/versions/634befbb-a6c9-4ae7-87a3-4636c2f78ce3/origins/3b4ceb05-d110-46a5-b325-4ced0d761858/matched-files"
+                    },
+                    {
+                        "rel": "vulnerabilities",
+                        "href": "https://example.co/api/components/7a777763-ac31-4919-8f49-52e373f3af41/versions/634befbb-a6c9-4ae7-87a3-4636c2f78ce3/origin/3b4ceb05-d110-46a5-b325-4ced0d761858/vulnerabilities"
+                    }
+                ]
+            }
+        },
+        {
+            "componentVersion": "https://example.co/api/components/231f0898-c453-415b-91fa-fba6585fdb82/versions/ac474a13-0e57-4105-b5a1-982ba5e4a26a",
+            "componentName": "Lo-Dash",
+            "componentVersionName": "4.17.15",
+            "componentVersionOriginName": "npmjs",
+            "componentVersionOriginId": "lodash/4.17.15",
+            "license": {
+                "type": "DISJUNCTIVE",
+                "licenses": [
+                    {
+                        "license": "https://example.co/api/licenses/ad705c59-6893-4980-bdbf-0837f1823cc4",
+                        "licenses": [],
+                        "name": "MIT License",
+                        "ownership": "OPEN_SOURCE",
+                        "licenseDisplay": "MIT License",
+                        "codeSharing": "PERMISSIVE"
+                    }
+                ],
+                "licenseDisplay": "MIT License"
+            },
+            "vulnerabilityWithRemediation": {
+                "vulnerabilityName": "BDSA-2019-3842",
+                "description": "Lodash contains a denial-of-service (DoS) vulnerability.  This is due to multiple methods not validating the length of content supplied to it.  If an application is passing untrusted-input to the Lodash library, it may be possible for an attacker to cause the process to crash, resulting in a DoS condition.\n\nPlease note that this issue is not considered by the vendor to be a vulnerability in Lodash, however it could be exploited if an application using Lodash\naccepts user input without validation and passes it to the affected functions. A pull request was opened to update the Lodash documentation regarding this issue but it was closed and not merged.",
+                "vulnerabilityPublishedDate": "2019-12-06T12:02:12.369Z",
+                "vulnerabilityUpdatedDate": "2020-04-16T12:14:33.433Z",
+                "baseScore": 7.5,
+                "overallScore": 7.1,
+                "exploitabilitySubscore": 3.9,
+                "impactSubscore": 3.6,
+                "source": "BDSA",
+                "severity": "HIGH",
+                "remediationStatus": "NEW",
+                "cweId": "CWE-400",
+                "remediationCreatedAt": "2020-04-14T15:47:35.077Z",
+                "remediationUpdatedAt": "2020-04-14T15:47:35.077Z"
+            },
+            "_meta": {
+                "allow": [
+                    "GET",
+                    "PUT"
+                ],
+                "href": "https://example.co/api/projects/7637bf63-8137-4b82-a49a-7fa3327042d5/versions/f016ae2c-5b4b-46e4-a727-07f07887e3a2/components/231f0898-c453-415b-91fa-fba6585fdb82/versions/ac474a13-0e57-4105-b5a1-982ba5e4a26a/vulnerabilities/BDSA-2019-3842/remediation",
+                "links": [
+                    {
+                        "rel": "matched-files",
+                        "href": "https://example.co/api/projects/7637bf63-8137-4b82-a49a-7fa3327042d5/versions/f016ae2c-5b4b-46e4-a727-07f07887e3a2/components/231f0898-c453-415b-91fa-fba6585fdb82/versions/ac474a13-0e57-4105-b5a1-982ba5e4a26a/origins/54baf0e5-b36b-4110-b14b-3553a6e697cb/matched-files"
+                    },
+                    {
+                        "rel": "vulnerabilities",
+                        "href": "https://example.co/api/components/231f0898-c453-415b-91fa-fba6585fdb82/versions/ac474a13-0e57-4105-b5a1-982ba5e4a26a/origin/54baf0e5-b36b-4110-b14b-3553a6e697cb/vulnerabilities"
+                    }
+                ]
+            }
+        }
+    ],
+    "appliedFilters": [],
+    "_meta": {
+        "allow": [
+            "GET"
+        ],
+        "href": "https://example.co/api/projects/7637bf63-8137-4b82-a49a-7fa3327042d5/versions/f016ae2c-5b4b-46e4-a727-07f07887e3a2/vulnerable-bom-components",
+        "links": []
+    },
+    "customerId": "dC7YlCUDTYqRt6co9wNbPg",
+    "jobId": "bTIpOsKyT-itJGiIVCodvg",
+    "policyId": "RoziKweHTdGX5U5D5f76Dw"
+}

@@ -1,0 +1,1571 @@
+[
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_href": "https://www.zeronorth.io/api/v1/projectVersions/42/issues/29495",
+                        "_raw_id": 29495,
+                        "abstract": "The method hawkContactTypes() in hawkController.java sends unvalidated data to a web browser on line 1101, which can result in the browser executing malicious code.\n\n\n",
+                        "audited": false,
+                        "confidence": 5,
+                        "file_name": "hawkController.java",
+                        "full_file_name": "workspace/src/com/customer/AppX/controller/hawkController.java",
+                        "hasComments": false,
+                        "issue_description": "Cross-site scripting (XSS) vulnerabilities occur when:\n\n1. Data enters a web application through an untrusted source. In the case of persistent (also known as stored) XSS, the untrusted source is typically a database or other back-end data store, while in the case of reflected XSS it is typically a web request.\n\n\nIn this case, the data enters at <a href=\"event:file=workspace/src/com/customer/AppX/dao/testModel.java&amp;lineNo=140\" rel=\"nofollow\">queryForList()</a> in testModel.java at line 140.\n\n2. The data is included in dynamic content that is sent to a web user without validation.\n\nThe malicious content sent to the web browser often takes the form of a segment of JavaScript, but can also include HTML, Flash or any other type of code that the browser executes. The variety of attacks based on XSS is almost limitless, but they commonly include transmitting private data like cookies or other session information to the attacker, redirecting the victim to web content controlled by the attacker, or performing other malicious operations on the user's machine under the guise of the vulnerable site.\n\n\n<b>Example 1:</b> The following JSP code segment queries a database for an employee with a given ID and prints the corresponding employee's name.\n\n<span class=\"code\">\n&lt;%...\nStatement stmt = conn.createStatement();\nResultSet rs = stmt.executeQuery(\"select * from emp where id=\"+eid);\nif (rs != null) {\n   rs.next();\n   String name = rs.getString(\"name\");\n}\n%&gt;\n\nEmployee Name: &lt;%= name %&gt;\n</span>\n\n\nThis code functions correctly when the values of <span class=\"code\">name</span> are well-behaved, but it does nothing to prevent exploits if they are not. This code can appear less dangerous because the value of <span class=\"code\">name</span> is read from a database, whose contents are apparently managed by the application. However, if the value of <span class=\"code\">name</span> originates from user-supplied data, then the database can be a conduit for malicious content. Without proper input validation on all data stored in the database, an attacker may execute malicious commands in the user's web browser. This type of exploit, known as Persistent (or Stored) XSS, is particularly insidious because the indirection caused by the data store makes it more difficult to identify the threat and increases the possibility that the attack will affect multiple users. XSS got its start in this form with web sites that offered a \"guestbook\" to visitors. Attackers would include JavaScript in their guestbook entries, and all subsequent visitors to the guestbook page would execute the malicious code.\n\n\n<b>Example 2:</b> The following JSP code segment reads an employee ID, <span class=\"code\">eid</span>, from an HTTP request and displays it to the user.\n\n<span class=\"code\">\n&lt;% String eid = request.getParameter(\"eid\"); %&gt;\n...\nEmployee ID: &lt;%= eid %&gt;</span>\n\n\nAs in <span class=\"code\">Example 1</span>, this code operates correctly if <span class=\"code\">eid</span> contains only standard alphanumeric text. If <span class=\"code\">eid</span> has a value that includes metacharacters or source code, then the code is executed by the web browser as it displays the HTTP response.\n\nInitially this might not appear to be much of a vulnerability. After all, why would someone enter a URL which causes malicious code to run on their own computer? The real danger is that an attacker will create the malicious URL, then use email or social engineering tricks to lure victims into visiting a link to the URL. When victims click the link, they unwittingly reflect the malicious content through the vulnerable web application back to their own computers. This mechanism of exploiting vulnerable web applications is known as Reflected XSS.\n\nSome think that in the mobile environment, classic web application vulnerabilities, such as cross-site scripting, do not make sense -- why would the user attack themself? However, keep in mind that the essence of mobile platforms is applications that are downloaded from various sources and run alongside each other on the same device. The likelihood of running a piece of malware next to a banking application is high, which necessitates expanding the attack surface of mobile applications to include inter-process communication.\n\n<b>Example 3:</b> The following code enables JavaScript in Android's WebView (by default, JavaScript is disabled) and loads a page based on the value received from an Android intent.\n\n<span class=\"code\">\n...\n        WebView webview = (WebView) findViewById(R.id.webview);\n        webview.getSettings().setJavaScriptEnabled(true);\n        String url = this.getIntent().getExtras().getString(\"url\");\n        webview.loadUrl(url);\n...\n</span>\n\nIf the value of <span class=\"code\">url</span> starts with <span class=\"code\">javascript:</span>, JavaScript code that follows executes within the context of the web page inside WebView.\n\nAs the examples demonstrate, XSS vulnerabilities are caused by code that includes unvalidated data in an HTTP response. There are three vectors by which an XSS attack can reach a victim:\n\n- As in <span class=\"code\">Example 1</span>, the application stores dangerous data in a database or other trusted data store. The dangerous data is subsequently read back into the application and included in dynamic content. Persistent XSS exploits occur when an attacker injects dangerous content into a data store that is later read and included in dynamic content. From an attacker's perspective, the optimal place to inject malicious content is in an area that is displayed to either many users or particularly interesting users. Interesting users typically have elevated privileges in the application or interact with sensitive data that is valuable to the attacker. If one of these users executes malicious content, the attacker may be able to perform privileged operations on behalf of the user or gain access to sensitive data belonging to the user.\n\n- As in <span class=\"code\">Example 2</span>, data is read directly from the HTTP request and reflected back in the HTTP response. Reflected XSS exploits occur when an attacker causes a user to supply dangerous content to a vulnerable web application, which is then reflected back to the user and executed by the web browser. The most common mechanism for delivering malicious content is to include it as a parameter in a URL that is posted publicly or emailed directly to victims. URLs constructed in this manner constitute the core of many phishing schemes, whereby an attacker convinces victims to visit a URL that refers to a vulnerable site. After the site reflects the attacker's content back to the user, the content is executed and proceeds to transfer private information, such as cookies that may include session information, from the user's machine to the attacker or perform other nefarious activities.\n\n- As in <span class=\"code\">Example 3</span>, a source outside the application stores dangerous data in a database or other data store, and the dangerous data is subsequently read back into the application as trusted data and included in dynamic content.\n\n",
+                        "issue_instance_id": "824695FDAD73644D118E3DED7655EF79",
+                        "issue_status": "Unreviewed",
+                        "likelihood": 5,
+                        "line_number": 1101,
+                        "primary_rule_guid": "83E41F3E-2332-4C46-85D2-6A85E917B3000",
+                        "primary_tag": null
+                    },
+                    {
+                        "_href": "https://www.zeronorth.io/api/v1/projectVersions/42/issues/29560",
+                        "_raw_id": 29560,
+                        "abstract": "The method batdetails() in batController.java sends unvalidated data to a web browser on line 1138, which can result in the browser executing malicious code.\n\n\n",
+                        "audited": false,
+                        "confidence": 5,
+                        "file_name": "hawkController.java",
+                        "full_file_name": "workspace/src/com/customer/AppX/controller/hawkController.java",
+                        "hasComments": false,
+                        "issue_description": "Cross-site scripting (XSS) vulnerabilities occur when:\n\n1. Data enters a web application through an untrusted source. In the case of persistent (also known as stored) XSS, the untrusted source is typically a database or other back-end data store, while in the case of reflected XSS it is typically a web request.\n\n\nIn this case, the data enters at <a href=\"event:file=workspace/src/com/customer/AppX/test/battest.java&amp;lineNo=110\" rel=\"nofollow\">queryForList()</a> in battest.java at line 110.\n\n2. The data is included in dynamic content that is sent to a web user without validation.\n\nThe malicious content sent to the web browser often takes the form of a segment of JavaScript, but can also include HTML, Flash or any other type of code that the browser executes. The variety of attacks based on XSS is almost limitless, but they commonly include transmitting private data like cookies or other session information to the attacker, redirecting the victim to web content controlled by the attacker, or performing other malicious operations on the user's machine under the guise of the vulnerable site.\n\n\n<b>Example 1:</b> The following JSP code segment queries a database for an employee with a given ID and prints the corresponding employee's name.\n\n<span class=\"code\">\n&lt;%...\nStatement stmt = conn.createStatement();\nResultSet rs = stmt.executeQuery(\"select * from emp where id=\"+eid);\nif (rs != null) {\n   rs.next();\n   String name = rs.getString(\"name\");\n}\n%&gt;\n\nEmployee Name: &lt;%= name %&gt;\n</span>\n\n\nThis code functions correctly when the values of <span class=\"code\">name</span> are well-behaved, but it does nothing to prevent exploits if they are not. This code can appear less dangerous because the value of <span class=\"code\">name</span> is read from a database, whose contents are apparently managed by the application. However, if the value of <span class=\"code\">name</span> originates from user-supplied data, then the database can be a conduit for malicious content. Without proper input validation on all data stored in the database, an attacker may execute malicious commands in the user's web browser. This type of exploit, known as Persistent (or Stored) XSS, is particularly insidious because the indirection caused by the data store makes it more difficult to identify the threat and increases the possibility that the attack will affect multiple users. XSS got its start in this form with web sites that offered a \"guestbook\" to visitors. Attackers would include JavaScript in their guestbook entries, and all subsequent visitors to the guestbook page would execute the malicious code.\n\n\n<b>Example 2:</b> The following JSP code segment reads an employee ID, <span class=\"code\">eid</span>, from an HTTP request and displays it to the user.\n\n<span class=\"code\">\n&lt;% String eid = request.getParameter(\"eid\"); %&gt;\n...\nEmployee ID: &lt;%= eid %&gt;</span>\n\n\nAs in <span class=\"code\">Example 1</span>, this code operates correctly if <span class=\"code\">eid</span> contains only standard alphanumeric text. If <span class=\"code\">eid</span> has a value that includes metacharacters or source code, then the code is executed by the web browser as it displays the HTTP response.\n\nInitially this might not appear to be much of a vulnerability. After all, why would someone enter a URL which causes malicious code to run on their own computer? The real danger is that an attacker will create the malicious URL, then use email or social engineering tricks to lure victims into visiting a link to the URL. When victims click the link, they unwittingly reflect the malicious content through the vulnerable web application back to their own computers. This mechanism of exploiting vulnerable web applications is known as Reflected XSS.\n\nSome think that in the mobile environment, classic web application vulnerabilities, such as cross-site scripting, do not make sense -- why would the user attack themself? However, keep in mind that the essence of mobile platforms is applications that are downloaded from various sources and run alongside each other on the same device. The likelihood of running a piece of malware next to a banking application is high, which necessitates expanding the attack surface of mobile applications to include inter-process communication.\n\n<b>Example 3:</b> The following code enables JavaScript in Android's WebView (by default, JavaScript is disabled) and loads a page based on the value received from an Android intent.\n\n<span class=\"code\">\n...\n        WebView webview = (WebView) findViewById(R.id.webview);\n        webview.getSettings().setJavaScriptEnabled(true);\n        String url = this.getIntent().getExtras().getString(\"url\");\n        webview.loadUrl(url);\n...\n</span>\n\nIf the value of <span class=\"code\">url</span> starts with <span class=\"code\">javascript:</span>, JavaScript code that follows executes within the context of the web page inside WebView.\n\nAs the examples demonstrate, XSS vulnerabilities are caused by code that includes unvalidated data in an HTTP response. There are three vectors by which an XSS attack can reach a victim:\n\n- As in <span class=\"code\">Example 1</span>, the application stores dangerous data in a database or other trusted data store. The dangerous data is subsequently read back into the application and included in dynamic content. Persistent XSS exploits occur when an attacker injects dangerous content into a data store that is later read and included in dynamic content. From an attacker's perspective, the optimal place to inject malicious content is in an area that is displayed to either many users or particularly interesting users. Interesting users typically have elevated privileges in the application or interact with sensitive data that is valuable to the attacker. If one of these users executes malicious content, the attacker may be able to perform privileged operations on behalf of the user or gain access to sensitive data belonging to the user.\n\n- As in <span class=\"code\">Example 2</span>, data is read directly from the HTTP request and reflected back in the HTTP response. Reflected XSS exploits occur when an attacker causes a user to supply dangerous content to a vulnerable web application, which is then reflected back to the user and executed by the web browser. The most common mechanism for delivering malicious content is to include it as a parameter in a URL that is posted publicly or emailed directly to victims. URLs constructed in this manner constitute the core of many phishing schemes, whereby an attacker convinces victims to visit a URL that refers to a vulnerable site. After the site reflects the attacker's content back to the user, the content is executed and proceeds to transfer private information, such as cookies that may include session information, from the user's machine to the attacker or perform other nefarious activities.\n\n- As in <span class=\"code\">Example 3</span>, a source outside the application stores dangerous data in a database or other data store, and the dangerous data is subsequently read back into the application as trusted data and included in dynamic content.\n\n",
+                        "issue_instance_id": "8C53EFD98B53381A269BE2E4BE69B2FC",
+                        "issue_status": "Unreviewed",
+                        "likelihood": 5,
+                        "line_number": 1138,
+                        "primary_rule_guid": "83E41F3E-2332-4C46-85D2-6A85E917B3000",
+                        "primary_tag": null
+                    }
+                ]
+            },
+            {
+                "key": "project_version_id",
+                "value": 42
+            },
+            {
+                "key": "project_version_name",
+                "value": null
+            },
+            {
+                "key": "revision",
+                "value": 0
+            },
+            {
+                "key": "folder_id",
+                "value": 232
+            },
+            {
+                "key": "folder_guid",
+                "value": "54362046-6cd7-4d09-84db-50958b560180"
+            },
+            {
+                "key": "analyzer",
+                "value": "Data Flow"
+            },
+            {
+                "key": "kingdom",
+                "value": "Input Validation and Representation"
+            },
+            {
+                "key": "class_type",
+                "value": "Cross-Site Scripting"
+            },
+            {
+                "key": "sub_type",
+                "value": "Persistent"
+            },
+            {
+                "key": "friority",
+                "value": "Critical"
+            },
+            {
+                "key": "reviewed",
+                "value": null
+            },
+            {
+                "key": "external_bug_id",
+                "value": null
+            },
+            {
+                "key": "has_attachments",
+                "value": false
+            },
+            {
+                "key": "has_correlated_issues",
+                "value": false
+            },
+            {
+                "key": "found_date",
+                "value": "2020-10-25T19:27:38.000+0000"
+            },
+            {
+                "key": "removed_date",
+                "value": null
+            },
+            {
+                "key": "display_engine_type",
+                "value": "SCA"
+            },
+            {
+                "key": "primary_tag_value_auto_applied",
+                "value": false
+            },
+            {
+                "key": "removed",
+                "value": false
+            },
+            {
+                "key": "suppressed",
+                "value": false
+            },
+            {
+                "key": "hidden",
+                "value": false
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "kingdom",
+                    "class_type",
+                    "sub_type"
+                ]
+            },
+            {
+                "key": "recommendations",
+                "value": "The solution to XSS is to ensure that validation occurs in the correct places and checks are made for the correct properties.\n\nBecause XSS vulnerabilities occur when an application includes malicious data in its output, one logical approach is to validate data immediately before it leaves the application. However, because web applications often have complex and intricate code for generating dynamic content, this method is prone to errors of omission (missing validation). An effective way to mitigate this risk is to also perform input validation for XSS.\n\nWeb applications must validate their input to prevent other vulnerabilities, such as SQL injection, so augmenting an application's existing input validation mechanism to include checks for XSS is generally relatively easy. Despite its value, input validation for XSS does not take the place of rigorous output validation. An application might accept input through a shared data store or other trusted source, and that data store might accept input from a source that does not perform adequate input validation. Therefore, the application cannot implicitly rely on the safety of this or any other data. This means that the best way to prevent XSS vulnerabilities is to validate everything that enters the application and leaves the application destined for the user.\n\nThe most secure approach to validation for XSS is to create an allow list of safe characters that are permitted to appear in HTTP content and accept input composed exclusively of characters in the approved set. For example, a valid username might only include alphanumeric characters or a phone number might only include digits 0-9. However, this solution is often infeasible in web applications because many characters that have special meaning to the browser must be considered valid input after they are encoded, such as a web design bulletin board that must accept HTML fragments from its users.\n\nA more flexible, but less secure approach is to implement a deny list, which selectively rejects or escapes potentially dangerous characters before using the input. To form such a list, you first need to understand the set of characters that hold special meaning for web browsers. Although the HTML standard defines what characters have special meaning, many web browsers try to correct common mistakes in HTML and might treat other characters as special in certain contexts, which is why we do not encourage the use of deny lists as a means to prevent XSS. The CERT(R) Coordination Center at the Software Engineering Institute at Carnegie Mellon University provides the following details about special characters in various contexts [1]:\n\nIn the content of a block-level element (in the middle of a paragraph of text):\n\n- \"&lt;\" is special because it introduces a tag.\n\n- \"&amp;\" is special because it introduces a character entity.\n\n- \"&gt;\" is special because some browsers treat it as special, on the assumption that the author of the page intended to include an opening \"&lt;\", but omitted it in error.\n\nThe following principles apply to attribute values:\n\n- In attribute values enclosed with double quotes, the double quotes are special because they mark the end of the attribute value.\n\n- In attribute values enclosed with single quote, the single quotes are special because they mark the end of the attribute value.\n\n- In attribute values without any quotes, white-space characters, such as space and tab, are special.\n\n- \"&amp;\" is special when used with certain attributes, because it introduces a character entity.\n\nIn URLs, for example, a search engine might provide a link within the results page that the user can click to re-run the search. This can be implemented by encoding the search query inside the URL, which introduces additional special characters:\n\n- Space, tab, and new line are special because they mark the end of the URL.\n\n- \"&amp;\" is special because it either introduces a character entity or separates CGI parameters.\n\n- Non-ASCII characters (that is, everything greater than 127 in the ISO-8859-1 encoding) are not allowed in URLs, so they are considered to be special in this context.\n\n- The \"%\" symbol must be filtered from input anywhere parameters encoded with HTTP escape sequences are decoded by server-side code. For example, \"%\" must be filtered if input such as \"%68%65%6C%6C%6F\" becomes \"hello\" when it appears on the web page in question.\n\n\nWithin the body of a &lt;SCRIPT&gt; &lt;/SCRIPT&gt;:\n\n- Semicolons, parentheses, curly braces, and new line characters should be filtered out in situations where text could be inserted directly into a pre-existing script tag.\n\nServer-side scripts:\n\n- Server-side scripts that convert any exclamation characters (!) in input to double-quote characters (\") on output might require additional filtering.\n\nOther possibilities:\n\n- If an attacker submits a request in UTF-7, the special character '&lt;' appears as '+ADw-' and might bypass filtering. If the output is included in a page that does not explicitly specify an encoding format, then some browsers try to intelligently identify the encoding based on the content (in this case, UTF-7).\n\nAfter you identify the correct points in an application to perform validation for XSS attacks and what special characters the validation should consider, the next challenge is to identify how your validation handles special characters. If special characters are not considered valid input to the application, then you can reject any input that contains special characters as invalid. A second option in this situation is to remove special characters with filtering. However, filtering has the side effect of changing any visual representation of the filtered content and might be unacceptable in circumstances where the integrity of the input must be preserved for display.\n\nIf input containing special characters must be accepted and displayed accurately, validation must encode any special characters to remove their significance. A complete list of ISO 8859-1 encoded values for special characters is provided as part of the official HTML specification [2].\n\nMany application servers attempt to limit an application's exposure to cross-site scripting vulnerabilities by providing implementations for the functions responsible for setting certain specific HTTP response content that perform validation for the characters essential to a cross-site scripting attack. Do not rely on the server running your application to make it secure. When an application is developed there are no guarantees about what application servers it will run on during its lifetime. As standards and known exploits evolve, there are no guarantees that application servers will also stay in sync.\n\n\n"
+            },
+            {
+                "key": "references",
+                "value": [
+                    "[1] Understanding Malicious Content Mitigation for Web Developers, CERT, <a href=\"event:loc=https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=496719#9\" rel=\"nofollow\">https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=496719#9</a>",
+                    "[2] HTML 4.01 Specification, W3, <a href=\"event:loc=https://www.w3.org/TR/html401/sgml/entities.html#h-24.2\" rel=\"nofollow\">https://www.w3.org/TR/html401/sgml/entities.html#h-24.2</a>",
+                    "[3] Tongbo Luo, Hao Hao, Wenliang Du, Yifei Wang, and Heng Yin, Attacks on WebView in the Android System, <a href=\"event:loc=http://www.cis.syr.edu/~wedu/Research/paper/webview_acsac2011.pdf\" rel=\"nofollow\">http://www.cis.syr.edu/~wedu/Research/paper/webview_acsac2011.pdf</a>",
+                    "[4] Erika Chin and David Wagner, Bifocals: Analyzing WebView Vulnerabilities in Android Applications, <a href=\"event:loc=https://people.eecs.berkeley.edu/~daw/papers/bifocals-wisa13.pdf\" rel=\"nofollow\">https://people.eecs.berkeley.edu/~daw/papers/bifocals-wisa13.pdf</a>",
+                    "[5] INJECT-3: XML and HTML generation requires care, Oracle, <a href=\"event:loc=http://www.oracle.com/technetwork/java/seccodeguide-139067.html#3\" rel=\"nofollow\">http://www.oracle.com/technetwork/java/seccodeguide-139067.html#3</a>",
+                    "[6] INPUT-1: Validate inputs, Oracle, <a href=\"event:loc=http://www.oracle.com/technetwork/java/seccodeguide-139067.html#5\" rel=\"nofollow\">http://www.oracle.com/technetwork/java/seccodeguide-139067.html#5</a>",
+                    "[7] Standards Mapping - Common Weakness Enumeration, CWE ID 79, CWE ID 80",
+                    "[8] Standards Mapping - Common Weakness Enumeration Top 25 2019, [2] CWE ID 079",
+                    "[9] Standards Mapping - DISA Control Correlation Identifier Version 2, CCI-001310, CCI-002754",
+                    "[10] Standards Mapping - FIPS200, SI",
+                    "[11] Standards Mapping - General Data Protection Regulation, Indirect Access to Sensitive Data",
+                    "[12] Standards Mapping - NIST Special Publication 800-53 Revision 4, SI-10 Information Input Validation (P1)",
+                    "[13] Standards Mapping - OWASP Application Security Verification Standard 4.0, 5.3.3 Output Encoding and Injection Prevention Requirements, 5.3.6 Output Encoding and Injection Prevention Requirements",
+                    "[14] Standards Mapping - OWASP Mobile Top 10 Risks 2014, M7 Client Side Injection",
+                    "[15] Standards Mapping - OWASP Top 10 2004, A4 Cross Site Scripting",
+                    "[16] Standards Mapping - OWASP Top 10 2007, A1 Cross Site Scripting (XSS)",
+                    "[17] Standards Mapping - OWASP Top 10 2010, A2 Cross-Site Scripting (XSS)",
+                    "[18] Standards Mapping - OWASP Top 10 2013, A3 Cross-Site Scripting (XSS)",
+                    "[19] Standards Mapping - OWASP Top 10 2017, A7 Cross-Site Scripting (XSS)",
+                    "[20] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1, Requirement 6.5.4",
+                    "[21] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2, Requirement 6.3.1.1, Requirement 6.5.1",
+                    "[22] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0, Requirement 6.5.7",
+                    "[23] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0, Requirement 6.5.7",
+                    "[24] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1, Requirement 6.5.7",
+                    "[25] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2, Requirement 6.5.7",
+                    "[26] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1, Requirement 6.5.7",
+                    "[27] Standards Mapping - Payment Card Industry Software Security Framework 1.0, Control Objective 4.2 - Critical Asset Protection",
+                    "[28] Standards Mapping - SANS Top 25 2009, Insecure Interaction - CWE ID 079",
+                    "[29] Standards Mapping - SANS Top 25 2010, Insecure Interaction - CWE ID 079",
+                    "[30] Standards Mapping - SANS Top 25 2011, Insecure Interaction - CWE ID 079",
+                    "[31] Standards Mapping - Security Technical Implementation Guide Version 3.1, APP3510 CAT I, APP3580 CAT I",
+                    "[32] Standards Mapping - Security Technical Implementation Guide Version 3.10, APP3510 CAT I, APP3580 CAT I",
+                    "[33] Standards Mapping - Security Technical Implementation Guide Version 3.4, APP3510 CAT I, APP3580 CAT I",
+                    "[34] Standards Mapping - Security Technical Implementation Guide Version 3.5, APP3510 CAT I, APP3580 CAT I",
+                    "[35] Standards Mapping - Security Technical Implementation Guide Version 3.6, APP3510 CAT I, APP3580 CAT I",
+                    "[36] Standards Mapping - Security Technical Implementation Guide Version 3.7, APP3510 CAT I, APP3580 CAT I",
+                    "[37] Standards Mapping - Security Technical Implementation Guide Version 3.9, APP3510 CAT I, APP3580 CAT I",
+                    "[38] Standards Mapping - Security Technical Implementation Guide Version 4.1, APSC-DV-002490 CAT I, APSC-DV-002560 CAT I",
+                    "[39] Standards Mapping - Security Technical Implementation Guide Version 4.10, APSC-DV-002490 CAT I, APSC-DV-002560 CAT I",
+                    "[40] Standards Mapping - Security Technical Implementation Guide Version 4.11, APSC-DV-002490 CAT I, APSC-DV-002560 CAT I",
+                    "[41] Standards Mapping - Security Technical Implementation Guide Version 4.2, APSC-DV-002490 CAT I, APSC-DV-002560 CAT I",
+                    "[42] Standards Mapping - Security Technical Implementation Guide Version 4.3, APSC-DV-002490 CAT I, APSC-DV-002560 CAT I",
+                    "[43] Standards Mapping - Security Technical Implementation Guide Version 4.4, APSC-DV-002490 CAT I, APSC-DV-002560 CAT I",
+                    "[44] Standards Mapping - Security Technical Implementation Guide Version 4.5, APSC-DV-002490 CAT I, APSC-DV-002560 CAT I",
+                    "[45] Standards Mapping - Security Technical Implementation Guide Version 4.6, APSC-DV-002490 CAT I, APSC-DV-002560 CAT I",
+                    "[46] Standards Mapping - Security Technical Implementation Guide Version 4.7, APSC-DV-002490 CAT I, APSC-DV-002560 CAT I",
+                    "[47] Standards Mapping - Security Technical Implementation Guide Version 4.8, APSC-DV-002490 CAT I, APSC-DV-002560 CAT I",
+                    "[48] Standards Mapping - Security Technical Implementation Guide Version 4.9, APSC-DV-002490 CAT I, APSC-DV-002560 CAT I",
+                    "[49] Standards Mapping - Web Application Security Consortium 24 + 2, Cross-Site Scripting",
+                    "[50] Standards Mapping - Web Application Security Consortium Version 2.00, Cross-Site Scripting (WASC-08)"
+                ]
+            },
+            {
+                "key": "_raw_issuename",
+                "value": "Cross-Site Scripting: Persistent"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": 5,
+        "ip": null,
+        "issueDescription": "Cross-site scripting (XSS) vulnerabilities occur when:\n\n1. Data enters a web application through an untrusted source. In the case of persistent (also known as stored) XSS, the untrusted source is typically a database or other back-end data store, while in the case of reflected XSS it is typically a web request.\n\n\nIn this case, the data enters at <a href=\"event:file=workspace/src/com/customer/AppX/dao/testModel.java&amp;lineNo=140\" rel=\"nofollow\">queryForList()</a> in testModel.java at line 140.\n\n2. The data is included in dynamic content that is sent to a web user without validation.\n\nThe malicious content sent to the web browser often takes the form of a segment of JavaScript, but can also include HTML, Flash or any other type of code that the browser executes. The variety of attacks based on XSS is almost limitless, but they commonly include transmitting private data like cookies or other session information to the attacker, redirecting the victim to web content controlled by the attacker, or performing other malicious operations on the user's machine under the guise of the vulnerable site.\n\n\n<b>Example 1:</b> The following JSP code segment queries a database for an employee with a given ID and prints the corresponding employee's name.\n\n<span class=\"code\">\n&lt;%...\nStatement stmt = conn.createStatement();\nResultSet rs = stmt.executeQuery(\"select * from emp where id=\"+eid);\nif (rs != null) {\n   rs.next();\n   String name = rs.getString(\"name\");\n}\n%&gt;\n\nEmployee Name: &lt;%= name %&gt;\n</span>\n\n\nThis code functions correctly when the values of <span class=\"code\">name</span> are well-behaved, but it does nothing to prevent exploits if they are not. This code can appear less dangerous because the value of <span class=\"code\">name</span> is read from a database, whose contents are apparently managed by the application. However, if the value of <span class=\"code\">name</span> originates from user-supplied data, then the database can be a conduit for malicious content. Without proper input validation on all data stored in the database, an attacker may execute malicious commands in the user's web browser. This type of exploit, known as Persistent (or Stored) XSS, is particularly insidious because the indirection caused by the data store makes it more difficult to identify the threat and increases the possibility that the attack will affect multiple users. XSS got its start in this form with web sites that offered a \"guestbook\" to visitors. Attackers would include JavaScript in their guestbook entries, and all subsequent visitors to the guestbook page would execute the malicious code.\n\n\n<b>Example 2:</b> The following JSP code segment reads an employee ID, <span class=\"code\">eid</span>, from an HTTP request and displays it to the user.\n\n<span class=\"code\">\n&lt;% String eid = request.getParameter(\"eid\"); %&gt;\n...\nEmployee ID: &lt;%= eid %&gt;</span>\n\n\nAs in <span class=\"code\">Example 1</span>, this code operates correctly if <span class=\"code\">eid</span> contains only standard alphanumeric text. If <span class=\"code\">eid</span> has a value that includes metacharacters or source code, then the code is executed by the web browser as it displays the HTTP response.\n\nInitially this might not appear to be much of a vulnerability. After all, why would someone enter a URL which causes malicious code to run on their own computer? The real danger is that an attacker will create the malicious URL, then use email or social engineering tricks to lure victims into visiting a link to the URL. When victims click the link, they unwittingly reflect the malicious content through the vulnerable web application back to their own computers. This mechanism of exploiting vulnerable web applications is known as Reflected XSS.\n\nSome think that in the mobile environment, classic web application vulnerabilities, such as cross-site scripting, do not make sense -- why would the user attack themself? However, keep in mind that the essence of mobile platforms is applications that are downloaded from various sources and run alongside each other on the same device. The likelihood of running a piece of malware next to a banking application is high, which necessitates expanding the attack surface of mobile applications to include inter-process communication.\n\n<b>Example 3:</b> The following code enables JavaScript in Android's WebView (by default, JavaScript is disabled) and loads a page based on the value received from an Android intent.\n\n<span class=\"code\">\n...\n        WebView webview = (WebView) findViewById(R.id.webview);\n        webview.getSettings().setJavaScriptEnabled(true);\n        String url = this.getIntent().getExtras().getString(\"url\");\n        webview.loadUrl(url);\n...\n</span>\n\nIf the value of <span class=\"code\">url</span> starts with <span class=\"code\">javascript:</span>, JavaScript code that follows executes within the context of the web page inside WebView.\n\nAs the examples demonstrate, XSS vulnerabilities are caused by code that includes unvalidated data in an HTTP response. There are three vectors by which an XSS attack can reach a victim:\n\n- As in <span class=\"code\">Example 1</span>, the application stores dangerous data in a database or other trusted data store. The dangerous data is subsequently read back into the application and included in dynamic content. Persistent XSS exploits occur when an attacker injects dangerous content into a data store that is later read and included in dynamic content. From an attacker's perspective, the optimal place to inject malicious content is in an area that is displayed to either many users or particularly interesting users. Interesting users typically have elevated privileges in the application or interact with sensitive data that is valuable to the attacker. If one of these users executes malicious content, the attacker may be able to perform privileged operations on behalf of the user or gain access to sensitive data belonging to the user.\n\n- As in <span class=\"code\">Example 2</span>, data is read directly from the HTTP request and reflected back in the HTTP response. Reflected XSS exploits occur when an attacker causes a user to supply dangerous content to a vulnerable web application, which is then reflected back to the user and executed by the web browser. The most common mechanism for delivering malicious content is to include it as a parameter in a URL that is posted publicly or emailed directly to victims. URLs constructed in this manner constitute the core of many phishing schemes, whereby an attacker convinces victims to visit a URL that refers to a vulnerable site. After the site reflects the attacker's content back to the user, the content is executed and proceeds to transfer private information, such as cookies that may include session information, from the user's machine to the attacker or perform other nefarious activities.\n\n- As in <span class=\"code\">Example 3</span>, a source outside the application stores dangerous data in a database or other data store, and the dangerous data is subsequently read back into the application as trusted data and included in dynamic content.\n\n",
+        "issueName": "Cross-Site Scripting_Persistent",
+        "issueType": "STATIC",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Input Validation and Representation//Cross-Site Scripting//Persistent",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortify",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": [
+            "1. The Fortify Secure Coding Rulepacks warn about SQL Injection and Access Control: Database issues when untrusted data is written to a database and also treat the database as a source of untrusted data, which can lead to XSS vulnerabilities. If the database is a trusted resource in your environment, use custom filters to filter out dataflow issues that include the DATABASE taint flag or originate from database sources. Nonetheless, it is often still a good idea to validate everything read from the database.",
+            "2. Even though URL encoding untrusted data protects against many XSS attacks, some browsers (specifically, Internet Explorer 6 and 7 and possibly others) automatically decode content at certain locations within the Document Object Model (DOM) prior to passing it to the JavaScript interpreter. To reflect this danger, the rulepacks no longer treat URL encoding routines as sufficient to protect against cross-site scripting. Data values that are URL encoded and subsequently output will cause Fortify to report Cross-Site Scripting: Poor Validation vulnerabilities.",
+            "3. Fortify RTA adds protection against this category."
+        ],
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": 219,
+        "scanSeverity": null,
+        "scanStatus": "NEW",
+        "scanTool": "fortify",
+        "scanType": "SCA",
+        "scenarioId": "8207742350716442876",
+        "severity": 4.0,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_href": "https://www.zeronorth.io/api/v1/projectVersions/42/issues/29020",
+                        "_raw_id": 29020,
+                        "abstract": "The method SearchByDate() in file1.java sends unvalidated data to a web browser on line 168, which can result in the browser executing malicious code.\n\n\n",
+                        "audited": false,
+                        "confidence": 5,
+                        "file_name": "HomeController.java",
+                        "full_file_name": "workspace/src/com/customer/AppX/controller/HomeController.java",
+                        "hasComments": false,
+                        "issue_description": "Cross-site scripting (XSS) vulnerabilities occur when:\n\n1. Data enters a web application through an untrusted source. In the case of reflected XSS, the untrusted source is typically a web request, while in the case of persisted (also known as stored) XSS it is typically a database or other back-end data store.\n\n\nIn this case, the data enters at <a href=\"event:file=workspace/src/com/customer/appX/file1.java&amp;lineNo=136\" rel=\"nofollow\">portfolioSearchHandler()</a> in file1.java at line 136.\n\n2. The data is included in dynamic content that is sent to a web user without validation.\n\nThe malicious content sent to the web browser often takes the form of a segment of JavaScript, but can also include HTML, Flash or any other type of code that the browser executes. The variety of attacks based on XSS is almost limitless, but they commonly include transmitting private data like cookies or other session information to the attacker, redirecting the victim to web content controlled by the attacker, or performing other malicious operations on the user's machine under the guise of the vulnerable site.\n\n\n<b>Example 1:</b> The following JSP code segment reads an employee ID, <span class=\"code\">eid</span>, from an HTTP request and displays it to the user.\n\n<span class=\"code\">\n&lt;% String eid = request.getParameter(\"eid\"); %&gt;\n...\nEmployee ID: &lt;%= eid %&gt;\n</span>\n\n\nThe code in this example operates correctly if <span class=\"code\">eid</span> contains only standard alphanumeric text. If <span class=\"code\">eid</span> has a value that includes metacharacters or source code, then the code is executed by the web browser as it displays the HTTP response.\n\nInitially this might not appear to be much of a vulnerability. After all, why would someone enter a URL which causes malicious code to run on their own computer? The real danger is that an attacker will create the malicious URL, then use email or social engineering tricks to lure victims into visiting a link to the URL. When victims click the link, they unwittingly reflect the malicious content through the vulnerable web application back to their own computers. This mechanism of exploiting vulnerable web applications is known as Reflected XSS.\n\n\n<b>Example 2:</b> The following JSP code segment queries a database for an employee with a given ID and prints the corresponding employee's name.\n\n<span class=\"code\">\n&lt;%...\nStatement stmt = conn.createStatement();\nResultSet rs = stmt.executeQuery(\"select * from emp where id=\"+eid);\nif (rs != null) {\n   rs.next();\n   String name = rs.getString(\"name\");\n}\n%&gt;\n\nEmployee Name: &lt;%= name %&gt;\n</span>\n\n\nAs in <span class=\"code\">Example 1</span>, this code functions correctly when the values of <span class=\"code\">name</span> are well-behaved, but it does nothing to prevent exploits if they are not. Again, this code can appear less dangerous because the value of <span class=\"code\">name</span> is read from a database, whose contents are apparently managed by the application. However, if the value of <span class=\"code\">name</span> originates from user-supplied data, then the database can be a conduit for malicious content. Without proper input validation on all data stored in the database, an attacker may execute malicious commands in the user's web browser. This type of exploit, known as Persistent (or Stored) XSS, is particularly insidious because the indirection caused by the data store makes it more difficult to identify the threat and increases the possibility that the attack will affect multiple users. XSS got its start in this form with web sites that offered a \"guestbook\" to visitors. Attackers would include JavaScript in their guestbook entries, and all subsequent visitors to the guestbook page would execute the malicious code.\n\nSome think that in the mobile environment, classic web application vulnerabilities, such as cross-site scripting, do not make sense -- why would the user attack themself? However, keep in mind that the essence of mobile platforms is applications that are downloaded from various sources and run alongside each other on the same device. The likelihood of running a piece of malware next to a banking application is high, which necessitates expanding the attack surface of mobile applications to include inter-process communication.\n\n<b>Example 3:</b> The following code enables JavaScript in Android's WebView (by default, JavaScript is disabled) and loads a page based on the value received from an Android intent.\n\n<span class=\"code\">\n...\n        WebView webview = (WebView) findViewById(R.id.webview);\n        webview.getSettings().setJavaScriptEnabled(true);\n        String url = this.getIntent().getExtras().getString(\"url\");\n        webview.loadUrl(url);\n...\n</span>\n\nIf the value of <span class=\"code\">url</span> starts with <span class=\"code\">javascript:</span>, JavaScript code that follows executes within the context of the web page inside WebView.\n\nAs the examples demonstrate, XSS vulnerabilities are caused by code that includes unvalidated data in an HTTP response. There are three vectors by which an XSS attack can reach a victim:\n\n- As in <span class=\"code\">Example 1</span>, data is read directly from the HTTP request and reflected back in the HTTP response. Reflected XSS exploits occur when an attacker causes a user to supply dangerous content to a vulnerable web application, which is then reflected back to the user and executed by the web browser. The most common mechanism for delivering malicious content is to include it as a parameter in a URL that is posted publicly or emailed directly to victims. URLs constructed in this manner constitute the core of many phishing schemes, whereby an attacker convinces victims to visit a URL that refers to a vulnerable site. After the site reflects the attacker's content back to the user, the content is executed and proceeds to transfer private information, such as cookies that may include session information, from the user's machine to the attacker or perform other nefarious activities.\n\n- As in <span class=\"code\">Example 2</span>, the application stores dangerous data in a database or other trusted data store. The dangerous data is subsequently read back into the application and included in dynamic content. Persistent XSS exploits occur when an attacker injects dangerous content into a data store that is later read and included in dynamic content. From an attacker's perspective, the optimal place to inject malicious content is in an area that is displayed to either many users or particularly interesting users. Interesting users typically have elevated privileges in the application or interact with sensitive data that is valuable to the attacker. If one of these users executes malicious content, the attacker may be able to perform privileged operations on behalf of the user or gain access to sensitive data belonging to the user.\n\n- As in <span class=\"code\">Example 3</span>, a source outside the application stores dangerous data in a database or other data store, and the dangerous data is subsequently read back into the application as trusted data and included in dynamic content.\n\n",
+                        "issue_instance_id": "3F7856D70807A652688581D492E2CAE1",
+                        "issue_status": "Unreviewed",
+                        "likelihood": 5,
+                        "line_number": 168,
+                        "primary_rule_guid": "44F68395-73CB-4912-942C-98DC34FA90D80",
+                        "primary_tag": null
+                    },
+                    {
+                        "_href": "https://www.zeronorth.io/api/v1/projectVersions/42/issues/29083",
+                        "_raw_id": 29083,
+                        "abstract": "The method contactsSearchByDateHandler() in homestuff.java sends unvalidated data to a web browser on line 168, which can result in the browser executing malicious code.\n\n\n",
+                        "audited": false,
+                        "confidence": 5,
+                        "file_name": "HomeController.java",
+                        "full_file_name": "workspace/src/com/customer/AppX/controller/HomeController.java",
+                        "hasComments": false,
+                        "issue_description": "Cross-site scripting (XSS) vulnerabilities occur when:\n\n1. Data enters a web application through an untrusted source. In the case of reflected XSS, the untrusted source is typically a web request, while in the case of persisted (also known as stored) XSS it is typically a database or other back-end data store.\n\n\nIn this case, the data enters at <a href=\"event:file=workspace/src/com/customer/AppX/controller/homestuff.java&amp;lineNo=158\" rel=\"nofollow\">contactsSearchByDateHandler()</a> in homestuff.java at line 158.\n\n2. The data is included in dynamic content that is sent to a web user without validation.\n\nThe malicious content sent to the web browser often takes the form of a segment of JavaScript, but can also include HTML, Flash or any other type of code that the browser executes. The variety of attacks based on XSS is almost limitless, but they commonly include transmitting private data like cookies or other session information to the attacker, redirecting the victim to web content controlled by the attacker, or performing other malicious operations on the user's machine under the guise of the vulnerable site.\n\n\n<b>Example 1:</b> The following JSP code segment reads an employee ID, <span class=\"code\">eid</span>, from an HTTP request and displays it to the user.\n\n<span class=\"code\">\n&lt;% String eid = request.getParameter(\"eid\"); %&gt;\n...\nEmployee ID: &lt;%= eid %&gt;\n</span>\n\n\nThe code in this example operates correctly if <span class=\"code\">eid</span> contains only standard alphanumeric text. If <span class=\"code\">eid</span> has a value that includes metacharacters or source code, then the code is executed by the web browser as it displays the HTTP response.\n\nInitially this might not appear to be much of a vulnerability. After all, why would someone enter a URL which causes malicious code to run on their own computer? The real danger is that an attacker will create the malicious URL, then use email or social engineering tricks to lure victims into visiting a link to the URL. When victims click the link, they unwittingly reflect the malicious content through the vulnerable web application back to their own computers. This mechanism of exploiting vulnerable web applications is known as Reflected XSS.\n\n\n<b>Example 2:</b> The following JSP code segment queries a database for an employee with a given ID and prints the corresponding employee's name.\n\n<span class=\"code\">\n&lt;%...\nStatement stmt = conn.createStatement();\nResultSet rs = stmt.executeQuery(\"select * from emp where id=\"+eid);\nif (rs != null) {\n   rs.next();\n   String name = rs.getString(\"name\");\n}\n%&gt;\n\nEmployee Name: &lt;%= name %&gt;\n</span>\n\n\nAs in <span class=\"code\">Example 1</span>, this code functions correctly when the values of <span class=\"code\">name</span> are well-behaved, but it does nothing to prevent exploits if they are not. Again, this code can appear less dangerous because the value of <span class=\"code\">name</span> is read from a database, whose contents are apparently managed by the application. However, if the value of <span class=\"code\">name</span> originates from user-supplied data, then the database can be a conduit for malicious content. Without proper input validation on all data stored in the database, an attacker may execute malicious commands in the user's web browser. This type of exploit, known as Persistent (or Stored) XSS, is particularly insidious because the indirection caused by the data store makes it more difficult to identify the threat and increases the possibility that the attack will affect multiple users. XSS got its start in this form with web sites that offered a \"guestbook\" to visitors. Attackers would include JavaScript in their guestbook entries, and all subsequent visitors to the guestbook page would execute the malicious code.\n\nSome think that in the mobile environment, classic web application vulnerabilities, such as cross-site scripting, do not make sense -- why would the user attack themself? However, keep in mind that the essence of mobile platforms is applications that are downloaded from various sources and run alongside each other on the same device. The likelihood of running a piece of malware next to a banking application is high, which necessitates expanding the attack surface of mobile applications to include inter-process communication.\n\n<b>Example 3:</b> The following code enables JavaScript in Android's WebView (by default, JavaScript is disabled) and loads a page based on the value received from an Android intent.\n\n<span class=\"code\">\n...\n        WebView webview = (WebView) findViewById(R.id.webview);\n        webview.getSettings().setJavaScriptEnabled(true);\n        String url = this.getIntent().getExtras().getString(\"url\");\n        webview.loadUrl(url);\n...\n</span>\n\nIf the value of <span class=\"code\">url</span> starts with <span class=\"code\">javascript:</span>, JavaScript code that follows executes within the context of the web page inside WebView.\n\nAs the examples demonstrate, XSS vulnerabilities are caused by code that includes unvalidated data in an HTTP response. There are three vectors by which an XSS attack can reach a victim:\n\n- As in <span class=\"code\">Example 1</span>, data is read directly from the HTTP request and reflected back in the HTTP response. Reflected XSS exploits occur when an attacker causes a user to supply dangerous content to a vulnerable web application, which is then reflected back to the user and executed by the web browser. The most common mechanism for delivering malicious content is to include it as a parameter in a URL that is posted publicly or emailed directly to victims. URLs constructed in this manner constitute the core of many phishing schemes, whereby an attacker convinces victims to visit a URL that refers to a vulnerable site. After the site reflects the attacker's content back to the user, the content is executed and proceeds to transfer private information, such as cookies that may include session information, from the user's machine to the attacker or perform other nefarious activities.\n\n- As in <span class=\"code\">Example 2</span>, the application stores dangerous data in a database or other trusted data store. The dangerous data is subsequently read back into the application and included in dynamic content. Persistent XSS exploits occur when an attacker injects dangerous content into a data store that is later read and included in dynamic content. From an attacker's perspective, the optimal place to inject malicious content is in an area that is displayed to either many users or particularly interesting users. Interesting users typically have elevated privileges in the application or interact with sensitive data that is valuable to the attacker. If one of these users executes malicious content, the attacker may be able to perform privileged operations on behalf of the user or gain access to sensitive data belonging to the user.\n\n- As in <span class=\"code\">Example 3</span>, a source outside the application stores dangerous data in a database or other data store, and the dangerous data is subsequently read back into the application as trusted data and included in dynamic content.\n\n",
+                        "issue_instance_id": "4D7F4CEA4EE094068C522A76C56C8A9E",
+                        "issue_status": "Unreviewed",
+                        "likelihood": 5,
+                        "line_number": 168,
+                        "primary_rule_guid": "44F68395-73CB-4912-942C-98DC34FA90D80",
+                        "primary_tag": null
+                    }
+                ]
+            },
+            {
+                "key": "project_version_id",
+                "value": 42
+            },
+            {
+                "key": "project_version_name",
+                "value": null
+            },
+            {
+                "key": "revision",
+                "value": 0
+            },
+            {
+                "key": "folder_id",
+                "value": 232
+            },
+            {
+                "key": "folder_guid",
+                "value": "54362046-6cd7-4d09-84db-50958b560180"
+            },
+            {
+                "key": "analyzer",
+                "value": "Data Flow"
+            },
+            {
+                "key": "kingdom",
+                "value": "Input Validation and Representation"
+            },
+            {
+                "key": "class_type",
+                "value": "Cross-Site Scripting"
+            },
+            {
+                "key": "sub_type",
+                "value": "Reflected"
+            },
+            {
+                "key": "friority",
+                "value": "Critical"
+            },
+            {
+                "key": "reviewed",
+                "value": null
+            },
+            {
+                "key": "external_bug_id",
+                "value": null
+            },
+            {
+                "key": "has_attachments",
+                "value": false
+            },
+            {
+                "key": "has_correlated_issues",
+                "value": false
+            },
+            {
+                "key": "found_date",
+                "value": "2020-10-25T19:27:38.000+0000"
+            },
+            {
+                "key": "removed_date",
+                "value": null
+            },
+            {
+                "key": "display_engine_type",
+                "value": "SCA"
+            },
+            {
+                "key": "primary_tag_value_auto_applied",
+                "value": false
+            },
+            {
+                "key": "removed",
+                "value": false
+            },
+            {
+                "key": "suppressed",
+                "value": false
+            },
+            {
+                "key": "hidden",
+                "value": false
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "kingdom",
+                    "class_type",
+                    "sub_type"
+                ]
+            },
+            {
+                "key": "recommendations",
+                "value": "The solution to XSS is to ensure that validation occurs in the correct places and checks are made for the correct properties.\n\nBecause XSS vulnerabilities occur when an application includes malicious data in its output, one logical approach is to validate data immediately before it leaves the application. However, because web applications often have complex and intricate code for generating dynamic content, this method is prone to errors of omission (missing validation). An effective way to mitigate this risk is to also perform input validation for XSS.\n\nWeb applications must validate their input to prevent other vulnerabilities, such as SQL injection, so augmenting an application's existing input validation mechanism to include checks for XSS is generally relatively easy. Despite its value, input validation for XSS does not take the place of rigorous output validation. An application might accept input through a shared data store or other trusted source, and that data store might accept input from a source that does not perform adequate input validation. Therefore, the application cannot implicitly rely on the safety of this or any other data. This means that the best way to prevent XSS vulnerabilities is to validate everything that enters the application and leaves the application destined for the user.\n\nThe most secure approach to validation for XSS is to create an allow list of safe characters that are permitted to appear in HTTP content and accept input composed exclusively of characters in the approved set. For example, a valid username might only include alphanumeric characters or a phone number might only include digits 0-9. However, this solution is often infeasible in web applications because many characters that have special meaning to the browser must be considered valid input after they are encoded, such as a web design bulletin board that must accept HTML fragments from its users.\n\nA more flexible, but less secure approach is to implement a deny list, which selectively rejects or escapes potentially dangerous characters before using the input. To form such a list, you first need to understand the set of characters that hold special meaning for web browsers. Although the HTML standard defines what characters have special meaning, many web browsers try to correct common mistakes in HTML and might treat other characters as special in certain contexts, which is why we do not encourage the use of deny lists as a means to prevent XSS. The CERT(R) Coordination Center at the Software Engineering Institute at Carnegie Mellon University provides the following details about special characters in various contexts [1]:\n\nIn the content of a block-level element (in the middle of a paragraph of text):\n\n- \"&lt;\" is special because it introduces a tag.\n\n- \"&amp;\" is special because it introduces a character entity.\n\n- \"&gt;\" is special because some browsers treat it as special, on the assumption that the author of the page intended to include an opening \"&lt;\", but omitted it in error.\n\nThe following principles apply to attribute values:\n\n- In attribute values enclosed with double quotes, the double quotes are special because they mark the end of the attribute value.\n\n- In attribute values enclosed with single quote, the single quotes are special because they mark the end of the attribute value.\n\n- In attribute values without any quotes, white-space characters, such as space and tab, are special.\n\n- \"&amp;\" is special when used with certain attributes, because it introduces a character entity.\n\nIn URLs, for example, a search engine might provide a link within the results page that the user can click to re-run the search. This can be implemented by encoding the search query inside the URL, which introduces additional special characters:\n\n- Space, tab, and new line are special because they mark the end of the URL.\n\n- \"&amp;\" is special because it either introduces a character entity or separates CGI parameters.\n\n- Non-ASCII characters (that is, everything greater than 127 in the ISO-8859-1 encoding) are not allowed in URLs, so they are considered to be special in this context.\n\n- The \"%\" symbol must be filtered from input anywhere parameters encoded with HTTP escape sequences are decoded by server-side code. For example, \"%\" must be filtered if input such as \"%68%65%6C%6C%6F\" becomes \"hello\" when it appears on the web page in question.\n\n\nWithin the body of a &lt;SCRIPT&gt; &lt;/SCRIPT&gt;:\n\n- Semicolons, parentheses, curly braces, and new line characters should be filtered out in situations where text could be inserted directly into a pre-existing script tag.\n\nServer-side scripts:\n\n- Server-side scripts that convert any exclamation characters (!) in input to double-quote characters (\") on output might require additional filtering.\n\nOther possibilities:\n\n- If an attacker submits a request in UTF-7, the special character '&lt;' appears as '+ADw-' and might bypass filtering. If the output is included in a page that does not explicitly specify an encoding format, then some browsers try to intelligently identify the encoding based on the content (in this case, UTF-7).\n\nAfter you identify the correct points in an application to perform validation for XSS attacks and what special characters the validation should consider, the next challenge is to identify how your validation handles special characters. If special characters are not considered valid input to the application, then you can reject any input that contains special characters as invalid. A second option in this situation is to remove special characters with filtering. However, filtering has the side effect of changing any visual representation of the filtered content and might be unacceptable in circumstances where the integrity of the input must be preserved for display.\n\nIf input containing special characters must be accepted and displayed accurately, validation must encode any special characters to remove their significance. A complete list of ISO 8859-1 encoded values for special characters is provided as part of the official HTML specification [2].\n\nMany application servers attempt to limit an application's exposure to cross-site scripting vulnerabilities by providing implementations for the functions responsible for setting certain specific HTTP response content that perform validation for the characters essential to a cross-site scripting attack. Do not rely on the server running your application to make it secure. When an application is developed there are no guarantees about what application servers it will run on during its lifetime. As standards and known exploits evolve, there are no guarantees that application servers will also stay in sync.\n\n\n"
+            },
+            {
+                "key": "references",
+                "value": [
+                    "[1] Understanding Malicious Content Mitigation for Web Developers, CERT, <a href=\"event:loc=https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=496719#9\" rel=\"nofollow\">https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=496719#9</a>",
+                    "[2] HTML 4.01 Specification, W3, <a href=\"event:loc=https://www.w3.org/TR/html401/sgml/entities.html#h-24.2\" rel=\"nofollow\">https://www.w3.org/TR/html401/sgml/entities.html#h-24.2</a>",
+                    "[3] Tongbo Luo, Hao Hao, Wenliang Du, Yifei Wang, and Heng Yin, Attacks on WebView in the Android System, <a href=\"event:loc=http://www.cis.syr.edu/~wedu/Research/paper/webview_acsac2011.pdf\" rel=\"nofollow\">http://www.cis.syr.edu/~wedu/Research/paper/webview_acsac2011.pdf</a>",
+                    "[4] Erika Chin and David Wagner, Bifocals: Analyzing WebView Vulnerabilities in Android Applications, <a href=\"event:loc=https://people.eecs.berkeley.edu/~daw/papers/bifocals-wisa13.pdf\" rel=\"nofollow\">https://people.eecs.berkeley.edu/~daw/papers/bifocals-wisa13.pdf</a>",
+                    "[5] INJECT-3: XML and HTML generation requires care, Oracle, <a href=\"event:loc=http://www.oracle.com/technetwork/java/seccodeguide-139067.html#3\" rel=\"nofollow\">http://www.oracle.com/technetwork/java/seccodeguide-139067.html#3</a>",
+                    "[6] INPUT-1: Validate inputs, Oracle, <a href=\"event:loc=http://www.oracle.com/technetwork/java/seccodeguide-139067.html#5\" rel=\"nofollow\">http://www.oracle.com/technetwork/java/seccodeguide-139067.html#5</a>",
+                    "[7] Standards Mapping - Common Weakness Enumeration, CWE ID 79, CWE ID 80",
+                    "[8] Standards Mapping - Common Weakness Enumeration Top 25 2019, [2] CWE ID 079",
+                    "[9] Standards Mapping - DISA Control Correlation Identifier Version 2, CCI-001310, CCI-002754",
+                    "[10] Standards Mapping - FIPS200, SI",
+                    "[11] Standards Mapping - General Data Protection Regulation, Indirect Access to Sensitive Data",
+                    "[12] Standards Mapping - NIST Special Publication 800-53 Revision 4, SI-10 Information Input Validation (P1)",
+                    "[13] Standards Mapping - OWASP Application Security Verification Standard 4.0, 5.3.3 Output Encoding and Injection Prevention Requirements, 5.3.6 Output Encoding and Injection Prevention Requirements",
+                    "[14] Standards Mapping - OWASP Mobile Top 10 Risks 2014, M7 Client Side Injection",
+                    "[15] Standards Mapping - OWASP Top 10 2004, A4 Cross Site Scripting",
+                    "[16] Standards Mapping - OWASP Top 10 2007, A1 Cross Site Scripting (XSS)",
+                    "[17] Standards Mapping - OWASP Top 10 2010, A2 Cross-Site Scripting (XSS)",
+                    "[18] Standards Mapping - OWASP Top 10 2013, A3 Cross-Site Scripting (XSS)",
+                    "[19] Standards Mapping - OWASP Top 10 2017, A7 Cross-Site Scripting (XSS)",
+                    "[20] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1, Requirement 6.5.4",
+                    "[21] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2, Requirement 6.3.1.1, Requirement 6.5.1",
+                    "[22] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0, Requirement 6.5.7",
+                    "[23] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0, Requirement 6.5.7",
+                    "[24] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1, Requirement 6.5.7",
+                    "[25] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2, Requirement 6.5.7",
+                    "[26] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1, Requirement 6.5.7",
+                    "[27] Standards Mapping - Payment Card Industry Software Security Framework 1.0, Control Objective 4.2 - Critical Asset Protection",
+                    "[28] Standards Mapping - SANS Top 25 2009, Insecure Interaction - CWE ID 079",
+                    "[29] Standards Mapping - SANS Top 25 2010, Insecure Interaction - CWE ID 079",
+                    "[30] Standards Mapping - SANS Top 25 2011, Insecure Interaction - CWE ID 079",
+                    "[31] Standards Mapping - Security Technical Implementation Guide Version 3.1, APP3510 CAT I, APP3580 CAT I",
+                    "[32] Standards Mapping - Security Technical Implementation Guide Version 3.10, APP3510 CAT I, APP3580 CAT I",
+                    "[33] Standards Mapping - Security Technical Implementation Guide Version 3.4, APP3510 CAT I, APP3580 CAT I",
+                    "[34] Standards Mapping - Security Technical Implementation Guide Version 3.5, APP3510 CAT I, APP3580 CAT I",
+                    "[35] Standards Mapping - Security Technical Implementation Guide Version 3.6, APP3510 CAT I, APP3580 CAT I",
+                    "[36] Standards Mapping - Security Technical Implementation Guide Version 3.7, APP3510 CAT I, APP3580 CAT I",
+                    "[37] Standards Mapping - Security Technical Implementation Guide Version 3.9, APP3510 CAT I, APP3580 CAT I",
+                    "[38] Standards Mapping - Security Technical Implementation Guide Version 4.1, APSC-DV-002490 CAT I, APSC-DV-002560 CAT I",
+                    "[39] Standards Mapping - Security Technical Implementation Guide Version 4.10, APSC-DV-002490 CAT I, APSC-DV-002560 CAT I",
+                    "[40] Standards Mapping - Security Technical Implementation Guide Version 4.11, APSC-DV-002490 CAT I, APSC-DV-002560 CAT I",
+                    "[41] Standards Mapping - Security Technical Implementation Guide Version 4.2, APSC-DV-002490 CAT I, APSC-DV-002560 CAT I",
+                    "[42] Standards Mapping - Security Technical Implementation Guide Version 4.3, APSC-DV-002490 CAT I, APSC-DV-002560 CAT I",
+                    "[43] Standards Mapping - Security Technical Implementation Guide Version 4.4, APSC-DV-002490 CAT I, APSC-DV-002560 CAT I",
+                    "[44] Standards Mapping - Security Technical Implementation Guide Version 4.5, APSC-DV-002490 CAT I, APSC-DV-002560 CAT I",
+                    "[45] Standards Mapping - Security Technical Implementation Guide Version 4.6, APSC-DV-002490 CAT I, APSC-DV-002560 CAT I",
+                    "[46] Standards Mapping - Security Technical Implementation Guide Version 4.7, APSC-DV-002490 CAT I, APSC-DV-002560 CAT I",
+                    "[47] Standards Mapping - Security Technical Implementation Guide Version 4.8, APSC-DV-002490 CAT I, APSC-DV-002560 CAT I",
+                    "[48] Standards Mapping - Security Technical Implementation Guide Version 4.9, APSC-DV-002490 CAT I, APSC-DV-002560 CAT I",
+                    "[49] Standards Mapping - Web Application Security Consortium 24 + 2, Cross-Site Scripting",
+                    "[50] Standards Mapping - Web Application Security Consortium Version 2.00, Cross-Site Scripting (WASC-08)"
+                ]
+            },
+            {
+                "key": "_raw_issuename",
+                "value": "Cross-Site Scripting: Reflected"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": 5,
+        "ip": null,
+        "issueDescription": "Cross-site scripting (XSS) vulnerabilities occur when:\n\n1. Data enters a web application through an untrusted source. In the case of reflected XSS, the untrusted source is typically a web request, while in the case of persisted (also known as stored) XSS it is typically a database or other back-end data store.\n\n\nIn this case, the data enters at <a href=\"event:file=workspace/src/com/customer/appX/file1.java&amp;lineNo=136\" rel=\"nofollow\">portfolioSearchHandler()</a> in file1.java at line 136.\n\n2. The data is included in dynamic content that is sent to a web user without validation.\n\nThe malicious content sent to the web browser often takes the form of a segment of JavaScript, but can also include HTML, Flash or any other type of code that the browser executes. The variety of attacks based on XSS is almost limitless, but they commonly include transmitting private data like cookies or other session information to the attacker, redirecting the victim to web content controlled by the attacker, or performing other malicious operations on the user's machine under the guise of the vulnerable site.\n\n\n<b>Example 1:</b> The following JSP code segment reads an employee ID, <span class=\"code\">eid</span>, from an HTTP request and displays it to the user.\n\n<span class=\"code\">\n&lt;% String eid = request.getParameter(\"eid\"); %&gt;\n...\nEmployee ID: &lt;%= eid %&gt;\n</span>\n\n\nThe code in this example operates correctly if <span class=\"code\">eid</span> contains only standard alphanumeric text. If <span class=\"code\">eid</span> has a value that includes metacharacters or source code, then the code is executed by the web browser as it displays the HTTP response.\n\nInitially this might not appear to be much of a vulnerability. After all, why would someone enter a URL which causes malicious code to run on their own computer? The real danger is that an attacker will create the malicious URL, then use email or social engineering tricks to lure victims into visiting a link to the URL. When victims click the link, they unwittingly reflect the malicious content through the vulnerable web application back to their own computers. This mechanism of exploiting vulnerable web applications is known as Reflected XSS.\n\n\n<b>Example 2:</b> The following JSP code segment queries a database for an employee with a given ID and prints the corresponding employee's name.\n\n<span class=\"code\">\n&lt;%...\nStatement stmt = conn.createStatement();\nResultSet rs = stmt.executeQuery(\"select * from emp where id=\"+eid);\nif (rs != null) {\n   rs.next();\n   String name = rs.getString(\"name\");\n}\n%&gt;\n\nEmployee Name: &lt;%= name %&gt;\n</span>\n\n\nAs in <span class=\"code\">Example 1</span>, this code functions correctly when the values of <span class=\"code\">name</span> are well-behaved, but it does nothing to prevent exploits if they are not. Again, this code can appear less dangerous because the value of <span class=\"code\">name</span> is read from a database, whose contents are apparently managed by the application. However, if the value of <span class=\"code\">name</span> originates from user-supplied data, then the database can be a conduit for malicious content. Without proper input validation on all data stored in the database, an attacker may execute malicious commands in the user's web browser. This type of exploit, known as Persistent (or Stored) XSS, is particularly insidious because the indirection caused by the data store makes it more difficult to identify the threat and increases the possibility that the attack will affect multiple users. XSS got its start in this form with web sites that offered a \"guestbook\" to visitors. Attackers would include JavaScript in their guestbook entries, and all subsequent visitors to the guestbook page would execute the malicious code.\n\nSome think that in the mobile environment, classic web application vulnerabilities, such as cross-site scripting, do not make sense -- why would the user attack themself? However, keep in mind that the essence of mobile platforms is applications that are downloaded from various sources and run alongside each other on the same device. The likelihood of running a piece of malware next to a banking application is high, which necessitates expanding the attack surface of mobile applications to include inter-process communication.\n\n<b>Example 3:</b> The following code enables JavaScript in Android's WebView (by default, JavaScript is disabled) and loads a page based on the value received from an Android intent.\n\n<span class=\"code\">\n...\n        WebView webview = (WebView) findViewById(R.id.webview);\n        webview.getSettings().setJavaScriptEnabled(true);\n        String url = this.getIntent().getExtras().getString(\"url\");\n        webview.loadUrl(url);\n...\n</span>\n\nIf the value of <span class=\"code\">url</span> starts with <span class=\"code\">javascript:</span>, JavaScript code that follows executes within the context of the web page inside WebView.\n\nAs the examples demonstrate, XSS vulnerabilities are caused by code that includes unvalidated data in an HTTP response. There are three vectors by which an XSS attack can reach a victim:\n\n- As in <span class=\"code\">Example 1</span>, data is read directly from the HTTP request and reflected back in the HTTP response. Reflected XSS exploits occur when an attacker causes a user to supply dangerous content to a vulnerable web application, which is then reflected back to the user and executed by the web browser. The most common mechanism for delivering malicious content is to include it as a parameter in a URL that is posted publicly or emailed directly to victims. URLs constructed in this manner constitute the core of many phishing schemes, whereby an attacker convinces victims to visit a URL that refers to a vulnerable site. After the site reflects the attacker's content back to the user, the content is executed and proceeds to transfer private information, such as cookies that may include session information, from the user's machine to the attacker or perform other nefarious activities.\n\n- As in <span class=\"code\">Example 2</span>, the application stores dangerous data in a database or other trusted data store. The dangerous data is subsequently read back into the application and included in dynamic content. Persistent XSS exploits occur when an attacker injects dangerous content into a data store that is later read and included in dynamic content. From an attacker's perspective, the optimal place to inject malicious content is in an area that is displayed to either many users or particularly interesting users. Interesting users typically have elevated privileges in the application or interact with sensitive data that is valuable to the attacker. If one of these users executes malicious content, the attacker may be able to perform privileged operations on behalf of the user or gain access to sensitive data belonging to the user.\n\n- As in <span class=\"code\">Example 3</span>, a source outside the application stores dangerous data in a database or other data store, and the dangerous data is subsequently read back into the application as trusted data and included in dynamic content.\n\n",
+        "issueName": "Cross-Site Scripting_Reflected",
+        "issueType": "STATIC",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Input Validation and Representation//Cross-Site Scripting//Reflected",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortify",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": [
+            "1. The Fortify Secure Coding Rulepacks warn about SQL Injection and Access Control: Database issues when untrusted data is written to a database and also treat the database as a source of untrusted data, which can lead to XSS vulnerabilities. If the database is a trusted resource in your environment, use custom filters to filter out dataflow issues that include the DATABASE taint flag or originate from database sources. Nonetheless, it is often still a good idea to validate everything read from the database.",
+            "2. Even though URL encoding untrusted data protects against many XSS attacks, some browsers (specifically, Internet Explorer 6 and 7 and possibly others) automatically decode content at certain locations within the Document Object Model (DOM) prior to passing it to the JavaScript interpreter. To reflect this danger, the rulepacks no longer treat URL encoding routines as sufficient to protect against cross-site scripting. Data values that are URL encoded and subsequently output will cause Fortify to report Cross-Site Scripting: Poor Validation vulnerabilities.",
+            "3. Fortify RTA adds protection against this category."
+        ],
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": 219,
+        "scanSeverity": null,
+        "scanStatus": "NEW",
+        "scanTool": "fortify",
+        "scanType": "SCA",
+        "scenarioId": "8207742350716442876",
+        "severity": 4.0,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_href": "https://www.zeronorth.io/api/v1/projectVersions/42/issues/30087",
+                        "_raw_id": 30087,
+                        "abstract": "The call to read() at mySesion.java line 143 allows an attacker to crash the program or otherwise make it unavailable to legitimate users.\n\n\n",
+                        "audited": false,
+                        "confidence": 5,
+                        "file_name": "MySesion.java",
+                        "full_file_name": "workspace/src/com/customer/AppX/ssh/MySesion.java",
+                        "hasComments": false,
+                        "issue_description": "Attackers may be able to deny service to legitimate users by flooding the application with requests, but flooding attacks can often be defused at the network layer. More problematic are bugs that allow an attacker to overload the application using a small number of requests. Such bugs allow the attacker to specify the quantity of system resources their requests will consume or the duration for which they will use them.\n\n<b>Example 1:</b> The following code allows a user to specify the amount of time for which a thread will sleep. By specifying a large number, an attacker may tie up the thread indefinitely. With a small number of requests, the attacker may deplete the application's thread pool.\n\n<span class=\"code\">\n  int usrSleepTime = Integer.parseInt(usrInput);\n  Thread.sleep(usrSleepTime);\n</span>\n\n<b>Example 2:</b> The following code reads a String from a zip file. Because it uses the <span class=\"code\">readLine()</span> method, it will read an unbounded amount of input. An attacker may take advantage of this code to cause an <span class=\"code\">OutOfMemoryException</span> or to consume a large amount of memory so that the program spends more time performing garbage collection or runs out of memory during some subsequent operation.\n\n<span class=\"code\">\n  InputStream zipInput = zipFile.getInputStream(zipEntry);\n  Reader zipReader = new InputStreamReader(zipInput);\n  BufferedReader br = new BufferedReader(zipReader);\n  String line = br.readLine();\n</span>\n",
+                        "issue_instance_id": "E67378E922867F16EF569A7FC73ED44D",
+                        "issue_status": "Unreviewed",
+                        "likelihood": 0.6,
+                        "line_number": 143,
+                        "primary_rule_guid": "4D8824AC-1D69-4000-986D-A75C37F96E44",
+                        "primary_tag": null
+                    },
+                    {
+                        "_href": "https://www.zeronorth.io/api/v1/projectVersions/42/issues/28603",
+                        "_raw_id": 28603,
+                        "abstract": "The call to read() at login123.java line 143 allows an attacker to crash the program or otherwise make it unavailable to legitimate users.\n\n\n",
+                        "audited": false,
+                        "confidence": 5,
+                        "file_name": "MySesion.java",
+                        "full_file_name": "workspace/src/com/customer/AppX/ssh/MySesion.java",
+                        "hasComments": false,
+                        "issue_description": "Attackers may be able to deny service to legitimate users by flooding the application with requests, but flooding attacks can often be defused at the network layer. More problematic are bugs that allow an attacker to overload the application using a small number of requests. Such bugs allow the attacker to specify the quantity of system resources their requests will consume or the duration for which they will use them.\n\n<b>Example 1:</b> The following code allows a user to specify the amount of time for which a thread will sleep. By specifying a large number, an attacker may tie up the thread indefinitely. With a small number of requests, the attacker may deplete the application's thread pool.\n\n<span class=\"code\">\n  int usrSleepTime = Integer.parseInt(usrInput);\n  Thread.sleep(usrSleepTime);\n</span>\n\n<b>Example 2:</b> The following code reads a String from a zip file. Because it uses the <span class=\"code\">readLine()</span> method, it will read an unbounded amount of input. An attacker may take advantage of this code to cause an <span class=\"code\">OutOfMemoryException</span> or to consume a large amount of memory so that the program spends more time performing garbage collection or runs out of memory during some subsequent operation.\n\n<span class=\"code\">\n  InputStream zipInput = zipFile.getInputStream(zipEntry);\n  Reader zipReader = new InputStreamReader(zipInput);\n  BufferedReader br = new BufferedReader(zipReader);\n  String line = br.readLine();\n</span>\n",
+                        "issue_instance_id": "105AB5FE5740C03105B6AEC4B5F41F50",
+                        "issue_status": "Unreviewed",
+                        "likelihood": 0.6,
+                        "line_number": 143,
+                        "primary_rule_guid": "4D8824AC-1D69-4000-986D-A75C37F96E44",
+                        "primary_tag": null
+                    }
+                ]
+            },
+            {
+                "key": "project_version_id",
+                "value": 42
+            },
+            {
+                "key": "project_version_name",
+                "value": null
+            },
+            {
+                "key": "revision",
+                "value": 0
+            },
+            {
+                "key": "folder_id",
+                "value": 232
+            },
+            {
+                "key": "folder_guid",
+                "value": "54362046-6cd7-4d09-84db-50958b560180"
+            },
+            {
+                "key": "analyzer",
+                "value": "Data Flow"
+            },
+            {
+                "key": "kingdom",
+                "value": "Input Validation and Representation"
+            },
+            {
+                "key": "class_type",
+                "value": "Denial of Service"
+            },
+            {
+                "key": "sub_type",
+                "value": null
+            },
+            {
+                "key": "friority",
+                "value": "Low"
+            },
+            {
+                "key": "reviewed",
+                "value": null
+            },
+            {
+                "key": "external_bug_id",
+                "value": null
+            },
+            {
+                "key": "has_attachments",
+                "value": false
+            },
+            {
+                "key": "has_correlated_issues",
+                "value": false
+            },
+            {
+                "key": "found_date",
+                "value": "2020-10-25T19:27:38.000+0000"
+            },
+            {
+                "key": "removed_date",
+                "value": null
+            },
+            {
+                "key": "display_engine_type",
+                "value": "SCA"
+            },
+            {
+                "key": "primary_tag_value_auto_applied",
+                "value": false
+            },
+            {
+                "key": "removed",
+                "value": false
+            },
+            {
+                "key": "suppressed",
+                "value": false
+            },
+            {
+                "key": "hidden",
+                "value": false
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "kingdom",
+                    "class_type"
+                ]
+            },
+            {
+                "key": "recommendations",
+                "value": "Validate user input to ensure that it will not cause inappropriate resource utilization.\n\n<b>Example 3:</b> The following code allows a user to specify the amount of time for which a thread will sleep just as in <span class=\"code\">Example 1</span>, but only if the value is within reasonable bounds.\n<span class=\"code\">\n  int usrSleepTime = Integer.parseInt(usrInput);\n  if (usrSleepTime &gt;= SLEEP_MIN &amp;&amp;\n      usrSleepTime &lt;= SLEEP_MAX) {\n    Thread.sleep(usrSleepTime);\n  } else {\n    throw new Exception(\"Invalid sleep duration\");\n  }\n}\n</span>\n\n<b>Example 4:</b> The following code reads a String from a zip file just as in <span class=\"code\">Example 2</span>, except the maximum string length it will read is <span class=\"code\">MAX_STR_LEN</span> characters.\n\n<span class=\"code\">\n  InputStream zipInput = zipFile.getInputStream(zipEntry);\n  Reader zipReader = new InputStreamReader(zipInput);\n  BufferedReader br = new BufferedReader(zipReader);\n  StringBuffer sb = new StringBuffer();\n  int intC;\n  while ((intC = br.read()) != -1) {\n    char c = (char) intC;\n    if (c == '\\n') {\n      break;\n    }\n    if (sb.length() &gt;= MAX_STR_LEN) {\n      throw new Exception(\"input too long\");\n    }\n    sb.append(c);\n  }\n  String line = sb.toString();\n</span>\n\n\n\n"
+            },
+            {
+                "key": "references",
+                "value": [
+                    "[1] DOS-1: Beware of activities that may use disproportionate resources, Oracle, <a href=\"event:loc=http://www.oracle.com/technetwork/java/seccodeguide-139067.html#1\" rel=\"nofollow\">http://www.oracle.com/technetwork/java/seccodeguide-139067.html#1</a>",
+                    "[2] INPUT-1: Validate inputs, Oracle, <a href=\"event:loc=http://www.oracle.com/technetwork/java/seccodeguide-139067.html#5\" rel=\"nofollow\">http://www.oracle.com/technetwork/java/seccodeguide-139067.html#5</a>",
+                    "[3] Standards Mapping - Common Weakness Enumeration, CWE ID 730",
+                    "[4] Standards Mapping - DISA Control Correlation Identifier Version 2, CCI-001094",
+                    "[5] Standards Mapping - MISRA C++ 2008, Rule 0-3-1",
+                    "[6] Standards Mapping - NIST Special Publication 800-53 Revision 4, SC-5 Denial of Service Protection (P1)",
+                    "[7] Standards Mapping - OWASP Application Security Verification Standard 4.0, 12.1.1 File Upload Requirements",
+                    "[8] Standards Mapping - OWASP Top 10 2004, A9 Application Denial of Service",
+                    "[9] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1, Requirement 6.5.9",
+                    "[10] Standards Mapping - Security Technical Implementation Guide Version 3.1, APP6080 CAT II",
+                    "[11] Standards Mapping - Security Technical Implementation Guide Version 3.10, APP6080 CAT II",
+                    "[12] Standards Mapping - Security Technical Implementation Guide Version 3.4, APP6080 CAT II",
+                    "[13] Standards Mapping - Security Technical Implementation Guide Version 3.5, APP6080 CAT II",
+                    "[14] Standards Mapping - Security Technical Implementation Guide Version 3.6, APP6080 CAT II",
+                    "[15] Standards Mapping - Security Technical Implementation Guide Version 3.7, APP6080 CAT II",
+                    "[16] Standards Mapping - Security Technical Implementation Guide Version 3.9, APP6080 CAT II",
+                    "[17] Standards Mapping - Security Technical Implementation Guide Version 4.1, APSC-DV-002400 CAT II",
+                    "[18] Standards Mapping - Security Technical Implementation Guide Version 4.10, APSC-DV-002400 CAT II",
+                    "[19] Standards Mapping - Security Technical Implementation Guide Version 4.11, APSC-DV-002400 CAT II",
+                    "[20] Standards Mapping - Security Technical Implementation Guide Version 4.2, APSC-DV-002400 CAT II",
+                    "[21] Standards Mapping - Security Technical Implementation Guide Version 4.3, APSC-DV-002400 CAT II",
+                    "[22] Standards Mapping - Security Technical Implementation Guide Version 4.4, APSC-DV-002400 CAT II",
+                    "[23] Standards Mapping - Security Technical Implementation Guide Version 4.5, APSC-DV-002400 CAT II",
+                    "[24] Standards Mapping - Security Technical Implementation Guide Version 4.6, APSC-DV-002400 CAT II",
+                    "[25] Standards Mapping - Security Technical Implementation Guide Version 4.7, APSC-DV-002400 CAT II",
+                    "[26] Standards Mapping - Security Technical Implementation Guide Version 4.8, APSC-DV-002400 CAT II",
+                    "[27] Standards Mapping - Security Technical Implementation Guide Version 4.9, APSC-DV-002400 CAT II",
+                    "[28] Standards Mapping - Web Application Security Consortium 24 + 2, Denial of Service",
+                    "[29] Standards Mapping - Web Application Security Consortium Version 2.00, Denial of Service (WASC-10)"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": 2,
+        "ip": null,
+        "issueDescription": "Attackers may be able to deny service to legitimate users by flooding the application with requests, but flooding attacks can often be defused at the network layer. More problematic are bugs that allow an attacker to overload the application using a small number of requests. Such bugs allow the attacker to specify the quantity of system resources their requests will consume or the duration for which they will use them.\n\n<b>Example 1:</b> The following code allows a user to specify the amount of time for which a thread will sleep. By specifying a large number, an attacker may tie up the thread indefinitely. With a small number of requests, the attacker may deplete the application's thread pool.\n\n<span class=\"code\">\n  int usrSleepTime = Integer.parseInt(usrInput);\n  Thread.sleep(usrSleepTime);\n</span>\n\n<b>Example 2:</b> The following code reads a String from a zip file. Because it uses the <span class=\"code\">readLine()</span> method, it will read an unbounded amount of input. An attacker may take advantage of this code to cause an <span class=\"code\">OutOfMemoryException</span> or to consume a large amount of memory so that the program spends more time performing garbage collection or runs out of memory during some subsequent operation.\n\n<span class=\"code\">\n  InputStream zipInput = zipFile.getInputStream(zipEntry);\n  Reader zipReader = new InputStreamReader(zipInput);\n  BufferedReader br = new BufferedReader(zipReader);\n  String line = br.readLine();\n</span>\n",
+        "issueName": "Denial of Service",
+        "issueType": "STATIC",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Input Validation and Representation//Denial of Service",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortify",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": [
+            "1. A number of modern web frameworks provide mechanisms to perform user input validation (including Struts and Spring MVC). To highlight the unvalidated sources of input, the Fortify Secure Coding Rulepacks dynamically re-prioritize the issues reported by Fortify Static Code Analyzer by lowering their probability of exploit and providing pointers to the supporting evidence whenever the framework validation mechanism is in use. We refer to this feature as Context-Sensitive Ranking. To further assist the Fortify user with the auditing process, the Fortify Software Security Research group makes available the Data Validation project template that groups the issues into folders based on the validation mechanism applied to their source of input.",
+            "2. The recommended fix for this weakness might not be detectable, and therefore you might need to perform additional auditing after remediation to confirm the fix. After you confirm the weakness is removed, you can safely suppress the issue."
+        ],
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": 219,
+        "scanSeverity": null,
+        "scanStatus": "NEW",
+        "scanTool": "fortify",
+        "scanType": "SCA",
+        "scenarioId": "8207742350716442876",
+        "severity": 3.0,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_href": "https://www.zeronorth.io/api/v1/projectVersions/42/issues/29015",
+                        "_raw_id": 29015,
+                        "abstract": "The file file3.jsp passes unvalidated data to an HTTP redirect function on line 591. Allowing unvalidated input to control the URL used in a redirect can aid phishing attacks.\n\n\n",
+                        "audited": false,
+                        "confidence": 4.8,
+                        "file_name": "hawk_test.jsp",
+                        "full_file_name": "workspace/WebContent/WEB-INF/views/hawk/hawk_test.jsp",
+                        "hasComments": false,
+                        "issue_description": "Redirects allow web applications to direct users to different pages within the same application or to external sites. Applications utilize redirects to aid in site navigation and, in some cases, to track how users exit the site. Open redirect vulnerabilities occur when a web application redirects clients to any arbitrary URL that can be controlled by an attacker.\n\nAttackers may utilize open redirects to trick users into visiting a URL to a trusted site and redirecting them to a malicious site. By encoding the URL, an attacker is able to make it more difficult for end-users to notice the malicious destination of the redirect, even when it is passed as a URL parameter to the trusted site. Open redirects are often abused as part of phishing scams to harvest sensitive end-user data.\n\n\nIn this case, the URL the client will be redirected to is read at <a href=\"event:file=workspace/WebContent/WEB-INF/views/file3.jsp&amp;lineNo=592\" rel=\"nofollow\">val()</a> in file3.jsp at line 592.\n\n\n<b>Example 1:</b> The following JavaScript code instructs the user's browser to open a URL read from the <span class=\"code\">dest</span> request parameter when a user clicks the link.\n\n<span class=\"code\">\n\t...\n\tstrDest = form.dest.value;\n\twindow.open(strDest,\"myresults\");\n\t...\n</span>\n\nIf a victim received an email instructing them to follow a link to \"http://trusted.example.com/ecommerce/redirect.asp?dest=www.wilyhacker.com\", the user would likely click on the link believing they would be transferred to the trusted site. However, when the victim clicks the link, the code in <span class=\"code\">Example 1</span> will redirect the browser to \"http://www.wilyhacker.com\".\n\nMany users have been educated to always inspect URLs they receive in emails to make sure the link specifies a trusted site they know. However, if the attacker Hex encoded the destination url as follows:\n\"http://trusted.example.com/ecommerce/redirect.asp?dest=%77%69%6C%79%68%61%63%6B%65%72%2E%63%6F%6D\"\n\nthen even a savvy end-user may be fooled into following the link.",
+                        "issue_instance_id": "3DD134D14612BD2D3F6E09B580AA1BD9",
+                        "issue_status": "Unreviewed",
+                        "likelihood": 2.688,
+                        "line_number": 591,
+                        "primary_rule_guid": "C71A9777-B31F-4A80-ADED-0868DAE5CF760",
+                        "primary_tag": null
+                    },
+                    {
+                        "_href": "https://www.zeronorth.io/api/v1/projectVersions/42/issues/29528",
+                        "_raw_id": 29528,
+                        "abstract": "The file bat_test.jsp passes unvalidated data to an HTTP redirect function on line 591. Allowing unvalidated input to control the URL used in a redirect can aid phishing attacks.\n\n\n",
+                        "audited": false,
+                        "confidence": 4.8,
+                        "file_name": "hawk_test.jsp",
+                        "full_file_name": "workspace/WebContent/WEB-INF/views/hawk/hawk_test.jsp",
+                        "hasComments": false,
+                        "issue_description": "Redirects allow web applications to direct users to different pages within the same application or to external sites. Applications hawktestize redirects to aid in site navigation and, in some cases, to track how users exit the site. Open redirect vulnerabilities occur when a web application redirects clients to any arbitrary URL that can be controlled by an attacker.\n\nAttackers may hawktestize open redirects to trick users into visiting a URL to a trusted site and redirecting them to a malicious site. By encoding the URL, an attacker is able to make it more difficult for end-users to notice the malicious destination of the redirect, even when it is passed as a URL parameter to the trusted site. Open redirects are often abused as part of phishing scams to harvest sensitive end-user data.\n\n\nIn this case, the URL the client will be redirected to is read at <a href=\"event:file=workspace/WebContent/WEB-INF/views/bat/bat_test.jsp&amp;lineNo=593\" rel=\"nofollow\">val()</a> in bat_test.jsp at line 593.\n\n\n<b>Example 1:</b> The following JavaScript code instructs the user's browser to open a URL read from the <span class=\"code\">dest</span> request parameter when a user clicks the link.\n\n<span class=\"code\">\n\t...\n\tstrDest = form.dest.value;\n\twindow.open(strDest,\"myresults\");\n\t...\n</span>\n\nIf a victim received an email instructing them to follow a link to \"http://trusted.example.com/ecommerce/redirect.asp?dest=www.wilyhacker.com\", the user would likely click on the link believing they would be transferred to the trusted site. However, when the victim clicks the link, the code in <span class=\"code\">Example 1</span> will redirect the browser to \"http://www.wilyhacker.com\".\n\nMany users have been educated to always inspect URLs they receive in emails to make sure the link specifies a trusted site they know. However, if the attacker Hex encoded the destination url as follows:\n\"http://trusted.example.com/ecommerce/redirect.asp?dest=%77%69%6C%79%68%61%63%6B%65%72%2E%63%6F%6D\"\n\nthen even a savvy end-user may be fooled into following the link.",
+                        "issue_instance_id": "869B476F978CDA1296B16581646EC9DD",
+                        "issue_status": "Unreviewed",
+                        "likelihood": 2.688,
+                        "line_number": 591,
+                        "primary_rule_guid": "C71A9777-B31F-4A80-ADED-0868DAE5CF760",
+                        "primary_tag": null
+                    },
+                    {
+                        "_href": "https://www.zeronorth.io/api/v1/projectVersions/42/issues/30050",
+                        "_raw_id": 30050,
+                        "abstract": "The file surveyHome.jsp passes unvalidated data to an HTTP redirect function on line 190. Allowing unvalidated input to control the URL used in a redirect can aid phishing attacks.\n\n\n",
+                        "audited": false,
+                        "confidence": 4.61,
+                        "file_name": "surveyHome.jsp",
+                        "full_file_name": "workspace/WebContent/WEB-INF/views/survey/surveyHome.jsp",
+                        "hasComments": false,
+                        "issue_description": "Redirects allow web applications to direct users to different pages within the same application or to external sites. Applications utilize redirects to aid in site navigation and, in some cases, to track how users exit the site. Open redirect vulnerabilities occur when a web application redirects clients to any arbitrary URL that can be controlled by an attacker.\n\nAttackers may utilize open redirects to trick users into visiting a URL to a trusted site and redirecting them to a malicious site. By encoding the URL, an attacker is able to make it more difficult for end-users to notice the malicious destination of the redirect, even when it is passed as a URL parameter to the trusted site. Open redirects are often abused as part of phishing scams to harvest sensitive end-user data.\n\n\nIn this case, the URL the client will be redirected to is read at <a href=\"event:file=workspace/WebContent/WEB-INF/testsurveyHome.jsp&amp;lineNo=188\" rel=\"nofollow\">val()</a> in surveyHome.jsp at line 188.\n\n\n<b>Example 1:</b> The following JavaScript code instructs the user's browser to open a URL read from the <span class=\"code\">dest</span> request parameter when a user clicks the link.\n\n<span class=\"code\">\n\t...\n\tstrDest = form.dest.value;\n\twindow.open(strDest,\"myresults\");\n\t...\n</span>\n\nIf a victim received an email instructing them to follow a link to \"http://trusted.example.com/ecommerce/redirect.asp?dest=www.wilyhacker.com\", the user would likely click on the link believing they would be transferred to the trusted site. However, when the victim clicks the link, the code in <span class=\"code\">Example 1</span> will redirect the browser to \"http://www.wilyhacker.com\".\n\nMany users have been educated to always inspect URLs they receive in emails to make sure the link specifies a trusted site they know. However, if the attacker Hex encoded the destination url as follows:\n\"http://trusted.example.com/ecommerce/redirect.asp?dest=%77%69%6C%79%68%61%63%6B%65%72%2E%63%6F%6D\"\n\nthen even a savvy end-user may be fooled into following the link.",
+                        "issue_instance_id": "E35299F1F95BB6EA9B8404CB0A0B9BE9",
+                        "issue_status": "Unreviewed",
+                        "likelihood": 2.582,
+                        "line_number": 190,
+                        "primary_rule_guid": "B8C91C36-E277-4001-A85D-56065B0F46200",
+                        "primary_tag": null
+                    }
+                ]
+            },
+            {
+                "key": "project_version_id",
+                "value": 42
+            },
+            {
+                "key": "project_version_name",
+                "value": null
+            },
+            {
+                "key": "revision",
+                "value": 0
+            },
+            {
+                "key": "folder_id",
+                "value": 232
+            },
+            {
+                "key": "folder_guid",
+                "value": "54362046-6cd7-4d09-84db-50958b560180"
+            },
+            {
+                "key": "analyzer",
+                "value": "Data Flow"
+            },
+            {
+                "key": "kingdom",
+                "value": "Input Validation and Representation"
+            },
+            {
+                "key": "class_type",
+                "value": "Open Redirect"
+            },
+            {
+                "key": "sub_type",
+                "value": null
+            },
+            {
+                "key": "friority",
+                "value": "Critical"
+            },
+            {
+                "key": "reviewed",
+                "value": null
+            },
+            {
+                "key": "external_bug_id",
+                "value": null
+            },
+            {
+                "key": "has_attachments",
+                "value": false
+            },
+            {
+                "key": "has_correlated_issues",
+                "value": false
+            },
+            {
+                "key": "found_date",
+                "value": "2020-10-25T19:27:38.000+0000"
+            },
+            {
+                "key": "removed_date",
+                "value": null
+            },
+            {
+                "key": "display_engine_type",
+                "value": "SCA"
+            },
+            {
+                "key": "primary_tag_value_auto_applied",
+                "value": false
+            },
+            {
+                "key": "removed",
+                "value": false
+            },
+            {
+                "key": "suppressed",
+                "value": false
+            },
+            {
+                "key": "hidden",
+                "value": false
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "kingdom",
+                    "class_type"
+                ]
+            },
+            {
+                "key": "recommendations",
+                "value": "Unvalidated user input should not be allowed to control the destination URL in a redirect. Instead, use a level of indirection: create a list of legitimate URLs that users are allowed to specify, and only allow users to select from the list. With this approach, input provided by users is never used directly to specify a URL for redirects.\n\n<b>Example 2:</b> The following code references an array populated with valid URLs. The link the user clicks passes in the array index that corresponds to the desired URL.\n\n<span class=\"code\">\n...\n\tstrDest = form.dest.value;\n\tif((strDest.value != null)||(strDest.value.length!=0))\n\t{\n\t\tif((strDest &gt;= 0) &amp;&amp; (strDest &lt;= strURLArray.length -1 ))\n\t\t{\n\t\t\tstrFinalURL = strURLArray[strDest];\n\t\t\twindow.open(strFinalURL,\"myresults\");\n\t\t}\n\t}\n...\n</span>\n\nIn some situations this approach is impractical because the set of legitimate URLs is too large or too hard to keep track of. In such cases, use a similar approach to restrict the domains that users can be redirected to, which can at least prevent attackers from sending users to malicious external sites.\n\n\n"
+            },
+            {
+                "key": "references",
+                "value": [
+                    "[1] Standards Mapping - Common Weakness Enumeration, CWE ID 601",
+                    "[2] Standards Mapping - DISA Control Correlation Identifier Version 2, CCI-002754",
+                    "[3] Standards Mapping - FIPS200, SI",
+                    "[4] Standards Mapping - General Data Protection Regulation, Indirect Access to Sensitive Data",
+                    "[5] Standards Mapping - NIST Special Publication 800-53 Revision 4, SI-10 Information Input Validation (P1)",
+                    "[6] Standards Mapping - OWASP Application Security Verification Standard 4.0, 5.1.5 Input Validation Requirements",
+                    "[7] Standards Mapping - OWASP Mobile Top 10 Risks 2014, M1 Weak Server Side Controls",
+                    "[8] Standards Mapping - OWASP Top 10 2004, A1 Unvalidated Input",
+                    "[9] Standards Mapping - OWASP Top 10 2010, A10 Unvalidated Redirects and Forwards",
+                    "[10] Standards Mapping - OWASP Top 10 2013, A10 Unvalidated Redirects and Forwards",
+                    "[11] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1, Requirement 6.5.1",
+                    "[12] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2, Requirement 6.3.1.1",
+                    "[13] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0, Requirement 6.5.1",
+                    "[14] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0, Requirement 6.5.1",
+                    "[15] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1, Requirement 6.5.1",
+                    "[16] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2, Requirement 6.5.1",
+                    "[17] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1, Requirement 6.5.1",
+                    "[18] Standards Mapping - Payment Card Industry Software Security Framework 1.0, Control Objective 4.2 - Critical Asset Protection",
+                    "[19] Standards Mapping - SANS Top 25 2010, Insecure Interaction - CWE ID 601",
+                    "[20] Standards Mapping - SANS Top 25 2011, Insecure Interaction - CWE ID 601",
+                    "[21] Standards Mapping - Security Technical Implementation Guide Version 3.1, APP3510 CAT I, APP3600 CAT II",
+                    "[22] Standards Mapping - Security Technical Implementation Guide Version 3.10, APP3510 CAT I, APP3600 CAT II",
+                    "[23] Standards Mapping - Security Technical Implementation Guide Version 3.4, APP3510 CAT I, APP3600 CAT II",
+                    "[24] Standards Mapping - Security Technical Implementation Guide Version 3.5, APP3510 CAT I, APP3600 CAT II",
+                    "[25] Standards Mapping - Security Technical Implementation Guide Version 3.6, APP3510 CAT I, APP3600 CAT II",
+                    "[26] Standards Mapping - Security Technical Implementation Guide Version 3.7, APP3510 CAT I, APP3600 CAT II",
+                    "[27] Standards Mapping - Security Technical Implementation Guide Version 3.9, APP3510 CAT I, APP3600 CAT II",
+                    "[28] Standards Mapping - Security Technical Implementation Guide Version 4.1, APSC-DV-002560 CAT I",
+                    "[29] Standards Mapping - Security Technical Implementation Guide Version 4.10, APSC-DV-002560 CAT I",
+                    "[30] Standards Mapping - Security Technical Implementation Guide Version 4.11, APSC-DV-002560 CAT I",
+                    "[31] Standards Mapping - Security Technical Implementation Guide Version 4.2, APSC-DV-002560 CAT I",
+                    "[32] Standards Mapping - Security Technical Implementation Guide Version 4.3, APSC-DV-002560 CAT I",
+                    "[33] Standards Mapping - Security Technical Implementation Guide Version 4.4, APSC-DV-002560 CAT I",
+                    "[34] Standards Mapping - Security Technical Implementation Guide Version 4.5, APSC-DV-002560 CAT I",
+                    "[35] Standards Mapping - Security Technical Implementation Guide Version 4.6, APSC-DV-002560 CAT I",
+                    "[36] Standards Mapping - Security Technical Implementation Guide Version 4.7, APSC-DV-002560 CAT I",
+                    "[37] Standards Mapping - Security Technical Implementation Guide Version 4.8, APSC-DV-002560 CAT I",
+                    "[38] Standards Mapping - Security Technical Implementation Guide Version 4.9, APSC-DV-002560 CAT I",
+                    "[39] Standards Mapping - Web Application Security Consortium 24 + 2, Content Spoofing",
+                    "[40] Standards Mapping - Web Application Security Consortium Version 2.00, URL Redirector Abuse (WASC-38)"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": 4,
+        "ip": null,
+        "issueDescription": "Redirects allow web applications to direct users to different pages within the same application or to external sites. Applications utilize redirects to aid in site navigation and, in some cases, to track how users exit the site. Open redirect vulnerabilities occur when a web application redirects clients to any arbitrary URL that can be controlled by an attacker.\n\nAttackers may utilize open redirects to trick users into visiting a URL to a trusted site and redirecting them to a malicious site. By encoding the URL, an attacker is able to make it more difficult for end-users to notice the malicious destination of the redirect, even when it is passed as a URL parameter to the trusted site. Open redirects are often abused as part of phishing scams to harvest sensitive end-user data.\n\n\nIn this case, the URL the client will be redirected to is read at <a href=\"event:file=workspace/WebContent/WEB-INF/views/file3.jsp&amp;lineNo=592\" rel=\"nofollow\">val()</a> in file3.jsp at line 592.\n\n\n<b>Example 1:</b> The following JavaScript code instructs the user's browser to open a URL read from the <span class=\"code\">dest</span> request parameter when a user clicks the link.\n\n<span class=\"code\">\n\t...\n\tstrDest = form.dest.value;\n\twindow.open(strDest,\"myresults\");\n\t...\n</span>\n\nIf a victim received an email instructing them to follow a link to \"http://trusted.example.com/ecommerce/redirect.asp?dest=www.wilyhacker.com\", the user would likely click on the link believing they would be transferred to the trusted site. However, when the victim clicks the link, the code in <span class=\"code\">Example 1</span> will redirect the browser to \"http://www.wilyhacker.com\".\n\nMany users have been educated to always inspect URLs they receive in emails to make sure the link specifies a trusted site they know. However, if the attacker Hex encoded the destination url as follows:\n\"http://trusted.example.com/ecommerce/redirect.asp?dest=%77%69%6C%79%68%61%63%6B%65%72%2E%63%6F%6D\"\n\nthen even a savvy end-user may be fooled into following the link.",
+        "issueName": "Open Redirect",
+        "issueType": "STATIC",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Input Validation and Representation//Open Redirect",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortify",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": [],
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": 219,
+        "scanSeverity": null,
+        "scanStatus": "NEW",
+        "scanTool": "fortify",
+        "scanType": "SCA",
+        "scenarioId": "8207742350716442876",
+        "severity": 4.0,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_href": "https://www.zeronorth.io/api/v1/projectVersions/42/issues/29053",
+                        "_raw_id": 29053,
+                        "abstract": "On line 30 of file4.java, the method isAuthedUser() invokes a SQL query built using input potentially coming from an untrusted source. This call could allow an attacker to modify the statement's meaning or to execute arbitrary SQL commands.\n\n\n",
+                        "audited": false,
+                        "confidence": 5,
+                        "file_name": "file4.java",
+                        "full_file_name": "workspace/src/com/file4.java",
+                        "hasComments": false,
+                        "issue_description": "SQL injection errors occur when:\n\n1. Data enters a program from an untrusted source.\n\nIn this case, Fortify Static Code Analyzer could not determine that the source of the data is trusted.\n\n2. The data is used to dynamically construct a SQL query.\n\n\nIn this case, the data is passed to <a href=\"event:file=workspace/src/com/customer/AppX/file4.java&amp;lineNo=30\" rel=\"nofollow\">queryForList()</a> in file4.java at line 30.\n\n\n<b>Example 1:</b> The following code dynamically constructs and executes a SQL query that searches for items matching a specified name. The query restricts the items displayed to those where the owner matches the user name of the currently-authenticated user.\n\n<span class=\"code\">\n...\n\tString userName = ctx.getAuthenticatedUserName();\n\tString itemName = request.getParameter(\"itemName\");\n\tString query = \"SELECT * FROM items WHERE owner = '\"\n\t\t\t\t+ userName + \"' AND itemname = '\"\n\t\t\t\t+ itemName + \"'\";\n\tResultSet rs = stmt.execute(query);\n...\n</span>\n\nThe query intends to execute the following code:\n\n<span class=\"code\">\n\tSELECT * FROM items\n\tWHERE owner = &lt;userName&gt;\n\tAND itemname = &lt;itemName&gt;;\n</span>\n\nHowever, because the query is constructed dynamically by concatenating a constant base query string and a user input string, the query only behaves correctly if <span class=\"code\">itemName</span> does not contain a single-quote character. If an attacker with the user name <span class=\"code\">wiley</span> enters the string \"<span class=\"code\">name' OR 'a'='a</span>\" for <span class=\"code\">itemName</span>, then the query becomes the following:\n\n<span class=\"code\">\n\tSELECT * FROM items\n\tWHERE owner = 'wiley'\n\tAND itemname = 'name' OR 'a'='a';\n</span>\n\nThe addition of the <span class=\"code\">OR 'a'='a'</span> condition causes the where clause to always evaluate to true, so the query becomes logically equivalent to the much simpler query:\n\n<span class=\"code\">\n\tSELECT * FROM items;\n</span>\n\nThis simplification of the query allows the attacker to bypass the requirement that the query must only return items owned by the authenticated user. The query now returns all entries stored in the <span class=\"code\">items</span> table, regardless of their specified owner.\n\n<b>Example 2:</b> This example examines the effects of a different malicious value passed to the query constructed and executed in <span class=\"code\">Example 1</span>. If an attacker with the user name <span class=\"code\">wiley</span> enters the string \"<span class=\"code\">name'; DELETE FROM items; --</span>\" for <span class=\"code\">itemName</span>, then the query becomes the following two queries:\n\n<span class=\"code\">\n\tSELECT * FROM items\n\tWHERE owner = 'wiley'\n\tAND itemname = 'name';\n\n\tDELETE FROM items;\n\n\t--'\n</span>\n\nMany database servers, including Microsoft(R) SQL Server 2000, allow multiple SQL statements separated by semicolons to be executed at once. While this attack string results in an error on Oracle and other database servers that do not allow the batch-execution of statements separated by semicolons, on databases that do allow batch execution, this type of attack allows the attacker to execute arbitrary commands against the database.\n\nNotice the trailing pair of hyphens (--), which specifies to most database servers that the remainder of the statement is to be treated as a comment and not executed [4]. In this case the comment character serves to remove the trailing single-quote left over from the modified query. On a database where comments are not allowed to be used in this way, the general attack could still be made effective using a trick similar to the one used in <span class=\"code\">Example 1</span>. If an attacker enters the string \"<span class=\"code\">name'); DELETE FROM items; SELECT * FROM items WHERE 'a'='a</span>\", the following three valid statements will be created:\n\n<span class=\"code\">\n\tSELECT * FROM items\n\tWHERE owner = 'wiley'\n\tAND itemname = 'name';\n\n\tDELETE FROM items;\n\n\tSELECT * FROM items WHERE 'a'='a';\n</span>\n\nSome think that in the mobile world, classic web application vulnerabilities, such as SQL injection, do not make sense -- why would the user attack themself? However, keep in mind that the essence of mobile platforms is applications that are downloaded from various sources and run alongside each other on the same device. The likelihood of running a piece of malware next to a banking application is high, which necessitates expanding the attack surface of mobile applications to include inter-process communication.\n\n<b>Example 3:</b> The following code adapts <span class=\"code\">Example 1</span> to the Android platform.\n\n<span class=\"code\">\n...\n        PasswordAuthentication pa = authenticator.getPasswordAuthentication();\n        String userName = pa.getUserName();\n        String itemName = this.getIntent().getExtras().getString(\"itemName\");\n        String query = \"SELECT * FROM items WHERE owner = '\"\n                                + userName + \"' AND itemname = '\"\n                                + itemName + \"'\";\n        SQLiteDatabase db = this.openOrCreateDatabase(\"DB\", MODE_PRIVATE, null);\n        Cursor c = db.rawQuery(query, null);\n...\n</span>\n\nOne traditional approach to preventing SQL injection attacks is to handle them as an input validation problem and either accept only characters from an allow list of safe values or identify and escape a list of potentially malicious values (deny list). Checking an allow list can be a very effective means of enforcing strict input validation rules, but parameterized SQL statements require less maintenance and can offer more guarantees with respect to security. As is almost always the case, implementing a deny list is riddled with loopholes that make it ineffective at preventing SQL injection attacks. For example, attackers may:\n\n    - Target fields that are not quoted\n    - Find ways to bypass the need for certain escaped metacharacters\n    - Use stored procedures to hide the injected metacharacters\n\nManually escaping characters in input to SQL queries can help, but it will not make your application secure from SQL injection attacks.\n\nAnother solution commonly proposed for dealing with SQL injection attacks is to use stored procedures. Although stored procedures prevent some types of SQL injection attacks, they fail to protect against many others. Stored procedures typically help prevent SQL injection attacks by limiting the types of statements that can be passed to their parameters. However, there are many ways around the limitations and many interesting statements that can still be passed to stored procedures. Again, stored procedures can prevent some exploits, but they will not make your application secure against SQL injection attacks.",
+                        "issue_instance_id": "47E3A1D3F3695B0B2618F5FF86333BA8",
+                        "issue_status": "Unreviewed",
+                        "likelihood": 1,
+                        "line_number": 30,
+                        "primary_rule_guid": "02A6B1B6-DDFC-4078-A7D7-405DAA9EE672",
+                        "primary_tag": null
+                    },
+                    {
+                        "_href": "https://www.zeronorth.io/api/v1/projectVersions/42/issues/29081",
+                        "_raw_id": 29081,
+                        "abstract": "On line 40 of file0.java, the method isManagerUser() invokes a SQL query built using input potentially coming from an untrusted source. This call could allow an attacker to modify the statement's meaning or to execute arbitrary SQL commands.\n\n\n",
+                        "audited": false,
+                        "confidence": 5,
+                        "file_name": "file4.java",
+                        "full_file_name": "workspace/src/com/file4.java",
+                        "hasComments": false,
+                        "issue_description": "SQL injection errors occur when:\n\n1. Data enters a program from an untrusted source.\n\nIn this case, Fortify Static Code Analyzer could not determine that the source of the data is trusted.\n\n2. The data is used to dynamically construct a SQL query.\n\n\nIn this case, the data is passed to <a href=\"event:file=workspace/src/com/customer/AppX/test/dao/file0.java&amp;lineNo=40\" rel=\"nofollow\">queryForList()</a> in file0.java at line 40.\n\n\n<b>Example 1:</b> The following code dynamically constructs and executes a SQL query that searches for items matching a specified name. The query restricts the items displayed to those where the owner matches the user name of the currently-authenticated user.\n\n<span class=\"code\">\n...\n\tString userName = ctx.getAuthenticatedUserName();\n\tString itemName = request.getParameter(\"itemName\");\n\tString query = \"SELECT * FROM items WHERE owner = '\"\n\t\t\t\t+ userName + \"' AND itemname = '\"\n\t\t\t\t+ itemName + \"'\";\n\tResultSet rs = stmt.execute(query);\n...\n</span>\n\nThe query intends to execute the following code:\n\n<span class=\"code\">\n\tSELECT * FROM items\n\tWHERE owner = &lt;userName&gt;\n\tAND itemname = &lt;itemName&gt;;\n</span>\n\nHowever, because the query is constructed dynamically by concatenating a constant base query string and a user input string, the query only behaves correctly if <span class=\"code\">itemName</span> does not contain a single-quote character. If an attacker with the user name <span class=\"code\">wiley</span> enters the string \"<span class=\"code\">name' OR 'a'='a</span>\" for <span class=\"code\">itemName</span>, then the query becomes the following:\n\n<span class=\"code\">\n\tSELECT * FROM items\n\tWHERE owner = 'wiley'\n\tAND itemname = 'name' OR 'a'='a';\n</span>\n\nThe addition of the <span class=\"code\">OR 'a'='a'</span> condition causes the where clause to always evaluate to true, so the query becomes logically equivalent to the much simpler query:\n\n<span class=\"code\">\n\tSELECT * FROM items;\n</span>\n\nThis simplification of the query allows the attacker to bypass the requirement that the query must only return items owned by the authenticated user. The query now returns all entries stored in the <span class=\"code\">items</span> table, regardless of their specified owner.\n\n<b>Example 2:</b> This example examines the effects of a different malicious value passed to the query constructed and executed in <span class=\"code\">Example 1</span>. If an attacker with the user name <span class=\"code\">wiley</span> enters the string \"<span class=\"code\">name'; DELETE FROM items; --</span>\" for <span class=\"code\">itemName</span>, then the query becomes the following two queries:\n\n<span class=\"code\">\n\tSELECT * FROM items\n\tWHERE owner = 'wiley'\n\tAND itemname = 'name';\n\n\tDELETE FROM items;\n\n\t--'\n</span>\n\nMany database servers, including Microsoft(R) SQL Server 2000, allow multiple SQL statements separated by semicolons to be executed at once. While this attack string results in an error on Oracle and other database servers that do not allow the batch-execution of statements separated by semicolons, on databases that do allow batch execution, this type of attack allows the attacker to execute arbitrary commands against the database.\n\nNotice the trailing pair of hyphens (--), which specifies to most database servers that the remainder of the statement is to be treated as a comment and not executed [4]. In this case the comment character serves to remove the trailing single-quote left over from the modified query. On a database where comments are not allowed to be used in this way, the general attack could still be made effective using a trick similar to the one used in <span class=\"code\">Example 1</span>. If an attacker enters the string \"<span class=\"code\">name'); DELETE FROM items; SELECT * FROM items WHERE 'a'='a</span>\", the following three valid statements will be created:\n\n<span class=\"code\">\n\tSELECT * FROM items\n\tWHERE owner = 'wiley'\n\tAND itemname = 'name';\n\n\tDELETE FROM items;\n\n\tSELECT * FROM items WHERE 'a'='a';\n</span>\n\nSome think that in the mobile world, classic web application vulnerabilities, such as SQL injection, do not make sense -- why would the user attack themself? However, keep in mind that the essence of mobile platforms is applications that are downloaded from various sources and run alongside each other on the same device. The likelihood of running a piece of malware next to a banking application is high, which necessitates expanding the attack surface of mobile applications to include inter-process communication.\n\n<b>Example 3:</b> The following code adapts <span class=\"code\">Example 1</span> to the Android platform.\n\n<span class=\"code\">\n...\n        PasswordAuthentication pa = authenticator.getPasswordAuthentication();\n        String userName = pa.getUserName();\n        String itemName = this.getIntent().getExtras().getString(\"itemName\");\n        String query = \"SELECT * FROM items WHERE owner = '\"\n                                + userName + \"' AND itemname = '\"\n                                + itemName + \"'\";\n        SQLiteDatabase db = this.openOrCreateDatabase(\"DB\", MODE_PRIVATE, null);\n        Cursor c = db.rawQuery(query, null);\n...\n</span>\n\nOne traditional approach to preventing SQL injection attacks is to handle them as an input validation problem and either accept only characters from an allow list of safe values or identify and escape a list of potentially malicious values (deny list). Checking an allow list can be a very effective means of enforcing strict input validation rules, but parameterized SQL statements require less maintenance and can offer more guarantees with respect to security. As is almost always the case, implementing a deny list is riddled with loopholes that make it ineffective at preventing SQL injection attacks. For example, attackers may:\n\n    - Target fields that are not quoted\n    - Find ways to bypass the need for certain escaped metacharacters\n    - Use stored procedures to hide the injected metacharacters\n\nManually escaping characters in input to SQL queries can help, but it will not make your application secure from SQL injection attacks.\n\nAnother solution commonly proposed for dealing with SQL injection attacks is to use stored procedures. Although stored procedures prevent some types of SQL injection attacks, they fail to protect against many others. Stored procedures typically help prevent SQL injection attacks by limiting the types of statements that can be passed to their parameters. However, there are many ways around the limitations and many interesting statements that can still be passed to stored procedures. Again, stored procedures can prevent some exploits, but they will not make your application secure against SQL injection attacks.",
+                        "issue_instance_id": "4C88FAAE3B0A815E83B11ED2998D7ACA",
+                        "issue_status": "Unreviewed",
+                        "likelihood": 1,
+                        "line_number": 40,
+                        "primary_rule_guid": "02A6B1B6-DDFC-4078-A7D7-405DAA9EE672",
+                        "primary_tag": null
+                    },
+                    {
+                        "_href": "https://www.zeronorth.io/api/v1/projectVersions/42/issues/30161",
+                        "_raw_id": 30161,
+                        "abstract": "On line 111 of testModel.java, the method queryOneBatch() invokes a SQL query built using input potentially coming from an untrusted source. This call could allow an attacker to modify the statement's meaning or to execute arbitrary SQL commands.\n\n\n",
+                        "audited": false,
+                        "confidence": 5,
+                        "file_name": "testModel.java",
+                        "full_file_name": "workspace/src/com/customer/AppX/model/testModel.java",
+                        "hasComments": false,
+                        "issue_description": "SQL injection errors occur when:\n\n1. Data enters a program from an untrusted source.\n\nIn this case, Fortify Static Code Analyzer could not determine that the source of the data is trusted.\n\n2. The data is used to dynamically construct a SQL query.\n\n\nIn this case, the data is passed to <a href=\"event:file=workspace/src/com/customer/AppX/model/testModel.java&amp;lineNo=111\" rel=\"nofollow\">queryForList()</a> in testModel.java at line 111.\n\n\n<b>Example 1:</b> The following code dynamically constructs and executes a SQL query that searches for items matching a specified name. The query restricts the items displayed to those where the owner matches the user name of the currently-authenticated user.\n\n<span class=\"code\">\n...\n\tString userName = ctx.getAuthenticatedUserName();\n\tString itemName = request.getParameter(\"itemName\");\n\tString query = \"SELECT * FROM items WHERE owner = '\"\n\t\t\t\t+ userName + \"' AND itemname = '\"\n\t\t\t\t+ itemName + \"'\";\n\tResultSet rs = stmt.execute(query);\n...\n</span>\n\nThe query intends to execute the following code:\n\n<span class=\"code\">\n\tSELECT * FROM items\n\tWHERE owner = &lt;userName&gt;\n\tAND itemname = &lt;itemName&gt;;\n</span>\n\nHowever, because the query is constructed dynamically by concatenating a constant base query string and a user input string, the query only behaves correctly if <span class=\"code\">itemName</span> does not contain a single-quote character. If an attacker with the user name <span class=\"code\">wiley</span> enters the string \"<span class=\"code\">name' OR 'a'='a</span>\" for <span class=\"code\">itemName</span>, then the query becomes the following:\n\n<span class=\"code\">\n\tSELECT * FROM items\n\tWHERE owner = 'wiley'\n\tAND itemname = 'name' OR 'a'='a';\n</span>\n\nThe addition of the <span class=\"code\">OR 'a'='a'</span> condition causes the where clause to always evaluate to true, so the query becomes logically equivalent to the much simpler query:\n\n<span class=\"code\">\n\tSELECT * FROM items;\n</span>\n\nThis simplification of the query allows the attacker to bypass the requirement that the query must only return items owned by the authenticated user. The query now returns all entries stored in the <span class=\"code\">items</span> table, regardless of their specified owner.\n\n<b>Example 2:</b> This example examines the effects of a different malicious value passed to the query constructed and executed in <span class=\"code\">Example 1</span>. If an attacker with the user name <span class=\"code\">wiley</span> enters the string \"<span class=\"code\">name'; DELETE FROM items; --</span>\" for <span class=\"code\">itemName</span>, then the query becomes the following two queries:\n\n<span class=\"code\">\n\tSELECT * FROM items\n\tWHERE owner = 'wiley'\n\tAND itemname = 'name';\n\n\tDELETE FROM items;\n\n\t--'\n</span>\n\nMany database servers, including Microsoft(R) SQL Server 2000, allow multiple SQL statements separated by semicolons to be executed at once. While this attack string results in an error on Oracle and other database servers that do not allow the batch-execution of statements separated by semicolons, on databases that do allow batch execution, this type of attack allows the attacker to execute arbitrary commands against the database.\n\nNotice the trailing pair of hyphens (--), which specifies to most database servers that the remainder of the statement is to be treated as a comment and not executed [4]. In this case the comment character serves to remove the trailing single-quote left over from the modified query. On a database where comments are not allowed to be used in this way, the general attack could still be made effective using a trick similar to the one used in <span class=\"code\">Example 1</span>. If an attacker enters the string \"<span class=\"code\">name'); DELETE FROM items; SELECT * FROM items WHERE 'a'='a</span>\", the following three valid statements will be created:\n\n<span class=\"code\">\n\tSELECT * FROM items\n\tWHERE owner = 'wiley'\n\tAND itemname = 'name';\n\n\tDELETE FROM items;\n\n\tSELECT * FROM items WHERE 'a'='a';\n</span>\n\nSome think that in the mobile world, classic web application vulnerabilities, such as SQL injection, do not make sense -- why would the user attack themself? However, keep in mind that the essence of mobile platforms is applications that are downloaded from various sources and run alongside each other on the same device. The likelihood of running a piece of malware next to a banking application is high, which necessitates expanding the attack surface of mobile applications to include inter-process communication.\n\n<b>Example 3:</b> The following code adapts <span class=\"code\">Example 1</span> to the Android platform.\n\n<span class=\"code\">\n...\n        PasswordAuthentication pa = authenticator.getPasswordAuthentication();\n        String userName = pa.getUserName();\n        String itemName = this.getIntent().getExtras().getString(\"itemName\");\n        String query = \"SELECT * FROM items WHERE owner = '\"\n                                + userName + \"' AND itemname = '\"\n                                + itemName + \"'\";\n        SQLiteDatabase db = this.openOrCreateDatabase(\"DB\", MODE_PRIVATE, null);\n        Cursor c = db.rawQuery(query, null);\n...\n</span>\n\nOne traditional approach to preventing SQL injection attacks is to handle them as an input validation problem and either accept only characters from an allow list of safe values or identify and escape a list of potentially malicious values (deny list). Checking an allow list can be a very effective means of enforcing strict input validation rules, but parameterized SQL statements require less maintenance and can offer more guarantees with respect to security. As is almost always the case, implementing a deny list is riddled with loopholes that make it ineffective at preventing SQL injection attacks. For example, attackers may:\n\n    - Target fields that are not quoted\n    - Find ways to bypass the need for certain escaped metacharacters\n    - Use stored procedures to hide the injected metacharacters\n\nManually escaping characters in input to SQL queries can help, but it will not make your application secure from SQL injection attacks.\n\nAnother solution commonly proposed for dealing with SQL injection attacks is to use stored procedures. Although stored procedures prevent some types of SQL injection attacks, they fail to protect against many others. Stored procedures typically help prevent SQL injection attacks by limiting the types of statements that can be passed to their parameters. However, there are many ways around the limitations and many interesting statements that can still be passed to stored procedures. Again, stored procedures can prevent some exploits, but they will not make your application secure against SQL injection attacks.",
+                        "issue_instance_id": "F2FC7CB19E5C35C8CEFD5F22C6FF3FD3",
+                        "issue_status": "Unreviewed",
+                        "likelihood": 1,
+                        "line_number": 111,
+                        "primary_rule_guid": "02A6B1B6-DDFC-4078-A7D7-405DAA9EE672",
+                        "primary_tag": null
+                    }
+                ]
+            },
+            {
+                "key": "project_version_id",
+                "value": 42
+            },
+            {
+                "key": "project_version_name",
+                "value": null
+            },
+            {
+                "key": "revision",
+                "value": 0
+            },
+            {
+                "key": "folder_id",
+                "value": 232
+            },
+            {
+                "key": "folder_guid",
+                "value": "54362046-6cd7-4d09-84db-50958b560180"
+            },
+            {
+                "key": "analyzer",
+                "value": "Semantic"
+            },
+            {
+                "key": "kingdom",
+                "value": "Input Validation and Representation"
+            },
+            {
+                "key": "class_type",
+                "value": "SQL Injection"
+            },
+            {
+                "key": "sub_type",
+                "value": null
+            },
+            {
+                "key": "friority",
+                "value": "Low"
+            },
+            {
+                "key": "reviewed",
+                "value": null
+            },
+            {
+                "key": "external_bug_id",
+                "value": null
+            },
+            {
+                "key": "has_attachments",
+                "value": false
+            },
+            {
+                "key": "has_correlated_issues",
+                "value": false
+            },
+            {
+                "key": "found_date",
+                "value": "2020-10-25T19:27:38.000+0000"
+            },
+            {
+                "key": "removed_date",
+                "value": null
+            },
+            {
+                "key": "display_engine_type",
+                "value": "SCA"
+            },
+            {
+                "key": "primary_tag_value_auto_applied",
+                "value": false
+            },
+            {
+                "key": "removed",
+                "value": false
+            },
+            {
+                "key": "suppressed",
+                "value": false
+            },
+            {
+                "key": "hidden",
+                "value": false
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "kingdom",
+                    "class_type"
+                ]
+            },
+            {
+                "key": "recommendations",
+                "value": "The root cause of a SQL injection vulnerability is the ability of an attacker to change context in the SQL query, causing a value that the programmer intended to be interpreted as data to be interpreted as a command instead. When a SQL query is constructed, the programmer knows what should be interpreted as part of the command and what should be interpreted as data. Parameterized SQL statements can enforce this behavior by disallowing data-directed context changes and preventing nearly all SQL injection attacks. Parameterized SQL statements are constructed using strings of regular SQL, but when user-supplied data needs to be included, they create bind parameters, which are placeholders for data that is subsequently inserted. Bind parameters allow the program to explicitly specify to the database what should be treated as a command and what should be treated as data. When the program is ready to execute a statement, it specifies to the database the runtime values to use for the value of each of the bind parameters, without the risk of the data being interpreted as commands.\n\nExample 1 can be rewritten to use parameterized SQL statements (instead of concatenating user supplied strings) as follows:\n\n<span class=\"code\">\n...\n\tString userName = ctx.getAuthenticatedUserName();\n\tString itemName = request.getParameter(\"itemName\");\n\tString query =\n        \t\"SELECT * FROM items WHERE itemname=? AND owner=?\";\n\tPreparedStatement stmt = conn.prepareStatement(query);\n\tstmt.setString(1, itemName);\n\tstmt.setString(2, userName);\n\tResultSet results = stmt.execute();\n...\n</span>\n\nAnd here is an Android equivalent:\n\n<span class=\"code\">\n...\n\tPasswordAuthentication pa = authenticator.getPasswordAuthentication();\n\tString userName = pa.getUserName();\n\tString itemName = this.getIntent().getExtras().getString(\"itemName\");\n\tString query = \"SELECT * FROM items WHERE itemname=? AND owner=?\";\n\tSQLiteDatabase db = this.openOrCreateDatabase(\"DB\", MODE_PRIVATE, null);\n\tCursor c = db.rawQuery(query, new Object[]{itemName, userName});\n...\n</span>\n\nMore complicated scenarios, often found in report generation code, require that user input affect the command structure of the SQL statement, such as the addition of dynamic constraints in the <span class=\"code\">WHERE</span> clause. Do not use this requirement to justify concatenating user input into query strings. Prevent SQL injection attacks where user input must affect statement command structure with a level of indirection: create a set of legitimate strings that correspond to different elements you might include in a SQL statement. When constructing a statement, use input from the user to select from this set of application-controlled values.\n\n\n"
+            },
+            {
+                "key": "references",
+                "value": [
+                    "[1] S. J. Friedl, SQL Injection Attacks by Example, <a href=\"event:loc=http://www.unixwiz.net/techtips/sql-injection.html\" rel=\"nofollow\">http://www.unixwiz.net/techtips/sql-injection.html</a>",
+                    "[2] P. Litwin, Stop SQL Injection Attacks Before They Stop You, MSDN Magazine, 2004",
+                    "[3] P. Finnigan, SQL Injection and Oracle, Part One, Security Focus, 2002, <a href=\"event:loc=http://www.securityfocus.com/infocus/1644\" rel=\"nofollow\">http://www.securityfocus.com/infocus/1644</a>",
+                    "[4] M. Howard, D. LeBlanc, Writing Secure Code, Second Edition, Microsoft Press, 2003",
+                    "[5] IDS00-J. Prevent SQL Injection, CERT, <a href=\"event:loc=https://www.securecoding.cert.org/confluence/display/java/IDS00-J.+Prevent+SQL+Injection\" rel=\"nofollow\">https://www.securecoding.cert.org/confluence/display/java/IDS00-J.+Prevent+SQL+Injection</a>",
+                    "[6] INJECT-2: Avoid dynamic SQL, Oracle, <a href=\"event:loc=http://www.oracle.com/technetwork/java/seccodeguide-139067.html#3\" rel=\"nofollow\">http://www.oracle.com/technetwork/java/seccodeguide-139067.html#3</a>",
+                    "[7] Standards Mapping - Common Weakness Enumeration, CWE ID 89",
+                    "[8] Standards Mapping - Common Weakness Enumeration Top 25 2019, [6] CWE ID 089",
+                    "[9] Standards Mapping - DISA Control Correlation Identifier Version 2, CCI-001310, CCI-002754",
+                    "[10] Standards Mapping - FIPS200, SI",
+                    "[11] Standards Mapping - General Data Protection Regulation, Indirect Access to Sensitive Data",
+                    "[12] Standards Mapping - MISRA C 2012, Rule 1.3",
+                    "[13] Standards Mapping - MISRA C++ 2008, Rule 0-3-1",
+                    "[14] Standards Mapping - NIST Special Publication 800-53 Revision 4, SI-10 Information Input Validation (P1)",
+                    "[15] Standards Mapping - OWASP Application Security Verification Standard 4.0, 5.3.4 Output Encoding and Injection Prevention Requirements, 5.3.5 Output Encoding and Injection Prevention Requirements",
+                    "[16] Standards Mapping - OWASP Mobile Top 10 Risks 2014, M7 Client Side Injection",
+                    "[17] Standards Mapping - OWASP Top 10 2004, A6 Injection Flaws",
+                    "[18] Standards Mapping - OWASP Top 10 2007, A2 Injection Flaws",
+                    "[19] Standards Mapping - OWASP Top 10 2010, A1 Injection",
+                    "[20] Standards Mapping - OWASP Top 10 2013, A1 Injection",
+                    "[21] Standards Mapping - OWASP Top 10 2017, A1 Injection",
+                    "[22] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1, Requirement 6.5.6",
+                    "[23] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2, Requirement 6.3.1.1, Requirement 6.5.2",
+                    "[24] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0, Requirement 6.5.1",
+                    "[25] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0, Requirement 6.5.1",
+                    "[26] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1, Requirement 6.5.1",
+                    "[27] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2, Requirement 6.5.1",
+                    "[28] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1, Requirement 6.5.1",
+                    "[29] Standards Mapping - Payment Card Industry Software Security Framework 1.0, Control Objective 4.2 - Critical Asset Protection",
+                    "[30] Standards Mapping - SANS Top 25 2009, Insecure Interaction - CWE ID 089",
+                    "[31] Standards Mapping - SANS Top 25 2010, Insecure Interaction - CWE ID 089",
+                    "[32] Standards Mapping - SANS Top 25 2011, Insecure Interaction - CWE ID 089",
+                    "[33] Standards Mapping - Security Technical Implementation Guide Version 3.1, APP3510 CAT I, APP3540.1 CAT I, APP3540.3 CAT II",
+                    "[34] Standards Mapping - Security Technical Implementation Guide Version 3.10, APP3510 CAT I, APP3540.1 CAT I, APP3540.3 CAT II",
+                    "[35] Standards Mapping - Security Technical Implementation Guide Version 3.4, APP3510 CAT I, APP3540.1 CAT I, APP3540.3 CAT II",
+                    "[36] Standards Mapping - Security Technical Implementation Guide Version 3.5, APP3510 CAT I, APP3540.1 CAT I, APP3540.3 CAT II",
+                    "[37] Standards Mapping - Security Technical Implementation Guide Version 3.6, APP3510 CAT I, APP3540.1 CAT I, APP3540.3 CAT II",
+                    "[38] Standards Mapping - Security Technical Implementation Guide Version 3.7, APP3510 CAT I, APP3540.1 CAT I, APP3540.3 CAT II",
+                    "[39] Standards Mapping - Security Technical Implementation Guide Version 3.9, APP3510 CAT I, APP3540.1 CAT I, APP3540.3 CAT II",
+                    "[40] Standards Mapping - Security Technical Implementation Guide Version 4.1, APSC-DV-002540 CAT I, APSC-DV-002560 CAT I",
+                    "[41] Standards Mapping - Security Technical Implementation Guide Version 4.10, APSC-DV-002540 CAT I, APSC-DV-002560 CAT I",
+                    "[42] Standards Mapping - Security Technical Implementation Guide Version 4.11, APSC-DV-002540 CAT I, APSC-DV-002560 CAT I",
+                    "[43] Standards Mapping - Security Technical Implementation Guide Version 4.2, APSC-DV-002540 CAT I, APSC-DV-002560 CAT I",
+                    "[44] Standards Mapping - Security Technical Implementation Guide Version 4.3, APSC-DV-002540 CAT I, APSC-DV-002560 CAT I",
+                    "[45] Standards Mapping - Security Technical Implementation Guide Version 4.4, APSC-DV-002540 CAT I, APSC-DV-002560 CAT I",
+                    "[46] Standards Mapping - Security Technical Implementation Guide Version 4.5, APSC-DV-002540 CAT I, APSC-DV-002560 CAT I",
+                    "[47] Standards Mapping - Security Technical Implementation Guide Version 4.6, APSC-DV-002540 CAT I, APSC-DV-002560 CAT I",
+                    "[48] Standards Mapping - Security Technical Implementation Guide Version 4.7, APSC-DV-002540 CAT I, APSC-DV-002560 CAT I",
+                    "[49] Standards Mapping - Security Technical Implementation Guide Version 4.8, APSC-DV-002540 CAT I, APSC-DV-002560 CAT I",
+                    "[50] Standards Mapping - Security Technical Implementation Guide Version 4.9, APSC-DV-002540 CAT I, APSC-DV-002560 CAT I",
+                    "[51] Standards Mapping - Web Application Security Consortium 24 + 2, SQL Injection",
+                    "[52] Standards Mapping - Web Application Security Consortium Version 2.00, SQL Injection (WASC-19)"
+                ]
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": 1,
+        "ip": null,
+        "issueDescription": "SQL injection errors occur when:\n\n1. Data enters a program from an untrusted source.\n\nIn this case, Fortify Static Code Analyzer could not determine that the source of the data is trusted.\n\n2. The data is used to dynamically construct a SQL query.\n\n\nIn this case, the data is passed to <a href=\"event:file=workspace/src/com/customer/AppX/file4.java&amp;lineNo=30\" rel=\"nofollow\">queryForList()</a> in file4.java at line 30.\n\n\n<b>Example 1:</b> The following code dynamically constructs and executes a SQL query that searches for items matching a specified name. The query restricts the items displayed to those where the owner matches the user name of the currently-authenticated user.\n\n<span class=\"code\">\n...\n\tString userName = ctx.getAuthenticatedUserName();\n\tString itemName = request.getParameter(\"itemName\");\n\tString query = \"SELECT * FROM items WHERE owner = '\"\n\t\t\t\t+ userName + \"' AND itemname = '\"\n\t\t\t\t+ itemName + \"'\";\n\tResultSet rs = stmt.execute(query);\n...\n</span>\n\nThe query intends to execute the following code:\n\n<span class=\"code\">\n\tSELECT * FROM items\n\tWHERE owner = &lt;userName&gt;\n\tAND itemname = &lt;itemName&gt;;\n</span>\n\nHowever, because the query is constructed dynamically by concatenating a constant base query string and a user input string, the query only behaves correctly if <span class=\"code\">itemName</span> does not contain a single-quote character. If an attacker with the user name <span class=\"code\">wiley</span> enters the string \"<span class=\"code\">name' OR 'a'='a</span>\" for <span class=\"code\">itemName</span>, then the query becomes the following:\n\n<span class=\"code\">\n\tSELECT * FROM items\n\tWHERE owner = 'wiley'\n\tAND itemname = 'name' OR 'a'='a';\n</span>\n\nThe addition of the <span class=\"code\">OR 'a'='a'</span> condition causes the where clause to always evaluate to true, so the query becomes logically equivalent to the much simpler query:\n\n<span class=\"code\">\n\tSELECT * FROM items;\n</span>\n\nThis simplification of the query allows the attacker to bypass the requirement that the query must only return items owned by the authenticated user. The query now returns all entries stored in the <span class=\"code\">items</span> table, regardless of their specified owner.\n\n<b>Example 2:</b> This example examines the effects of a different malicious value passed to the query constructed and executed in <span class=\"code\">Example 1</span>. If an attacker with the user name <span class=\"code\">wiley</span> enters the string \"<span class=\"code\">name'; DELETE FROM items; --</span>\" for <span class=\"code\">itemName</span>, then the query becomes the following two queries:\n\n<span class=\"code\">\n\tSELECT * FROM items\n\tWHERE owner = 'wiley'\n\tAND itemname = 'name';\n\n\tDELETE FROM items;\n\n\t--'\n</span>\n\nMany database servers, including Microsoft(R) SQL Server 2000, allow multiple SQL statements separated by semicolons to be executed at once. While this attack string results in an error on Oracle and other database servers that do not allow the batch-execution of statements separated by semicolons, on databases that do allow batch execution, this type of attack allows the attacker to execute arbitrary commands against the database.\n\nNotice the trailing pair of hyphens (--), which specifies to most database servers that the remainder of the statement is to be treated as a comment and not executed [4]. In this case the comment character serves to remove the trailing single-quote left over from the modified query. On a database where comments are not allowed to be used in this way, the general attack could still be made effective using a trick similar to the one used in <span class=\"code\">Example 1</span>. If an attacker enters the string \"<span class=\"code\">name'); DELETE FROM items; SELECT * FROM items WHERE 'a'='a</span>\", the following three valid statements will be created:\n\n<span class=\"code\">\n\tSELECT * FROM items\n\tWHERE owner = 'wiley'\n\tAND itemname = 'name';\n\n\tDELETE FROM items;\n\n\tSELECT * FROM items WHERE 'a'='a';\n</span>\n\nSome think that in the mobile world, classic web application vulnerabilities, such as SQL injection, do not make sense -- why would the user attack themself? However, keep in mind that the essence of mobile platforms is applications that are downloaded from various sources and run alongside each other on the same device. The likelihood of running a piece of malware next to a banking application is high, which necessitates expanding the attack surface of mobile applications to include inter-process communication.\n\n<b>Example 3:</b> The following code adapts <span class=\"code\">Example 1</span> to the Android platform.\n\n<span class=\"code\">\n...\n        PasswordAuthentication pa = authenticator.getPasswordAuthentication();\n        String userName = pa.getUserName();\n        String itemName = this.getIntent().getExtras().getString(\"itemName\");\n        String query = \"SELECT * FROM items WHERE owner = '\"\n                                + userName + \"' AND itemname = '\"\n                                + itemName + \"'\";\n        SQLiteDatabase db = this.openOrCreateDatabase(\"DB\", MODE_PRIVATE, null);\n        Cursor c = db.rawQuery(query, null);\n...\n</span>\n\nOne traditional approach to preventing SQL injection attacks is to handle them as an input validation problem and either accept only characters from an allow list of safe values or identify and escape a list of potentially malicious values (deny list). Checking an allow list can be a very effective means of enforcing strict input validation rules, but parameterized SQL statements require less maintenance and can offer more guarantees with respect to security. As is almost always the case, implementing a deny list is riddled with loopholes that make it ineffective at preventing SQL injection attacks. For example, attackers may:\n\n    - Target fields that are not quoted\n    - Find ways to bypass the need for certain escaped metacharacters\n    - Use stored procedures to hide the injected metacharacters\n\nManually escaping characters in input to SQL queries can help, but it will not make your application secure from SQL injection attacks.\n\nAnother solution commonly proposed for dealing with SQL injection attacks is to use stored procedures. Although stored procedures prevent some types of SQL injection attacks, they fail to protect against many others. Stored procedures typically help prevent SQL injection attacks by limiting the types of statements that can be passed to their parameters. However, there are many ways around the limitations and many interesting statements that can still be passed to stored procedures. Again, stored procedures can prevent some exploits, but they will not make your application secure against SQL injection attacks.",
+        "issueName": "SQL Injection",
+        "issueType": "STATIC",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Input Validation and Representation//SQL Injection",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortify",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": [
+            "1. A common mistake is to use parameterized SQL statements that are constructed by concatenating user-controlled strings. Of course, this defeats the purpose of using parameterized SQL statements. If you are not certain that the strings used to form statements are constants controlled by the application, do not assume that they are safe because they are not being executed directly as SQL strings. Thoroughly investigate all uses of user-controlled strings in SQL statements and verify that none can be used to modify the meaning of the query.",
+            "2. Data is untrustworthy if it originates from public non-final string fields of a class. These types of fields may be modified by an unknown source.",
+            "3. Fortify RTA adds protection against this category."
+        ],
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": 219,
+        "scanSeverity": null,
+        "scanStatus": "NEW",
+        "scanTool": "fortify",
+        "scanType": "SCA",
+        "scenarioId": "8207742350716442876",
+        "severity": 2.0,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {
+                        "_href": "https://www.zeronorth.io/api/v1/projectVersions/42/issues/30223",
+                        "_raw_id": 30223,
+                        "abstract": "The function decode() in testEncrypt.java uses a cryptographic encryption algorithm with an insecure mode of operation on line 36.\n\n\n",
+                        "audited": true,
+                        "confidence": 5,
+                        "file_name": "testEncrypt.java",
+                        "full_file_name": "workspace/src/com/customer/AppX/model/testEncrypt.java",
+                        "hasComments": true,
+                        "issue_description": "The mode of operation of a block cipher is an algorithm that describes how to repeatedly apply a cipher's single-block operation to securely transform amounts of data larger than a block. Some modes of operation include Electronic Codebook (ECB), Cipher Block Chaining (CBC), Cipher Feedback (CFB), and Counter (CTR).\n\nECB mode is inherently weak, as it produces the same ciphertext for identical blocks of plain text. CBC mode is vulnerable to padding oracle attacks. CTR mode is the superior choice because it does not have these weaknesses.\n\n<b>Example 1:</b> The following code uses the AES cipher with ECB mode:\n\n<span class=\"code\">\n...\nSecretKeySpec key = new SecretKeySpec(keyBytes, \"AES\");\nCipher cipher = Cipher.getInstance(\"AES/ECB/PKCS7Padding\", \"BC\");\ncipher.init(Cipher.ENCRYPT_MODE, key);\n...\n</span>",
+                        "issue_instance_id": "FC1B943C8D34E4BA1C01519E35C12734",
+                        "issue_status": "Reviewed",
+                        "likelihood": 3.5,
+                        "line_number": 36,
+                        "primary_rule_guid": "C4ECC6B6-1A5E-41D8-97DE-807334D22D07",
+                        "primary_tag": "Not an Issue"
+                    },
+                    {
+                        "_href": "https://www.zeronorth.io/api/v1/projectVersions/42/issues/29939",
+                        "_raw_id": 29939,
+                        "abstract": "The function decode() in testEncrypt.java uses a cryptographic encryption algorithm with an insecure mode of operation on line 44.\n\n\n",
+                        "audited": false,
+                        "confidence": 5,
+                        "file_name": "testEncrypt.java",
+                        "full_file_name": "workspace/src/com/customer/AppX/model/testEncrypt.java",
+                        "hasComments": false,
+                        "issue_description": "The mode of operation of a block cipher is an algorithm that describes how to repeatedly apply a cipher's single-block operation to securely transform amounts of data larger than a block. Some modes of operation include Electronic Codebook (ECB), Cipher Block Chaining (CBC), Cipher Feedback (CFB), and Counter (CTR).\n\nECB mode is inherently weak, as it produces the same ciphertext for identical blocks of plain text. CBC mode is vulnerable to padding oracle attacks. CTR mode is the superior choice because it does not have these weaknesses.\n\n<b>Example 1:</b> The following code uses the AES cipher with ECB mode:\n\n<span class=\"code\">\n...\nSecretKeySpec key = new SecretKeySpec(keyBytes, \"AES\");\nCipher cipher = Cipher.getInstance(\"AES/ECB/PKCS7Padding\", \"BC\");\ncipher.init(Cipher.ENCRYPT_MODE, key);\n...\n</span>",
+                        "issue_instance_id": "CCF32749B8F8A59DB446C2BF70D7599B",
+                        "issue_status": "Unreviewed",
+                        "likelihood": 3.5,
+                        "line_number": 44,
+                        "primary_rule_guid": "C4ECC6B6-1A5E-41D8-97DE-807334D22D07",
+                        "primary_tag": null
+                    }
+                ]
+            },
+            {
+                "key": "project_version_id",
+                "value": 42
+            },
+            {
+                "key": "project_version_name",
+                "value": null
+            },
+            {
+                "key": "revision",
+                "value": 0
+            },
+            {
+                "key": "folder_id",
+                "value": 232
+            },
+            {
+                "key": "folder_guid",
+                "value": "54362046-6cd7-4d09-84db-50958b560180"
+            },
+            {
+                "key": "analyzer",
+                "value": "Semantic"
+            },
+            {
+                "key": "kingdom",
+                "value": "Security Features"
+            },
+            {
+                "key": "class_type",
+                "value": "Weak Encryption"
+            },
+            {
+                "key": "sub_type",
+                "value": "Insecure Mode of Operation"
+            },
+            {
+                "key": "friority",
+                "value": "Critical"
+            },
+            {
+                "key": "reviewed",
+                "value": null
+            },
+            {
+                "key": "external_bug_id",
+                "value": null
+            },
+            {
+                "key": "has_attachments",
+                "value": false
+            },
+            {
+                "key": "has_correlated_issues",
+                "value": false
+            },
+            {
+                "key": "found_date",
+                "value": "2020-10-25T19:27:38.000+0000"
+            },
+            {
+                "key": "removed_date",
+                "value": null
+            },
+            {
+                "key": "display_engine_type",
+                "value": "SCA"
+            },
+            {
+                "key": "primary_tag_value_auto_applied",
+                "value": false
+            },
+            {
+                "key": "removed",
+                "value": false
+            },
+            {
+                "key": "suppressed",
+                "value": false
+            },
+            {
+                "key": "hidden",
+                "value": false
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "kingdom",
+                    "class_type",
+                    "sub_type"
+                ]
+            },
+            {
+                "key": "recommendations",
+                "value": "Avoid using ECB and CBC modes of operation when encrypting data larger than a block. CBC mode is somewhat inefficient and poses a serious risk if used with SSL [1]. Instead, use CCM (Counter with CBC-MAC) mode or, if performance is a concern, GCM (Galois/Counter Mode) mode where they are available.\n\n<b>Example 2:</b> The following code uses the AES cipher with GCM mode:\n\n<span class=\"code\">\n...\nSecretKeySpec key = new SecretKeySpec(keyBytes, \"AES\");\nCipher cipher = Cipher.getInstance(\"AES/GCM/PKCS5Padding\", \"BC\");\ncipher.init(Cipher.ENCRYPT_MODE, key);\n...\n</span>\n\n\n"
+            },
+            {
+                "key": "references",
+                "value": [
+                    "[1] CVE 2014-3566, <a href=\"event:loc=http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3566\" rel=\"nofollow\">http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3566</a>",
+                    "[2] Manuel Egele, David Brumley, Yanick Fratantonio, Christopher Kruegel, An Empirical Study of Cryptographic Misuse in Android Applications, 2013, <a href=\"event:loc=https://sites.cs.ucsb.edu/~chris/research/doc/ccs13_cryptolint.pdf\" rel=\"nofollow\">https://sites.cs.ucsb.edu/~chris/research/doc/ccs13_cryptolint.pdf</a>",
+                    "[3] Standards Mapping - Common Weakness Enumeration, CWE ID 327",
+                    "[4] Standards Mapping - DISA Control Correlation Identifier Version 2, CCI-002450",
+                    "[5] Standards Mapping - FIPS200, MP",
+                    "[6] Standards Mapping - General Data Protection Regulation, Insufficient Data Protection",
+                    "[7] Standards Mapping - NIST Special Publication 800-53 Revision 4, SC-13 Cryptographic Protection (P1)",
+                    "[8] Standards Mapping - OWASP Application Security Verification Standard 4.0, 2.6.3 Look-up Secret Verifier Requirements, 2.9.3 Cryptographic Software and Devices Verifier Requirements, 6.2.1 Algorithms, 6.2.2 Algorithms, 8.3.7 Sensitive Private Data, 9.1.2 Communications Security Requirements, 9.1.3 Communications Security Requirements",
+                    "[9] Standards Mapping - OWASP Mobile Top 10 Risks 2014, M6 Broken Cryptography",
+                    "[10] Standards Mapping - OWASP Top 10 2004, A8 Insecure Storage",
+                    "[11] Standards Mapping - OWASP Top 10 2007, A8 Insecure Cryptographic Storage",
+                    "[12] Standards Mapping - OWASP Top 10 2010, A7 Insecure Cryptographic Storage",
+                    "[13] Standards Mapping - OWASP Top 10 2013, A6 Sensitive Data Exposure",
+                    "[14] Standards Mapping - OWASP Top 10 2017, A3 Sensitive Data Exposure",
+                    "[15] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1, Requirement 6.5.8",
+                    "[16] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2, Requirement 6.3.1.3, Requirement 6.5.8",
+                    "[17] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0, Requirement 6.5.3",
+                    "[18] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0, Requirement 6.5.3",
+                    "[19] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1, Requirement 6.5.3",
+                    "[20] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2, Requirement 6.5.3",
+                    "[21] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1, Requirement 6.5.3",
+                    "[22] Standards Mapping - Payment Card Industry Software Security Framework 1.0, Control Objective 7.4 - Use of Cryptography",
+                    "[23] Standards Mapping - SANS Top 25 2009, Porous Defenses - CWE ID 327",
+                    "[24] Standards Mapping - SANS Top 25 2010, Porous Defenses - CWE ID 327",
+                    "[25] Standards Mapping - SANS Top 25 2011, Porous Defenses - CWE ID 327",
+                    "[26] Standards Mapping - Security Technical Implementation Guide Version 3.1, APP3150.1 CAT II",
+                    "[27] Standards Mapping - Security Technical Implementation Guide Version 3.10, APP3150.1 CAT II",
+                    "[28] Standards Mapping - Security Technical Implementation Guide Version 3.4, APP3150.1 CAT II",
+                    "[29] Standards Mapping - Security Technical Implementation Guide Version 3.5, APP3150.1 CAT II",
+                    "[30] Standards Mapping - Security Technical Implementation Guide Version 3.6, APP3150.1 CAT II",
+                    "[31] Standards Mapping - Security Technical Implementation Guide Version 3.7, APP3150.1 CAT II",
+                    "[32] Standards Mapping - Security Technical Implementation Guide Version 3.9, APP3150.1 CAT II",
+                    "[33] Standards Mapping - Security Technical Implementation Guide Version 4.1, APSC-DV-002010 CAT II, APSC-DV-002040 CAT II",
+                    "[34] Standards Mapping - Security Technical Implementation Guide Version 4.10, APSC-DV-002010 CAT II, APSC-DV-002040 CAT II",
+                    "[35] Standards Mapping - Security Technical Implementation Guide Version 4.11, APSC-DV-002010 CAT II, APSC-DV-002040 CAT II",
+                    "[36] Standards Mapping - Security Technical Implementation Guide Version 4.2, APSC-DV-002010 CAT II, APSC-DV-002040 CAT II",
+                    "[37] Standards Mapping - Security Technical Implementation Guide Version 4.3, APSC-DV-002010 CAT II, APSC-DV-002040 CAT II",
+                    "[38] Standards Mapping - Security Technical Implementation Guide Version 4.4, APSC-DV-002010 CAT II, APSC-DV-002040 CAT II",
+                    "[39] Standards Mapping - Security Technical Implementation Guide Version 4.5, APSC-DV-002010 CAT II, APSC-DV-002040 CAT II",
+                    "[40] Standards Mapping - Security Technical Implementation Guide Version 4.6, APSC-DV-002010 CAT II, APSC-DV-002040 CAT II",
+                    "[41] Standards Mapping - Security Technical Implementation Guide Version 4.7, APSC-DV-002010 CAT II, APSC-DV-002040 CAT II",
+                    "[42] Standards Mapping - Security Technical Implementation Guide Version 4.8, APSC-DV-002010 CAT II, APSC-DV-002040 CAT II",
+                    "[43] Standards Mapping - Security Technical Implementation Guide Version 4.9, APSC-DV-002010 CAT II, APSC-DV-002040 CAT II"
+                ]
+            },
+            {
+                "key": "_raw_issuename",
+                "value": "Weak Encryption: Insecure Mode of Operation"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": 5,
+        "ip": null,
+        "issueDescription": "The mode of operation of a block cipher is an algorithm that describes how to repeatedly apply a cipher's single-block operation to securely transform amounts of data larger than a block. Some modes of operation include Electronic Codebook (ECB), Cipher Block Chaining (CBC), Cipher Feedback (CFB), and Counter (CTR).\n\nECB mode is inherently weak, as it produces the same ciphertext for identical blocks of plain text. CBC mode is vulnerable to padding oracle attacks. CTR mode is the superior choice because it does not have these weaknesses.\n\n<b>Example 1:</b> The following code uses the AES cipher with ECB mode:\n\n<span class=\"code\">\n...\nSecretKeySpec key = new SecretKeySpec(keyBytes, \"AES\");\nCipher cipher = Cipher.getInstance(\"AES/ECB/PKCS7Padding\", \"BC\");\ncipher.init(Cipher.ENCRYPT_MODE, key);\n...\n</span>",
+        "issueName": "Weak Encryption_Insecure Mode of Operation",
+        "issueType": "STATIC",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Security Features//Weak Encryption//Insecure Mode of Operation",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "fortify",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "2014-3566",
+                "type": "cve"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": [],
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": 219,
+        "scanSeverity": null,
+        "scanStatus": "NEW",
+        "scanTool": "fortify",
+        "scanType": "SCA",
+        "scenarioId": "8207742350716442876",
+        "severity": 4.0,
+        "severityCode": "Medium",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    }
+]

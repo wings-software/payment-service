@@ -1,0 +1,291 @@
+[
+    {
+       "aggregated_status":"OPEN",
+       "category":"DATA_LOSS_TO_HACKERS",
+       "compliance_policy_references":[
+          {
+             "compliance_policy":"PCI",
+             "link":"https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf?agreement=true&time=1534758404990",
+             "markdown":"Section 8.2"
+          }
+       ],
+       "description":"The App does not specify a text field marked as a two-factor authentication code input field.\n\nStarting with the iOS 12 SDK, [Apple has added a new text field property](https://developer.apple.com/documentation/uikit/uitextinputtraits/1649656-textcontenttype?language=objc) to automate the process of inputting two-factor authentication SMS codes.\n\nIf a text field has the `textContentType` property set to `UITextContentTypeOneTimeCode`, iOS will automatically scan incoming SMS messages for an authentication code. When the user interacts with the text field, iOS will prompt the user to AutoFill the authentication code. This process makes using two-factor authentication a smoother experience for users.\n\nThis enhancement is also available if the App's two-factor authentication flow occurs within a WebView. In this case, set the `autocomplete` attribute of the appropriate HTML elements, as [further described here](https://developer.apple.com/documentation/security/password_autofill/enabling_password_autofill_on_an_html_input_element?language=objc).\n\n\nTwo-factor authentication is a valuable mechanism to ensure that even if a user's credentials are leaked, access to\naccount data within the App is still restricted without physical access to their devices or other accounts.",
+       "exploitability":"MODERATE",
+       "id":"001796",
+       "importance_tags":[
+          "SECURITY",
+          "DEFENSE_IN_DEPTH"
+       ],
+       "is_permanently_closed":false,
+       "issue_type_id":"dfebf7a4-96a7-5173-af52-7387a14e9c09",
+       "links":[
+          {
+             "href":"mobile_apps/578040001",
+             "rel":"mobile_apps",
+             "type":"GET"
+          },
+          {
+             "href":"security_findings?mobile_app_id=578040001",
+             "rel":"self",
+             "type":"GET"
+          },
+          {
+             "href":"security_finding_targets?mobile_app_id=578040001",
+             "rel":"security_finding_targets",
+             "type":"GET"
+          }
+       ],
+       "mobile_app_id":"578040001",
+       "portal_url":"https://www.securetheorem.com/mobile/app/578040001/issues/001796",
+       "recommendation":"Ensure two-factor authentication is offered or enforced in your service. Leverage the [`UITextContentTypeOneTimeCode` content type available in iOS 12](https://developer.apple.com/documentation/uikit/uitextinputtraits/1649656-textcontenttype?language=objc) to automate the process of entering SMS authentication codes for your users.",
+       "results_last_updated":"2020-07-28T01:16:54.245621+00:00",
+       "secure_code":"```\n- (void)configureOneTimeCodeField {\n    self.twoFAInputField = [[UITextField alloc] initWithFrame:self.view.frame];\n    self.twoFAInputField.textContentType = UITextContentTypeOneTimeCode;\n    [self.view addSubview:self.twoFAInputField];\n}\n```",
+       "severity":"LOW",
+       "title":"Enable Two-Factor Authentication Input Field"
+    },
+    {
+       "aggregated_status":"OPEN",
+       "category":"DATA_AT_REST_EXPOSURE",
+       "description":"__Edit: On January 13th, 2020, Apple announced [on its developer portal](https://developer.apple.com/news/?id=01132020b) that starting April 2020, all Apps must use an Xcode storyboard to provide the App's launch screen, and must use the Auto Layout APIs to provide an adaptive UI.__\n\n__Edit: On March 26th, 2020, Apple announced [on its developer portal](https://developer.apple.com/news/?id=03262020b) the deadline for adhering to these requirements has been extended to June 30, 2020.__\n\nThe App does not reference APIs used to present the user interface based on the available screen space. \n\nAs stated in the [WWDC 2019 Platform State of the Union video](https://developer.apple.com/videos/play/wwdc2019/103/?time=120), Apple will require that all Apps on the store adapt their UI according to the available screen space by Q1 2020. Failing to include an adaptive UI in the App may trigger a rejection from the App Store review team on the next submission.\n\nApple is also requiring that the App uses Xcode storyboards to provide the App's launch screen.\n\nApple provides multiple APIs used to layout the App's UI according to the available screen space. For example, the App could leverage the `UITraitCollection` API to receive and respond to changes in the available screen space. Supplementarily, the App could utilize the auto-layout API to define the relationships between UI elements on the screen, or the `UIAppearance` API to present elements appropriately based on the current user settings. \n\nIt should be noted that this issue has no security impact, but may cause the App to be rejected by the App Store review team on the next submission. Apple has stated [on its developer portal](https://developer.apple.com/news/?id=01132020b) that it will begin enforcing these requirements in April 2020.",
+       "exploitability":"DIFFICULT",
+       "id":"008674",
+       "importance_tags":[
+          "APPLE_P1",
+          "APPLE"
+       ],
+       "is_permanently_closed":false,
+       "issue_type_id":"6e91c2ce-d839-5be3-b622-bcf32b0a8cc0",
+       "links":[
+          {
+             "href":"mobile_apps/578040001",
+             "rel":"mobile_apps",
+             "type":"GET"
+          },
+          {
+             "href":"security_findings?mobile_app_id=578040001",
+             "rel":"self",
+             "type":"GET"
+          },
+          {
+             "href":"security_finding_targets?mobile_app_id=578040001",
+             "rel":"security_finding_targets",
+             "type":"GET"
+          }
+       ],
+       "mobile_app_id":"578040001",
+       "portal_url":"https://www.securetheorem.com/mobile/app/578040001/issues/008674",
+       "recommendation":"Leverage the system APIs which inform the App about changes in the available screen space, such as `traitCollectionDidChange:`, and layout the App's UI accordingly. Aim to utilize all the available screen space to provide a more seamless experience for the user.",
+       "results_last_updated":"2020-07-28T01:16:54.244889+00:00",
+       "secure_code":"```\noverride func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {\n    super.traitCollectionDidChange(previousTraitCollection)\n\n    // Dynamically update our UI to respond to the available layout space\n    if traitCollection.horizontalSizeClass == .compact {\n        // Load slim view\n    } else {\n        // Load wide view\n    }\n}\n```",
+       "severity":"LOW",
+       "title":"App Store Blocker - App Must Adapt to Different Screen Sizes"
+    },
+    {
+       "aggregated_status":"OPEN",
+       "category":"DATA_LOSS_TO_HACKERS",
+       "compliance_policy_references":[
+          {
+             "compliance_policy":"OWASP",
+             "link":"https://owasp.org/www-project-mobile-top-10/2016-risks/m1-improper-platform-usage",
+             "markdown":"M1 - Improper Platfrom Usage"
+          }
+       ],
+       "description":"The App is compiled with Automatic Reference Counting (ARC) disabled. Automatic Reference Counting is a memory management feature that automates the process of allocating and deallocating objects.\n\nWhen enabled, ARC shifts the responsibility of memory management from the developer to the compiler, thereby improving the App's security posture by preventing specific cases of memory safety violations such as dangling pointers; such issues could potentially facilitate the exploitation of a memory corruption vulnerability affecting the App. Lastly, ARC also helps to prevent memory leaks triggered by objects that never get deallocated.",
+       "exploitability":"MODERATE",
+       "id":"002825",
+       "importance_tags":[
+          "SECURITY"
+       ],
+       "is_permanently_closed":false,
+       "issue_type_id":"e5abd764-65c3-5f88-b9c7-7557fce225a7",
+       "links":[
+          {
+             "href":"mobile_apps/578040001",
+             "rel":"mobile_apps",
+             "type":"GET"
+          },
+          {
+             "href":"security_findings?mobile_app_id=578040001",
+             "rel":"self",
+             "type":"GET"
+          },
+          {
+             "href":"security_finding_targets?mobile_app_id=578040001",
+             "rel":"security_finding_targets",
+             "type":"GET"
+          }
+       ],
+       "mobile_app_id":"578040001",
+       "portal_url":"https://www.securetheorem.com/mobile/app/578040001/issues/002825",
+       "recommendation":"Enable ARC within the App's compilation settings:\n\n* Find the \"Apple LLVM Language Objective C\" setting within the App's Build Settings tab in Xcode.\n* Set the \"Objective-C Automatic Reference Counting\" setting to `Yes`.\n\nEnabling ARC will also require code changes in order to transition from manual to automated object reference counting. A guide on how to migrate an existing App is available at [https://developer.apple.com/library/ios/releasenotes/ObjectiveC/RN-TransitioningToARC/Introduction/Introduction.html](https://developer.apple.com/library/ios/releasenotes/ObjectiveC/RN-TransitioningToARC/Introduction/Introduction.html).",
+       "results_last_updated":"2020-07-28T01:16:54.244630+00:00",
+       "severity":"MEDIUM",
+       "title":"Automatic Reference Counting (ARC) not Enabled"
+    },
+    {
+       "aggregated_status":"OPEN",
+       "category":"DATA_AT_REST_EXPOSURE",
+       "compliance_policy_references":[
+          {
+             "compliance_policy":"OWASP",
+             "link":"https://owasp.org/www-project-mobile-top-10/2016-risks/m1-improper-platform-usage",
+             "markdown":"M1 - Improper Platfrom Usage"
+          }
+       ],
+       "description":"The Data Protection entitlement is not enabled within the Xcode project for the App. When enabled, the Data Protection capability will automatically protect all files created by the App with the strongest Data Protection class, [`NSFileProtectionComplete`](https://developer.apple.com/documentation/foundation/nsfileprotectioncomplete); this protection class ensures that the file is encrypted with the user's passcode whenever the device is locked.\n\nAs described in the [iOS Security Guide](https://www.apple.com/business/docs/iOS_Security_Guide.pdf) in the \"Data Protection\" section, the default Data Protection class for files since iOS 7 is `NSFileProtectionCompleteUntilFirstUserAuthentication`, which only encrypts the user's data until the very first time they unlock their device:\n\n> \"The protection in this class has similar properties to desktop full-volume encryption, and protects data from attacks that involve a reboot\".\n\nEnabling the Data Protection entitlement changes the default protection class for the App's files to `NSFileProtectionComplete`, ensuring the user's data is protected whenever the device is locked. In the event of theft, files protected with `NSFileProtectionComplete` are harder to extract from devices that have a passcode set, by preventing the following attacks:\n\n* Exploiting a vulnerability to gain code execution on the device (such as a buffer overflow in a driver) or within the App. After code execution, files that are not protected can be recovered even if the device is locked.\n* Using a lock screen bypass, of which there have been several in iOS.\n* Extracting data from the device using a pairing record from a computer to which the victim's device has previously been paired with via iTunes.",
+       "exploitability":"MODERATE",
+       "id":"000796",
+       "importance_tags":[
+          "SECURITY",
+          "DEFENSE_IN_DEPTH"
+       ],
+       "is_permanently_closed":false,
+       "issue_type_id":"5a8c399e-f829-5351-a7b1-50985d3fb5af",
+       "links":[
+          {
+             "href":"mobile_apps/578040001",
+             "rel":"mobile_apps",
+             "type":"GET"
+          },
+          {
+             "href":"security_findings?mobile_app_id=578040001",
+             "rel":"self",
+             "type":"GET"
+          },
+          {
+             "href":"security_finding_targets?mobile_app_id=578040001",
+             "rel":"security_finding_targets",
+             "type":"GET"
+          }
+       ],
+       "mobile_app_id":"578040001",
+       "portal_url":"https://www.securetheorem.com/mobile/app/578040001/issues/000796",
+       "recommendation":"Enable the Data Protection entitlement in the Xcode project configuration of the App. As shown in the screenshot, this setting is available in the \"Capabilities\" tab within Xcode.\n\nBecause the entitlement will cause iOS to encrypt all the App's files when the device is locked, it might cause problems if the App tries to access its files while running in the background (ie. when the device might be locked). To work around this problem, App can lower the protection level to `NSFileProtectionCompleteUntilFirstUserAuthentication` for the specific files that need to be accessed while in the background, as described in the [Encrypting Your App's Files](https://developer.apple.com/documentation/uikit/core_app/protecting_the_user_s_privacy/encrypting_your_app_s_files?language=objc) article within the Apple documentation.\n\nLastly, the [`applicationProtectedDataWillBecomeUnavailable:`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623019-applicationprotecteddatawillbeco?language=objc) and [`applicationProtectedDataDidBecomeAvailable:`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623044-applicationprotecteddatadidbecom?language=objc) App delegate methods can be used to [manage the App's access to protected files](https://developer.apple.com/documentation/uikit/core_app/protecting_the_user_s_privacy/encrypting_your_app_s_files?language=objc).",
+       "results_last_updated":"2020-07-28T01:16:54.244322+00:00",
+       "severity":"MEDIUM",
+       "title":"Enable Data Protection Entitlement"
+    },
+    {
+       "aggregated_status":"OPEN",
+       "category":"DATA_EXPOSURE_TO_THIRD_PARTY_APPS",
+       "compliance_policy_references":[
+          {
+             "compliance_policy":"OWASP",
+             "link":"https://owasp.org/www-project-mobile-top-10/2016-risks/m1-improper-platform-usage",
+             "markdown":"M1 - Improper Platfrom Usage"
+          },
+          {
+             "compliance_policy":"MITRE",
+             "link":"https://attack.mitre.org/techniques/T1417/",
+             "markdown":"Malicious Third Party Keyboard App (ID: T1417)"
+          }
+       ],
+       "description":"The App does not disable custom keyboards. Such keyboards were introduced in iOS 8 and allow users to install a custom keyboard that can be used in any App, in order to replace the system's default keyboard.\n\nCustom keyboards are not leveraged when the user types into a \"Secure\" field (such as password fields) but can potentially log all the user's keystrokes for regular fields. If the App requires the user to enter sensitive data (such as credit card numbers) in a field not marked as \"Secure\", allowing a custom keyboard to be used may increase the risk of such data being leaked.\n\nAs an example of the feature's abuse, a custom keyboard was used within the Hacking Team Spyware App [to spoof the iOS default keyboard and record the user's key strokes](https://9to5mac.com/2015/07/14/truth-faq-hackingteam-iphone-ipad-surveillance/).\n\nA proof of concept for an iOS 8 custom keyboard logging the user's keystrokes is available on Data Theorem's [BitBucket account](https://bitbucket.org/datatheorem/keylogging-keyboard-ios).",
+       "exploitability":"MODERATE",
+       "id":"008532",
+       "importance_tags":[
+          "DEFENSE_IN_DEPTH",
+          "SECURITY"
+       ],
+       "is_permanently_closed":false,
+       "issue_type_id":"b22cdce3-89af-5b8e-b091-70831c92a1f5",
+       "links":[
+          {
+             "href":"mobile_apps/578040001",
+             "rel":"mobile_apps",
+             "type":"GET"
+          },
+          {
+             "href":"security_findings?mobile_app_id=578040001",
+             "rel":"self",
+             "type":"GET"
+          },
+          {
+             "href":"security_finding_targets?mobile_app_id=578040001",
+             "rel":"security_finding_targets",
+             "type":"GET"
+          }
+       ],
+       "mobile_app_id":"578040001",
+       "portal_url":"https://www.securetheorem.com/mobile/app/578040001/issues/008532",
+       "recommendation":"If most of the user's keystrokes within the App may contain sensitive data, consider disabling third-party keyboards within the App in order to prevent sensitive data entered by the user from being leaked. This can be achieved by implementing the [`application:shouldAllowExtensionPointIdentifier:` method]((https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html).) within the App's `UIApplicationDelegate`, as described in the \"Secure Code\" section below.\n\nIf only specific fields need to be protected from third-party keyboards, flag these fields as \"Secure\" in order to prevent the keyboards from being loaded when entering data within such sensitive fields.",
+       "results_last_updated":"2020-07-28T01:16:54.243912+00:00",
+       "secure_code":"The following code will disable custom keyboards within an App:\n```\n// To be added to the App's UIApplicationDelegate\n- (BOOL)application:(UIApplication *)application shouldAllowExtensionPointIdentifier:(UIApplicationExtensionPointIdentifier)extensionPointIdentifier\n{\n    // Disable third-party keyboards on iOS 8+\n    return NO;\n}\n```",
+       "severity":"MEDIUM",
+       "title":"Disable Third-Party Keyboards"
+    },
+    {
+       "aggregated_status":"OPEN",
+       "category":"DATA_LOSS_TO_HACKERS",
+       "description":"The App was compiled with an iOS SDK older than iOS 12.1.\nAs of **March 27, 2019**, [Apple will reject submissions and updates for Apps targeting an SDK version below iOS 12.1](https://developer.apple.com/news/?id=03202019a).\n\nBuilding the App with an outdated SDK also means that the App will not ship with any security patches made within system frameworks used by the App. Additionally, the App will be unable to make use of modern APIs only present in the latest SDK.\n\nThe requirement of a current SDK is now enforced for both new Apps and App updates.",
+       "exploitability":"DIFFICULT",
+       "id":"008326",
+       "importance_tags":[
+          "APPLE",
+          "DEFENSE_IN_DEPTH",
+          "APPLE_P1"
+       ],
+       "is_permanently_closed":false,
+       "issue_type_id":"c16c425f-4df4-5a5d-b442-a231eb1af745",
+       "links":[
+          {
+             "href":"mobile_apps/578040001",
+             "rel":"mobile_apps",
+             "type":"GET"
+          },
+          {
+             "href":"security_findings?mobile_app_id=578040001",
+             "rel":"self",
+             "type":"GET"
+          },
+          {
+             "href":"security_finding_targets?mobile_app_id=578040001",
+             "rel":"security_finding_targets",
+             "type":"GET"
+          }
+       ],
+       "mobile_app_id":"578040001",
+       "portal_url":"https://www.securetheorem.com/mobile/app/578040001/issues/008326",
+       "recommendation":"Recompile the App with the highest iOS SDK version available and do not rely on functionality only present in older SDK versions. More information about leveraging the latest iOS SDK version while maintaining backward compatibility with older devices is available in [the Apple developer documentation](https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/cross_development/Configuring/configuring.html).\n\nIf the App cannot be compiled using the latest SDK version, it must at least be built with the iOS 12.1 SDK or newer, in order to order to avoid an App Store rejection.",
+       "results_last_updated":"2020-07-28T01:16:54.243574+00:00",
+       "severity":"LOW",
+       "title":"App Store Blocker: App Built with Deprecated iOS SDK"
+    },
+    {
+       "aggregated_status":"OPEN",
+       "category":"DATA_LOSS_TO_HACKERS",
+       "description":"The App does not specify text fields marked as username and password input fields.\n\nStarting with the iOS 12 SDK, [Apple has added new text field properties](https://developer.apple.com/documentation/uikit/uitextinputtraits/1649656-textcontenttype?language=objc) to automate the process of password generation and login credentials entry.\n\nIf two text fields have the `textContentType` property set to `UITextContentTypeUsername` and `UITextContentTypePassword`, iOS will recognize that the current view represents a login context, and will prompt the user to input their saved iCloud Keychain credentials. If a field has the `textContentType` property set to `UITextContentTypeNewPassword`, iOS will prompt the user with a secure, system generated password to use.\n\nThis enhancement is also available if the App's login flow occurs within a WebView. In this case, set the `autocomplete` attribute of the login HTML elements, as further described in the [Apple documentation](https://developer.apple.com/documentation/security/password_autofill/enabling_password_autofill_on_an_html_input_element?language=objc).\n\nUtilizing these APIs makes it easier for users to create and manage secure credentials.",
+       "exploitability":"DIFFICULT",
+       "id":"008871",
+       "importance_tags":[
+          "DEFENSE_IN_DEPTH",
+          "SECURITY"
+       ],
+       "is_permanently_closed":false,
+       "issue_type_id":"5ccb3f15-10dc-58a6-bb95-a79fb3bd0508",
+       "links":[
+          {
+             "href":"mobile_apps/578040001",
+             "rel":"mobile_apps",
+             "type":"GET"
+          },
+          {
+             "href":"security_findings?mobile_app_id=578040001",
+             "rel":"self",
+             "type":"GET"
+          },
+          {
+             "href":"security_finding_targets?mobile_app_id=578040001",
+             "rel":"security_finding_targets",
+             "type":"GET"
+          }
+       ],
+       "mobile_app_id":"578040001",
+       "portal_url":"https://www.securetheorem.com/mobile/app/578040001/issues/008871",
+       "recommendation":"Leverage the [`UITextContentType` property available in iOS 12](https://developer.apple.com/documentation/uikit/uitextinputtraits/1649656-textcontenttype?language=objc) to automate the process of generating secure passwords and inputting login credentials for your users.",
+       "results_last_updated":"2020-07-28T01:16:54.241309+00:00",
+       "secure_code":"```\n- (void)configureLoginFields {\n    self.usernameField = [[UITextField alloc] initWithFrame:self.view.frame];\n    self.usernameField.textContentType = UITextContentTypeUsername;\n    [self.view addSubview:self.usernameField];\n\n    self.passwordField = [[UITextField alloc] initWithFrame:self.view.frame];\n    self.passwordField.textContentType = UITextContentTypePassword;\n    [self.view addSubview:self.passwordField];\n\n    self.passwordResetField = [[UITextField alloc] initWithFrame:self.view.frame];\n    self.passwordResetField.textContentType = UITextContentTypeNewPassword;\n    [self.view addSubview:self.passwordResetField];\n}\n```",
+       "severity":"LOW",
+       "title":"Enable System-Managed Login Input Fields"
+    }
+ ]

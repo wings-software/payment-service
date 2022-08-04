@@ -1,0 +1,2237 @@
+[
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "name",
+                "value": "Client_Insufficient_ClickJacking_Protection"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "name",
+                    "group"
+                ]
+            },
+            {
+                "key": "group",
+                "value": "JavaScript_Low_Visibility"
+            },
+            {
+                "key": "cwe",
+                "value": "693"
+            },
+            {
+                "key": "_raw_@id",
+                "value": "2612"
+            },
+            {
+                "key": "_raw_@language",
+                "value": "JavaScript"
+            },
+            {
+                "key": "_raw_@languagehash",
+                "value": "1003522720031683"
+            },
+            {
+                "key": "_raw_@languagechangedate",
+                "value": "2020-04-14T00:00:00.0000000"
+            },
+            {
+                "key": "_raw_@severityindex",
+                "value": "1"
+            },
+            {
+                "key": "_raw_@querypath",
+                "value": "JavaScript\\\\Cx\\\\JavaScript Low Visibility\\\\Client Insufficient ClickJacking Protection Version:5"
+            },
+            {
+                "key": "_raw_@queryversioncode",
+                "value": "79610658"
+            },
+            {
+                "key": "_raw_result",
+                "value": {
+                    "@AssignToUser": "",
+                    "@Column": "1",
+                    "@DeepLink": "https://oldcxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1030311&projectid=17122&pathid=30",
+                    "@FalsePositive": "False",
+                    "@FileName": "app/views/allocations.html",
+                    "@Line": "1",
+                    "@NodeId": "10303110030",
+                    "@Remark": "",
+                    "@Severity": "Low",
+                    "@SeverityIndex": "1",
+                    "@Status": "Recurrent",
+                    "@state": "0",
+                    "Path": {
+                        "@PathId": "30",
+                        "@ResultId": "1030311",
+                        "@SimilarityId": "457030861",
+                        "PathNode": {
+                            "Column": "1",
+                            "FileName": "app/views/allocations.html",
+                            "Length": "0",
+                            "Line": "1",
+                            "Name": "CxJSNS_1548388361",
+                            "NodeId": "1",
+                            "Snippet": {
+                                "Line": {
+                                    "Code": "{% extends \"./layout.html\" %} {% block title %}Allocations{% endblock %} {% block content %}",
+                                    "Number": "1"
+                                }
+                            },
+                            "Type": null
+                        }
+                    }
+                }
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "FISMA 2014;Configuration Management,NIST SP 800-53;SC-8 Transmission Confidentiality and Integrity (P1)",
+        "issueName": "Client_Insufficient_ClickJacking_Protection: JavaScript_Low_Visibility",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Client_Insufficient_ClickJacking_Protection//JavaScript_Low_Visibility",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "checkmarx",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "693",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "Low",
+        "scanStatus": null,
+        "scanTool": "checkmarx",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": [
+            {
+                "filename": "app/views/allocations.html",
+                "link": "https://oldcxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1030311&projectid=17122&pathid=30",
+                "severity": "Low",
+                "snippets": [
+                    {
+                        "lines": [
+                            "1"
+                        ],
+                        "snippet": "{% extends \"./layout.html\" %} {% block title %}Allocations{% endblock %} {% block content %}"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "name",
+                "value": "Client_Password_In_Comment"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "name",
+                    "group"
+                ]
+            },
+            {
+                "key": "group",
+                "value": "JavaScript_Low_Visibility"
+            },
+            {
+                "key": "cwe",
+                "value": "615"
+            },
+            {
+                "key": "_raw_@id",
+                "value": "2600"
+            },
+            {
+                "key": "_raw_@language",
+                "value": "JavaScript"
+            },
+            {
+                "key": "_raw_@languagehash",
+                "value": "1003522720031683"
+            },
+            {
+                "key": "_raw_@languagechangedate",
+                "value": "2020-04-14T00:00:00.0000000"
+            },
+            {
+                "key": "_raw_@severityindex",
+                "value": "1"
+            },
+            {
+                "key": "_raw_@querypath",
+                "value": "JavaScript\\\\Cx\\\\JavaScript Low Visibility\\\\Client Password In Comment Version:5"
+            },
+            {
+                "key": "_raw_@queryversioncode",
+                "value": "79459320"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "OWASP Top 10 2013;A6-Sensitive Data Exposure,FISMA 2014;Identification And Authentication,NIST SP 800-53;SC-28 Protection of Information at Rest (P1),OWASP Top 10 2017;A3-Sensitive Data Exposure",
+        "issueName": "Client_Password_In_Comment: JavaScript_Low_Visibility",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Client_Password_In_Comment//JavaScript_Low_Visibility",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "checkmarx",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "615",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "Low",
+        "scanStatus": null,
+        "scanTool": "checkmarx",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": [
+            {
+                "filename": "app/data/profile-dao.js",
+                "link": "https://oldcxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1030311&projectid=17122&pathid=28",
+                "severity": "Low",
+                "snippets": [
+                    {
+                        "lines": [
+                            "32"
+                        ],
+                        "snippet": "var cipher = crypto.createCipheriv(config.cryptoAlgo, config.cryptoKey, config.iv);"
+                    }
+                ]
+            },
+            {
+                "filename": "app/data/user-dao.js",
+                "link": "https://oldcxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1030311&projectid=17122&pathid=29",
+                "severity": "Low",
+                "snippets": [
+                    {
+                        "lines": [
+                            "29"
+                        ],
+                        "snippet": "password: bcrypt.hashSync(password, bcrypt.genSaltSync())"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "name",
+                "value": "Client_Password_In_Comment"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "name",
+                    "group"
+                ]
+            },
+            {
+                "key": "group",
+                "value": "Typescript_Low_Visibility"
+            },
+            {
+                "key": "cwe",
+                "value": "615"
+            },
+            {
+                "key": "_raw_@id",
+                "value": "5139"
+            },
+            {
+                "key": "_raw_@language",
+                "value": "Typescript"
+            },
+            {
+                "key": "_raw_@languagehash",
+                "value": "1488217042171263"
+            },
+            {
+                "key": "_raw_@languagechangedate",
+                "value": "2020-04-14T00:00:00.0000000"
+            },
+            {
+                "key": "_raw_@severityindex",
+                "value": "1"
+            },
+            {
+                "key": "_raw_@querypath",
+                "value": "Typescript\\\\Cx\\\\Typescript Low Visibility\\\\Client Password In Comment Version:2"
+            },
+            {
+                "key": "_raw_@queryversioncode",
+                "value": "114642513"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Client_Password_In_Comment",
+        "issueName": "Client_Password_In_Comment: Typescript_Low_Visibility",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Client_Password_In_Comment//Typescript_Low_Visibility",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "checkmarx",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "615",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "Low",
+        "scanStatus": null,
+        "scanTool": "checkmarx",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": [
+            {
+                "filename": "app/data/profile-dao.js",
+                "link": "https://oldcxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1030311&projectid=17122&pathid=77",
+                "severity": "Low",
+                "snippets": [
+                    {
+                        "lines": [
+                            "32"
+                        ],
+                        "snippet": "var cipher = crypto.createCipheriv(config.cryptoAlgo, config.cryptoKey, config.iv);"
+                    }
+                ]
+            },
+            {
+                "filename": "app/data/user-dao.js",
+                "link": "https://oldcxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1030311&projectid=17122&pathid=78",
+                "severity": "Low",
+                "snippets": [
+                    {
+                        "lines": [
+                            "29"
+                        ],
+                        "snippet": "password: bcrypt.hashSync(password, bcrypt.genSaltSync())"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "name",
+                "value": "Client_Use_Of_Iframe_Without_Sandbox"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "name",
+                    "group"
+                ]
+            },
+            {
+                "key": "group",
+                "value": "JavaScript_Low_Visibility"
+            },
+            {
+                "key": "cwe",
+                "value": "829"
+            },
+            {
+                "key": "_raw_@id",
+                "value": "2618"
+            },
+            {
+                "key": "_raw_@language",
+                "value": "JavaScript"
+            },
+            {
+                "key": "_raw_@languagehash",
+                "value": "1003522720031683"
+            },
+            {
+                "key": "_raw_@languagechangedate",
+                "value": "2020-04-14T00:00:00.0000000"
+            },
+            {
+                "key": "_raw_@severityindex",
+                "value": "1"
+            },
+            {
+                "key": "_raw_@querypath",
+                "value": "JavaScript\\\\Cx\\\\JavaScript Low Visibility\\\\Client Use Of Iframe Without Sandbox Version:2"
+            },
+            {
+                "key": "_raw_@queryversioncode",
+                "value": "79648512"
+            },
+            {
+                "key": "_raw_result",
+                "value": {
+                    "@AssignToUser": "",
+                    "@Column": "10",
+                    "@DeepLink": "https://oldcxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1030311&projectid=17122&pathid=31",
+                    "@FalsePositive": "False",
+                    "@FileName": "app/views/tutorial/ssrf.html",
+                    "@Line": "23",
+                    "@NodeId": "10303110031",
+                    "@Remark": "",
+                    "@Severity": "Low",
+                    "@SeverityIndex": "1",
+                    "@Status": "Recurrent",
+                    "@state": "0",
+                    "Path": {
+                        "@PathId": "31",
+                        "@ResultId": "1030311",
+                        "@SimilarityId": "-1600529655",
+                        "PathNode": {
+                            "Column": "10",
+                            "FileName": "app/views/tutorial/ssrf.html",
+                            "Length": "19",
+                            "Line": "23",
+                            "Name": "iframe____542515709",
+                            "NodeId": "1",
+                            "Snippet": {
+                                "Line": {
+                                    "Code": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/neClYWB05bQ\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+                                    "Number": "23"
+                                }
+                            },
+                            "Type": null
+                        }
+                    }
+                }
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "NIST SP 800-53;SC-18 Mobile Code (P2),OWASP Top 10 2017;A6-Security Misconfiguration",
+        "issueName": "Client_Use_Of_Iframe_Without_Sandbox: JavaScript_Low_Visibility",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Client_Use_Of_Iframe_Without_Sandbox//JavaScript_Low_Visibility",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "checkmarx",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "829",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "Low",
+        "scanStatus": null,
+        "scanTool": "checkmarx",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": [
+            {
+                "filename": "app/views/tutorial/ssrf.html",
+                "link": "https://oldcxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1030311&projectid=17122&pathid=31",
+                "severity": "Low",
+                "snippets": [
+                    {
+                        "lines": [
+                            "23"
+                        ],
+                        "snippet": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/neClYWB05bQ\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "name",
+                "value": "Missing_CSP_Header"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "name",
+                    "group"
+                ]
+            },
+            {
+                "key": "group",
+                "value": "JavaScript_Server_Side_Vulnerabilities"
+            },
+            {
+                "key": "cwe",
+                "value": "346"
+            },
+            {
+                "key": "_raw_@id",
+                "value": "4033"
+            },
+            {
+                "key": "_raw_@language",
+                "value": "JavaScript"
+            },
+            {
+                "key": "_raw_@languagehash",
+                "value": "1003522720031683"
+            },
+            {
+                "key": "_raw_@languagechangedate",
+                "value": "2020-04-14T00:00:00.0000000"
+            },
+            {
+                "key": "_raw_@severityindex",
+                "value": "1"
+            },
+            {
+                "key": "_raw_@querypath",
+                "value": "JavaScript\\\\Cx\\\\JavaScript Server Side Vulnerabilities\\\\Missing CSP Header Version:1"
+            },
+            {
+                "key": "_raw_@queryversioncode",
+                "value": "98493596"
+            },
+            {
+                "key": "_raw_result",
+                "value": {
+                    "@AssignToUser": "",
+                    "@Column": "19",
+                    "@DeepLink": "https://oldcxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1030311&projectid=17122&pathid=64",
+                    "@FalsePositive": "False",
+                    "@FileName": "app/routes/session.js",
+                    "@Line": "47",
+                    "@NodeId": "10303110064",
+                    "@Remark": "",
+                    "@Severity": "Low",
+                    "@SeverityIndex": "1",
+                    "@Status": "New",
+                    "@state": "0",
+                    "Path": {
+                        "@PathId": "64",
+                        "@ResultId": "1030311",
+                        "@SimilarityId": "-138142024",
+                        "PathNode": {
+                            "Column": "19",
+                            "FileName": "app/routes/session.js",
+                            "Length": "1",
+                            "Line": "47",
+                            "Name": "render",
+                            "NodeId": "1",
+                            "Snippet": {
+                                "Line": {
+                                    "Code": "return res.render(\"login\", {",
+                                    "Number": "47"
+                                }
+                            },
+                            "Type": null
+                        }
+                    }
+                }
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "PCI DSS v3.2;PCI DSS (3.2) - 6.5.7 - Cross-site scripting (XSS),OWASP Top 10 2013;A3-Cross-Site Scripting (XSS)",
+        "issueName": "Missing_CSP_Header: JavaScript_Server_Side_Vulnerabilities",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Missing_CSP_Header//JavaScript_Server_Side_Vulnerabilities",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "checkmarx",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "346",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "Low",
+        "scanStatus": null,
+        "scanTool": "checkmarx",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": [
+            {
+                "filename": "app/routes/session.js",
+                "link": "https://oldcxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1030311&projectid=17122&pathid=64",
+                "severity": "Low",
+                "snippets": [
+                    {
+                        "lines": [
+                            "47"
+                        ],
+                        "snippet": "return res.render(\"login\", {"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "name",
+                "value": "Missing_Default_Case_In_Switch_Statement"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "name",
+                    "group"
+                ]
+            },
+            {
+                "key": "group",
+                "value": "JavaScript_Server_Side_Vulnerabilities"
+            },
+            {
+                "key": "cwe",
+                "value": "478"
+            },
+            {
+                "key": "_raw_@id",
+                "value": "2977"
+            },
+            {
+                "key": "_raw_@language",
+                "value": "JavaScript"
+            },
+            {
+                "key": "_raw_@languagehash",
+                "value": "1003522720031683"
+            },
+            {
+                "key": "_raw_@languagechangedate",
+                "value": "2020-04-14T00:00:00.0000000"
+            },
+            {
+                "key": "_raw_@severityindex",
+                "value": "0"
+            },
+            {
+                "key": "_raw_@querypath",
+                "value": "JavaScript\\\\Cx\\\\JavaScript Server Side Vulnerabilities\\\\Missing Default Case In Switch Statement Version:1"
+            },
+            {
+                "key": "_raw_@queryversioncode",
+                "value": "84230732"
+            },
+            {
+                "key": "_raw_result",
+                "value": {
+                    "@AssignToUser": "",
+                    "@Column": "9",
+                    "@DeepLink": "https://oldcxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1030311&projectid=17122&pathid=38",
+                    "@FalsePositive": "False",
+                    "@FileName": "app/assets/vendor/bootstrap/bootstrap-tour.js",
+                    "@Line": "592",
+                    "@NodeId": "10303110038",
+                    "@Remark": "",
+                    "@Severity": "Information",
+                    "@SeverityIndex": "0",
+                    "@Status": "Recurrent",
+                    "@state": "0",
+                    "Path": {
+                        "@PathId": "38",
+                        "@ResultId": "1030311",
+                        "@SimilarityId": "-869059517",
+                        "PathNode": {
+                            "Column": "9",
+                            "FileName": "app/assets/vendor/bootstrap/bootstrap-tour.js",
+                            "Length": "6",
+                            "Line": "592",
+                            "Name": "switch",
+                            "NodeId": "1",
+                            "Snippet": {
+                                "Line": {
+                                    "Code": "switch (e.which) {",
+                                    "Number": "592"
+                                }
+                            },
+                            "Type": null
+                        }
+                    }
+                }
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Missing_Default_Case_In_Switch_Statement",
+        "issueName": "Missing_Default_Case_In_Switch_Statement: JavaScript_Server_Side_Vulnerabilities",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Missing_Default_Case_In_Switch_Statement//JavaScript_Server_Side_Vulnerabilities",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "checkmarx",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "478",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "Information",
+        "scanStatus": null,
+        "scanTool": "checkmarx",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": [
+            {
+                "filename": "app/assets/vendor/bootstrap/bootstrap-tour.js",
+                "link": "https://oldcxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1030311&projectid=17122&pathid=38",
+                "severity": "Information",
+                "snippets": [
+                    {
+                        "lines": [
+                            "592"
+                        ],
+                        "snippet": "switch (e.which) {"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "name",
+                "value": "Open_Redirect"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "name",
+                    "group"
+                ]
+            },
+            {
+                "key": "group",
+                "value": "JavaScript_Server_Side_Vulnerabilities"
+            },
+            {
+                "key": "cwe",
+                "value": "601"
+            },
+            {
+                "key": "_raw_@id",
+                "value": "3926"
+            },
+            {
+                "key": "_raw_@language",
+                "value": "JavaScript"
+            },
+            {
+                "key": "_raw_@languagehash",
+                "value": "1003522720031683"
+            },
+            {
+                "key": "_raw_@languagechangedate",
+                "value": "2020-04-14T00:00:00.0000000"
+            },
+            {
+                "key": "_raw_@severityindex",
+                "value": "1"
+            },
+            {
+                "key": "_raw_@querypath",
+                "value": "JavaScript\\\\Cx\\\\JavaScript Server Side Vulnerabilities\\\\Open Redirect Version:1"
+            },
+            {
+                "key": "_raw_@queryversioncode",
+                "value": "96997629"
+            },
+            {
+                "key": "_raw_result",
+                "value": {
+                    "@AssignToUser": "",
+                    "@Column": "38",
+                    "@DeepLink": "https://oldcxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1030311&projectid=17122&pathid=41",
+                    "@FalsePositive": "False",
+                    "@FileName": "app/routes/index.js",
+                    "@Line": "72",
+                    "@NodeId": "10303110041",
+                    "@Remark": "",
+                    "@Severity": "Low",
+                    "@SeverityIndex": "1",
+                    "@Status": "New",
+                    "@state": "0",
+                    "Path": {
+                        "@PathId": "41",
+                        "@ResultId": "1030311",
+                        "@SimilarityId": "-525614774",
+                        "PathNode": [
+                            {
+                                "Column": "38",
+                                "FileName": "app/routes/index.js",
+                                "Length": "1",
+                                "Line": "72",
+                                "Name": "url",
+                                "NodeId": "1",
+                                "Snippet": {
+                                    "Line": {
+                                        "Code": "return res.redirect(req.query.url);",
+                                        "Number": "72"
+                                    }
+                                },
+                                "Type": null
+                            },
+                            {
+                                "Column": "19",
+                                "FileName": "app/routes/index.js",
+                                "Length": "1",
+                                "Line": "72",
+                                "Name": "redirect",
+                                "NodeId": "2",
+                                "Snippet": {
+                                    "Line": {
+                                        "Code": "return res.redirect(req.query.url);",
+                                        "Number": "72"
+                                    }
+                                },
+                                "Type": null
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "OWASP Top 10 2013;A10-Unvalidated Redirects and Forwards,FISMA 2014;System And Information Integrity,NIST SP 800-53;SI-10 Information Input Validation (P1)",
+        "issueName": "Open_Redirect: JavaScript_Server_Side_Vulnerabilities",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Open_Redirect//JavaScript_Server_Side_Vulnerabilities",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "checkmarx",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "601",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "Low",
+        "scanStatus": null,
+        "scanTool": "checkmarx",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": [
+            {
+                "filename": "app/routes/index.js",
+                "link": "https://oldcxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1030311&projectid=17122&pathid=41",
+                "severity": "Low",
+                "snippets": [
+                    {
+                        "lines": [
+                            "72"
+                        ],
+                        "snippet": "return res.redirect(req.query.url);"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "name",
+                "value": "Potentially_Vulnerable_To_Xsrf"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "name",
+                    "group"
+                ]
+            },
+            {
+                "key": "group",
+                "value": "JavaScript_Server_Side_Vulnerabilities"
+            },
+            {
+                "key": "cwe",
+                "value": "352"
+            },
+            {
+                "key": "_raw_@id",
+                "value": "3922"
+            },
+            {
+                "key": "_raw_@language",
+                "value": "JavaScript"
+            },
+            {
+                "key": "_raw_@languagehash",
+                "value": "1003522720031683"
+            },
+            {
+                "key": "_raw_@languagechangedate",
+                "value": "2020-04-14T00:00:00.0000000"
+            },
+            {
+                "key": "_raw_@severityindex",
+                "value": "1"
+            },
+            {
+                "key": "_raw_@querypath",
+                "value": "JavaScript\\\\Cx\\\\JavaScript Server Side Vulnerabilities\\\\Potentially Vulnerable To Xsrf Version:1"
+            },
+            {
+                "key": "_raw_@queryversioncode",
+                "value": "96941927"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "PCI DSS v3.2;PCI DSS (3.2) - 6.5.9 - Cross-site request forgery,OWASP Top 10 2013;A8-Cross-Site Request Forgery (CSRF)",
+        "issueName": "Potentially_Vulnerable_To_Xsrf: JavaScript_Server_Side_Vulnerabilities",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Potentially_Vulnerable_To_Xsrf//JavaScript_Server_Side_Vulnerabilities",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "checkmarx",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "352",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "Low",
+        "scanStatus": null,
+        "scanTool": "checkmarx",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": [
+            {
+                "filename": "server.js",
+                "link": "https://oldcxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1030311&projectid=17122&pathid=39",
+                "severity": "Low",
+                "snippets": [
+                    {
+                        "lines": [
+                            "16"
+                        ],
+                        "snippet": "var app = express(); // Web framework to handle routing requests"
+                    }
+                ]
+            },
+            {
+                "filename": "server.js",
+                "link": "https://oldcxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1030311&projectid=17122&pathid=40",
+                "severity": "Low",
+                "snippets": [
+                    {
+                        "lines": [
+                            "145"
+                        ],
+                        "snippet": "http.createServer(app).listen(config.port, function() {"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "name",
+                "value": "Reflected_XSS"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "name",
+                    "group"
+                ]
+            },
+            {
+                "key": "group",
+                "value": "JavaScript_Server_Side_Vulnerabilities"
+            },
+            {
+                "key": "cwe",
+                "value": "79"
+            },
+            {
+                "key": "_raw_@id",
+                "value": "2982"
+            },
+            {
+                "key": "_raw_@language",
+                "value": "JavaScript"
+            },
+            {
+                "key": "_raw_@languagehash",
+                "value": "1003522720031683"
+            },
+            {
+                "key": "_raw_@languagechangedate",
+                "value": "2020-04-14T00:00:00.0000000"
+            },
+            {
+                "key": "_raw_@severityindex",
+                "value": "3"
+            },
+            {
+                "key": "_raw_@querypath",
+                "value": "JavaScript\\\\Cx\\\\JavaScript Server Side Vulnerabilities\\\\Reflected XSS Version:1"
+            },
+            {
+                "key": "_raw_@queryversioncode",
+                "value": "84295637"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "PCI DSS v3.2;PCI DSS (3.2) - 6.5.7 - Cross-site scripting (XSS),OWASP Top 10 2013;A3-Cross-Site Scripting (XSS),FISMA 2014;System And Information Integrity,NIST SP 800-53;SI-15 Information Output Filtering (P0),OWASP Top 10 2017;A7-Cross-Site Scripting (XSS)",
+        "issueName": "Reflected_XSS: JavaScript_Server_Side_Vulnerabilities",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Reflected_XSS//JavaScript_Server_Side_Vulnerabilities",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "checkmarx",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "79",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "High",
+        "scanStatus": null,
+        "scanTool": "checkmarx",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 8,
+        "severityCode": "High",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": [
+            {
+                "filename": "app/routes/session.js",
+                "link": "https://oldcxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1030311&projectid=17122&pathid=4",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "256"
+                        ],
+                        "snippet": "userId = req.session.userId;"
+                    },
+                    {
+                        "lines": [
+                            "258"
+                        ],
+                        "snippet": "userDAO.getUserById(userId, function(err, doc) {"
+                    },
+                    {
+                        "lines": [
+                            "261"
+                        ],
+                        "snippet": "doc.userId = userId;"
+                    },
+                    {
+                        "lines": [
+                            "263"
+                        ],
+                        "snippet": "return res.render(\"dashboard\", doc);"
+                    }
+                ]
+            },
+            {
+                "filename": "app/routes/profile.js",
+                "link": "https://oldcxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1030311&projectid=17122&pathid=5",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "11"
+                        ],
+                        "snippet": "var userId = req.session.userId;"
+                    },
+                    {
+                        "lines": [
+                            "15"
+                        ],
+                        "snippet": "profile.getByUserId(parseInt(userId), function (err, doc) {"
+                    },
+                    {
+                        "lines": [
+                            "17"
+                        ],
+                        "snippet": "doc.userId = userId;"
+                    },
+                    {
+                        "lines": [
+                            "28"
+                        ],
+                        "snippet": "return res.render(\"profile\", doc);"
+                    }
+                ]
+            },
+            {
+                "filename": "app/routes/profile.js",
+                "link": "https://oldcxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1030311&projectid=17122&pathid=6",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "37"
+                        ],
+                        "snippet": "var dob = req.body.dob;"
+                    },
+                    {
+                        "lines": [
+                            "74"
+                        ],
+                        "snippet": "dob,"
+                    },
+                    {
+                        "lines": [
+                            "42"
+                        ],
+                        "snippet": "this.updateUser = function(userId, firstName, lastName, ssn, dob, address, bankAcc, bankRouting, callback) {"
+                    },
+                    {
+                        "lines": [
+                            "65"
+                        ],
+                        "snippet": "user.dob = dob;"
+                    },
+                    {
+                        "lines": [
+                            "80"
+                        ],
+                        "snippet": "}, {"
+                    },
+                    {
+                        "lines": [
+                            "83"
+                        ],
+                        "snippet": "function(err, result) {"
+                    },
+                    {
+                        "lines": [
+                            "86"
+                        ],
+                        "snippet": "return callback(null, user);"
+                    },
+                    {
+                        "lines": [
+                            "78"
+                        ],
+                        "snippet": "function (err, user) {"
+                    },
+                    {
+                        "lines": [
+                            "87"
+                        ],
+                        "snippet": "return res.render(\"profile\", user);"
+                    }
+                ]
+            },
+            {
+                "filename": "app/routes/profile.js",
+                "link": "https://oldcxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1030311&projectid=17122&pathid=7",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "36"
+                        ],
+                        "snippet": "var ssn = req.body.ssn;"
+                    },
+                    {
+                        "lines": [
+                            "73"
+                        ],
+                        "snippet": "ssn,"
+                    },
+                    {
+                        "lines": [
+                            "42"
+                        ],
+                        "snippet": "this.updateUser = function(userId, firstName, lastName, ssn, dob, address, bankAcc, bankRouting, callback) {"
+                    },
+                    {
+                        "lines": [
+                            "62"
+                        ],
+                        "snippet": "user.ssn = ssn;"
+                    },
+                    {
+                        "lines": [
+                            "80"
+                        ],
+                        "snippet": "}, {"
+                    },
+                    {
+                        "lines": [
+                            "83"
+                        ],
+                        "snippet": "function(err, result) {"
+                    },
+                    {
+                        "lines": [
+                            "86"
+                        ],
+                        "snippet": "return callback(null, user);"
+                    },
+                    {
+                        "lines": [
+                            "78"
+                        ],
+                        "snippet": "function (err, user) {"
+                    },
+                    {
+                        "lines": [
+                            "87"
+                        ],
+                        "snippet": "return res.render(\"profile\", user);"
+                    }
+                ]
+            },
+            {
+                "filename": "app/routes/profile.js",
+                "link": "https://oldcxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1030311&projectid=17122&pathid=8",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "40"
+                        ],
+                        "snippet": "var bankRouting = req.body.bankRouting;"
+                    },
+                    {
+                        "lines": [
+                            "77"
+                        ],
+                        "snippet": "bankRouting,"
+                    },
+                    {
+                        "lines": [
+                            "42"
+                        ],
+                        "snippet": "this.updateUser = function(userId, firstName, lastName, ssn, dob, address, bankAcc, bankRouting, callback) {"
+                    },
+                    {
+                        "lines": [
+                            "59"
+                        ],
+                        "snippet": "user.bankRouting = bankRouting;"
+                    },
+                    {
+                        "lines": [
+                            "80"
+                        ],
+                        "snippet": "}, {"
+                    },
+                    {
+                        "lines": [
+                            "83"
+                        ],
+                        "snippet": "function(err, result) {"
+                    },
+                    {
+                        "lines": [
+                            "86"
+                        ],
+                        "snippet": "return callback(null, user);"
+                    },
+                    {
+                        "lines": [
+                            "78"
+                        ],
+                        "snippet": "function (err, user) {"
+                    },
+                    {
+                        "lines": [
+                            "87"
+                        ],
+                        "snippet": "return res.render(\"profile\", user);"
+                    }
+                ]
+            },
+            {
+                "filename": "app/routes/profile.js",
+                "link": "https://oldcxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1030311&projectid=17122&pathid=9",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "39"
+                        ],
+                        "snippet": "var bankAcc = req.body.bankAcc;"
+                    },
+                    {
+                        "lines": [
+                            "76"
+                        ],
+                        "snippet": "bankAcc,"
+                    },
+                    {
+                        "lines": [
+                            "42"
+                        ],
+                        "snippet": "this.updateUser = function(userId, firstName, lastName, ssn, dob, address, bankAcc, bankRouting, callback) {"
+                    },
+                    {
+                        "lines": [
+                            "56"
+                        ],
+                        "snippet": "user.bankAcc = bankAcc;"
+                    },
+                    {
+                        "lines": [
+                            "80"
+                        ],
+                        "snippet": "}, {"
+                    },
+                    {
+                        "lines": [
+                            "83"
+                        ],
+                        "snippet": "function(err, result) {"
+                    },
+                    {
+                        "lines": [
+                            "86"
+                        ],
+                        "snippet": "return callback(null, user);"
+                    },
+                    {
+                        "lines": [
+                            "78"
+                        ],
+                        "snippet": "function (err, user) {"
+                    },
+                    {
+                        "lines": [
+                            "87"
+                        ],
+                        "snippet": "return res.render(\"profile\", user);"
+                    }
+                ]
+            },
+            {
+                "filename": "app/routes/profile.js",
+                "link": "https://oldcxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1030311&projectid=17122&pathid=10",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "38"
+                        ],
+                        "snippet": "var address = req.body.address;"
+                    },
+                    {
+                        "lines": [
+                            "75"
+                        ],
+                        "snippet": "address,"
+                    },
+                    {
+                        "lines": [
+                            "42"
+                        ],
+                        "snippet": "this.updateUser = function(userId, firstName, lastName, ssn, dob, address, bankAcc, bankRouting, callback) {"
+                    },
+                    {
+                        "lines": [
+                            "53"
+                        ],
+                        "snippet": "user.address = address;"
+                    },
+                    {
+                        "lines": [
+                            "80"
+                        ],
+                        "snippet": "}, {"
+                    },
+                    {
+                        "lines": [
+                            "83"
+                        ],
+                        "snippet": "function(err, result) {"
+                    },
+                    {
+                        "lines": [
+                            "86"
+                        ],
+                        "snippet": "return callback(null, user);"
+                    },
+                    {
+                        "lines": [
+                            "78"
+                        ],
+                        "snippet": "function (err, user) {"
+                    },
+                    {
+                        "lines": [
+                            "87"
+                        ],
+                        "snippet": "return res.render(\"profile\", user);"
+                    }
+                ]
+            },
+            {
+                "filename": "app/routes/profile.js",
+                "link": "https://oldcxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1030311&projectid=17122&pathid=11",
+                "severity": "High",
+                "snippets": [
+                    {
+                        "lines": [
+                            "35"
+                        ],
+                        "snippet": "var lastName = req.body.lastName;"
+                    },
+                    {
+                        "lines": [
+                            "72"
+                        ],
+                        "snippet": "lastName,"
+                    },
+                    {
+                        "lines": [
+                            "42"
+                        ],
+                        "snippet": "this.updateUser = function(userId, firstName, lastName, ssn, dob, address, bankAcc, bankRouting, callback) {"
+                    },
+                    {
+                        "lines": [
+                            "50"
+                        ],
+                        "snippet": "user.lastName = lastName;"
+                    },
+                    {
+                        "lines": [
+                            "50"
+                        ],
+                        "snippet": null
+                    },
+                    {
+                        "lines": [
+                            "62"
+                        ],
+                        "snippet": "return year + \"-\" + (\"0\" + month).slice(-2) + \"-\" + (\"0\" + day).slice(-2);"
+                    },
+                    {
+                        "lines": [
+                            "24"
+                        ],
+                        "snippet": "benefitStartDate: this.getRandomFutureDate(),"
+                    },
+                    {
+                        "lines": [
+                            "20"
+                        ],
+                        "snippet": "var user = {"
+                    },
+                    {
+                        "lines": [
+                            "25"
+                        ],
+                        "snippet": "password: password //received from request param"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "name",
+                "value": "Unprotected_Cookie"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "name",
+                    "group"
+                ]
+            },
+            {
+                "key": "group",
+                "value": "JavaScript_Server_Side_Vulnerabilities"
+            },
+            {
+                "key": "cwe",
+                "value": "614"
+            },
+            {
+                "key": "_raw_@id",
+                "value": "3934"
+            },
+            {
+                "key": "_raw_@language",
+                "value": "JavaScript"
+            },
+            {
+                "key": "_raw_@languagehash",
+                "value": "1003522720031683"
+            },
+            {
+                "key": "_raw_@languagechangedate",
+                "value": "2020-04-14T00:00:00.0000000"
+            },
+            {
+                "key": "_raw_@severityindex",
+                "value": "1"
+            },
+            {
+                "key": "_raw_@querypath",
+                "value": "JavaScript\\\\Cx\\\\JavaScript Server Side Vulnerabilities\\\\Unprotected Cookie Version:5"
+            },
+            {
+                "key": "_raw_@queryversioncode",
+                "value": "97164835"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "PCI DSS v3.2;PCI DSS (3.2) - 6.5.4 - Insecure communications,OWASP Top 10 2013;A2-Broken Authentication and Session Management,FISMA 2014;System And Communications Protection,NIST SP 800-53;SC-8 Transmission Confidentiality and Integrity (P1)",
+        "issueName": "Unprotected_Cookie: JavaScript_Server_Side_Vulnerabilities",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Unprotected_Cookie//JavaScript_Server_Side_Vulnerabilities",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "checkmarx",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "614",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "Low",
+        "scanStatus": null,
+        "scanTool": "checkmarx",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": [
+            {
+                "filename": "app/views/login.html",
+                "link": "https://oldcxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1030311&projectid=17122&pathid=60",
+                "severity": "Low",
+                "snippets": [
+                    {
+                        "lines": [
+                            "160"
+                        ],
+                        "snippet": "document.cookie = \"testcookie=1\";"
+                    }
+                ]
+            },
+            {
+                "filename": "app/views/login.html",
+                "link": "https://oldcxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1030311&projectid=17122&pathid=61",
+                "severity": "Low",
+                "snippets": [
+                    {
+                        "lines": [
+                            "165"
+                        ],
+                        "snippet": "document.cookie = \"testcookie=; expires=\" + new Date(0).toUTCString();"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "name",
+                "value": "Use_Of_HTTP_Sensitive_Data_Exposure"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "name",
+                    "group"
+                ]
+            },
+            {
+                "key": "group",
+                "value": "JavaScript_Server_Side_Vulnerabilities"
+            },
+            {
+                "key": "cwe",
+                "value": "319"
+            },
+            {
+                "key": "_raw_@id",
+                "value": "3930"
+            },
+            {
+                "key": "_raw_@language",
+                "value": "JavaScript"
+            },
+            {
+                "key": "_raw_@languagehash",
+                "value": "1003522720031683"
+            },
+            {
+                "key": "_raw_@languagechangedate",
+                "value": "2020-04-14T00:00:00.0000000"
+            },
+            {
+                "key": "_raw_@severityindex",
+                "value": "1"
+            },
+            {
+                "key": "_raw_@querypath",
+                "value": "JavaScript\\\\Cx\\\\JavaScript Server Side Vulnerabilities\\\\Use Of HTTP Sensitive Data Exposure Version:1"
+            },
+            {
+                "key": "_raw_@queryversioncode",
+                "value": "97053347"
+            },
+            {
+                "key": "_raw_result",
+                "value": {
+                    "@AssignToUser": "",
+                    "@Column": "9",
+                    "@DeepLink": "https://oldcxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1030311&projectid=17122&pathid=54",
+                    "@FalsePositive": "False",
+                    "@FileName": "server.js",
+                    "@Line": "145",
+                    "@NodeId": "10303110054",
+                    "@Remark": "",
+                    "@Severity": "Low",
+                    "@SeverityIndex": "1",
+                    "@Status": "New",
+                    "@state": "0",
+                    "Path": {
+                        "@PathId": "54",
+                        "@ResultId": "1030311",
+                        "@SimilarityId": "-581170119",
+                        "PathNode": {
+                            "Column": "9",
+                            "FileName": "server.js",
+                            "Length": "1",
+                            "Line": "145",
+                            "Name": "createServer",
+                            "NodeId": "1",
+                            "Snippet": {
+                                "Line": {
+                                    "Code": "http.createServer(app).listen(config.port, function() {",
+                                    "Number": "145"
+                                }
+                            },
+                            "Type": null
+                        }
+                    }
+                }
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "OWASP Top 10 2013;A6-Sensitive Data Exposure,FISMA 2014;System And Communications Protection,NIST SP 800-53;SC-8 Transmission Confidentiality and Integrity (P1)",
+        "issueName": "Use_Of_HTTP_Sensitive_Data_Exposure: JavaScript_Server_Side_Vulnerabilities",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "Use_Of_HTTP_Sensitive_Data_Exposure//JavaScript_Server_Side_Vulnerabilities",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "checkmarx",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "319",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "Low",
+        "scanStatus": null,
+        "scanTool": "checkmarx",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": [
+            {
+                "filename": "server.js",
+                "link": "https://oldcxprivatecloud.checkmarx.net/CxWebClient/ViewerMain.aspx?scanid=1030311&projectid=17122&pathid=54",
+                "severity": "Low",
+                "snippets": [
+                    {
+                        "lines": [
+                            "145"
+                        ],
+                        "snippet": "http.createServer(app).listen(config.port, function() {"
+                    }
+                ]
+            }
+        ]
+    }
+]

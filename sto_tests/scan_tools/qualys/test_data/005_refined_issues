@@ -1,0 +1,3091 @@
+[
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101750340"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": "PATH"
+            },
+            {
+                "key": "owasp",
+                "value": "A5"
+            },
+            {
+                "key": "wasc",
+                "value": "WASC-17,WASC-15,WASC-16"
+            },
+            {
+                "key": "vuln_id",
+                "value": "101750340"
+            },
+            {
+                "key": "lookup_id",
+                "value": "150004"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "vuln_id"
+                ]
+            },
+            {
+                "key": "description",
+                "value": "A potentially sensitive file, directory, or directory listing was discovered on the Web server."
+            },
+            {
+                "key": "cvss_base",
+                "value": "2.1"
+            },
+            {
+                "key": "cvss_temporal",
+                "value": "1.9"
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_unique_id",
+                "value": "c1db5b22-7b82-11ea-8826-77d5915fa8c2"
+            },
+            {
+                "key": "_raw_detection_id",
+                "value": "6058986"
+            },
+            {
+                "key": "_raw_access_path",
+                "value": {
+                    "URL": [
+                        "https://exweb.example.com/",
+                        "https://exweb.example.com/index.html"
+                    ]
+                }
+            },
+            {
+                "key": "_raw_ajax",
+                "value": "false"
+            },
+            {
+                "key": "_raw_authentication",
+                "value": "Not Required"
+            },
+            {
+                "key": "_raw_detection_date",
+                "value": "15 Mar 2020 03:03AM GMT-0400"
+            },
+            {
+                "key": "_raw_payloads",
+                "value": {
+                    "PAYLOAD": {
+                        "NUM": "1",
+                        "PAYLOAD": "https://exweb.example.com/js/xdr/core/lang/xdr_en.json.gz",
+                        "REQUEST": {
+                            "HEADERS": {
+                                "HEADER": [
+                                    {
+                                        "key": "Referer",
+                                        "value": "https://exweb.example.com/"
+                                    },
+                                    {
+                                        "key": "Cookie",
+                                        "value": "EXM_ERR=4001;"
+                                    },
+                                    {
+                                        "key": "Host",
+                                        "value": "exweb.example.com"
+                                    },
+                                    {
+                                        "key": "User-Agent",
+                                        "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/601.4.4 (KHTML, like Gecko) Version/9.0.3 Safari/601.4.4"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "*/*"
+                                    }
+                                ]
+                            },
+                            "METHOD": "GET",
+                            "URL": "https://exweb.example.com/js/xdr/core/lang/xdr_en.json.gz"
+                        },
+                        "RESPONSE": {
+                            "CONTENTS": {
+                                "#text": "Y29tbWVudDogQXJjaGl2ZSBjb250ZW50IGlzIGd6aXBlZAoKT3JpZ2luYWwgVVJMIGlzOiBodHRwczovL2V4d2ViLmV4YW1wbGUuY29tL2pzL3hkci9jb3JlL2xhbmcveGRyX2VuLmpzb24KCkhUVFAvMS4xIDIwMCBPSw==",
+                                "@base64": "true"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "key": "_raw__type",
+                "value": "VULNERABILITY"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "The contents of this file or directory may disclose sensitive information.",
+        "issueName": "Path-Based Vulnerability",
+        "issueType": "Confirmed Vulnerability",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150004//101750340",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "22",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "Verify that access to this file or directory is permitted. If necessary, remove it or apply access controls to it.",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "2",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": "https://exweb.example.com/js/xdr/core/lang/xdr_en.json.gz",
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101750336"
+            },
+            {
+                "key": "unique_id",
+                "value": "96e7c80a-7b8d-11ea-a499-1bf39e34b8c1"
+            },
+            {
+                "key": "detection_id",
+                "value": "2244717"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "15 Mar 2020 03:03AM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "Duration of crawl phase (seconds): 215.00\nNumber of links: 30\n(This number excludes form requests and links re-requested during authentication.)\n\nhttps://exweb.example.com/\nhttps://exweb.example.com/cgi/login\nhttps://exweb.example.com/favicon.ico\nhttps://exweb.example.com/logon/themes/Default/css/custom.css?v=fd96bc8977256003de05ed84270b90bb\nhttps://exweb.example.com/logon/themes/Default/resources/%7Blang%7D\nhttps://exweb.example.com/logon/themes/Default/resources/config.xml\nhttps://exweb.example.com/logon/themes/Default/resources/en.xml\nhttps://exweb.example.com/logon/themes/EULA/resources/%7Blang%7D\nhttps://exweb.example.com/images/Access.ico\nhttps://exweb.example.com/images/exampleWatermark.png\nhttps://exweb.example.com/images/LoginButtonGlow.png\nhttps://exweb.example.com/images/NavBarLink.gif\nhttps://exweb.example.com/images/carbonfibre_img.png\nhttps://exweb.example.com/images/carbonfibre_img_white_header.png\nhttps://exweb.example.com/images/icon.png\nhttps://exweb.example.com/index.html\nhttps://exweb.example.com/js/rdx/core/css/fonts/example_sans/examplesans_bold.svg\nhttps://exweb.example.com/js/rdx/core/css/fonts/example_sans/examplesans_bold.ttf\nhttps://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_bold.woff\nhttps://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_light.svg\nhttps://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_light.ttf\nhttps://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_light.woff\nhttps://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_regular.svg\nhttps://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_regular.ttf\nhttps://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_regular.woff\nhttps://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_semibold.svg\nhttps://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_semibold.ttf\nhttps://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_semibold.woff\nhttps://exweb.example.com/js/xdr/core/lang/xdr_en.json\nhttps://exweb.example.com/media/example_logo_white.png\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150009"
+            },
+            {
+                "key": "info_id",
+                "value": "101750336"
+            },
+            {
+                "key": "description",
+                "value": "The list of unique links crawled and HTML forms submitted by the Web application scanner appear in the Results section. This list may contain fewer links than the maximum threshold defined at scan launch. \n<P>NOTE: This list also includes \n- All the unique links that are reported in QID 150140 (Redundant links/URL paths crawled and not crawled)\n- All the forms reported in QID 150152 (Forms Crawled), \n- All the forms in QID 150115 (Authentication Form Found) and \n- Certain requests from QID 150172 (Requests Crawled)"
+            },
+            {
+                "key": "group",
+                "value": "IG-DIAG"
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "N/A",
+        "issueName": "Links Crawled",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150009//101750336",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101750322"
+            },
+            {
+                "key": "unique_id",
+                "value": "8888e3b8-7b86-11ea-b4b8-d77b6a38e20a"
+            },
+            {
+                "key": "detection_id",
+                "value": "2244704"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "15 Mar 2020 03:03AM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "\nTotal number of unique links that encountered timeout errors: 1\nLinks with highest number of timeouts:\n   1 http://exweb.example.com/resources.js\n\nPhase wise summary of timeout and connection errors encountered: \nePhaseCrawl                        :          1         0\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150018"
+            },
+            {
+                "key": "info_id",
+                "value": "101750322"
+            },
+            {
+                "key": "description",
+                "value": "The following are some of the possible reasons for the timeouts or connection errors:\n<OL>\n<LI> A disturbance in network connectivity between the scanner and the web application occurred.</LI>\n<LI> The web server or application server hosting the application was taken down in the midst of a scan.</LI>\n<LI> The web application experienced an overload, possibly due to load generated by the scan.</LI>\n<LI> An error occurred in the SSL/TLS handshake (applies to HTTPS web applications only).</LI>\n<LI> A security device, such as an IDS/IPS or web application firewall (WAF), began to drop or reject the HTTP connections from the scanner.</LI>\n<LI> Very large files like PDFs, videos, etc. are present on the site and caused timeouts when accessed by the scanner.</LI>\n</OL>"
+            },
+            {
+                "key": "group",
+                "value": "IG-DIAG"
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_data",
+                "value": {
+                    "#text": "ClRvdGFsIG51bWJlciBvZiB1bmlxdWUgbGlua3MgdGhhdCBlbmNvdW50ZXJlZCB0aW1lb3V0IGVycm9yczogMQpMaW5rcyB3aXRoIGhpZ2hlc3QgbnVtYmVyIG9mIHRpbWVvdXRzOgogICAxIGh0dHA6Ly9leHdlYi5leGFtcGxlLmNvbS9yZXNvdXJjZXMuanMKClBoYXNlIHdpc2Ugc3VtbWFyeSBvZiB0aW1lb3V0IGFuZCBjb25uZWN0aW9uIGVycm9ycyBlbmNvdW50ZXJlZDogCmVQaGFzZUNyYXdsICAgICAgICAgICAgICAgICAgICAgICAgOiAgICAgICAgICAxICAgICAgICAgMAo=",
+                    "@base64": "true"
+                }
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Some of the links were not crawled or scanned. Results may be incomplete or incorrect.",
+        "issueName": "Connection Error Occurred During Web Application Scan",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150018//101750322",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "First, confirm that the server was not taken down in the midst of the scan.  After that, investigate the root cause by reviewing the listed links and examining web server logs, application server logs, or IDS/IPS/WAF logs. If the errors are caused due to load generated by the scanner then try reducing the scan intensity (this could increase the scan duration). If the errors are due to specific URLs being tested by the scanner or due to specific form data sent by the scanner, then configure blacklists in the scan configuration as needed to avoid such requests. If timeouts or connection errors are a persistent issue but you want the scan to run to completion, change the Behavior Settings in the option profile to increase the error thresholds or disable the error checks entirely.",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "2",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101750327"
+            },
+            {
+                "key": "unique_id",
+                "value": "e0b4cac0-7b90-11ea-b383-7b34da191312"
+            },
+            {
+                "key": "detection_id",
+                "value": "2244709"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "15 Mar 2020 03:03AM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "Loaded 0 blacklist entries.\nLoaded 0 whitelist entries.\nHTML form authentication unavailable, no WEBAPP entry found\nBatch #0 VirtualHostDiscovery: estimated time < 1 minute (0 tests, 0 inputs)\nVirtualHostDiscovery: 0 vulnsigs tests, completed 0  requests, 0 seconds. No tests to execute.\nBatch #0 CMSDetection: estimated time < 1 minute (1 tests, 1 inputs)\n[CMSDetection phase] : No potential CMS found. Aborting the CMS Detection phaseCMSDetection: 1 vulnsigs tests, completed 48  requests, 8 seconds. Completed 48 requests of 48 estimated requests (100%). All tests completed.\nCollected 41 links overall in 0 hours 3 minutes duration.\nPath manipulation: Estimated requests (payloads x links): files with extension:(0 x 26) + files:(0 x 29) +  directories:(9 x 19) +  paths:(0 x 48) = total (171) \nBatch #0 WS Directory Path manipulation: estimated time < 1 minute (9 tests, 48 inputs)\nWS Directory Path manipulation: 9 vulnsigs tests, completed 171  requests, 2 seconds. Completed 171 requests of 171 estimated requests (100%). All tests completed.\nBatch #0 WS enumeration: estimated time < 1 minute (11 tests, 48 inputs)\nWS enumeration: 11 vulnsigs tests, completed 238  requests, 4 seconds. Completed 238 requests of 528 estimated requests (45.0758%). All tests completed.\nBatch #1 URI parameter manipulation (no auth): estimated time < 1 minute (68 tests, 1 inputs)\nBatch #1 URI parameter manipulation (no auth): 68 vulnsigs tests, completed 65  requests, 2 seconds. Completed 65 requests of 68 estimated requests (95.5882%). All tests completed.\nBatch #1 Form parameter manipulation (no auth): estimated time < 1 minute (68 tests, 5 inputs)\nBatch #1 Form parameter manipulation (no auth): 68 vulnsigs tests, completed 508  requests, 19 seconds. Completed 508 requests of 340 estimated requests (149.412%). All tests completed.\nBatch #1 URI blind SQL manipulation (no auth): estimated time < 1 minute (8 tests, 1 inputs)\nBatch #1 URI blind SQL manipulation (no auth): 8 vulnsigs tests, completed 16  requests, 1 seconds. Completed 16 requests of 24 estimated requests (66.6667%). All tests completed.\nBatch #1 Form blind SQL manipulation (no auth): estimated time < 1 minute (8 tests, 5 inputs)\nBatch #1 Form blind SQL manipulation (no auth): 8 vulnsigs tests, completed 64  requests, 4 seconds. Completed 64 requests of 120 estimated requests (53.3333%). All tests completed.\nBatch #1 URI parameter time-based tests (no auth): estimated time < 1 minute (14 tests, 1 inputs)\nBatch #1 URI parameter time-based tests (no auth): 14 vulnsigs tests, completed 14  requests, 0 seconds. Completed 14 requests of 14 estimated requests (100%). All tests completed.\nBatch #1 Form field time-based tests (no auth): estimated time < 1 minute (14 tests, 5 inputs)\nBatch #1 Form field time-based tests (no auth): 14 vulnsigs tests, completed 56  requests, 5 seconds. Completed 56 requests of 70 estimated requests (80%). All tests completed.\nBatch #1 URI parameter time-based tests for Apache Struts Vulnerabilities (no auth): estimated time < 1 minute (1 tests, 1 inputs)\nBatch #1 URI parameter time-based tests for Apache Struts Vulnerabilities (no auth): 1 vulnsigs tests, completed 1  requests, 0 seconds. Completed 1 requests of 1 estimated requests (100%). All tests completed.\nBatch #1 Form field time-based tests for Apache Struts Vulnerabilities (no auth): estimated time < 1 minute (1 tests, 5 inputs)\nBatch #1 Form field time-based tests for Apache Struts Vulnerabilities (no auth): 1 vulnsigs tests, completed 4  requests, 1 seconds. Completed 4 requests of 5 estimated requests (80%). All tests completed.\nBatch #2 URI parameter manipulation (no auth): estimated time < 1 minute (68 tests, 0 inputs)\nBatch #2 URI parameter manipulation (no auth): 68 vulnsigs tests, completed 0  requests, 0 seconds. No tests to execute.\nBatch #2 URI blind SQL manipulation (no auth): estimated time < 1 minute (8 tests, 0 inputs)\nBatch #2 URI blind SQL manipulation (no auth): 8 vulnsigs tests, completed 0  requests, 0 seconds. No tests to execute.\nBatch #2 URI parameter time-based tests (no auth): estimated time < 1 minute (14 tests, 0 inputs)\nBatch #2 URI parameter time-based tests (no auth): 14 vulnsigs tests, completed 0  requests, 0 seconds. No tests to execute.\nBatch #2 URI parameter time-based tests for Apache Struts Vulnerabilities (no auth): estimated time < 1 minute (1 tests, 0 inputs)\nBatch #2 URI parameter time-based tests for Apache Struts Vulnerabilities (no auth): 1 vulnsigs tests, completed 0  requests, 0 seconds. No tests to execute.\nBatch #4 WebCgiOob: estimated time < 1 minute (2 tests, 1 inputs)\nBatch #4 WebCgiOob: 2 vulnsigs tests, completed 0  requests, 0 seconds. Completed 0 requests of 96 estimated requests (0%). All tests completed.\nNo XML requests found. Skipping XXE tests.\nBatch #4 DOM XSS exploitation: estimated time < 1 minute (4 tests, 5 inputs)\nBatch #4 DOM XSS exploitation: 4 vulnsigs tests, completed 40  requests, 78 seconds. No tests to execute.\nBatch #4 HTTP call manipulation: estimated time < 1 minute (37 tests, 0 inputs)\nBatch #4 HTTP call manipulation: 37 vulnsigs tests, completed 0  requests, 0 seconds. No tests to execute.\nBatch #4 Open Redirect analysis: estimated time < 1 minute (3 tests, 2 inputs)\nBatch #4 Open Redirect analysis: 3 vulnsigs tests, completed 2  requests, 4 seconds. Completed 2 requests of 2 estimated requests (100%). All tests completed.\nCSRF tests will not be launched because the scan is not successfully authenticated.\nBatch #4 File Inclusion analysis: estimated time < 1 minute (1 tests, 31 inputs)\nBatch #4 File Inclusion analysis: 1 vulnsigs tests, completed 0  requests, 0 seconds. Completed 0 requests of 31 estimated requests (0%). All tests completed.\nBatch #4 Cookie manipulation: estimated time < 1 minute (45 tests, 6 inputs)\nBatch #4 Cookie manipulation: 45 vulnsigs tests, completed 289  requests, 8 seconds. Completed 289 requests of 255 estimated requests (113.333%). XSS optimization removed 420 links. All tests completed.\nBatch #4 Header manipulation: estimated time < 10 minutes (45 tests, 15 inputs)\nBatch #4 Header manipulation: 45 vulnsigs tests, completed 1003  requests, 23 seconds. Completed 1003 requests of 1860 estimated requests (53.9247%). XSS optimization removed 420 links. All tests completed.\nBatch #4 shell shock detector: estimated time < 1 minute (1 tests, 15 inputs)\nBatch #4 shell shock detector: 1 vulnsigs tests, completed 17  requests, 1 seconds. Completed 17 requests of 15 estimated requests (113.333%). All tests completed.\nBatch #4 shell shock detector(form): estimated time < 1 minute (1 tests, 1 inputs)\nBatch #4 shell shock detector(form): 1 vulnsigs tests, completed 2  requests, 0 seconds. Completed 2 requests of 1 estimated requests (200%). All tests completed.\nBatch #4 httpoxy detector: estimated time < 1 minute (1 tests, 15 inputs)\nBatch #4 httpoxy detector: 1 vulnsigs tests, completed 15  requests, 1 seconds. Completed 15 requests of 15 estimated requests (100%). All tests completed.\nBatch #4 httpoxy detector(form): estimated time < 1 minute (1 tests, 1 inputs)\nBatch #4 httpoxy detector(form): 1 vulnsigs tests, completed 1  requests, 0 seconds. Completed 1 requests of 1 estimated requests (100%). All tests completed.\nBatch #4 Struts timebased detector: estimated time < 1 minute (1 tests, 15 inputs)\nBatch #4 Struts timebased detector: 1 vulnsigs tests, completed 15  requests, 1 seconds. Completed 15 requests of 15 estimated requests (100%). All tests completed.\nBatch #4 insecurely served cred forms detector (no auth): estimated time < 1 minute (1 tests, 1 inputs)\nBatch #4 insecurely served cred forms detector (no auth): 1 vulnsigs tests, completed 0  requests, 0 seconds. No tests to execute.\nBatch #5 HTTP Time Bandit: estimated time < 1 minute (1 tests, 10 inputs)\nBatch #5 HTTP Time Bandit: 1 vulnsigs tests, completed 200  requests, 14 seconds. No tests to execute.\nPath manipulation: Estimated requests (payloads x links): files with extension:(0 x 26) + files:(0 x 29) +  directories:(4 x 19) +  paths:(11 x 48) = total (604) \nBatch #5 Path XSS manipulation: estimated time < 1 minute (15 tests, 48 inputs)\nBatch #5 Path XSS manipulation: 15 vulnsigs tests, completed 603  requests, 9 seconds. Completed 603 requests of 604 estimated requests (99.8344%). All tests completed.\nPath manipulation: Estimated requests (payloads x links): files with extension:(0 x 26) + files:(0 x 29) +  directories:(1 x 19) +  paths:(0 x 48) = total (19) \nBatch #5 Tomcat Vuln manipulation: estimated time < 1 minute (1 tests, 48 inputs)\nBatch #5 Tomcat Vuln manipulation: 1 vulnsigs tests, completed 14  requests, 0 seconds. Completed 14 requests of 19 estimated requests (73.6842%). All tests completed.\nPath manipulation: Estimated requests (payloads x links): files with extension:(0 x 26) + files:(0 x 29) +  directories:(16 x 19) +  paths:(0 x 48) = total (304) \nBatch #5 Time based path manipulation: estimated time < 1 minute (16 tests, 31 inputs)\nBatch #5 Time based path manipulation: 16 vulnsigs tests, completed 64  requests, 660 seconds. Completed 64 requests of 304 estimated requests (21.0526%). All tests completed.\nPath manipulation: Estimated requests (payloads x links): files with extension:(4 x 26) + files:(18 x 29) +  directories:(123 x 19) +  paths:(16 x 48) = total (3731) \nBatch #5 Path manipulation: estimated time < 10 minutes (161 tests, 48 inputs)\nBatch #5 Path manipulation: 161 vulnsigs tests, completed 2748  requests, 44 seconds. Completed 2748 requests of 3731 estimated requests (73.6532%). All tests completed.\nBatch #5 WebCgiGeneric: estimated time < 10 minutes (23 tests, 1 inputs)\nBatch #5 WebCgiGeneric: 23 vulnsigs tests, completed 39  requests, 6 seconds. Completed 39 requests of 1968 estimated requests (1.98171%). All tests completed.\nTotal requests made: 6342\nAverage server response time: 0.09 seconds\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150021"
+            },
+            {
+                "key": "info_id",
+                "value": "101750327"
+            },
+            {
+                "key": "description",
+                "value": "This check provides various details of the scan's performance and behavior. In some cases, this check can be used to identify problems that the scanner encountered when crawling the target Web application."
+            },
+            {
+                "key": "group",
+                "value": "IG-DIAG"
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "The scan diagnostics data provides technical details about the crawler's performance and behavior. This information does not necessarily imply problems with the Web application.",
+        "issueName": "Scan Diagnostics",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150021//101750327",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "No action is required.",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101750323"
+            },
+            {
+                "key": "unique_id",
+                "value": "0e618c16-7b90-11ea-bfb0-5bd3b789bb3e"
+            },
+            {
+                "key": "detection_id",
+                "value": "2244705"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "15 Mar 2020 03:03AM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "https://exweb.example.com/index.html\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150082"
+            },
+            {
+                "key": "info_id",
+                "value": "101750323"
+            },
+            {
+                "key": "description",
+                "value": "The URLs listed have protection against Clickjacking. The protection is implemented via the X-Frame-Options response header."
+            },
+            {
+                "key": "group",
+                "value": "IG-DIAG"
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "cvss_base",
+                "value": "10.0"
+            },
+            {
+                "key": "cvss_temporal",
+                "value": "8.6"
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_data",
+                "value": {
+                    "#text": "aHR0cHM6Ly9leHdlYi5leGFtcGxlLmNvbS9pbmRleC5odG1sCg==",
+                    "@base64": "true"
+                }
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "X-Frame-Options header is used to prevent framing of the page.",
+        "issueName": "Protection against Clickjacking",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150082//101750323",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101750341"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": "INFO"
+            },
+            {
+                "key": "owasp",
+                "value": "A6"
+            },
+            {
+                "key": "wasc",
+                "value": "WASC-10"
+            },
+            {
+                "key": "vuln_id",
+                "value": "101750341"
+            },
+            {
+                "key": "lookup_id",
+                "value": "150085"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "vuln_id"
+                ]
+            },
+            {
+                "key": "description",
+                "value": "The web application is possibly vulnerable to a \"slow HTTP POST\" Denial of Service (DoS) attack. This is an application-level DoS that consumes server resources by maintaining open connections for an extended period of time by slowly sending traffic to the server. If the server maintains too many connections open at once, then it may not be able to respond to new, legitimate connections. Unlike bandwidth-consumption DoS attacks, the \"slow\" attack does not require a large amount of traffic to be sent to the server -- only that the client is able to maintain open connections for several minutes at a time.\n<P>\nThe attack holds server connections open by sending properly crafted HTTP POST headers that contain a Content-Length header with a large value to inform the web server how much of data to expect. After the HTTP POST headers are fully sent, the HTTP POST message body is sent at slow speeds to prolong the completion of the connection and lock up server resources. By waiting for the complete request body, the server is helping clients with slow or intermittent connections to complete requests, but is also exposing itself to abuse.\n<P>\nFurther information can be found under <A HREF=\"https://media.blackhat.com/bh-dc-11/Brennan/BlackHat_DC_2011_Brennan_Denial_Service-Slides.pdf\" TARGET=\"_blank\">BlackHat_DC_2011_Brennan_Denial_Service-Slides.pdf</A>."
+            },
+            {
+                "key": "cvss_base",
+                "value": "6.1"
+            },
+            {
+                "key": "cvss_temporal",
+                "value": "5.5"
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_unique_id",
+                "value": "dae7e452-7b85-11ea-af01-171c49476b8a"
+            },
+            {
+                "key": "_raw_detection_id",
+                "value": "6101732"
+            },
+            {
+                "key": "_raw_ajax",
+                "value": "false"
+            },
+            {
+                "key": "_raw_authentication",
+                "value": "Not Required"
+            },
+            {
+                "key": "_raw_detection_date",
+                "value": "15 Mar 2020 03:03AM GMT-0400"
+            },
+            {
+                "key": "_raw_payloads",
+                "value": {
+                    "PAYLOAD": {
+                        "NUM": "1",
+                        "PAYLOAD": "N/A",
+                        "REQUEST": {
+                            "HEADERS": {
+                                "HEADER": [
+                                    {
+                                        "key": "Host",
+                                        "value": "exweb.example.com"
+                                    },
+                                    {
+                                        "key": "User-Agent",
+                                        "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/601.4.4 (KHTML, like Gecko) Version/9.0.3 Safari/601.4.4"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "*/*"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/x-www-form-urlencoded"
+                                    }
+                                ]
+                            },
+                            "METHOD": "POST",
+                            "URL": "https://exweb.example.com/cgi/login"
+                        },
+                        "RESPONSE": {
+                            "CONTENTS": {
+                                "#text": "VnVsbmVyYWJsZSB0byBzbG93IEhUVFAgUE9TVCBhdHRhY2sKCUNvbm5lY3Rpb24gd2l0aCBwYXJ0aWFsIFBPU1QgYm9keSByZW1haW5lZCBvcGVuIGZvcjogMjMyNDc0IG1pbGxpc2Vjb25kcw==",
+                                "@base64": "true"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "key": "_raw__type",
+                "value": "VULNERABILITY"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "All other services remain intact but the web server itself becomes inaccessible.",
+        "issueName": "Slow HTTP POST vulnerability",
+        "issueType": "Potential Vulnerability",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150085//101750341",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [
+            {
+                "id": "772",
+                "type": "cwe"
+            }
+        ],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "Solution would be server-specific, but general recommendations are:\n- to limit the size of the acceptable request to each form requirements\n- establish minimal acceptable speed rate\n- establish absolute request timeout for connection with POST request\nServer-specific details can be found <A HREF=\"https://blog.qualys.com/securitylabs/2011/11/02/how-to-protect-against-slow-http-attacks\" TARGET=\"_blank\">here</A>. \nA tool that demonstrates this vulnerability in a more intrusive manner is available <A HREF=\"https://github.com/shekyan/slowhttptest\" TARGET=\"_blank\">here</A>.",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "3",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 6,
+        "severityCode": "Medium",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": "https://exweb.example.com/cgi/login",
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101750331"
+            },
+            {
+                "key": "unique_id",
+                "value": "8c5ee838-7b91-11ea-a231-b31d98510e8d"
+            },
+            {
+                "key": "detection_id",
+                "value": "2244712"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "15 Mar 2020 03:03AM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "Total cookies: 15\nNSC_AAAC=xyz; secure; expires=Tue, 09-Nov-1999 23:12:40 GMT; path=/ First set at URL: https://exweb.example.com/\nNSC_EPAC=xyz; secure; expires=Tue, 09-Nov-1999 23:12:40 GMT; path=/ First set at URL: https://exweb.example.com/\nNSC_USER=xyz; secure; expires=Tue, 09-Nov-1999 23:12:40 GMT; path=/ First set at URL: https://exweb.example.com/\nNSC_TEMP=xyz; secure; expires=Tue, 09-Nov-1999 23:12:40 GMT; path=/ First set at URL: https://exweb.example.com/\nNSC_PERS=xyz; secure; expires=Tue, 09-Nov-1999 23:12:40 GMT; path=/ First set at URL: https://exweb.example.com/\nNSC_BASEURL=xyz; secure; expires=Tue, 09-Nov-1999 23:12:40 GMT; path=/ First set at URL: https://exweb.example.com/\nCsrfToken=xyz; secure; expires=Tue, 09-Nov-1999 23:12:40 GMT; path=/ First set at URL: https://exweb.example.com/\nCtxsAuthId=xyz; secure; expires=Tue, 09-Nov-1999 23:12:40 GMT; path=/ First set at URL: https://exweb.example.com/\nASP.NET_SessionId=xyz; secure; expires=Tue, 09-Nov-1999 23:12:40 GMT; path=/ First set at URL: https://exweb.example.com/\nNSC_TMAA=xyz; expires=Tue, 09-Nov-1999 23:12:40 GMT; path=/ First set at URL: https://exweb.example.com/\nNSC_TMAS=xyz; secure; expires=Tue, 09-Nov-1999 23:12:40 GMT; path=/ First set at URL: https://exweb.example.com/\nNSC_TEMP=xyz; expires=Tue, 09-Nov-1999 23:12:40 GMT; path=/ First set at URL: https://exweb.example.com/\nNSC_PERS=xyz; expires=Tue, 09-Nov-1999 23:12:40 GMT; path=/ First set at URL: https://exweb.example.com/\nNSC_AAAC=xyz; expires=Tue, 09-Nov-1999 23:12:40 GMT; path=/ First set at URL: https://exweb.example.com/\npwcount=0; secure; HttpOnly; expires=Tue, 09-Nov-1999 23:12:40 GMT; path=/ First set at URL: https://exweb.example.com/index.html\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150099"
+            },
+            {
+                "key": "info_id",
+                "value": "101750331"
+            },
+            {
+                "key": "description",
+                "value": "The cookies listed in the Results section were issued from the web\napplication during the crawl without accepting any opt-in dialogs."
+            },
+            {
+                "key": "group",
+                "value": "IG-WEAK"
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Cookies may be set without user explicitly agreeing to accept them.",
+        "issueName": "Cookies Issued Without User Consent",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150099//101750331",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "Review the application to ensure that all cookies listed are supposed to be issued without user opt-in.  If the EU Cookie law is applicable for this web application, ensure these cookies require user opt-in or have been classified as exempt by your organization.",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101750329"
+            },
+            {
+                "key": "unique_id",
+                "value": "a017fb24-7b89-11ea-ad92-6b17cf835556"
+            },
+            {
+                "key": "detection_id",
+                "value": "2247133"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "15 Mar 2020 03:03AM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "1159.400000 bytes/sec https://exweb.example.com/vpn/js/rdx/core/css/fonts/example_sans/examplesans_light.svg\n1322.500000 bytes/sec https://exweb.example.com/favicon.ico\n198559.800000 bytes/sec https://exweb.example.com/vpn/js/rdx/core/css/fonts/example_sans/examplesans_bold.ttf\n614533.300000 bytes/sec https://exweb.example.com/vpn/js/rdx/core/css/fonts/example_sans/examplesans_bold.woff\n620774.100000 bytes/sec https://exweb.example.com/vpn/js/rdx/core/css/fonts/example_sans/examplesans_light.woff\n629927.700000 bytes/sec https://exweb.example.com/vpn/js/rdx/core/css/fonts/example_sans/examplesans_regular.woff\n631260.600000 bytes/sec https://exweb.example.com/vpn/js/rdx/core/css/fonts/example_sans/examplesans_semibold.woff\n1061238.700000 bytes/sec https://exweb.example.com/vpn/js/rdx/core/css/fonts/example_sans/examplesans_semibold.ttf\n1063785.800000 bytes/sec https://exweb.example.com/vpn/js/rdx/core/css/fonts/example_sans/examplesans_regular.ttf\n1070717.600000 bytes/sec https://exweb.example.com/vpn/js/rdx/core/css/fonts/example_sans/examplesans_light.ttf\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150126"
+            },
+            {
+                "key": "info_id",
+                "value": "101750329"
+            },
+            {
+                "key": "description",
+                "value": "The list of links with lowest bytes/sec which are assumed to be resources with  highest resource consumption.  The links in the list have slower transfer times speeds to an average resource on the server.  This may indicate that the links are more CPU or DB intensive than majority of links.<P>\nThe latency of the network and file size have no effect on calculations."
+            },
+            {
+                "key": "group",
+                "value": "IG-WEAK"
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "The links with high resource consumption could be used to perform DOS on the server  by just performing GET Flooding. Attackers could more easily take the server down if there are huge resource hogs on it, performing less request.",
+        "issueName": "Links With High Resource Consumption",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150126//101750329",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "Find the root cause of resources slow download speed.<P>\nIf the cause is a real CPU strain or complex DB queries performed, there may be a need for re-engineering of the web application or defense measures should be in place.  Examples of defense against DOS that is targeted towards high resource consumption links are Load Balancers and Rate Limiters.",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101750333"
+            },
+            {
+                "key": "unique_id",
+                "value": "45a66416-7b91-11ea-a426-23a5b560f585"
+            },
+            {
+                "key": "detection_id",
+                "value": "2244714"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "15 Mar 2020 03:03AM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "IncludeSubDomains directive missing and max-age set below 120 days for \nhttps://exweb.example.com/logon/themes/Default/resources/config.xml\nNote:Including subdomains directive is recommended only when all sites within the organization for the given domain name require ssl. It's necessary to evaluate an impact of existing 3rd party services like email or DNS CNAMES for CDNs before adding 'includeSubDomains' directive.\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150135"
+            },
+            {
+                "key": "info_id",
+                "value": "101750333"
+            },
+            {
+                "key": "description",
+                "value": "HTTP Strict Transport Security (HSTS) header found to be missing or misconfigured. HSTS header dictates to a conforming browser that the current and all subsequent connections (for a configurable amount of time) to the subject website should only be performed over a secure transport layer. Additionally, users are not permitted to bypass SSL/TLS certificate errors; preventing browser click-throughs in the event of expired or otherwise untrusted certificates."
+            },
+            {
+                "key": "group",
+                "value": "IG-WEAK"
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_data",
+                "value": {
+                    "#text": "SW5jbHVkZVN1YkRvbWFpbnMgZGlyZWN0aXZlIG1pc3NpbmcgYW5kIG1heC1hZ2Ugc2V0IGJlbG93IDEyMCBkYXlzIGZvciAKaHR0cHM6Ly9leHdlYi5leGFtcGxlLmNvbS9sb2dvbi90aGVtZXMvRGVmYXVsdC9yZXNvdXJjZXMvY29uZmlnLnhtbApOb3RlOkluY2x1ZGluZyBzdWJkb21haW5zIGRpcmVjdGl2ZSBpcyByZWNvbW1lbmRlZCBvbmx5IHdoZW4gYWxsIHNpdGVzIHdpdGhpbiB0aGUgb3JnYW5pemF0aW9uIGZvciB0aGUgZ2l2ZW4gZG9tYWluIG5hbWUgcmVxdWlyZSBzc2wuIEl0J3MgbmVjZXNzYXJ5IHRvIGV2YWx1YXRlIGFuIGltcGFjdCBvZiBleGlzdGluZyAzcmQgcGFydHkgc2VydmljZXMgbGlrZSBlbWFpbCBvciBETlMgQ05BTUVTIGZvciBDRE5zIGJlZm9yZSBhZGRpbmcgJ2luY2x1ZGVTdWJEb21haW5zJyBkaXJlY3RpdmUuCg==",
+                    "@base64": "true"
+                }
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "If HSTS header is not set by Web applications using TLS, users are potentially vulnerable to active Man-in-the-middle(MITM), SSL Striping and passive eavesdropper attacks.",
+        "issueName": "HTTP Strict Transport Security (HSTS) header missing/misconfigured.",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150135//101750333",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "1. The strongest protection is to ensure that all requested resources use only TLS with well-formed HSTS header. Add the Strict-Transport-Security HTTPS header to all responses from the target domains<BR>\n2. Add 'includeSubDomains' directive to all Strict-Transport-Security headers.<BR>\n3. Ensure that the max-age directive is included and set to an acceptable value equal to or greater than 10,368,000 seconds (120 days) with every Strict-Transport-Security header. If the max-age directive is not included, it must be added. If the value is set to less than 10,368,000 seconds, it must be increased to the minimum value.",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101750328"
+            },
+            {
+                "key": "unique_id",
+                "value": "f9f780c4-7b89-11ea-8cfd-67309e0873f7"
+            },
+            {
+                "key": "detection_id",
+                "value": "2244710"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "15 Mar 2020 03:03AM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "Total internal forms seen (this count includes duplicate forms): 1\n\nCrawled forms (Total: 1)\nNOTE: This does not include authentication forms. Authentication forms are reported separately in QID 150115\nForm #:1 Action URI:https://exweb.example.com/cgi/login\nForm Fields: a3555980743025242, a5339069850589283, a3972399559262486, a0693217167838696\n\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150152"
+            },
+            {
+                "key": "info_id",
+                "value": "101750328"
+            },
+            {
+                "key": "description",
+                "value": "Results section consists of the unique forms submitted by the Web Application Scanner. Reported list of forms in this QID does not contain authentication forms (i.e. login forms) which are reported separately in QID 150115. There is redundancy checks done on forms based on form fields. Forms determined to be similar will be considered redundant and not tested. \n<P>NOTE: The regular expression specified under 'Redundant Links' are not applied to forms. Forms (unique or redundant) are not reported under QID 150140."
+            },
+            {
+                "key": "group",
+                "value": "IG-DIAG"
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_data",
+                "value": {
+                    "#text": "VG90YWwgaW50ZXJuYWwgZm9ybXMgc2VlbiAodGhpcyBjb3VudCBpbmNsdWRlcyBkdXBsaWNhdGUgZm9ybXMpOiAxCgpDcmF3bGVkIGZvcm1zIChUb3RhbDogMSkKTk9URTogVGhpcyBkb2VzIG5vdCBpbmNsdWRlIGF1dGhlbnRpY2F0aW9uIGZvcm1zLiBBdXRoZW50aWNhdGlvbiBmb3JtcyBhcmUgcmVwb3J0ZWQgc2VwYXJhdGVseSBpbiBRSUQgMTUwMTE1CkZvcm0gIzoxIEFjdGlvbiBVUkk6aHR0cHM6Ly9leHdlYi5leGFtcGxlLmNvbS9jZ2kvbG9naW4KRm9ybSBGaWVsZHM6IGEzNTU1OTgwNzQzMDI1MjQyLCBhNTMzOTA2OTg1MDU4OTI4MywgYTM5NzIzOTk1NTkyNjI0ODYsIGEwNjkzMjE3MTY3ODM4Njk2Cgo=",
+                    "@base64": "true"
+                }
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "N/A",
+        "issueName": "Forms Crawled",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150152//101750328",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101750324"
+            },
+            {
+                "key": "unique_id",
+                "value": "50e9916a-7b8a-11ea-8d6b-b7b9be75651f"
+            },
+            {
+                "key": "detection_id",
+                "value": "2244706"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "15 Mar 2020 03:03AM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "\nNumber of unique JS libraries: 8\nJavascript library : D3\nVersion : 3.5.12\nFound on the following page(only first page is reported):\n https://exweb.example.com/index.html\n\n===============================================================\n\nJavascript library : METAGeneratorReports\nVersion : MSHTML 6.00.2900.2802\nFound on the following page(only first page is reported):\n https://exweb.example.com/index.html\n\n===============================================================\n\nJavascript library : Underscore\nFound on the following page(only first page is reported):\n https://exweb.example.com/index.html\n\n===============================================================\n\nJavascript library : jQuery\nVersion : 3.4.1\nFound on the following page(only first page is reported):\n https://exweb.example.com/index.html\n\n===============================================================\n\nJavascript library : jQuery.migrate\nVersion : 3.1.0\nFound on the following page(only first page is reported):\n https://exweb.example.com/index.html\n\n===============================================================\n\nJavascript library : jQuery.ui.autocomplete\nVersion : 1.12.1\nFound on the following page(only first page is reported):\n https://exweb.example.com/index.html\n\n===============================================================\n\nJavascript library : jQuery.ui.dialog\nVersion : 1.12.1\nFound on the following page(only first page is reported):\n https://exweb.example.com/index.html\n\n===============================================================\n\nJavascript library : jQuery.ui.tooltip\nVersion : 1.12.1\nFound on the following page(only first page is reported):\n https://exweb.example.com/index.html\n\n===============================================================\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150176"
+            },
+            {
+                "key": "info_id",
+                "value": "101750324"
+            },
+            {
+                "key": "description",
+                "value": "The JavaScript libraries discovered by the scanner are provided in the Results section. The discovered libraries are reported only once based on the page on which they were first detected.<P>\n\nEach library is reported along with other information such as the URL of page on which it was first found, the version, and the URL of the .js file."
+            },
+            {
+                "key": "group",
+                "value": "IG-DIAG"
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "N/A",
+        "issueName": "JavaScript Libraries Detected",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150176//101750324",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101750334"
+            },
+            {
+                "key": "unique_id",
+                "value": "db963c94-75bd-4e94-ac2b-585f8906de52"
+            },
+            {
+                "key": "detection_id",
+                "value": "2244715"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "15 Mar 2020 03:03AM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "\nX-Content-Type-Options: Header missing\nResponse headers on link: GET https://167.24.131.98/logon/themes/Default/resources/%7Blang%7D response code: 404\nDate: Sun, 15 Mar 2020 07:05:32 GMT\nServer: Apache\nX-Frame-Options: SAMEORIGIN\nContent-Length: 196\nKeep-Alive: timeout=15, max=95\nConnection: Keep-Alive\nContent-Type: text/html; charset=iso-8859-1\nStrict-Transport-Security: max-age=157680000, max-age=31536000\n\nHeader missing on the following link(s):\n(Only first 50 such pages are listed)\n\nGET https://167.24.131.98/logon/themes/Default/resources/%7Blang%7D response code: 404\nGET https://167.24.131.98/logon/themes/Default/css/custom.css?v=fd96bc8977256003de05ed84270b90bb response code: 404\nGET https://167.24.131.98/logon/themes/EULA/resources/%7Blang%7D response code: 404\nGET https://167.24.131.98/vpn/js/rdx/core/css/fonts/citrix_sans/citrixsans_light.svg response code: 404\nGET https://167.24.131.98/favicon.ico response code: 404\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150202"
+            },
+            {
+                "key": "info_id",
+                "value": "101750334"
+            },
+            {
+                "key": "description",
+                "value": "The X-Content-Type-Options response header is not present. WAS reports missing X-Content-Type-Options header on each crawled link for both static and dynamic responses. The scanner performs the check not only on 200 responses but 4xx and 5xx responses as well. It's also possible the QID will be reported on directory-level links."
+            },
+            {
+                "key": "group",
+                "value": "IG-WEAK"
+            },
+            {
+                "key": "owasp",
+                "value": "A6"
+            },
+            {
+                "key": "wasc",
+                "value": "WASC-15"
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "All web browsers employ a content-sniffing algorithm that inspects the contents of HTTP responses and also occasionally overrides the MIME type provided by the server. If X-Content-Type-Options header is not present, browsers can potentially be tricked into treating non-HTML response as HTML. An attacker can then potentially leverage the functionality to perform a cross-site scripting (XSS) attack. This specific case is known as a Content-Sniffing XSS (CS-XSS) attack.",
+        "issueName": "Missing header: X-Content-Type-Options",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150202//101750334",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "It is recommended to disable browser content sniffing by adding the X-Content-Type-Options header to the HTTP response with a value of 'nosniff'. Also, ensure that the 'Content-Type' header is set correctly on responses.",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "2",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101750338"
+            },
+            {
+                "key": "unique_id",
+                "value": "dd0b0c66-7b88-11ea-8ed8-434edb6c896e"
+            },
+            {
+                "key": "detection_id",
+                "value": "2244719"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "15 Mar 2020 03:03AM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "\nX-Xss-Protection: Header missing\nResponse headers on link: GET https://exweb.example.com/logon/themes/Default/resources/%7Blang%7D response code: 404\nDate: Sun, 15 Mar 2020 07:05:32 GMT\nServer: Apache\nX-Frame-Options: SAMEORIGIN\nContent-Length: 196\nKeep-Alive: timeout=15, max=95\nConnection: Keep-Alive\nContent-Type: text/html; charset=iso-8859-1\nStrict-Transport-Security: max-age=157680000, max-age=31536000\n\nHeader missing on the following link(s):\n(Only first 50 such pages are listed)\n\nGET https://exweb.example.com/logon/themes/Default/resources/%7Blang%7D response code: 404\nGET https://exweb.example.com/logon/themes/Default/css/custom.css?v=fd96bc8977256003de05ed84270b90bb response code: 404\nGET https://exweb.example.com/logon/themes/Default/resources/config.xml response code: 200\nGET https://exweb.example.com/logon/themes/EULA/resources/%7Blang%7D response code: 404\nGET https://exweb.example.com/logon/themes/Default/resources/en.xml response code: 200\nGET https://exweb.example.com/js/rdx/core/css/fonts/example_sans/examplesans_light.svg response code: 404\nGET https://exweb.example.com/favicon.ico response code: 404\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150204"
+            },
+            {
+                "key": "info_id",
+                "value": "101750338"
+            },
+            {
+                "key": "description",
+                "value": "The X-XSS-Protection response header is not present."
+            },
+            {
+                "key": "group",
+                "value": "IG-WEAK"
+            },
+            {
+                "key": "owasp",
+                "value": "A6"
+            },
+            {
+                "key": "wasc",
+                "value": "WASC-15"
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "The X-XSS-Protection response header provides a layer of protection against reflected cross-site scripting (XSS) attacks by instructing browsers to abort rendering a page in which a reflected XSS attack has been detected. This is a best-effort second line of defense measure which helps prevent an attacker from using evasion techniques to avoid the neutralization mechanisms that the filters use by default. When configured appropriately, browser-level XSS filters can provide additional layers of defense against web application attacks.\n<P>\nNote that HTTP 4xx and 5xx responses can also be susceptible to attacks such as XSS. For better security the X-XSS-Protection header should be set on 4xx and 5xx responses as well.",
+        "issueName": "Missing header: X-XSS-Protection",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150204//101750338",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "It is recommend to set X-XSS-Protection header with value set to '1; mode=block' on all the relevant responses to activate browser's XSS filter.\n\n<P><B>NOTE:</B> The X-XSS-Protection header is not supported by all browsers. Google Chrome and Safari are some of the browsers which support it, Firefox on the other hand does not support the header. X-XSS-Protection header does not guarantee a complete protection against XSS. For better protection against XSS attacks, the web application should use secure coding principles. Also, consider leveraging the Content-Security-Policy (CSP) header, which is supported by all browsers.\n\n<P>Using X-XSS-Protection could have unintended side effects, please understand the implications carefully before using it.\n\n<P>References:<BR>\n- <A HREF=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection\" TARGET=\"_blank\">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection</A><BR>\n- <A HREF=\"https://blog.innerht.ml/the-misunderstood-x-xss-protection/\" TARGET=\"_blank\">https://blog.innerht.ml/the-misunderstood-x-xss-protection/</A><BR>\n- <A HREF=\"https://www.mbsd.jp/blog/20160407.html\" TARGET=\"_blank\">https://www.mbsd.jp/blog/20160407.html</A><BR>\n- <A HREF=\"https://www.chromium.org/developers/design-documents/xss-auditor\" TARGET=\"_blank\">https://www.chromium.org/developers/design-documents/xss-auditor</A>",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101750337"
+            },
+            {
+                "key": "unique_id",
+                "value": "195892de-7b8d-11ea-baae-97ae7dac89b1"
+            },
+            {
+                "key": "detection_id",
+                "value": "2244718"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "15 Mar 2020 03:03AM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "\nContent-Security-Policy: Header missing\nResponse headers on link: GET https://exweb.example.com/resources.js response code: 200\nAge: 7\nDate: Sun, 15 Mar 2020 07:04:31 GMT\nCache-Control: no-cache\nConnection: Keep-Alive\nVia: NS-CACHE-10.0: 180\nEtag: \"4acd-59cd64cdc6580\"\nServer: Apache\nX-Frame-Options: SAMEORIGIN\nLast-Modified: Thu, 23 Jan 2020 22:38:30 GMT\nAccept-Ranges: bytes\nContent-Length: 19149\nX-Xss-Protection: 1; mode=block\nX-Content-Type-Options: nosniff\nContent-Type: application/javascript\nStrict-Transport-Security: max-age=157680000, max-age=31536000\n\nHeader missing on the following link(s):\n(Only first 50 such pages are listed)\n\nGET https://exweb.example.com/resources.js response code: 200\nGET https://exweb.example.com/index.html response code: 200\nGET https://exweb.example.com/logon/themes/Default/resources/%7Blang%7D response code: 404\nGET https://exweb.example.com/images/AccessGateway.ico response code: 200\nGET https://exweb.example.com/js/xdr/core/css/xdr.css?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/logon/fonts/example-fonts.css?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/logon/themes/Default/css/base.css?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/logon/themes/Default/css/custom.css?v=fd96bc8977256003de05ed84270b90bb response code: 404\nGET https://exweb.example.com/js/xdr.js?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/login.js?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/js/views.js?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/js/login_view.js?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/js/login_form_view.js?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/resources.js?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/share.js?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/logon/themes/EULA/resources/%7Blang%7D response code: 404\nGET https://exweb.example.com/logon/themes/Default/resources/config.xml response code: 200\nGET https://exweb.example.com/images/exampleWatermark.png response code: 200\nGET https://exweb.example.com/logon/themes/Default/resources/en.xml response code: 200\nGET https://exweb.example.com/images/LoginButtonGlow.png response code: 200\nGET https://exweb.example.com/images/NavBarLink.gif response code: 200\nGET https://exweb.example.com/images/carbonfibre_img.png response code: 200\nGET https://exweb.example.com/images/carbonfibre_img_white_header.png response code: 200\nGET https://exweb.example.com/images/icon-VPN.png response code: 200\nGET https://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_bold.svg response code: 200\nGET https://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_bold.ttf response code: 200\nGET https://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_bold.woff response code: 200\nGET https://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_light.svg response code: 404\nGET https://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_light.ttf response code: 200\nGET https://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_light.woff response code: 200\nGET https://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_regular.svg response code: 200\nGET https://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_regular.ttf response code: 200\nGET https://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_regular.woff response code: 200\nGET https://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_semibold.svg response code: 200\nGET https://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_semibold.ttf response code: 200\nGET https://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_semibold.woff response code: 200\nGET https://exweb.example.com/js/xdr/core/lang/xdr_en.json response code: 200\nGET https://exweb.example.com/media/examplegateway_logo_white.png response code: 200\nGET https://exweb.example.com/favicon.ico response code: 404\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150206"
+            },
+            {
+                "key": "info_id",
+                "value": "101750337"
+            },
+            {
+                "key": "description",
+                "value": "No Content-Security-Policy (CSP) is specified for the page. WAS checks for the missing CSP on all static and dynamic pages. It checks for CSP in the response headers (Content-Security-Policy, X-Content-Security-Policy or X-Webkit-CSP) and in response body (http-equiv=\"Content-Security-Policy\" meta tag).<P>\n\nHTTP 4xx and 5xx responses can also be susceptible to attacks such as XSS. For better security it's important to set appropriate CSP policies on 4xx and 5xx responses as well."
+            },
+            {
+                "key": "group",
+                "value": "IG-WEAK"
+            },
+            {
+                "key": "owasp",
+                "value": "A6"
+            },
+            {
+                "key": "wasc",
+                "value": "WASC-15"
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Content-Security Policy is a defense mechanism that can significantly reduce the risk and impact of XSS attacks in modern browsers. The CSP specification provides a set of content restrictions for web resources and a mechanism for transmitting the policy from a server to a client where the policy is enforced. When a Content Security Policy is specified, a number of default behaviors in user agents are changed; specifically inline content and JavaScript eval constructs are not interpreted without additional directives. In short, CSP allows you to create a whitelist of sources of the trusted content. The CSP policy instructs the browser to only render resources from those whitelisted sources. Even though an attacker can find a security vulnerability in the application through which to inject script, the script won't match the whitelisted sources defined in the CSP policy, and therefore will not be executed.<P>\n\nThe absence of Content Security Policy in the response will allow the attacker to exploit vulnerabilities as the protection provided by the browser is not at all leveraged by the Web application. If secure CSP configuration is not implemented, browsers will not be able to block content-injection attacks such as Cross-Site Scripting and Clickjacking.",
+        "issueName": "Content-Security-Policy Not Implemented",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150206//101750337",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "Appropriate CSP policies help prevent content-injection attacks such as cross-site scripting (XSS) and clickjacking. It's recommended to add secure CSP policies as a part of a defense-in-depth approach for securing web applications.<P>\n\nReferences:<BR>\n- <A HREF=\"https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html\" TARGET=\"_blank\">https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</A><BR>\n- <A HREF=\"https://developers.google.com/web/fundamentals/security/csp/\" TARGET=\"_blank\">https://developers.google.com/web/fundamentals/security/csp/</A>",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "2",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101750325"
+            },
+            {
+                "key": "unique_id",
+                "value": "4b51517e-7b90-11ea-84d9-5702dc847caf"
+            },
+            {
+                "key": "detection_id",
+                "value": "2244707"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "15 Mar 2020 03:03AM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "\nReferrer-Policy: Header missing\nResponse headers on link: GET https://exweb.example.com/resources.js response code: 200\nAge: 7\nDate: Sun, 15 Mar 2020 07:04:31 GMT\nCache-Control: no-cache\nConnection: Keep-Alive\nVia: NS-CACHE-10.0: 180\nEtag: \"4acd-59cd64cdc6580\"\nServer: Apache\nX-Frame-Options: SAMEORIGIN\nLast-Modified: Thu, 23 Jan 2020 22:38:30 GMT\nAccept-Ranges: bytes\nContent-Length: 19149\nX-Xss-Protection: 1; mode=block\nX-Content-Type-Options: nosniff\nContent-Type: application/javascript\nStrict-Transport-Security: max-age=157680000, max-age=31536000\n\nHeader missing on the following link(s):\n(Only first 50 such pages are listed)\n\nGET https://exweb.example.com/resources.js response code: 200\nGET https://exweb.example.com/index.html response code: 200\nGET https://exweb.example.com/logon/themes/Default/resources/%7Blang%7D response code: 404\nGET https://exweb.example.com/images/Access.ico response code: 200\nGET https://exweb.example.com/js/xdr/core/css/xdr.css?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/logon/fonts/example-fonts.css?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/logon/themes/Default/css/base.css?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/logon/themes/Default/css/custom.css?v=fd96bc8977256003de05ed84270b90bb response code: 404\nGET https://exweb.example.com/js/xdr.js?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/login.js?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/js/views.js?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/js/login_view.js?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/js/login_form_view.js?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/resources.js?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/share.js?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/logon/themes/EULA/resources/%7Blang%7D response code: 404\nGET https://exweb.example.com/logon/themes/Default/resources/config.xml response code: 200\nGET https://exweb.example.com/images/exampleWatermark.png response code: 200\nGET https://exweb.example.com/logon/themes/Default/resources/en.xml response code: 200\nGET https://exweb.example.com/images/LoginButtonGlow.png response code: 200\nGET https://exweb.example.com/images/NavBarLink.gif response code: 200\nGET https://exweb.example.com/images/carbonfibre_img.png response code: 200\nGET https://exweb.example.com/images/carbonfibre_img_white_header.png response code: 200\nGET https://exweb.example.com/images/icon.png response code: 200\nGET https://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_bold.svg response code: 200\nGET https://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_bold.ttf response code: 200\nGET https://"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150208"
+            },
+            {
+                "key": "info_id",
+                "value": "101750325"
+            },
+            {
+                "key": "description",
+                "value": "No Referrer Policy is specified for the link. WAS checks for the missing Referrer Policy on all static and dynamic pages. It checks for one of the following Referrer Policy in the response headers:<P>\n1) no-referrer<BR>\n2) no-referrer-when-downgrade<BR>\n3) same-origin<BR>\n4) origin<BR>\n5) origin-when-cross-origin<BR>\n6) strict-origin<BR>\n7) strict-origin-when-cross-origin<BR>\n<P>\nIf the Referrer Policy header is not found , WAS checks in response body for meta tag containing tag name as \"referrer\" and one of the above Referrer Policy."
+            },
+            {
+                "key": "group",
+                "value": "IG-WEAK"
+            },
+            {
+                "key": "owasp",
+                "value": "A6"
+            },
+            {
+                "key": "wasc",
+                "value": "WASC-15"
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "The Referrer-Policy header controls how much referrer information is sent to a site when navigating to it. Absence of Referrer-Policy header can lead to leakage of sensitive information via the referrer header.",
+        "issueName": "Missing header: Referrer-Policy",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150208//101750325",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "Referrer Policy header improves security by ensuring websites don't leak sensitive information via the referrer header. It's recommended to add secure Referrer Policies as a part of a defense-in-depth approach.<P>\n\nReferences:<BR>\n- <A HREF=\"https://www.w3.org/TR/referrer-policy/\" TARGET=\"_blank\">https://www.w3.org/TR/referrer-policy/</A><BR>\n- <A HREF=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy\" TARGET=\"_blank\">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy</A>",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "2",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101750339"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": null
+            },
+            {
+                "key": "group",
+                "value": "INFO"
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "vuln_id",
+                "value": "101750339"
+            },
+            {
+                "key": "lookup_id",
+                "value": "150246"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "vuln_id"
+                ]
+            },
+            {
+                "key": "description",
+                "value": "Relative URLs can be dangerous since browser may not determine the correct directory. If the HTML uses path-relative CSS links, it may be susceptible to path-relative stylesheet import (PRSSI) vulnerabilities. This could allow an attacker to take advantage of CSS imports with relative URLs by overwriting their target file.<P>\n\nReferences:<BR>\n<A HREF=\"https://www.theregister.co.uk/2015/02/20/prssi_web_vuln/\" TARGET=\"_blank\">Evil CSS Injection</A><BR>\n<A HREF=\"https://latesthackingnews.com/2017/07/16/relative-path-overwrite-attack/\" TARGET=\"_blank\">Relative Path Overwrite Attack</A><BR>\n<A HREF=\"https://seclab.ccs.neu.edu/static/publications/www2018rpo.pdf\" TARGET=\"_blank\">Research paper: Large-Scale Analysis of Style Injection by Relative Path Overwrite</A><BR>"
+            },
+            {
+                "key": "cvss_base",
+                "value": "6.4"
+            },
+            {
+                "key": "cvss_temporal",
+                "value": "5.9"
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_unique_id",
+                "value": "21a8da14-7b85-11ea-aa89-6721120aaba2"
+            },
+            {
+                "key": "_raw_detection_id",
+                "value": "6058984"
+            },
+            {
+                "key": "_raw_ajax",
+                "value": "false"
+            },
+            {
+                "key": "_raw_authentication",
+                "value": "Not Required"
+            },
+            {
+                "key": "_raw_detection_date",
+                "value": "15 Mar 2020 03:03AM GMT-0400"
+            },
+            {
+                "key": "_raw_payloads",
+                "value": {
+                    "PAYLOAD": {
+                        "NUM": "1",
+                        "PAYLOAD": "N/A",
+                        "REQUEST": {
+                            "HEADERS": {
+                                "HEADER": [
+                                    {
+                                        "key": "Host",
+                                        "value": "exweb.example.com"
+                                    },
+                                    {
+                                        "key": "User-Agent",
+                                        "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/601.4.4 (KHTML, like Gecko) Version/9.0.3 Safari/601.4.4"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "*/*"
+                                    }
+                                ]
+                            },
+                            "METHOD": "GET",
+                            "URL": "https://exweb.example.com/index.html"
+                        },
+                        "RESPONSE": {
+                            "CONTENTS": {
+                                "#text": "ClJlbGF0aXZlIFBhdGggQ1NTIExpbmtzIGZvdW5kOgovanMveGRyL2NvcmUvY3NzL3hkci5jc3M/dj1mZDk2YmM4OTc3MjU2MDAzZGUwNWVkODQyNzBiOTBiYgovbG9nb24vdGhlbWVzL0RlZmF1bHQvY3NzL2Jhc2UuY3NzP3Y9ZmQ5NmJjODk3NzI1NjAwM2RlMDVlZDg0MjcwYjkwYmIKL2xvZ29uL2ZvbnRzL2V4YW1wbGUtZm9udHMuY3NzP3Y9ZmQ5NmJjODk3NzI1NjAwM2RlMDVlZDg0MjcwYjkwYmIKL2xvZ29uL3RoZW1lcy9EZWZhdWx0L2Nzcy9jdXN0b20uY3NzP3Y9ZmQ5NmJjODk3NzI1NjAwM2RlMDVlZDg0MjcwYjkwYmI=",
+                                "@base64": "true"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "key": "_raw__type",
+                "value": "VULNERABILITY"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "An attacker may trick browsers into importing JavaScript or HTML code as a stylesheet.  This has been shown to enable a number of different attacks, including cross-site scripting (XSS) and exfiltration of CSRF tokens.",
+        "issueName": "Path-relative stylesheet import (PRSSI) vulnerability",
+        "issueType": "Confirmed Vulnerability",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150246//101750339",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "It is recommended to remove relative URLs and use absolute URLs in CSS imports.<P>\n\nThe following alternatives can be applied to avoid PRSSI vulnerabilities.<BR>\n- Set a DOCTYPE which does not allow Quirks mode as explained at <A HREF=\"https://hsivonen.fi/doctype/\" TARGET=\"_blank\"> https://hsivonen.fi/doctype/</A><BR>\n- Set response header X-Frame-Options: deny<BR>\n- Set response header X-Content-Type-Options: nosniff<BR>\n- Define an HTML base tag to specify base URL for all relative URLs in a document.<BR>",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": null,
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": "https://exweb.example.com/index.html",
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101750332"
+            },
+            {
+                "key": "unique_id",
+                "value": "37242162-7b87-11ea-865e-f330b33cd96e"
+            },
+            {
+                "key": "detection_id",
+                "value": "2244713"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "15 Mar 2020 03:03AM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "\nFeature-Policy: Header missing\nResponse headers on link: GET https://exweb.example.com/resources.js response code: 200\nAge: 7\nDate: Sun, 15 Mar 2020 07:04:31 GMT\nCache-Control: no-cache\nConnection: Keep-Alive\nVia: NS-CACHE-10.0: 180\nEtag: \"4acd-59cd64cdc6580\"\nServer: Apache\nX-Frame-Options: SAMEORIGIN\nLast-Modified: Thu, 23 Jan 2020 22:38:30 GMT\nAccept-Ranges: bytes\nContent-Length: 19149\nX-Xss-Protection: 1; mode=block\nX-Content-Type-Options: nosniff\nContent-Type: application/javascript\nStrict-Transport-Security: max-age=157680000, max-age=31536000\n\nHeader missing on the following link(s):\n(Only first 50 such pages are listed)\n\nGET https://exweb.example.com/resources.js response code: 200\nGET https://exweb.example.com/index.html response code: 200\nGET https://exweb.example.com/logon/themes/Default/resources/%7Blang%7D response code: 404\nGET https://exweb.example.com/images/Access.ico response code: 200\nGET https://exweb.example.com/js/xdr/core/css/xdr.css?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/logon/fonts/example-fonts.css?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/logon/themes/Default/css/base.css?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/logon/themes/Default/css/custom.css?v=fd96bc8977256003de05ed84270b90bb response code: 404\nGET https://exweb.example.com/js/xdr.js?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/login.js?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/js/views.js?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/js/gateway_login_view.js?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/js/gateway_login_form_view.js?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/resources.js?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/share.js?v=fd96bc8977256003de05ed84270b90bb response code: 200\nGET https://exweb.example.com/logon/themes/EULA/resources/%7Blang%7D response code: 404\nGET https://exweb.example.com/logon/themes/Default/resources/config.xml response code: 200\nGET https://exweb.example.com/images/ExampleWatermark.png response code: 200\nGET https://exweb.example.com/logon/themes/Default/resources/en.xml response code: 200\nGET https://exweb.example.com/images/LoginButtonGlow.png response code: 200\nGET https://exweb.example.com/images/NavBarLink.gif response code: 200\nGET https://exweb.example.com/images/carbonfibre_img.png response code: 200\nGET https://exweb.example.com/images/carbonfibre_img_white_header.png response code: 200\nGET https://exweb.example.com/images/icon.png response code: 200\nGET https://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_bold.svg response code: 200\nGET https://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_bold.ttf response code: 200\nGET https://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_bold.woff response code: 200\nGET https://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_light.svg response code: 404\nGET https://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_light.ttf response code: 200\nGET https://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_light.woff response code: 200\nGET https://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_regular.svg response code: 200\nGET https://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_regular.woff response code: 200\nGET https://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_regular.ttf response code: 200\nGET https://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_semibold.svg response code: 200\nGET https://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_semibold.ttf response code: 200\nGET https://exweb.example.com/js/xdr/core/css/fonts/example_sans/examplesans_semibold.woff response code: 200\nGET https://exweb.example.com/js/xdr/core/lang/xdr_en.json response code: 200\nGET https://exweb.example.com/media/example_logo_white.png response code: 200\nGET https://exweb.example.com/favicon.ico response code: 404\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "150262"
+            },
+            {
+                "key": "info_id",
+                "value": "101750332"
+            },
+            {
+                "key": "description",
+                "value": "The Feature-Policy response header is not present."
+            },
+            {
+                "key": "group",
+                "value": "IG-WEAK"
+            },
+            {
+                "key": "owasp",
+                "value": "A6"
+            },
+            {
+                "key": "wasc",
+                "value": "WASC-15"
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Feature Policy allows web developers to selectively enable, disable, and modify the behavior of certain APIs and web features such as \"geolocation\",\"camera\", \"usb\", \"fullscreen\", \"animations\" etc in the browser.\n<P> \nThese policies restrict what APIs the site can access or modify the browser's default behavior for certain features.",
+        "issueName": "Missing header: Feature-Policy",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "150262//101750332",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "It is recommended to set the Feature-Policy header to selectively enable, disable, and modify the behavior of certain APIs and web features.<P>\n\nReferences:<BR>\n- <A HREF=\"https://www.w3.org/TR/feature-policy/\" TARGET=\"_blank\">https://www.w3.org/TR/feature-policy/</A><BR>\n- <A HREF=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy\" TARGET=\"_blank\">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy</A>",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "2",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101750335"
+            },
+            {
+                "key": "unique_id",
+                "value": "aaf5327e-7b88-11ea-8e04-37327a6b6ba7"
+            },
+            {
+                "key": "detection_id",
+                "value": "2244716"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "15 Mar 2020 03:03AM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "NetScaler TCP/IP_Fingerprint U4118:443\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "45017"
+            },
+            {
+                "key": "info_id",
+                "value": "101750335"
+            },
+            {
+                "key": "description",
+                "value": "Several different techniques can be used to identify the operating system (OS) running on a host. A short description of these techniques is provided below. The specific technique used to identify the OS on this host is included in the RESULTS section of your report.\n<P>\n1) <B>TCP/IP Fingerprint</B>: The operating system of a host can be identified from a remote system using TCP/IP fingerprinting. All underlying operating system TCP/IP stacks have subtle differences that can be seen in their responses to specially-crafted TCP packets. According to the results of this \"fingerprinting\" technique, the OS version is among those listed below. \n<P>\nNote that if one or more of these subtle differences are modified by a firewall or a packet filtering device between the scanner and the host, the fingerprinting technique may fail. Consequently, the version of the OS may not be detected correctly. If the host is behind a proxy-type firewall, the version of the operating system detected may be that of the firewall instead of the host being scanned.\n<P>\n2) <B>NetBIOS</B>: Short for Network Basic Input Output System, an application programming interface (API) that augments the DOS BIOS by adding special functions for local-area networks (LANs). Almost all LANs for PCs are based on the NetBIOS. Some LAN manufacturers have even extended it, adding additional network capabilities. NetBIOS relies on a message format called Server Message Block (SMB). \n<P>\n3) <B>PHP Info</B>: PHP is a hypertext pre-processor, an open-source, server-side, HTML-embedded scripting language used to create dynamic Web pages. Under some configurations it is possible to call PHP functions like phpinfo() and obtain operating system information.\n<P>\n4) <B>SNMP</B>: The Simple Network Monitoring Protocol is used to monitor hosts, routers, and the networks to which they attach. The SNMP service maintains Management Information Base (MIB), a set of variables (database) that can be fetched by Managers. These include \"MIB_II.system.sysDescr\" for the operating system."
+            },
+            {
+                "key": "group",
+                "value": "IG-DIAG"
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_data",
+                "value": {
+                    "#text": "TmV0U2NhbGVyIFRDUC9JUF9GaW5nZXJwcmludCBVNDExODo0NDMK",
+                    "@base64": "true"
+                }
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Not  applicable.",
+        "issueName": "Operating System Detected",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "45017//101750335",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "Not  applicable.",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "2",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 3,
+        "severityCode": "Low",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101750330"
+            },
+            {
+                "key": "unique_id",
+                "value": "860f0ca0-7b88-11ea-9cbd-6730cd60eadc"
+            },
+            {
+                "key": "detection_id",
+                "value": "2244711"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "15 Mar 2020 03:03AM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "Scan duration: 1372 seconds\n\nStart time: Sun, Mar 15 2020, 07:03:24 GMT\n\nEnd time: Sun, Mar 15 2020, 07:26:16 GMT\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "45038"
+            },
+            {
+                "key": "info_id",
+                "value": "101750330"
+            },
+            {
+                "key": "description",
+                "value": "The Host Scan Time is the period of time it takes the scanning engine to perform the vulnerability assessment of a single target host. The Host Scan Time for this host is reported in the Result section below. \n<P>\nThe Host Scan Time does not have a direct correlation to the Duration time as displayed in the Report Summary section of a scan results report. The Duration is the period of time it takes the service to perform a scan task. The Duration includes the time it takes the service to scan all hosts, which may involve parallel scanning. It also includes the time it takes for a scanner appliance to pick up the scan task and transfer the results back to the service's Secure Operating Center. Further, when a scan task is distributed across multiple scanners, the Duration includes the time it takes to perform parallel host scanning on all scanners.\n<P>\nFor host running the Qualys Windows agent this QID reports the time taken by the agent to collect the host metadata used for the most recent assessment scan."
+            },
+            {
+                "key": "group",
+                "value": "IG-DIAG"
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_data",
+                "value": {
+                    "#text": "U2NhbiBkdXJhdGlvbjogMTM3MiBzZWNvbmRzCgpTdGFydCB0aW1lOiBTdW4sIE1hciAxNSAyMDIwLCAwNzowMzoyNCBHTVQKCkVuZCB0aW1lOiBTdW4sIE1hciAxNSAyMDIwLCAwNzoyNjoxNiBHTVQK",
+                    "@base64": "true"
+                }
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "N/A",
+        "issueName": "Host Scan Time",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "45038//101750330",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    },
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "id",
+                "value": "101750326"
+            },
+            {
+                "key": "unique_id",
+                "value": "4fffcba8-7b89-11ea-ac7f-c79768443099"
+            },
+            {
+                "key": "detection_id",
+                "value": "2244708"
+            },
+            {
+                "key": "first_detected",
+                "value": null
+            },
+            {
+                "key": "last_detected",
+                "value": "15 Mar 2020 03:03AM GMT-0400"
+            },
+            {
+                "key": "data",
+                "value": "#table\nIP_address Host_name\n\n10.24.13.98 No_registered_hostname\n"
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "lookup_id",
+                    "info_id"
+                ]
+            },
+            {
+                "key": "lookup_id",
+                "value": "6"
+            },
+            {
+                "key": "info_id",
+                "value": "101750326"
+            },
+            {
+                "key": "description",
+                "value": "The fully qualified domain name of this host, if it was obtained from a DNS server, is displayed in the RESULT section."
+            },
+            {
+                "key": "group",
+                "value": "IG-DIAG"
+            },
+            {
+                "key": "owasp",
+                "value": null
+            },
+            {
+                "key": "wasc",
+                "value": null
+            },
+            {
+                "key": "cvss_base",
+                "value": null
+            },
+            {
+                "key": "cvss_temporal",
+                "value": null
+            },
+            {
+                "key": "common_attributes",
+                "value": []
+            },
+            {
+                "key": "_raw_data",
+                "value": {
+                    "#text": "I3RhYmxlCklQX2FkZHJlc3MgSG9zdF9uYW1lCgoxMC4yNC4xMy45OCBOb19yZWdpc3RlcmVkX2hvc3RuYW1lCg==",
+                    "@base64": "true"
+                }
+            },
+            {
+                "key": "_raw__type",
+                "value": "INFORMATION_GATHERED"
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "N/A",
+        "issueName": "DNS Host Name",
+        "issueType": "Information Gathered",
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "6//101750326",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "qualys",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": "N/A",
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": "1",
+        "scanStatus": null,
+        "scanTool": "qualys",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 0,
+        "severityCode": "Info",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    }
+]

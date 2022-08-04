@@ -1,0 +1,89 @@
+[
+    {
+        "additionalData": [
+            {
+                "key": "unique_data",
+                "value": [
+                    {}
+                ]
+            },
+            {
+                "key": "key_values",
+                "value": [
+                    "issue_name"
+                ]
+            },
+            {
+                "key": "_raw_result",
+                "value": "Error: remote trust data does not exist for docker.io/webgoat/webgoat-8.0: notary.docker.io does not have trust data for docker.io/webgoat/webgoat-8.0"
+            },
+            {
+                "key": "_raw_trusted",
+                "value": false
+            }
+        ],
+        "alert": false,
+        "alertRulesets": [],
+        "author": null,
+        "code": null,
+        "confidence": null,
+        "currentVersion": null,
+        "customerId": "4503657098653210424",
+        "cvss": null,
+        "cvssVector": null,
+        "discoveryIssueId": null,
+        "discoveryRunTime": null,
+        "discoveryTimespan": null,
+        "effort": null,
+        "exploitabilityScore": null,
+        "fileName": null,
+        "host": null,
+        "id": null,
+        "ignore": false,
+        "ignoreRulesets": [],
+        "imageLayerId": null,
+        "imageNamespace": null,
+        "impactScore": null,
+        "ip": null,
+        "issueDescription": "Not trusted",
+        "issueName": "docker-content-trust",
+        "issueType": null,
+        "jobId": "7208394414039548170",
+        "jobTags": [],
+        "key": "docker-content-trust",
+        "libraryName": null,
+        "lineNumber": null,
+        "linesOfCodeImpacted": null,
+        "link": null,
+        "overrideRuleDetails": null,
+        "policyId": "3507742950716442876",
+        "policyName": "policy with upload",
+        "port": null,
+        "product": "docker_content_trust",
+        "project": null,
+        "referenceIdentifiers": [],
+        "refinementVersion": "1.0",
+        "remediationRunTime": null,
+        "remediationSteps": null,
+        "remediationTags": [],
+        "remediationTimespan": null,
+        "riLicense": null,
+        "rule": null,
+        "runTime": 1536070894,
+        "scanId": null,
+        "scanSeverity": null,
+        "scanStatus": null,
+        "scanTool": "docker-content-trust",
+        "scanType": null,
+        "scenarioId": "8207742350716442876",
+        "severity": 7,
+        "severityCode": "High",
+        "status": "Detection",
+        "tags": [],
+        "target": "Custom Target virtual url",
+        "targetId": "Mq07z7LFR7qxrJON18125g",
+        "upgradeVersion": null,
+        "url": null,
+        "vulnerabilityDetails": null
+    }
+]

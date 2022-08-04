@@ -1,0 +1,5 @@
+{
+    "result": "Error: remote trust data does not exist for docker.io/webgoat/webgoat-8.0: notary.docker.io does not have trust data for docker.io/webgoat/webgoat-8.0",
+    "trusted": false,
+    "bad": "field"
+}
