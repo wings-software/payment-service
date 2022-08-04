@@ -149,8 +149,8 @@ pipeline:
                                               product_config_name: fortify-default
                                               policy_type: manualUpload
                                               scan_type: repository
-                                              repository_project: jhttp_isolated
-                                              repository_branch: main
+                                              repository_project: payment-service
+                                              repository_branch: master
                                               customer_artifacts_path: sto_tests/scan_tools/fortify/test_data
                                               manual_upload_filename: 001_refined_issues
                                           imagePullPolicy: Always
@@ -199,8 +199,8 @@ pipeline:
                                               product_config_name: checkmarx
                                               policy_type: manualUpload
                                               scan_type: repository
-                                              repository_project: jhttp_isolated
-                                              repository_branch: dev
+                                              repository_project: payment-service
+                                              repository_branch: master
                                               customer_artifacts_path: sto_tests/scan_tools/checkmarx/test_data
                                               manual_upload_filename: "001"
                                           imagePullPolicy: Always
@@ -222,15 +222,15 @@ pipeline:
                                           settings:
                                               policy_type: manualUpload
                                               scan_type: repository
-                                              repository_branch: main
+                                              repository_branch: master
                                               product_name: sonarqube
                                               product_access_token: 9be106a1849c3b98f5beb1cc4b916674432944e0
-                                              product_project_name: jhttp_isolated
-                                              product_project_key: jhttp_isolated
+                                              product_project_name: payment-service
+                                              product_project_key: payment-service
                                               product_domain: http://sonar.harness-demo.site
                                               product_config_name: sonarqube-agent
                                               product_lookup_type: byKey
-                                              repository_project: jhttp_isolated
+                                              repository_project: payment-service
                                               customer_artifacts_path: sto_tests/scan_tools/sonarqube/test_data
                                               manual_upload_filename: "001"
                                           imagePullPolicy: Always
