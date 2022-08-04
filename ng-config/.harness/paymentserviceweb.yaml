@@ -54,7 +54,7 @@ pipeline:
                                           args: test
                                           packages: com.nikp.
                                           runOnlySelectedTests: true
-                                          preCommand: |-
+                                          preCommand: |
                                               cd payment-service
                                               #ET-SETUP-BEGIN
                                               PROJ_DIR=$PWD
@@ -76,7 +76,6 @@ pipeline:
                                               export JAVA_TOOL_OPTIONS="-agentpath:/opt/harness/lib/libETAgent.so"
                                               cd $PROJ_DIR
                                               #ET-SETUP-END
-                                              cd payment-service
                                           reports:
                                               type: JUnit
                                               spec:
