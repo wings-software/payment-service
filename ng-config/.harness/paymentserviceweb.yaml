@@ -627,7 +627,7 @@ pipeline:
         - name: servicename
           type: String
           default: payment-service
-          value: <+input>
+          value: payment-service
         - name: seusername
           type: String
           value: <+input>
