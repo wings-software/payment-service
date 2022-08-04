@@ -16,6 +16,26 @@ featureFlags:
         - identifier: "false"
           value: "false"
       environments:
+      - identifier: GKEQA
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "on"
+      - identifier: HarnessProd
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: GKEDEV
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: gitopsprod
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
       - identifier: GKEPROD
         default:
           onVariation: "true"
@@ -27,24 +47,9 @@ featureFlags:
           - identifier: harness-olirees
           variation: "false"
         - targets:
-          - identifier: beta
           - identifier: jkharnessio
+          - identifier: beta
           variation: "true"
-      - identifier: GKEDEV
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-      - identifier: gitopsprod
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-      - identifier: GKEQA
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "on"
   - flag:
       name: mortgageoffer
       identifier: mortgageoffer
@@ -61,20 +66,16 @@ featureFlags:
         - identifier: "false"
           value: "false"
       environments:
-      - identifier: GKEPROD
+      - identifier: GKEQA
         default:
           onVariation: "true"
           offVariation: "false"
         state: "on"
-        targetRules:
-        - targets:
-          - identifier: nikpapag
-          variation: "true"
-        - targets:
-          - identifier: nikp
-          - identifier: jkharnessio
-          - identifier: harness-olirees
-          variation: "false"
+      - identifier: HarnessProd
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
       - identifier: GKEDEV
         default:
           onVariation: "true"
@@ -85,10 +86,19 @@ featureFlags:
           onVariation: "true"
           offVariation: "false"
         state: "off"
-      - identifier: GKEQA
+      - identifier: GKEPROD
         default:
           onVariation: "true"
           offVariation: "false"
         state: "on"
+        targetRules:
+        - targets:
+          - identifier: nikp
+          - identifier: jkharnessio
+          - identifier: harness-olirees
+          variation: "false"
+        - targets:
+          - identifier: nikpapag
+          variation: "true"
   projectIdentifier: DevX_Demo
   orgIdentifier: default
