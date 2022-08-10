@@ -138,7 +138,7 @@ pipeline:
                                 when:
                                     stageStatus: Success
                                 failureStrategies: []
-                                description: hello-
+                                description: hello-electrolux
                           - parallel:
                                 - step:
                                       type: Security
