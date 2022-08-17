@@ -43,8 +43,9 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
-          - identifier: nikpapag
           - identifier: harness-olirees
+          - identifier: jkharnessio
+          - identifier: nikpapag
           variation: "false"
         - targets:
           - identifier: beta
@@ -92,6 +93,7 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
+          - identifier: jkharnessio
           - identifier: harness-olirees
           variation: "false"
         - targets:
