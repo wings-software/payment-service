@@ -94,10 +94,10 @@ featureFlags:
         targetRules:
         - targets:
           - identifier: jkharnessio
+          - identifier: nikp
           - identifier: nikpapag
           variation: "true"
         - targets:
-          - identifier: nikp
           - identifier: harness-olirees
           variation: "false"
   projectIdentifier: DevX_Demo
