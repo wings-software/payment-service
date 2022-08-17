@@ -43,13 +43,13 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
-          - identifier: nikpapag
-          - identifier: harness-olirees
-          variation: "false"
-        - targets:
           - identifier: jkharnessio
           - identifier: beta
           variation: "true"
+        - targets:
+          - identifier: nikpapag
+          - identifier: harness-olirees
+          variation: "false"
   - flag:
       name: mortgageoffer
       identifier: mortgageoffer
@@ -93,7 +93,6 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
-          - identifier: jkharnessio
           - identifier: harness-olirees
           variation: "false"
         - targets:
