@@ -88,6 +88,7 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
+          - identifier: jkharnessio
           - identifier: harness-olirees
           variation: "false"
         - targets:
