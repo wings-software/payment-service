@@ -88,13 +88,13 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
-          - identifier: nikpapag
-          - identifier: nikp
           - identifier: jkharnessio
-          variation: "true"
-        - targets:
           - identifier: harness-olirees
           variation: "false"
+        - targets:
+          - identifier: nikpapag
+          - identifier: nikp
+          variation: "true"
       - identifier: HarnessProd
         default:
           onVariation: "true"
