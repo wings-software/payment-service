@@ -90,9 +90,9 @@ featureFlags:
         - targets:
           - identifier: nikpapag
           - identifier: nikp
+          - identifier: jkharnessio
           variation: "true"
         - targets:
-          - identifier: jkharnessio
           - identifier: harness-olirees
           variation: "false"
       - identifier: HarnessProd
