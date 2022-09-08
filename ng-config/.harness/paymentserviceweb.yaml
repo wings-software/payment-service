@@ -1,819 +1,818 @@
 pipeline:
-    name: payment-service
-    identifier: paymentserviceweb
-    projectIdentifier: DevX_Demo
-    orgIdentifier: default
-    tags: {}
-    properties:
-        ci:
-            codebase:
-                connectorRef: nikpwingssoftware
-                repoName: payment-service
-                build: <+input>
-    stages:
-        - stage:
-              name: Build
-              identifier: Build
-              type: CI
-              spec:
-                  cloneCodebase: true
-                  infrastructure:
-                      type: KubernetesDirect
+  name: payment-service
+  identifier: paymentserviceweb
+  projectIdentifier: DevX_Demo
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: nikpwingssoftware
+        repoName: payment-service
+        build: <+input>
+  stages:
+    - stage:
+        name: Build
+        identifier: Build
+        type: CI
+        spec:
+          cloneCodebase: true
+          infrastructure:
+            type: KubernetesDirect
+            spec:
+              connectorRef: nikpgkecluster
+              namespace: payment-service-build
+              automountServiceAccountToken: true
+              nodeSelector: {}
+              os: Linux
+          execution:
+            steps:
+              - step:
+                  type: RestoreCacheS3
+                  name: RestoreCache
+                  identifier: RestoreCache
+                  spec:
+                    connectorRef: nikpaws
+                    region: eu-west-2
+                    bucket: nikp-maven
+                    key: payment-service-ci
+                    archiveFormat: Tar
+                    resources:
+                      limits:
+                        memory: 512Mi
+                        cpu: "0.5"
+                  when:
+                    stageStatus: Success
+                  failureStrategies: []
+              - parallel:
+                  - step:
+                      type: RunTests
+                      name: runTestsWithIntelligence
+                      identifier: runTestsWithIntelligence
                       spec:
-                          connectorRef: nikpgkecluster
-                          namespace: payment-service-build
-                          automountServiceAccountToken: true
-                          nodeSelector: {}
-                          os: Linux
-                  execution:
-                      steps:
-                          - step:
-                                type: RestoreCacheS3
-                                name: RestoreCache
-                                identifier: RestoreCache
-                                spec:
-                                    connectorRef: nikpaws
-                                    region: eu-west-2
-                                    bucket: nikp-maven
-                                    key: payment-service-ci
-                                    archiveFormat: Tar
-                                    resources:
-                                        limits:
-                                            memory: 512Mi
-                                            cpu: "0.5"
-                                when:
-                                    stageStatus: Success
-                                failureStrategies: []
-                          - parallel:
-                                - step:
-                                      type: RunTests
-                                      name: runTestsWithIntelligence
-                                      identifier: runTestsWithIntelligence
-                                      spec:
-                                          connectorRef: nikpdockerhub
-                                          image: maven:<+pipeline.variables.mavenversion>-jdk-<+pipeline.variables.javaversion>
-                                          language: Java
-                                          buildTool: Maven
-                                          args: test
-                                          packages: com.nikp.
-                                          runOnlySelectedTests: true
-                                          preCommand: |
-                                              cd payment-service
-                                              #ET-SETUP-BEGIN
-                                              PROJ_DIR=$PWD
-                                              cd /opt
-                                              arch=`uname -m`
-                                              if [ $arch = "x86_64" ]; then
-                                                wget -qO- https://get.et.harness.io/releases/latest/nix/harness-et-agent.tar.gz | tar -xz
-                                              elif [ $arch = "aarch64" ]; then
-                                                wget -qO- https://get.et.harness.io/releases/latest/arm/harness-et-agent.tar.gz | tar -xz
-                                              fi
-                                              export ET_COLLECTOR_URL=https://app.harness.io/gratis/et-collector
-                                              export ET_APPLICATION_NAME=$HARNESS_PIPELINE_ID
-                                              export ET_ENV_ID=_INTERNAL_ET_CI
-                                              export ET_DEPLOYMENT_NAME=$HARNESS_BUILD_ID
-                                              export ET_ACCOUNT_ID=$HARNESS_ACCOUNT_ID
-                                              export ET_ORG_ID=$HARNESS_ORG_ID
-                                              export ET_PROJECT_ID=$HARNESS_PROJECT_ID
-                                              #export ET_SHUTDOWN_GRACETIME=30000
-                                              export JAVA_TOOL_OPTIONS="-agentpath:/opt/harness/lib/libETAgent.so"
-                                              cd $PROJ_DIR
-                                              #ET-SETUP-END
-                                          reports:
-                                              type: JUnit
-                                              spec:
-                                                  paths:
-                                                      - "**/*.xml"
-                                          envVariables:
-                                              DRONE_COMMIT_SHA: any
-                                              DRONE_REMOTE_URL: any
-                                              DRONE_SOURCE_BRANCH: any
-                                              DRONE_TARGET_BRANCH: any
-                                              MAVEN_OPTS: -Dmaven.repo.local=/harness/maven/repository
-                                              CONTAINER_STEP: "3"
-                                          resources:
-                                              limits:
-                                                  memory: 2Gi
-                                                  cpu: "2"
-                                      description: aderasdsad
-                                - step:
-                                      type: Plugin
-                                      name: cleanup
-                                      identifier: cleanup
-                                      spec:
-                                          connectorRef: nikpdockerhub
-                                          image: nikpap/githubcli:v2
-                                          privileged: false
-                                          settings:
-                                              GITHUB_TOKEN: <+secrets.getValue("githubtoken")>
-                                              GITHUB_USERNAME: nikpapag
-                                              GITHUB_EMAIL: nikpap.cs@icloud.com
-                                          imagePullPolicy: Always
-                                      failureStrategies:
-                                          - onFailure:
-                                                errors:
-                                                    - Unknown
-                                                action:
-                                                    type: Ignore
-                                      when:
-                                          stageStatus: Success
-                          - step:
-                                type: Run
-                                name: Build
-                                identifier: Build
-                                spec:
-                                    connectorRef: nikpdockerhub
-                                    image: maven:<+pipeline.variables.mavenversion>-jdk-<+pipeline.variables.javaversion>
-                                    shell: Sh
-                                    command: |-
-                                        cd payment-service
-                                        mvn -Dmaven.test.skip=true clean install -X
-                                    privileged: false
-                                    envVariables:
-                                        MAVEN_OPTS: -Dmaven.repo.local=/harness/maven/repository
-                                    resources:
-                                        limits:
-                                            memory: 2Gi
-                                            cpu: "2"
-                                when:
-                                    stageStatus: Success
-                                failureStrategies: []
-                                description: hello-electrolux
-                          - parallel:
-                                - step:
-                                      type: Security
-                                      name: Fortify
-                                      identifier: fortify
-                                      spec:
-                                          connectorRef: account.Harness_Docker_Connector
-                                          privileged: true
-                                          settings:
-                                              product_name: fortify
-                                              product_config_name: fortify-default
-                                              policy_type: manualUpload
-                                              scan_type: repository
-                                              repository_project: payment-service
-                                              repository_branch: <+codebase.branch>
-                                              customer_artifacts_path: sto_tests/scan_tools/fortify/test_data
-                                              manual_upload_filename: "001"
-                                          imagePullPolicy: Always
-                                      failureStrategies:
-                                          - onFailure:
-                                                errors:
-                                                    - AllErrors
-                                                action:
-                                                    type: Ignore
-                                      when:
-                                          stageStatus: Success
-                                - step:
-                                      type: Security
-                                      name: OWASP
-                                      identifier: OWASP
-                                      spec:
-                                          connectorRef: harnessImage
-                                          privileged: true
-                                          settings:
-                                              policy_type: orchestratedScan
-                                              scan_type: repository
-                                              repository_project: payment-service
-                                              repository_branch: <+codebase.branch>
-                                              product_name: owasp
-                                              product_config_name: owasp 5.x
-                                              fail_on_severity: HIGH
-                                          imagePullPolicy: Always
-                                      failureStrategies:
-                                          - onFailure:
-                                                errors:
-                                                    - AllErrors
-                                                action:
-                                                    type: Ignore
-                                      when:
-                                          stageStatus: Success
-                                          condition: <+pipeline.variables.run_owasp_scan> == true
-                                - step:
-                                      type: Security
-                                      name: Checkmarx
-                                      identifier: checkmarx
-                                      spec:
-                                          connectorRef: account.Harness_Docker_Connector
-                                          privileged: true
-                                          settings:
-                                              product_name: checkmarx
-                                              product_config_name: checkmarx
-                                              policy_type: manualUpload
-                                              scan_type: repository
-                                              repository_project: payment-service
-                                              repository_branch: <+codebase.branch>
-                                              customer_artifacts_path: sto_tests/scan_tools/checkmarx/test_data
-                                              manual_upload_filename: "001"
-                                          imagePullPolicy: Always
-                                      failureStrategies:
-                                          - onFailure:
-                                                errors:
-                                                    - AllErrors
-                                                action:
-                                                    type: Ignore
-                                      when:
-                                          stageStatus: Success
-                                - step:
-                                      type: Security
-                                      name: Sonar_STO
-                                      identifier: Sonar_Scan_Vulnerabilities
-                                      spec:
-                                          connectorRef: account.Harness_Docker_Connector
-                                          privileged: true
-                                          settings:
-                                              policy_type: manualUpload
-                                              scan_type: repository
-                                              repository_branch: <+codebase.branch>
-                                              product_name: sonarqube
-                                              product_access_token: 9be106a1849c3b98f5beb1cc4b916674432944e0
-                                              product_project_name: payment-service
-                                              product_project_key: payment-service
-                                              product_domain: http://sonar.harness-demo.site
-                                              product_config_name: sonarqube-agent
-                                              product_lookup_type: byKey
-                                              repository_project: payment-service
-                                              customer_artifacts_path: sto_tests/scan_tools/sonarqube/test_data
-                                              manual_upload_filename: "001"
-                                          imagePullPolicy: Always
-                                      when:
-                                          stageStatus: Success
-                                - step:
-                                      type: Plugin
-                                      name: sonarqube
-                                      identifier: sonarqube
-                                      spec:
-                                          connectorRef: nikpdockerhub
-                                          image: nikpap/harness-plugin:sonarqube
-                                          privileged: true
-                                          reports:
-                                              type: JUnit
-                                              spec:
-                                                  paths:
-                                                      - "**/SonarqubeJunitResults.xml"
-                                          settings:
-                                              SONAR_URL: http://35.214.81.102
-                                              SONAR_PORT: "9000"
-                                              SONAR_TOKEN: c00fa8ffd513a84923e9f62353e8447823f45ca2
-                                              SONAR_PROJECT_KEY: devxdemo
-                                              SONAR_REPORT_NAME: sonarqube-report-name
-                                          imagePullPolicy: Always
-                                      when:
-                                          stageStatus: Success
-                                      failureStrategies: []
-                          - step:
-                                type: SaveCacheS3
-                                name: Savemavenrepo
-                                identifier: Savemavenrepo
-                                spec:
-                                    connectorRef: nikpaws
-                                    region: eu-west-2
-                                    bucket: nikp-maven
-                                    key: payment-service-ci
-                                    sourcePaths:
-                                        - ./maven/repository
-                                    archiveFormat: Tar
-                                    override: true
-                                    resources:
-                                        limits:
-                                            memory: 512Mi
-                                            cpu: "0.5"
-                                when:
-                                    stageStatus: Success
-                                failureStrategies: []
-                          - step:
-                                type: BuildAndPushECR
-                                name: pushToECR
-                                identifier: pushToECR
-                                spec:
-                                    connectorRef: nikpaws
-                                    region: eu-west-2
-                                    account: "759984737373"
-                                    imageName: payment-service
-                                    tags:
-                                        - <+pipeline.sequenceId>
-                                    dockerfile: /harness/payment-service/Dockerfile
-                                    optimize: true
-                                    resources:
-                                        limits:
-                                            memory: 1Gi
-                                            cpu: "1"
-                                when:
-                                    stageStatus: Success
-                                    condition: <+pipeline.variables.seusername> == 'aws'
-                                failureStrategies: []
-                          - step:
-                                type: BuildAndPushDockerRegistry
-                                name: pushToDockerHub
-                                identifier: pushToDockerHub
-                                spec:
-                                    connectorRef: nikpdockerhub
-                                    repo: nikpap/payment-service
-                                    tags:
-                                        - <+pipeline.sequenceId>
-                                    dockerfile: /harness/payment-service/Dockerfile
-                                    optimize: true
-                                    resources:
-                                        limits:
-                                            memory: 2Gi
-                                            cpu: "2"
-                                when:
-                                    stageStatus: Success
-                                failureStrategies: []
-                          - parallel:
-                                - step:
-                                      type: Security
-                                      name: Veracode
-                                      identifier: veracode
-                                      spec:
-                                          connectorRef: account.Harness_Docker_Connector
-                                          privileged: true
-                                          settings:
-                                              product_name: veracode
-                                              product_config_name: default
-                                              policy_type: ingestionOnly
-                                              scan_type: repository
-                                              repository_project: payment-service
-                                              repository_branch: <+codebase.branch>
-                                              customer_artifacts_path: sto_tests/scan_tools/veracode/test_data
-                                              manual_upload_filename: "001"
-                                          imagePullPolicy: Always
-                                      failureStrategies:
-                                          - onFailure:
-                                                errors:
-                                                    - AllErrors
-                                                action:
-                                                    type: Ignore
-                                      when:
-                                          stageStatus: Success
-                                - step:
-                                      type: Security
-                                      name: Aqua
-                                      identifier: Aqua2
-                                      spec:
-                                          connectorRef: account.Harness_Docker_Connector
-                                          privileged: true
-                                          settings:
-                                              product_name: aqua-trivy
-                                              product_config_name: aqua-trivy
-                                              policy_type: manualUpload
-                                              scan_type: container
-                                              container_type: local_image
-                                              container_domain: docker.io
-                                              container_project: nodegoat
-                                              container_tag: local
-                                              fail_on_severity: HIGH
-                                              customer_artifacts_path: sto_tests/scan_tools/aqua_trivy/test_data
-                                              manual_upload_filename: "001"
-                                          imagePullPolicy: Always
-                                      failureStrategies:
-                                          - onFailure:
-                                                errors:
-                                                    - AllErrors
-                                                action:
-                                                    type: Ignore
-                                      when:
-                                          stageStatus: Success
-                  serviceConfig:
-                      serviceRef: ""
-                      serviceDefinition:
-                          type: Kubernetes
+                        connectorRef: nikpdockerhub
+                        image: maven:<+pipeline.variables.mavenversion>-jdk-<+pipeline.variables.javaversion>
+                        language: Java
+                        buildTool: Maven
+                        args: test
+                        packages: com.nikp.
+                        runOnlySelectedTests: true
+                        preCommand: |
+                          cd payment-service
+                          #ET-SETUP-BEGIN
+                          PROJ_DIR=$PWD
+                          cd /opt
+                          arch=`uname -m`
+                          if [ $arch = "x86_64" ]; then
+                            wget -qO- https://get.et.harness.io/releases/latest/nix/harness-et-agent.tar.gz | tar -xz
+                          elif [ $arch = "aarch64" ]; then
+                            wget -qO- https://get.et.harness.io/releases/latest/arm/harness-et-agent.tar.gz | tar -xz
+                          fi
+                          export ET_COLLECTOR_URL=https://app.harness.io/gratis/et-collector
+                          export ET_APPLICATION_NAME=$HARNESS_PIPELINE_ID
+                          export ET_ENV_ID=_INTERNAL_ET_CI
+                          export ET_DEPLOYMENT_NAME=$HARNESS_BUILD_ID
+                          export ET_ACCOUNT_ID=$HARNESS_ACCOUNT_ID
+                          export ET_ORG_ID=$HARNESS_ORG_ID
+                          export ET_PROJECT_ID=$HARNESS_PROJECT_ID
+                          #export ET_SHUTDOWN_GRACETIME=30000
+                          export JAVA_TOOL_OPTIONS="-agentpath:/opt/harness/lib/libETAgent.so"
+                          cd $PROJ_DIR
+                          #ET-SETUP-END
+                        reports:
+                          type: JUnit
                           spec:
-                              variables: []
-                  sharedPaths:
-                      - /var/run
-                  serviceDependencies:
-                      - identifier: dind
-                        name: dind
-                        type: Service
+                            paths:
+                              - "**/*.xml"
+                        envVariables:
+                          DRONE_COMMIT_SHA: any
+                          DRONE_REMOTE_URL: any
+                          DRONE_SOURCE_BRANCH: any
+                          DRONE_TARGET_BRANCH: any
+                          MAVEN_OPTS: "-Dmaven.repo.local=/harness/maven/repository"
+                          CONTAINER_STEP: "3"
+                        resources:
+                          limits:
+                            memory: 2Gi
+                            cpu: "2"
+                      description: aderasdsad
+                  - step:
+                      type: Plugin
+                      name: cleanup
+                      identifier: cleanup
+                      spec:
+                        connectorRef: nikpdockerhub
+                        image: nikpap/githubcli:v2
+                        privileged: false
+                        settings:
+                          GITHUB_TOKEN: <+secrets.getValue("githubtoken")>
+                          GITHUB_USERNAME: nikpapag
+                          GITHUB_EMAIL: nikpap.cs@icloud.com
+                        imagePullPolicy: Always
+                      failureStrategies:
+                        - onFailure:
+                            errors:
+                              - Unknown
+                            action:
+                              type: Ignore
+                      when:
+                        stageStatus: Success
+              - step:
+                  type: Run
+                  name: Build
+                  identifier: Build
+                  spec:
+                    connectorRef: nikpdockerhub
+                    image: maven:<+pipeline.variables.mavenversion>-jdk-<+pipeline.variables.javaversion>
+                    shell: Sh
+                    command: |-
+                      cd payment-service
+                      mvn -Dmaven.test.skip=true clean install -X
+                    privileged: false
+                    envVariables:
+                      MAVEN_OPTS: "-Dmaven.repo.local=/harness/maven/repository"
+                    resources:
+                      limits:
+                        memory: 2Gi
+                        cpu: "2"
+                  when:
+                    stageStatus: Success
+                  failureStrategies: []
+              - parallel:
+                  - step:
+                      type: Security
+                      name: Fortify
+                      identifier: fortify
+                      spec:
+                        connectorRef: account.Harness_Docker_Connector
+                        privileged: true
+                        settings:
+                          product_name: fortify
+                          product_config_name: fortify-default
+                          policy_type: manualUpload
+                          scan_type: repository
+                          repository_project: payment-service
+                          repository_branch: <+codebase.branch>
+                          customer_artifacts_path: sto_tests/scan_tools/fortify/test_data
+                          manual_upload_filename: "001"
+                        imagePullPolicy: Always
+                      failureStrategies:
+                        - onFailure:
+                            errors:
+                              - AllErrors
+                            action:
+                              type: Ignore
+                      when:
+                        stageStatus: Success
+                  - step:
+                      type: Security
+                      name: OWASP
+                      identifier: OWASP
+                      spec:
+                        connectorRef: harnessImage
+                        privileged: true
+                        settings:
+                          policy_type: orchestratedScan
+                          scan_type: repository
+                          repository_project: payment-service
+                          repository_branch: <+codebase.branch>
+                          product_name: owasp
+                          product_config_name: owasp 5.x
+                          fail_on_severity: HIGH
+                        imagePullPolicy: Always
+                      failureStrategies:
+                        - onFailure:
+                            errors:
+                              - AllErrors
+                            action:
+                              type: Ignore
+                      when:
+                        stageStatus: Success
+                        condition: <+pipeline.variables.run_owasp_scan> == true
+                  - step:
+                      type: Security
+                      name: Checkmarx
+                      identifier: checkmarx
+                      spec:
+                        connectorRef: account.Harness_Docker_Connector
+                        privileged: true
+                        settings:
+                          product_name: checkmarx
+                          product_config_name: checkmarx
+                          policy_type: manualUpload
+                          scan_type: repository
+                          repository_project: payment-service
+                          repository_branch: <+codebase.branch>
+                          customer_artifacts_path: sto_tests/scan_tools/checkmarx/test_data
+                          manual_upload_filename: "001"
+                        imagePullPolicy: Always
+                      failureStrategies:
+                        - onFailure:
+                            errors:
+                              - AllErrors
+                            action:
+                              type: Ignore
+                      when:
+                        stageStatus: Success
+                  - step:
+                      type: Security
+                      name: Sonar_STO
+                      identifier: Sonar_Scan_Vulnerabilities
+                      spec:
+                        connectorRef: account.Harness_Docker_Connector
+                        privileged: true
+                        settings:
+                          policy_type: manualUpload
+                          scan_type: repository
+                          repository_branch: <+codebase.branch>
+                          product_name: sonarqube
+                          product_access_token: 9be106a1849c3b98f5beb1cc4b916674432944e0
+                          product_project_name: payment-service
+                          product_project_key: payment-service
+                          product_domain: http://sonar.harness-demo.site
+                          product_config_name: sonarqube-agent
+                          product_lookup_type: byKey
+                          repository_project: payment-service
+                          customer_artifacts_path: sto_tests/scan_tools/sonarqube/test_data
+                          manual_upload_filename: "001"
+                        imagePullPolicy: Always
+                      when:
+                        stageStatus: Success
+                  - step:
+                      type: Plugin
+                      name: sonarqube
+                      identifier: sonarqube
+                      spec:
+                        connectorRef: nikpdockerhub
+                        image: nikpap/harness-plugin:sonarqube
+                        privileged: true
+                        reports:
+                          type: JUnit
+                          spec:
+                            paths:
+                              - "**/SonarqubeJunitResults.xml"
+                        settings:
+                          SONAR_URL: http://35.214.81.102
+                          SONAR_PORT: "9000"
+                          SONAR_TOKEN: c00fa8ffd513a84923e9f62353e8447823f45ca2
+                          SONAR_PROJECT_KEY: devxdemo
+                          SONAR_REPORT_NAME: sonarqube-report-name
+                        imagePullPolicy: Always
+                      when:
+                        stageStatus: Success
+                      failureStrategies: []
+              - step:
+                  type: SaveCacheS3
+                  name: Savemavenrepo
+                  identifier: Savemavenrepo
+                  spec:
+                    connectorRef: nikpaws
+                    region: eu-west-2
+                    bucket: nikp-maven
+                    key: payment-service-ci
+                    sourcePaths:
+                      - ./maven/repository
+                    archiveFormat: Tar
+                    override: true
+                    resources:
+                      limits:
+                        memory: 512Mi
+                        cpu: "0.5"
+                  when:
+                    stageStatus: Success
+                  failureStrategies: []
+              - step:
+                  type: BuildAndPushECR
+                  name: pushToECR
+                  identifier: pushToECR
+                  spec:
+                    connectorRef: nikpaws
+                    region: eu-west-2
+                    account: "759984737373"
+                    imageName: payment-service
+                    tags:
+                      - <+pipeline.sequenceId>
+                    dockerfile: /harness/payment-service/Dockerfile
+                    optimize: true
+                    resources:
+                      limits:
+                        memory: 1Gi
+                        cpu: "1"
+                  when:
+                    stageStatus: Success
+                    condition: <+pipeline.variables.seusername> == 'aws'
+                  failureStrategies: []
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: pushToDockerHub
+                  identifier: pushToDockerHub
+                  spec:
+                    connectorRef: nikpdockerhub
+                    repo: nikpap/payment-service
+                    tags:
+                      - <+pipeline.sequenceId>
+                    dockerfile: /harness/payment-service/Dockerfile
+                    optimize: true
+                    resources:
+                      limits:
+                        memory: 2Gi
+                        cpu: "2"
+                  when:
+                    stageStatus: Success
+                  failureStrategies: []
+              - parallel:
+                  - step:
+                      type: Security
+                      name: Veracode
+                      identifier: veracode
+                      spec:
+                        connectorRef: account.Harness_Docker_Connector
+                        privileged: true
+                        settings:
+                          product_name: veracode
+                          product_config_name: default
+                          policy_type: ingestionOnly
+                          scan_type: repository
+                          repository_project: payment-service
+                          repository_branch: <+codebase.branch>
+                          customer_artifacts_path: sto_tests/scan_tools/veracode/test_data
+                          manual_upload_filename: "001"
+                        imagePullPolicy: Always
+                      failureStrategies:
+                        - onFailure:
+                            errors:
+                              - AllErrors
+                            action:
+                              type: Ignore
+                      when:
+                        stageStatus: Success
+                  - step:
+                      type: Security
+                      name: Aqua
+                      identifier: Aqua2
+                      spec:
+                        connectorRef: account.Harness_Docker_Connector
+                        privileged: true
+                        settings:
+                          product_name: aqua-trivy
+                          product_config_name: aqua-trivy
+                          policy_type: manualUpload
+                          scan_type: container
+                          container_type: local_image
+                          container_domain: docker.io
+                          container_project: nodegoat
+                          container_tag: local
+                          fail_on_severity: HIGH
+                          customer_artifacts_path: sto_tests/scan_tools/aqua_trivy/test_data
+                          manual_upload_filename: "001"
+                        imagePullPolicy: Always
+                      failureStrategies:
+                        - onFailure:
+                            errors:
+                              - AllErrors
+                            action:
+                              type: Ignore
+                      when:
+                        stageStatus: Success
+          serviceConfig:
+            serviceRef: ""
+            serviceDefinition:
+              type: Kubernetes
+              spec:
+                variables: []
+          sharedPaths:
+            - /var/run
+          serviceDependencies:
+            - identifier: dind
+              name: dind
+              type: Service
+              spec:
+                connectorRef: nikpdockerhub
+                image: docker:dind
+                privileged: true
+                entrypoint:
+                  - dockerd-entrypoint.sh
+                imagePullPolicy: IfNotPresent
+        when:
+          pipelineStatus: Success
+        variables:
+          - name: sto_api_key
+            type: Secret
+            value: STOJWT
+          - name: runner_registry_username
+            type: Secret
+            value: ZN_Docker_Student_Username
+          - name: runner_registry_token
+            type: Secret
+            value: zeronorthpass
+          - name: runner_tag
+            type: String
+            value: dev
+          - name: api_domain_name
+            type: String
+            value: https://api.sto.harness.io
+    - stage:
+        name: DeployDev
+        identifier: DeployDev
+        description: ""
+        type: Deployment
+        spec:
+          serviceConfig:
+            serviceDefinition:
+              type: Kubernetes
+              spec:
+                manifestOverrideSets: []
+                manifests:
+                  - manifest:
+                      identifier: templates
+                      type: K8sManifest
+                      spec:
+                        store:
+                          type: Github
+                          spec:
+                            connectorRef: nikpgithub
+                            gitFetchType: Branch
+                            paths:
+                              - templates
+                            repoName: payment-service-nonprod
+                            branch: master
+                        skipResourceVersioning: false
+                  - manifest:
+                      identifier: values
+                      type: Values
+                      spec:
+                        store:
+                          type: Github
+                          spec:
+                            connectorRef: nikpgithub
+                            gitFetchType: Branch
+                            paths:
+                              - values-non-prod.yaml
+                            repoName: payment-service-nonprod
+                            branch: master
+                artifacts:
+                  sidecars: []
+                  primary:
+                    spec:
+                      connectorRef: nikpdockerhub
+                      imagePath: nikpap/payment-service
+                      tag: <+pipeline.sequenceId>
+                    type: DockerRegistry
+                variables: []
+            serviceRef: paymentservicesrm_dev
+          infrastructure:
+            environmentRef: GKEDEV
+            infrastructureDefinition:
+              type: KubernetesDirect
+              spec:
+                connectorRef: nikpgkecluster
+                namespace: payment-service-dev
+                releaseName: release-1
+            allowSimultaneousDeployments: true
+            infrastructureKey: ""
+          execution:
+            steps:
+              - step:
+                  type: JiraCreate
+                  name: JiraCreate
+                  identifier: JiraCreate
+                  spec:
+                    connectorRef: account.Harness_JIRA
+                    projectKey: HD
+                    issueType: Story
+                    fields:
+                      - name: Summary
+                        value: Ticket to track deployment of <+pipeline.variables.servicename> triggered by <+pipeline.variables.seusername>
+                      - name: Description
+                        value: "triggeredBy: <+pipeline.variables.seusername> buildNumber: <+pipeline.sequenceId>"
+                  timeout: 1d
+              - step:
+                  name: Rollout Deployment
+                  identifier: rolloutDeployment
+                  type: K8sRollingDeploy
+                  timeout: 10m
+                  spec:
+                    skipDryRun: false
+              - step:
+                  type: JiraUpdate
+                  name: JiraUpdate
+                  identifier: JiraUpdate
+                  spec:
+                    connectorRef: account.Harness_JIRA
+                    issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.id>
+                    transitionTo:
+                      transitionName: In Progress
+                      status: In Progress
+                    fields: []
+                  timeout: 1d
+            rollbackSteps:
+              - step:
+                  name: Rollback Rollout Deployment
+                  identifier: rollbackRolloutDeployment
+                  type: K8sRollingRollback
+                  timeout: 10m
+                  spec: {}
+        tags: {}
+        failureStrategies:
+          - onFailure:
+              errors:
+                - AllErrors
+              action:
+                type: StageRollback
+        when:
+          pipelineStatus: Success
+    - stage:
+        name: Jira Approve
+        identifier: Jira_Approve
+        description: ""
+        type: Approval
+        spec:
+          execution:
+            steps:
+              - step:
+                  name: Jira Approval
+                  identifier: jiraApproval
+                  type: JiraApproval
+                  timeout: 1d
+                  spec:
+                    approvalCriteria:
+                      type: KeyValues
+                      spec:
+                        matchAnyCondition: true
+                        conditions:
+                          - key: Status
+                            operator: equals
+                            value: Approved
+                    rejectionCriteria:
+                      type: KeyValues
+                      spec:
+                        matchAnyCondition: false
+                        conditions:
+                          - key: Status
+                            operator: equals
+                            value: Rejected
+                    connectorRef: account.Harness_JIRA
+                    projectKey: HD
+                    issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.key>
+            rollbackSteps: []
+          serviceDependencies: []
+        tags: {}
+        when:
+          pipelineStatus: Success
+    - stage:
+        name: DeployProd
+        identifier: DeployProd
+        description: ""
+        type: Deployment
+        spec:
+          serviceConfig:
+            serviceRef: <+input>
+            serviceDefinition:
+              type: Kubernetes
+              spec:
+                variables: []
+                manifests:
+                  - manifest:
+                      identifier: templates
+                      type: K8sManifest
+                      spec:
+                        store:
+                          type: Github
+                          spec:
+                            connectorRef: nikpgithub
+                            gitFetchType: Branch
+                            paths:
+                              - templates-prod
+                            repoName: payment-service-nonprod
+                            branch: master
+                        skipResourceVersioning: false
+                  - manifest:
+                      identifier: values
+                      type: Values
+                      spec:
+                        store:
+                          type: Github
+                          spec:
+                            connectorRef: nikpgithub
+                            gitFetchType: Branch
+                            paths:
+                              - values-non-prod.yaml
+                            repoName: payment-service-nonprod
+                            branch: master
+                artifacts:
+                  primary:
+                    type: DockerRegistry
+                    spec:
+                      connectorRef: nikpdockerhub
+                      imagePath: nikpap/payment-service
+                      tag: <+pipeline.sequenceId>
+          infrastructure:
+            environmentRef: GKEPROD
+            infrastructureDefinition:
+              type: KubernetesDirect
+              spec:
+                connectorRef: nikpgkecluster
+                namespace: payment-service
+                releaseName: release-1
+            allowSimultaneousDeployments: true
+            infrastructureKey: ""
+          execution:
+            steps:
+              - stepGroup:
+                  name: Canary Deployment
+                  identifier: canaryDepoyment
+                  steps:
+                    - step:
+                        name: Canary Deployment
+                        identifier: canaryDeployment
+                        type: K8sCanaryDeploy
+                        timeout: 10m
                         spec:
-                            connectorRef: nikpdockerhub
-                            image: docker:dind
-                            privileged: true
-                            entrypoint:
-                                - dockerd-entrypoint.sh
-                            imagePullPolicy: IfNotPresent
-              when:
-                  pipelineStatus: Success
-              variables:
-                  - name: sto_api_key
-                    type: Secret
-                    value: STOJWT
-                  - name: runner_registry_username
-                    type: Secret
-                    value: ZN_Docker_Student_Username
-                  - name: runner_registry_token
-                    type: Secret
-                    value: zeronorthpass
-                  - name: runner_tag
-                    type: String
-                    value: dev
-                  - name: api_domain_name
-                    type: String
-                    value: https://api.sto.harness.io
-        - stage:
-              name: DeployDev
-              identifier: DeployDev
-              description: ""
-              type: Deployment
-              spec:
-                  serviceConfig:
-                      serviceDefinition:
-                          type: Kubernetes
+                          instanceSelection:
+                            type: Count
+                            spec:
+                              count: 1
+                          skipDryRun: false
+                    - step:
+                        type: Verify
+                        name: verify_canary
+                        identifier: verify_dev
+                        spec:
+                          type: Canary
                           spec:
-                              manifestOverrideSets: []
-                              manifests:
-                                  - manifest:
-                                        identifier: templates
-                                        type: K8sManifest
-                                        spec:
-                                            store:
-                                                type: Github
-                                                spec:
-                                                    connectorRef: nikpgithub
-                                                    gitFetchType: Branch
-                                                    paths:
-                                                        - templates
-                                                    repoName: payment-service-nonprod
-                                                    branch: master
-                                            skipResourceVersioning: false
-                                  - manifest:
-                                        identifier: values
-                                        type: Values
-                                        spec:
-                                            store:
-                                                type: Github
-                                                spec:
-                                                    connectorRef: nikpgithub
-                                                    gitFetchType: Branch
-                                                    paths:
-                                                        - values-non-prod.yaml
-                                                    repoName: payment-service-nonprod
-                                                    branch: master
-                              artifacts:
-                                  sidecars: []
-                                  primary:
-                                      spec:
-                                          connectorRef: nikpdockerhub
-                                          imagePath: nikpap/payment-service
-                                          tag: <+pipeline.sequenceId>
-                                      type: DockerRegistry
-                              variables: []
-                      serviceRef: paymentservicesrm_dev
-                  infrastructure:
-                      environmentRef: GKEDEV
-                      infrastructureDefinition:
-                          type: KubernetesDirect
-                          spec:
-                              connectorRef: nikpgkecluster
-                              namespace: payment-service-dev
-                              releaseName: release-1
-                      allowSimultaneousDeployments: true
-                      infrastructureKey: ""
-                  execution:
-                      steps:
-                          - step:
-                                type: JiraCreate
-                                name: JiraCreate
-                                identifier: JiraCreate
+                            sensitivity: LOW
+                            duration: 5m
+                            deploymentTag: <+serviceConfig.artifacts.primary.tag>
+                        timeout: 2h
+                        failureStrategies:
+                          - onFailure:
+                              errors:
+                                - Verification
+                              action:
+                                type: ManualIntervention
                                 spec:
-                                    connectorRef: account.Harness_JIRA
-                                    projectKey: HD
-                                    issueType: Story
-                                    fields:
-                                        - name: Summary
-                                          value: Ticket to track deployment of <+pipeline.variables.servicename> triggered by <+pipeline.variables.seusername>
-                                        - name: Description
-                                          value: "triggeredBy: <+pipeline.variables.seusername> buildNumber: <+pipeline.sequenceId>"
-                                timeout: 1d
-                          - step:
-                                name: Rollout Deployment
-                                identifier: rolloutDeployment
-                                type: K8sRollingDeploy
-                                timeout: 10m
+                                  timeout: 2h
+                                  onTimeout:
+                                    action:
+                                      type: StageRollback
+                          - onFailure:
+                              errors:
+                                - Unknown
+                              action:
+                                type: ManualIntervention
                                 spec:
-                                    skipDryRun: false
-                          - step:
-                                type: JiraUpdate
-                                name: JiraUpdate
-                                identifier: JiraUpdate
-                                spec:
-                                    connectorRef: account.Harness_JIRA
-                                    issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.id>
-                                    transitionTo:
-                                        transitionName: In Progress
-                                        status: In Progress
-                                    fields: []
-                                timeout: 1d
-                      rollbackSteps:
-                          - step:
-                                name: Rollback Rollout Deployment
-                                identifier: rollbackRolloutDeployment
-                                type: K8sRollingRollback
-                                timeout: 10m
-                                spec: {}
-              tags: {}
-              failureStrategies:
-                  - onFailure:
-                        errors:
-                            - AllErrors
-                        action:
-                            type: StageRollback
-              when:
-                  pipelineStatus: Success
-        - stage:
-              name: Jira Approve
-              identifier: Jira_Approve
-              description: ""
-              type: Approval
-              spec:
-                  execution:
-                      steps:
-                          - step:
-                                name: Jira Approval
-                                identifier: jiraApproval
-                                type: JiraApproval
-                                timeout: 1d
-                                spec:
-                                    approvalCriteria:
-                                        type: KeyValues
-                                        spec:
-                                            matchAnyCondition: true
-                                            conditions:
-                                                - key: Status
-                                                  operator: equals
-                                                  value: Approved
-                                    rejectionCriteria:
-                                        type: KeyValues
-                                        spec:
-                                            matchAnyCondition: false
-                                            conditions:
-                                                - key: Status
-                                                  operator: equals
-                                                  value: Rejected
-                                    connectorRef: account.Harness_JIRA
-                                    projectKey: HD
-                                    issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.key>
-                      rollbackSteps: []
-                  serviceDependencies: []
-              tags: {}
-              when:
-                  pipelineStatus: Success
-        - stage:
-              name: DeployProd
-              identifier: DeployProd
-              description: ""
-              type: Deployment
-              spec:
-                  serviceConfig:
-                      serviceRef: <+input>
-                      serviceDefinition:
-                          type: Kubernetes
-                          spec:
-                              variables: []
-                              manifests:
-                                  - manifest:
-                                        identifier: templates
-                                        type: K8sManifest
-                                        spec:
-                                            store:
-                                                type: Github
-                                                spec:
-                                                    connectorRef: nikpgithub
-                                                    gitFetchType: Branch
-                                                    paths:
-                                                        - templates-prod
-                                                    repoName: payment-service-nonprod
-                                                    branch: master
-                                            skipResourceVersioning: false
-                                  - manifest:
-                                        identifier: values
-                                        type: Values
-                                        spec:
-                                            store:
-                                                type: Github
-                                                spec:
-                                                    connectorRef: nikpgithub
-                                                    gitFetchType: Branch
-                                                    paths:
-                                                        - values-non-prod.yaml
-                                                    repoName: payment-service-nonprod
-                                                    branch: master
-                              artifacts:
-                                  primary:
-                                      type: DockerRegistry
-                                      spec:
-                                          connectorRef: nikpdockerhub
-                                          imagePath: nikpap/payment-service
-                                          tag: <+pipeline.sequenceId>
-                  infrastructure:
-                      environmentRef: GKEPROD
-                      infrastructureDefinition:
-                          type: KubernetesDirect
-                          spec:
-                              connectorRef: nikpgkecluster
-                              namespace: payment-service
-                              releaseName: release-1
-                      allowSimultaneousDeployments: true
-                      infrastructureKey: ""
-                  execution:
-                      steps:
-                          - stepGroup:
-                                name: Canary Deployment
-                                identifier: canaryDepoyment
-                                steps:
-                                    - step:
-                                          name: Canary Deployment
-                                          identifier: canaryDeployment
-                                          type: K8sCanaryDeploy
-                                          timeout: 10m
-                                          spec:
-                                              instanceSelection:
-                                                  type: Count
-                                                  spec:
-                                                      count: 1
-                                              skipDryRun: false
-                                    - step:
-                                          type: Verify
-                                          name: verify_canary
-                                          identifier: verify_dev
-                                          spec:
-                                              type: Canary
-                                              spec:
-                                                  sensitivity: LOW
-                                                  duration: 5m
-                                                  deploymentTag: <+serviceConfig.artifacts.primary.tag>
-                                          timeout: 2h
-                                          failureStrategies:
-                                              - onFailure:
-                                                    errors:
-                                                        - Verification
-                                                    action:
-                                                        type: ManualIntervention
-                                                        spec:
-                                                            timeout: 2h
-                                                            onTimeout:
-                                                                action:
-                                                                    type: StageRollback
-                                              - onFailure:
-                                                    errors:
-                                                        - Unknown
-                                                    action:
-                                                        type: ManualIntervention
-                                                        spec:
-                                                            timeout: 2h
-                                                            onTimeout:
-                                                                action:
-                                                                    type: Ignore
-                                          when:
-                                              stageStatus: Success
-                                              condition: <+pipeline.variables.verify_fail> == "false"
-                                    - step:
-                                          name: Canary Delete
-                                          identifier: canaryDelete
-                                          type: K8sCanaryDelete
-                                          timeout: 10m
-                                          spec: {}
-                                rollbackSteps:
-                                    - step:
-                                          name: Canary Delete
-                                          identifier: canaryDelete
-                                          type: K8sCanaryDelete
-                                          timeout: 10m
-                                          spec: {}
-                          - stepGroup:
-                                name: Primary Deployment
-                                identifier: primaryDepoyment
-                                steps:
-                                    - step:
-                                          name: Rolling Deployment
-                                          identifier: rollingDeployment
-                                          type: K8sRollingDeploy
-                                          timeout: 10m
-                                          spec:
-                                              skipDryRun: false
-                                rollbackSteps:
-                                    - step:
-                                          name: Rolling Rollback
-                                          identifier: rollingRollback
-                                          type: K8sRollingRollback
-                                          timeout: 10m
-                                          spec: {}
-                          - step:
-                                type: ShellScript
-                                name: WrapUp
-                                identifier: WrapUp
-                                spec:
-                                    shell: Bash
-                                    onDelegate: true
-                                    source:
-                                        type: Inline
-                                        spec:
-                                            script: |-
-                                                echo "Wrapping up deployment"
-                                                url="http://$subdomain.cie-demo.co.uk"
-                                                export application="$url"
-                                    environmentVariables:
-                                        - name: subdomain
-                                          type: String
-                                          value: <+pipeline.variables.seusername>
-                                    outputVariables:
-                                        - name: application
-                                          type: String
-                                          value: application
-                                    executionTarget: {}
-                                timeout: 10m
-                          - step:
-                                type: JiraUpdate
-                                name: JiraUpdate
-                                identifier: JiraUpdate
-                                spec:
-                                    connectorRef: account.Harness_JIRA
-                                    issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.key>
-                                    transitionTo:
-                                        transitionName: Done
-                                        status: Done
-                                    fields: []
-                                timeout: 1d
-                          - step:
-                                type: K8sApply
-                                name: Autostopping
-                                identifier: Autostopping
-                                spec:
-                                    filePaths:
-                                        - autostopping/ccm-autostoppingrule.yaml
-                                    skipDryRun: false
-                                    skipSteadyStateCheck: false
-                                timeout: 10m
-                                when:
-                                    stageStatus: Success
-                                    condition: <+pipeline.variables.autostopping> == "true"
-                                failureStrategies: []
-                      rollbackSteps:
-                          - step:
-                                type: K8sCanaryDelete
-                                name: Canary Rollback
-                                identifier: Canary_Rollback
-                                spec:
-                                    skipDryRun: false
-                                timeout: 10m
-                  serviceDependencies: []
-              tags: {}
-              failureStrategies:
-                  - onFailure:
-                        errors:
-                            - AllErrors
-                        action:
-                            type: StageRollback
-              when:
-                  pipelineStatus: Success
-    variables:
-        - name: mavenversion
-          type: String
-          default: "3.8"
-          value: <+input>
-        - name: javaversion
-          type: String
-          default: "8"
-          value: <+input>
-        - name: servicename
-          type: String
-          default: payment-service
-          value: payment-service
-        - name: seusername
-          type: String
-          value: <+input>
-        - name: ffsdkkeyprod
-          type: String
-          default: 44c9dcaa-dab2-4100-b2b5-75bdeb7aa497
-          value: <+input>
-        - name: isingress
-          type: Number
-          default: 1
-          value: 0
-        - name: verify_fail
-          type: String
-          default: "false"
-          value: <+input>.allowedValues(true,false)
-        - name: run_owasp_scan
-          type: String
-          default: "false"
-          value: <+input>.allowedValues(true,false)
-        - name: dbuser
-          type: Secret
-          value: dbuser
-        - name: dbpassword
-          type: Secret
-          value: dbpassword
-        - name: verify_fail2
-          type: String
-          value: test
-        - name: autostopping
-          type: String
-          default: "false"
-          value: <+input>.allowedValues(true,false)
-    flowControl:
-        barriers:
-            - name: Barrier
-              identifier: Barrier
+                                  timeout: 2h
+                                  onTimeout:
+                                    action:
+                                      type: Ignore
+                        when:
+                          stageStatus: Success
+                          condition: <+pipeline.variables.verify_fail> == "false"
+                    - step:
+                        name: Canary Delete
+                        identifier: canaryDelete
+                        type: K8sCanaryDelete
+                        timeout: 10m
+                        spec: {}
+                  rollbackSteps:
+                    - step:
+                        name: Canary Delete
+                        identifier: canaryDelete
+                        type: K8sCanaryDelete
+                        timeout: 10m
+                        spec: {}
+              - stepGroup:
+                  name: Primary Deployment
+                  identifier: primaryDepoyment
+                  steps:
+                    - step:
+                        name: Rolling Deployment
+                        identifier: rollingDeployment
+                        type: K8sRollingDeploy
+                        timeout: 10m
+                        spec:
+                          skipDryRun: false
+                  rollbackSteps:
+                    - step:
+                        name: Rolling Rollback
+                        identifier: rollingRollback
+                        type: K8sRollingRollback
+                        timeout: 10m
+                        spec: {}
+              - step:
+                  type: ShellScript
+                  name: WrapUp
+                  identifier: WrapUp
+                  spec:
+                    shell: Bash
+                    onDelegate: true
+                    source:
+                      type: Inline
+                      spec:
+                        script: |-
+                          echo "Wrapping up deployment"
+                          url="http://$subdomain.cie-demo.co.uk"
+                          export application="$url"
+                    environmentVariables:
+                      - name: subdomain
+                        type: String
+                        value: <+pipeline.variables.seusername>
+                    outputVariables:
+                      - name: application
+                        type: String
+                        value: application
+                    executionTarget: {}
+                  timeout: 10m
+              - step:
+                  type: JiraUpdate
+                  name: JiraUpdate
+                  identifier: JiraUpdate
+                  spec:
+                    connectorRef: account.Harness_JIRA
+                    issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.key>
+                    transitionTo:
+                      transitionName: Done
+                      status: Done
+                    fields: []
+                  timeout: 1d
+              - step:
+                  type: K8sApply
+                  name: Autostopping
+                  identifier: Autostopping
+                  spec:
+                    filePaths:
+                      - autostopping/ccm-autostoppingrule.yaml
+                    skipDryRun: false
+                    skipSteadyStateCheck: false
+                  timeout: 10m
+                  when:
+                    stageStatus: Success
+                    condition: <+pipeline.variables.autostopping> == "true"
+                  failureStrategies: []
+            rollbackSteps:
+              - step:
+                  type: K8sCanaryDelete
+                  name: Canary Rollback
+                  identifier: Canary_Rollback
+                  spec:
+                    skipDryRun: false
+                  timeout: 10m
+          serviceDependencies: []
+        tags: {}
+        failureStrategies:
+          - onFailure:
+              errors:
+                - AllErrors
+              action:
+                type: StageRollback
+        when:
+          pipelineStatus: Success
+  variables:
+    - name: mavenversion
+      type: String
+      default: "3.8"
+      value: <+input>
+    - name: javaversion
+      type: String
+      default: "8"
+      value: <+input>
+    - name: servicename
+      type: String
+      default: payment-service
+      value: payment-service
+    - name: seusername
+      type: String
+      value: <+input>
+    - name: ffsdkkeyprod
+      type: String
+      default: 44c9dcaa-dab2-4100-b2b5-75bdeb7aa497
+      value: <+input>
+    - name: isingress
+      type: Number
+      default: 1
+      value: 0
+    - name: verify_fail
+      type: String
+      default: "false"
+      value: <+input>.allowedValues(true,false)
+    - name: run_owasp_scan
+      type: String
+      default: "false"
+      value: <+input>.allowedValues(true,false)
+    - name: dbuser
+      type: Secret
+      value: dbuser
+    - name: dbpassword
+      type: Secret
+      value: dbpassword
+    - name: verify_fail2
+      type: String
+      value: test
+    - name: autostopping
+      type: String
+      default: "false"
+      value: <+input>.allowedValues(true,false)
+  flowControl:
+    barriers:
+      - name: Barrier
+        identifier: Barrier
