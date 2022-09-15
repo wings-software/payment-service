@@ -138,6 +138,7 @@ pipeline:
                   when:
                     stageStatus: Success
                   failureStrategies: []
+                  description: ads
               - parallel:
                   - step:
                       type: Security
