@@ -169,7 +169,6 @@ pipeline:
                       name: OWASP
                       identifier: OWASP
                       spec:
-                        connectorRef: harnessImage
                         privileged: true
                         settings:
                           policy_type: orchestratedScan
@@ -351,7 +350,6 @@ pipeline:
                       name: Aqua
                       identifier: Aqua2
                       spec:
-                        connectorRef: account.Harness_Docker_Connector
                         privileged: true
                         settings:
                           product_name: aqua-trivy
@@ -374,6 +372,7 @@ pipeline:
                               type: Ignore
                       when:
                         stageStatus: Success
+                        condition: <+pipeline.variables.run_owasp_scan> == true
           serviceConfig:
             serviceRef: ""
             serviceDefinition:
