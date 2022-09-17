@@ -93,8 +93,8 @@ pipeline:
                           CONTAINER_STEP: "3"
                         resources:
                           limits:
-                            memory: 2Gi
-                            cpu: "2"
+                            memory: 3Gi
+                            cpu: "1"
                       description: aderasdsad
                   - step:
                       type: Plugin
@@ -133,8 +133,8 @@ pipeline:
                       MAVEN_OPTS: "-Dmaven.repo.local=/harness/maven/repository"
                     resources:
                       limits:
-                        memory: 2Gi
-                        cpu: "2"
+                        memory: 3Gi
+                        cpu: "1"
                   when:
                     stageStatus: Success
                   failureStrategies: []
