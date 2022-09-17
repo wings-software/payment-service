@@ -93,8 +93,8 @@ pipeline:
                           CONTAINER_STEP: "3"
                         resources:
                           limits:
-                            memory: 3Gi
-                            cpu: "1"
+                            memory: 4Gi
+                            cpu: "1.5"
                       description: aderasdsad
                   - step:
                       type: Plugin
@@ -134,7 +134,7 @@ pipeline:
                     resources:
                       limits:
                         memory: 3Gi
-                        cpu: "1"
+                        cpu: "1.5"
                   when:
                     stageStatus: Success
                   failureStrategies: []
@@ -315,8 +315,8 @@ pipeline:
                     optimize: true
                     resources:
                       limits:
-                        memory: 3Gi
-                        cpu: "1"
+                        memory: 4Gi
+                        cpu: "1.5"
                   when:
                     stageStatus: Success
                   failureStrategies: []
@@ -393,6 +393,10 @@ pipeline:
                 entrypoint:
                   - dockerd-entrypoint.sh
                 imagePullPolicy: IfNotPresent
+                resources:
+                  limits:
+                    memory: 500Mi
+                    cpu: 300m
         when:
           pipelineStatus: Success
         variables:
