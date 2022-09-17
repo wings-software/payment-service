@@ -94,7 +94,7 @@ pipeline:
                         resources:
                           limits:
                             memory: 5Gi
-                            cpu: "5"
+                            cpu: "6"
                       description: aderasdsad
                       failureStrategies: []
                   - step:
@@ -320,7 +320,7 @@ pipeline:
                     resources:
                       limits:
                         memory: 4Gi
-                        cpu: "3"
+                        cpu: "4"
                   when:
                     stageStatus: Success
                   failureStrategies: []
