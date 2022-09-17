@@ -96,6 +96,9 @@ pipeline:
                             memory: 4Gi
                             cpu: "4"
                       description: aderasdsad
+                      failureStrategies: []
+                      strategy:
+                        parallelism: 2
                   - step:
                       type: Plugin
                       name: cleanup
