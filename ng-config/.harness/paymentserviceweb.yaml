@@ -94,7 +94,7 @@ pipeline:
                         resources:
                           limits:
                             memory: 4Gi
-                            cpu: "1.5"
+                            cpu: "2"
                       description: aderasdsad
                   - step:
                       type: Plugin
@@ -109,6 +109,9 @@ pipeline:
                           GITHUB_USERNAME: nikpapag
                           GITHUB_EMAIL: nikpap.cs@icloud.com
                         imagePullPolicy: Always
+                        resources:
+                          limits:
+                            memory: 3Gi
                       failureStrategies:
                         - onFailure:
                             errors:
@@ -134,7 +137,7 @@ pipeline:
                     resources:
                       limits:
                         memory: 3Gi
-                        cpu: "1.5"
+                        cpu: "2"
                   when:
                     stageStatus: Success
                   failureStrategies: []
