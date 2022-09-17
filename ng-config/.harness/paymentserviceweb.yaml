@@ -93,12 +93,10 @@ pipeline:
                           CONTAINER_STEP: "3"
                         resources:
                           limits:
-                            memory: 4Gi
-                            cpu: "4"
+                            memory: 5Gi
+                            cpu: "5"
                       description: aderasdsad
                       failureStrategies: []
-                      strategy:
-                        parallelism: 2
                   - step:
                       type: Plugin
                       name: cleanup
