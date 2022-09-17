@@ -94,7 +94,7 @@ pipeline:
                         resources:
                           limits:
                             memory: 4Gi
-                            cpu: "2"
+                            cpu: "3"
                       description: aderasdsad
                   - step:
                       type: Plugin
