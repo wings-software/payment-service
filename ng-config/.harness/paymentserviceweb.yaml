@@ -315,8 +315,8 @@ pipeline:
                     optimize: true
                     resources:
                       limits:
-                        memory: 2Gi
-                        cpu: "2"
+                        memory: 3Gi
+                        cpu: "1"
                   when:
                     stageStatus: Success
                   failureStrategies: []
