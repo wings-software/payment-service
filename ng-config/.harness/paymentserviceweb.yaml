@@ -50,8 +50,8 @@ pipeline:
                       name: runTestsWithIntelligence
                       identifier: runTestsWithIntelligence
                       spec:
-                        connectorRef: nikpdockerhub
-                        image: maven:<+pipeline.variables.mavenversion>-jdk-<+pipeline.variables.javaversion>
+                        connectorRef: devxgcp
+                        image: gcr.io/sales-209522/devx-maven:<+pipeline.variables.mavenversion>-jdk-<+pipeline.variables.javaversion>
                         language: Java
                         buildTool: Maven
                         args: test
