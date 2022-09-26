@@ -25,7 +25,7 @@ inputSet:
       value: "3.8"
     - name: "javaversion"
       type: "String"
-      value: "9"
+      value: "8"
     - name: "seusername"
       type: "String"
       value: "nikpapag"
