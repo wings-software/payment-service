@@ -1,5 +1,8 @@
 inputSet:
   identifier: "nikpsrminputset"
+  name: "nikp-srm-input-set"
+  orgIdentifier: "default"
+  projectIdentifier: "DevX_Demo"
   pipeline:
     identifier: "paymentserviceweb"
     properties:
@@ -15,7 +18,7 @@ inputSet:
         type: "Deployment"
         spec:
           serviceConfig:
-            serviceRef: "paymentservicesrm_dev"
+            serviceRef: "paymentservice"
     variables:
     - name: "mavenversion"
       type: "String"
@@ -38,6 +41,3 @@ inputSet:
     - name: "autostopping"
       type: "String"
       value: "false"
-  name: "nikp-srm-input-set"
-  orgIdentifier: "default"
-  projectIdentifier: "DevX_Demo"
