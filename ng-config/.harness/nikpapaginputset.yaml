@@ -22,7 +22,7 @@ inputSet:
       value: "3.8"
     - name: "javaversion"
       type: "String"
-      value: "8"
+      value: "9"
     - name: "servicename"
       type: "String"
       value: "payment-service"
