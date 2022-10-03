@@ -21,16 +21,16 @@ featureFlags:
           onVariation: "true"
           offVariation: "false"
         state: "on"
+      - identifier: Test
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
       - identifier: gitopsprod
         default:
           onVariation: "true"
           offVariation: "false"
         state: "off"
-      - identifier: HarnessProd
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "on"
       - identifier: GKEPROD
         default:
           onVariation: "true"
@@ -38,13 +38,18 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
-          - identifier: nikpapag
           - identifier: jkharnessio
           - identifier: harness-olirees
+          - identifier: nikpapag
           variation: "false"
         - targets:
           - identifier: beta
           variation: "true"
+      - identifier: HarnessProd
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "on"
       - identifier: GKEDEV
         default:
           onVariation: "true"
@@ -71,16 +76,16 @@ featureFlags:
           onVariation: "true"
           offVariation: "false"
         state: "on"
+      - identifier: Test
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
       - identifier: gitopsprod
         default:
           onVariation: "true"
           offVariation: "false"
         state: "off"
-      - identifier: HarnessProd
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "on"
       - identifier: GKEPROD
         default:
           onVariation: "true"
@@ -95,6 +100,11 @@ featureFlags:
           - identifier: nikpapag
           - identifier: nikp
           variation: "true"
+      - identifier: HarnessProd
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "on"
       - identifier: GKEDEV
         default:
           onVariation: "true"
