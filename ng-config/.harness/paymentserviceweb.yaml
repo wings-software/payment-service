@@ -798,7 +798,7 @@ pipeline:
     - name: isingress
       type: Number
       default: 1
-      value: 0
+      value: <+input>.allowedValues(0,1)
     - name: verify_fail
       type: String
       default: "false"
