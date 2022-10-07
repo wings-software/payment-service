@@ -16,16 +16,16 @@ featureFlags:
         - identifier: "false"
           value: "false"
       environments:
-      - identifier: GKEQA
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "on"
       - identifier: Test
         default:
           onVariation: "true"
           offVariation: "false"
         state: "off"
+      - identifier: GKEQA
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "on"
       - identifier: gitopsprod
         default:
           onVariation: "true"
@@ -38,13 +38,14 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
+          - identifier: beta
+          variation: "true"
+        - targets:
           - identifier: jkharnessio
+          - identifier: iamlennym
           - identifier: harness-olirees
           - identifier: nikpapag
           variation: "false"
-        - targets:
-          - identifier: beta
-          variation: "true"
       - identifier: HarnessProd
         default:
           onVariation: "true"
@@ -71,16 +72,16 @@ featureFlags:
         - identifier: "false"
           value: "false"
       environments:
-      - identifier: GKEQA
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "on"
       - identifier: Test
         default:
           onVariation: "true"
           offVariation: "false"
         state: "off"
+      - identifier: GKEQA
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "on"
       - identifier: gitopsprod
         default:
           onVariation: "true"
@@ -94,6 +95,7 @@ featureFlags:
         targetRules:
         - targets:
           - identifier: jkharnessio
+          - identifier: iamlennym
           - identifier: harness-olirees
           variation: "false"
         - targets:
