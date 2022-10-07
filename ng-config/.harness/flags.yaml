@@ -38,14 +38,14 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
-          - identifier: beta
-          variation: "true"
-        - targets:
           - identifier: jkharnessio
-          - identifier: iamlennym
           - identifier: harness-olirees
           - identifier: nikpapag
           variation: "false"
+        - targets:
+          - identifier: iamlennym
+          - identifier: beta
+          variation: "true"
       - identifier: HarnessProd
         default:
           onVariation: "true"
