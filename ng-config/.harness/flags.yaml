@@ -39,11 +39,11 @@ featureFlags:
         targetRules:
         - targets:
           - identifier: jkharnessio
+          - identifier: iamlennym
           - identifier: harness-olirees
           - identifier: nikpapag
           variation: "false"
         - targets:
-          - identifier: iamlennym
           - identifier: beta
           variation: "true"
       - identifier: HarnessProd
@@ -94,14 +94,14 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
-          - identifier: jkharnessio
+          - identifier: nikp
           - identifier: iamlennym
+          - identifier: nikpapag
+          variation: "true"
+        - targets:
+          - identifier: jkharnessio
           - identifier: harness-olirees
           variation: "false"
-        - targets:
-          - identifier: nikpapag
-          - identifier: nikp
-          variation: "true"
       - identifier: HarnessProd
         default:
           onVariation: "true"
