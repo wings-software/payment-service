@@ -16,21 +16,16 @@ featureFlags:
         - identifier: "false"
           value: "false"
       environments:
-      - identifier: Test
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-      - identifier: GKEQA
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "on"
       - identifier: gitopsprod
         default:
           onVariation: "true"
           offVariation: "false"
         state: "off"
+      - identifier: HarnessProd
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "on"
       - identifier: GKEPROD
         default:
           onVariation: "true"
@@ -46,11 +41,16 @@ featureFlags:
         - targets:
           - identifier: beta
           variation: "true"
-      - identifier: HarnessProd
+      - identifier: GKEQA
         default:
           onVariation: "true"
           offVariation: "false"
         state: "on"
+      - identifier: Test
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
       - identifier: GKEDEV
         default:
           onVariation: "true"
@@ -72,21 +72,16 @@ featureFlags:
         - identifier: "false"
           value: "false"
       environments:
-      - identifier: Test
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-      - identifier: GKEQA
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "on"
       - identifier: gitopsprod
         default:
           onVariation: "true"
           offVariation: "false"
         state: "off"
+      - identifier: HarnessProd
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "on"
       - identifier: GKEPROD
         default:
           onVariation: "true"
@@ -96,17 +91,22 @@ featureFlags:
         - targets:
           - identifier: nikp
           - identifier: iamlennym
+          - identifier: harness-olirees
           - identifier: nikpapag
           variation: "true"
         - targets:
           - identifier: jkharnessio
-          - identifier: harness-olirees
           variation: "false"
-      - identifier: HarnessProd
+      - identifier: GKEQA
         default:
           onVariation: "true"
           offVariation: "false"
         state: "on"
+      - identifier: Test
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
       - identifier: GKEDEV
         default:
           onVariation: "true"
