@@ -34,12 +34,12 @@ featureFlags:
         targetRules:
         - targets:
           - identifier: jkharnessio
-          - identifier: fbreton
           - identifier: iamlennym
           - identifier: harness-olirees
           - identifier: nikpapag
           variation: "false"
         - targets:
+          - identifier: fbreton
           - identifier: beta
           variation: "true"
       - identifier: GKEQA
