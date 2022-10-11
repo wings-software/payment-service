@@ -91,12 +91,12 @@ featureFlags:
         targetRules:
         - targets:
           - identifier: nikp
+          - identifier: fbreton
           - identifier: iamlennym
           - identifier: harness-olirees
           - identifier: nikpapag
           variation: "true"
         - targets:
-          - identifier: fbreton
           - identifier: jkharnessio
           variation: "false"
       - identifier: GKEQA
