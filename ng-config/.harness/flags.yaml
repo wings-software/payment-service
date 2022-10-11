@@ -16,6 +16,11 @@ featureFlags:
         - identifier: "false"
           value: "false"
       environments:
+      - identifier: paul_foo_env
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
       - identifier: Test
         default:
           onVariation: "true"
@@ -73,6 +78,11 @@ featureFlags:
         - identifier: "false"
           value: "false"
       environments:
+      - identifier: paul_foo_env
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
       - identifier: Test
         default:
           onVariation: "true"
