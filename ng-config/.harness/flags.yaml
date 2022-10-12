@@ -100,15 +100,15 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
+          - identifier: jkharnessio
+          - identifier: iamlennym
+          variation: "false"
+        - targets:
           - identifier: nikp
           - identifier: fbreton
-          - identifier: iamlennym
           - identifier: harness-olirees
           - identifier: nikpapag
           variation: "true"
-        - targets:
-          - identifier: jkharnessio
-          variation: "false"
       - identifier: GKEQA
         default:
           onVariation: "true"
