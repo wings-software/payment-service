@@ -39,12 +39,12 @@ featureFlags:
         targetRules:
         - targets:
           - identifier: jkharnessio
+          - identifier: fbreton
           - identifier: iamlennym
           - identifier: harness-olirees
           - identifier: nikpapag
           variation: "false"
         - targets:
-          - identifier: fbreton
           - identifier: beta
           variation: "true"
       - identifier: GKEQA
@@ -101,11 +101,11 @@ featureFlags:
         targetRules:
         - targets:
           - identifier: jkharnessio
+          - identifier: fbreton
           - identifier: iamlennym
           variation: "false"
         - targets:
           - identifier: nikp
-          - identifier: fbreton
           - identifier: harness-olirees
           - identifier: nikpapag
           variation: "true"
