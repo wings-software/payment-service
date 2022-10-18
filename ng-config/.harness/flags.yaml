@@ -16,6 +16,21 @@ featureFlags:
         - identifier: "false"
           value: "false"
       environments:
+      - identifier: EC2
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: GKEQA
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "on"
+      - identifier: ec2dev
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
       - identifier: paul_foo_env
         default:
           onVariation: "true"
@@ -52,16 +67,6 @@ featureFlags:
           onVariation: "true"
           offVariation: "false"
         state: "off"
-      - identifier: GKEQA
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "on"
-      - identifier: ec2dev
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
       - identifier: GKEDEV
         default:
           onVariation: "true"
@@ -83,6 +88,21 @@ featureFlags:
         - identifier: "false"
           value: "false"
       environments:
+      - identifier: EC2
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: GKEQA
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "on"
+      - identifier: ec2dev
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
       - identifier: paul_foo_env
         default:
           onVariation: "true"
@@ -105,26 +125,16 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
-          - identifier: nikp
-          - identifier: harness-olirees
-          - identifier: nikpapag
-          variation: "true"
-        - targets:
           - identifier: jkharnessio
           - identifier: fbreton
           - identifier: iamlennym
           variation: "false"
+        - targets:
+          - identifier: nikp
+          - identifier: harness-olirees
+          - identifier: nikpapag
+          variation: "true"
       - identifier: gitopsprod
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-      - identifier: GKEQA
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "on"
-      - identifier: ec2dev
         default:
           onVariation: "true"
           offVariation: "false"
