@@ -6,6 +6,12 @@ pipeline:
   tags: {}
   stages:
     - stage:
+        name: Postgres
+        identifier: Postgres
+        template:
+          templateRef: PostgresTemplate
+          versionLabel: "0.01"
+    - stage:
         name: TraditionalDeployment
         identifier: TraditionalDeployment
         description: ""
