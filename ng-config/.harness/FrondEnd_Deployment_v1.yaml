@@ -8,7 +8,11 @@ template:
   tags: {}
   spec:
     infrastructure:
-      variables: []
+      variables:
+        - name: target_bucket
+          type: String
+          value: ""
+          description: ""
       fetchInstancesScript:
         store:
           type: Inline
@@ -27,7 +31,7 @@ template:
               {
                 "data": [
                   {
-                    "bucket_name": "test"
+                    "bucket_name": <+infra.variables.target_bucket>
                   }
                 ]
               }'
