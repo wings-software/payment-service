@@ -35,6 +35,9 @@ pipeline:
                   type: CustomDeployment
                   spec:
                     variables:
+                      - name: target_bucket
+                        type: String
+                        value: <+input>
                       - name: source_bucket
                         type: String
                         value: <+input>
