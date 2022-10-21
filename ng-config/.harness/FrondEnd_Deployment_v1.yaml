@@ -11,7 +11,7 @@ template:
       variables:
         - name: target_bucket
           type: String
-          value: s3bucket
+          value: <+input>
           description: ""
       fetchInstancesScript:
         store:
