@@ -1,0 +1,48 @@
+pipeline:
+  name: DeploymentTemplate
+  identifier: DeploymentTemplate
+  projectIdentifier: DevX_Demo
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: DeploymentTemplate
+        identifier: DeploymentTemplate
+        description: ""
+        type: Deployment
+        spec:
+          deploymentType: CustomDeployment
+          customDeploymentRef:
+            templateRef: FrondEnd_Deployment
+            versionLabel: v1
+          execution:
+            steps:
+              - step:
+                  name: Fetch Instances
+                  identifier: fetchInstances
+                  type: FetchInstanceScript
+                  timeout: 10m
+                  spec: {}
+            rollbackSteps: []
+          service:
+            serviceRef: frontend
+          environment:
+            environmentRef: GKEDEV
+            deployToAll: false
+            infrastructureDefinitions:
+              - identifier: Infra
+                inputs:
+                  identifier: Infra
+                  type: CustomDeployment
+                  spec:
+                    variables:
+                      - name: target_bucket
+                        type: String
+                        value: <+input>
+        tags: {}
+        failureStrategies:
+          - onFailure:
+              errors:
+                - AllErrors
+              action:
+                type: StageRollback
