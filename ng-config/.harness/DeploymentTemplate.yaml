@@ -6,15 +6,14 @@ pipeline:
   tags: {}
   stages:
     - stage:
-        name: DeploymentTemplate
-        identifier: DeploymentTemplate
+        name: DeployFrontEnd
+        identifier: DeployFrontEnd
         description: ""
         type: Deployment
         spec:
           deploymentType: CustomDeployment
           customDeploymentRef:
             templateRef: FrondEnd_Deployment
-            versionLabel: v1
           execution:
             steps:
               - step:
@@ -30,9 +29,9 @@ pipeline:
             environmentRef: GKEDEV
             deployToAll: false
             infrastructureDefinitions:
-              - identifier: Infra
+              - identifier: Infra1
                 inputs:
-                  identifier: Infra
+                  identifier: Infra1
                   type: CustomDeployment
                   spec:
                     variables:
