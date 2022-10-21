@@ -98,7 +98,7 @@ pipeline:
                               errors:
                                 - Verification
                               action:
-                                type: StageRollback
+                                type: Ignore
                           - onFailure:
                               errors:
                                 - Unknown
