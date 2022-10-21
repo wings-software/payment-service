@@ -13,6 +13,10 @@ template:
           type: String
           value: ""
           description: ""
+        - name: source_bucket
+          type: String
+          value: <+input>
+          description: ""
       fetchInstancesScript:
         store:
           type: Inline
@@ -31,13 +35,17 @@ template:
               {
                 "data": [
                   {
-                    "bucket_name": "<+infra.variables.target_bucket>"
+                    "bucket_name": "<+infra.variables.target_bucket>",
+                    "source_name": "<+infra.variables.source_bucket>"
                   }
                 ]
               }'
       instanceAttributes:
         - name: instancename
           jsonPath: bucket_name
+          description: ""
+        - name: source_bucket
+          jsonPath: source_bucket
           description: ""
       instancesListPath: data
     execution:
