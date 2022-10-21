@@ -29,13 +29,13 @@ pipeline:
             environmentRef: GKEDEV
             deployToAll: false
             infrastructureDefinitions:
-              - identifier: Infra1
+              - identifier: infra2
                 inputs:
-                  identifier: Infra1
+                  identifier: infra2
                   type: CustomDeployment
                   spec:
                     variables:
-                      - name: target_bucket
+                      - name: source_bucket
                         type: String
                         value: <+input>
         tags: {}
