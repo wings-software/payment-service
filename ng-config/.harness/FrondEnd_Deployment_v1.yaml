@@ -45,7 +45,7 @@ template:
           jsonPath: bucket_name
           description: ""
         - name: source_bucket
-          jsonPath: source_bucket
+          jsonPath: source_name
           description: ""
       instancesListPath: data
     execution:
