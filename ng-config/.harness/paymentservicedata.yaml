@@ -1,5 +1,5 @@
 pipeline:
-  name: payment-service-data
+  name: payment-service-srm-data-generator
   identifier: paymentservicedata
   projectIdentifier: DevX_Demo
   orgIdentifier: default
@@ -89,13 +89,16 @@ pipeline:
                             sensitivity: LOW
                             duration: 5m
                             deploymentTag: <+serviceConfig.artifacts.primary.tag>
+                          monitoredService:
+                            type: Default
+                            spec: {}
                         timeout: 2h
                         failureStrategies:
                           - onFailure:
                               errors:
                                 - Verification
                               action:
-                                type: Ignore
+                                type: StageRollback
                           - onFailure:
                               errors:
                                 - Unknown
