@@ -12,7 +12,7 @@ template:
       source:
         type: Inline
         spec:
-          script: echo "<+instancename>"
+          script: echo "<+instanceName>"
       environmentVariables: []
       outputVariables: []
   identifier: Run_Step
