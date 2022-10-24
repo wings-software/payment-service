@@ -12,7 +12,7 @@ template:
       source:
         type: Inline
         spec:
-          script: echo "Deploy"
+          script: echo "<+pipeline.stages.DeployTemplate.spec.execution.steps.fetchInstances.deploymentInfoOutcome.serverInstanceInfoList[*].properties.instancename>"
       environmentVariables: []
       outputVariables: []
   identifier: Run_Step
