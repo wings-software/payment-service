@@ -11,7 +11,7 @@ template:
       variables:
         - name: target_bucket
           type: String
-          value: ""
+          value: <+input>
           description: ""
         - name: source_bucket
           type: String
