@@ -42,9 +42,9 @@ featureFlags:
           - identifier: iamlennym
           - identifier: harness-olirees
           - identifier: nikpapag
-          - identifier: fred
           variation: "false"
         - targets:
+          - identifier: fred
           - identifier: beta
           variation: "true"
       - identifier: gitopsprod
@@ -117,12 +117,12 @@ featureFlags:
         - targets:
           - identifier: jkharnessio
           - identifier: iamlennym
-          - identifier: fred
           variation: "false"
         - targets:
           - identifier: nikp
           - identifier: harness-olirees
           - identifier: nikpapag
+          - identifier: fred
           variation: "true"
       - identifier: gitopsprod
         default:
