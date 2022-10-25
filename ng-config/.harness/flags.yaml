@@ -26,16 +26,16 @@ featureFlags:
           onVariation: "true"
           offVariation: "false"
         state: "off"
-      - identifier: HarnessProd
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "on"
       - identifier: TemplateInfra
         default:
           onVariation: "true"
           offVariation: "false"
         state: "off"
+      - identifier: HarnessProd
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "on"
       - identifier: GKEPROD
         default:
           onVariation: "true"
@@ -107,16 +107,16 @@ featureFlags:
           onVariation: "true"
           offVariation: "false"
         state: "off"
-      - identifier: HarnessProd
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "on"
       - identifier: TemplateInfra
         default:
           onVariation: "true"
           offVariation: "false"
         state: "off"
+      - identifier: HarnessProd
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "on"
       - identifier: GKEPROD
         default:
           onVariation: "true"
@@ -124,11 +124,11 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
-          - identifier: jkharnessio
           - identifier: iamlennym
           variation: "false"
         - targets:
           - identifier: nikp
+          - identifier: jkharnessio
           - identifier: harness-olirees
           - identifier: nikpapag
           variation: "true"
