@@ -16,12 +16,12 @@ featureFlags:
         - identifier: "false"
           value: "false"
       environments:
-      - identifier: GKEDEV
+      - identifier: GKEQA
         default:
           onVariation: "true"
           offVariation: "false"
-        state: "off"
-      - identifier: serverless
+        state: "on"
+      - identifier: gitopsprod
         default:
           onVariation: "true"
           offVariation: "false"
@@ -31,11 +31,16 @@ featureFlags:
           onVariation: "true"
           offVariation: "false"
         state: "off"
-      - identifier: HarnessProd
+      - identifier: Test
         default:
           onVariation: "true"
           offVariation: "false"
-        state: "on"
+        state: "off"
+      - identifier: serverless
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
       - identifier: GKEPROD
         default:
           onVariation: "true"
@@ -51,27 +56,22 @@ featureFlags:
         - targets:
           - identifier: beta
           variation: "true"
-      - identifier: gitopsprod
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-      - identifier: ec2dev
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
       - identifier: EC2
         default:
           onVariation: "true"
           offVariation: "false"
         state: "off"
-      - identifier: GKEQA
+      - identifier: GKEDEV
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: HarnessProd
         default:
           onVariation: "true"
           offVariation: "false"
         state: "on"
-      - identifier: Test
+      - identifier: ec2dev
         default:
           onVariation: "true"
           offVariation: "false"
@@ -97,12 +97,12 @@ featureFlags:
         - identifier: "false"
           value: "false"
       environments:
-      - identifier: GKEDEV
+      - identifier: GKEQA
         default:
           onVariation: "true"
           offVariation: "false"
-        state: "off"
-      - identifier: serverless
+        state: "on"
+      - identifier: gitopsprod
         default:
           onVariation: "true"
           offVariation: "false"
@@ -112,11 +112,16 @@ featureFlags:
           onVariation: "true"
           offVariation: "false"
         state: "off"
-      - identifier: HarnessProd
+      - identifier: Test
         default:
           onVariation: "true"
           offVariation: "false"
         state: "on"
+      - identifier: serverless
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
       - identifier: GKEPROD
         default:
           onVariation: "true"
@@ -124,35 +129,30 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
-          - identifier: jkharnessio
-          - identifier: iamlennym
-          variation: "false"
-        - targets:
           - identifier: nikp
           - identifier: harness-olirees
           - identifier: nikpapag
           variation: "true"
-      - identifier: gitopsprod
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-      - identifier: ec2dev
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
+        - targets:
+          - identifier: jkharnessio
+          - identifier: iamlennym
+          variation: "false"
       - identifier: EC2
         default:
           onVariation: "true"
           offVariation: "false"
         state: "off"
-      - identifier: GKEQA
+      - identifier: GKEDEV
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: HarnessProd
         default:
           onVariation: "true"
           offVariation: "false"
         state: "on"
-      - identifier: Test
+      - identifier: ec2dev
         default:
           onVariation: "true"
           offVariation: "false"
