@@ -129,14 +129,14 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
+          - identifier: iamlennym
+          variation: "false"
+        - targets:
           - identifier: nikp
+          - identifier: jkharnessio
           - identifier: harness-olirees
           - identifier: nikpapag
           variation: "true"
-        - targets:
-          - identifier: jkharnessio
-          - identifier: iamlennym
-          variation: "false"
       - identifier: EC2
         default:
           onVariation: "true"
