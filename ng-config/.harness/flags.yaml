@@ -129,11 +129,11 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
+          - identifier: jkharnessio
           - identifier: iamlennym
           variation: "false"
         - targets:
           - identifier: nikp
-          - identifier: jkharnessio
           - identifier: harness-olirees
           - identifier: nikpapag
           variation: "true"
