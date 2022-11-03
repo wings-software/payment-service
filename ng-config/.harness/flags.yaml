@@ -70,10 +70,10 @@ featureFlags:
         - targets:
           - identifier: jkharnessio
           - identifier: iamlennym
+          - identifier: harness-olirees
           - identifier: nikpapag
           variation: "false"
         - targets:
-          - identifier: harness-olirees
           - identifier: beta
           variation: "true"
       - identifier: serverless
