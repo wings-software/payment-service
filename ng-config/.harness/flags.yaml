@@ -68,14 +68,14 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
-          - identifier: harness-olirees
-          - identifier: beta
-          variation: "true"
-        - targets:
           - identifier: jkharnessio
           - identifier: iamlennym
           - identifier: nikpapag
           variation: "false"
+        - targets:
+          - identifier: harness-olirees
+          - identifier: beta
+          variation: "true"
       - identifier: serverless
         default:
           onVariation: "true"
@@ -151,11 +151,11 @@ featureFlags:
         - targets:
           - identifier: jkharnessio
           - identifier: iamlennym
+          - identifier: harness-olirees
           variation: "false"
         - targets:
-          - identifier: nikp
-          - identifier: harness-olirees
           - identifier: nikpapag
+          - identifier: nikp
           variation: "true"
       - identifier: serverless
         default:
