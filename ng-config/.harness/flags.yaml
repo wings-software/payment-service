@@ -16,27 +16,47 @@ featureFlags:
         - identifier: "false"
           value: "false"
       environments:
+      - identifier: TemplateInfra
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: GKEDEV
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: paul_foo_env
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: ec2dev
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: HarnessProd
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "on"
+      - identifier: Test
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: EC2
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
       - identifier: GKEQA
         default:
           onVariation: "true"
           offVariation: "false"
         state: "on"
       - identifier: gitopsprod
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-      - identifier: TemplateInfra
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-      - identifier: Test
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-      - identifier: serverless
         default:
           onVariation: "true"
           offVariation: "false"
@@ -56,27 +76,7 @@ featureFlags:
         - targets:
           - identifier: beta
           variation: "true"
-      - identifier: EC2
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-      - identifier: GKEDEV
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-      - identifier: HarnessProd
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "on"
-      - identifier: ec2dev
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-      - identifier: paul_foo_env
+      - identifier: serverless
         default:
           onVariation: "true"
           offVariation: "false"
@@ -97,27 +97,47 @@ featureFlags:
         - identifier: "false"
           value: "false"
       environments:
+      - identifier: TemplateInfra
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: GKEDEV
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: paul_foo_env
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: ec2dev
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: HarnessProd
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "on"
+      - identifier: Test
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: EC2
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
       - identifier: GKEQA
         default:
           onVariation: "true"
           offVariation: "false"
         state: "on"
       - identifier: gitopsprod
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-      - identifier: TemplateInfra
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-      - identifier: Test
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-      - identifier: serverless
         default:
           onVariation: "true"
           offVariation: "false"
@@ -131,33 +151,13 @@ featureFlags:
         - targets:
           - identifier: jkharnessio
           - identifier: iamlennym
+          - identifier: harness-olirees
           variation: "false"
         - targets:
-          - identifier: nikp
-          - identifier: harness-olirees
           - identifier: nikpapag
+          - identifier: nikp
           variation: "true"
-      - identifier: EC2
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-      - identifier: GKEDEV
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-      - identifier: HarnessProd
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "on"
-      - identifier: ec2dev
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-      - identifier: paul_foo_env
+      - identifier: serverless
         default:
           onVariation: "true"
           offVariation: "false"
