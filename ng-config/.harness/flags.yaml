@@ -21,27 +21,17 @@ featureFlags:
           onVariation: "true"
           offVariation: "false"
         state: "off"
-      - identifier: GKEDEV
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-      - identifier: paul_foo_env
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-      - identifier: ec2dev
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
       - identifier: HarnessProd
         default:
           onVariation: "true"
           offVariation: "false"
         state: "on"
-      - identifier: Test
+      - identifier: GKEDEV
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: emeaonprem
         default:
           onVariation: "true"
           offVariation: "false"
@@ -51,12 +41,32 @@ featureFlags:
           onVariation: "true"
           offVariation: "false"
         state: "off"
+      - identifier: gitopsprod
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: paul_foo_env
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
       - identifier: GKEQA
         default:
           onVariation: "true"
           offVariation: "false"
         state: "on"
-      - identifier: gitopsprod
+      - identifier: Test
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: serverless
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: ec2dev
         default:
           onVariation: "true"
           offVariation: "false"
@@ -68,19 +78,14 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
+          - identifier: beta
+          variation: "true"
+        - targets:
           - identifier: jkharnessio
           - identifier: iamlennym
           - identifier: harness-olirees
           - identifier: nikpapag
           variation: "false"
-        - targets:
-          - identifier: beta
-          variation: "true"
-      - identifier: serverless
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
   - flag:
       name: mortgageoffer
       identifier: mortgageoffer
@@ -102,27 +107,17 @@ featureFlags:
           onVariation: "true"
           offVariation: "false"
         state: "off"
-      - identifier: GKEDEV
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-      - identifier: paul_foo_env
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-      - identifier: ec2dev
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
       - identifier: HarnessProd
         default:
           onVariation: "true"
           offVariation: "false"
         state: "on"
-      - identifier: Test
+      - identifier: GKEDEV
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: emeaonprem
         default:
           onVariation: "true"
           offVariation: "false"
@@ -132,12 +127,32 @@ featureFlags:
           onVariation: "true"
           offVariation: "false"
         state: "off"
+      - identifier: gitopsprod
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: paul_foo_env
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
       - identifier: GKEQA
         default:
           onVariation: "true"
           offVariation: "false"
         state: "on"
-      - identifier: gitopsprod
+      - identifier: Test
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: serverless
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: ec2dev
         default:
           onVariation: "true"
           offVariation: "false"
@@ -157,10 +172,5 @@ featureFlags:
           - identifier: nikpapag
           - identifier: nikp
           variation: "true"
-      - identifier: serverless
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
   projectIdentifier: DevX_Demo
   orgIdentifier: default
