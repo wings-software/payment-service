@@ -154,14 +154,14 @@ featureFlags:
         state: "on"
         targetRules:
         - targets:
+          - identifier: nikpapag
+          - identifier: nikp
+          variation: "true"
+        - targets:
+          - identifier: jkharnessio
           - identifier: iamlennym
           - identifier: harness-olirees
           variation: "false"
-        - targets:
-          - identifier: nikp
-          - identifier: jkharnessio
-          - identifier: nikpapag
-          variation: "true"
       - identifier: emeaonprem
         default:
           onVariation: "true"
