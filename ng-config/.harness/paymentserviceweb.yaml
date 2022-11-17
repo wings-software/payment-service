@@ -331,7 +331,6 @@ pipeline:
                       name: Veracode
                       identifier: veracode
                       spec:
-                        connectorRef: account.Harness_Docker_Connector
                         privileged: true
                         settings:
                           product_name: veracode
@@ -351,6 +350,7 @@ pipeline:
                               type: Ignore
                       when:
                         stageStatus: Success
+                        condition: <+pipeline.variables.seusername> != "nikpapag"
                   - step:
                       type: Security
                       name: Aqua
