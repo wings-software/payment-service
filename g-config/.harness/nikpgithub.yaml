@@ -1,0 +1,22 @@
+connector:
+  name: nikp-github
+  identifier: nikpgithub
+  description:
+  orgIdentifier: default
+  projectIdentifier: DevX_Demo
+  type: Github
+  spec:
+    url: https://github.com/nikpapag
+    validationRepo: payment-service
+    authentication:
+      type: Http
+      spec:
+        type: UsernameToken
+        spec:
+          username: nikpapag
+          tokenRef: nikpgitwingssoftwaretoken
+    apiAccess:
+      type: Token
+      spec:
+        tokenRef: nikpgitwingssoftwaretoken
+    type: Account

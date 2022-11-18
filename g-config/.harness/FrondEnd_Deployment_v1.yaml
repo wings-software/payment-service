@@ -1,0 +1,53 @@
+template:
+  name: FrondEnd Deployment
+  identifier: FrondEnd_Deployment
+  versionLabel: v1
+  type: CustomDeployment
+  projectIdentifier: DevX_Demo
+  orgIdentifier: default
+  tags: {}
+  spec:
+    infrastructure:
+      variables:
+        - name: target_bucket
+          type: String
+          value: <+input>
+          description: ""
+        - name: source_bucket
+          type: String
+          value: <+input>
+          description: ""
+      fetchInstancesScript:
+        store:
+          type: Inline
+          spec:
+            content: |-
+              #
+              # Fetch instances Script is used to query the Target infrastructure and provide the instance information in
+              # environment variable $INSTANCE_OUTPUT_PATH . Instance information enables tracking in Service Dashboard
+              #
+              # It is expected to initialize ${INSTANCE_OUTPUT_PATH}
+              # environment variable and assign the script execution result with instance information
+              #
+              # Sampl
+
+              INSTANCE_OUTPUT_PATH='
+              {
+                "data": [
+                  {
+                    "bucket_name": "<+infra.variables.target_bucket>",
+                    "source_name": "<+infra.variables.source_bucket>"
+                  }
+                ]
+              }'
+      instanceAttributes:
+        - name: instancename
+          jsonPath: bucket_name
+          description: ""
+        - name: source_bucket
+          jsonPath: source_name
+          description: ""
+      instancesListPath: data
+    execution:
+      stepTemplateRefs:
+        - Run_Step

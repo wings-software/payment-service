@@ -1,0 +1,30 @@
+inputSet:
+  identifier: "nikp"
+  name: "nikp"
+  orgIdentifier: "default"
+  projectIdentifier: "NG_Demo"
+  pipeline:
+    identifier: "paymentservice"
+    properties:
+      ci:
+        codebase:
+          build:
+            type: "branch"
+            spec:
+              branch: "captcha"
+    variables:
+    - name: "mavenversion"
+      type: "String"
+      value: "3.8"
+    - name: "javaversion"
+      type: "String"
+      value: "8"
+    - name: "servicename"
+      type: "String"
+      value: "payment-service"
+    - name: "seusername"
+      type: "String"
+      value: "nikp"
+    - name: "ffsdkkeyprod"
+      type: "String"
+      value: " 5bf77c96-fbae-446e-b83e-e1aba03e203a"

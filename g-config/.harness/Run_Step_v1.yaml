@@ -1,0 +1,19 @@
+template:
+  name: Run Step
+  type: Step
+  projectIdentifier: DevX_Demo
+  orgIdentifier: default
+  spec:
+    type: ShellScript
+    timeout: 10m
+    spec:
+      shell: Bash
+      onDelegate: true
+      source:
+        type: Inline
+        spec:
+          script: echo "<+pipeline.stages.DeployTemplate.spec.execution.steps.fetchInstances.deploymentInfoOutcome>"
+      environmentVariables: []
+      outputVariables: []
+  identifier: Run_Step
+  versionLabel: v1

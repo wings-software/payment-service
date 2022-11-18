@@ -1,0 +1,30 @@
+inputSet:
+  identifier: "captcha"
+  pipeline:
+    identifier: "paymentserviceweb"
+    properties:
+      ci:
+        codebase:
+          build:
+            type: "branch"
+            spec:
+              branch: "captcha"
+    variables:
+    - name: "mavenversion"
+      type: "String"
+      value: "3.8"
+    - name: "javaversion"
+      type: "String"
+      value: "8"
+    - name: "servicename"
+      type: "String"
+      value: "payment-service"
+    - name: "seusername"
+      type: "String"
+      value: "nikpapag"
+    - name: "ffsdkkeyprod"
+      type: "String"
+      value: "44c9dcaa-dab2-4100-b2b5-75bdeb7aa497"
+  name: "captcha"
+  orgIdentifier: "default"
+  projectIdentifier: "DevX_Demo"

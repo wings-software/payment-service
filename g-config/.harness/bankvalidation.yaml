@@ -1,0 +1,100 @@
+pipeline:
+    name: bank-validation
+    identifier: bankvalidation
+    allowStageExecutions: false
+    projectIdentifier: DevX_Demo
+    orgIdentifier: default
+    tags: {}
+    stages:
+        - stage:
+              name: bankvalidation
+              identifier: bankvalidationtrue
+              description: ""
+              type: FeatureFlag
+              spec:
+                  execution:
+                      steps:
+                          - step:
+                                type: JiraCreate
+                                name: JiraCreate
+                                identifier: JiraCreate
+                                spec:
+                                    connectorRef: account.Harness_JIRA
+                                    projectKey: HD
+                                    issueType: Story
+                                    fields:
+                                        - name: Summary
+                                          value: Ticket to track rollout deployment of Feature Flag
+                                        - name: Description
+                                          value: ""
+                                timeout: 1d
+                          - step:
+                                type: JiraApproval
+                                name: Jira Check
+                                identifier: Jira_Check
+                                spec:
+                                    connectorRef: account.Harness_JIRA
+                                    approvalCriteria:
+                                        type: KeyValues
+                                        spec:
+                                            matchAnyCondition: true
+                                            conditions:
+                                                - key: Status
+                                                  operator: equals
+                                                  value: In Progress
+                                    rejectionCriteria:
+                                        type: KeyValues
+                                        spec:
+                                            matchAnyCondition: true
+                                            conditions: []
+                                    issueKey: <+pipeline.stages.bankvalidationtrue.execution.steps.JiraCreate.issue.key>
+                                timeout: 1d
+                          - step:
+                                type: FlagConfiguration
+                                name: flag-enable
+                                identifier: flagenable
+                                spec:
+                                    environment: GKEPROD
+                                    feature: bankvalidation
+                                    instructions:
+                                        - identifier: SetFeatureFlagStateIdentifier
+                                          type: SetFeatureFlagState
+                                          spec:
+                                              state: "on"
+                                        - identifier: SetDefaultVariationsIdentifier
+                                          type: SetDefaultVariations
+                                          spec:
+                                              "on": "true"
+                                              "off": "false"
+                                        - identifier: SetVariationForTarget
+                                          type: AddTargetsToVariationTargetMap
+                                          spec:
+                                              variation: "true"
+                                              targets:
+                                                  - nikpapag
+                                timeout: 10m
+                          - step:
+                                type: JiraApproval
+                                name: Jira Approval
+                                identifier: Jira_Approval
+                                spec:
+                                    connectorRef: account.Harness_JIRA
+                                    approvalCriteria:
+                                        type: KeyValues
+                                        spec:
+                                            matchAnyCondition: true
+                                            conditions:
+                                                - key: Status
+                                                  operator: equals
+                                                  value: Approved
+                                    rejectionCriteria:
+                                        type: KeyValues
+                                        spec:
+                                            matchAnyCondition: true
+                                            conditions: []
+                                    issueKey: <+pipeline.stages.bankvalidationtrue.execution.steps.JiraCreate.issue.key>
+                                timeout: 1d
+    variables:
+        - name: target_flag
+          type: String
+          value: <+input>
