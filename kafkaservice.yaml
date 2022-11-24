@@ -28,3 +28,159 @@ pipeline:
                     outputVariables: []
                   timeout: 10m
         tags: {}
+    - stage:
+        name: DeployKafka
+        identifier: DeployKafka
+        description: ""
+        type: Deployment
+        spec:
+          deploymentType: Ssh
+          service:
+            serviceRef: apachekafka
+          environment:
+            environmentRef: googlecompute
+            deployToAll: false
+            infrastructureDefinitions:
+              - identifier: compute
+          execution:
+            steps:
+              - stepGroup:
+                  name: Phase
+                  identifier: Phase
+                  strategy:
+                    repeat:
+                      items: <+stage.output.hosts>
+                      maxConcurrency: 1
+                      partitionSize: 1
+                      unit: Count
+                  steps:
+                    - stepGroup:
+                        name: Phase Group
+                        identifier: phase_group
+                        strategy:
+                          repeat:
+                            items: <+repeat.partition>
+                        steps:
+                          - step:
+                              name: Deploy
+                              type: Command
+                              identifier: Deploy
+                              timeout: 10m
+                              spec:
+                                onDelegate: false
+                                environmentVariables: []
+                                outputVariables: []
+                                commandUnits:
+                                  - identifier: Setup_Runtime_Paths
+                                    name: Setup Runtime Paths
+                                    type: Script
+                                    spec:
+                                      shell: Bash
+                                      source:
+                                        type: Inline
+                                        spec:
+                                          script: |-
+                                            # Execute as root and pass environment variables
+                                            # su -p -
+
+                                            # Execute as root via user credentials (with root privileges)
+                                            # sudo -E su -p -
+
+                                            # Creating runtime, backup and staging folders:
+
+                                            mkdir -p $HOME/<+service.name>/<+env.name>/runtime
+                                            mkdir -p $HOME/<+service.name>/<+env.name>/backup
+                                            mkdir -p $HOME/<+service.name>/<+env.name>/staging
+                                  - identifier: System_Update
+                                    name: System Update
+                                    type: Script
+                                    spec:
+                                      shell: Bash
+                                      source:
+                                        type: Inline
+                                        spec:
+                                          script: |-
+                                            sudo su
+
+                                            apt-get update
+                                            apt-get install wget
+                                            apt-get update
+                                  - identifier: Install_Java
+                                    name: Install Java
+                                    type: Script
+                                    spec:
+                                      shell: Bash
+                                      source:
+                                        type: Inline
+                                        spec:
+                                          script: |-
+                                            wget -O- https://apt.corretto.aws/corretto.key | sudo apt-key add - 
+                                            sudo add-apt-repository 'deb https://apt.corretto.aws stable main'
+                                            sudo apt-get update; sudo apt-get install -y java-11-amazon-corretto-jdk
+            rollbackSteps:
+              - stepGroup:
+                  name: Phase
+                  identifier: Phase
+                  strategy:
+                    repeat:
+                      items: <+stage.output.hosts>
+                      maxConcurrency: 1
+                      partitionSize: 1
+                      unit: Count
+                  steps:
+                    - stepGroup:
+                        name: Phase Group Rollback
+                        identifier: phase_group_rollback
+                        strategy:
+                          repeat:
+                            items: <+repeat.partition>
+                        steps:
+                          - step:
+                              name: Rollback
+                              identifier: Rollback
+                              type: Command
+                              timeout: 10m
+                              spec:
+                                onDelegate: false
+                                environmentVariables: []
+                                outputVariables: []
+                                commandUnits:
+                                  - identifier: Setup_Runtime_Paths_Rollback
+                                    name: Setup Runtime Paths Rollback
+                                    type: Script
+                                    spec:
+                                      shell: Bash
+                                      source:
+                                        type: Inline
+                                        spec:
+                                          script: |-
+                                            # Execute as root and pass environment variables
+                                            # su -p -
+
+                                            # Execute as root via user credentials (with root privileges)
+                                            # sudo -E su -p -
+
+                                            # Creating runtime, backup and staging folders:
+
+                                            mkdir -p $HOME/<+service.name>/<+env.name>/runtime
+                                            mkdir -p $HOME/<+service.name>/<+env.name>/backup
+                                            mkdir -p $HOME/<+service.name>/<+env.name>/staging
+                                  - identifier: Copy_Artifact_Rollback
+                                    name: Copy Artifact Rollback
+                                    type: Copy
+                                    spec:
+                                      sourceType: Artifact
+                                      destinationPath: $HOME/<+service.name>/<+env.name>
+                                  - identifier: Copy_Config_Rollback
+                                    name: Copy Config Rollback
+                                    type: Copy
+                                    spec:
+                                      sourceType: Config
+                                      destinationPath: $HOME/<+service.name>/<+env.name>
+        tags: {}
+        failureStrategies:
+          - onFailure:
+              errors:
+                - AllErrors
+              action:
+                type: StageRollback
