@@ -1,0 +1,30 @@
+pipeline:
+  name: apache-kafka
+  identifier: apachekafka
+  projectIdentifier: DevX_Demo
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: Drain-Queue
+        identifier: DrainQueue
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: Echo
+                  identifier: Echo
+                  spec:
+                    shell: Bash
+                    onDelegate: true
+                    source:
+                      type: Inline
+                      spec:
+                        script: Echo "Hello World"
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
+        tags: {}
