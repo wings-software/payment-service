@@ -77,9 +77,7 @@ pipeline:
                                         type: Inline
                                         spec:
                                           script: |
-                                            sudo su
-
-                                            apt-get install wget
+                                            sudo apt-get install -y wget
                                   - identifier: Install_Java
                                     name: Install Java
                                     type: Script
