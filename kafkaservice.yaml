@@ -28,3 +28,65 @@ pipeline:
                     outputVariables: []
                   timeout: 10m
         tags: {}
+    - stage:
+        name: Kafka-Deploy
+        identifier: KafkaDeploy
+        description: ""
+        type: Deployment
+        spec:
+          deploymentType: Ssh
+          service:
+            serviceRef: apachekafka
+          environment:
+            environmentRef: googlecompute
+            deployToAll: false
+            infrastructureDefinitions:
+              - identifier: compute
+          execution:
+            steps:
+              - step:
+                  name: Deploy
+                  identifier: Deploy
+                  timeout: 10m
+                  strategy:
+                    repeat:
+                      items: <+stage.output.hosts>
+                  template:
+                    templateRef: account.Default_Install_Jar_Bash
+                    templateInputs:
+                      type: Command
+                      spec:
+                        environmentVariables:
+                          - name: DestinationDirectory
+                            type: String
+                            value: $HOME/<+service.name>/<+env.name>
+                          - name: WorkingDirectory
+                            type: String
+                            value: $HOME/<+service.name>/<+env.name>/tomcat/bin
+            rollbackSteps:
+              - step:
+                  name: Rollback
+                  identifier: Rollback
+                  timeout: 10m
+                  strategy:
+                    repeat:
+                      items: <+stage.output.hosts>
+                  template:
+                    templateRef: account.Default_Install_Jar_Bash
+                    templateInputs:
+                      type: Command
+                      spec:
+                        environmentVariables:
+                          - name: DestinationDirectory
+                            type: String
+                            value: $HOME/<+service.name>/<+env.name>
+                          - name: WorkingDirectory
+                            type: String
+                            value: $HOME/<+service.name>/<+env.name>/tomcat/bin
+        tags: {}
+        failureStrategies:
+          - onFailure:
+              errors:
+                - AllErrors
+              action:
+                type: StageRollback
