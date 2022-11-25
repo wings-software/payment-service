@@ -87,6 +87,18 @@ pipeline:
                                         type: Inline
                                         spec:
                                           script: sudo apt-get install -y openjdk-11-jdk
+                                  - identifier: Install_Kafka
+                                    name: Install Kafka
+                                    type: Script
+                                    spec:
+                                      shell: Bash
+                                      source:
+                                        type: Inline
+                                        spec:
+                                          script: |-
+                                            wget https://archive.apache.org/dist/kafka/3.0.0/kafka_2.13-3.0.0.tgz
+                                            tar xzf kafka_2.12-3.0.0.tgz
+                                            mv kafka_2.12-3.0.0 ~
             rollbackSteps:
               - stepGroup:
                   name: Phase
