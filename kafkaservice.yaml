@@ -101,7 +101,7 @@ pipeline:
 
                                             sudo mv $HOME/<+service.name>/<+env.name>/runtime/kafka_2.13-3.0.0  $HOME/<+service.name>/<+env.name>/backup/kafka-<+pipeline.sequenceId>
 
-                                            mv kafka_2.13-3.0.0 $HOME/<+service.name>/<+env.name>/runtime
+                                            sudo mv kafka_2.13-3.0.0 $HOME/<+service.name>/<+env.name>/runtime
                               failureStrategies:
                                 - onFailure:
                                     errors:
