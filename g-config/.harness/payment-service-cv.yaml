@@ -343,18 +343,16 @@ pipeline:
                                 sensitivity: HIGH
                                 duration: 10m
                                 deploymentTag: <+serviceConfig.artifacts.primary.tag>
+                              monitoredService:
+                                type: Default
+                                spec: {}
                             timeout: 2h
                             failureStrategies:
                               - onFailure:
                                   errors:
                                     - Verification
                                   action:
-                                    type: ManualIntervention
-                                    spec:
-                                      timeout: 2h
-                                      onTimeout:
-                                        action:
-                                          type: Ignore
+                                    type: Ignore
                               - onFailure:
                                   errors:
                                     - Unknown
