@@ -362,14 +362,6 @@ pipeline:
         when:
           pipelineStatus: Success
   variables:
-    - name: mavenversion
-      type: String
-      default: "3.8"
-      value: <+input>
-    - name: javaversion
-      type: String
-      default: "8"
-      value: <+input>
     - name: servicename
       type: String
       default: payment-service
@@ -410,6 +402,10 @@ pipeline:
       type: String
       description: ""
       value: <+input>.allowedValues(v0.1,v0.2)
+    - name: namespace
+      type: String
+      description: ""
+      value: <+input>.allowedValues(payment-service,mortgage-service)
   flowControl:
     barriers:
       - name: Barrier
