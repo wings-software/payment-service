@@ -195,11 +195,11 @@ pipeline:
                             branch: master
                 artifacts:
                   primary:
-                    type: DockerRegistry
                     spec:
                       connectorRef: nikpdockerhub
                       imagePath: nikpap/payment-service
-                      tag: <+pipeline.sequenceId>
+                      tag: <+pipeline.variables.artifact>
+                    type: DockerRegistry
           infrastructure:
             environmentRef: GKEPROD
             infrastructureDefinition:
