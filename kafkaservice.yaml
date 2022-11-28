@@ -337,7 +337,7 @@ pipeline:
                                           script: |+
                                             wget https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/<+pipeline.variables.prometheus_jmx_version>/jmx_prometheus_javaagent-<+pipeline.variables.prometheus_jmx_version>.jar
 
-                                            sudo mv $HOME/<+pipeline.variables.service_name>/<+env.name>/runtime/jmx_prometheus_javaagent-<+pipeline.variables.prometheus_jmx_version>.jar  $HOME/<+service.name>/<+env.name>/backup/kafka-<+pipeline.sequenceId>/<+pipeline.sequenceId>-jmx_prometheus_javaagent-<+pipeline.variables.prometheus_jmx_version>.jar
+                                            [ ! -f $HOME/<+pipeline.variables.service_name>/<+env.name>/runtime/jmx_prometheus_javaagent-<+pipeline.variables.prometheus_jmx_version>.jar ] || sudo mv $HOME/<+pipeline.variables.service_name>/<+env.name>/runtime/jmx_prometheus_javaagent-<+pipeline.variables.prometheus_jmx_version>.jar  $HOME/<+service.name>/<+env.name>/backup/kafka-<+pipeline.sequenceId>/<+pipeline.sequenceId>-jmx_prometheus_javaagent-<+pipeline.variables.prometheus_jmx_version>.jar
 
                                             sudo mv <jmx_prometheus_javaagent-<+pipeline.variables.prometheus_jmx_version>.jar $HOME/<+pipeline.variables.service_name>/<+env.name>/runtime/jmx_prometheus_javaagent-<+pipeline.variables.prometheus_jmx_version>.jar
 
