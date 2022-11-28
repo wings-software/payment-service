@@ -150,6 +150,30 @@ pipeline:
                                             ExecStop=/home/sales-demo-admin/apache-kafka/google-compute/runtime/kafka_2.13-3.0.0/bin/kafka-server-stop.sh
                                             [Install]
                                             WantedBy=multi-user.target' > /etc/systemd/system/kafka.service"
+                                  - identifier: Start_Zookeeper_Service
+                                    name: "Start Zookeeper Service "
+                                    type: Script
+                                    spec:
+                                      shell: Bash
+                                      source:
+                                        type: Inline
+                                        spec:
+                                          script: |-
+                                            sudo systemctl daemon-reload
+                                            sudo systemctl enable zookeeper.service
+                                            sudo systemctl start zookeeper
+                                  - identifier: Start_Kafka_Service
+                                    name: Start Kafka Service
+                                    type: Script
+                                    spec:
+                                      shell: Bash
+                                      source:
+                                        type: Inline
+                                        spec:
+                                          script: |-
+                                            sudo systemctl daemon-reload
+                                            sudo systemctl enable kafka.service
+                                            sudo systemctl start kafka
                               failureStrategies:
                                 - onFailure:
                                     errors:
