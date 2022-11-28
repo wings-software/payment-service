@@ -87,52 +87,37 @@ pipeline:
                   timeout: 10m
                   spec:
                     skipDryRun: false
-              - parallel:
-                  - step:
-                      type: ShellScript
-                      name: Selenium
-                      identifier: Selenium
+              - step:
+                  type: ShellScript
+                  name: Selenium
+                  identifier: Selenium
+                  spec:
+                    shell: Bash
+                    onDelegate: true
+                    source:
+                      type: Inline
                       spec:
-                        shell: Bash
-                        onDelegate: true
-                        source:
-                          type: Inline
-                          spec:
-                            script: |-
-                              selenium_results="# [info] Executing: |View Balance | /paymentservice/viewBalance 
-                              # [info] Actual value 'Match with the expected'
-                              # [info] Executing: |Perform Transaction | /paymentservice/createTransaction
-                              # [info] Actual value 'Successful Transaction'
-                              # [info] Executing: |verifyPayment | /paymentservice/verifyPayment
-                              # [info] Actual value 'Payment verified'
-                              # [info] Executing: |verifyElementPresent | //input[contains(@src,'/ndmns/../images/wap2/img/framework/search_button.png')]
-                              # [info] Actual value 'ElementPresent'
-                              # [info] Executing: |verifyElementPresent | //img[contains(@src,'ad-banners/banner_ideas_240x40.jpg')] 
-                              # [info] Actual value 'ElementPresent'"
+                        script: |-
+                          selenium_results="# [info] Executing: |View Balance | /paymentservice/viewBalance 
+                          # [info] Actual value 'Match with the expected'
+                          # [info] Executing: |Perform Transaction | /paymentservice/createTransaction
+                          # [info] Actual value 'Successful Transaction'
+                          # [info] Executing: |verifyPayment | /paymentservice/verifyPayment
+                          # [info] Actual value 'Payment verified'
+                          # [info] Executing: |verifyElementPresent | //input[contains(@src,'/ndmns/../images/wap2/img/framework/search_button.png')]
+                          # [info] Actual value 'ElementPresent'
+                          # [info] Executing: |verifyElementPresent | //img[contains(@src,'ad-banners/banner_ideas_240x40.jpg')] 
+                          # [info] Actual value 'ElementPresent'"
 
-                              echo $selenium_results
+                          echo $selenium_results
 
-                              export selenium_output=$selenium_results
-                        environmentVariables: []
-                        outputVariables:
-                          - name: selenium_output
-                            type: String
-                            value: selenium_output
-                      timeout: 10m
-                  - step:
-                      type: ShellScript
-                      name: JMeter
-                      identifier: JMeter
-                      spec:
-                        shell: Bash
-                        onDelegate: true
-                        source:
-                          type: Inline
-                          spec:
-                            script: "curl http://devx.cie-demo.co.uk/application/metrics "
-                        environmentVariables: []
-                        outputVariables: []
-                      timeout: 10m
+                          export selenium_output=$selenium_results
+                    environmentVariables: []
+                    outputVariables:
+                      - name: selenium_output
+                        type: String
+                        value: selenium_output
+                  timeout: 10m
               - step:
                   type: JiraUpdate
                   name: JiraUpdate
