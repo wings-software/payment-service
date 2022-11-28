@@ -167,7 +167,7 @@ pipeline:
                                     type: Copy
                                     spec:
                                       sourceType: Config
-                                      destinationPath: /home/sales-demo-admin/apache-kafka/google-compute/runtime/kafka_2.13-3.0.0/config/server.properties
+                                      destinationPath: /home/sales-demo-admin/apache-kafka/google-compute/runtime/kafka_2.13-3.0.0/config/
                                   - identifier: Start_Kafka_Service
                                     name: Start Kafka Service
                                     type: Script
