@@ -228,3 +228,8 @@ pipeline:
                 - AllErrors
               action:
                 type: StageRollback
+  variables:
+    - name: kafka_version
+      type: String
+      description: ""
+      value: <+input>.allowedValues(kafka_2.13-3.0.0)
