@@ -339,7 +339,7 @@ pipeline:
 
 
 
-                                            sudo mv jmx_prometheus_javaagent-<+pipeline.variables.prometheus_jmx_version>.jar $HOME/<+pipeline.variables.service_name>/<+env.name>/runtime/jmx_prometheus_javaagent-<+pipeline.variables.prometheus_jmx_version>.jar
+                                            sudo mv jmx_prometheus_javaagent-<+pipeline.variables.prometheus_jmx_version>.jar $HOME/<+pipeline.variables.service_name>/<+env.name>/runtime/<+pipeline.variables.kafka_version>/jmx_prometheus_javaagent-<+pipeline.variables.prometheus_jmx_version>.jar
 
 
 
