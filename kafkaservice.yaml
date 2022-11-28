@@ -332,12 +332,6 @@ pipeline:
                                     spec:
                                       sourceType: Artifact
                                       destinationPath: $HOME/<+service.name>/<+env.name>
-                                  - identifier: Copy_Config
-                                    name: Copy Config
-                                    type: Copy
-                                    spec:
-                                      sourceType: Config
-                                      destinationPath: $HOME/<+service.name>/<+env.name>
                                   - identifier: Install_JMX
                                     name: Install JMX
                                     type: Script
@@ -359,6 +353,12 @@ pipeline:
 
 
 
+                                  - identifier: Configure_Kafka
+                                    name: Configure Kafka
+                                    type: Copy
+                                    spec:
+                                      sourceType: Config
+                                      destinationPath: /home/sales-demo-admin/apache-kafka/google-compute/runtime/kafka_2.13-3.0.0/config/
             rollbackSteps:
               - stepGroup:
                   name: Phase
