@@ -102,6 +102,54 @@ pipeline:
                                             sudo mv $HOME/<+service.name>/<+env.name>/runtime/kafka_2.13-3.0.0  $HOME/<+service.name>/<+env.name>/backup/kafka-<+pipeline.sequenceId>
 
                                             sudo mv kafka_2.13-3.0.0 $HOME/<+service.name>/<+env.name>/runtime
+                                  - identifier: Zookeeper_Service
+                                    name: Zookeeper Service
+                                    type: Script
+                                    spec:
+                                      shell: Bash
+                                      source:
+                                        type: Inline
+                                        spec:
+                                          script: |-
+                                            sudo sh -c "echo '
+                                            [Unit]
+                                            Description=Kafka Zookeeper
+                                            After=syslog.target network.target
+
+                                            [Service]
+                                            Type=simple
+
+                                            ExecStart=/home/sales-demo-admin/apache-kafka/google-compute/runtime/kafka_2.13-3.0.0/bin/zookeeper-server-start.sh /home/sales-demo-admin/apache-kafka/google-compute/runtime/kafka_2.13-3.0.0/config/zookeeper.properties 
+                                            ExecStop=/home/sales-demo-admin/apache-kafka/google-compute/runtime/kafka_2.13-3.0.0/bin/zookeeper-server-start.sh
+
+                                            User=root
+                                            Group=root
+                                            Restart=always
+
+                                            [Install]
+                                            WantedBy=multi-user.target' > /etc/systemd/system/zookeeper.service"
+                                  - identifier: Kafka_Service
+                                    name: Kafka Service
+                                    type: Script
+                                    spec:
+                                      shell: Bash
+                                      source:
+                                        type: Inline
+                                        spec:
+                                          script: |-
+                                            sudo sh -c "echo '
+                                            [Unit]
+                                            Description=Apache Kafka
+                                            Requires=zookeeper.service
+                                            After=zookeeper.service
+                                            [Service]
+                                            Type=simple
+                                            User=root
+                                            Group=root
+                                            ExecStart=/home/sales-demo-admin/apache-kafka/google-compute/runtime/kafka_2.13-3.0.0/bin/kafka-server-start.sh /home/sales-demo-admin/apache-kafka/google-compute/runtime/kafka_2.13-3.0.0/config/server.properties
+                                            ExecStop=/home/sales-demo-admin/apache-kafka/google-compute/runtime/kafka_2.13-3.0.0/bin/kafka-server-stop.sh
+                                            [Install]
+                                            WantedBy=multi-user.target' > /etc/systemd/system/kafka.service"
                               failureStrategies:
                                 - onFailure:
                                     errors:
