@@ -495,13 +495,20 @@ pipeline:
                       - name: Description
                         value: "triggeredBy: <+pipeline.variables.seusername> buildNumber: <+pipeline.sequenceId>"
                   timeout: 1d
-              - step:
-                  name: Rollout Deployment
-                  identifier: rolloutDeployment
-                  type: K8sRollingDeploy
-                  timeout: 10m
-                  spec:
-                    skipDryRun: false
+              - parallel:
+                  - step:
+                      name: Rollout Deployment
+                      identifier: rolloutDeployment
+                      type: K8sRollingDeploy
+                      timeout: 10m
+                      spec:
+                        skipDryRun: false
+                  - step:
+                      name: JMeter
+                      identifier: JMeter
+                      template:
+                        templateRef: JMeter
+                        versionLabel: v1
               - step:
                   type: JiraUpdate
                   name: JiraUpdate
