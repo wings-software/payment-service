@@ -110,11 +110,13 @@ pipeline:
                           # [info] Actual value 'ElementPresent'"
 
                           echo $selenium_results
+
+                          export selenium_output=$selenium_results
                     environmentVariables: []
                     outputVariables:
-                      - name: output
+                      - name: selenium_output
                         type: String
-                        value: output
+                        value: selenium_output
                   timeout: 10m
               - step:
                   type: JiraUpdate
