@@ -239,7 +239,7 @@ pipeline:
               type: KubernetesDirect
               spec:
                 connectorRef: nikpgkecluster
-                namespace: payment-service
+                namespace: mortgage-application
                 releaseName: release-1
             allowSimultaneousDeployments: true
             infrastructureKey: ""
