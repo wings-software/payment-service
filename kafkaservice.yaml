@@ -410,3 +410,7 @@ pipeline:
       type: String
       description: ""
       value: <+input>.allowedValues(kafka_2.13-3.0.0)
+    - name: service_name
+      type: String
+      description: ""
+      value: apache-kafka
