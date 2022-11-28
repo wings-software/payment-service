@@ -60,7 +60,7 @@ pipeline:
               type: KubernetesDirect
               spec:
                 connectorRef: nikpgkecluster
-                namespace: <+pipeline.variables.namespace>
+                namespace: payment-service-dev
                 releaseName: release-1
             allowSimultaneousDeployments: true
             infrastructureKey: ""
@@ -239,7 +239,7 @@ pipeline:
               type: KubernetesDirect
               spec:
                 connectorRef: nikpgkecluster
-                namespace: <+pipeline.variables.namespace>
+                namespace: payment-service
                 releaseName: release-1
             allowSimultaneousDeployments: true
             infrastructureKey: ""
