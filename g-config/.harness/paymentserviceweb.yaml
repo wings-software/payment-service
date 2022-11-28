@@ -98,7 +98,7 @@ pipeline:
                       type: Inline
                       spec:
                         script: |-
-                          export output= "# [info] Executing: |View Balance | /paymentservice/viewBalance 
+                          export output= "# [info] Executing: |View Balance | /paymentservice/viewBalance "
                           # [info] Actual value 'Match with the expected'
                           # [info] Executing: |Perform Transaction | /paymentservice/createTransaction
                           # [info] Actual value 'Successful Transaction'
