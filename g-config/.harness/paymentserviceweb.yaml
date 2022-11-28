@@ -129,7 +129,7 @@ pipeline:
                       transitionName: In Progress
                       status: In Progress
                     fields:
-                      - name: Acceptance criteria
+                      - name: Test Summary
                         value: <+pipeline.stages.DeployDev.spec.execution.steps.Selenium.output.outputVariables.selenium_output>
                   timeout: 1d
             rollbackSteps:
