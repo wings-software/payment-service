@@ -128,7 +128,9 @@ pipeline:
                     transitionTo:
                       transitionName: In Progress
                       status: In Progress
-                    fields: []
+                    fields:
+                      - name: Acceptance criteria
+                        value: <+pipeline.stages.DeployDev.spec.execution.steps.Selenium.output.outputVariables.selenium_output>
                   timeout: 1d
             rollbackSteps:
               - step:
