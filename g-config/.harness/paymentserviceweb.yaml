@@ -406,6 +406,10 @@ pipeline:
       type: String
       default: "false"
       value: <+input>.allowedValues(true,false)
+    - name: artifact
+      type: String
+      description: ""
+      value: <+input>.allowedValues(v0.1,v0.2)
   flowControl:
     barriers:
       - name: Barrier
