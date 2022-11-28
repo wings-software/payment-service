@@ -326,12 +326,6 @@ pipeline:
                                             mkdir -p $HOME/<+service.name>/<+env.name>/runtime
                                             mkdir -p $HOME/<+service.name>/<+env.name>/backup
                                             mkdir -p $HOME/<+service.name>/<+env.name>/staging
-                                  - identifier: Copy_Artifact
-                                    name: Copy Artifact
-                                    type: Copy
-                                    spec:
-                                      sourceType: Artifact
-                                      destinationPath: $HOME/<+service.name>/<+env.name>
                                   - identifier: Install_JMX
                                     name: Install JMX
                                     type: Script
