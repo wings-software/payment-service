@@ -50,7 +50,7 @@ pipeline:
                     spec:
                       connectorRef: nikpdockerhub
                       imagePath: nikpap/payment-service
-                      tag: <+pipeline.sequenceId>
+                      tag: <+pipeline.variables.artifact>
                     type: DockerRegistry
                 variables: []
             serviceRef: paymentservicesrm_dev
