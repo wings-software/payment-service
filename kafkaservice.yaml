@@ -97,11 +97,11 @@ pipeline:
                                         spec:
                                           script: |-
                                             wget https://archive.apache.org/dist/kafka/3.0.0/kafka_2.13-3.0.0.tgz
-                                            tar xzf kafka_2.13-3.0.0.tgz
+                                            tar xzf <+pipeline.variables.kafka_version>.tgz
 
                                             sudo mv $HOME/<+service.name>/<+env.name>/runtime/kafka_2.13-3.0.0  $HOME/<+service.name>/<+env.name>/backup/kafka-<+pipeline.sequenceId>
 
-                                            sudo mv kafka_2.13-3.0.0 $HOME/<+service.name>/<+env.name>/runtime
+                                            sudo mv <+pipeline.variables.kafka_version> $HOME/<+service.name>/<+env.name>/runtime
                                   - identifier: Zookeeper_Service
                                     name: Zookeeper Service
                                     type: Script
