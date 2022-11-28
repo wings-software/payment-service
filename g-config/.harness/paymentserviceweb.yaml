@@ -98,7 +98,7 @@ pipeline:
                       type: Inline
                       spec:
                         script: |-
-                          export output= "# [info] Executing: |View Balance | /paymentservice/viewBalance "
+                          selenium_results="# [info] Executing: |View Balance | /paymentservice/viewBalance 
                           # [info] Actual value 'Match with the expected'
                           # [info] Executing: |Perform Transaction | /paymentservice/createTransaction
                           # [info] Actual value 'Successful Transaction'
@@ -108,6 +108,8 @@ pipeline:
                           # [info] Actual value 'ElementPresent'
                           # [info] Executing: |verifyElementPresent | //img[contains(@src,'ad-banners/banner_ideas_240x40.jpg')] 
                           # [info] Actual value 'ElementPresent'"
+
+                          echo $selenium_results
                     environmentVariables: []
                     outputVariables:
                       - name: output
