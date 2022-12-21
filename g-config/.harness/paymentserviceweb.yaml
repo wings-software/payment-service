@@ -325,21 +325,6 @@ pipeline:
                   when:
                     stageStatus: Success
                   failureStrategies: []
-              - step:
-                  type: Run
-                  name: Jfrog-Xray
-                  identifier: JfrogXray
-                  spec:
-                    connectorRef: nikpdockerhub
-                    image: library/bash
-                    shell: Sh
-                    command: |-
-                      curl --location --request POST 'https://nikpap.jfrog.io/xray/api/v1/summary/artifact' \
-                      --header 'Content-Type: application/json' \
-                      --header 'Authorization: Basic aGFybmVzczpleUoyWlhJaU9pSXlJaXdpZEhsd0lqb2lTbGRVSWl3aVlXeG5Jam9pVWxNeU5UWWlMQ0pyYVdRaU9pSlpiSGxHYkdsMVFURk1MV3ByWTJkSmVFVmFWM1pTZGpsNU5sRllhMEZMUzJkeVUxRldkemhNUVdaUkluMC5leUpsZUhRaU9pSjdYQ0p5WlhadlkyRmliR1ZjSWpwY0luUnlkV1ZjSW4waUxDSnpkV0lpT2lKcVptRmpRREF4WjIxeGJXYzFZemx3Wm1Gb01HVmllSGw0TnpVeGNEaHJYQzkxYzJWeWMxd3ZhR0Z5Ym1WemN5SXNJbk5qY0NJNkltRndjR3hwWldRdGNHVnliV2x6YzJsdmJuTmNMMkZrYldsdUlpd2lZWFZrSWpvaUtrQXFJaXdpYVhOeklqb2lhbVptWlVBd01EQWlMQ0pwWVhRaU9qRTJOekUyTVRFMU1qVXNJbXAwYVNJNkltTXpOelEwTnpCaUxXWmhNbUl0TkdJd05pMDVaV015TFRSaVltWTVaV0kyTURNNE9DSjkuSzFObTdoMkVSejM2TEhXbldfQkU2NEo2NFJEV0tPalVVQ29iRDJnTnVXWjlhSzRIY1prVXIyR2JsUTJpMkRlYU5EU2NHOHlkVUZjTkxpUVdKMU1iMlZmbDl3U1ZDaDNzdkV0Q1NUTXd5Sm1iM1ZBdzFDanA5Rkp2d1VtVzd2UzlVX05UU0EwVk1QWEtwNTJRUFVvRUg1ZGFIcjlxVlBEYnNyMWtiZVpMQkY2d1FiSWc1SjduVGpaekotdlJ3TFlTdjJwS3dQVXZMdTJWY3h0OHdoUTIzVmlMM1M4UkVYaFdXcGxJUlR2V2NFMlNNbEs0aGwwMkJfNEM3S0gwdVByX05qeTljN3pYUkJmeWJ2d1hfYS1CYS05d1Q5eXhSdDNzMThxMFNwVWxGbXZTVUNld3pFQ2VCRmdsLUhtV3Jrb1VORkpla1JyWkZ0NDNKSkZObFFGck13' \
-                      --data-raw '{
-                          "paths": ["artifactory/payment-service/payment-service/latest/"]
-                      }' > jfrog.json
               - parallel:
                   - step:
                       type: Security
@@ -394,25 +379,6 @@ pipeline:
                       when:
                         stageStatus: Success
                         condition: <+pipeline.variables.run_owasp_scan> == true
-                  - step:
-                      type: Security
-                      name: Jfrog
-                      identifier: Jfrog
-                      spec:
-                        privileged: true
-                        settings:
-                          policy_type: ingestionOnly
-                          scan_type: containerImage
-                          product_name: xray
-                          product_config_name: default
-                          container_project: payment-service
-                          container_tag: latest
-                          container_type: jfrog_artifactory
-                          container_access_id: harness
-                          container_access_token: eyJ2ZXIiOiIyIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYiLCJraWQiOiJZbHlGbGl1QTFMLWprY2dJeEVaV3ZSdjl5NlFYa0FLS2dyU1FWdzhMQWZRIn0.eyJleHQiOiJ7XCJyZXZvY2FibGVcIjpcInRydWVcIn0iLCJzdWIiOiJqZmFjQDAxZ21xbWc1YzlwZmFoMGVieHl4NzUxcDhrXC91c2Vyc1wvaGFybmVzcyIsInNjcCI6ImFwcGxpZWQtcGVybWlzc2lvbnNcL2FkbWluIiwiYXVkIjoiKkAqIiwiaXNzIjoiamZmZUAwMDAiLCJpYXQiOjE2NzE2MTE1MjUsImp0aSI6ImMzNzQ0NzBiLWZhMmItNGIwNi05ZWMyLTRiYmY5ZWI2MDM4OCJ9.K1Nm7h2ERz36LHWnW_BE64J64RDWKOjUUCobD2gNuWZ9aK4HcZkUr2GblQ2i2DeaNDScG8ydUFcNLiQWJ1Mb2Vfl9wSVCh3svEtCSTMwyJmb3VAw1Cjp9FJvwUmW7vS9U_NTSA0VMPXKp52QPUoEH5daHr9qVPDbsr1kbeZLBF6wQbIg5J7nTjZzJ-vRwLYSv2pKwPUvLu2Vcxt8whQ23ViL3S8REXhWWplIRTvWcE2SMlK4hl02B_4C7KH0uPr_Njy9c7zXRBfybvwX_a-Ba-9wT9yxRt3s18q0SpUlFmvSUCewzECeBFgl-HmWrkoUNFJekRrZFt43JJFNlQFrMw
-                          container_domain: nikpap.jfrog.io
-                          customer_artifacts_path: /harness
-                          manual_upload_filename: jfrog.json
           serviceConfig:
             serviceRef: ""
             serviceDefinition:
