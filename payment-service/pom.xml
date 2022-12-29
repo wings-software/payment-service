@@ -233,6 +233,11 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
+	<repository>
+      	    <id>jitpack</id>
+            <name>jitpack</name>
+            <url>https://jitpack.io</url>
+        </repository>
     </repositories>
 
     <pluginRepositories>
