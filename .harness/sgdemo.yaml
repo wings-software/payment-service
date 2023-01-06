@@ -1,0 +1,30 @@
+inputSet:
+  identifier: "sgdemo"
+  pipeline:
+    identifier: "paymentserviceweb"
+    stages:
+    - stage:
+        identifier: "DeployProd"
+        type: "Deployment"
+        spec:
+          serviceConfig:
+            serviceRef: "paymentservice"
+    variables:
+    - name: "seusername"
+      type: "String"
+      value: "nikp"
+    - name: "verify_fail"
+      type: "String"
+      value: "false"
+    - name: "autostopping"
+      type: "String"
+      value: "false"
+    - name: "artifact"
+      type: "String"
+      value: "v0.2"
+    - name: "namespace"
+      type: "String"
+      value: "mortgage-service"
+  name: "sg-demo"
+  orgIdentifier: "default"
+  projectIdentifier: "DevX_Demo"
