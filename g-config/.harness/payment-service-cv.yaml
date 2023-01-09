@@ -352,7 +352,7 @@ pipeline:
                                   errors:
                                     - Verification
                                   action:
-                                    type: Ignore
+                                    type: StageRollback
                               - onFailure:
                                   errors:
                                     - Unknown
