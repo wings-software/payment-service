@@ -12,31 +12,6 @@ pipeline:
         build: <+input>
   stages:
     - stage:
-        name: Review Input
-        identifier: Review_Input
-        description: ""
-        type: Approval
-        spec:
-          execution:
-            steps:
-              - step:
-                  name: Input
-                  identifier: Input
-                  type: HarnessApproval
-                  timeout: 1d
-                  spec:
-                    approvalMessage: |-
-                      Please review the following information
-                      and approve the pipeline progression
-                    includePipelineExecutionHistory: true
-                    approvers:
-                      minimumCount: 1
-                      disallowPipelineExecutor: false
-                      userGroups:
-                        - account._account_all_users
-                    approverInputs: []
-        tags: {}
-    - stage:
         name: Build
         identifier: Build
         type: CI
