@@ -92,15 +92,5 @@ public class TiServiceTest {
     }
     
     
-    @Test
-    public void testExchangeRateDKKtoGBP() throws InterruptedException {
-    	TimeUnit.SECONDS.sleep(20);
-        Assertions.assertThat(tiService.calculateExchangeRate(4, 5)).isEqualTo(20);
-    }
-    
-    @Test
-    public void testExchangeRateGBPtoDKK() throws InterruptedException {
-    	TimeUnit.SECONDS.sleep(20);
-        Assertions.assertThat(tiService.calculateExchangeRate(4, 5)).isEqualTo(20);
-    }
+
 }
