@@ -121,7 +121,7 @@ pipeline:
                               type: Ignore
                       when:
                         stageStatus: Success
-                        condition: <+pipeline.variables.seusername> != "nikpapag"
+                        condition: <+trigger.branch> != "master-2"
               - step:
                   type: Run
                   name: Build
