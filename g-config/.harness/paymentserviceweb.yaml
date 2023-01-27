@@ -143,7 +143,7 @@ pipeline:
                   when:
                     stageStatus: Success
                   failureStrategies: []
-                  description: ads
+                  description: This builds payment service
               - parallel:
                   - step:
                       type: Security
