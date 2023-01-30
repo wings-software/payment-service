@@ -1072,3 +1072,4 @@ pipeline:
     barriers:
       - name: Barrier
         identifier: Barrier
+  allowStageExecutions: true
