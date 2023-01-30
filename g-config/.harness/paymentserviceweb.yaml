@@ -565,7 +565,7 @@ pipeline:
                       status: Dev Complete
                     fields:
                       - name: Test Summary
-                        value: <+pipeline.stages.DeployDev.spec.execution.steps.Selenium_Test.output.outputVariables.selenium_output>
+                        value: "Selenium: <+pipeline.stages.DeployDev.spec.execution.steps.Selenium_Test.output.outputVariables.selenium_output>"
                       - name: Comment
                         value: Development for <+pipeline.variables.servicename> finished
                   timeout: 1d
@@ -812,7 +812,7 @@ pipeline:
                       status: Waiting for customer
                     fields:
                       - name: Test Summary
-                        value: "Smoke Test Result: <+pipeline.stages.DeployProd.spec.execution.steps.canaryDepoyment.steps.Smoke_Test.output.httpResponseCode>"
+                        value: "Smoke Test Result: <+pipeline.stages.DeployProd.spec.execution.steps.canaryDepoyment.steps.Smoke_Test.output.httpResponseCode> Selenium: <+pipeline.stages.DeployDev.spec.execution.steps.Selenium_Test.output.outputVariables.selenium_output>"
                       - name: Comment
                         value: "Release Version: <+pipeline.stages.DeployProd.spec.execution.steps.primaryDepoyment.steps.rollingDeployment.output.releaseNumber> Service is available here: http://<+pipeline.variables.seusername>.cie-demo.co.uk"
                   timeout: 1d
