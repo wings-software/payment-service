@@ -872,7 +872,7 @@ pipeline:
                     approverInputs: []
         tags: {}
     - stage:
-        name: Release Features
+        name: Progressive Rollout
         identifier: Release_Features
         description: ""
         type: FeatureFlag
@@ -881,25 +881,132 @@ pipeline:
             steps:
               - step:
                   type: FlagConfiguration
-                  name: Release Mortage Offer
-                  identifier: Release_Mortage_Offer
+                  name: Ten Percent Release
+                  identifier: Ten_Percent_Release
                   spec:
                     feature: mortgageoffer
                     environment: GKEPROD
                     instructions:
-                      - identifier: SetVariationForTarget
-                        type: AddTargetsToVariationTargetMap
+                      - identifier: AddRuleIdentifier
+                        type: AddRule
                         spec:
-                          variation: "true"
-                          targets:
-                            - jkharnessio
+                          priority: 100
+                          distribution:
+                            bucketBy: identifier
+                            clauses:
+                              - op: segmentMatch
+                                attribute: ""
+                                values:
+                                  - Customer_Group_A
+                            variations:
+                              - variation: "true"
+                                weight: 50
+                              - variation: "false"
+                                weight: 50
                   timeout: 10m
-                  failureStrategies:
-                    - onFailure:
-                        errors:
-                          - AllErrors
-                        action:
-                          type: Ignore
+              - step:
+                  type: HarnessApproval
+                  name: Release Gate
+                  identifier: Release_Gate
+                  spec:
+                    approvalMessage: Please review the following information and approve the pipeline progression
+                    includePipelineExecutionHistory: true
+                    approvers:
+                      userGroups:
+                        - jkharnessio
+                      minimumCount: 1
+                      disallowPipelineExecutor: false
+                    approverInputs: []
+                  timeout: 1d
+              - step:
+                  type: FlagConfiguration
+                  name: Twenty Percent Release
+                  identifier: Twenty_Percent_Release
+                  spec:
+                    feature: mortgageoffer
+                    environment: GKEPROD
+                    instructions:
+                      - identifier: AddRuleIdentifier
+                        type: AddRule
+                        spec:
+                          priority: 100
+                          distribution:
+                            bucketBy: identifier
+                            clauses:
+                              - op: segmentMatch
+                                attribute: ""
+                                values:
+                                  - Customer_Group_A
+                            variations:
+                              - variation: "true"
+                                weight: 50
+                              - variation: "false"
+                                weight: 50
+                  timeout: 10m
+              - step:
+                  type: FlagConfiguration
+                  name: Fifty Percent Release
+                  identifier: Fifty_Percent_Release
+                  spec:
+                    feature: mortgageoffer
+                    environment: GKEPROD
+                    instructions:
+                      - identifier: AddRuleIdentifier
+                        type: AddRule
+                        spec:
+                          priority: 100
+                          distribution:
+                            bucketBy: identifier
+                            clauses:
+                              - op: segmentMatch
+                                attribute: ""
+                                values:
+                                  - Customer_Group_A
+                            variations:
+                              - variation: "true"
+                                weight: 50
+                              - variation: "false"
+                                weight: 50
+                  timeout: 10m
+              - step:
+                  type: HarnessApproval
+                  name: Final Release Gate
+                  identifier: Final_Release_Gate
+                  spec:
+                    approvalMessage: Please review the following information and approve the pipeline progression
+                    includePipelineExecutionHistory: true
+                    approvers:
+                      userGroups:
+                        - jkharnessio
+                      minimumCount: 1
+                      disallowPipelineExecutor: false
+                    approverInputs: []
+                  timeout: 1d
+              - step:
+                  type: FlagConfiguration
+                  name: Full Release
+                  identifier: Full_Release
+                  spec:
+                    feature: mortgageoffer
+                    environment: GKEPROD
+                    instructions:
+                      - identifier: AddRuleIdentifier
+                        type: AddRule
+                        spec:
+                          priority: 100
+                          distribution:
+                            bucketBy: identifier
+                            clauses:
+                              - op: segmentMatch
+                                attribute: ""
+                                values:
+                                  - Customer_Group_A
+                            variations:
+                              - variation: "true"
+                                weight: 50
+                              - variation: "false"
+                                weight: 50
+                  timeout: 10m
               - step:
                   type: JiraUpdate
                   name: Update Ticket
