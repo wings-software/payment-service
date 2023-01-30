@@ -548,7 +548,10 @@ pipeline:
 
                               export selenium_output=$selenium_results
                         environmentVariables: []
-                        outputVariables: []
+                        outputVariables:
+                          - name: selenium_output
+                            type: String
+                            value: selenium_output
                       timeout: 10m
               - step:
                   type: JiraUpdate
