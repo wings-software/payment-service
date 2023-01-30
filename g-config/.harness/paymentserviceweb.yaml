@@ -807,7 +807,11 @@ pipeline:
                     transitionTo:
                       transitionName: Done
                       status: Done
-                    fields: []
+                    fields:
+                      - name: Test Summary
+                        value: "Smoke Test Result: <+pipeline.stages.DeployProd.spec.execution.steps.canaryDepoyment.steps.Smoke_Test.output.httpResponseCode>"
+                      - name: Comment
+                        value: Release Version:<+pipeline.stages.DeployProd.spec.execution.steps.canaryDepoyment.steps.canaryDeployment.output.releaseNumber>
                   timeout: 1d
               - step:
                   type: K8sApply
