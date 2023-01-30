@@ -880,42 +880,6 @@ pipeline:
           execution:
             steps:
               - step:
-                  type: ShellScript
-                  name: Shell Script_1
-                  identifier: ShellScript_1
-                  spec:
-                    shell: Bash
-                    onDelegate: true
-                    source:
-                      type: Inline
-                      spec:
-                        script: |-
-                          curl -i -X PATCH \
-                            'https://app.harness.io/gateway/cf/admin/targets/<+pipeline.variables.seusername>?accountIdentifier=6_vVHzo9Qeu9fXvj-AcbCQ&orgIdentifier=default&projectIdentifier=DevX_Demo&environmentIdentifier=GKEPROD' \
-                            -H 'Content-Type: application/json' \
-                            -H 'x-api-key: pat.6_vVHzo9Qeu9fXvj-AcbCQ.63d7b27bd8a4335c5b2131ec.QzprMCblxo896ICzTVqv' \
-                            -d '{
-                              "gitDetails": {
-                                "commitMsg": "Making some changes"
-                              },
-                              "instructions": [
-                                {
-                                  "kind": "addTargetToFlagsVariationTargetMap",
-                                  "parameters": {
-                                    "features": [
-                                      {
-                                        "identifier": "mortgageoffer",
-                                        "variation": "true"
-                                      },
-                                    ]
-                                  }
-                                }
-                              ]
-                            }'
-                    environmentVariables: []
-                    outputVariables: []
-                  timeout: 10m
-              - step:
                   type: FlagConfiguration
                   name: Release Mortage Offer
                   identifier: Release_Mortage_Offer
