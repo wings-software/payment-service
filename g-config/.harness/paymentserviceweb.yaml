@@ -868,7 +868,7 @@ pipeline:
                       minimumCount: 1
                       disallowPipelineExecutor: false
                       userGroups:
-                        - account.New_Demo_Group
+                        - jkharnessio
                     approverInputs: []
         tags: {}
     - stage:
