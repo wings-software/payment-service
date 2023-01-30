@@ -565,7 +565,7 @@ pipeline:
                       status: Dev Complete
                     fields:
                       - name: Test Summary
-                        value: <+pipeline.stages.DeployDev.spec.execution.steps.Selenium.output.outputVariables.selenium_output>
+                        value: <+pipeline.stages.DeployDev.spec.execution.steps.Selenium_Test.output.outputVariables.selenium_output>
                       - name: Comment
                         value: Development for <+pipeline.variables.servicename> finished
                   timeout: 1d
