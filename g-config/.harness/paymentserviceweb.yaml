@@ -808,13 +808,13 @@ pipeline:
                     connectorRef: account.Harness_JIRA
                     issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.key>
                     transitionTo:
-                      transitionName: Done
-                      status: Done
+                      transitionName: Waiting for Customer
+                      status: Waiting for customer
                     fields:
                       - name: Test Summary
                         value: "Smoke Test Result: <+pipeline.stages.DeployProd.spec.execution.steps.canaryDepoyment.steps.Smoke_Test.output.httpResponseCode>"
                       - name: Comment
-                        value: Release Version:<+pipeline.stages.DeployProd.spec.execution.steps.canaryDepoyment.steps.canaryDeployment.output.releaseNumber>
+                        value: "Release Version: <+pipeline.stages.DeployProd.spec.execution.steps.primaryDepoyment.steps.rollingDeployment.output.releaseNumber>"
                   timeout: 1d
               - step:
                   type: K8sApply
@@ -849,35 +849,27 @@ pipeline:
         when:
           pipelineStatus: Success
     - stage:
-        name: CAB
-        identifier: CAB
+        name: CAB Meeting
+        identifier: CAB_Meeting
         description: ""
         type: Approval
         spec:
           execution:
             steps:
               - step:
-                  name: CAB Decision
-                  identifier: CAB_Decision
-                  type: JiraApproval
+                  name: CAB Meeting
+                  identifier: CAB_Meeting
+                  type: HarnessApproval
                   timeout: 1d
                   spec:
-                    approvalCriteria:
-                      type: KeyValues
-                      spec:
-                        matchAnyCondition: true
-                        conditions:
-                          - key: Status
-                            operator: equals
-                            value: Under Review
-                    rejectionCriteria:
-                      type: KeyValues
-                      spec:
-                        matchAnyCondition: true
-                        conditions: []
-                    connectorRef: account.Harness_JIRA
-                    projectKey: HD
-                    issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.id>
+                    approvalMessage: Please approve that Feature can be released http://<+pipeline.variables.seusername>.cie-demo.co.uk
+                    includePipelineExecutionHistory: true
+                    approvers:
+                      minimumCount: 1
+                      disallowPipelineExecutor: false
+                      userGroups:
+                        - account.New_Demo_Group
+                    approverInputs: []
         tags: {}
     - stage:
         name: Release Features
