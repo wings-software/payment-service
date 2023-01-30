@@ -872,7 +872,7 @@ pipeline:
                     approverInputs: []
         tags: {}
     - stage:
-        name: Progressive Rollout
+        name: Progressive Release
         identifier: Release_Features
         description: ""
         type: FeatureFlag
