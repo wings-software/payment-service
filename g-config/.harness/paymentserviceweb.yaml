@@ -808,7 +808,7 @@ pipeline:
                     connectorRef: account.Harness_JIRA
                     issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.key>
                     transitionTo:
-                      transitionName: Waiting for Customer
+                      transitionName: Waiting for customer
                       status: Waiting for customer
                     fields:
                       - name: Test Summary
