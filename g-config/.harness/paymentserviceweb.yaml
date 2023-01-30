@@ -930,6 +930,12 @@ pipeline:
                           targets:
                             - jkharnessio
                   timeout: 10m
+                  failureStrategies:
+                    - onFailure:
+                        errors:
+                          - AllErrors
+                        action:
+                          type: Ignore
               - step:
                   type: JiraUpdate
                   name: Update Ticket
