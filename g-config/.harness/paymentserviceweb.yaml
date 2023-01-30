@@ -814,7 +814,7 @@ pipeline:
                       - name: Test Summary
                         value: "Smoke Test Result: <+pipeline.stages.DeployProd.spec.execution.steps.canaryDepoyment.steps.Smoke_Test.output.httpResponseCode>"
                       - name: Comment
-                        value: "Release Version: <+pipeline.stages.DeployProd.spec.execution.steps.primaryDepoyment.steps.rollingDeployment.output.releaseNumber>"
+                        value: "Release Version: <+pipeline.stages.DeployProd.spec.execution.steps.primaryDepoyment.steps.rollingDeployment.output.releaseNumber> Service is available here: http://<+pipeline.variables.seusername>.cie-demo.co.uk"
                   timeout: 1d
               - step:
                   type: K8sApply
@@ -905,6 +905,8 @@ pipeline:
                       transitionName: Published
                       status: Published
                     fields:
+                      - name: Feature Flag Enabled Customers
+                        value: "Feature <+pipeline.stages.Release_Features.execution.steps.Release_Mortage_Offer.spec.feature> enabled for <+pipeline.variables.seusername> "
                       - name: Comment
                         value: Feature Mortage Offer Release and ready for Live Testing
                   timeout: 1d
