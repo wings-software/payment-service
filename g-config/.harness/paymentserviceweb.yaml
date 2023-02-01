@@ -12,33 +12,6 @@ pipeline:
         build: <+input>
   stages:
     - stage:
-        name: Approval
-        identifier: Approval
-        description: ""
-        type: Approval
-        spec:
-          execution:
-            steps:
-              - step:
-                  name: Check Input
-                  identifier: Check_Input
-                  type: HarnessApproval
-                  timeout: 1d
-                  spec:
-                    approvalMessage: |-
-                      Please review the following information
-                      and approve the pipeline progression
-                    includePipelineExecutionHistory: true
-                    approvers:
-                      minimumCount: 1
-                      disallowPipelineExecutor: false
-                      userGroups:
-                        - jkharnessio
-                    approverInputs:
-                      - name: "User Input "
-                        defaultValue: ""
-        tags: {}
-    - stage:
         name: Build
         identifier: Build
         type: CI
