@@ -900,9 +900,9 @@ pipeline:
                                   - Customer_Group_A
                             variations:
                               - variation: "true"
-                                weight: 50
+                                weight: 10
                               - variation: "false"
-                                weight: 50
+                                weight: 90
                   timeout: 10m
               - step:
                   type: HarnessApproval
@@ -939,9 +939,9 @@ pipeline:
                                   - Customer_Group_A
                             variations:
                               - variation: "true"
-                                weight: 50
+                                weight: 20
                               - variation: "false"
-                                weight: 50
+                                weight: 80
                   timeout: 10m
               - step:
                   type: FlagConfiguration
@@ -1003,9 +1003,9 @@ pipeline:
                                   - Customer_Group_A
                             variations:
                               - variation: "true"
-                                weight: 50
+                                weight: 100
                               - variation: "false"
-                                weight: 50
+                                weight: 0
                   timeout: 10m
               - step:
                   type: JiraUpdate
