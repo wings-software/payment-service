@@ -707,6 +707,17 @@ pipeline:
                           headers: []
                           outputVariables: []
                         timeout: 10s
+                        failureStrategies:
+                          - onFailure:
+                              errors:
+                                - AllErrors
+                              action:
+                                type: ManualIntervention
+                                spec:
+                                  timeout: 1h
+                                  onTimeout:
+                                    action:
+                                      type: Abort
                     - step:
                         type: Verify
                         name: verify_canary
