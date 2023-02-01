@@ -1014,9 +1014,6 @@ pipeline:
                   spec:
                     connectorRef: account.Harness_JIRA
                     issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.id>
-                    transitionTo:
-                      transitionName: Published
-                      status: Published
                     fields:
                       - name: Feature Flag Enabled Customers
                         value: "Feature <+pipeline.stages.Release_Features.execution.steps.Release_Mortage_Offer.spec.feature> enabled for <+pipeline.variables.seusername> "
