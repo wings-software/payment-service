@@ -142,7 +142,7 @@ pipeline:
                       name: Fortify
                       identifier: fortify
                       spec:
-                        connectorRef: account.Harness_Docker_Connector
+                        connectorRef: nikpdockerhub
                         privileged: true
                         settings:
                           product_name: fortify
@@ -191,7 +191,7 @@ pipeline:
                       name: Checkmarx
                       identifier: checkmarx
                       spec:
-                        connectorRef: account.Harness_Docker_Connector
+                        connectorRef: nikpdockerhub
                         privileged: true
                         settings:
                           product_name: checkmarx
