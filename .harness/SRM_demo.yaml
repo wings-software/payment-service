@@ -1,0 +1,41 @@
+inputSet:
+  pipeline:
+    identifier: paymentserviceweb
+    properties:
+      ci:
+        codebase:
+          build:
+            spec:
+              branch: master
+            type: branch
+    stages:
+      - stage:
+          identifier: DeployProd
+          type: Deployment
+          spec:
+            serviceConfig:
+              serviceRef: paymentservicesrm_dev
+    variables:
+      - name: mavenversion
+        type: String
+        value: "3.8"
+      - name: javaversion
+        type: String
+        value: "8"
+      - name: seusername
+        type: String
+        value: jkharnessio
+      - name: verify_fail
+        type: String
+        value: "false"
+      - name: run_owasp_scan
+        type: String
+        value: "false"
+      - name: autostopping
+        type: String
+        value: "false"
+  name: SRM demo
+  identifier: SRM_demo
+  description: Updated 2/8/2023
+  orgIdentifier: default
+  projectIdentifier: DevX_Demo
