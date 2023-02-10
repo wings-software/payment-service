@@ -43,7 +43,7 @@ pipeline:
                       identifier: runTestsWithIntelligence
                       spec:
                         connectorRef: nikpdockerhub
-                        image: maven:3.8-jdk-1.8
+                        image: maven:<+pipeline.variables.mavenversion>-jdk-<+pipeline.variables.javaversion>
                         language: Java
                         buildTool: Maven
                         args: test
