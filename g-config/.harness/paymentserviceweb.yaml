@@ -376,7 +376,7 @@ pipeline:
                     cpu: 300m
           platform:
             os: Linux
-            arch: Amd64
+            arch: Arm64
           runtime:
             type: Cloud
             spec: {}
