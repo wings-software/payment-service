@@ -674,6 +674,12 @@ pipeline:
                             spec:
                               state: "on"
                       timeout: 10m
+                      failureStrategies:
+                        - onFailure:
+                            errors:
+                              - AllErrors
+                            action:
+                              type: MarkAsSuccess
     - stage:
         name: Approve Prod
         identifier: Jira_Approve
