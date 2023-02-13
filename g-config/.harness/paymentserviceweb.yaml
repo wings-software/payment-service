@@ -587,7 +587,7 @@ pipeline:
             environmentRef: GKEPROD
             deployToAll: false
             infrastructureDefinitions:
-              - identifier: adsfas
+              - identifier: K8s_Prod_Namespace
           execution:
             steps:
               - stepGroup:
