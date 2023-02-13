@@ -580,57 +580,14 @@ pipeline:
         description: ""
         type: Deployment
         spec:
-          serviceConfig:
-            serviceRef: <+input>
-            serviceDefinition:
-              type: Kubernetes
-              spec:
-                variables: []
-                manifests:
-                  - manifest:
-                      identifier: templates
-                      type: K8sManifest
-                      spec:
-                        store:
-                          type: Github
-                          spec:
-                            connectorRef: nikpgithub
-                            gitFetchType: Branch
-                            paths:
-                              - templates-prod
-                            repoName: payment-service-nonprod
-                            branch: master
-                        skipResourceVersioning: false
-                  - manifest:
-                      identifier: values
-                      type: Values
-                      spec:
-                        store:
-                          type: Github
-                          spec:
-                            connectorRef: nikpgithub
-                            gitFetchType: Branch
-                            paths:
-                              - values-non-prod.yaml
-                            repoName: payment-service-nonprod
-                            branch: master
-                artifacts:
-                  primary:
-                    type: DockerRegistry
-                    spec:
-                      connectorRef: nikpdockerhub
-                      imagePath: nikpap/payment-service
-                      tag: <+pipeline.sequenceId>
-          infrastructure:
+          deploymentType: Kubernetes
+          service:
+            serviceRef: paymentservice
+          environment:
             environmentRef: GKEPROD
-            infrastructureDefinition:
-              type: KubernetesDirect
-              spec:
-                connectorRef: nikpgkecluster
-                namespace: payment-service
-                releaseName: release-1
-            allowSimultaneousDeployments: true
-            infrastructureKey: ""
+            deployToAll: false
+            infrastructureDefinitions:
+              - identifier: adsfas
           execution:
             steps:
               - stepGroup:
