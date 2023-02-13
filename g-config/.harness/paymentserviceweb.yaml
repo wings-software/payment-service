@@ -764,242 +764,289 @@ pipeline:
         tags: {}
         when:
           pipelineStatus: Success
-    - stage:
-        name: DeployProd
-        identifier: DeployProd
-        description: ""
-        type: Deployment
-        spec:
-          serviceConfig:
-            serviceRef: <+input>
-            serviceDefinition:
-              type: Kubernetes
-              spec:
-                variables: []
-                manifests:
-                  - manifest:
-                      identifier: templates
-                      type: K8sManifest
-                      spec:
-                        store:
-                          type: Github
+    - parallel:
+        - stage:
+            name: DeployProd
+            identifier: DeployProd
+            description: ""
+            type: Deployment
+            spec:
+              serviceConfig:
+                serviceRef: <+input>
+                serviceDefinition:
+                  type: Kubernetes
+                  spec:
+                    variables: []
+                    manifests:
+                      - manifest:
+                          identifier: templates
+                          type: K8sManifest
                           spec:
-                            connectorRef: nikpgithub
-                            gitFetchType: Branch
-                            paths:
-                              - templates-prod
-                            repoName: payment-service-nonprod
-                            branch: master
-                        skipResourceVersioning: false
-                  - manifest:
-                      identifier: values
-                      type: Values
-                      spec:
-                        store:
-                          type: Github
+                            store:
+                              type: Github
+                              spec:
+                                connectorRef: nikpgithub
+                                gitFetchType: Branch
+                                paths:
+                                  - templates-prod
+                                repoName: payment-service-nonprod
+                                branch: master
+                            skipResourceVersioning: false
+                      - manifest:
+                          identifier: values
+                          type: Values
                           spec:
-                            connectorRef: nikpgithub
-                            gitFetchType: Branch
-                            paths:
-                              - values-non-prod.yaml
-                            repoName: payment-service-nonprod
-                            branch: master
-                artifacts:
-                  primary:
-                    type: DockerRegistry
-                    spec:
-                      connectorRef: nikpdockerhub
-                      imagePath: nikpap/payment-service
-                      tag: <+pipeline.sequenceId>
-          infrastructure:
-            environmentRef: GKEPROD
-            infrastructureDefinition:
-              type: KubernetesDirect
-              spec:
-                connectorRef: nikpgkecluster
-                namespace: payment-service
-                releaseName: release-1
-            allowSimultaneousDeployments: true
-            infrastructureKey: ""
-          execution:
-            steps:
-              - stepGroup:
-                  name: Canary Deployment
-                  identifier: canaryDepoyment
-                  steps:
-                    - step:
-                        name: Canary Deployment
-                        identifier: canaryDeployment
-                        type: K8sCanaryDeploy
-                        timeout: 10m
+                            store:
+                              type: Github
+                              spec:
+                                connectorRef: nikpgithub
+                                gitFetchType: Branch
+                                paths:
+                                  - values-non-prod.yaml
+                                repoName: payment-service-nonprod
+                                branch: master
+                    artifacts:
+                      primary:
+                        type: DockerRegistry
                         spec:
-                          instanceSelection:
-                            type: Count
+                          connectorRef: nikpdockerhub
+                          imagePath: nikpap/payment-service
+                          tag: <+pipeline.sequenceId>
+              infrastructure:
+                environmentRef: GKEPROD
+                infrastructureDefinition:
+                  type: KubernetesDirect
+                  spec:
+                    connectorRef: nikpgkecluster
+                    namespace: payment-service
+                    releaseName: release-1
+                allowSimultaneousDeployments: true
+                infrastructureKey: ""
+              execution:
+                steps:
+                  - stepGroup:
+                      name: Canary Deployment
+                      identifier: canaryDepoyment
+                      steps:
+                        - step:
+                            name: Canary Deployment
+                            identifier: canaryDeployment
+                            type: K8sCanaryDeploy
+                            timeout: 10m
                             spec:
-                              count: 1
-                          skipDryRun: false
-                    - step:
-                        type: Http
-                        name: Smoke Test
-                        identifier: Smoke_Test
-                        spec:
-                          url: http://<+pipeline.variables.seusername>.cie-demo.co.uk/
-                          method: GET
-                          headers: []
-                          outputVariables: []
-                        timeout: 10s
-                        failureStrategies:
-                          - onFailure:
-                              errors:
-                                - AllErrors
-                              action:
-                                type: ManualIntervention
+                              instanceSelection:
+                                type: Count
                                 spec:
-                                  timeout: 1h
-                                  onTimeout:
-                                    action:
-                                      type: Abort
-                    - step:
-                        type: Verify
-                        name: verify_canary
-                        identifier: verify_dev
-                        spec:
-                          type: Canary
-                          spec:
-                            sensitivity: LOW
-                            duration: 5m
-                            deploymentTag: <+serviceConfig.artifacts.primary.tag>
-                          monitoredService:
-                            type: Default
+                                  count: 1
+                              skipDryRun: false
+                        - step:
+                            type: Http
+                            name: Smoke Test
+                            identifier: Smoke_Test
+                            spec:
+                              url: http://<+pipeline.variables.seusername>.cie-demo.co.uk/
+                              method: GET
+                              headers: []
+                              outputVariables: []
+                            timeout: 10s
+                            failureStrategies:
+                              - onFailure:
+                                  errors:
+                                    - AllErrors
+                                  action:
+                                    type: ManualIntervention
+                                    spec:
+                                      timeout: 1h
+                                      onTimeout:
+                                        action:
+                                          type: Abort
+                        - step:
+                            type: Verify
+                            name: verify_canary
+                            identifier: verify_dev
+                            spec:
+                              type: Canary
+                              spec:
+                                sensitivity: LOW
+                                duration: 5m
+                                deploymentTag: <+serviceConfig.artifacts.primary.tag>
+                              monitoredService:
+                                type: Default
+                                spec: {}
+                            timeout: 2h
+                            failureStrategies:
+                              - onFailure:
+                                  errors:
+                                    - Verification
+                                  action:
+                                    type: ManualIntervention
+                                    spec:
+                                      timeout: 2h
+                                      onTimeout:
+                                        action:
+                                          type: StageRollback
+                              - onFailure:
+                                  errors:
+                                    - Unknown
+                                  action:
+                                    type: ManualIntervention
+                                    spec:
+                                      timeout: 2h
+                                      onTimeout:
+                                        action:
+                                          type: Ignore
+                            when:
+                              stageStatus: Success
+                              condition: <+pipeline.variables.verify_fail> == "false"
+                        - step:
+                            name: Canary Delete
+                            identifier: canaryDelete
+                            type: K8sCanaryDelete
+                            timeout: 10m
                             spec: {}
-                        timeout: 2h
-                        failureStrategies:
-                          - onFailure:
-                              errors:
-                                - Verification
-                              action:
-                                type: ManualIntervention
-                                spec:
-                                  timeout: 2h
-                                  onTimeout:
-                                    action:
-                                      type: StageRollback
-                          - onFailure:
-                              errors:
-                                - Unknown
-                              action:
-                                type: ManualIntervention
-                                spec:
-                                  timeout: 2h
-                                  onTimeout:
-                                    action:
-                                      type: Ignore
-                        when:
-                          stageStatus: Success
-                          condition: <+pipeline.variables.verify_fail> == "false"
-                    - step:
-                        name: Canary Delete
-                        identifier: canaryDelete
-                        type: K8sCanaryDelete
-                        timeout: 10m
-                        spec: {}
-                  rollbackSteps:
-                    - step:
-                        name: Canary Delete
-                        identifier: canaryDelete
-                        type: K8sCanaryDelete
-                        timeout: 10m
-                        spec: {}
-              - stepGroup:
-                  name: Primary Deployment
-                  identifier: primaryDepoyment
-                  steps:
-                    - step:
-                        name: Rolling Deployment
-                        identifier: rollingDeployment
-                        type: K8sRollingDeploy
-                        timeout: 10m
-                        spec:
-                          skipDryRun: false
-                  rollbackSteps:
-                    - step:
-                        name: Rolling Rollback
-                        identifier: rollingRollback
-                        type: K8sRollingRollback
-                        timeout: 10m
-                        spec: {}
-              - step:
-                  type: ShellScript
-                  name: WrapUp
-                  identifier: WrapUp
-                  spec:
-                    shell: Bash
-                    onDelegate: true
-                    source:
-                      type: Inline
+                      rollbackSteps:
+                        - step:
+                            name: Canary Delete
+                            identifier: canaryDelete
+                            type: K8sCanaryDelete
+                            timeout: 10m
+                            spec: {}
+                  - stepGroup:
+                      name: Primary Deployment
+                      identifier: primaryDepoyment
+                      steps:
+                        - step:
+                            name: Rolling Deployment
+                            identifier: rollingDeployment
+                            type: K8sRollingDeploy
+                            timeout: 10m
+                            spec:
+                              skipDryRun: false
+                      rollbackSteps:
+                        - step:
+                            name: Rolling Rollback
+                            identifier: rollingRollback
+                            type: K8sRollingRollback
+                            timeout: 10m
+                            spec: {}
+                  - step:
+                      type: ShellScript
+                      name: WrapUp
+                      identifier: WrapUp
                       spec:
-                        script: |-
-                          echo "Wrapping up deployment"
-                          url="http://$subdomain.cie-demo.co.uk"
-                          export application="$url"
-                    environmentVariables:
-                      - name: subdomain
-                        type: String
-                        value: <+pipeline.variables.seusername>
-                    outputVariables:
-                      - name: application
-                        type: String
-                        value: application
-                    executionTarget: {}
-                  timeout: 10m
-              - step:
-                  type: JiraUpdate
-                  name: JiraUpdate
-                  identifier: JiraUpdate
-                  spec:
-                    connectorRef: account.Harness_JIRA
-                    issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.key>
-                    transitionTo:
-                      transitionName: Waiting for customer
-                      status: Waiting for customer
-                    fields:
-                      - name: Test Summary
-                        value: "Smoke Test Result: <+pipeline.stages.DeployProd.spec.execution.steps.canaryDepoyment.steps.Smoke_Test.output.httpResponseCode> Selenium: <+pipeline.stages.DeployDev.spec.execution.steps.Selenium_Test.output.outputVariables.selenium_output>"
-                      - name: Comment
-                        value: "Release Version: <+pipeline.stages.DeployProd.spec.execution.steps.primaryDepoyment.steps.rollingDeployment.output.releaseNumber> Service is available here: http://<+pipeline.variables.seusername>.cie-demo.co.uk"
-                  timeout: 1d
-              - step:
-                  type: K8sApply
-                  name: Autostopping
-                  identifier: Autostopping
-                  spec:
-                    filePaths:
-                      - autostopping/ccm-autostoppingrule.yaml
-                    skipDryRun: false
-                    skipSteadyStateCheck: false
-                  timeout: 10m
-                  when:
-                    stageStatus: Success
-                    condition: <+pipeline.variables.autostopping> == "true"
-                  failureStrategies: []
-            rollbackSteps:
-              - step:
-                  type: K8sCanaryDelete
-                  name: Canary Rollback
-                  identifier: Canary_Rollback
-                  spec:
-                    skipDryRun: false
-                  timeout: 10m
-          serviceDependencies: []
-        tags: {}
-        failureStrategies:
-          - onFailure:
-              errors:
-                - AllErrors
-              action:
-                type: StageRollback
-        when:
-          pipelineStatus: Success
+                        shell: Bash
+                        onDelegate: true
+                        source:
+                          type: Inline
+                          spec:
+                            script: |-
+                              echo "Wrapping up deployment"
+                              url="http://$subdomain.cie-demo.co.uk"
+                              export application="$url"
+                        environmentVariables:
+                          - name: subdomain
+                            type: String
+                            value: <+pipeline.variables.seusername>
+                        outputVariables:
+                          - name: application
+                            type: String
+                            value: application
+                        executionTarget: {}
+                      timeout: 10m
+                  - step:
+                      type: JiraUpdate
+                      name: JiraUpdate
+                      identifier: JiraUpdate
+                      spec:
+                        connectorRef: account.Harness_JIRA
+                        issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.key>
+                        transitionTo:
+                          transitionName: Waiting for customer
+                          status: Waiting for customer
+                        fields:
+                          - name: Test Summary
+                            value: "Smoke Test Result: <+pipeline.stages.DeployProd.spec.execution.steps.canaryDepoyment.steps.Smoke_Test.output.httpResponseCode> Selenium: <+pipeline.stages.DeployDev.spec.execution.steps.Selenium_Test.output.outputVariables.selenium_output>"
+                          - name: Comment
+                            value: "Release Version: <+pipeline.stages.DeployProd.spec.execution.steps.primaryDepoyment.steps.rollingDeployment.output.releaseNumber> Service is available here: http://<+pipeline.variables.seusername>.cie-demo.co.uk"
+                      timeout: 1d
+                  - step:
+                      type: K8sApply
+                      name: Autostopping
+                      identifier: Autostopping
+                      spec:
+                        filePaths:
+                          - autostopping/ccm-autostoppingrule.yaml
+                        skipDryRun: false
+                        skipSteadyStateCheck: false
+                      timeout: 10m
+                      when:
+                        stageStatus: Success
+                        condition: <+pipeline.variables.autostopping> == "true"
+                      failureStrategies: []
+                rollbackSteps:
+                  - step:
+                      type: K8sCanaryDelete
+                      name: Canary Rollback
+                      identifier: Canary_Rollback
+                      spec:
+                        skipDryRun: false
+                      timeout: 10m
+              serviceDependencies: []
+            tags: {}
+            failureStrategies:
+              - onFailure:
+                  errors:
+                    - AllErrors
+                  action:
+                    type: StageRollback
+            when:
+              pipelineStatus: Success
+        - stage:
+            name: Production Shop UI
+            identifier: Production_Shop_UI
+            description: ""
+            type: Deployment
+            spec:
+              deploymentType: Kubernetes
+              service:
+                useFromStage:
+                  stage: Test_Shop_UI
+              environment:
+                environmentRef: JKProduction
+                deployToAll: false
+                infrastructureDefinitions:
+                  - identifier: Production_K8s_Namespace
+              execution:
+                steps:
+                  - step:
+                      name: Rollout Deployment
+                      identifier: rolloutDeployment
+                      type: K8sRollingDeploy
+                      timeout: 10m
+                      spec:
+                        skipDryRun: false
+                        pruningEnabled: false
+                      failureStrategies:
+                        - onFailure:
+                            errors:
+                              - AllErrors
+                            action:
+                              type: MarkAsSuccess
+                rollbackSteps:
+                  - step:
+                      name: Rollback Rollout Deployment
+                      identifier: rollbackRolloutDeployment
+                      type: K8sRollingRollback
+                      timeout: 10m
+                      spec:
+                        pruningEnabled: false
+            tags: {}
+            failureStrategies:
+              - onFailure:
+                  errors:
+                    - AllErrors
+                  action:
+                    type: StageRollback
     - stage:
         name: CAB Meeting
         identifier: CAB_Meeting
