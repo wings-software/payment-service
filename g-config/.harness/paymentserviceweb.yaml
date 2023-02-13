@@ -617,6 +617,19 @@ pipeline:
                   spec:
                     skipDryRun: false
                     pruningEnabled: false
+                  failureStrategies:
+                    - onFailure:
+                        errors:
+                          - AllErrors
+                        action:
+                          type: MarkAsSuccess
+              - step:
+                  type: Barrier
+                  name: Test Barrier
+                  identifier: Test_Barrier
+                  spec:
+                    barrierRef: Test_Barrier
+                  timeout: 10m
             rollbackSteps:
               - step:
                   name: Rollback Rollout Deployment
@@ -1127,4 +1140,6 @@ pipeline:
     barriers:
       - name: Barrier
         identifier: Barrier
+      - name: Test Barrier
+        identifier: Test_Barrier
   allowStageExecutions: true
