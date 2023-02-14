@@ -587,6 +587,60 @@ pipeline:
           pipelineStatus: Success
     - parallel:
         - stage:
+            name: Test Payment Service
+            identifier: Test_Payment_Service
+            description: ""
+            type: Deployment
+            spec:
+              deploymentType: Kubernetes
+              service:
+                serviceRef: paymentservice
+                serviceInputs:
+                  serviceDefinition:
+                    type: Kubernetes
+                    spec:
+                      artifacts:
+                        primary:
+                          primaryArtifactRef: <+input>
+                          sources: <+input>
+              environment:
+                environmentRef: JKTest
+                deployToAll: false
+                infrastructureDefinitions:
+                  - identifier: Test_K8s_Namespace
+              execution:
+                steps:
+                  - step:
+                      name: Rollout Deployment
+                      identifier: rolloutDeployment
+                      type: K8sRollingDeploy
+                      timeout: 10m
+                      spec:
+                        skipDryRun: false
+                        pruningEnabled: false
+                  - step:
+                      type: Barrier
+                      name: Test Barrier
+                      identifier: Test_Barrier
+                      spec:
+                        barrierRef: Test_Barrier
+                      timeout: 10m
+                rollbackSteps:
+                  - step:
+                      name: Rollback Rollout Deployment
+                      identifier: rollbackRolloutDeployment
+                      type: K8sRollingRollback
+                      timeout: 10m
+                      spec:
+                        pruningEnabled: false
+            tags: {}
+            failureStrategies:
+              - onFailure:
+                  errors:
+                    - AllErrors
+                  action:
+                    type: StageRollback
+        - stage:
             name: Test Shop UI
             identifier: Test_Shop_UI
             description: ""
@@ -680,52 +734,6 @@ pipeline:
                               - AllErrors
                             action:
                               type: MarkAsSuccess
-        - stage:
-            name: Test Payment Service
-            identifier: Test_Payment_Service
-            description: ""
-            type: Deployment
-            spec:
-              deploymentType: Kubernetes
-              service:
-                serviceRef: paymentservice
-              environment:
-                environmentRef: JKTest
-                deployToAll: false
-                infrastructureDefinitions:
-                  - identifier: Test_K8s_Namespace
-              execution:
-                steps:
-                  - step:
-                      name: Rollout Deployment
-                      identifier: rolloutDeployment
-                      type: K8sRollingDeploy
-                      timeout: 10m
-                      spec:
-                        skipDryRun: false
-                        pruningEnabled: false
-                  - step:
-                      type: Barrier
-                      name: Test Barrier
-                      identifier: Test_Barrier
-                      spec:
-                        barrierRef: Test_Barrier
-                      timeout: 10m
-                rollbackSteps:
-                  - step:
-                      name: Rollback Rollout Deployment
-                      identifier: rollbackRolloutDeployment
-                      type: K8sRollingRollback
-                      timeout: 10m
-                      spec:
-                        pruningEnabled: false
-            tags: {}
-            failureStrategies:
-              - onFailure:
-                  errors:
-                    - AllErrors
-                  action:
-                    type: StageRollback
     - stage:
         name: Approve Prod
         identifier: Jira_Approve
@@ -771,57 +779,18 @@ pipeline:
             description: ""
             type: Deployment
             spec:
-              serviceConfig:
-                serviceRef: <+input>
-                serviceDefinition:
-                  type: Kubernetes
-                  spec:
-                    variables: []
-                    manifests:
-                      - manifest:
-                          identifier: templates
-                          type: K8sManifest
-                          spec:
-                            store:
-                              type: Github
-                              spec:
-                                connectorRef: nikpgithub
-                                gitFetchType: Branch
-                                paths:
-                                  - templates-prod
-                                repoName: payment-service-nonprod
-                                branch: master
-                            skipResourceVersioning: false
-                      - manifest:
-                          identifier: values
-                          type: Values
-                          spec:
-                            store:
-                              type: Github
-                              spec:
-                                connectorRef: nikpgithub
-                                gitFetchType: Branch
-                                paths:
-                                  - values-non-prod.yaml
-                                repoName: payment-service-nonprod
-                                branch: master
-                    artifacts:
-                      primary:
-                        type: DockerRegistry
-                        spec:
-                          connectorRef: nikpdockerhub
-                          imagePath: nikpap/payment-service
-                          tag: <+pipeline.sequenceId>
-              infrastructure:
+              deploymentType: Kubernetes
+              service:
+                useFromStage:
+                  stage: Test_Payment_Service
+              environment:
                 environmentRef: GKEPROD
-                infrastructureDefinition:
-                  type: KubernetesDirect
-                  spec:
-                    connectorRef: nikpgkecluster
-                    namespace: payment-service
-                    releaseName: release-1
-                allowSimultaneousDeployments: true
-                infrastructureKey: ""
+                deployToAll: false
+                infrastructureDefinitions:
+                  - identifier: K8s_Prod_Namespace
+              deployToAll: false
+              infrastructureDefinitions:
+                - identifier: K8s_Prod_Namespace
               execution:
                 steps:
                   - stepGroup:
