@@ -1230,6 +1230,8 @@ pipeline:
                                   - variation: "false"
                                     weight: 100
                       timeout: 10m
+              service:
+                serviceRef: ""
         - stage:
             name: Verify Deployment
             identifier: Verify_Deployment
