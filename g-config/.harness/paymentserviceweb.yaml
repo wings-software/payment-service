@@ -435,8 +435,7 @@ pipeline:
                     spec:
                       artifacts:
                         primary:
-                          primaryArtifactRef: <+input>
-                          sources: <+input>
+                          primaryArtifactRef: payment-service
               environment:
                 environmentRef: GKEDEV
                 deployToAll: false
