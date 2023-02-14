@@ -594,8 +594,15 @@ pipeline:
             spec:
               deploymentType: Kubernetes
               service:
-                serviceRef: <+input>
-                serviceInputs: <+input>
+                serviceRef: paymentservicesrm_dev
+                serviceInputs:
+                  serviceDefinition:
+                    type: Kubernetes
+                    spec:
+                      artifacts:
+                        primary:
+                          primaryArtifactRef: <+input>
+                          sources: <+input>
               environment:
                 environmentRef: JKTest
                 deployToAll: false
@@ -611,6 +618,12 @@ pipeline:
                       spec:
                         skipDryRun: false
                         pruningEnabled: false
+                      failureStrategies:
+                        - onFailure:
+                            errors:
+                              - AllErrors
+                            action:
+                              type: MarkAsSuccess
                   - step:
                       type: Barrier
                       name: Test Barrier
@@ -774,8 +787,8 @@ pipeline:
             spec:
               deploymentType: Kubernetes
               service:
-                useFromStage:
-                  stage: Test_Payment_Service
+                serviceRef: <+input>
+                serviceInputs: <+input>
               environment:
                 environmentRef: GKEPROD
                 deployToAll: false
