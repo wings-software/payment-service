@@ -720,7 +720,7 @@ pipeline:
           pipelineStatus: Success
     - parallel:
         - stage:
-            name: DeployProd
+            name: Production Payment Service
             identifier: DeployProd
             description: ""
             type: Deployment
