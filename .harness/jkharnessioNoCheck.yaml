@@ -1,0 +1,48 @@
+inputSet:
+  pipeline:
+    identifier: paymentserviceweb
+    properties:
+      ci:
+        codebase:
+          build:
+            spec:
+              branch: master
+            type: branch
+    stages:
+      - parallel:
+          - stage:
+              identifier: DeployProd
+              type: Deployment
+              spec:
+                service:
+                  serviceRef: paymentservice
+                  serviceInputs:
+                    serviceDefinition:
+                      type: Kubernetes
+                      spec:
+                        artifacts:
+                          primary:
+                            primaryArtifactRef: payment-service
+    variables:
+      - name: mavenversion
+        type: String
+        value: "3.8"
+      - name: javaversion
+        type: String
+        value: "8"
+      - name: seusername
+        type: String
+        value: jkharnessio
+      - name: verify_fail
+        type: String
+        value: "false"
+      - name: run_owasp_scan
+        type: String
+        value: "false"
+      - name: autostopping
+        type: String
+        value: "false"
+  name: jkharnessioNoCheck
+  identifier: jkharnessioNoCheck
+  orgIdentifier: default
+  projectIdentifier: DevX_Demo
