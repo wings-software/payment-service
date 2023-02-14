@@ -1254,6 +1254,20 @@ pipeline:
               execution:
                 steps:
                   - step:
+                      type: ShellScript
+                      name: Release Check
+                      identifier: Release_Check
+                      spec:
+                        shell: Bash
+                        onDelegate: true
+                        source:
+                          type: Inline
+                          spec:
+                            script: echo "Hello World"
+                        environmentVariables: []
+                        outputVariables: []
+                      timeout: 10m
+                  - step:
                       name: Rollout Deployment
                       identifier: rolloutDeployment
                       type: K8sRollingDeploy
