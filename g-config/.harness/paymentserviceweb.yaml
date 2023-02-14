@@ -1142,6 +1142,9 @@ pipeline:
                     approverInputs: []
                     approvalMessage: "Review and Approve final Release of Payment Service - Features in Scope: <+pipeline.stages.Enable_Test_Features.execution.steps.FlagConfiguration_1.spec.feature> and Service is running here url=http://<+pipeline.variables.seusername>.cie-demo.co.uk"
         tags: {}
+        when:
+          pipelineStatus: Success
+          condition: <+pipeline.variables.CABRequired> == "True"
     - parallel:
         - stage:
             name: Progressive Release
@@ -1485,6 +1488,11 @@ pipeline:
       default: "False"
       description: ""
       value: <+input>
+    - name: CABRequired
+      type: String
+      default: "False"
+      description: ""
+      value: <+input>.allowedValues(True,False)
   flowControl:
     barriers:
       - name: Barrier
