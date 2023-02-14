@@ -1318,6 +1318,9 @@ pipeline:
                                 onTimeout:
                                   action:
                                     type: Ignore
+                      when:
+                        stageStatus: Success
+                        condition: <+pipeline.variables.verify_fail> == "false"
                 rollbackSteps:
                   - step:
                       name: Rollback Rollout Deployment
