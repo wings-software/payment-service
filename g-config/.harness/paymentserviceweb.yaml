@@ -457,6 +457,8 @@ pipeline:
                         fields:
                           - name: Description
                             value: "triggeredBy: <+pipeline.variables.seusername> --- buildNumber: <+pipeline.sequenceId>"
+                          - name: Acceptance criteria
+                            value: Review Pipeline here <+pipeline.execution.url>
                           - name: Summary
                             value: Ticket to track deployment of <+pipeline.variables.servicename> triggered by <+pipeline.variables.seusername>
                       timeout: 1d
