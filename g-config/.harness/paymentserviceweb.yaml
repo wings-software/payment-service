@@ -430,23 +430,57 @@ pipeline:
             useFromStage: Build
           execution:
             steps:
-              - step:
-                  type: Checkmarx
-                  name: Checkmarx Quality Gate
-                  identifier: Checkmarx_Quality_Gate
-                  spec:
-                    mode: ingestion
-                    config: default
-                    target:
-                      name: aa
-                      type: repository
-                      variant: aa
-                    advanced:
-                      log:
-                        level: info
-                      fail_on_severity: critical
-                    ingestion:
-                      file: aa
+              - parallel:
+                  - step:
+                      type: Checkmarx
+                      name: Checkmarx Quality Gate
+                      identifier: Checkmarx_Quality_Gate
+                      spec:
+                        mode: ingestion
+                        config: default
+                        target:
+                          name: aa
+                          type: repository
+                          variant: aa
+                        advanced:
+                          log:
+                            level: info
+                          fail_on_severity: critical
+                        ingestion:
+                          file: aa
+                  - step:
+                      type: Sonarqube
+                      name: Sonarqube Quality Gate
+                      identifier: Sonarqube_Quality_Gate
+                      spec:
+                        mode: ingestion
+                        config: default
+                        target:
+                          name: aa
+                          type: repository
+                          variant: aa
+                        advanced:
+                          log:
+                            level: info
+                        ingestion:
+                          file: aa
+                  - step:
+                      type: AquaTrivy
+                      name: AquaTrivy Quality Gate
+                      identifier: AquaTrivy_Quality_Gate
+                      spec:
+                        mode: ingestion
+                        config: default
+                        target:
+                          name: aa
+                          type: container
+                          variant: aa
+                        advanced:
+                          log:
+                            level: info
+                        privileged: false
+                        ingestion:
+                          file: aa
         when:
           pipelineStatus: Success
           condition: <+pipeline.variables.runSecurityStage> == "True"
