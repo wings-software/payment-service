@@ -419,6 +419,37 @@ pipeline:
           - name: api_domain_name
             type: String
             value: https://api.sto.harness.io
+    - stage:
+        name: Security Checks
+        identifier: Security_Checks
+        description: ""
+        type: SecurityTests
+        spec:
+          cloneCodebase: true
+          infrastructure:
+            useFromStage: Build
+          execution:
+            steps:
+              - step:
+                  type: Checkmarx
+                  name: Checkmarx Quality Gate
+                  identifier: Checkmarx_Quality_Gate
+                  spec:
+                    mode: ingestion
+                    config: default
+                    target:
+                      name: aa
+                      type: repository
+                      variant: aa
+                    advanced:
+                      log:
+                        level: info
+                      fail_on_severity: critical
+                    ingestion:
+                      file: aa
+        when:
+          pipelineStatus: Success
+          condition: <+pipeline.variables.runSecurityStage> == "True"
     - parallel:
         - stage:
             name: Test Payment Service
@@ -1381,6 +1412,11 @@ pipeline:
       type: String
       default: "false"
       value: <+input>.allowedValues(true,false)
+    - name: runSecurityStage
+      type: String
+      default: "False"
+      description: ""
+      value: <+input>
   flowControl:
     barriers:
       - name: Barrier
