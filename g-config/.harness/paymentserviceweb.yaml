@@ -688,7 +688,7 @@ pipeline:
             when:
               pipelineStatus: Success
         - stage:
-            name: Test Shop UI
+            name: Test Bank UI
             identifier: Test_Shop_UI
             description: ""
             type: Deployment
@@ -1074,7 +1074,7 @@ pipeline:
             when:
               pipelineStatus: Success
         - stage:
-            name: Production Shop UI
+            name: Production Bank UI
             identifier: Production_Shop_UI
             description: ""
             type: Deployment
