@@ -474,14 +474,28 @@ pipeline:
                           - name: Comment
                             value: "Development for <+pipeline.variables.servicename> started "
                       timeout: 1d
+                  - step:
+                      name: Rollout Deployment
+                      identifier: rolloutDeployment
+                      type: K8sRollingDeploy
+                      timeout: 10m
+                      spec:
+                        skipDryRun: false
+                  - step:
+                      type: Barrier
+                      name: Enable Flags
+                      identifier: Enable_Flags
+                      spec:
+                        barrierRef: Enable_Flags
+                      timeout: 10m
+                  - step:
+                      type: Barrier
+                      name: Test Barrier
+                      identifier: Test_Barrier
+                      spec:
+                        barrierRef: Test_Barrier
+                      timeout: 10m
                   - parallel:
-                      - step:
-                          name: Rollout Deployment
-                          identifier: rolloutDeployment
-                          type: K8sRollingDeploy
-                          timeout: 10m
-                          spec:
-                            skipDryRun: false
                       - step:
                           name: JMeter
                           identifier: JMeter
@@ -591,6 +605,13 @@ pipeline:
                               type: MarkAsSuccess
                   - step:
                       type: Barrier
+                      name: Enable Flags
+                      identifier: Enable_Flags
+                      spec:
+                        barrierRef: Enable_Flags
+                      timeout: 10m
+                  - step:
+                      type: Barrier
                       name: Test Barrier
                       identifier: Test_Barrier
                       spec:
@@ -621,14 +642,14 @@ pipeline:
                 steps:
                   - step:
                       type: Barrier
-                      name: Test Barrier
-                      identifier: Test_Barrier
+                      name: Enable Flags
+                      identifier: Enable_Flags
                       spec:
-                        barrierRef: Test_Barrier
+                        barrierRef: Enable_Flags
                       timeout: 10m
                   - step:
                       type: FlagConfiguration
-                      name: Flag Configuration_1
+                      name: Enable Features for Testers
                       identifier: FlagConfiguration_1
                       spec:
                         feature: mortgageoffer
@@ -645,6 +666,13 @@ pipeline:
                               - AllErrors
                             action:
                               type: MarkAsSuccess
+                  - step:
+                      type: Barrier
+                      name: Test Barrier
+                      identifier: Test_Barrier
+                      spec:
+                        barrierRef: Test_Barrier
+                      timeout: 10m
     - stage:
         name: Approve Prod
         identifier: Jira_Approve
@@ -1150,4 +1178,6 @@ pipeline:
         identifier: Barrier
       - name: Test Barrier
         identifier: Test_Barrier
+      - name: Enable Flags
+        identifier: Enable_Flags
   allowStageExecutions: true
