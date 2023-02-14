@@ -686,6 +686,19 @@ pipeline:
                             action:
                               type: MarkAsSuccess
                   - step:
+                      type: JiraUpdate
+                      name: Update Ticket with Flags
+                      identifier: Update_Ticket_with_Flags
+                      spec:
+                        connectorRef: account.Harness_JIRA
+                        issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.key>
+                        fields:
+                          - name: Comment
+                            value: Enabled Flags for Testers
+                          - name: Feature Flag Name
+                            value: Feature <+pipeline.stages.Enable_Test_Features.execution.steps.FlagConfiguration_1.spec.feature> fully enabled for Testers
+                      timeout: 1d
+                  - step:
                       type: Barrier
                       name: Test Barrier
                       identifier: Test_Barrier
@@ -912,7 +925,7 @@ pipeline:
                           status: Waiting for customer
                         fields:
                           - name: Test Summary
-                            value: "Smoke Test Result: <+pipeline.stages.DeployProd.spec.execution.steps.canaryDepoyment.steps.Smoke_Test.output.httpResponseCode> Selenium: <+pipeline.stages.DeployDev.spec.execution.steps.Selenium_Test.output.outputVariables.selenium_output>"
+                            value: "Smoke Test Result: <+pipeline.stages.DeployProd.spec.execution.steps.canaryDepoyment.steps.Smoke_Test.output.httpResponseCode> #### Selenium: <+pipeline.stages.DeployDev.spec.execution.steps.Selenium_Test.output.outputVariables.selenium_output>"
                           - name: Comment
                             value: "Release Version: <+pipeline.stages.DeployProd.spec.execution.steps.primaryDepoyment.steps.rollingDeployment.output.releaseNumber> Service is available here: http://<+pipeline.variables.seusername>.cie-demo.co.uk"
                       timeout: 1d
