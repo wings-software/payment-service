@@ -464,6 +464,7 @@ pipeline:
                             level: info
                         ingestion:
                           file: aa
+              - parallel:
                   - step:
                       type: AquaTrivy
                       name: AquaTrivy Quality Gate
@@ -474,6 +475,23 @@ pipeline:
                         target:
                           name: aa
                           type: container
+                          variant: aa
+                        advanced:
+                          log:
+                            level: info
+                        privileged: false
+                        ingestion:
+                          file: aa
+                  - step:
+                      type: BlackDuck
+                      name: BlackDuck Quality Gate
+                      identifier: BlackDuck_Quality_Gate
+                      spec:
+                        mode: ingestion
+                        config: default
+                        target:
+                          name: aa
+                          type: repository
                           variant: aa
                         advanced:
                           log:
