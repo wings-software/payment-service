@@ -580,8 +580,12 @@ pipeline:
                     spec:
                       artifacts:
                         primary:
-                          primaryArtifactRef: <+input>
-                          sources: <+input>
+                          primaryArtifactRef: helloWorld
+                          sources:
+                            - identifier: helloWorld
+                              type: DockerRegistry
+                              spec:
+                                tag: linux
               environment:
                 environmentRef: JKTest
                 deployToAll: false
