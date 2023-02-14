@@ -499,6 +499,22 @@ pipeline:
                         privileged: false
                         ingestion:
                           file: aa
+              - step:
+                  type: Snyk
+                  name: Snyk Quality Gate
+                  identifier: Snyk_Quality_Gate
+                  spec:
+                    mode: ingestion
+                    config: default
+                    target:
+                      name: aa
+                      type: repository
+                      variant: aa
+                    advanced:
+                      log:
+                        level: info
+                    ingestion:
+                      file: aa
         when:
           pipelineStatus: Success
           condition: <+pipeline.variables.runSecurityStage> == "True"
