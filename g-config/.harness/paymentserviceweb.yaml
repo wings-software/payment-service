@@ -426,59 +426,25 @@ pipeline:
             description: ""
             type: Deployment
             spec:
-              serviceConfig:
-                serviceDefinition:
-                  type: Kubernetes
-                  spec:
-                    manifestOverrideSets: []
-                    manifests:
-                      - manifest:
-                          identifier: templates
-                          type: K8sManifest
-                          spec:
-                            store:
-                              type: Github
-                              spec:
-                                connectorRef: nikpgithub
-                                gitFetchType: Branch
-                                paths:
-                                  - templates
-                                repoName: payment-service-nonprod
-                                branch: master
-                            skipResourceVersioning: false
-                      - manifest:
-                          identifier: values
-                          type: Values
-                          spec:
-                            store:
-                              type: Github
-                              spec:
-                                connectorRef: nikpgithub
-                                gitFetchType: Branch
-                                paths:
-                                  - values-non-prod.yaml
-                                repoName: payment-service-nonprod
-                                branch: master
-                    artifacts:
-                      sidecars: []
-                      primary:
-                        spec:
-                          connectorRef: nikpdockerhub
-                          imagePath: nikpap/payment-service
-                          tag: <+pipeline.sequenceId>
-                        type: DockerRegistry
-                    variables: []
+              deploymentType: Kubernetes
+              service:
                 serviceRef: paymentservicesrm_dev
-              infrastructure:
+                serviceInputs:
+                  serviceDefinition:
+                    type: Kubernetes
+                    spec:
+                      artifacts:
+                        primary:
+                          primaryArtifactRef: <+input>
+                          sources: <+input>
+              environment:
                 environmentRef: GKEDEV
-                infrastructureDefinition:
-                  type: KubernetesDirect
-                  spec:
-                    connectorRef: nikpgkecluster
-                    namespace: payment-service-dev
-                    releaseName: release-1
-                allowSimultaneousDeployments: true
-                infrastructureKey: ""
+                deployToAll: false
+                infrastructureDefinitions:
+                  - identifier: K8s_Dev_Namespace
+              deployToAll: false
+              infrastructureDefinitions:
+                - identifier: K8s_Prod_Namespace
               execution:
                 steps:
                   - step:
