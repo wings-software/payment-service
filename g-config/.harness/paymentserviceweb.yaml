@@ -419,226 +419,164 @@ pipeline:
           - name: api_domain_name
             type: String
             value: https://api.sto.harness.io
-    - stage:
-        name: DeployDev
-        identifier: DeployDev
-        description: ""
-        type: Deployment
-        spec:
-          serviceConfig:
-            serviceDefinition:
-              type: Kubernetes
-              spec:
-                manifestOverrideSets: []
-                manifests:
-                  - manifest:
-                      identifier: templates
-                      type: K8sManifest
-                      spec:
-                        store:
-                          type: Github
-                          spec:
-                            connectorRef: nikpgithub
-                            gitFetchType: Branch
-                            paths:
-                              - templates
-                            repoName: payment-service-nonprod
-                            branch: master
-                        skipResourceVersioning: false
-                  - manifest:
-                      identifier: values
-                      type: Values
-                      spec:
-                        store:
-                          type: Github
-                          spec:
-                            connectorRef: nikpgithub
-                            gitFetchType: Branch
-                            paths:
-                              - values-non-prod.yaml
-                            repoName: payment-service-nonprod
-                            branch: master
-                artifacts:
-                  sidecars: []
-                  primary:
-                    spec:
-                      connectorRef: nikpdockerhub
-                      imagePath: nikpap/payment-service
-                      tag: <+pipeline.sequenceId>
-                    type: DockerRegistry
-                variables: []
-            serviceRef: paymentservicesrm_dev
-          infrastructure:
-            environmentRef: GKEDEV
-            infrastructureDefinition:
-              type: KubernetesDirect
-              spec:
-                connectorRef: nikpgkecluster
-                namespace: payment-service-dev
-                releaseName: release-1
-            allowSimultaneousDeployments: true
-            infrastructureKey: ""
-          execution:
-            steps:
-              - step:
-                  type: JiraCreate
-                  name: JiraCreate
-                  identifier: JiraCreate
-                  spec:
-                    connectorRef: account.Harness_JIRA
-                    projectKey: HD
-                    issueType: Story
-                    fields:
-                      - name: Description
-                        value: "triggeredBy: <+pipeline.variables.seusername> --- buildNumber: <+pipeline.sequenceId>"
-                      - name: Summary
-                        value: Ticket to track deployment of <+pipeline.variables.servicename> triggered by <+pipeline.variables.seusername>
-                  timeout: 1d
-              - step:
-                  type: JiraUpdate
-                  name: Move to in Progress
-                  identifier: Move_to_in_Progress
-                  spec:
-                    connectorRef: account.Harness_JIRA
-                    issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.id>
-                    transitionTo:
-                      transitionName: In Progress
-                      status: In Progress
-                    fields:
-                      - name: Comment
-                        value: "Development for <+pipeline.variables.servicename> started "
-                  timeout: 1d
-              - parallel:
-                  - step:
-                      name: Rollout Deployment
-                      identifier: rolloutDeployment
-                      type: K8sRollingDeploy
-                      timeout: 10m
-                      spec:
-                        skipDryRun: false
-                  - step:
-                      name: JMeter
-                      identifier: JMeter
-                      template:
-                        templateRef: JMeter
-                        versionLabel: v1
-                  - step:
-                      type: ShellScript
-                      name: Selenium Test
-                      identifier: Selenium_Test
-                      spec:
-                        shell: Bash
-                        onDelegate: true
-                        source:
-                          type: Inline
-                          spec:
-                            script: |-
-                              selenium_results="# [info] Executing: |View Balance | /paymentservice/viewBalance 
-                              # [info] Actual value 'Match with the expected'
-                              # [info] Executing: |Perform Transaction | /paymentservice/createTransaction
-                              # [info] Actual value 'Successful Transaction'
-                              # [info] Executing: |verifyPayment | /paymentservice/verifyPayment
-                              # [info] Actual value 'Payment verified'
-                              # [info] Executing: |verifyElementPresent | //input[contains(@src,'/ndmns/../images/wap2/img/framework/search_button.png')]
-                              # [info] Actual value 'ElementPresent'
-                              # [info] Executing: |verifyElementPresent | //img[contains(@src,'ad-banners/banner_ideas_240x40.jpg')] 
-                              # [info] Actual value 'ElementPresent'"
-
-                              echo $selenium_results
-
-                              export selenium_output=$selenium_results
-                        environmentVariables: []
-                        outputVariables:
-                          - name: selenium_output
-                            type: String
-                            value: selenium_output
-                      timeout: 10m
-              - step:
-                  type: JiraUpdate
-                  name: Move to Dev Completed
-                  identifier: Move_to_Dev_Completed
-                  spec:
-                    connectorRef: account.Harness_JIRA
-                    issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.id>
-                    transitionTo:
-                      transitionName: Dev Complete
-                      status: Dev Complete
-                    fields:
-                      - name: Test Summary
-                        value: "Selenium: <+pipeline.stages.DeployDev.spec.execution.steps.Selenium_Test.output.outputVariables.selenium_output>"
-                      - name: Comment
-                        value: Development for <+pipeline.variables.servicename> finished
-                  timeout: 1d
-            rollbackSteps:
-              - step:
-                  name: Rollback Rollout Deployment
-                  identifier: rollbackRolloutDeployment
-                  type: K8sRollingRollback
-                  timeout: 10m
-                  spec: {}
-        tags: {}
-        failureStrategies:
-          - onFailure:
-              errors:
-                - AllErrors
-              action:
-                type: StageRollback
-        when:
-          pipelineStatus: Success
     - parallel:
         - stage:
             name: Test Payment Service
-            identifier: Test_Payment_Service
+            identifier: DeployDev
             description: ""
             type: Deployment
             spec:
-              deploymentType: Kubernetes
-              service:
+              serviceConfig:
+                serviceDefinition:
+                  type: Kubernetes
+                  spec:
+                    manifestOverrideSets: []
+                    manifests:
+                      - manifest:
+                          identifier: templates
+                          type: K8sManifest
+                          spec:
+                            store:
+                              type: Github
+                              spec:
+                                connectorRef: nikpgithub
+                                gitFetchType: Branch
+                                paths:
+                                  - templates
+                                repoName: payment-service-nonprod
+                                branch: master
+                            skipResourceVersioning: false
+                      - manifest:
+                          identifier: values
+                          type: Values
+                          spec:
+                            store:
+                              type: Github
+                              spec:
+                                connectorRef: nikpgithub
+                                gitFetchType: Branch
+                                paths:
+                                  - values-non-prod.yaml
+                                repoName: payment-service-nonprod
+                                branch: master
+                    artifacts:
+                      sidecars: []
+                      primary:
+                        spec:
+                          connectorRef: nikpdockerhub
+                          imagePath: nikpap/payment-service
+                          tag: <+pipeline.sequenceId>
+                        type: DockerRegistry
+                    variables: []
                 serviceRef: paymentservicesrm_dev
-                serviceInputs:
-                  serviceDefinition:
-                    type: Kubernetes
-                    spec:
-                      artifacts:
-                        primary:
-                          primaryArtifactRef: <+input>
-                          sources: <+input>
-              environment:
-                environmentRef: JKTest
-                deployToAll: false
-                infrastructureDefinitions:
-                  - identifier: Test_K8s_Namespace
+              infrastructure:
+                environmentRef: GKEDEV
+                infrastructureDefinition:
+                  type: KubernetesDirect
+                  spec:
+                    connectorRef: nikpgkecluster
+                    namespace: payment-service-dev
+                    releaseName: release-1
+                allowSimultaneousDeployments: true
+                infrastructureKey: ""
               execution:
                 steps:
                   - step:
-                      name: Rollout Deployment
-                      identifier: rolloutDeployment
-                      type: K8sRollingDeploy
-                      timeout: 10m
+                      type: JiraCreate
+                      name: JiraCreate
+                      identifier: JiraCreate
                       spec:
-                        skipDryRun: false
-                        pruningEnabled: false
-                      failureStrategies:
-                        - onFailure:
-                            errors:
-                              - AllErrors
-                            action:
-                              type: MarkAsSuccess
+                        connectorRef: account.Harness_JIRA
+                        projectKey: HD
+                        issueType: Story
+                        fields:
+                          - name: Description
+                            value: "triggeredBy: <+pipeline.variables.seusername> --- buildNumber: <+pipeline.sequenceId>"
+                          - name: Summary
+                            value: Ticket to track deployment of <+pipeline.variables.servicename> triggered by <+pipeline.variables.seusername>
+                      timeout: 1d
                   - step:
-                      type: Barrier
-                      name: Test Barrier
-                      identifier: Test_Barrier
+                      type: JiraUpdate
+                      name: Move to in Progress
+                      identifier: Move_to_in_Progress
                       spec:
-                        barrierRef: Test_Barrier
-                      timeout: 10m
+                        connectorRef: account.Harness_JIRA
+                        issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.id>
+                        transitionTo:
+                          transitionName: In Progress
+                          status: In Progress
+                        fields:
+                          - name: Comment
+                            value: "Development for <+pipeline.variables.servicename> started "
+                      timeout: 1d
+                  - parallel:
+                      - step:
+                          name: Rollout Deployment
+                          identifier: rolloutDeployment
+                          type: K8sRollingDeploy
+                          timeout: 10m
+                          spec:
+                            skipDryRun: false
+                      - step:
+                          name: JMeter
+                          identifier: JMeter
+                          template:
+                            templateRef: JMeter
+                            versionLabel: v1
+                      - step:
+                          type: ShellScript
+                          name: Selenium Test
+                          identifier: Selenium_Test
+                          spec:
+                            shell: Bash
+                            onDelegate: true
+                            source:
+                              type: Inline
+                              spec:
+                                script: |-
+                                  selenium_results="# [info] Executing: |View Balance | /paymentservice/viewBalance 
+                                  # [info] Actual value 'Match with the expected'
+                                  # [info] Executing: |Perform Transaction | /paymentservice/createTransaction
+                                  # [info] Actual value 'Successful Transaction'
+                                  # [info] Executing: |verifyPayment | /paymentservice/verifyPayment
+                                  # [info] Actual value 'Payment verified'
+                                  # [info] Executing: |verifyElementPresent | //input[contains(@src,'/ndmns/../images/wap2/img/framework/search_button.png')]
+                                  # [info] Actual value 'ElementPresent'
+                                  # [info] Executing: |verifyElementPresent | //img[contains(@src,'ad-banners/banner_ideas_240x40.jpg')] 
+                                  # [info] Actual value 'ElementPresent'"
+
+                                  echo $selenium_results
+
+                                  export selenium_output=$selenium_results
+                            environmentVariables: []
+                            outputVariables:
+                              - name: selenium_output
+                                type: String
+                                value: selenium_output
+                          timeout: 10m
+                  - step:
+                      type: JiraUpdate
+                      name: Move to Dev Completed
+                      identifier: Move_to_Dev_Completed
+                      spec:
+                        connectorRef: account.Harness_JIRA
+                        issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.id>
+                        transitionTo:
+                          transitionName: Dev Complete
+                          status: Dev Complete
+                        fields:
+                          - name: Test Summary
+                            value: "Selenium: <+pipeline.stages.DeployDev.spec.execution.steps.Selenium_Test.output.outputVariables.selenium_output>"
+                          - name: Comment
+                            value: Development for <+pipeline.variables.servicename> finished
+                      timeout: 1d
                 rollbackSteps:
                   - step:
                       name: Rollback Rollout Deployment
                       identifier: rollbackRolloutDeployment
                       type: K8sRollingRollback
                       timeout: 10m
-                      spec:
-                        pruningEnabled: false
+                      spec: {}
             tags: {}
             failureStrategies:
               - onFailure:
@@ -646,6 +584,8 @@ pipeline:
                     - AllErrors
                   action:
                     type: StageRollback
+            when:
+              pipelineStatus: Success
         - stage:
             name: Test Shop UI
             identifier: Test_Shop_UI
