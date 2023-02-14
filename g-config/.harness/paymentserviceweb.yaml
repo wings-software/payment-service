@@ -495,6 +495,20 @@ pipeline:
                       spec:
                         barrierRef: Test_Barrier
                       timeout: 10m
+                  - step:
+                      type: JiraUpdate
+                      name: Move to Ready for Testing
+                      identifier: Move_to_Ready_for_Testing
+                      spec:
+                        connectorRef: account.Harness_JIRA
+                        issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.id>
+                        transitionTo:
+                          transitionName: Ready For Testing
+                          status: QA Test
+                        fields:
+                          - name: Comment
+                            value: Payment Service new Features are now ready for Testing
+                      timeout: 1d
                   - parallel:
                       - step:
                           name: JMeter
@@ -533,30 +547,29 @@ pipeline:
                                 type: String
                                 value: selenium_output
                           timeout: 10m
-                  - parallel:
-                      - step:
-                          type: JiraUpdate
-                          name: Move to Dev Completed
-                          identifier: Move_to_Dev_Completed
-                          spec:
-                            connectorRef: account.Harness_JIRA
-                            issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.id>
-                            transitionTo:
-                              transitionName: Dev Complete
-                              status: Dev Complete
-                            fields:
-                              - name: Test Summary
-                                value: "Selenium: <+pipeline.stages.DeployDev.spec.execution.steps.Selenium_Test.output.outputVariables.selenium_output>"
-                              - name: Comment
-                                value: Development for <+pipeline.variables.servicename> finished
-                          timeout: 1d
-                      - step:
-                          type: Barrier
-                          name: Test finished
-                          identifier: Test_finished
-                          spec:
-                            barrierRef: Test_finished
-                          timeout: 10m
+                  - step:
+                      type: JiraUpdate
+                      name: Move to Test Completed
+                      identifier: Move_to_Dev_Completed
+                      spec:
+                        connectorRef: account.Harness_JIRA
+                        issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.id>
+                        transitionTo:
+                          transitionName: Under Review
+                          status: Under Review
+                        fields:
+                          - name: Test Summary
+                            value: "Selenium: <+pipeline.stages.DeployDev.spec.execution.steps.Selenium_Test.output.outputVariables.selenium_output>"
+                          - name: Comment
+                            value: Testing for <+pipeline.variables.servicename> completed
+                      timeout: 1d
+                  - step:
+                      type: Barrier
+                      name: Test finished
+                      identifier: Test_finished
+                      spec:
+                        barrierRef: Test_finished
+                      timeout: 10m
                 rollbackSteps:
                   - step:
                       name: Rollback Rollout Deployment
@@ -889,46 +902,44 @@ pipeline:
                             type: K8sRollingRollback
                             timeout: 10m
                             spec: {}
-                  - step:
-                      type: ShellScript
-                      name: WrapUp
-                      identifier: WrapUp
-                      spec:
-                        shell: Bash
-                        onDelegate: true
-                        source:
-                          type: Inline
+                  - parallel:
+                      - step:
+                          type: JiraUpdate
+                          name: JiraUpdate
+                          identifier: JiraUpdate
                           spec:
-                            script: |-
-                              echo "Wrapping up deployment"
-                              url="http://$subdomain.cie-demo.co.uk"
-                              export application="$url"
-                        environmentVariables:
-                          - name: subdomain
-                            type: String
-                            value: <+pipeline.variables.seusername>
-                        outputVariables:
-                          - name: application
-                            type: String
-                            value: application
-                        executionTarget: {}
-                      timeout: 10m
-                  - step:
-                      type: JiraUpdate
-                      name: JiraUpdate
-                      identifier: JiraUpdate
-                      spec:
-                        connectorRef: account.Harness_JIRA
-                        issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.key>
-                        transitionTo:
-                          transitionName: Waiting for customer
-                          status: Waiting for customer
-                        fields:
-                          - name: Test Summary
-                            value: "Smoke Test Result: <+pipeline.stages.DeployProd.spec.execution.steps.canaryDepoyment.steps.Smoke_Test.output.httpResponseCode> #### Selenium: <+pipeline.stages.DeployDev.spec.execution.steps.Selenium_Test.output.outputVariables.selenium_output>"
-                          - name: Comment
-                            value: "Release Version: <+pipeline.stages.DeployProd.spec.execution.steps.primaryDepoyment.steps.rollingDeployment.output.releaseNumber> Service is available here: http://<+pipeline.variables.seusername>.cie-demo.co.uk"
-                      timeout: 1d
+                            connectorRef: account.Harness_JIRA
+                            issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.key>
+                            fields:
+                              - name: Test Summary
+                                value: "Smoke Test Result: <+pipeline.stages.DeployProd.spec.execution.steps.canaryDepoyment.steps.Smoke_Test.output.httpResponseCode> #### Selenium: <+pipeline.stages.DeployDev.spec.execution.steps.Selenium_Test.output.outputVariables.selenium_output>"
+                              - name: Comment
+                                value: "Release Version: <+pipeline.stages.DeployProd.spec.execution.steps.primaryDepoyment.steps.rollingDeployment.output.releaseNumber> of Payment Service is available here: http://<+pipeline.variables.seusername>.cie-demo.co.uk all new Features are turned off for Customers"
+                          timeout: 1d
+                      - step:
+                          type: ShellScript
+                          name: WrapUp
+                          identifier: WrapUp
+                          spec:
+                            shell: Bash
+                            onDelegate: true
+                            source:
+                              type: Inline
+                              spec:
+                                script: |-
+                                  echo "Wrapping up deployment"
+                                  url="http://$subdomain.cie-demo.co.uk"
+                                  export application="$url"
+                            environmentVariables:
+                              - name: subdomain
+                                type: String
+                                value: <+pipeline.variables.seusername>
+                            outputVariables:
+                              - name: application
+                                type: String
+                                value: application
+                            executionTarget: {}
+                          timeout: 10m
                   - step:
                       type: K8sApply
                       name: Autostopping
@@ -1021,7 +1032,6 @@ pipeline:
                   type: HarnessApproval
                   timeout: 1d
                   spec:
-                    approvalMessage: Please approve that Feature can be released http://<+pipeline.variables.seusername>.cie-demo.co.uk
                     includePipelineExecutionHistory: true
                     approvers:
                       minimumCount: 1
@@ -1029,195 +1039,276 @@ pipeline:
                       userGroups:
                         - jkharnessio
                     approverInputs: []
+                    approvalMessage: "Review and Approve final Release of Payment Service - Features in Scope: <+pipeline.stages.Enable_Test_Features.execution.steps.FlagConfiguration_1.spec.feature> and Service is running here url=http://<+pipeline.variables.seusername>.cie-demo.co.uk"
         tags: {}
-    - stage:
-        name: Progressive Release
-        identifier: Release_Features
-        description: ""
-        type: FeatureFlag
-        spec:
-          execution:
-            steps:
-              - step:
-                  type: FlagConfiguration
-                  name: Ten Percent Release
-                  identifier: Ten_Percent_Release
-                  spec:
-                    feature: mortgageoffer
-                    environment: GKEPROD
-                    instructions:
-                      - identifier: AddRuleIdentifier
-                        type: AddRule
+    - parallel:
+        - stage:
+            name: Progressive Release
+            identifier: Release_Features
+            description: ""
+            type: FeatureFlag
+            spec:
+              execution:
+                steps:
+                  - step:
+                      type: FlagConfiguration
+                      name: Ten Percent Release
+                      identifier: Ten_Percent_Release
+                      spec:
+                        feature: mortgageoffer
+                        environment: GKEPROD
+                        instructions:
+                          - identifier: AddRuleIdentifier
+                            type: AddRule
+                            spec:
+                              priority: 100
+                              distribution:
+                                bucketBy: identifier
+                                clauses:
+                                  - op: segmentMatch
+                                    attribute: ""
+                                    values:
+                                      - Customer_Group_A
+                                variations:
+                                  - variation: "true"
+                                    weight: 10
+                                  - variation: "false"
+                                    weight: 90
+                      timeout: 10m
+                  - step:
+                      type: HarnessApproval
+                      name: Release Gate
+                      identifier: Release_Gate
+                      spec:
+                        approvalMessage: Please review the following information and approve the pipeline progression
+                        includePipelineExecutionHistory: true
+                        approvers:
+                          userGroups:
+                            - jkharnessio
+                          minimumCount: 1
+                          disallowPipelineExecutor: false
+                        approverInputs: []
+                      timeout: 1d
+                  - step:
+                      type: FlagConfiguration
+                      name: Twenty Percent Release
+                      identifier: Twenty_Percent_Release
+                      spec:
+                        feature: mortgageoffer
+                        environment: GKEPROD
+                        instructions:
+                          - identifier: AddRuleIdentifier
+                            type: AddRule
+                            spec:
+                              priority: 100
+                              distribution:
+                                bucketBy: identifier
+                                clauses:
+                                  - op: segmentMatch
+                                    attribute: ""
+                                    values:
+                                      - Customer_Group_A
+                                variations:
+                                  - variation: "true"
+                                    weight: 20
+                                  - variation: "false"
+                                    weight: 80
+                      timeout: 10m
+                  - step:
+                      type: FlagConfiguration
+                      name: Fifty Percent Release
+                      identifier: Fifty_Percent_Release
+                      spec:
+                        feature: mortgageoffer
+                        environment: GKEPROD
+                        instructions:
+                          - identifier: AddRuleIdentifier
+                            type: AddRule
+                            spec:
+                              priority: 100
+                              distribution:
+                                bucketBy: identifier
+                                clauses:
+                                  - op: segmentMatch
+                                    attribute: ""
+                                    values:
+                                      - Customer_Group_A
+                                variations:
+                                  - variation: "true"
+                                    weight: 50
+                                  - variation: "false"
+                                    weight: 50
+                      timeout: 10m
+                  - step:
+                      type: HarnessApproval
+                      name: Final Release Gate
+                      identifier: Final_Release_Gate
+                      spec:
+                        approvalMessage: Please review the following information and approve the pipeline progression
+                        includePipelineExecutionHistory: true
+                        approvers:
+                          userGroups:
+                            - jkharnessio
+                          minimumCount: 1
+                          disallowPipelineExecutor: false
+                        approverInputs: []
+                      timeout: 1d
+                  - step:
+                      type: FlagConfiguration
+                      name: Full Release
+                      identifier: Full_Release
+                      spec:
+                        feature: mortgageoffer
+                        environment: GKEPROD
+                        instructions:
+                          - identifier: AddRuleIdentifier
+                            type: AddRule
+                            spec:
+                              priority: 100
+                              distribution:
+                                bucketBy: identifier
+                                clauses:
+                                  - op: segmentMatch
+                                    attribute: ""
+                                    values:
+                                      - Customer_Group_A
+                                variations:
+                                  - variation: "true"
+                                    weight: 100
+                                  - variation: "false"
+                                    weight: 0
+                      timeout: 10m
+                  - step:
+                      type: JiraUpdate
+                      name: Update Ticket
+                      identifier: Update_Ticket
+                      spec:
+                        connectorRef: account.Harness_JIRA
+                        issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.id>
+                        fields:
+                          - name: Feature Flag Enabled Customers
+                            value: Feature <+pipeline.stages.Release_Features.execution.steps.Full_Release.spec.feature> fully enabled for <+pipeline.stages.Release_Features.execution.steps.Full_Release.spec.instructions[0].spec.distribution.clauses[0].values>
+                          - name: Comment
+                            value: Feature Mortage Offer Release and ready for Live Testing
+                      timeout: 1d
+                  - step:
+                      type: HarnessApproval
+                      name: Rollback Environment
+                      identifier: Rollback_Environment
+                      spec:
+                        approvalMessage: Please review the following information and approve the pipeline progression
+                        includePipelineExecutionHistory: true
+                        approvers:
+                          userGroups:
+                            - jkharnessio
+                          minimumCount: 1
+                          disallowPipelineExecutor: false
+                        approverInputs: []
+                      timeout: 1d
+                  - step:
+                      type: FlagConfiguration
+                      name: Disable Flag
+                      identifier: Disable_Flag
+                      spec:
+                        feature: mortgageoffer
+                        environment: GKEPROD
+                        instructions:
+                          - identifier: AddRuleIdentifier
+                            type: AddRule
+                            spec:
+                              priority: 100
+                              distribution:
+                                bucketBy: identifier
+                                clauses:
+                                  - op: segmentMatch
+                                    attribute: ""
+                                    values:
+                                      - Customer_Group_A
+                                variations:
+                                  - variation: "true"
+                                    weight: 0
+                                  - variation: "false"
+                                    weight: 100
+                      timeout: 10m
+        - stage:
+            name: Verify Release
+            identifier: Verify_Release
+            description: ""
+            type: Deployment
+            spec:
+              deploymentType: Kubernetes
+              service:
+                serviceRef: paymentservice
+                serviceInputs:
+                  serviceDefinition:
+                    type: Kubernetes
+                    spec:
+                      artifacts:
+                        primary:
+                          primaryArtifactRef: payment-service
+              environment:
+                environmentRef: GKEPROD
+                deployToAll: false
+                infrastructureDefinitions:
+                  - identifier: K8s_Prod_Namespace
+              execution:
+                steps:
+                  - step:
+                      type: Verify
+                      name: Verify Production Release
+                      identifier: Verify_Production_Release
+                      spec:
+                        type: LoadTest
+                        monitoredService:
+                          type: Default
+                          spec: {}
                         spec:
-                          priority: 100
-                          distribution:
-                            bucketBy: identifier
-                            clauses:
-                              - op: segmentMatch
-                                attribute: ""
-                                values:
-                                  - Customer_Group_A
-                            variations:
-                              - variation: "true"
-                                weight: 10
-                              - variation: "false"
-                                weight: 90
-                  timeout: 10m
-              - step:
-                  type: HarnessApproval
-                  name: Release Gate
-                  identifier: Release_Gate
-                  spec:
-                    approvalMessage: Please review the following information and approve the pipeline progression
-                    includePipelineExecutionHistory: true
-                    approvers:
-                      userGroups:
-                        - jkharnessio
-                      minimumCount: 1
-                      disallowPipelineExecutor: false
-                    approverInputs: []
-                  timeout: 1d
-              - step:
-                  type: FlagConfiguration
-                  name: Twenty Percent Release
-                  identifier: Twenty_Percent_Release
-                  spec:
-                    feature: mortgageoffer
-                    environment: GKEPROD
-                    instructions:
-                      - identifier: AddRuleIdentifier
-                        type: AddRule
-                        spec:
-                          priority: 100
-                          distribution:
-                            bucketBy: identifier
-                            clauses:
-                              - op: segmentMatch
-                                attribute: ""
-                                values:
-                                  - Customer_Group_A
-                            variations:
-                              - variation: "true"
-                                weight: 20
-                              - variation: "false"
-                                weight: 80
-                  timeout: 10m
-              - step:
-                  type: FlagConfiguration
-                  name: Fifty Percent Release
-                  identifier: Fifty_Percent_Release
-                  spec:
-                    feature: mortgageoffer
-                    environment: GKEPROD
-                    instructions:
-                      - identifier: AddRuleIdentifier
-                        type: AddRule
-                        spec:
-                          priority: 100
-                          distribution:
-                            bucketBy: identifier
-                            clauses:
-                              - op: segmentMatch
-                                attribute: ""
-                                values:
-                                  - Customer_Group_A
-                            variations:
-                              - variation: "true"
-                                weight: 50
-                              - variation: "false"
-                                weight: 50
-                  timeout: 10m
-              - step:
-                  type: HarnessApproval
-                  name: Final Release Gate
-                  identifier: Final_Release_Gate
-                  spec:
-                    approvalMessage: Please review the following information and approve the pipeline progression
-                    includePipelineExecutionHistory: true
-                    approvers:
-                      userGroups:
-                        - jkharnessio
-                      minimumCount: 1
-                      disallowPipelineExecutor: false
-                    approverInputs: []
-                  timeout: 1d
-              - step:
-                  type: FlagConfiguration
-                  name: Full Release
-                  identifier: Full_Release
-                  spec:
-                    feature: mortgageoffer
-                    environment: GKEPROD
-                    instructions:
-                      - identifier: AddRuleIdentifier
-                        type: AddRule
-                        spec:
-                          priority: 100
-                          distribution:
-                            bucketBy: identifier
-                            clauses:
-                              - op: segmentMatch
-                                attribute: ""
-                                values:
-                                  - Customer_Group_A
-                            variations:
-                              - variation: "true"
-                                weight: 100
-                              - variation: "false"
-                                weight: 0
-                  timeout: 10m
-              - step:
-                  type: JiraUpdate
-                  name: Update Ticket
-                  identifier: Update_Ticket
-                  spec:
-                    connectorRef: account.Harness_JIRA
-                    issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.id>
-                    fields:
-                      - name: Feature Flag Enabled Customers
-                        value: Feature <+pipeline.stages.Release_Features.execution.steps.Full_Release.spec.feature> fully enabled for <+pipeline.stages.Release_Features.execution.steps.Full_Release.spec.instructions[0].spec.distribution.clauses[0].values>
-                      - name: Comment
-                        value: Feature Mortage Offer Release and ready for Live Testing
-                  timeout: 1d
-              - step:
-                  type: HarnessApproval
-                  name: Rollback Environment
-                  identifier: Rollback_Environment
-                  spec:
-                    approvalMessage: Please review the following information and approve the pipeline progression
-                    includePipelineExecutionHistory: true
-                    approvers:
-                      userGroups:
-                        - jkharnessio
-                      minimumCount: 1
-                      disallowPipelineExecutor: false
-                    approverInputs: []
-                  timeout: 1d
-              - step:
-                  type: FlagConfiguration
-                  name: Disable Flag
-                  identifier: Disable_Flag
-                  spec:
-                    feature: mortgageoffer
-                    environment: GKEPROD
-                    instructions:
-                      - identifier: AddRuleIdentifier
-                        type: AddRule
-                        spec:
-                          priority: 100
-                          distribution:
-                            bucketBy: identifier
-                            clauses:
-                              - op: segmentMatch
-                                attribute: ""
-                                values:
-                                  - Customer_Group_A
-                            variations:
-                              - variation: "true"
-                                weight: 0
-                              - variation: "false"
-                                weight: 100
-                  timeout: 10m
+                          sensitivity: LOW
+                          duration: 5m
+                          baseline: LAST
+                          deploymentTag: <+serviceConfig.artifacts.primary.tag>
+                      timeout: 2h
+                      failureStrategies:
+                        - onFailure:
+                            errors:
+                              - AllErrors
+                            action:
+                              type: ManualIntervention
+                              spec:
+                                timeout: 1h
+                                onTimeout:
+                                  action:
+                                    type: StageRollback
+                        - onFailure:
+                            errors:
+                              - Unknown
+                            action:
+                              type: ManualIntervention
+                              spec:
+                                timeout: 2h
+                                onTimeout:
+                                  action:
+                                    type: Ignore
+                rollbackSteps:
+                  - step:
+                      name: Canary Delete
+                      identifier: rollbackCanaryDelete
+                      type: K8sCanaryDelete
+                      timeout: 10m
+                      spec: {}
+                  - step:
+                      name: Rolling Rollback
+                      identifier: rollingRollback
+                      type: K8sRollingRollback
+                      timeout: 10m
+                      spec: {}
+            tags: {}
+            failureStrategies:
+              - onFailure:
+                  errors:
+                    - AllErrors
+                  action:
+                    type: StageRollback
   variables:
     - name: mavenversion
       type: String
