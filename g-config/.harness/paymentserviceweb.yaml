@@ -947,7 +947,7 @@ pipeline:
                               monitoredService:
                                 type: Default
                                 spec: {}
-                            timeout: 2h
+                            timeout: 1d
                             failureStrategies:
                               - onFailure:
                                   errors:
