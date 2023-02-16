@@ -499,44 +499,6 @@ pipeline:
         when:
           pipelineStatus: Success
     - stage:
-        name: Jira Approve
-        identifier: Jira_Approve
-        description: ""
-        type: Approval
-        spec:
-          execution:
-            steps:
-              - step:
-                  name: Jira Approval
-                  identifier: jiraApproval
-                  type: JiraApproval
-                  timeout: 1d
-                  spec:
-                    approvalCriteria:
-                      type: KeyValues
-                      spec:
-                        matchAnyCondition: true
-                        conditions:
-                          - key: Status
-                            operator: equals
-                            value: Approved
-                    rejectionCriteria:
-                      type: KeyValues
-                      spec:
-                        matchAnyCondition: false
-                        conditions:
-                          - key: Status
-                            operator: equals
-                            value: Rejected
-                    connectorRef: account.Harness_JIRA
-                    projectKey: HD
-                    issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.key>
-            rollbackSteps: []
-          serviceDependencies: []
-        tags: {}
-        when:
-          pipelineStatus: Success
-    - stage:
         name: DeployProd
         identifier: DeployProd
         description: ""
@@ -578,18 +540,16 @@ pipeline:
                             sensitivity: LOW
                             duration: 5m
                             deploymentTag: <+serviceConfig.artifacts.primary.tag>
+                          monitoredService:
+                            type: Default
+                            spec: {}
                         timeout: 2h
                         failureStrategies:
                           - onFailure:
                               errors:
                                 - Verification
                               action:
-                                type: ManualIntervention
-                                spec:
-                                  timeout: 2h
-                                  onTimeout:
-                                    action:
-                                      type: StageRollback
+                                type: StageRollback
                           - onFailure:
                               errors:
                                 - Unknown
