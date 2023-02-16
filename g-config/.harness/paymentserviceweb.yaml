@@ -749,7 +749,7 @@ pipeline:
                       identifier: Enable_Flags
                       spec:
                         barrierRef: Enable_Flags
-                      timeout: 10m
+                      timeout: 1d
                   - step:
                       type: Barrier
                       name: Test Barrier
@@ -793,7 +793,7 @@ pipeline:
                       identifier: Enable_Flags
                       spec:
                         barrierRef: Enable_Flags
-                      timeout: 10m
+                      timeout: 1d
                   - step:
                       type: FlagConfiguration
                       name: Enable Features for Testers
