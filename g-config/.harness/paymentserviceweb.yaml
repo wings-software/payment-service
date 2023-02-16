@@ -583,6 +583,20 @@ pipeline:
                       spec:
                         skipDryRun: false
                   - step:
+                      type: HarnessApproval
+                      name: Wait here to show Barriers
+                      identifier: Wait_here_to_show_Barriers
+                      spec:
+                        approvalMessage: Please review the following information and approve the pipeline progression
+                        includePipelineExecutionHistory: true
+                        approvers:
+                          userGroups:
+                            - jkharnessio
+                          minimumCount: 1
+                          disallowPipelineExecutor: false
+                        approverInputs: []
+                      timeout: 1d
+                  - step:
                       type: Barrier
                       name: Enable Flags
                       identifier: Enable_Flags
