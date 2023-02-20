@@ -751,3 +751,4 @@ pipeline:
     barriers:
       - name: Barrier
         identifier: Barrier
+  allowStageExecutions: false
