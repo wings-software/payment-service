@@ -1,0 +1,82 @@
+template:
+  name: Dev Deployment Finbourne
+  type: Stage
+  projectIdentifier: DevX_Demo
+  orgIdentifier: default
+  spec:
+    type: Deployment
+    spec:
+      deploymentType: Kubernetes
+      service:
+        serviceRef: paymentservicesrm_dev
+        serviceInputs:
+          serviceDefinition:
+            type: Kubernetes
+            spec:
+              artifacts:
+                primary:
+                  primaryArtifactRef: payment-service
+      environment:
+        environmentRef: GKEDEV
+        deployToAll: false
+        infrastructureDefinitions:
+          - identifier: K8s_Dev_Namespace
+      execution:
+        steps:
+          - step:
+              type: JiraCreate
+              name: JiraCreate
+              identifier: JiraCreate
+              spec:
+                connectorRef: account.Harness_JIRA
+                projectKey: HD
+                issueType: Story
+                fields:
+                  - name: Summary
+                    value: Ticket to track deployment of <+pipeline.variables.servicename> triggered by <+pipeline.variables.seusername>
+                  - name: Description
+                    value: "triggeredBy: <+pipeline.variables.seusername> buildNumber: <+pipeline.sequenceId>"
+              timeout: 1d
+          - parallel:
+              - step:
+                  name: Rollout Deployment
+                  identifier: rolloutDeployment
+                  type: K8sRollingDeploy
+                  timeout: 10m
+                  spec:
+                    skipDryRun: false
+              - step:
+                  name: JMeter
+                  identifier: JMeter
+                  template:
+                    templateRef: JMeter
+                    versionLabel: v1
+          - step:
+              type: JiraUpdate
+              name: JiraUpdate
+              identifier: JiraUpdate
+              spec:
+                connectorRef: account.Harness_JIRA
+                issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.id>
+                transitionTo:
+                  transitionName: In Progress
+                  status: In Progress
+                fields: []
+              timeout: 1d
+        rollbackSteps:
+          - step:
+              name: Rollback Rollout Deployment
+              identifier: rollbackRolloutDeployment
+              type: K8sRollingRollback
+              timeout: 10m
+              spec: {}
+    failureStrategies:
+      - onFailure:
+          errors:
+            - AllErrors
+          action:
+            type: StageRollback
+    when:
+      pipelineStatus: Success
+  identifier: Dev_Deployment_Finbourne
+  versionLabel: "1.0"
