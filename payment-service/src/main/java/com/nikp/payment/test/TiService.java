@@ -11,6 +11,7 @@ public class TiService {
 	
 	public int calculateExchangeRate(int a, int b) {
 		return a * b;
+		
 	}
 
 }
