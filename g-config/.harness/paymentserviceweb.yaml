@@ -121,7 +121,7 @@ pipeline:
                               type: Ignore
                       when:
                         stageStatus: Success
-                        condition: <+trigger.branch> != "master-2"
+                        condition: <+trigger.branch> != "master-2-1"
               - step:
                   type: Run
                   name: Build
