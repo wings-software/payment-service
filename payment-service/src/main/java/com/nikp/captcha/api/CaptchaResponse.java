@@ -17,6 +17,7 @@ public class CaptchaResponse {
     
     
 	public Boolean getSuccess() {
+		
 		return success;
 	}
 	public void setSuccess(Boolean success) {
