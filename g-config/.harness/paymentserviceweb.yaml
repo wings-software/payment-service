@@ -54,7 +54,7 @@ pipeline:
                         image: gcr.io/sales-209522/devx-maven:<+pipeline.variables.mavenversion>-jdk-<+pipeline.variables.javaversion>
                         language: Java
                         buildTool: Maven
-                        args: test
+                        args: clean test
                         packages: com.nikp.
                         runOnlySelectedTests: true
                         preCommand: |
