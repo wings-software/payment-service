@@ -186,7 +186,6 @@ pipeline:
         tags: {}
         when:
           pipelineStatus: Success
-          condition: <+git.branch> == "production"
     - stage:
         name: DeployProd
         identifier: DeployProd
