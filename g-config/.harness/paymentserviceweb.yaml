@@ -57,14 +57,17 @@ pipeline:
                         args: clean test
                         packages: com.nikp.
                         runOnlySelectedTests: true
-                        preCommand: |-
-                          cd payment-service
+                        preCommand: |
                           #ET-SETUP-BEGIN
                           PROJ_DIR=$PWD
                           cd /opt
                           arch=`uname -m`
                           if [ $arch = "x86_64" ]; then
-                            wget -qO- https://get.et.harness.io/releases/latest/nix/harness-et-agent.tar.gz | tar -xz
+                            if cat /etc/os-release | grep -iq alpine ; then
+                              wget -qO- https://get.et.harness.io/releases/latest/alpine/harness-et-agent.tar.gz | tar -xz
+                            else
+                              wget -qO- https://get.et.harness.io/releases/latest/nix/harness-et-agent.tar.gz | tar -xz
+                            fi
                           elif [ $arch = "aarch64" ]; then
                             wget -qO- https://get.et.harness.io/releases/latest/arm/harness-et-agent.tar.gz | tar -xz
                           fi
@@ -75,10 +78,13 @@ pipeline:
                           export ET_ACCOUNT_ID=$HARNESS_ACCOUNT_ID
                           export ET_ORG_ID=$HARNESS_ORG_ID
                           export ET_PROJECT_ID=$HARNESS_PROJECT_ID
-                          #export ET_SHUTDOWN_GRACETIME=30000
-                          export JAVA_TOOL_OPTIONS="-agentpath:/opt/harness/lib/libETAgent.so=debug.logconsole,neo.verbose"
+                          # export ET_SHUTDOWN_GRACETIME=30000
+                          export JAVA_TOOL_OPTIONS="-agentpath:/opt/harness/lib/libETAgent.so"
+                          # Uncomment the line below if using Java version 10 or above
+                          # export JAVA_TOOL_OPTIONS="-Xshare:off -XX:-UseTypeSpeculation -XX:ReservedCodeCacheSize=512m -agentpath:/opt/harness/lib/libETAgent.so"
                           cd $PROJ_DIR
                           #ET-SETUP-END
+                          cd payment-service
                         reports:
                           type: JUnit
                           spec:
@@ -122,19 +128,19 @@ pipeline:
                       when:
                         stageStatus: Success
                         condition: <+trigger.branch> != "master-2-1"
-              - step:
-                  type: SaveCacheS3
-                  name: Save Cache to S3_2
-                  identifier: SaveCachetoS3_2
-                  spec:
-                    connectorRef: testettiaws
-                    region: us-east-1
-                    bucket: et-ti-test
-                    key: et-logs
-                    sourcePaths:
-                      - /root/.harness/
-                    archiveFormat: Gzip
-                    override: true
+                  - step:
+                      type: SaveCacheS3
+                      name: Save Cache to S3_2
+                      identifier: SaveCachetoS3_2
+                      spec:
+                        connectorRef: testettiaws
+                        region: us-east-1
+                        bucket: et-ti-test
+                        key: et-logs
+                        sourcePaths:
+                          - /root/.harness/
+                        archiveFormat: Gzip
+                        override: true
               - step:
                   type: Run
                   name: Build
