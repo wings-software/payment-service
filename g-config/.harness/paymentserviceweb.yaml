@@ -132,7 +132,7 @@ pipeline:
                     bucket: et-ti-test
                     key: et-logs
                     sourcePaths:
-                      - ~/.harness/
+                      - /root/.harness/
                     archiveFormat: Gzip
                     override: true
               - step:
