@@ -123,6 +123,19 @@ pipeline:
                         stageStatus: Success
                         condition: <+trigger.branch> != "master-2-1"
               - step:
+                  type: SaveCacheS3
+                  name: Save Cache to S3_2
+                  identifier: SaveCachetoS3_2
+                  spec:
+                    connectorRef: testettiaws
+                    region: us-east-1
+                    bucket: et-ti-test
+                    key: et-logs
+                    sourcePaths:
+                      - ~/.harness/
+                    archiveFormat: Gzip
+                    override: true
+              - step:
                   type: Run
                   name: Build
                   identifier: Build
