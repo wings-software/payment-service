@@ -61,10 +61,10 @@ pipeline:
                           #ET-SETUP-BEGIN
                           PROJ_DIR=$PWD
 
-                          echo "logLevel: 6" > /addon/tmp/config.ini
-                          echo "logConsole: true" >> /addon/tmp/config.ini
-                          echo "writeTo: COVERAGE_JSON" >> /addon/tmp/config.ini
-                          echo "instrPackages: com.nikp." >> /addon/tmp/config.ini
+                          # echo "logLevel: 6" > /addon/tmp/config.ini
+                          # echo "logConsole: true" >> /addon/tmp/config.ini
+                          # echo "writeTo: COVERAGE_JSON" >> /addon/tmp/config.ini
+                          # echo "instrPackages: com.nikp." >> /addon/tmp/config.ini
 
                           ls -la /addon/tmp/ti/callgraph/
 
