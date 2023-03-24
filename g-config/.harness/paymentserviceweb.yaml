@@ -60,6 +60,14 @@ pipeline:
                         preCommand: |
                           #ET-SETUP-BEGIN
                           PROJ_DIR=$PWD
+
+                          echo "logLevel: 6" > /addon/tmp/config.ini
+                          echo "logConsole: true" >> /addon/tmp/config.ini
+                          echo "writeTo: COVERAGE_JSON" >> /addon/tmp/config.ini
+                          echo "instrPackages: com.nikp." >> /addon/tmp/config.ini
+
+                          ls -la /addon/tmp/ti/callgraph/
+
                           cd /opt
                           arch=`uname -m`
                           if [ $arch = "x86_64" ]; then
@@ -85,6 +93,7 @@ pipeline:
                           cd $PROJ_DIR
                           #ET-SETUP-END
                           cd payment-service
+                        postCommand: ls -la /addon/tmp/ti/callgraph/
                         reports:
                           type: JUnit
                           spec:
