@@ -61,13 +61,6 @@ pipeline:
                           #ET-SETUP-BEGIN
                           PROJ_DIR=$PWD
 
-                          # echo "logLevel: 6" > /addon/tmp/config.ini
-                          # echo "logConsole: true" >> /addon/tmp/config.ini
-                          # echo "writeTo: COVERAGE_JSON" >> /addon/tmp/config.ini
-                          # echo "instrPackages: com.nikp." >> /addon/tmp/config.ini
-
-                          ls -la /addon/tmp/ti/callgraph/
-
                           cd /opt
                           arch=`uname -m`
                           if [ $arch = "x86_64" ]; then
@@ -87,13 +80,12 @@ pipeline:
                           #export ET_ORG_ID=$HARNESS_ORG_ID
                           export ET_PROJECT_ID=$HARNESS_PROJECT_ID
                           # export ET_SHUTDOWN_GRACETIME=30000
-                          export JAVA_TOOL_OPTIONS="-verbose:class -agentpath:/opt/harness/lib/libETAgent.so=debug.logconsole"
+                          export JAVA_TOOL_OPTIONS="-agentpath:/opt/harness/lib/libETAgent.so=debug.logconsole"
                           # Uncomment the line below if using Java version 10 or above
                           # export JAVA_TOOL_OPTIONS="-Xshare:off -XX:-UseTypeSpeculation -XX:ReservedCodeCacheSize=512m -agentpath:/opt/harness/lib/libETAgent.so"
                           cd $PROJ_DIR
                           #ET-SETUP-END
                           cd payment-service
-                        postCommand: ls -la /addon/tmp/ti/callgraph/
                         reports:
                           type: JUnit
                           spec:
