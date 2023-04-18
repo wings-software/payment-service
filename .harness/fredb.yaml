@@ -1,0 +1,52 @@
+inputSet:
+  pipeline:
+    identifier: paymentserviceweb
+    properties:
+      ci:
+        codebase:
+          build:
+            spec:
+              branch: master
+            type: branch
+    stages:
+      - stage:
+          identifier: DeployProd
+          type: Deployment
+          spec:
+            service:
+              serviceRef: paymentservice
+              serviceInputs:
+                serviceDefinition:
+                  type: Kubernetes
+                  spec:
+                    artifacts:
+                      primary:
+                        primaryArtifactRef: payment-service
+    variables:
+      - name: mavenversion
+        type: String
+        default: "3.8"
+        value: "3.8"
+      - name: javaversion
+        type: String
+        default: "8"
+        value: "8"
+      - name: seusername
+        type: String
+        value: fbreton
+      - name: verify_fail
+        type: String
+        default: "false"
+        value: "false"
+      - name: run_owasp_scan
+        type: String
+        default: "false"
+        value: "false"
+      - name: autostopping
+        type: String
+        default: "false"
+        value: "false"
+  name: fredb
+  identifier: fredb
+  orgIdentifier: default
+  projectIdentifier: DevX_Demo
