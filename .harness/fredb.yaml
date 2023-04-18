@@ -1,13 +1,18 @@
 inputSet:
+  name: fredb
+  tags: {}
+  identifier: fredb
+  orgIdentifier: default
+  projectIdentifier: DevX_Demo
   pipeline:
     identifier: paymentserviceweb
     properties:
       ci:
         codebase:
           build:
+            type: PR
             spec:
-              branch: master
-            type: branch
+              number: "624"
     stages:
       - stage:
           identifier: DeployProd
@@ -22,31 +27,27 @@ inputSet:
                     artifacts:
                       primary:
                         primaryArtifactRef: payment-service
+                        sources: <+input>
     variables:
       - name: mavenversion
         type: String
-        default: "3.8"
         value: "3.8"
       - name: javaversion
         type: String
-        default: "8"
         value: "8"
       - name: seusername
         type: String
         value: fbreton
       - name: verify_fail
         type: String
-        default: "false"
         value: "false"
       - name: run_owasp_scan
         type: String
-        default: "false"
         value: "false"
       - name: autostopping
         type: String
-        default: "false"
         value: "false"
-  name: fredb
-  identifier: fredb
-  orgIdentifier: default
-  projectIdentifier: DevX_Demo
+  cacheResponse:
+    cacheState: VALID_CACHE
+    ttlLeft: 2591350899
+    lastUpdatedAt: 1681800686021
