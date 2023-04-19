@@ -12,7 +12,7 @@ inputSet:
           build:
             type: PR
             spec:
-              number: "624"
+              number: "625"
     stages:
       - stage:
           identifier: DeployProd
@@ -48,6 +48,6 @@ inputSet:
         type: String
         value: "false"
   cacheResponse:
-    cacheState: VALID_CACHE
-    ttlLeft: 2591350899
-    lastUpdatedAt: 1681800686021
+    cacheState: STALE_CACHE
+    ttlLeft: 2527198009
+    lastUpdatedAt: 1681832883811
