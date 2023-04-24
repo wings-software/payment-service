@@ -60,7 +60,7 @@ pipeline:
               type: KubernetesDirect
               spec:
                 connectorRef: nikpgkecluster
-                namespace: payment-service-production
+                namespace: payment-service-prod
                 releaseName: release-1
             allowSimultaneousDeployments: true
             infrastructureKey: ""
