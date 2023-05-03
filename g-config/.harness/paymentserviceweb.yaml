@@ -403,6 +403,7 @@ pipeline:
                     cpu: 300m
         when:
           pipelineStatus: Success
+          condition: <+pipeline.variables.runSecurityStage> == "True"
         variables:
           - name: sto_api_key
             type: Secret
