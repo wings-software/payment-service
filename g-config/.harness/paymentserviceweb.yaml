@@ -658,6 +658,22 @@ pipeline:
                       disallowPipelineExecutor: false
                     approverInputs: []
                   timeout: 1d
+              - step:
+                  name: Update Change Ticket
+                  identifier: Update_Change_Ticket
+                  template:
+                    templateRef: BMC_Remedy_Update_Ticket
+                    versionLabel: 1.0.0
+                    templateInputs:
+                      type: ShellScript
+                      spec:
+                        environmentVariables:
+                          - name: ticketID
+                            type: String
+                            value: ""
+                          - name: approver
+                            type: String
+                            value: ""
             rollbackSteps: []
           serviceDependencies: []
         tags: {}
