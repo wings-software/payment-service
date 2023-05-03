@@ -422,7 +422,6 @@ pipeline:
     - stage:
         name: Security Checks
         identifier: Security_Checks
-        description: ""
         type: SecurityTests
         spec:
           cloneCodebase: true
@@ -439,15 +438,15 @@ pipeline:
                         mode: ingestion
                         config: default
                         target:
-                          name: aa
+                          name: Checkmarx
                           type: repository
-                          variant: aa
+                          variant: <+codebase.branch>
                         advanced:
                           log:
                             level: info
                           fail_on_severity: critical
                         ingestion:
-                          file: aa
+                          file: sto_tests/scan_tools/checkmarx/test_data/001
                   - step:
                       type: Sonarqube
                       name: Sonarqube Quality Gate
@@ -456,14 +455,15 @@ pipeline:
                         mode: ingestion
                         config: default
                         target:
-                          name: aa
+                          name: SonarQube
                           type: repository
-                          variant: aa
+                          variant: <+codebase.branch>
                         advanced:
                           log:
                             level: info
+                          fail_on_severity: critical
                         ingestion:
-                          file: aa
+                          file: sto_tests/scan_tools/sonarqube/test_data/001
               - parallel:
                   - step:
                       type: AquaTrivy
@@ -473,51 +473,33 @@ pipeline:
                         mode: ingestion
                         config: default
                         target:
-                          name: aa
+                          name: AquaTrivy
                           type: container
-                          variant: aa
+                          variant: <+codebase.branch>
                         advanced:
                           log:
                             level: info
                         privileged: false
                         ingestion:
-                          file: aa
+                          file: sto_tests/scan_tools/aqua_trivy/test_data/001
                   - step:
-                      type: BlackDuck
-                      name: BlackDuck Quality Gate
-                      identifier: BlackDuck_Quality_Gate
+                      type: Snyk
+                      name: Snyk Quality Gate
+                      identifier: Snyk_Quality_Gate
                       spec:
                         mode: ingestion
                         config: default
                         target:
-                          name: aa
+                          name: Snyk
                           type: repository
-                          variant: aa
+                          variant: <+codebase.branch>
                         advanced:
                           log:
                             level: info
-                        privileged: false
                         ingestion:
-                          file: aa
-              - step:
-                  type: Snyk
-                  name: Snyk Quality Gate
-                  identifier: Snyk_Quality_Gate
-                  spec:
-                    mode: ingestion
-                    config: default
-                    target:
-                      name: aa
-                      type: repository
-                      variant: aa
-                    advanced:
-                      log:
-                        level: info
-                    ingestion:
-                      file: aa
+                          file: sto_tests/scan_tools/snyk/test_data/001
         when:
           pipelineStatus: Success
-          condition: <+pipeline.variables.runSecurityStage> == "True"
     - stage:
         name: Test Payment Service
         identifier: DeployDev
