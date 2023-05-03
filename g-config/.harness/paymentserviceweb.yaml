@@ -502,6 +502,7 @@ pipeline:
                           file: sto_tests/scan_tools/snyk/test_data/001
         when:
           pipelineStatus: Success
+          condition: <+pipeline.variables.runSecurityStage> == "True"
     - stage:
         name: Test Payment Service
         identifier: DeployDev
