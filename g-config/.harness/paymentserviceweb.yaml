@@ -778,44 +778,30 @@ pipeline:
                         type: K8sRollingRollback
                         timeout: 10m
                         spec: {}
-              - parallel:
-                  - step:
-                      type: JiraUpdate
-                      name: JiraUpdate
-                      identifier: JiraUpdate
+              - step:
+                  type: ShellScript
+                  name: WrapUp
+                  identifier: WrapUp
+                  spec:
+                    shell: Bash
+                    onDelegate: true
+                    source:
+                      type: Inline
                       spec:
-                        connectorRef: account.Harness_JIRA
-                        issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.key>
-                        fields:
-                          - name: Test Summary
-                            value: "Smoke Test Result: <+pipeline.stages.DeployProd.spec.execution.steps.canaryDepoyment.steps.Smoke_Test.output.httpResponseCode> #### Selenium: <+pipeline.stages.DeployDev.spec.execution.steps.Selenium_Test.output.outputVariables.selenium_output>"
-                          - name: Comment
-                            value: "Release Version: <+pipeline.stages.DeployProd.spec.execution.steps.primaryDepoyment.steps.rollingDeployment.output.releaseNumber> of Payment Service is available here: http://<+pipeline.variables.seusername>.cie-demo.co.uk all new Features are turned off for Customers"
-                      timeout: 1d
-                  - step:
-                      type: ShellScript
-                      name: WrapUp
-                      identifier: WrapUp
-                      spec:
-                        shell: Bash
-                        onDelegate: true
-                        source:
-                          type: Inline
-                          spec:
-                            script: |-
-                              echo "Wrapping up deployment"
-                              url="http://$subdomain.cie-demo.co.uk"
-                              export application="$url"
-                        environmentVariables:
-                          - name: subdomain
-                            type: String
-                            value: <+pipeline.variables.seusername>
-                        outputVariables:
-                          - name: application
-                            type: String
-                            value: application
-                        executionTarget: {}
-                      timeout: 10m
+                        script: |-
+                          echo "Wrapping up deployment"
+                          url="http://$subdomain.cie-demo.co.uk"
+                          export application="$url"
+                    environmentVariables:
+                      - name: subdomain
+                        type: String
+                        value: <+pipeline.variables.seusername>
+                    outputVariables:
+                      - name: application
+                        type: String
+                        value: application
+                    executionTarget: {}
+                  timeout: 10m
               - step:
                   type: K8sApply
                   name: Autostopping
