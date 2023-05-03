@@ -616,7 +616,10 @@ pipeline:
                         environmentVariables:
                           - name: expectedStatus
                             type: String
-                            value: <+input>
+                            value: OK
+                          - name: pollIntervall
+                            type: Number
+                            value: "10"
             rollbackSteps:
               - step:
                   name: Rollback Rollout Deployment
