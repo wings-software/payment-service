@@ -670,10 +670,10 @@ pipeline:
                         environmentVariables:
                           - name: ticketID
                             type: String
-                            value: ""
+                            value: <+pipeline.stages.DeployDev.spec.execution.steps.Get_BMC_Ticket_Data.output.outputVariables.ticketID>
                           - name: approver
                             type: String
-                            value: ""
+                            value: <+pipeline.stages.Jira_Approve.spec.execution.steps.Approve_Production_Deployment_Phase.output.approvalActivities[0].user.name>
             rollbackSteps: []
           serviceDependencies: []
         tags: {}
