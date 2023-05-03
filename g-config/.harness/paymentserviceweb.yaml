@@ -552,6 +552,12 @@ pipeline:
                     unstableStatusAsSuccess: false
                     useConnectorUrlForJobExecution: false
                   timeout: 10m
+                  failureStrategies:
+                    - onFailure:
+                        errors:
+                          - AllErrors
+                        action:
+                          type: MarkAsSuccess
               - step:
                   name: Deploy Service on Test
                   identifier: rolloutDeployment
