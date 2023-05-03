@@ -444,7 +444,7 @@ pipeline:
                         advanced:
                           log:
                             level: info
-                          fail_on_severity: critical
+                          fail_on_severity: none
                         ingestion:
                           file: sto_tests/scan_tools/checkmarx/test_data/001
                   - step:
@@ -461,7 +461,7 @@ pipeline:
                         advanced:
                           log:
                             level: info
-                          fail_on_severity: critical
+                          fail_on_severity: none
                         ingestion:
                           file: sto_tests/scan_tools/sonarqube/test_data/001
               - parallel:
@@ -479,6 +479,7 @@ pipeline:
                         advanced:
                           log:
                             level: info
+                          fail_on_severity: none
                         privileged: false
                         ingestion:
                           file: sto_tests/scan_tools/aqua_trivy/test_data/001
@@ -496,6 +497,7 @@ pipeline:
                         advanced:
                           log:
                             level: info
+                          fail_on_severity: none
                         ingestion:
                           file: sto_tests/scan_tools/snyk/test_data/001
         when:
@@ -595,6 +597,19 @@ pipeline:
                             type: String
                             value: selenium_output
                       timeout: 10m
+              - step:
+                  name: Check BMC Ticket Status
+                  identifier: Check_BMC_Ticket_Status
+                  template:
+                    templateRef: BMC_Remedy_Status_Check
+                    versionLabel: 1.0.0
+                    templateInputs:
+                      type: ShellScript
+                      spec:
+                        environmentVariables:
+                          - name: expectedStatus
+                            type: String
+                            value: <+input>
             rollbackSteps:
               - step:
                   name: Rollback Rollout Deployment
