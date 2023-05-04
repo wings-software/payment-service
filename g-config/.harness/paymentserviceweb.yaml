@@ -535,6 +535,13 @@ pipeline:
                   template:
                     templateRef: BMC_Remedy_Get_Ticket_Data
                     versionLabel: 1.0.0
+                    templateInputs:
+                      type: ShellScript
+                      spec:
+                        environmentVariables:
+                          - name: TicketID
+                            type: String
+                            value: <+input>
               - step:
                   name: Persist Ticket Data
                   identifier: Persist_Ticket_Data
