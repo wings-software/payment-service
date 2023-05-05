@@ -858,10 +858,10 @@ pipeline:
                                 value: Production Environment updated
                   - step:
                       type: Email
-                      name: Notify Julian
+                      name: Notify
                       identifier: Notify_Julian
                       spec:
-                        to: julian-maurice.klodzinski@harness.io
+                        to: <+pipeline.stages.Jira_Approve.spec.execution.steps.Approve_Production_Deployment_Phase.output.approvalActivities[0].user.email>, <+pipeline.triggeredBy.name>
                         cc: ""
                         body: |-
                           Hi Julian,
