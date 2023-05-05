@@ -863,20 +863,7 @@ pipeline:
                       spec:
                         to: <+pipeline.stages.Jira_Approve.spec.execution.steps.Approve_Production_Deployment_Phase.output.approvalActivities[0].user.email>, <+pipeline.triggeredBy.name>
                         cc: ""
-                        body: |-
-                          Hi Julian,
-
-                          your RFP Demo Service went into Production. Here are the details.
-
-                          Release Name:<+pipeline.stages.DeployProd.spec.execution.steps.primaryDepoyment.steps.rollingDeployment.output.releaseName>
-                          Release Number: <+pipeline.stages.DeployProd.spec.execution.steps.primaryDepoyment.steps.rollingDeployment.output.releaseNumber>
-                          CommitID: <+pipeline.stages.DeployProd.spec.execution.steps.primaryDepoyment.steps.rollingDeployment.output.manifest.manifest.commitId>
-                          Namespace: <+pipeline.stages.DeployProd.spec.execution.steps.primaryDepoyment.steps.rollingDeployment.deploymentInfoOutcome.serverInstanceInfoList[0].namespace>
-                          Image: <+pipeline.stages.DeployProd.spec.execution.steps.primaryDepoyment.steps.rollingDeployment.deploymentInfoOutcome.serverInstanceInfoList[0].containerList[0].image>
-
-
-                          Best,
-                          Julian
+                        body: "Hi Julian, <br> <+service.name> went into <+env.name>. Here are the details. <br> <ul> <li>Release Name: <+pipeline.stages.DeployProd.spec.execution.steps.primaryDepoyment.steps.rollingDeployment.output.releaseName></li> <li>Release Number: <+pipeline.stages.DeployProd.spec.execution.steps.primaryDepoyment.steps.rollingDeployment.output.releaseNumber></li> <li>CommitID: <+pipeline.stages.DeployProd.spec.execution.steps.primaryDepoyment.steps.rollingDeployment.output.manifest.manifest.commitId></li> <li>Namespace: <+pipeline.stages.DeployProd.spec.execution.steps.primaryDepoyment.steps.rollingDeployment.deploymentInfoOutcome.serverInstanceInfoList[0].namespace></li> <li>Image: <+pipeline.stages.DeployProd.spec.execution.steps.primaryDepoyment.steps.rollingDeployment.deploymentInfoOutcome.serverInstanceInfoList[0].containerList[0].image></li> </ul> <br> Best, <br> Julian"
                         subject: <+service.name> is deployed on <+env.name>
                       timeout: 10m
               - step:
