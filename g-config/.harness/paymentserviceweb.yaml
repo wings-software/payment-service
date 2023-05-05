@@ -627,6 +627,9 @@ pipeline:
                           - name: pollIntervall
                             type: Number
                             value: "10"
+                          - name: ticketID
+                            type: String
+                            value: <+input>
             rollbackSteps:
               - step:
                   name: Rollback Rollout Deployment
@@ -677,7 +680,7 @@ pipeline:
                         environmentVariables:
                           - name: ticketID
                             type: String
-                            value: <+pipeline.stages.DeployDev.spec.execution.steps.Get_BMC_Ticket_Data.output.outputVariables.ticketID>
+                            value: <+input>
                           - name: approver
                             type: String
                             value: <+pipeline.stages.Jira_Approve.spec.execution.steps.Approve_Production_Deployment_Phase.output.approvalActivities[0].user.name>
@@ -786,6 +789,22 @@ pipeline:
                         type: K8sCanaryDelete
                         timeout: 10m
                         spec: {}
+                    - step:
+                        name: Update Ticket Canary done
+                        identifier: Update_Ticket_Canary_done
+                        template:
+                          templateRef: BMC_Remedy_Update_Ticket
+                          versionLabel: 1.0.0
+                          templateInputs:
+                            type: ShellScript
+                            spec:
+                              environmentVariables:
+                                - name: ticketID
+                                  type: String
+                                  value: <+input>
+                                - name: approver
+                                  type: String
+                                  value: <+pipeline.stages.Jira_Approve.spec.execution.steps.Approve_Production_Deployment_Phase.output.approvalActivities[0].user.name>
                   rollbackSteps:
                     - step:
                         name: Canary Delete
@@ -811,6 +830,22 @@ pipeline:
                         type: K8sRollingRollback
                         timeout: 10m
                         spec: {}
+              - step:
+                  name: Update Ticket - Prod Deployment Done
+                  identifier: Update_Ticket_Prod_Deployment_Done
+                  template:
+                    templateRef: BMC_Remedy_Update_Ticket
+                    versionLabel: 1.0.0
+                    templateInputs:
+                      type: ShellScript
+                      spec:
+                        environmentVariables:
+                          - name: ticketID
+                            type: String
+                            value: <+input>
+                          - name: approver
+                            type: String
+                            value: <+pipeline.stages.Jira_Approve.spec.execution.steps.Approve_Production_Deployment_Phase.output.approvalActivities[0].user.name>
               - step:
                   type: ShellScript
                   name: WrapUp
