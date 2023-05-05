@@ -684,6 +684,9 @@ pipeline:
                           - name: approver
                             type: String
                             value: <+pipeline.stages.Jira_Approve.spec.execution.steps.Approve_Production_Deployment_Phase.output.approvalActivities[0].user.name>
+                          - name: ticketMessage
+                            type: String
+                            value: Production Deployment approved and test results verified
             rollbackSteps: []
           serviceDependencies: []
         tags: {}
@@ -805,6 +808,9 @@ pipeline:
                                 - name: approver
                                   type: String
                                   value: <+pipeline.stages.Jira_Approve.spec.execution.steps.Approve_Production_Deployment_Phase.output.approvalActivities[0].user.name>
+                                - name: ticketMessage
+                                  type: String
+                                  value: Production Canary Deployment successfull. Now rolling out to entire environment.
                   rollbackSteps:
                     - step:
                         name: Canary Delete
@@ -846,6 +852,9 @@ pipeline:
                           - name: approver
                             type: String
                             value: <+pipeline.stages.Jira_Approve.spec.execution.steps.Approve_Production_Deployment_Phase.output.approvalActivities[0].user.name>
+                          - name: ticketMessage
+                            type: String
+                            value: Production Environment updated
               - step:
                   type: ShellScript
                   name: WrapUp
