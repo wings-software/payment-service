@@ -836,25 +836,42 @@ pipeline:
                         type: K8sRollingRollback
                         timeout: 10m
                         spec: {}
-              - step:
-                  name: Update Ticket - Prod Deployment Done
-                  identifier: Update_Ticket_Prod_Deployment_Done
-                  template:
-                    templateRef: BMC_Remedy_Update_Ticket
-                    versionLabel: 1.0.0
-                    templateInputs:
-                      type: ShellScript
+              - parallel:
+                  - step:
+                      name: Update Ticket - Prod Deployment Done
+                      identifier: Update_Ticket_Prod_Deployment_Done
+                      template:
+                        templateRef: BMC_Remedy_Update_Ticket
+                        versionLabel: 1.0.0
+                        templateInputs:
+                          type: ShellScript
+                          spec:
+                            environmentVariables:
+                              - name: ticketID
+                                type: String
+                                value: <+input>
+                              - name: approver
+                                type: String
+                                value: <+pipeline.stages.Jira_Approve.spec.execution.steps.Approve_Production_Deployment_Phase.output.approvalActivities[0].user.name>
+                              - name: ticketMessage
+                                type: String
+                                value: Production Environment updated
+                  - step:
+                      type: Email
+                      name: Notify Julian
+                      identifier: Notify_Julian
                       spec:
-                        environmentVariables:
-                          - name: ticketID
-                            type: String
-                            value: <+input>
-                          - name: approver
-                            type: String
-                            value: <+pipeline.stages.Jira_Approve.spec.execution.steps.Approve_Production_Deployment_Phase.output.approvalActivities[0].user.name>
-                          - name: ticketMessage
-                            type: String
-                            value: Production Environment updated
+                        to: julian.klodzinski@harness.io
+                        cc: ""
+                        body: |-
+                          Hi Julian,
+
+                          your RFP Demo Service went into Production. We hope the audience is asking a lot of questions.
+
+                          Best,
+                          Julian
+                        subject: Your RFP Demo went into Production
+                      timeout: 10m
               - step:
                   type: ShellScript
                   name: WrapUp
