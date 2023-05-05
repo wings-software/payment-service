@@ -861,7 +861,7 @@ pipeline:
                       name: Notify Julian
                       identifier: Notify_Julian
                       spec:
-                        to: julian.klodzinski@harness.io
+                        to: julian-maurice.klodzinski@harness.io
                         cc: ""
                         body: |-
                           Hi Julian,
@@ -877,7 +877,7 @@ pipeline:
 
                           Best,
                           Julian
-                        subject: Your RFP Demo went into Production
+                        subject: <+service.name> is deployed on <+env.name>
                       timeout: 10m
               - step:
                   type: ShellScript
