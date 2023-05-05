@@ -629,7 +629,7 @@ pipeline:
                             value: "10"
                           - name: ticketID
                             type: String
-                            value: <+input>
+                            value: <+pipeline.stages.DeployDev.spec.execution.steps.Get_BMC_Ticket_Data.spec.environmentVariables.TicketID>
             rollbackSteps:
               - step:
                   name: Rollback Rollout Deployment
@@ -680,7 +680,7 @@ pipeline:
                         environmentVariables:
                           - name: ticketID
                             type: String
-                            value: <+input>
+                            value: <+pipeline.stages.DeployDev.spec.execution.steps.Get_BMC_Ticket_Data.spec.environmentVariables.TicketID>
                           - name: approver
                             type: String
                             value: <+pipeline.stages.Jira_Approve.spec.execution.steps.Approve_Production_Deployment_Phase.output.approvalActivities[0].user.name>
@@ -804,7 +804,7 @@ pipeline:
                               environmentVariables:
                                 - name: ticketID
                                   type: String
-                                  value: <+input>
+                                  value: <+pipeline.stages.DeployDev.spec.execution.steps.Get_BMC_Ticket_Data.spec.environmentVariables.TicketID>
                                 - name: approver
                                   type: String
                                   value: <+pipeline.stages.Jira_Approve.spec.execution.steps.Approve_Production_Deployment_Phase.output.approvalActivities[0].user.name>
@@ -849,7 +849,7 @@ pipeline:
                             environmentVariables:
                               - name: ticketID
                                 type: String
-                                value: <+input>
+                                value: <+pipeline.stages.DeployDev.spec.execution.steps.Get_BMC_Ticket_Data.spec.environmentVariables.TicketID>
                               - name: approver
                                 type: String
                                 value: <+pipeline.stages.Jira_Approve.spec.execution.steps.Approve_Production_Deployment_Phase.output.approvalActivities[0].user.name>
