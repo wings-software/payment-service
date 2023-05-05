@@ -866,7 +866,14 @@ pipeline:
                         body: |-
                           Hi Julian,
 
-                          your RFP Demo Service went into Production. We hope the audience is asking a lot of questions.
+                          your RFP Demo Service went into Production. Here are the details.
+
+                          Release Name:<+pipeline.stages.DeployProd.spec.execution.steps.primaryDepoyment.steps.rollingDeployment.output.releaseName>
+                          Release Number: <+pipeline.stages.DeployProd.spec.execution.steps.primaryDepoyment.steps.rollingDeployment.output.releaseNumber>
+                          CommitID: <+pipeline.stages.DeployProd.spec.execution.steps.primaryDepoyment.steps.rollingDeployment.output.manifest.manifest.commitId>
+                          Namespace: <+pipeline.stages.DeployProd.spec.execution.steps.primaryDepoyment.steps.rollingDeployment.deploymentInfoOutcome.serverInstanceInfoList[0].namespace>
+                          Image: <+pipeline.stages.DeployProd.spec.execution.steps.primaryDepoyment.steps.rollingDeployment.deploymentInfoOutcome.serverInstanceInfoList[0].containerList[0].image>
+
 
                           Best,
                           Julian
