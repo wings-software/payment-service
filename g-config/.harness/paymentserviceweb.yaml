@@ -486,7 +486,7 @@ pipeline:
           execution:
             steps:
               - step:
-                  name: Jira Approval
+                  name: Jira Approval1
                   identifier: jiraApproval
                   type: JiraApproval
                   timeout: 1d
