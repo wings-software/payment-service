@@ -451,31 +451,6 @@ pipeline:
                           product_name: external
                           product_config_name: default
     - stage:
-        name: ap
-        identifier: ap
-        description: ""
-        type: Approval
-        spec:
-          execution:
-            steps:
-              - step:
-                  name: c
-                  identifier: c
-                  type: HarnessApproval
-                  timeout: 1d
-                  spec:
-                    approvalMessage: |-
-                      Please review the following information
-                      and approve the pipeline progression
-                    includePipelineExecutionHistory: true
-                    approvers:
-                      minimumCount: 1
-                      disallowPipelineExecutor: false
-                      userGroups:
-                        - account.New_Demo_Group
-                    approverInputs: []
-        tags: {}
-    - stage:
         name: DeployDev
         identifier: DeployDev
         description: ""
