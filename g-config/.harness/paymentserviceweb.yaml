@@ -399,9 +399,8 @@ pipeline:
             type: String
             value: https://api.sto.harness.io
     - stage:
-        name: Security Tests
+        name: Security Test
         identifier: Security_Tests
-        description: ""
         type: SecurityTests
         spec:
           cloneCodebase: false
