@@ -399,6 +399,58 @@ pipeline:
             type: String
             value: https://api.sto.harness.io
     - stage:
+        name: Security Tests
+        identifier: Security_Tests
+        description: ""
+        type: SecurityTests
+        spec:
+          cloneCodebase: false
+          infrastructure:
+            useFromStage: Build
+          execution:
+            steps:
+              - parallel:
+                  - step:
+                      type: Sonarqube
+                      name: Sonarqube
+                      identifier: Sonarqube
+                      spec:
+                        mode: orchestration
+                        config: default
+                        target:
+                          name: lkj
+                          type: repository
+                          variant: lkj
+                        advanced:
+                          log:
+                            level: info
+                        auth:
+                          access_token: lj
+                          domain: lkj
+                          ssl: true
+                  - step:
+                      type: Security
+                      name: Xray
+                      identifier: Xray
+                      spec:
+                        privileged: true
+                        settings:
+                          policy_type: orchestratedScan
+                          scan_type: repository
+                          product_name: xray
+                          product_config_name: default
+                  - step:
+                      type: Security
+                      name: CodeQL
+                      identifier: CodeQL
+                      spec:
+                        privileged: true
+                        settings:
+                          policy_type: orchestratedScan
+                          scan_type: repository
+                          product_name: external
+                          product_config_name: default
+    - stage:
         name: DeployDev
         identifier: DeployDev
         description: ""
