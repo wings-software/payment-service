@@ -1,0 +1,76 @@
+inputSet:
+  pipeline:
+    identifier: paymentserviceweb
+    properties:
+      ci:
+        codebase:
+          build:
+            spec:
+              branch: master
+            type: branch
+    stages:
+      - stage:
+          identifier: DeployDev
+          type: Deployment
+          spec:
+            execution:
+              steps:
+                - step:
+                    identifier: Get_BMC_Ticket_Data
+                    template:
+                      templateInputs:
+                        type: ShellScript
+                        spec:
+                          environmentVariables:
+                            - name: TicketID
+                              type: String
+                              value: CB112200
+      - stage:
+          identifier: DeployProd
+          type: Deployment
+          spec:
+            service:
+              serviceRef: paymentservice
+              serviceInputs:
+                serviceDefinition:
+                  type: Kubernetes
+                  spec:
+                    artifacts:
+                      primary:
+                        primaryArtifactRef: payment-service
+    variables:
+      - name: mavenversion
+        type: String
+        default: "3.8"
+        value: "3.8"
+      - name: javaversion
+        type: String
+        default: "8"
+        value: "8"
+      - name: seusername
+        type: String
+        value: jkharnessio
+      - name: verify_fail
+        type: String
+        default: "false"
+        value: "false"
+      - name: run_owasp_scan
+        type: String
+        default: "false"
+        value: "false"
+      - name: autostopping
+        type: String
+        default: "false"
+        value: "false"
+      - name: runSecurityStage
+        type: String
+        default: "False"
+        value: "True"
+      - name: CABRequired
+        type: String
+        default: "False"
+        value: "True"
+  name: jkharnessio-rfp-demo-input
+  identifier: jkharnessiorfpdemoinput
+  orgIdentifier: default
+  projectIdentifier: DevX_Demo
