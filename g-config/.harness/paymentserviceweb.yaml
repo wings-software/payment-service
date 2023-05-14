@@ -564,7 +564,12 @@ pipeline:
                         errors:
                           - AllErrors
                         action:
-                          type: MarkAsSuccess
+                          type: ManualIntervention
+                          spec:
+                            timeout: 1d
+                            onTimeout:
+                              action:
+                                type: Ignore
               - step:
                   name: Deploy Service on Test
                   identifier: rolloutDeployment
