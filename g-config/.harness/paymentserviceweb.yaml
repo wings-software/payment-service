@@ -1196,3 +1196,4 @@ pipeline:
       - name: Test finished
         identifier: Test_finished
   allowStageExecutions: true
+  notificationRules: []
