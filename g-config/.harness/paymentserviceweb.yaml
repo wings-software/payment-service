@@ -1113,6 +1113,10 @@ pipeline:
       type: String
       default: "false"
       value: <+input>.allowedValues(true,false)
+    - name: hosted
+      type: String
+      description: ""
+      value: <+input>.allowedValues(true)
   flowControl:
     barriers:
       - name: Barrier
