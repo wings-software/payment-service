@@ -1117,7 +1117,7 @@ pipeline:
     - name: hosted
       type: String
       description: ""
-      value: <+input>.allowedValues(true)
+      value: <+input>.allowedValues(true,false)
   flowControl:
     barriers:
       - name: Barrier
