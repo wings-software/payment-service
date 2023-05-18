@@ -382,6 +382,7 @@ pipeline:
             spec: {}
         when:
           pipelineStatus: Success
+          condition: <+pipeline.variables.hosted> == 'true'
         variables:
           - name: sto_api_key
             type: Secret
