@@ -211,7 +211,7 @@
     			    <forkCount>3</forkCount>
     				<reuseForks>true</reuseForks>
 				 <argLine>${harnessArgLine} -Xmx4096m -XX:MaxPermSize=512m </argLine>
-       				 <useSystemClassLoader>false</useSystemClassLoader>
+       				 <useSystemClassLoader>true</useSystemClassLoader>
     			</configuration>
 			</plugin>  
         </plugins>
