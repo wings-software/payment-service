@@ -210,7 +210,7 @@
     			<configuration>
     			    <forkCount>3</forkCount>
     				<reuseForks>true</reuseForks>
-				 <argLine>${harnessArgLine} -Xmx1024m -XX:MaxPermSize=256m </argLine>
+				 <argLine>${harnessArgLine} -Xmx4096m -XX:MaxPermSize=512m </argLine>
        				 <useSystemClassLoader>false</useSystemClassLoader>
     			</configuration>
 			</plugin>  
