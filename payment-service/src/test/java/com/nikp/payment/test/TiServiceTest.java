@@ -37,59 +37,59 @@ public class TiServiceTest {
     
     @Test
     public void testExchangeRateGBPtoUSD() throws InterruptedException {
-    	//TimeUnit.SECONDS.sleep(20);
+    	TimeUnit.SECONDS.sleep(20);
         Assertions.assertThat(tiService.calculateExchangeRate(4, 5)).isEqualTo(20);
     }
     
     @Test
     public void testExchangeRateUSDtoGBP() throws InterruptedException {
-    	//TimeUnit.SECONDS.sleep(20);
+    	TimeUnit.SECONDS.sleep(20);
         Assertions.assertThat(tiService.calculateExchangeRate(4, 5)).isEqualTo(20);
     }
     
     
     @Test
     public void testExchangeRateGBPtoEuro() throws InterruptedException {
-    	//TimeUnit.SECONDS.sleep(20);
+    	TimeUnit.SECONDS.sleep(20);
         Assertions.assertThat(tiService.calculateExchangeRate(4, 5)).isEqualTo(20);
     }
     
     @Test
     public void testExchangeRateJPYtoGBP() throws InterruptedException {
-    	//TimeUnit.SECONDS.sleep(20);
+    	TimeUnit.SECONDS.sleep(20);
         Assertions.assertThat(tiService.calculateExchangeRate(4, 5)).isEqualTo(20);
     }
     
     @Test
     public void testExchangeRateGBPtoJPY() throws InterruptedException {
-    	//TimeUnit.SECONDS.sleep(20);
+    	TimeUnit.SECONDS.sleep(20);
         Assertions.assertThat(tiService.calculateExchangeRate(4, 5)).isEqualTo(20);
     }
     
     @Test
     public void testExchangeRateCHFtoGBP() throws InterruptedException {
-    	//TimeUnit.SECONDS.sleep(20);
+    	TimeUnit.SECONDS.sleep(20);
         Assertions.assertThat(tiService.calculateExchangeRate(4, 5)).isEqualTo(20);
     }
     
     @Test
     public void testExchangeRateGBPtoCHF() throws InterruptedException {
-    	//TimeUnit.SECONDS.sleep(20);
+    	TimeUnit.SECONDS.sleep(20);
         Assertions.assertThat(tiService.calculateExchangeRate(4, 5)).isEqualTo(20);
     }
     
     
     @Test
     public void testExchangeRateAUDtoGBP() throws InterruptedException {
-    	//TimeUnit.SECONDS.sleep(20);
+    	TimeUnit.SECONDS.sleep(20);
         Assertions.assertThat(tiService.calculateExchangeRate(4, 5)).isEqualTo(20);
     }
     
-   // @Test
-   // public void testExchangeRateGBPtoAUD() throws InterruptedException {
-   // 	TimeUnit.SECONDS.sleep(20);
-   //     Assertions.assertThat(tiService.calculateExchangeRate(4, 5)).isEqualTo(20);
-  //  }
+    @Test
+    public void testExchangeRateGBPtoAUD() throws InterruptedException {
+    	TimeUnit.SECONDS.sleep(20);
+        Assertions.assertThat(tiService.calculateExchangeRate(4, 5)).isEqualTo(20);
+    }
     
     
 
