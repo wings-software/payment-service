@@ -860,6 +860,52 @@ pipeline:
         when:
           pipelineStatus: Success
     - stage:
+        name: DeployStage
+        identifier: DeployStage
+        description: ""
+        type: Deployment
+        spec:
+          deploymentType: Kubernetes
+          service:
+            useFromStage:
+              stage: DeployDev
+          environment:
+            environmentRef: GKEQA
+            deployToAll: false
+            infrastructureDefinitions:
+              - identifier: qa
+          execution:
+            steps:
+              - step:
+                  name: Rollout Deployment
+                  identifier: rolloutDeployment
+                  type: K8sRollingDeploy
+                  timeout: 10m
+                  spec:
+                    skipDryRun: false
+                    pruningEnabled: false
+              - step:
+                  name: Selenium
+                  identifier: Selenium
+                  template:
+                    templateRef: Selenium
+                    versionLabel: v0.1
+            rollbackSteps:
+              - step:
+                  name: Rollback Rollout Deployment
+                  identifier: rollbackRolloutDeployment
+                  type: K8sRollingRollback
+                  timeout: 10m
+                  spec:
+                    pruningEnabled: false
+        tags: {}
+        failureStrategies:
+          - onFailure:
+              errors:
+                - AllErrors
+              action:
+                type: StageRollback
+    - stage:
         name: Jira Approve
         identifier: Jira_Approve
         description: ""
