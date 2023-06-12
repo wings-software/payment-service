@@ -19,6 +19,7 @@ public class PaymentTest {
 	 public void testAccesors_shouldAccessAccountFrom() {
 		 Payment payment = new Payment("testuser","accountFrom","accountTo",(long) 100);
 		 String accountFrom=payment.getAccountFrom();
+		 
 		 Assert.assertEquals("accountFrom", accountFrom);
 		 
 	 }
