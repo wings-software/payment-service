@@ -1,0 +1,52 @@
+inputSet:
+  pipeline:
+    identifier: paymentserviceweb
+    stages:
+      - stage:
+          identifier: DeployDev
+          type: Deployment
+          spec:
+            service:
+              serviceInputs:
+                serviceDefinition:
+                  type: Kubernetes
+                  spec:
+                    artifacts:
+                      primary:
+                        primaryArtifactRef: image
+                        sources:
+                          - identifier: image
+                            type: DockerRegistry
+                            spec:
+                              digest: ""
+    variables:
+      - name: mavenversion
+        type: String
+        default: "3.8"
+        value: "3.8"
+      - name: javaversion
+        type: String
+        default: "8"
+        value: "8"
+      - name: seusername
+        type: String
+        value: nikp
+      - name: verify_fail
+        type: String
+        default: "false"
+        value: "false"
+      - name: run_owasp_scan
+        type: String
+        default: "false"
+        value: "false"
+      - name: autostopping
+        type: String
+        default: "false"
+        value: "false"
+      - name: hosted
+        type: String
+        value: "false"
+  name: nikp-jexl
+  identifier: nikpjexl
+  orgIdentifier: default
+  projectIdentifier: DevX_Demo
