@@ -47,7 +47,7 @@ pipeline:
                     source:
                       type: Inline
                       spec:
-                        script: echo <+repeat.item.podIp>
+                        script: echo "hello"
                     environmentVariables: []
                     outputVariables: []
                   timeout: 10m
