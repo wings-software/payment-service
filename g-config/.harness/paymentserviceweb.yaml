@@ -52,8 +52,8 @@ pipeline:
 
                           for (( x=0; x<podLength; x++ )); do
                               echo $x
-                              pod=<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList[$x].podIP>
-                              echo $pod
+                              echo <+ <+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList[$x].podIP>>
+
                           done
 
                           echo "Passing number to array"
