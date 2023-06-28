@@ -13,14 +13,15 @@ pipeline:
         spec:
           deploymentType: Kubernetes
           service:
-            serviceRef: paymentservicesrm_dev
+            serviceRef: paymentservicemultipod
             serviceInputs:
               serviceDefinition:
                 type: Kubernetes
                 spec:
                   artifacts:
                     primary:
-                      primaryArtifactRef: payment-service
+                      primaryArtifactRef: <+input>
+                      sources: <+input>
           environment:
             environmentRef: GKEDEV
             deployToAll: false
