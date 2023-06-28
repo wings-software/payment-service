@@ -47,7 +47,7 @@ pipeline:
                     source:
                       type: Inline
                       spec:
-                        script: echo <+search("[].podIP", <+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList>)>
+                        script: echo <+search('[].podIP', <+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList>)>
                     environmentVariables: []
                     outputVariables: []
                   timeout: 10m
