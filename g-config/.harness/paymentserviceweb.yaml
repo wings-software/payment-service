@@ -90,6 +90,8 @@ pipeline:
                   strategy:
                     repeat:
                       times: <+size(<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList>)>
+                  when:
+                    stageStatus: Failure
             rollbackSteps:
               - step:
                   name: Rollback Rollout Deployment
