@@ -39,6 +39,28 @@ pipeline:
                     pruningEnabled: false
               - step:
                   type: ShellScript
+                  name: ShellScript_2_1
+                  identifier: ShellScript_2_1
+                  spec:
+                    shell: Bash
+                    onDelegate: true
+                    source:
+                      type: Inline
+                      spec:
+                        script: |-
+                          # JSON payload
+                          payload=<+execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList>
+
+                          pod_ips=($(echo "$payload" | jq -r '.[].podIP'))
+                          pod_ips_string=$(IFS=,; echo "${pod_ips[*]}")
+
+
+                          echo "['$pod_ips_string']"
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
+              - step:
+                  type: ShellScript
                   name: ShellScript_2
                   identifier: ShellScript_2
                   spec:
