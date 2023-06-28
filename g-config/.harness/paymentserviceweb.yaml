@@ -47,10 +47,13 @@ pipeline:
                     source:
                       type: Inline
                       spec:
-                        script: |+
+                        script: |
+                          echo <+strategy.iteration>
                           echo <+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList[<+strategy.iteration>].podIP>
 
 
+                          var a=<+strategy.iteration>
+                          echo <+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList[$a].podIP>
                     environmentVariables: []
                     outputVariables:
                       - name: podCount
