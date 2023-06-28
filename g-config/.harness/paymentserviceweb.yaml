@@ -47,9 +47,12 @@ pipeline:
                     source:
                       type: Inline
                       spec:
-                        script: echo "echo <+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList>" | grep -o podIP | wc -l
+                        script: export podCount=$(echo "echo <+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList>" | grep -o podIP | wc -l)
                     environmentVariables: []
-                    outputVariables: []
+                    outputVariables:
+                      - name: podCount
+                        type: String
+                        value: podCount
                   timeout: 10m
             rollbackSteps:
               - step:
