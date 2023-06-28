@@ -47,7 +47,7 @@ pipeline:
                     source:
                       type: Inline
                       spec:
-                        script: echo <+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList.length>
+                        script: echo "echo <+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList>" | grep -o podIP | wc -l
                     environmentVariables: []
                     outputVariables: []
                   timeout: 10m
