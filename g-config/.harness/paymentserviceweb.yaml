@@ -51,8 +51,6 @@ pipeline:
                     environmentVariables: []
                     outputVariables: []
                   timeout: 10m
-                  strategy:
-                    repeat: {}
               - step:
                   type: ShellScript
                   name: ShellScript_2
