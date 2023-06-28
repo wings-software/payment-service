@@ -30,20 +30,6 @@ pipeline:
           execution:
             steps:
               - step:
-                  type: JiraCreate
-                  name: JiraCreate
-                  identifier: JiraCreate
-                  spec:
-                    connectorRef: account.Harness_JIRA
-                    projectKey: HD
-                    issueType: Story
-                    fields:
-                      - name: Summary
-                        value: Ticket to track deployment of <+pipeline.variables.servicename> triggered by <+pipeline.variables.seusername>
-                      - name: Description
-                        value: "triggeredBy: <+pipeline.variables.seusername> buildNumber: <+pipeline.sequenceId>"
-                  timeout: 1d
-              - step:
                   name: Rollout Deployment1
                   identifier: rolloutDeployment
                   type: K8sRollingDeploy
@@ -52,17 +38,22 @@ pipeline:
                     skipDryRun: false
                     pruningEnabled: false
               - step:
-                  type: JiraUpdate
-                  name: JiraUpdate
-                  identifier: JiraUpdate
+                  type: ShellScript
+                  name: ShellScript_1
+                  identifier: ShellScript_1
                   spec:
-                    connectorRef: account.Harness_JIRA
-                    issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.id>
-                    transitionTo:
-                      transitionName: In Progress
-                      status: In Progress
-                    fields: []
-                  timeout: 1d
+                    shell: Bash
+                    onDelegate: true
+                    source:
+                      type: Inline
+                      spec:
+                        script: echo <+repeat.item.podIp>
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
+                  strategy:
+                    repeat:
+                      items: <+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList>
             rollbackSteps:
               - step:
                   name: Rollback Rollout Deployment
