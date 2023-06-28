@@ -48,8 +48,6 @@ pipeline:
                       type: Inline
                       spec:
                         script: |+
-                          echo "hello"
-
                           podLength=<+size(<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList>)>
 
                           for (( x=0; x<podLength; x++ )); do
