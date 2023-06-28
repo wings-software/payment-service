@@ -47,8 +47,13 @@ pipeline:
                     source:
                       type: Inline
                       spec:
-                        script: |
+                        script: |-
                           echo "hello"
+
+
+
+                          deployment=<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList>
+                          echo $deployment
                     environmentVariables: []
                     outputVariables: []
                   timeout: 10m
