@@ -51,7 +51,14 @@ pipeline:
                           # JSON payload
                           payload=<+execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList>
 
-                          pod_ips=($(echo "$payload" | jq -r '.[].podIP'))
+                          pod_ips=()
+                          while IFS= read -r line; do
+                            if [[ "$line" =~ "podIP\":\"([^\",]+)\" ]]; then
+                              pod_ips+=("${BASH_REMATCH[1]}")
+                            fi
+                          done < <(echo "$payload")
+
+
                           pod_ips_string=$(IFS=,; echo "${pod_ips[*]}")
 
 
