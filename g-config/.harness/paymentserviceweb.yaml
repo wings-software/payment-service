@@ -47,10 +47,12 @@ pipeline:
                     source:
                       type: Inline
                       spec:
-                        script: echo <+search('[].podIP', <+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList>)>
+                        script: echo "hello"
                     environmentVariables: []
                     outputVariables: []
                   timeout: 10m
+                  strategy:
+                    repeat: {}
               - step:
                   type: ShellScript
                   name: ShellScript_2
