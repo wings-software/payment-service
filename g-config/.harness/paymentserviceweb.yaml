@@ -52,9 +52,6 @@ pipeline:
                     environmentVariables: []
                     outputVariables: []
                   timeout: 10m
-                  strategy:
-                    repeat:
-                      items: <+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList>.split('podID')
               - step:
                   type: ShellScript
                   name: ShellScript_2
