@@ -62,7 +62,7 @@ pipeline:
                           pod_ips_string=$(IFS=,; echo "${pod_ips[*]}")
 
 
-                          echo "['$pod_ips_string']"
+                          echo $pod_ips_string
                     environmentVariables: []
                     outputVariables: []
                   timeout: 10m
