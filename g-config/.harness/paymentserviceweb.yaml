@@ -53,6 +53,7 @@ pipeline:
 
 
 
+                          echo <+regex.extract("*podIP:.*,",<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList)>
 
 
 
