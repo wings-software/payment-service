@@ -49,7 +49,7 @@ pipeline:
                       type: Inline
                       spec:
                         script: |
-                          echo '<+json.list("serverInstanceInfoList", <+<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome>.replaceAll("__recast", "__recast1")>)>'
+                          echo '<+<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome>.replaceAll("__recast", "__recast1")>'
                     environmentVariables: []
                     outputVariables: []
                   timeout: 10m
