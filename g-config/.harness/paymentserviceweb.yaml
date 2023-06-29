@@ -46,9 +46,6 @@ pipeline:
                         type: String
                         value: ipArray
                   timeout: 10m
-                  strategy:
-                    matrix:
-                      podIp: <+json.list("a", <+<+pipeline.variables.sahilTest>.replaceAll("__recast", "__recast1")>>
                 isContainerStepGroup: false
               - step:
                   name: Rollout Deployment1
