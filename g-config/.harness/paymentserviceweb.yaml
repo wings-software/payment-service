@@ -39,7 +39,7 @@ pipeline:
                     source:
                       type: Inline
                       spec:
-                        script: "ipArray=grep -oP '(?<=\"podIP\": \")[^\"]+' <<< '<+pipeline.variables.sahilTest>'"
+                        script: "ipArray=$(grep -oP '(?<=\"podIP\": \")[^\"]+' <<< '<+pipeline.variables.sahilTest>')"
                     environmentVariables: []
                     outputVariables:
                       - name: ipArray
