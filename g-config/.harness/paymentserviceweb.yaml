@@ -47,8 +47,10 @@ pipeline:
                     source:
                       type: Inline
                       spec:
-                        script: |
+                        script: |-
                           echo <+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList> | grep -Eo '"podIP"[^,]*' | grep -Eo '[^:]*$'
+
+                          echo <+json.list('serverInstanceInfoList', <+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome>)>
                     environmentVariables: []
                     outputVariables:
                       - name: ipArray
