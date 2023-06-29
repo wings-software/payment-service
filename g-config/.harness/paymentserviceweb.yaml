@@ -37,6 +37,25 @@ pipeline:
                   spec:
                     skipDryRun: false
                     pruningEnabled: false
+              - step:
+                  type: ShellScript
+                  name: IPList
+                  identifier: IPList
+                  spec:
+                    shell: Bash
+                    onDelegate: true
+                    source:
+                      type: Inline
+                      spec:
+                        script: |-
+                          ipArray=($(echo <+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList> | grep -Eo '"podIP"[^,]*' | grep -Eo '[^:]*$'))
+                          export ipArray=$ipArray
+                    environmentVariables: []
+                    outputVariables:
+                      - name: ipArray
+                        type: String
+                        value: ipArray
+                  timeout: 10m
               - stepGroup:
                   name: Health Check
                   identifier: Health_Check
