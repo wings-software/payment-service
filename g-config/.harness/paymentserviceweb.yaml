@@ -30,6 +30,15 @@ pipeline:
           execution:
             steps:
               - step:
+                  name: Rollout Deployment1
+                  identifier: rolloutDeployment
+                  type: K8sRollingDeploy
+                  timeout: 10m
+                  spec:
+                    skipDryRun: false
+                    pruningEnabled: false
+                isContainerStepGroup: false
+              - step:
                   type: ShellScript
                   name: IPList
                   identifier: IPList
@@ -39,22 +48,13 @@ pipeline:
                     source:
                       type: Inline
                       spec:
-                        script: "ipArray=$(grep -oP '(?<=\"podIP\": \")[^\"]+' <<< '<+pipeline.variables.sahilTest>')"
+                        script: "ipArray=$(grep -oP '(?<=\"podIP\": \")[^\"]+' <<< '<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList>')"
                     environmentVariables: []
                     outputVariables:
                       - name: ipArray
                         type: String
                         value: ipArray
                   timeout: 10m
-                isContainerStepGroup: false
-              - step:
-                  name: Rollout Deployment1
-                  identifier: rolloutDeployment
-                  type: K8sRollingDeploy
-                  timeout: 10m
-                  spec:
-                    skipDryRun: false
-                    pruningEnabled: false
                 isContainerStepGroup: false
               - stepGroup:
                   name: Health Check
@@ -91,7 +91,7 @@ pipeline:
                         timeout: 10s
                   strategy:
                     repeat:
-                      times: <+size(<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList>)>
+                      items: <+<+pipeline.stages.DeployDev.spec.execution.steps.IPList.output.outputVariables.ipArray>.split()>
               - step:
                   type: ShellScript
                   name: IP Array
