@@ -57,9 +57,6 @@ pipeline:
                         type: String
                         value: ipArray
                   timeout: 10m
-                  strategy:
-                    matrix:
-                      podIp: <+json.list("a", <+pipeline.variables.sahilTest>)>
                 isContainerStepGroup: false
               - stepGroup:
                   name: Health Check
