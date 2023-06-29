@@ -56,7 +56,7 @@ pipeline:
                   timeout: 10m
                   strategy:
                     matrix:
-                      podIp: <+json.list('serverInstanceInfoList', <+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome>)>
+                      podIp: <+json.list('serverInstanceInfoList', <+json.format(<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome>)>)>
               - stepGroup:
                   name: Health Check
                   identifier: Health_Check
