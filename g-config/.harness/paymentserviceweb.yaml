@@ -94,7 +94,7 @@ pipeline:
                         timeout: 10s
                   strategy:
                     matrix:
-                      podIp: <+json.list("a", <+<+pipeline.variables.sahilTest>.replaceAll("__recast", "__recast1")>>
+                      test: <+json.list("serverInstanceInfoList", <+<+json.format(<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome>)>.replaceAll("__recast", "__recast1")>)>
               - step:
                   type: ShellScript
                   name: IP Array
