@@ -30,15 +30,6 @@ pipeline:
           execution:
             steps:
               - step:
-                  name: Rollout Deployment1
-                  identifier: rolloutDeployment
-                  type: K8sRollingDeploy
-                  timeout: 10m
-                  spec:
-                    skipDryRun: false
-                    pruningEnabled: false
-                isContainerStepGroup: false
-              - step:
                   type: ShellScript
                   name: IPList
                   identifier: IPList
@@ -55,6 +46,18 @@ pipeline:
                         type: String
                         value: ipArray
                   timeout: 10m
+                  strategy:
+                    matrix:
+                      podIp: <+json.list("a", <+<+pipeline.variables.sahilTest>.replaceAll("__recast", "__recast1")>>
+                isContainerStepGroup: false
+              - step:
+                  name: Rollout Deployment1
+                  identifier: rolloutDeployment
+                  type: K8sRollingDeploy
+                  timeout: 10m
+                  spec:
+                    skipDryRun: false
+                    pruningEnabled: false
                 isContainerStepGroup: false
               - stepGroup:
                   name: Health Check
