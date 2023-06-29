@@ -39,7 +39,9 @@ pipeline:
                     source:
                       type: Inline
                       spec:
-                        script: echo '<+<+pipeline.variables.sahilTest>.replaceAll("__recast", "__recast1")>'
+                        script: |
+                          echo '<+<+pipeline.variables.sahilTest>.replaceAll("__recast", "__recast1")>'
+                          echo <+json.list("a", <+json.format(<+<+pipeline.variables.sahilTest>.replaceAll("__recast", "__recast1"))>>>
                     environmentVariables: []
                     outputVariables:
                       - name: ipArray
