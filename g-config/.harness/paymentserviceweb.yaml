@@ -49,8 +49,8 @@ pipeline:
                       type: Inline
                       spec:
                         script: |+
-                          grep -oP '(?<="podIP": ")[^"]+' <<< '<+json.format(<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome>)>'
-                          ipArray=$(grep -oP '(?<="podIP": ")[^"]+' <<< '<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome>')
+                          echo '<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome>' | grep -oE '"podIP":"[0-9]+\.[0-9]+\.[0
+                          ipArray=$(echo '<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome>' | grep -oE '"podIP":"[0-9]+\.[0-9]+\.[0)
 
                     environmentVariables: []
                     outputVariables:
