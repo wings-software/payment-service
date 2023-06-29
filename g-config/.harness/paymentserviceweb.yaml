@@ -227,7 +227,7 @@ pipeline:
       type: String
       description: ""
       required: false
-      value: "{\"a\":[ { \"name\": \"svc1\", \"version\": \"1.0.0\" }, { \"name\": \"svc2\", \"version\": \"1.0.2\" }, { \"name\": \"svc3\", \"version\": \"1.0.1\" } ]}"
+      value: "{  \"a\": [    {      \"__recast\": \"io.harness.delegate.beans.instancesync.info.K8sServerInstanceInfo\",      \"name\": \"payment-service-multipod-nikp-deployment-6d8c8fb546-58d6p\",      \"namespace\": \"payment-service-dev\",      \"releaseName\": \"release-a7ae47d4f16338c5d35e8025915576850b95ab9d\",      \"podIP\": \"10.124.0.232\"    },    {      \"__recast\": \"io.harness.delegate.beans.instancesync.info.K8sServerInstanceInfo\",      \"name\": \"payment-service-multipod-nikp-deployment-6d8c8fb546-zs7cg\",      \"namespace\": \"payment-service-dev\",      \"releaseName\": \"release-a7ae47d4f16338c5d35e8025915576850b95ab9d\",      \"podIP\": \"10.124.0.231\"    },    {      \"__recast\": \"io.harness.delegate.beans.instancesync.info.K8sServerInstanceInfo\",      \"name\": \"payment-service-multipod-nikp1-deployment-7f9d678bfc-bp9xc\",      \"namespace\": \"payment-service-dev\",      \"releaseName\": \"release-a7ae47d4f16338c5d35e8025915576850b95ab9d\",      \"podIP\": \"10.124.0.126\"    },    {      \"__recast\": \"io.harness.delegate.beans.instancesync.info.K8sServerInstanceInfo\",      \"name\": \"payment-service-multipod-nikp1-deployment-7f9d678bfc-ctw8r\",      \"namespace\": \"payment-service-dev\",      \"releaseName\": \"release-a7ae47d4f16338c5d35e8025915576850b95ab9d\",      \"podIP\": \"10.124.0.127\"    }  ]}"
   flowControl:
     barriers:
       - name: Barrier
