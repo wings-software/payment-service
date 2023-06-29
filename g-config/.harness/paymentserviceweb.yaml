@@ -30,15 +30,6 @@ pipeline:
           execution:
             steps:
               - step:
-                  name: Rollout Deployment1
-                  identifier: rolloutDeployment
-                  type: K8sRollingDeploy
-                  timeout: 10m
-                  spec:
-                    skipDryRun: false
-                    pruningEnabled: false
-                isContainerStepGroup: false
-              - step:
                   type: ShellScript
                   name: IPList
                   identifier: IPList
@@ -48,16 +39,22 @@ pipeline:
                     source:
                       type: Inline
                       spec:
-                        script: |+
-                          echo '<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome>' | grep -oE '"podIP":"[0-9]+\.[0-9]+\.[0
-                          ipArray=$(echo '<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome>' | grep -oE '"podIP":"[0-9]+\.[0-9]+\.[0)
-
+                        script: echo '<+<+pipeline.varipipeline.variables.sahilTest>.replaceAll("__recast", "__recast1")>
                     environmentVariables: []
                     outputVariables:
                       - name: ipArray
                         type: String
                         value: ipArray
                   timeout: 10m
+                isContainerStepGroup: false
+              - step:
+                  name: Rollout Deployment1
+                  identifier: rolloutDeployment
+                  type: K8sRollingDeploy
+                  timeout: 10m
+                  spec:
+                    skipDryRun: false
+                    pruningEnabled: false
                 isContainerStepGroup: false
               - stepGroup:
                   name: Health Check
