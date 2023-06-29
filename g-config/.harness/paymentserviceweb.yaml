@@ -40,6 +40,21 @@ pipeline:
                 isContainerStepGroup: false
               - step:
                   type: ShellScript
+                  name: ShellScript_5
+                  identifier: ShellScript_5
+                  spec:
+                    shell: Bash
+                    onDelegate: true
+                    source:
+                      type: Inline
+                      spec:
+                        script: |
+                          echo '<+json.list("serverInstanceInfoList", <+<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome>.replaceAll("__recast", "__recast1")>)>'
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
+              - step:
+                  type: ShellScript
                   name: IPList
                   identifier: IPList
                   spec:
