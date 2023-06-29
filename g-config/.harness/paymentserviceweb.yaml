@@ -59,19 +59,17 @@ pipeline:
                               value: iteration
                         timeout: 10m
                     - step:
-                        type: ShellScript
-                        name: ShellScript_4
-                        identifier: ShellScript_4
+                        type: Http
+                        name: Http_1
+                        identifier: Http_1
                         spec:
-                          shell: Bash
-                          onDelegate: true
-                          source:
-                            type: Inline
-                            spec:
-                              script: echo <+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList[<+pipeline.stages.DeployDev.spec.execution.steps.Health_Check_1.steps.Counter.output.outputVariables.iteration>]>
-                          environmentVariables: []
+                          url: http://<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList[<+pipeline.stages.DeployDev.spec.execution.steps.Health_Check_1.steps.Counter.output.outputVariables.iteration>]>
+                          method: GET
+                          headers: []
+                          inputVariables: []
                           outputVariables: []
-                        timeout: 10m
+                          requestBody: OK
+                        timeout: 10s
                   strategy:
                     repeat:
                       times: <+size(<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList>)>
