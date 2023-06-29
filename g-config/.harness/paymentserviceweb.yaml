@@ -47,9 +47,8 @@ pipeline:
                     source:
                       type: Inline
                       spec:
-                        script: |-
-                          ipArray=($(echo <+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList> | grep -Eo '"podIP"[^,]*' | grep -Eo '[^:]*$'))
-                          echo $ipArray
+                        script: |
+                          echo <+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList> | grep -Eo '"podIP"[^,]*' | grep -Eo '[^:]*$')
                     environmentVariables: []
                     outputVariables:
                       - name: ipArray
