@@ -49,7 +49,7 @@ pipeline:
                       spec:
                         script: |-
                           ipArray=($(echo <+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList> | grep -Eo '"podIP"[^,]*' | grep -Eo '[^:]*$'))
-                          export ipArray=$ipArray
+                          echo $ipArray
                     environmentVariables: []
                     outputVariables:
                       - name: ipArray
