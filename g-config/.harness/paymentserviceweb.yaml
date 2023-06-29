@@ -50,7 +50,7 @@ pipeline:
                       spec:
                         script: |-
                           echo '<+<+json.format(<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome>)>.replaceAll("__recast", "__recast1")>'
-                          echo '<+json.list("serverInstanceInfoList", <+json.format(<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome>)>.replaceAll("__recast", "__recast1")>)>
+                          echo '<+json.list("serverInstanceInfoList", <+<+json.format(<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome>)>.replaceAll("__recast", "__recast1")>)>
                     environmentVariables: []
                     outputVariables: []
                   timeout: 10m
