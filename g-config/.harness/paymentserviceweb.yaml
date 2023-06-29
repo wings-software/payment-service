@@ -68,7 +68,7 @@ pipeline:
                           source:
                             type: Inline
                             spec:
-                              script: echo <+ <+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList[<+pipeline.stages.DeployDev.spec.execution.steps.Health_Check_1.steps.Counter.output.outputVariables.iteration>].podIP>>
+                              script: echo <+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList[<+pipeline.stages.DeployDev.spec.execution.steps.Health_Check_1.steps.Counter.output.outputVariables.iteration>]>
                           environmentVariables: []
                           outputVariables: []
                         timeout: 10m
