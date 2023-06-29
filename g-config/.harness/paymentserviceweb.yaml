@@ -49,7 +49,7 @@ pipeline:
                       type: Inline
                       spec:
                         script: |-
-                          grep -oP '(?<="podIP": ")[^"]+' <<< '<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList>'
+                          grep -oP '(?<="podIP": ")[^"]+' <<< '<+json.format(<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList>)>'
                           ipArray=$(grep -oP '(?<="podIP": ")[^"]+' <<< '<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList>')
                     environmentVariables: []
                     outputVariables:
