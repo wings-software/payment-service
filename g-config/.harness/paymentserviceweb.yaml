@@ -75,7 +75,7 @@ pipeline:
                   timeout: 10m
                   strategy:
                     matrix:
-                      test: <+json.list("serverInstanceInfoList", <+<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome>.replaceAll("__recast", "__recast1")>)>
+                      test: <+json.list("serverInstanceInfoList", <+<+json.format(<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome>)>.replaceAll("__recast", "__recast1")>)>
                 isContainerStepGroup: false
               - stepGroup:
                   name: Health Check
