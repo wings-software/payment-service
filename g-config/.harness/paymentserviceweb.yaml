@@ -85,7 +85,7 @@ pipeline:
                         name: Http_1
                         identifier: Http_1
                         spec:
-                          url: http://<+pipeline.stages.DeployDev.spec.execution.steps.rolloutDeployment.deploymentInfoOutcome.serverInstanceInfoList[<+pipeline.stages.DeployDev.spec.execution.steps.Health_Check_1.steps.Counter.output.outputVariables.iteration>].podIP>
+                          url: http://<+matrix.test.podIP>
                           method: GET
                           headers: []
                           inputVariables: []
