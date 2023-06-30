@@ -787,6 +787,26 @@ pipeline:
             type: String
             value: https://api.sto.harness.io
     - stage:
+        name: Policy Check
+        identifier: Policy_Check
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: Policy
+                  name: Policy
+                  identifier: Policy
+                  spec:
+                    policySets:
+                      - account.Barclays_Security_CVEs
+                    type: Custom
+                    policySpec:
+                      payload: test
+                  timeout: 10m
+        tags: {}
+    - stage:
         name: DeployDev
         identifier: DeployDev
         description: ""
