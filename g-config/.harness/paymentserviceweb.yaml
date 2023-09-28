@@ -1149,7 +1149,7 @@ pipeline:
       type: String
       description: ""
       required: false
-      value: <+input>.allowedValues(true,false)
+      value: <+input>.default(false).allowedValues(true,false)
   flowControl:
     barriers:
       - name: Barrier
