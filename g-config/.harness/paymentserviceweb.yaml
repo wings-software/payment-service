@@ -874,7 +874,9 @@ pipeline:
                     transitionTo:
                       transitionName: In Progress
                       status: In Progress
-                    fields: []
+                    fields:
+                      - name: Description
+                        value: "Chaos resiliency: <+execution.steps.chaos.status>"
                   timeout: 1d
             rollbackSteps:
               - step:
