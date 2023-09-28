@@ -1145,6 +1145,11 @@ pipeline:
       type: String
       description: ""
       value: <+input>.allowedValues(true,false)
+    - name: chaosexperiments
+      type: String
+      description: ""
+      required: false
+      value: <+input>.allowedValues(true,false)
   flowControl:
     barriers:
       - name: Barrier
