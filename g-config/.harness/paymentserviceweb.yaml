@@ -858,6 +858,13 @@ pipeline:
                     skipDryRun: false
                     pruningEnabled: false
               - step:
+                  type: Chaos
+                  name: chaos
+                  identifier: chaos
+                  spec:
+                    experimentRef: 0daffb0a-a801-48c7-a152-266c7c2fbe5e
+                    expectedResilienceScore: 50
+              - step:
                   type: JiraUpdate
                   name: JiraUpdate
                   identifier: JiraUpdate
