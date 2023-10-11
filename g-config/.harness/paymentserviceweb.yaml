@@ -771,6 +771,36 @@ pipeline:
                       when:
                         stageStatus: Success
                         condition: <+pipeline.variables.run_owasp_scan> == true
+              - step:
+                  type: SscaOrchestration
+                  name: SscaOrchestration_1
+                  identifier: SscaOrchestration_1
+                  spec:
+                    attestation:
+                      type: cosign
+                      spec:
+                        privateKey: sscaprivatekey
+                        password: sscapassword
+                    source:
+                      type: image
+                      spec:
+                        connector: nikpdockerhub
+                        image: nikpap/payment-service:<+pipeline.sequenceId>
+                    tool:
+                      type: Syft
+                      spec:
+                        format: spdx-json
+                    mode: generation
+                    resources:
+                      limits:
+                        memory: 500Mi
+                        cpu: "0.5"
+                  failureStrategies:
+                    - onFailure:
+                        errors:
+                          - AllErrors
+                        action:
+                          type: Ignore
           serviceConfig:
             serviceRef: ""
             serviceDefinition:
