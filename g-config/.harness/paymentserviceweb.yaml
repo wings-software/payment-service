@@ -773,7 +773,7 @@ pipeline:
                         condition: <+pipeline.variables.run_owasp_scan> == true
               - step:
                   type: SscaOrchestration
-                  name: SscaOrchestration_1
+                  name: SBOM Orchestration
                   identifier: SscaOrchestration_1
                   spec:
                     attestation:
