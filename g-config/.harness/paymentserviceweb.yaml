@@ -894,6 +894,9 @@ pipeline:
                   spec:
                     experimentRef: 0daffb0a-a801-48c7-a152-266c7c2fbe5e
                     expectedResilienceScore: 50
+                  when:
+                    stageStatus: Success
+                    condition: <+pipeline.variables.chaosexperiments> == true
               - step:
                   type: JiraUpdate
                   name: JiraUpdate
