@@ -1,0 +1,32 @@
+inputSet:
+  pipeline:
+    identifier: paymentserviceweb
+    stages:
+      - stage:
+          identifier: DeployProd
+          type: Deployment
+          spec:
+            serviceConfig:
+              serviceRef: paymentservice
+    variables:
+      - name: seusername
+        type: String
+        value: mgzam
+      - name: verify_fail
+        type: String
+        default: "false"
+        value: "false"
+      - name: autostopping
+        type: String
+        default: "false"
+        value: "false"
+      - name: artifact
+        type: String
+        value: "1503"
+      - name: namespace
+        type: String
+        value: ""
+  name: mgzam-cd
+  identifier: mgzamcd
+  orgIdentifier: default
+  projectIdentifier: DevX_Demo
