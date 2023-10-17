@@ -131,12 +131,6 @@ pipeline:
                       - name: Test Summary
                         value: <+pipeline.stages.DeployDev.spec.execution.steps.Selenium.output.outputVariables.selenium_output>
                   timeout: 1d
-              - step:
-                  name: sELENIUM1
-                  identifier: sELENIUM1
-                  template:
-                    templateRef: Selenium
-                    versionLabel: v0.1
             rollbackSteps:
               - step:
                   name: Rollback Rollout Deployment
@@ -436,10 +430,6 @@ pipeline:
       type: String
       description: ""
       value: <+input>.allowedValues(1503,1505)
-    - name: namespace
-      type: String
-      description: ""
-      value: <+input>.allowedValues(payment-service,mortgage-service)
   flowControl:
     barriers:
       - name: Barrier
