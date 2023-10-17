@@ -1,13 +1,18 @@
 inputSet:
+  name: mgzam
+  tags: {}
+  identifier: mgzam
+  orgIdentifier: default
+  projectIdentifier: DevX_Demo
   pipeline:
     identifier: paymentserviceweb
     properties:
       ci:
         codebase:
           build:
-            type: PR
+            type: branch
             spec:
-              number: "625"
+              branch: master
     stages:
       - stage:
           identifier: DeployProd
@@ -22,38 +27,29 @@ inputSet:
                     artifacts:
                       primary:
                         primaryArtifactRef: payment-service
-                        sources: ""
+                        sources: <+input>
     variables:
       - name: mavenversion
         type: String
-        default: "3.8"
         value: "3.8"
       - name: javaversion
         type: String
-        default: "8"
         value: "8"
       - name: seusername
         type: String
         value: mgzam
       - name: verify_fail
         type: String
-        default: "false"
         value: "false"
       - name: run_owasp_scan
         type: String
-        default: "false"
         value: "false"
       - name: autostopping
         type: String
-        default: "false"
         value: "false"
       - name: hosted
         type: String
-        value: ""
+        value: "false"
       - name: chaosexperiments
         type: String
         value: "false"
-  name: mgzam
-  identifier: mgzam
-  orgIdentifier: default
-  projectIdentifier: DevX_Demo
