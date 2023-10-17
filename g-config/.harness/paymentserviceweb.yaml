@@ -52,7 +52,6 @@ pipeline:
                       imagePath: nikpap/payment-service
                       tag: <+pipeline.variables.artifact>
                     type: DockerRegistry
-                variables: []
             serviceRef: paymentservicesrm_dev
           infrastructure:
             environmentRef: GKEDEV
@@ -436,7 +435,7 @@ pipeline:
     - name: artifact
       type: String
       description: ""
-      value: <+input>.allowedValues(v0.1,v0.2)
+      value: <+input>.allowedValues(1503,1505)
     - name: namespace
       type: String
       description: ""
