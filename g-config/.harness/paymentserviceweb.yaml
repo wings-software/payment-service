@@ -504,6 +504,17 @@ pipeline:
                             "SONAR_CRITICAL": <+pipeline.stages.Build.spec.execution.steps.Sonar_Scan_Vulnerabilities.output.outputVariables.CRITICAL>,
                             "VERACODE_CRITICAL": <+pipeline.stages.Build.spec.execution.steps.veracode.output.outputVariables.CRITICAL>}
                       timeout: 10m
+                      failureStrategies:
+                        - onFailure:
+                            errors:
+                              - AllErrors
+                            action:
+                              type: ManualIntervention
+                              spec:
+                                timeout: 10m
+                                onTimeout:
+                                  action:
+                                    type: Ignore
               - step:
                   type: JiraCreate
                   name: JiraCreate
