@@ -483,6 +483,12 @@ pipeline:
                           limits:
                             memory: 500Mi
                             cpu: "0.5"
+                  failureStrategies:
+                    - onFailure:
+                        errors:
+                          - AllErrors
+                        action:
+                          type: Ignore
               - step:
                   type: JiraCreate
                   name: JiraCreate
