@@ -456,6 +456,34 @@ pipeline:
           execution:
             steps:
               - step:
+                  type: CdSscaEnforcement
+                  name: SBOM Attestation and Policy
+                  identifier: SBOM_Attestation_and_Policy
+                  spec:
+                    source:
+                      type: image
+                      spec:
+                        connector: nikpdockerhub
+                        image: nikpap/payment-service:1505
+                    verifyAttestation:
+                      type: cosign
+                      spec:
+                        publicKey: sscapublickey
+                    policy:
+                      store:
+                        type: Harness
+                        spec:
+                          file: /SSCA Policy/ssca-policy
+                    infrastructure:
+                      type: KubernetesDirect
+                      spec:
+                        connectorRef: nikpgkecluster
+                        namespace: payment-service-build
+                        resources:
+                          limits:
+                            memory: 500Mi
+                            cpu: "0.5"
+              - step:
                   type: JiraCreate
                   name: JiraCreate
                   identifier: JiraCreate
