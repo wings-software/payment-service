@@ -454,32 +454,67 @@ pipeline:
               - identifier: K8s_Dev_Namespace
           execution:
             steps:
-              - step:
-                  type: Policy
-                  name: Vulnerability Policy
-                  identifier: Vulnerability_Policy
-                  spec:
-                    policySets:
-                      - Critical_Vulnerabilities
-                    type: Custom
-                    policySpec:
-                      payload: |-
-                        {"FORTIFY_CRITICAL": <+pipeline.stages.Build.spec.execution.steps.fortify.output.outputVariables.CRITICAL>,
-                        "CHECKMARX_CRITICAL": <+pipeline.stages.Build.spec.execution.steps.checkmarx.output.outputVariables.CRITICAL>,
-                        "SONAR_CRITICAL": <+pipeline.stages.Build.spec.execution.steps.Sonar_Scan_Vulnerabilities.output.outputVariables.CRITICAL>,
-                        "VERACODE_CRITICAL": <+pipeline.stages.Build.spec.execution.steps.veracode.output.outputVariables.CRITICAL>}
-                  timeout: 10m
-                  failureStrategies:
-                    - onFailure:
-                        errors:
-                          - AllErrors
-                        action:
-                          type: ManualIntervention
+              - parallel:
+                  - step:
+                      type: CdSscaEnforcement
+                      name: SBOM Attestation and Policy
+                      identifier: SBOM_Attestation_and_Policy
+                      spec:
+                        source:
+                          type: image
                           spec:
-                            timeout: 10m
-                            onTimeout:
-                              action:
-                                type: Ignore
+                            connector: nikpdockerhub
+                            image: nikpap/payment-service:<+pipeline.sequenceId>
+                        verifyAttestation:
+                          type: cosign
+                          spec:
+                            publicKey: sscapublickey
+                        policy:
+                          store:
+                            type: Harness
+                            spec:
+                              file: /SSCA Policy/ssca-policy
+                        infrastructure:
+                          type: KubernetesDirect
+                          spec:
+                            connectorRef: nikpgkecluster
+                            namespace: payment-service-build
+                            resources:
+                              limits:
+                                memory: 500Mi
+                                cpu: "0.5"
+                      failureStrategies:
+                        - onFailure:
+                            errors:
+                              - AllErrors
+                            action:
+                              type: Ignore
+                  - step:
+                      type: Policy
+                      name: Vulnerability Policy
+                      identifier: Vulnerability_Policy
+                      spec:
+                        policySets:
+                          - Critical_Vulnerabilities
+                        type: Custom
+                        policySpec:
+                          payload: |-
+                            {"FORTIFY_CRITICAL": <+pipeline.stages.Build.spec.execution.steps.fortify.output.outputVariables.CRITICAL>,
+                            "CHECKMARX_CRITICAL": <+pipeline.stages.Build.spec.execution.steps.checkmarx.output.outputVariables.CRITICAL>,
+                            "SONAR_CRITICAL": <+pipeline.stages.Build.spec.execution.steps.Sonar_Scan_Vulnerabilities.output.outputVariables.CRITICAL>,
+                            "VERACODE_CRITICAL": <+pipeline.stages.Build.spec.execution.steps.veracode.output.outputVariables.CRITICAL>}
+                      timeout: 10m
+                      failureStrategies:
+                        - onFailure:
+                            errors:
+                              - AllErrors
+                            action:
+                              type: ManualIntervention
+                              spec:
+                                timeout: 10m
+                                onTimeout:
+                                  action:
+                                    type: Ignore
               - step:
                   type: JiraCreate
                   name: JiraCreate
