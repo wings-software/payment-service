@@ -473,7 +473,7 @@ pipeline:
                           store:
                             type: Harness
                             spec:
-                              file: /SSCA Policy/ssca-policy
+                              file: /SSCA Policy/ssca-policy-2
                         infrastructure:
                           type: KubernetesDirect
                           spec:
