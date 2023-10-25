@@ -488,7 +488,12 @@ pipeline:
                             errors:
                               - AllErrors
                             action:
-                              type: Ignore
+                              type: ManualIntervention
+                              spec:
+                                timeout: 10m
+                                onTimeout:
+                                  action:
+                                    type: Ignore
                   - step:
                       type: Policy
                       name: Vulnerability Policy
