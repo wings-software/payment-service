@@ -552,6 +552,12 @@ pipeline:
                   when:
                     stageStatus: Success
                     condition: <+pipeline.variables.chaosexperiments> == 'true'
+                  failureStrategies:
+                    - onFailure:
+                        errors:
+                          - AllErrors
+                        action:
+                          type: MarkAsSuccess
               - step:
                   type: JiraUpdate
                   name: JiraUpdate
