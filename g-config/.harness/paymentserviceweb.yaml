@@ -454,6 +454,21 @@ pipeline:
               - identifier: K8s_Dev_Namespace
           execution:
             steps:
+              - step:
+                  type: HarnessApproval
+                  name: Wait and Show
+                  identifier: Wait_and_Show
+                  spec:
+                    approvalMessage: Please review the following information and approve the pipeline progression
+                    includePipelineExecutionHistory: true
+                    isAutoRejectEnabled: false
+                    approvers:
+                      userGroups:
+                        - jkharnessio
+                      minimumCount: 1
+                      disallowPipelineExecutor: false
+                    approverInputs: []
+                  timeout: 1d
               - parallel:
                   - step:
                       type: CdSscaEnforcement
@@ -800,6 +815,21 @@ pipeline:
         spec:
           execution:
             steps:
+              - step:
+                  type: HarnessApproval
+                  name: Wait and Show
+                  identifier: Wait_and_Show
+                  spec:
+                    approvalMessage: Please review the following information and approve the pipeline progression
+                    includePipelineExecutionHistory: true
+                    isAutoRejectEnabled: false
+                    approvers:
+                      userGroups:
+                        - jkharnessio
+                      minimumCount: 1
+                      disallowPipelineExecutor: false
+                    approverInputs: []
+                  timeout: 1d
               - step:
                   type: FlagConfiguration
                   name: Enable Mortage Offer
