@@ -143,6 +143,9 @@ pipeline:
                         memory: 3Gi
                         cpu: "2"
                   description: This builds payment service even better. And now with style!sad
+                  when:
+                    stageStatus: Success
+                    condition: <pipeline.variables.cool> != "cool"
               - parallel:
                   - step:
                       type: Security
