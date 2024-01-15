@@ -375,6 +375,8 @@ pipeline:
                           spec:
                             connector: nikpdockerhub
                             image: nikpap/payment-service:<+pipeline.sequenceId>
+                        sbom_drift:
+                          base: last_generated_sbom
                         tool:
                           type: Syft
                           spec:
