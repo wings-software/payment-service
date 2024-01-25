@@ -457,45 +457,54 @@ pipeline:
           execution:
             steps:
               - parallel:
-                  - step:
-                      type: CdSscaEnforcement
+                  - stepGroup:
                       name: SBOM Attestation and Policy
                       identifier: SBOM_Attestation_and_Policy
-                      spec:
-                        source:
-                          type: image
-                          spec:
-                            connector: nikpdockerhub
-                            image: nikpap/payment-service:<+pipeline.sequenceId>
-                        verifyAttestation:
-                          type: cosign
-                          spec:
-                            publicKey: sscapublickey
-                        policy:
-                          store:
-                            type: Harness
+                      steps:
+                        - step:
+                            type: CdSscaEnforcement
+                            name: SBOM Attestation and Policy
+                            identifier: SBOM_Attestation_and_Policy
                             spec:
-                              file: /SSCA Policy/ssca-policy-2
-                        infrastructure:
-                          type: KubernetesDirect
-                          spec:
-                            connectorRef: nikpgkecluster
-                            namespace: payment-service-build
-                            resources:
-                              limits:
-                                memory: 500Mi
-                                cpu: "0.5"
-                      failureStrategies:
-                        - onFailure:
-                            errors:
-                              - AllErrors
-                            action:
-                              type: ManualIntervention
-                              spec:
-                                timeout: 10m
-                                onTimeout:
+                              source:
+                                type: image
+                                spec:
+                                  connector: nikpdockerhub
+                                  image: nikpap/payment-service:<+pipeline.sequenceId>
+                              verifyAttestation:
+                                type: cosign
+                                spec:
+                                  publicKey: sscapublickey
+                              policy:
+                                store:
+                                  type: Harness
+                                  spec:
+                                    file: /SSCA Policy/ssca-policy-2
+                              infrastructure:
+                                type: KubernetesDirect
+                                spec:
+                                  connectorRef: nikpgkecluster
+                                  namespace: payment-service-build
+                                  resources:
+                                    limits:
+                                      memory: 500Mi
+                                      cpu: "0.5"
+                            failureStrategies:
+                              - onFailure:
+                                  errors:
+                                    - AllErrors
                                   action:
-                                    type: Ignore
+                                    type: ManualIntervention
+                                    spec:
+                                      timeout: 10m
+                                      onTimeout:
+                                        action:
+                                          type: Ignore
+                      stepGroupInfra:
+                        type: KubernetesDirect
+                        spec:
+                          connectorRef: nikpgkecluster
+                          namespace: payment-service-build
                   - step:
                       type: Policy
                       name: Vulnerability Policy
