@@ -484,6 +484,17 @@ pipeline:
                                 limits:
                                   memory: 500Mi
                                   cpu: "0.5"
+                            failureStrategies:
+                              - onFailure:
+                                  errors:
+                                    - AllErrors
+                                  action:
+                                    type: ManualIntervention
+                                    spec:
+                                      timeout: 20m
+                                      onTimeout:
+                                        action:
+                                          type: Ignore
                       stepGroupInfra:
                         type: KubernetesDirect
                         spec:
