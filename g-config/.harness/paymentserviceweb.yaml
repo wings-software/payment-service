@@ -48,7 +48,7 @@ pipeline:
                       identifier: runTestsWithIntelligence
                       spec:
                         connectorRef: devxgcp
-                        image: gcr.io/sales-209522/devx-maven:<+pipeline.variables.mavenversion>-jdk-<+pipeline.variables.javaversion>
+                        image: gcr.io/sales-209522/devx-demo/maven:<+pipeline.variables.mavenversion>-jdk-<+pipeline.variables.javaversion>
                         language: Java
                         buildTool: Maven
                         args: clean test
@@ -98,6 +98,7 @@ pipeline:
                           limits:
                             memory: 6Gi
                             cpu: "6"
+                        enableTestSplitting: false
                       description: aderasdsad
                   - step:
                       type: Plugin
