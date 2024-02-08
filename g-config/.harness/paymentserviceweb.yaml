@@ -48,7 +48,7 @@ pipeline:
                       identifier: runTestsWithIntelligence
                       spec:
                         connectorRef: devxgcp
-                        image: gcr.io/sales-209522/devx-demo/maven:<+pipeline.variables.mavenversion>-jdk-<+pipeline.variables.javaversion>
+                        image: europe-west1-docker.pkg.dev/sales-209522/devx-demo/maven:<+pipeline.variables.mavenversion>-jdk-<+pipeline.variables.javaversion>
                         language: Java
                         buildTool: Maven
                         args: clean test
