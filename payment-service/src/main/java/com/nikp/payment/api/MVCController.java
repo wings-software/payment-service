@@ -82,7 +82,7 @@ public class MVCController {
   }
 
   @GetMapping("/mvc/makePayment")
-  public String paymentForm( @ModelAttribute PaymentDto paymentDto,@RequestParam(name = "number", required = false, defaultValue = "") 
+  public String paymentFormNew( @ModelAttribute PaymentDto paymentDto,@RequestParam(name = "number", required = false, defaultValue = "") 
   String number, @RequestParam(name = "sename", required = false, defaultValue = "") 
   String sename, Model model) {
 	  System.out.println("Notification: creating payment using the main form");
