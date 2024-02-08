@@ -31,6 +31,6 @@ public class Event {
     return "Event{" +
         "action='" + action + '\'' +
         ", description='" + description + '\'' +
-        '}';
+        '} ';
   }
 }
