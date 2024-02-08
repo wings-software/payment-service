@@ -1,0 +1,572 @@
+pipeline:
+  name: payment-service-error-tracking
+  identifier: paymentservicewebcvtest
+  projectIdentifier: DevX_Demo
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: nikpwingssoftware
+        repoName: payment-service
+        build: <+input>
+  stages:
+    - stage:
+        name: Build
+        identifier: Build
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          infrastructure:
+            type: KubernetesDirect
+            spec:
+              connectorRef: nikpgkecluster
+              namespace: payment-service-build
+          execution:
+            steps:
+              - step:
+                  type: RestoreCacheS3
+                  name: RestoreCache
+                  identifier: RestoreCache
+                  spec:
+                    connectorRef: nikpaws
+                    region: eu-west-2
+                    bucket: nikp-maven
+                    key: payment-service-ci
+                    archiveFormat: Tar
+                    resources:
+                      limits:
+                        memory: 512Mi
+                        cpu: "0.5"
+              - parallel:
+                  - step:
+                      type: RunTests
+                      name: runTestsWithIntelligence
+                      identifier: runTestsWithIntelligence
+                      spec:
+                        connectorRef: nikpdockerhub
+                        image: maven:<+pipeline.variables.mavenversion>-jdk-<+pipeline.variables.javaversion>
+                        language: Java
+                        buildTool: Maven
+                        args: test
+                        packages: com.nikp.
+                        runOnlySelectedTests: true
+                        preCommand: cd payment-service
+                        reports:
+                          type: JUnit
+                          spec:
+                            paths:
+                              - "**/*.xml"
+                        envVariables:
+                          DRONE_COMMIT_SHA: any
+                          DRONE_REMOTE_URL: any
+                          DRONE_SOURCE_BRANCH: any
+                          DRONE_TARGET_BRANCH: any
+                          MAVEN_OPTS: "-Dmaven.repo.local=/harness/maven/repository"
+                          CONTAINER_STEP: "3"
+                        resources:
+                          limits:
+                            memory: 2Gi
+                            cpu: "2"
+                  - step:
+                      type: Plugin
+                      name: cleanup
+                      identifier: cleanup
+                      spec:
+                        connectorRef: nikpdockerhub
+                        image: nikpap/githubcli:v2
+                        privileged: false
+                        settings:
+                          GITHUB_TOKEN: <+secrets.getValue("githubtoken")>
+                          GITHUB_USERNAME: nikpapag
+                          GITHUB_EMAIL: nikpap.cs@icloud.com
+                        imagePullPolicy: Always
+                      failureStrategies:
+                        - onFailure:
+                            errors:
+                              - Unknown
+                            action:
+                              type: Ignore
+                      when:
+                        stageStatus: Success
+                        condition: <+pipeline.variables.deletepr> == 'yes'
+              - step:
+                  type: Run
+                  name: Build
+                  identifier: Build
+                  spec:
+                    connectorRef: nikpdockerhub
+                    image: maven:<+pipeline.variables.mavenversion>-jdk-<+pipeline.variables.javaversion>
+                    command: |-
+                      cd payment-service
+                      mvn -Dmaven.test.skip=true clean install -X
+                    privileged: false
+                    envVariables:
+                      MAVEN_OPTS: "-Dmaven.repo.local=/harness/maven/repository"
+                    resources:
+                      limits:
+                        memory: 2Gi
+                        cpu: "1"
+              - step:
+                  type: SaveCacheS3
+                  name: Savemavenrepo
+                  identifier: Savemavenrepo
+                  spec:
+                    connectorRef: nikpaws
+                    region: eu-west-2
+                    bucket: nikp-maven
+                    key: payment-service-ci
+                    sourcePaths:
+                      - ./maven/repository
+                    archiveFormat: Tar
+                    override: true
+                    resources:
+                      limits:
+                        memory: 512Mi
+                        cpu: "0.5"
+              - step:
+                  type: BuildAndPushECR
+                  name: pushToECR
+                  identifier: pushToECR
+                  spec:
+                    connectorRef: nikpaws
+                    region: eu-west-2
+                    account: "759984737373"
+                    imageName: payment-service
+                    tags:
+                      - <+pipeline.sequenceId>
+                    dockerfile: /harness/payment-service/Dockerfile
+                    optimize: true
+                    resources:
+                      limits:
+                        memory: 1Gi
+                        cpu: "1"
+                  when:
+                    stageStatus: Success
+                    condition: <+pipeline.variables.seusername> == 'aws'
+                  failureStrategies: []
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: pushToDockerHub
+                  identifier: pushToDockerHub
+                  spec:
+                    connectorRef: nikpdockerhub
+                    repo: nikpap/payment-service
+                    tags:
+                      - <+pipeline.sequenceId>
+                    dockerfile: /harness/payment-service/Dockerfile
+                    optimize: true
+                    resources:
+                      limits:
+                        memory: 2Gi
+                        cpu: "2"
+          serviceConfig:
+            serviceRef: ""
+            serviceDefinition:
+              type: Kubernetes
+              spec:
+                variables: []
+        when:
+          pipelineStatus: Success
+        variables: []
+    - stage:
+        name: DeployDev
+        identifier: DeployDev
+        description: ""
+        type: Deployment
+        spec:
+          serviceConfig:
+            serviceDefinition:
+              type: Kubernetes
+              spec:
+                manifestOverrideSets: []
+                manifests:
+                  - manifest:
+                      identifier: templates
+                      type: K8sManifest
+                      spec:
+                        store:
+                          type: Github
+                          spec:
+                            connectorRef: nikpgithub
+                            gitFetchType: Branch
+                            paths:
+                              - templates
+                            repoName: payment-service-nonprod
+                            branch: master
+                        skipResourceVersioning: false
+                  - manifest:
+                      identifier: values
+                      type: Values
+                      spec:
+                        store:
+                          type: Github
+                          spec:
+                            connectorRef: nikpgithub
+                            gitFetchType: Branch
+                            paths:
+                              - values-non-prod.yaml
+                            repoName: payment-service-nonprod
+                            branch: master
+                artifacts:
+                  sidecars: []
+                  primary:
+                    type: DockerRegistry
+                    spec:
+                      connectorRef: nikpdockerhub
+                      imagePath: nikpap/payment-service
+                      tag: <+pipeline.sequenceId>
+                variables: []
+            serviceRef: paymentservice
+          infrastructure:
+            environmentRef: GKEDEV
+            infrastructureDefinition:
+              type: KubernetesDirect
+              spec:
+                connectorRef: nikpgkecluster
+                namespace: payment-service-dev
+                releaseName: release-1
+            allowSimultaneousDeployments: true
+            infrastructureKey: ""
+          execution:
+            steps:
+              - step:
+                  name: Rollout Deployment
+                  identifier: rolloutDeployment
+                  type: K8sRollingDeploy
+                  timeout: 10m
+                  spec:
+                    skipDryRun: false
+            rollbackSteps:
+              - step:
+                  name: Rollback Rollout Deployment
+                  identifier: rollbackRolloutDeployment
+                  type: K8sRollingRollback
+                  timeout: 10m
+                  spec: {}
+        tags: {}
+        failureStrategies:
+          - onFailure:
+              errors:
+                - AllErrors
+              action:
+                type: StageRollback
+        when:
+          pipelineStatus: Success
+    - stage:
+        name: DeployProd
+        identifier: DeployProd
+        description: ""
+        type: Deployment
+        spec:
+          serviceConfig:
+            serviceRef: paymentservice
+            serviceDefinition:
+              type: Kubernetes
+              spec:
+                variables: []
+                manifests:
+                  - manifest:
+                      identifier: templates
+                      type: K8sManifest
+                      spec:
+                        store:
+                          type: Github
+                          spec:
+                            connectorRef: nikpgithub
+                            gitFetchType: Branch
+                            paths:
+                              - templates-prod-cv
+                            repoName: payment-service-nonprod
+                            branch: master
+                        skipResourceVersioning: false
+                  - manifest:
+                      identifier: values
+                      type: Values
+                      spec:
+                        store:
+                          type: Github
+                          spec:
+                            connectorRef: nikpgithub
+                            gitFetchType: Branch
+                            paths:
+                              - values-cv-overops.yaml
+                            repoName: payment-service-nonprod
+                            branch: master
+                artifacts:
+                  primary:
+                    type: DockerRegistry
+                    spec:
+                      connectorRef: nikpdockerhub
+                      imagePath: nikpap/payment-service
+                      tag: <+pipeline.sequenceId>
+                  sidecars:
+                    - sidecar:
+                        spec:
+                          connectorRef: nikpdockerhub
+                          imagePath: nikpap/overops-event-generator
+                          tag: devx
+                        identifier: overops
+                        type: DockerRegistry
+          infrastructure:
+            environmentRef: GKEPROD
+            infrastructureDefinition:
+              type: KubernetesDirect
+              spec:
+                connectorRef: nikpgkecluster
+                namespace: payment-service
+                releaseName: release-1
+            allowSimultaneousDeployments: true
+            infrastructureKey: ""
+          execution:
+            steps:
+              - stepGroup:
+                  name: Primary Deployment
+                  identifier: primaryDepoyment
+                  steps:
+                    - step:
+                        name: Rolling Deployment
+                        identifier: rollingDeployment
+                        type: K8sRollingDeploy
+                        timeout: 10m
+                        spec:
+                          skipDryRun: false
+                    - parallel:
+                        - step:
+                            type: Verify
+                            name: Verification
+                            identifier: Verification
+                            spec:
+                              type: Rolling
+                              spec:
+                                sensitivity: HIGH
+                                duration: 10m
+                                deploymentTag: <+serviceConfig.artifacts.primary.tag>
+                              monitoredService:
+                                type: Default
+                                spec: {}
+                            timeout: 2h
+                            failureStrategies:
+                              - onFailure:
+                                  errors:
+                                    - Verification
+                                  action:
+                                    type: StageRollback
+                              - onFailure:
+                                  errors:
+                                    - Unknown
+                                  action:
+                                    type: ManualIntervention
+                                    spec:
+                                      timeout: 2h
+                                      onTimeout:
+                                        action:
+                                          type: Ignore
+                        - step:
+                            type: ShellScript
+                            name: Selenium-prod
+                            identifier: Seleniumprod
+                            spec:
+                              shell: Bash
+                              onDelegate: true
+                              source:
+                                type: Inline
+                                spec:
+                                  script: |-
+                                    sleep 100
+                                    read -r -d '' script <<-"EOF"
+                                    import os
+                                    from selenium import webdriver
+                                    from selenium.webdriver.common.by import By
+                                    from selenium.webdriver.common.keys import Keys
+                                    from selenium.webdriver.support.ui import Select
+                                    from selenium.common.exceptions import NoSuchElementException
+                                    from selenium.common.exceptions import NoAlertPresentException
+                                    from selenium.webdriver.chrome.options import Options
+                                    from selenium.webdriver.chrome.service import Service
+                                    import unittest, time, re
+
+                                    se_username = os.getenv('SE_USERNAME')
+                                    deployment_type= os.getenv('HARNESS_DEPLOYMENT')
+
+                                    pod_name=os.popen('kubectl -n payment-service get pods -o=jsonpath="{.items[*][\'.metadata.name\']}"')
+                                    pod_name_output = pod_name.read()
+
+
+
+                                    pods=re.findall(r'payment-service-goto\S+', pod_name_output)
+                                    print(pods)
+
+                                    class SeleniumTest():
+                                        def __init__(self):
+                                            self.service = Service(executable_path='/usr/bin/chromedriver')
+                                            self.options = Options()
+                                            self.options.add_argument('--no-sandbox')
+                                            self.options.add_argument('--headless')
+                                            self.options.add_argument('--disable-dev-shm-usage')
+                                            self.options.add_argument('--disable-gpu')
+                                            self.driver = webdriver.Chrome(options=self.options,service=self.service)
+                                            self.driver.implicitly_wait(30)
+                                            self.base_url = "https://www.google.com/"
+                                            self.verificationErrors = []
+                                            self.accept_next_alert = True
+
+                                        def test_payment_service_job(self, url):
+                                            driver = self.driver
+                                            try:
+                                               driver.get(url)
+                                               print("Retrieved url succesfully", url)
+                                            except:
+                                                print("Failed to get url", url)
+                                            driver.find_element(By.XPATH,"(.//*[normalize-space(text()) and normalize-space(.)='Savings Account'])[1]/following::span[1]").click()
+                                            driver.find_element(By.ID,"userId").click()
+                                            driver.find_element(By.ID,"userId").clear()
+                                            driver.find_element(By.ID,"userId").send_keys("harness")
+                                            driver.find_element(By.XPATH,"(.//*[normalize-space(text()) and normalize-space(.)='From Account'])[1]/following::span[3]").click()
+                                            driver.find_element(By.ID,"amount").click()
+                                            driver.find_element(By.ID,"amount").clear()
+                                            driver.find_element(By.ID,"amount").send_keys("100")
+                                            driver.find_element(By.XPATH,"(.//*[normalize-space(text()) and normalize-space(.)='Amount'])[1]/following::button[1]").click()
+                                            driver.close()
+
+
+
+
+                                    for pod in pods:
+                                        urlstream = os.popen("kubectl -n payment-service get pod "+pod+"  --template={{.status.podIP}}")
+                                        url_output=urlstream.read()
+                                        print(pod, url_output)
+
+                                        url='http://'+url_output+':8080'
+                                        print(url)
+
+                                        selenium = SeleniumTest()
+                                        selenium.test_payment_service_job(url)
+
+
+
+                                    EOF
+                                    python3 -c "$script"
+                                    sleep 30
+                                    python3 -c "$script"
+                                    sleep 30
+                                    python3 -c "$script"
+                                    sleep 30
+                                    python3 -c "$script"
+                                    sleep 30
+                                    python3 -c "$script"
+                                    sleep 30
+                                    python3 -c "$script"
+                                    sleep 30
+                                    python3 -c "$script"
+                                    sleep 30
+                                    python3 -c "$script"
+                                    sleep 30
+                                    python3 -c "$script"
+                                    sleep 30
+                                    python3 -c "$script"
+                                    sleep 30
+                                    python3 -c "$script"
+                                    sleep 30
+                                    python3 -c "$script"
+                                    sleep 30
+                              environmentVariables:
+                                - name: subdomain
+                                  type: String
+                                  value: <+pipeline.variables.seusername>
+                              outputVariables: []
+                              executionTarget: {}
+                              delegateSelectors:
+                                - devx-demo-gke
+                            timeout: 30m
+                            failureStrategies: []
+                    - step:
+                        type: K8sRollingRollback
+                        name: rollback
+                        identifier: rollback
+                        spec:
+                          skipDryRun: false
+                        timeout: 10m
+                        when:
+                          stageStatus: Failure
+                        failureStrategies: []
+                  rollbackSteps:
+                    - step:
+                        name: Rolling Rollback
+                        identifier: rollingRollback
+                        type: K8sRollingRollback
+                        timeout: 10m
+                        spec: {}
+              - step:
+                  type: ShellScript
+                  name: WrapUp
+                  identifier: WrapUp
+                  spec:
+                    shell: Bash
+                    onDelegate: true
+                    source:
+                      type: Inline
+                      spec:
+                        script: |-
+                          echo "Wrapping up deployment"
+                          url="http://$subdomain.cie-demo.co.uk"
+                          export application="$url"
+                    environmentVariables:
+                      - name: subdomain
+                        type: String
+                        value: <+pipeline.variables.seusername>
+                    outputVariables:
+                      - name: application
+                        type: String
+                        value: application
+                    executionTarget: {}
+                    delegateSelectors:
+                      - devx-demo-gke
+                  timeout: 10m
+                  failureStrategies: []
+            rollbackSteps: []
+          serviceDependencies: []
+        tags: {}
+        failureStrategies:
+          - onFailure:
+              errors:
+                - AllErrors
+              action:
+                type: StageRollback
+        when:
+          pipelineStatus: Success
+  variables:
+    - name: mavenversion
+      type: String
+      default: "3.8"
+      value: <+input>
+    - name: javaversion
+      type: String
+      default: "8"
+      value: <+input>
+    - name: servicename
+      type: String
+      default: payment-service
+      value: <+input>
+    - name: seusername
+      type: String
+      default: et
+      value: <+input>
+    - name: ffsdkkeyprod
+      type: String
+      default: 44c9dcaa-dab2-4100-b2b5-75bdeb7aa497
+      value: <+input>
+    - name: isingress
+      type: Number
+      default: 1
+      value: 1
+    - name: dbuser
+      type: String
+      value: <+secrets.getValue("dbuser")>
+    - name: dbpassword
+      type: String
+      value: <+secrets.getValue("dbpassword")>
+    - name: COLLECTOR_URL
+      type: String
+      value: https://app.harness.io/gratis/et-collector

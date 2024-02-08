@@ -1,0 +1,8 @@
+connector:
+  name: nikp-prometheus
+  identifier: nikpprometheus
+  orgIdentifier: default
+  projectIdentifier: NG_Demo
+  type: Prometheus
+  spec:
+    url: http://35.214.81.102:9090/

@@ -1,0 +1,438 @@
+pipeline:
+  name: apache-kafka
+  identifier: apachekafka
+  projectIdentifier: DevX_Demo
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: DeployKafka
+        identifier: DeployKafka
+        description: ""
+        type: Deployment
+        spec:
+          deploymentType: Ssh
+          service:
+            serviceRef: apachekafka
+          environment:
+            environmentRef: googlecompute
+            deployToAll: false
+            infrastructureDefinitions:
+              - identifier: compute
+          execution:
+            steps:
+              - stepGroup:
+                  name: Phase
+                  identifier: Phase
+                  strategy:
+                    repeat:
+                      items: <+stage.output.hosts>
+                      maxConcurrency: 1
+                      partitionSize: 1
+                      unit: Count
+                  steps:
+                    - stepGroup:
+                        name: Phase Group
+                        identifier: phase_group
+                        strategy:
+                          repeat:
+                            items: <+repeat.partition>
+                        steps:
+                          - step:
+                              name: Deploy
+                              type: Command
+                              identifier: Deploy
+                              timeout: 10m
+                              spec:
+                                onDelegate: false
+                                environmentVariables: []
+                                outputVariables: []
+                                commandUnits:
+                                  - identifier: Setup_Runtime_Paths
+                                    name: Setup Runtime Paths
+                                    type: Script
+                                    spec:
+                                      shell: Bash
+                                      source:
+                                        type: Inline
+                                        spec:
+                                          script: |-
+                                            # Execute as root and pass environment variables
+                                            # su -p -
+
+                                            # Execute as root via user credentials (with root privileges)
+                                            # sudo -E su -p -
+
+                                            # Creating runtime, backup and staging folders:
+
+                                            mkdir -p $HOME/<+service.name>/<+env.name>/runtime
+                                            mkdir -p $HOME/<+service.name>/<+env.name>/backup
+                                            mkdir -p $HOME/<+service.name>/<+env.name>/staging
+                                  - identifier: System_Update
+                                    name: System Update
+                                    type: Script
+                                    spec:
+                                      shell: Bash
+                                      source:
+                                        type: Inline
+                                        spec:
+                                          script: |
+                                            sudo apt-get install -y wget
+                                  - identifier: Install_Java
+                                    name: Install Java
+                                    type: Script
+                                    spec:
+                                      shell: Bash
+                                      source:
+                                        type: Inline
+                                        spec:
+                                          script: sudo apt-get install -y openjdk-11-jdk
+                                  - identifier: Install_Kafka
+                                    name: Install Kafka
+                                    type: Script
+                                    spec:
+                                      shell: Bash
+                                      source:
+                                        type: Inline
+                                        spec:
+                                          script: |-
+                                            wget https://archive.apache.org/dist/kafka/3.0.0/kafka_2.13-3.0.0.tgz
+                                            tar xzf <+pipeline.variables.kafka_version>.tgz
+
+                                            sudo mv $HOME/<+service.name>/<+env.name>/runtime/kafka_2.13-3.0.0  $HOME/<+service.name>/<+env.name>/backup/kafka-<+pipeline.sequenceId>
+
+                                            sudo mv <+pipeline.variables.kafka_version> $HOME/<+service.name>/<+env.name>/runtime
+                                  - identifier: Zookeeper_Service
+                                    name: Zookeeper Service
+                                    type: Script
+                                    spec:
+                                      shell: Bash
+                                      source:
+                                        type: Inline
+                                        spec:
+                                          script: |-
+                                            sudo sh -c "echo '
+                                            [Unit]
+                                            Description=Kafka Zookeeper
+                                            After=syslog.target network.target
+
+                                            [Service]
+                                            Type=simple
+
+                                            ExecStart=/home/sales-demo-admin/apache-kafka/google-compute/runtime/kafka_2.13-3.0.0/bin/zookeeper-server-start.sh /home/sales-demo-admin/apache-kafka/google-compute/runtime/kafka_2.13-3.0.0/config/zookeeper.properties 
+                                            ExecStop=/home/sales-demo-admin/apache-kafka/google-compute/runtime/kafka_2.13-3.0.0/bin/zookeeper-server-start.sh
+
+                                            User=root
+                                            Group=root
+                                            Restart=always
+
+                                            [Install]
+                                            WantedBy=multi-user.target' > /etc/systemd/system/zookeeper.service"
+                                  - identifier: Kafka_Service
+                                    name: Kafka Service
+                                    type: Script
+                                    spec:
+                                      shell: Bash
+                                      source:
+                                        type: Inline
+                                        spec:
+                                          script: |-
+                                            sudo sh -c "echo '
+                                            [Unit]
+                                            Description=Apache Kafka
+                                            Requires=zookeeper.service
+                                            After=zookeeper.service
+                                            [Service]
+                                            Type=simple
+                                            User=root
+                                            Group=root
+                                            ExecStart=/home/sales-demo-admin/apache-kafka/google-compute/runtime/kafka_2.13-3.0.0/bin/kafka-server-start.sh /home/sales-demo-admin/apache-kafka/google-compute/runtime/kafka_2.13-3.0.0/config/server.properties
+                                            ExecStop=/home/sales-demo-admin/apache-kafka/google-compute/runtime/kafka_2.13-3.0.0/bin/kafka-server-stop.sh
+                                            [Install]
+                                            WantedBy=multi-user.target' > /etc/systemd/system/kafka.service"
+                                  - identifier: Start_Zookeeper_Service
+                                    name: "Start Zookeeper Service "
+                                    type: Script
+                                    spec:
+                                      shell: Bash
+                                      source:
+                                        type: Inline
+                                        spec:
+                                          script: |-
+                                            sudo systemctl daemon-reload
+                                            sudo systemctl enable zookeeper.service
+                                            sudo systemctl start zookeeper
+                                  - identifier: Configure_Kafka
+                                    name: Configure Kafka
+                                    type: Copy
+                                    spec:
+                                      sourceType: Config
+                                      destinationPath: /home/sales-demo-admin/apache-kafka/google-compute/runtime/kafka_2.13-3.0.0/config/
+                                  - identifier: Start_Kafka_Service
+                                    name: Start Kafka Service
+                                    type: Script
+                                    spec:
+                                      shell: Bash
+                                      source:
+                                        type: Inline
+                                        spec:
+                                          script: |-
+                                            sudo systemctl daemon-reload
+                                            sudo systemctl enable kafka.service
+                                            sudo systemctl start kafka
+                              failureStrategies:
+                                - onFailure:
+                                    errors:
+                                      - AllErrors
+                                    action:
+                                      type: ManualIntervention
+                                      spec:
+                                        timeout: 2h
+                                        onTimeout:
+                                          action:
+                                            type: StageRollback
+            rollbackSteps:
+              - stepGroup:
+                  name: Phase
+                  identifier: Phase
+                  strategy:
+                    repeat:
+                      items: <+stage.output.hosts>
+                      maxConcurrency: 1
+                      partitionSize: 1
+                      unit: Count
+                  steps:
+                    - stepGroup:
+                        name: Phase Group Rollback
+                        identifier: phase_group_rollback
+                        strategy:
+                          repeat:
+                            items: <+repeat.partition>
+                        steps:
+                          - step:
+                              name: Rollback
+                              identifier: Rollback
+                              type: Command
+                              timeout: 10m
+                              spec:
+                                onDelegate: false
+                                environmentVariables: []
+                                outputVariables: []
+                                commandUnits:
+                                  - identifier: Setup_Runtime_Paths_Rollback
+                                    name: Setup Runtime Paths Rollback
+                                    type: Script
+                                    spec:
+                                      shell: Bash
+                                      source:
+                                        type: Inline
+                                        spec:
+                                          script: |-
+                                            # Execute as root and pass environment variables
+                                            # su -p -
+
+                                            # Execute as root via user credentials (with root privileges)
+                                            # sudo -E su -p -
+
+                                            # Creating runtime, backup and staging folders:
+
+                                            mkdir -p $HOME/<+service.name>/<+env.name>/runtime
+                                            mkdir -p $HOME/<+service.name>/<+env.name>/backup
+                                            mkdir -p $HOME/<+service.name>/<+env.name>/staging
+                                  - identifier: Copy_Artifact_Rollback
+                                    name: Copy Artifact Rollback
+                                    type: Copy
+                                    spec:
+                                      sourceType: Artifact
+                                      destinationPath: $HOME/<+service.name>/<+env.name>
+                                  - identifier: Copy_Config_Rollback
+                                    name: Copy Config Rollback
+                                    type: Copy
+                                    spec:
+                                      sourceType: Config
+                                      destinationPath: $HOME/<+service.name>/<+env.name>
+        tags: {}
+        failureStrategies:
+          - onFailure:
+              errors:
+                - AllErrors
+              action:
+                type: StageRollback
+        variables:
+          - name: kafka_version
+            type: String
+            description: ""
+            value: <+input>.allowedValues(kafka_2.13-3.0.0)
+    - stage:
+        name: KafkaJMX
+        identifier: KafkaJMX
+        description: ""
+        type: Deployment
+        spec:
+          deploymentType: Ssh
+          service:
+            serviceRef: kafkajmx
+          environment:
+            environmentRef: googlecompute
+            deployToAll: false
+            infrastructureDefinitions:
+              - identifier: compute
+          execution:
+            steps:
+              - stepGroup:
+                  name: Phase
+                  identifier: Phase
+                  strategy:
+                    repeat:
+                      items: <+stage.output.hosts>
+                      maxConcurrency: 1
+                      partitionSize: 1
+                      unit: Count
+                  steps:
+                    - stepGroup:
+                        name: Phase Group
+                        identifier: phase_group
+                        strategy:
+                          repeat:
+                            items: <+repeat.partition>
+                        steps:
+                          - step:
+                              name: Deploy
+                              type: Command
+                              identifier: Deploy
+                              timeout: 10m
+                              spec:
+                                onDelegate: false
+                                environmentVariables: []
+                                outputVariables: []
+                                commandUnits:
+                                  - identifier: Setup_Runtime_Paths
+                                    name: Setup Runtime Paths
+                                    type: Script
+                                    spec:
+                                      shell: Bash
+                                      source:
+                                        type: Inline
+                                        spec:
+                                          script: |-
+                                            # Execute as root and pass environment variables
+                                            # su -p -
+
+                                            # Execute as root via user credentials (with root privileges)
+                                            # sudo -E su -p -
+
+                                            # Creating runtime, backup and staging folders:
+
+                                            mkdir -p $HOME/<+service.name>/<+env.name>/runtime
+                                            mkdir -p $HOME/<+service.name>/<+env.name>/backup
+                                            mkdir -p $HOME/<+service.name>/<+env.name>/staging
+                                  - identifier: Install_JMX
+                                    name: Install JMX
+                                    type: Script
+                                    spec:
+                                      shell: Bash
+                                      source:
+                                        type: Inline
+                                        spec:
+                                          script: |+
+                                            wget https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/<+pipeline.variables.prometheus_jmx_version>/jmx_prometheus_javaagent-<+pipeline.variables.prometheus_jmx_version>.jar
+
+
+
+                                            sudo mv jmx_prometheus_javaagent-<+pipeline.variables.prometheus_jmx_version>.jar $HOME/<+pipeline.variables.service_name>/<+env.name>/runtime/<+pipeline.variables.kafka_version>/libs/jmx_prometheus_javaagent-<+pipeline.variables.prometheus_jmx_version>.jar
+
+
+
+
+
+
+
+                                  - identifier: Configure_Kafka
+                                    name: Configure Kafka
+                                    type: Copy
+                                    spec:
+                                      sourceType: Config
+                                      destinationPath: /home/sales-demo-admin/apache-kafka/google-compute/runtime/kafka_2.13-3.0.0/config/
+            rollbackSteps:
+              - stepGroup:
+                  name: Phase
+                  identifier: Phase
+                  strategy:
+                    repeat:
+                      items: <+stage.output.hosts>
+                      maxConcurrency: 1
+                      partitionSize: 1
+                      unit: Count
+                  steps:
+                    - stepGroup:
+                        name: Phase Group Rollback
+                        identifier: phase_group_rollback
+                        strategy:
+                          repeat:
+                            items: <+repeat.partition>
+                        steps:
+                          - step:
+                              name: Rollback
+                              identifier: Rollback
+                              type: Command
+                              timeout: 10m
+                              spec:
+                                onDelegate: false
+                                environmentVariables: []
+                                outputVariables: []
+                                commandUnits:
+                                  - identifier: Setup_Runtime_Paths_Rollback
+                                    name: Setup Runtime Paths Rollback
+                                    type: Script
+                                    spec:
+                                      shell: Bash
+                                      source:
+                                        type: Inline
+                                        spec:
+                                          script: |-
+                                            # Execute as root and pass environment variables
+                                            # su -p -
+
+                                            # Execute as root via user credentials (with root privileges)
+                                            # sudo -E su -p -
+
+                                            # Creating runtime, backup and staging folders:
+
+                                            mkdir -p $HOME/<+service.name>/<+env.name>/runtime
+                                            mkdir -p $HOME/<+service.name>/<+env.name>/backup
+                                            mkdir -p $HOME/<+service.name>/<+env.name>/staging
+                                  - identifier: Copy_Artifact_Rollback
+                                    name: Copy Artifact Rollback
+                                    type: Copy
+                                    spec:
+                                      sourceType: Artifact
+                                      destinationPath: $HOME/<+service.name>/<+env.name>
+                                  - identifier: Copy_Config_Rollback
+                                    name: Copy Config Rollback
+                                    type: Copy
+                                    spec:
+                                      sourceType: Config
+                                      destinationPath: $HOME/<+service.name>/<+env.name>
+        tags: {}
+        failureStrategies:
+          - onFailure:
+              errors:
+                - AllErrors
+              action:
+                type: StageRollback
+  variables:
+    - name: kafka_version
+      type: String
+      description: ""
+      value: <+input>.allowedValues(kafka_2.13-3.0.0)
+    - name: service_name
+      type: String
+      description: ""
+      value: apache-kafka
+    - name: prometheus_jmx_version
+      type: String
+      description: ""
+      value: <+input>.allowedValues(0.16.1,0.17.1)
+
+
+      

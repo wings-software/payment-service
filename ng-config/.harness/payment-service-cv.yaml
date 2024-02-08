@@ -1,5 +1,5 @@
 pipeline:
-    name: payment-service-cvtest
+    name: payment-service-error-tracking
     identifier: paymentservicewebcvtest
     projectIdentifier: DevX_Demo
     orgIdentifier: default
@@ -291,7 +291,7 @@ pipeline:
                                                     connectorRef: nikpgithub
                                                     gitFetchType: Branch
                                                     paths:
-                                                        - values-non-prod.yaml
+                                                        - values-cv-overops.yaml
                                                     repoName: payment-service-nonprod
                                                     branch: master
                               artifacts:
@@ -301,6 +301,14 @@ pipeline:
                                           connectorRef: nikpdockerhub
                                           imagePath: nikpap/payment-service
                                           tag: <+pipeline.sequenceId>
+                                  sidecars:
+                                      - sidecar:
+                                            spec:
+                                                connectorRef: nikpdockerhub
+                                                imagePath: nikpap/overops-event-generator
+                                                tag: devx
+                                            identifier: overops
+                                            type: DockerRegistry
                   infrastructure:
                       environmentRef: GKEPROD
                       infrastructureDefinition:
@@ -313,185 +321,6 @@ pipeline:
                       infrastructureKey: ""
                   execution:
                       steps:
-                          - stepGroup:
-                                name: Canary Deployment
-                                identifier: canaryDepoyment
-                                steps:
-                                    - step:
-                                          name: Canary Deployment
-                                          identifier: canaryDeployment
-                                          type: K8sCanaryDeploy
-                                          timeout: 10m
-                                          spec:
-                                              instanceSelection:
-                                                  type: Count
-                                                  spec:
-                                                      count: 1
-                                              skipDryRun: false
-                                    - parallel:
-                                          - step:
-                                                type: Verify
-                                                name: VerifyCanary
-                                                identifier: VerifyCanary
-                                                spec:
-                                                    type: Canary
-                                                    spec:
-                                                        sensitivity: MEDIUM
-                                                        duration: 10m
-                                                        deploymentTag: <+serviceConfig.artifacts.primary.tag>
-                                                timeout: 2h
-                                                failureStrategies:
-                                                    - onFailure:
-                                                          errors:
-                                                              - Verification
-                                                          action:
-                                                              type: ManualIntervention
-                                                              spec:
-                                                                  timeout: 2h
-                                                                  onTimeout:
-                                                                      action:
-                                                                          type: StageRollback
-                                                    - onFailure:
-                                                          errors:
-                                                              - Unknown
-                                                          action:
-                                                              type: ManualIntervention
-                                                              spec:
-                                                                  timeout: 2h
-                                                                  onTimeout:
-                                                                      action:
-                                                                          type: Ignore
-                                          - step:
-                                                type: ShellScript
-                                                name: Canary-Traffic-Generator
-                                                identifier: CanaryTrafficGenerator
-                                                spec:
-                                                    shell: Bash
-                                                    onDelegate: true
-                                                    source:
-                                                        type: Inline
-                                                        spec:
-                                                            script: |-
-                                                                sleep 100
-                                                                read -r -d '' script <<-"EOF"
-                                                                import os
-                                                                from selenium import webdriver
-                                                                from selenium.webdriver.common.by import By
-                                                                from selenium.webdriver.common.keys import Keys
-                                                                from selenium.webdriver.support.ui import Select
-                                                                from selenium.common.exceptions import NoSuchElementException
-                                                                from selenium.common.exceptions import NoAlertPresentException
-                                                                from selenium.webdriver.chrome.options import Options
-                                                                from selenium.webdriver.chrome.service import Service
-                                                                import unittest, time, re
-
-                                                                se_username = os.getenv('SE_USERNAME')
-                                                                deployment_type= os.getenv('HARNESS_DEPLOYMENT')
-
-                                                                pod_name=os.popen('kubectl -n payment-service get pods -o=jsonpath="{.items[*][\'.metadata.name\']}"')
-                                                                pod_name_output = pod_name.read()
-
-
-
-                                                                pods=re.findall(r'payment-service-goto\S+', pod_name_output)
-                                                                print(pods)
-
-                                                                class SeleniumTest():
-                                                                    def __init__(self):
-                                                                        self.service = Service(executable_path='/usr/bin/chromedriver')
-                                                                        self.options = Options()
-                                                                        self.options.add_argument('--no-sandbox')
-                                                                        self.options.add_argument('--headless')
-                                                                        self.options.add_argument('--disable-dev-shm-usage')
-                                                                        self.options.add_argument('--disable-gpu')
-                                                                        self.driver = webdriver.Chrome(options=self.options,service=self.service)
-                                                                        self.driver.implicitly_wait(30)
-                                                                        self.base_url = "https://www.google.com/"
-                                                                        self.verificationErrors = []
-                                                                        self.accept_next_alert = True
-
-                                                                    def test_payment_service_job(self, url):
-                                                                        driver = self.driver
-                                                                        try:
-                                                                           driver.get(url)
-                                                                           print("Retrieved url succesfully", url)
-                                                                        except:
-                                                                            print("Failed to get url", url)
-                                                                        driver.find_element(By.XPATH,"(.//*[normalize-space(text()) and normalize-space(.)='Savings Account'])[1]/following::span[1]").click()
-                                                                        driver.find_element(By.ID,"userId").click()
-                                                                        driver.find_element(By.ID,"userId").clear()
-                                                                        driver.find_element(By.ID,"userId").send_keys("harness")
-                                                                        driver.find_element(By.XPATH,"(.//*[normalize-space(text()) and normalize-space(.)='From Account'])[1]/following::span[3]").click()
-                                                                        driver.find_element(By.ID,"amount").click()
-                                                                        driver.find_element(By.ID,"amount").clear()
-                                                                        driver.find_element(By.ID,"amount").send_keys("100")
-                                                                        driver.find_element(By.XPATH,"(.//*[normalize-space(text()) and normalize-space(.)='Amount'])[1]/following::button[1]").click()
-                                                                        driver.close()
-
-
-
-
-                                                                for pod in pods:
-                                                                    urlstream = os.popen("kubectl -n payment-service get pod "+pod+"  --template={{.status.podIP}}")
-                                                                    url_output=urlstream.read()
-                                                                    print(pod, url_output)
-
-                                                                    url='http://'+url_output+':8080'
-                                                                    print(url)
-
-                                                                    selenium = SeleniumTest()
-                                                                    selenium.test_payment_service_job(url)
-
-
-
-                                                                EOF
-                                                                python3 -c "$script"
-                                                                sleep 30
-                                                                python3 -c "$script"
-                                                                sleep 30
-                                                                python3 -c "$script"
-                                                                sleep 30
-                                                                python3 -c "$script"
-                                                                sleep 30
-                                                                python3 -c "$script"
-                                                                sleep 30
-                                                                python3 -c "$script"
-                                                                sleep 30
-                                                                python3 -c "$script"
-                                                                sleep 30
-                                                                python3 -c "$script"
-                                                                sleep 30
-                                                                python3 -c "$script"
-                                                                sleep 30
-                                                                python3 -c "$script"
-                                                                sleep 30
-                                                                python3 -c "$script"
-                                                                sleep 30
-                                                                python3 -c "$script"
-                                                                sleep 30
-                                                    environmentVariables:
-                                                        - name: subdomain
-                                                          type: String
-                                                          value: <+pipeline.variables.seusername>
-                                                    outputVariables: []
-                                                    executionTarget: {}
-                                                    delegateSelectors:
-                                                        - devx-demo-gke
-                                                timeout: 20m
-                                                failureStrategies: []
-                                    - step:
-                                          name: Canary Delete
-                                          identifier: canaryDelete
-                                          type: K8sCanaryDelete
-                                          timeout: 10m
-                                          spec: {}
-                                rollbackSteps:
-                                    - step:
-                                          name: Canary Delete
-                                          identifier: canaryDelete
-                                          type: K8sCanaryDelete
-                                          timeout: 10m
-                                          spec: {}
                           - stepGroup:
                                 name: Primary Deployment
                                 identifier: primaryDepoyment
@@ -724,6 +553,7 @@ pipeline:
           value: <+input>
         - name: seusername
           type: String
+          default: et
           value: <+input>
         - name: ffsdkkeyprod
           type: String
@@ -733,3 +563,12 @@ pipeline:
           type: Number
           default: 1
           value: <+input>.allowedValues(0,1)
+        - name: dbuser
+          type: String
+          value: <+secrets.getValue("dbuser")>
+        - name: dbpassword
+          type: String
+          value: <+secrets.getValue("dbpassword")>
+        - name: COLLECTOR_URL
+          type: String
+          value: https://app.harness.io/gratis/et-collector

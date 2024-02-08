@@ -1,6 +1,6 @@
 pipeline:
   name: payment-service
-  identifier: paymentserviceweb
+  identifier: paymentserviceprod
   projectIdentifier: DevX_Demo
   orgIdentifier: default
   tags: {}

@@ -1,0 +1,26 @@
+template:
+  name: Build-Maven
+  type: Step
+  projectIdentifier: DevX_Demo
+  orgIdentifier: default
+  spec:
+    type: Run
+    spec:
+      connectorRef: nikpdockerhub
+      image: maven:<+pipeline.variables.mavenversion>-jdk-<+pipeline.variables.javaversion>
+      shell: Sh
+      command: |-
+        cd payment-service
+        mvn -Dmaven.test.skip=true clean install -X
+        #Api change
+      privileged: false
+      envVariables:
+        MAVEN_OPTS: "-Dmaven.repo.local=/harness/maven/repository"
+      resources:
+        limits:
+          memory: 3Gi
+          cpu: "2"
+    when:
+      stageStatus: Success
+  identifier: BuildMaven
+  versionLabel: "0.2"

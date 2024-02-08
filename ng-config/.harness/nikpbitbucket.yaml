@@ -1,0 +1,18 @@
+connector:
+  name: nikp-bitbucket
+  identifier: nikpbitbucket
+  description:
+  orgIdentifier: default
+  projectIdentifier: DevX_Demo
+  type: Bitbucket
+  spec:
+    url: https://bitbucket.org/nikpapag/
+    validationRepo: quickstart
+    authentication:
+      type: Http
+      spec:
+        type: UsernamePassword
+        spec:
+          username: nikpapag
+          passwordRef: bitbucketpassword
+    type: Account

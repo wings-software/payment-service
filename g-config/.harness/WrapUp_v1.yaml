@@ -1,0 +1,29 @@
+template:
+    name: WrapUp
+    identifier: WrapUp
+    type: Step
+    projectIdentifier: DevX_Demo
+    orgIdentifier: default
+    spec:
+        type: ShellScript
+        spec:
+            shell: Bash
+            onDelegate: true
+            source:
+                type: Inline
+                spec:
+                    script: |-
+                        echo "Wrapping up deployment"
+                        url="http://$subdomain.cie-demo.co.uk"
+                        export application="$url"
+            environmentVariables:
+                - name: subdomain
+                  type: String
+                  value: <+pipeline.variables.seusername>
+            outputVariables:
+                - name: application
+                  type: String
+                  value: application
+            executionTarget: {}
+        timeout: 10m
+    versionLabel: v1

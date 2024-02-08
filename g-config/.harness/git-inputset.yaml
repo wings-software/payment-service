@@ -1,0 +1,40 @@
+inputSet:
+  identifier: "paymentservice"
+  name: "payment-service"
+  orgIdentifier: "default"
+  projectIdentifier: "DevX_Demo"
+  pipeline:
+    identifier: "paymentserviceweb"
+    properties:
+      ci:
+        codebase:
+          build:
+            type: "PR"
+            spec:
+              number: "<+trigger.prNumber>"
+    stages:
+    - stage:
+        identifier: "DeployProd"
+        type: "Deployment"
+        spec:
+          serviceConfig:
+            serviceRef: "paymentservice"
+    variables:
+    - name: "mavenversion"
+      type: "String"
+      value: "3.8"
+    - name: "javaversion"
+      type: "String"
+      value: "8"
+    - name: "seusername"
+      type: "String"
+      value: "<+trigger.payload.pull_request.user.login>"
+    - name: "verify_fail"
+      type: "String"
+      value: "false"
+    - name: "run_owasp_scan"
+      type: "String"
+      value: "false"
+    - name: "autostopping"
+      type: "String"
+      value: "false"

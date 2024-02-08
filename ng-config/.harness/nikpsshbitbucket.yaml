@@ -1,0 +1,15 @@
+connector:
+  name: nikp-ssh-bitbucket
+  identifier: nikpsshbitbucket
+  description:
+  orgIdentifier: default
+  projectIdentifier: DevX_Demo
+  type: Bitbucket
+  spec:
+    url: git@bitbucket.com:nikpapag
+    validationRepo: quickstart
+    authentication:
+      type: Ssh
+      spec:
+        sshKeyRef: bitbucketnikpssh
+    type: Account

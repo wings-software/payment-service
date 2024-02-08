@@ -1,0 +1,30 @@
+inputSet:
+  identifier: "ET"
+  pipeline:
+    identifier: "paymentservicewebcvtest"
+    properties:
+      ci:
+        codebase:
+          build:
+            type: "branch"
+            spec:
+              branch: "master"
+    variables:
+    - name: "mavenversion"
+      type: "String"
+      value: "3.8"
+    - name: "javaversion"
+      type: "String"
+      value: "8"
+    - name: "servicename"
+      type: "String"
+      value: "payment-service"
+    - name: "seusername"
+      type: "String"
+      value: "et"
+    - name: "ffsdkkeyprod"
+      type: "String"
+      value: "44c9dcaa-dab2-4100-b2b5-75bdeb7aa497"
+  name: "ET"
+  orgIdentifier: "default"
+  projectIdentifier: "DevX_Demo"

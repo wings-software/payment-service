@@ -1,0 +1,56 @@
+inputSet:
+  pipeline:
+    identifier: paymentserviceweb
+    properties:
+      ci:
+        codebase:
+          build:
+            spec:
+              branch: devx-develop
+            type: branch
+    stages:
+      - stage:
+          identifier: DeployProd
+          type: Deployment
+          spec:
+            service:
+              serviceRef: paymentservice
+              serviceInputs:
+                serviceDefinition:
+                  type: Kubernetes
+                  spec:
+                    artifacts:
+                      primary:
+                        primaryArtifactRef: payment-service
+    variables:
+      - name: mavenversion
+        type: String
+        default: "3.8"
+        value: "3.8"
+      - name: javaversion
+        type: String
+        default: "8"
+        value: "8"
+      - name: seusername
+        type: String
+        value: andydpage
+      - name: verify_fail
+        type: String
+        default: "false"
+        value: "false"
+      - name: run_owasp_scan
+        type: String
+        default: "false"
+        value: "false"
+      - name: autostopping
+        type: String
+        default: "false"
+        value: "false"
+      - name: hosted
+        type: String
+        value: "false"
+    object Object: properties.ci.codebase
+  name: andy-payment-service
+  identifier: andypaymentservice
+  orgIdentifier: default
+  projectIdentifier: DevX_Demo

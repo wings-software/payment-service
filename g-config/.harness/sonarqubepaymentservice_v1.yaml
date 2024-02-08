@@ -1,0 +1,26 @@
+template:
+  name: sonarqube-payment-service
+  identifier: sonarqubepaymentservice
+  versionLabel: v1
+  type: Step
+  projectIdentifier: DevX_Demo
+  orgIdentifier: default
+  tags: {}
+  spec:
+    type: Plugin
+    spec:
+      connectorRef: nikpdockerhub
+      image: nikpap/harness-plugin:sonarqube
+      privileged: true
+      reports:
+        type: JUnit
+        spec:
+          paths:
+            - "**/SonarqubeJunitResults.xml"
+      settings:
+        SONAR_URL: http://35.214.81.102
+        SONAR_PORT: "9000"
+        SONAR_TOKEN: <+secrets.getValue("sonardevxtoken")>
+        SONAR_PROJECT_KEY: devxdemo
+        SONAR_REPORT_NAME: sonarqube-report-name
+      imagePullPolicy: Always

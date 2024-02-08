@@ -1,0 +1,11 @@
+connector:
+  name: nik-jira
+  identifier: nikjira
+  description:
+  orgIdentifier: default
+  projectIdentifier: NG_Demo
+  type: Jira
+  spec:
+    jiraUrl: https://harness.atlassian.net
+    username: robin.elliott@harness.io
+    passwordRef: nikpjiratoken

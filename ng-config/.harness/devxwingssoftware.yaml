@@ -1,0 +1,23 @@
+connector:
+  name: devx-wings-software
+  identifier: devxwingssoftware
+  description:
+  orgIdentifier: default
+  projectIdentifier: DevX_Demo
+  type: Github
+  spec:
+    url: https://github.com/wings-software
+    validationRepo: payment-service
+    authentication:
+      type: Http
+      spec:
+        type: UsernameToken
+        spec:
+          username: nikpapag
+          tokenRef: devxtoken
+    apiAccess:
+      type: Token
+      spec:
+        tokenRef: devxtoken
+    executeOnDelegate: true
+    type: Account

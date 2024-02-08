@@ -20,6 +20,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.nikp.captcha.CaptchaService;
 import com.nikp.payment.api.PaymentService;
+import com.nikp.payment.test.TiService;
 
 
 @SpringBootApplication
@@ -51,6 +52,11 @@ public class PaymentApplication {
     @Bean
     public CaptchaService captchaService() {
     	return new CaptchaService();
+    }
+    
+    @Bean
+    public TiService tiService() {
+    	return new TiService();
     }
 
     @Bean

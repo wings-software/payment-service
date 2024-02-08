@@ -1,0 +1,20 @@
+template:
+    name: Infra Provision
+    identifier: Infra_Provision
+    versionLabel: "1"
+    type: Step
+    projectIdentifier: DevX_Demo
+    orgIdentifier: default
+    spec:
+        type: ShellScript
+        spec:
+            shell: Bash
+            onDelegate: true
+            source:
+                type: Inline
+                spec:
+                    script: echo "hello"
+            environmentVariables: []
+            outputVariables: []
+            executionTarget: {}
+        timeout: 10m
