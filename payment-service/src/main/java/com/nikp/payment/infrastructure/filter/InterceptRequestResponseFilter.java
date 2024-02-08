@@ -18,6 +18,7 @@ import org.springframework.stereotype.Component;
 
 public class InterceptRequestResponseFilter implements Filter {
 
+	
 	private final static Logger LOG = LoggerFactory.getLogger(InterceptRequestResponseFilter.class);
 
 	@Override
