@@ -3,6 +3,7 @@ pipeline:
   identifier: paymentserviceweb
   projectIdentifier: DevX_Demo
   orgIdentifier: default
+  description: Gartner Demo
   tags: {}
   properties:
     ci:
@@ -10,6 +11,7 @@ pipeline:
         connectorRef: nikpwingssoftware
         repoName: payment-service
         build: <+input>
+        prCloneStrategy: MergeCommit
   stages:
     - stage:
         name: Build
