@@ -658,41 +658,56 @@ pipeline:
                             spec:
                               count: 1
                           skipDryRun: false
-                    - step:
-                        type: Verify
-                        name: verify_canary
-                        identifier: verify_dev
-                        spec:
-                          type: Canary
-                          spec:
-                            sensitivity: LOW
-                            duration: 5m
-                            deploymentTag: <+serviceConfig.artifacts.primary.tag>
-                        timeout: 2h
-                        failureStrategies:
-                          - onFailure:
-                              errors:
-                                - Verification
-                              action:
-                                type: ManualIntervention
+                    - parallel:
+                        - step:
+                            type: Verify
+                            name: verify_canary
+                            identifier: verify_dev
+                            spec:
+                              type: Canary
+                              spec:
+                                sensitivity: LOW
+                                duration: 5m
+                                deploymentTag: <+serviceConfig.artifacts.primary.tag>
+                            timeout: 2h
+                            failureStrategies:
+                              - onFailure:
+                                  errors:
+                                    - Verification
+                                  action:
+                                    type: ManualIntervention
+                                    spec:
+                                      timeout: 2h
+                                      onTimeout:
+                                        action:
+                                          type: StageRollback
+                              - onFailure:
+                                  errors:
+                                    - Unknown
+                                  action:
+                                    type: ManualIntervention
+                                    spec:
+                                      timeout: 2h
+                                      onTimeout:
+                                        action:
+                                          type: Ignore
+                            when:
+                              stageStatus: Success
+                              condition: <+pipeline.variables.verify_fail> == "false"
+                        - step:
+                            type: ShellScript
+                            name: Smoke Tests
+                            identifier: Smoke_Tests
+                            spec:
+                              shell: Bash
+                              executionTarget: {}
+                              source:
+                                type: Inline
                                 spec:
-                                  timeout: 2h
-                                  onTimeout:
-                                    action:
-                                      type: StageRollback
-                          - onFailure:
-                              errors:
-                                - Unknown
-                              action:
-                                type: ManualIntervention
-                                spec:
-                                  timeout: 2h
-                                  onTimeout:
-                                    action:
-                                      type: Ignore
-                        when:
-                          stageStatus: Success
-                          condition: <+pipeline.variables.verify_fail> == "false"
+                                  script: echo "Executing smoke tests"
+                              environmentVariables: []
+                              outputVariables: []
+                            timeout: 10m
                     - step:
                         name: Canary Delete
                         identifier: canaryDelete
