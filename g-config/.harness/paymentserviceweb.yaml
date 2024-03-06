@@ -444,14 +444,7 @@ pipeline:
         spec:
           deploymentType: Kubernetes
           service:
-            serviceRef: paymentservicesrm_dev
-            serviceInputs:
-              serviceDefinition:
-                type: Kubernetes
-                spec:
-                  artifacts:
-                    primary:
-                      primaryArtifactRef: payment-service
+            serviceRef: paymentservice
           environment:
             environmentRef: GKEDEV
             deployToAll: false
