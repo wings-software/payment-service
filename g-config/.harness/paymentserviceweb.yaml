@@ -812,6 +812,8 @@ pipeline:
                 type: StageRollback
         when:
           pipelineStatus: Success
+        delegateSelectors:
+          - devx-demo-delegate
   variables:
     - name: mavenversion
       type: String
