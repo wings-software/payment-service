@@ -591,6 +591,8 @@ pipeline:
                 type: StageRollback
         when:
           pipelineStatus: Success
+        delegateSelectors:
+          - devx-demo-delegate
     - stage:
         name: Jira Approve
         identifier: Jira_Approve
