@@ -418,6 +418,16 @@ pipeline:
                   limits:
                     memory: 500Mi
                     cpu: 300m
+          slsa_provenance:
+            enabled: true
+            attestation:
+              type: cosign
+              spec:
+                password: sscapassword
+                private_key: sscaprivatekey
+          caching:
+            enabled: false
+            paths: []
         when:
           pipelineStatus: Success
         variables:
@@ -436,6 +446,7 @@ pipeline:
           - name: api_domain_name
             type: String
             value: https://api.sto.harness.io
+        description: ""
     - stage:
         name: DeployDev
         identifier: DeployDev
