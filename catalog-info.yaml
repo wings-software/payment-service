@@ -3,6 +3,8 @@ kind: Component
 metadata:
   name: payment-service
   annotations:
+    harness.io/project-url: https://app.harness.io/ng/account/6_vVHzo9Qeu9fXvj-AcbCQ/home/orgs/default/projects/DevX_Demo/details
+    backstage.io/techdocs-ref: dir:.
     github.com/project-slug: wings-software/payment-service
 spec:
   type: other
