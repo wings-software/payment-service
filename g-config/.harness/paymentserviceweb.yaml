@@ -129,7 +129,7 @@ pipeline:
                         condition: <+trigger.branch> != "master-1"
               - step:
                   type: Run
-                  name: Build1
+                  name: Build
                   identifier: Build
                   spec:
                     connectorRef: nikpdockerhub
