@@ -715,6 +715,59 @@ pipeline:
           pipelineStatus: Success
         delegateSelectors:
           - devx-demo-delegate
+    - stage:
+        name: Go To Market
+        identifier: Go_To_Market
+        description: ""
+        type: Approval
+        spec:
+          execution:
+            steps:
+              - step:
+                  name: approve
+                  identifier: approve
+                  type: HarnessApproval
+                  timeout: 1d
+                  spec:
+                    approvalMessage: |-
+                      Please review the following information
+                      and approve the pipeline progression
+                    includePipelineExecutionHistory: true
+                    approvers:
+                      minimumCount: 1
+                      disallowPipelineExecutor: false
+                      userGroups:
+                        - _project_all_users
+                    isAutoRejectEnabled: false
+                    approverInputs: []
+        tags: {}
+    - stage:
+        name: Feature Flags
+        identifier: Feature_Flags
+        description: ""
+        type: FeatureFlag
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: FlagConfiguration
+                  name: FlagConfiguration_1
+                  identifier: FlagConfiguration_1
+                  spec:
+                    feature: bankvalidation
+                    environment: GKEPROD
+                    instructions:
+                      - identifier: SetOnVariationIdentifier
+                        type: SetOnVariation
+                        spec:
+                          variation: "true"
+                      - identifier: AddTargetsToVariationTargetMapIdentifier
+                        type: AddTargetsToVariationTargetMap
+                        spec:
+                          variation: "true"
+                          targets:
+                            - harness-olirees
+                  timeout: 10m
   variables:
     - name: mavenversion
       type: String
