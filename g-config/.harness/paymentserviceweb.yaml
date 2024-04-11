@@ -745,9 +745,10 @@ pipeline:
                         name: Rolling Deployment
                         identifier: rollingDeployment
                         type: K8sRollingDeploy
-                        timeout: 10m
+                        timeout: 9m
                         spec:
                           skipDryRun: false
+                          pruningEnabled: false
                   rollbackSteps:
                     - step:
                         name: Rolling Rollback
