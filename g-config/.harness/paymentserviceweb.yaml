@@ -26,6 +26,7 @@ pipeline:
               namespace: payment-service-build
               automountServiceAccountToken: true
               nodeSelector: {}
+              harnessImageConnectorRef: nikpdockerhub
               os: Linux
           execution:
             steps:
