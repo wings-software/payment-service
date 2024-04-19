@@ -483,14 +483,10 @@ pipeline:
                             identifier: SBOM_Attestation_and_Policy
                             spec:
                               source:
-                                type: image
+                                type: docker
                                 spec:
-                                  connector: nikpdockerhub
-                                  image: nikpap/payment-service:<+pipeline.sequenceId>
-                              verifyAttestation:
-                                type: cosign
-                                spec:
-                                  publicKey: sscapublickey
+                                  connector: dockerhub
+                                  image: harness/ssca-plugin
                               policy:
                                 store:
                                   type: Harness
