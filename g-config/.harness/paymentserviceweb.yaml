@@ -512,6 +512,7 @@ pipeline:
                         spec:
                           connectorRef: nikpgkecluster
                           namespace: payment-service-build
+                          harnessImageConnectorRef: nikpdockerhub
                   - step:
                       type: Policy
                       name: Vulnerability Policy
