@@ -544,8 +544,8 @@ pipeline:
                                     type: Ignore
               - step:
                   type: JiraCreate
-                  name: JiraCreate
-                  identifier: JiraCreate
+                  name: Create Change
+                  identifier: CreateChange
                   spec:
                     connectorRef: account.Harness_JIRA
                     projectKey: HD
@@ -580,7 +580,7 @@ pipeline:
                   identifier: JiraUpdate
                   spec:
                     connectorRef: account.Harness_JIRA
-                    issueKey: <+pipeline.stages.PreProduction.spec.execution.steps.JiraCreate.issue.id>
+                    issueKey: <+pipeline.stages.PreProduction.spec.execution.steps.CreateChange.issue.id>
                     transitionTo:
                       transitionName: In Progress
                       status: In Progress
@@ -638,7 +638,7 @@ pipeline:
                             value: Rejected
                     connectorRef: account.Harness_JIRA
                     projectKey: HD
-                    issueKey: <+pipeline.stages.PreProduction.spec.execution.steps.JiraCreate.issue.key>
+                    issueKey: <+pipeline.stages.PreProduction.spec.execution.steps.CreateChange.issue.key>
                     retryInterval: 1m
             rollbackSteps: []
           serviceDependencies: []
@@ -788,7 +788,7 @@ pipeline:
                   identifier: JiraUpdate
                   spec:
                     connectorRef: account.Harness_JIRA
-                    issueKey: <+pipeline.stages.PreProduction.spec.execution.steps.JiraCreate.issue.key>
+                    issueKey: <+pipeline.stages.PreProduction.spec.execution.steps.CreateChange.issue.key>
                     transitionTo:
                       transitionName: Done
                       status: Done
