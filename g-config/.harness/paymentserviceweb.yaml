@@ -784,7 +784,7 @@ pipeline:
                   timeout: 10m
               - step:
                   type: JiraUpdate
-                  name: UpdateChangeRequest
+                  name: Update Change Request
                   identifier: UpdateChangeRequest
                   spec:
                     connectorRef: account.Harness_JIRA
