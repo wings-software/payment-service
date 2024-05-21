@@ -544,8 +544,8 @@ pipeline:
                                     type: Ignore
               - step:
                   type: JiraCreate
-                  name: Create Change
-                  identifier: CreateChange
+                  name: Create Change Request
+                  identifier: CreateChangeRequest
                   spec:
                     connectorRef: account.Harness_JIRA
                     projectKey: HD
@@ -557,7 +557,7 @@ pipeline:
                         value: "triggeredBy: <+pipeline.variables.seusername> buildNumber: <+pipeline.sequenceId>"
                   timeout: 1d
               - step:
-                  name: Rollout Deployment12
+                  name: Rollout Deployment
                   identifier: rolloutDeployment
                   type: K8sRollingDeploy
                   timeout: 10m
@@ -566,7 +566,7 @@ pipeline:
                     pruningEnabled: false
               - step:
                   type: Chaos
-                  name: chaos
+                  name: Chaos Testing
                   identifier: chaos
                   spec:
                     experimentRef: 0daffb0a-a801-48c7-a152-266c7c2fbe5e
@@ -576,11 +576,11 @@ pipeline:
                     condition: <+pipeline.variables.chaosexperiments> == 'true'
               - step:
                   type: JiraUpdate
-                  name: JiraUpdate
-                  identifier: JiraUpdate
+                  name: Update Change Request
+                  identifier: UpdateChangeRequest
                   spec:
                     connectorRef: account.Harness_JIRA
-                    issueKey: <+pipeline.stages.PreProduction.spec.execution.steps.CreateChange.issue.id>
+                    issueKey: <+pipeline.stages.PreProduction.spec.execution.steps.CreateChangeRequest.issue.id>
                     transitionTo:
                       transitionName: In Progress
                       status: In Progress
@@ -638,7 +638,7 @@ pipeline:
                             value: Rejected
                     connectorRef: account.Harness_JIRA
                     projectKey: HD
-                    issueKey: <+pipeline.stages.PreProduction.spec.execution.steps.CreateChange.issue.key>
+                    issueKey: <+pipeline.stages.PreProduction.spec.execution.steps.CreateChangeRequest.issue.key>
                     retryInterval: 1m
             rollbackSteps: []
           serviceDependencies: []
@@ -784,11 +784,11 @@ pipeline:
                   timeout: 10m
               - step:
                   type: JiraUpdate
-                  name: JiraUpdate
-                  identifier: JiraUpdate
+                  name: UpdateChangeRequest
+                  identifier: UpdateChangeRequest
                   spec:
                     connectorRef: account.Harness_JIRA
-                    issueKey: <+pipeline.stages.PreProduction.spec.execution.steps.CreateChange.issue.key>
+                    issueKey: <+pipeline.stages.PreProduction.spec.execution.steps.CreateChangeRequest.issue.key>
                     transitionTo:
                       transitionName: Done
                       status: Done
