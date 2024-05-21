@@ -763,12 +763,11 @@ pipeline:
                   identifier: WrapUp
                   spec:
                     shell: Bash
-                    onDelegate: true
                     source:
                       type: Inline
                       spec:
                         script: |-
-                          echo "Wrapping up deployment"
+                          echo "Wrapping up deployment1"
                           url="http://$subdomain.cie-demo.co.uk"
                           export application="$url"
                     environmentVariables:
