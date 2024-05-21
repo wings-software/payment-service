@@ -607,7 +607,7 @@ pipeline:
         delegateSelectors:
           - devx-demo-delegate
     - stage:
-        name: Jira Approve
+        name: Final Approval
         identifier: Jira_Approve
         description: ""
         type: Approval
@@ -615,7 +615,7 @@ pipeline:
           execution:
             steps:
               - step:
-                  name: Jira Approval1
+                  name: Jira Approval
                   identifier: jiraApproval
                   type: JiraApproval
                   timeout: 1d
@@ -639,6 +639,7 @@ pipeline:
                     connectorRef: account.Harness_JIRA
                     projectKey: HD
                     issueKey: <+pipeline.stages.PreProduction.spec.execution.steps.JiraCreate.issue.key>
+                    retryInterval: 1m
             rollbackSteps: []
           serviceDependencies: []
         tags: {}
