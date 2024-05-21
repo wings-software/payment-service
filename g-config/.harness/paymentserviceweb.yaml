@@ -646,8 +646,8 @@ pipeline:
         when:
           pipelineStatus: Success
     - stage:
-        name: DeployProd
-        identifier: DeployProd
+        name: Production
+        identifier: Production
         description: ""
         type: Deployment
         spec:
