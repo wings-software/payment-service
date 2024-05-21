@@ -3,6 +3,7 @@ pipeline:
   identifier: paymentserviceweb
   projectIdentifier: DevX_Demo
   orgIdentifier: default
+  description: Gartner Demo
   tags: {}
   properties:
     ci:
@@ -10,6 +11,7 @@ pipeline:
         connectorRef: nikpwingssoftware
         repoName: payment-service
         build: <+input>
+        prCloneStrategy: MergeCommit
   stages:
     - stage:
         name: Build
@@ -24,6 +26,7 @@ pipeline:
               namespace: payment-service-build
               automountServiceAccountToken: true
               nodeSelector: {}
+              harnessImageConnectorRef: nikpdockerhub
               os: Linux
           execution:
             steps:
@@ -48,7 +51,7 @@ pipeline:
                       identifier: runTestsWithIntelligence
                       spec:
                         connectorRef: devxgcp
-                        image: gcr.io/sales-209522/devx-maven:<+pipeline.variables.mavenversion>-jdk-<+pipeline.variables.javaversion>
+                        image: europe-west1-docker.pkg.dev/sales-209522/devx-demo/maven:<+pipeline.variables.mavenversion>-jdk-<+pipeline.variables.javaversion>
                         language: Java
                         buildTool: Maven
                         args: clean test
@@ -98,6 +101,7 @@ pipeline:
                           limits:
                             memory: 6Gi
                             cpu: "6"
+                        enableTestSplitting: false
                       description: aderasdsad
                   - step:
                       type: Plugin
@@ -123,7 +127,7 @@ pipeline:
                               type: Ignore
                       when:
                         stageStatus: Success
-                        condition: <+trigger.branch> != "master-2-1"
+                        condition: <+trigger.branch> != "master-1"
               - step:
                   type: Run
                   name: Build
@@ -143,9 +147,6 @@ pipeline:
                         memory: 3Gi
                         cpu: "2"
                   description: This builds payment service even better. And now with style!sad
-                  when:
-                    stageStatus: Success
-                    condition: <pipeline.variables.cool> != "cool"
               - parallel:
                   - step:
                       type: Security
@@ -378,6 +379,8 @@ pipeline:
                           spec:
                             connector: nikpdockerhub
                             image: nikpap/payment-service:<+pipeline.sequenceId>
+                        sbom_drift:
+                          base: last_generated_sbom
                         tool:
                           type: Syft
                           spec:
@@ -416,6 +419,16 @@ pipeline:
                   limits:
                     memory: 500Mi
                     cpu: 300m
+          slsa_provenance:
+            enabled: true
+            attestation:
+              type: cosign
+              spec:
+                password: sscapassword
+                private_key: sscaprivatekey
+          caching:
+            enabled: false
+            paths: []
         when:
           pipelineStatus: Success
         variables:
@@ -434,6 +447,7 @@ pipeline:
           - name: api_domain_name
             type: String
             value: https://api.sto.harness.io
+        description: ""
     - stage:
         name: DeployDev
         identifier: DeployDev
@@ -442,14 +456,15 @@ pipeline:
         spec:
           deploymentType: Kubernetes
           service:
-            serviceRef: paymentservicesrm_dev
+            serviceRef: paymentservice
             serviceInputs:
               serviceDefinition:
                 type: Kubernetes
                 spec:
                   artifacts:
                     primary:
-                      primaryArtifactRef: payment-service
+                      primaryArtifactRef: <+input>
+                      sources: <+input>
           environment:
             environmentRef: GKEDEV
             deployToAll: false
@@ -457,61 +472,51 @@ pipeline:
               - identifier: K8s_Dev_Namespace
           execution:
             steps:
-              - step:
-                  type: HarnessApproval
-                  name: Wait and Show
-                  identifier: Wait_and_Show
-                  spec:
-                    approvalMessage: Please review the following information and approve the pipeline progression
-                    includePipelineExecutionHistory: true
-                    isAutoRejectEnabled: false
-                    approvers:
-                      userGroups:
-                        - jkharnessio
-                      minimumCount: 1
-                      disallowPipelineExecutor: false
-                    approverInputs: []
-                  timeout: 1d
               - parallel:
-                  - step:
-                      type: CdSscaEnforcement
+                  - stepGroup:
                       name: SBOM Attestation and Policy
                       identifier: SBOM_Attestation_and_Policy
-                      spec:
-                        source:
-                          type: image
-                          spec:
-                            connector: nikpdockerhub
-                            image: nikpap/payment-service:<+pipeline.sequenceId>
-                        verifyAttestation:
-                          type: cosign
-                          spec:
-                            publicKey: sscapublickey
-                        policy:
-                          store:
-                            type: Harness
+                      steps:
+                        - step:
+                            type: SscaEnforcement
+                            name: SBOM Attestation and Policy
+                            identifier: SBOM_Attestation_and_Policy
                             spec:
-                              file: /SSCA Policy/ssca-policy-2
-                        infrastructure:
-                          type: KubernetesDirect
-                          spec:
-                            connectorRef: nikpgkecluster
-                            namespace: payment-service-build
-                            resources:
-                              limits:
-                                memory: 500Mi
-                                cpu: "0.5"
-                      failureStrategies:
-                        - onFailure:
-                            errors:
-                              - AllErrors
-                            action:
-                              type: ManualIntervention
-                              spec:
-                                timeout: 10m
-                                onTimeout:
+                              source:
+                                type: image
+                                spec:
+                                  connector: nikpdockerhub
+                                  image: nikpap/payment-service:<+pipeline.sequenceId>
+                              verifyAttestation:
+                                type: cosign
+                                spec:
+                                  publicKey: sscapublickey
+                              policy:
+                                store:
+                                  type: Harness
+                                  spec:
+                                    file: /SSCA Policy/ssca-policy-2
+                              resources:
+                                limits:
+                                  memory: 500Mi
+                                  cpu: "0.5"
+                            failureStrategies:
+                              - onFailure:
+                                  errors:
+                                    - AllErrors
                                   action:
-                                    type: Ignore
+                                    type: ManualIntervention
+                                    spec:
+                                      timeout: 20m
+                                      onTimeout:
+                                        action:
+                                          type: Ignore
+                      stepGroupInfra:
+                        type: KubernetesDirect
+                        spec:
+                          connectorRef: nikpgkecluster
+                          namespace: payment-service-build
+                          harnessImageConnectorRef: nikpdockerhub
                   - step:
                       type: Policy
                       name: Vulnerability Policy
@@ -524,8 +529,7 @@ pipeline:
                           payload: |-
                             {"FORTIFY_CRITICAL": <+pipeline.stages.Build.spec.execution.steps.fortify.output.outputVariables.CRITICAL>,
                             "CHECKMARX_CRITICAL": <+pipeline.stages.Build.spec.execution.steps.checkmarx.output.outputVariables.CRITICAL>,
-                            "SONAR_CRITICAL": <+pipeline.stages.Build.spec.execution.steps.Sonar_Scan_Vulnerabilities.output.outputVariables.CRITICAL>,
-                            "VERACODE_CRITICAL": <+pipeline.stages.Build.spec.execution.steps.veracode.output.outputVariables.CRITICAL>}
+                            "SONAR_CRITICAL": <+pipeline.stages.Build.spec.execution.steps.Sonar_Scan_Vulnerabilities.output.outputVariables.CRITICAL>,"VERACODE_CRITICAL": <+pipeline.stages.Build.spec.execution.steps.veracode.output.outputVariables.CRITICAL>}
                       timeout: 10m
                       failureStrategies:
                         - onFailure:
@@ -570,12 +574,6 @@ pipeline:
                   when:
                     stageStatus: Success
                     condition: <+pipeline.variables.chaosexperiments> == 'true'
-                  failureStrategies:
-                    - onFailure:
-                        errors:
-                          - AllErrors
-                        action:
-                          type: MarkAsSuccess
               - step:
                   type: JiraUpdate
                   name: JiraUpdate
@@ -606,6 +604,8 @@ pipeline:
                 type: StageRollback
         when:
           pipelineStatus: Success
+        delegateSelectors:
+          - devx-demo-delegate
     - stage:
         name: Jira Approve
         identifier: Jira_Approve
@@ -676,41 +676,56 @@ pipeline:
                             spec:
                               count: 1
                           skipDryRun: false
-                    - step:
-                        type: Verify
-                        name: verify_canary
-                        identifier: verify_dev
-                        spec:
-                          type: Canary
-                          spec:
-                            sensitivity: LOW
-                            duration: 5m
-                            deploymentTag: <+serviceConfig.artifacts.primary.tag>
-                        timeout: 2h
-                        failureStrategies:
-                          - onFailure:
-                              errors:
-                                - Verification
-                              action:
-                                type: ManualIntervention
+                    - parallel:
+                        - step:
+                            type: Verify
+                            name: verify_canary
+                            identifier: verify_dev
+                            spec:
+                              type: Canary
+                              spec:
+                                sensitivity: LOW
+                                duration: 5m
+                                deploymentTag: <+serviceConfig.artifacts.primary.tag>
+                            timeout: 2h
+                            failureStrategies:
+                              - onFailure:
+                                  errors:
+                                    - Verification
+                                  action:
+                                    type: ManualIntervention
+                                    spec:
+                                      timeout: 2h
+                                      onTimeout:
+                                        action:
+                                          type: StageRollback
+                              - onFailure:
+                                  errors:
+                                    - Unknown
+                                  action:
+                                    type: ManualIntervention
+                                    spec:
+                                      timeout: 2h
+                                      onTimeout:
+                                        action:
+                                          type: Ignore
+                            when:
+                              stageStatus: Success
+                              condition: <+pipeline.variables.verify_fail> == "false"
+                        - step:
+                            type: ShellScript
+                            name: Smoke Tests
+                            identifier: Smoke_Tests
+                            spec:
+                              shell: Bash
+                              executionTarget: {}
+                              source:
+                                type: Inline
                                 spec:
-                                  timeout: 2h
-                                  onTimeout:
-                                    action:
-                                      type: StageRollback
-                          - onFailure:
-                              errors:
-                                - Unknown
-                              action:
-                                type: ManualIntervention
-                                spec:
-                                  timeout: 2h
-                                  onTimeout:
-                                    action:
-                                      type: Ignore
-                        when:
-                          stageStatus: Success
-                          condition: <+pipeline.variables.verify_fail> == "false"
+                                  script: echo "Executing smoke tests"
+                              environmentVariables: []
+                              outputVariables: []
+                            timeout: 10m
                     - step:
                         name: Canary Delete
                         identifier: canaryDelete
@@ -810,44 +825,8 @@ pipeline:
                 type: StageRollback
         when:
           pipelineStatus: Success
-    - stage:
-        name: Release Features
-        identifier: Release_Features
-        description: ""
-        type: FeatureFlag
-        spec:
-          execution:
-            steps:
-              - step:
-                  type: HarnessApproval
-                  name: Wait and Show
-                  identifier: Wait_and_Show
-                  spec:
-                    approvalMessage: Please review the following information and approve the pipeline progression
-                    includePipelineExecutionHistory: true
-                    isAutoRejectEnabled: false
-                    approvers:
-                      userGroups:
-                        - jkharnessio
-                      minimumCount: 1
-                      disallowPipelineExecutor: false
-                    approverInputs: []
-                  timeout: 1d
-              - step:
-                  type: FlagConfiguration
-                  name: Enable Mortage Offer
-                  identifier: Enable_Mortage_Offer
-                  spec:
-                    feature: mortgageoffer
-                    environment: GKEPROD
-                    instructions:
-                      - identifier: SetVariationForTarget
-                        type: AddTargetsToVariationTargetMap
-                        spec:
-                          variation: "true"
-                          targets:
-                            - jkharnessio
-                  timeout: 10m
+        delegateSelectors:
+          - devx-demo-delegate
   variables:
     - name: mavenversion
       type: String
