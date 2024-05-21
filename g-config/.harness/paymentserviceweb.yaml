@@ -474,8 +474,8 @@ pipeline:
             steps:
               - parallel:
                   - stepGroup:
-                      name: SBOM Attestation and Policy
-                      identifier: SBOM_Attestation_and_Policy
+                      name: Artifact Integrity Checks
+                      identifier: Artifact_Integrity_Checks
                       steps:
                         - step:
                             type: SscaEnforcement
@@ -517,31 +517,35 @@ pipeline:
                           connectorRef: nikpgkecluster
                           namespace: payment-service-build
                           harnessImageConnectorRef: nikpdockerhub
-                  - step:
-                      type: Policy
-                      name: Vulnerability Policy
-                      identifier: Vulnerability_Policy
-                      spec:
-                        policySets:
-                          - Critical_Vulnerabilities
-                        type: Custom
-                        policySpec:
-                          payload: |-
-                            {"FORTIFY_CRITICAL": <+pipeline.stages.Build.spec.execution.steps.fortify.output.outputVariables.CRITICAL>,
-                            "CHECKMARX_CRITICAL": <+pipeline.stages.Build.spec.execution.steps.checkmarx.output.outputVariables.CRITICAL>,
-                            "SONAR_CRITICAL": <+pipeline.stages.Build.spec.execution.steps.Sonar_Scan_Vulnerabilities.output.outputVariables.CRITICAL>,"VERACODE_CRITICAL": <+pipeline.stages.Build.spec.execution.steps.veracode.output.outputVariables.CRITICAL>}
-                      timeout: 10m
-                      failureStrategies:
-                        - onFailure:
-                            errors:
-                              - AllErrors
-                            action:
-                              type: ManualIntervention
-                              spec:
-                                timeout: 10m
-                                onTimeout:
+                  - stepGroup:
+                      name: Policy Checks
+                      identifier: Policy_Checks
+                      steps:
+                        - step:
+                            type: Policy
+                            name: Vulnerability Policy
+                            identifier: Vulnerability_Policy
+                            spec:
+                              policySets:
+                                - Critical_Vulnerabilities
+                              type: Custom
+                              policySpec:
+                                payload: |-
+                                  {"FORTIFY_CRITICAL": <+pipeline.stages.Build.spec.execution.steps.fortify.output.outputVariables.CRITICAL>,
+                                  "CHECKMARX_CRITICAL": <+pipeline.stages.Build.spec.execution.steps.checkmarx.output.outputVariables.CRITICAL>,
+                                  "SONAR_CRITICAL": <+pipeline.stages.Build.spec.execution.steps.Sonar_Scan_Vulnerabilities.output.outputVariables.CRITICAL>,"VERACODE_CRITICAL": <+pipeline.stages.Build.spec.execution.steps.veracode.output.outputVariables.CRITICAL>}
+                            timeout: 10m
+                            failureStrategies:
+                              - onFailure:
+                                  errors:
+                                    - AllErrors
                                   action:
-                                    type: Ignore
+                                    type: ManualIntervention
+                                    spec:
+                                      timeout: 10m
+                                      onTimeout:
+                                        action:
+                                          type: Ignore
               - step:
                   type: JiraCreate
                   name: Create Change Request
