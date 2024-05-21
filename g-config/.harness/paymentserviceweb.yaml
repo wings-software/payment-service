@@ -607,7 +607,7 @@ pipeline:
         delegateSelectors:
           - devx-demo-delegate
     - stage:
-        name: Final Approval
+        name: Go or No Go Production
         identifier: Jira_Approve
         description: ""
         type: Approval
