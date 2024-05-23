@@ -449,7 +449,7 @@ pipeline:
             value: https://api.sto.harness.io
         description: ""
     - stage:
-        name: DeployDev
+        name: DeployDev Covea
         identifier: DeployDev
         description: ""
         type: Deployment
