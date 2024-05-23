@@ -14,7 +14,7 @@ pipeline:
         prCloneStrategy: MergeCommit
   stages:
     - stage:
-        name: Build
+        name: Build 2
         identifier: Build
         type: CI
         spec:
