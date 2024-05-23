@@ -645,7 +645,7 @@ pipeline:
         when:
           pipelineStatus: Success
     - stage:
-        name: DeployProd
+        name: DeployProd Covea
         identifier: DeployProd
         description: ""
         type: Deployment
