@@ -14,7 +14,7 @@ pipeline:
         prCloneStrategy: MergeCommit
   stages:
     - stage:
-        name: Build 2
+        name: Build
         identifier: Build
         type: CI
         spec:
@@ -32,7 +32,7 @@ pipeline:
             steps:
               - step:
                   type: RestoreCacheS3
-                  name: RestoreCache
+                  name: RestoreCache covea
                   identifier: RestoreCache
                   spec:
                     connectorRef: nikpaws
