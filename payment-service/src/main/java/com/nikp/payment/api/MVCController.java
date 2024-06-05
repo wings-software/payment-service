@@ -22,7 +22,7 @@ import com.nikp.payment.infrastructure.persistance.PaymentRepository;
 
 import javax.annotation.PostConstruct;
 import javax.ws.rs.ForbiddenException;
-
+import com.nikp.captcha.CaptchaService;
 @Controller
 public class MVCController {
 
@@ -43,6 +43,10 @@ public class MVCController {
   @Autowired
   private EventBus eventBus;
 
+
+  @Autowired
+  private CaptchaService captchaService;
+
   @RequestMapping("/")
   public String indexView(@RequestParam(name = "number", required = false, defaultValue = "")
   String number, @RequestParam(name = "sename", required = false, defaultValue = "") 
@@ -56,10 +60,27 @@ public class MVCController {
 
   
   @PostMapping("/mvc/payment")
-  public String paymentSubmit(@ModelAttribute PaymentDto paymentDto,@RequestParam(name = "number", required = false, defaultValue = "") 
+  public String paymentSubmit(@ModelAttribute PaymentDto paymentDto,@RequestParam(value="g-recaptcha-response") String response,@RequestParam(name = "number", required = false, defaultValue = "")
   String number, @RequestParam(name = "sename", required = false, defaultValue = "") 
   String sename, Model model) {
 	  
+  if(paymentDto.getBankValidation().isEmpty())
+  {
+	try { 
+		captchaService.processResponse(response);
+	}catch(BankValidationException e) {
+
+		model.addAttribute(paymentDto);
+		model.addAttribute("response",response);
+
+		return "bankError";
+	}catch(ReCaptchaInvalidException re)
+	{
+		return "captchaError";
+	}catch(ReCaptchaUnavailableException reU) {
+		return "captchaError";
+	}
+  }
     paymentRepository.save(new Payment(paymentDto.getUserId(), paymentDto.getAccountFrom(), paymentDto.getAccountTo(), paymentDto.getAmount()));
     eventBus.publish(new Event("SAVE", "Save payment" + paymentDto));
     System.out.println("Notification: added payment from user "+paymentDto.getUserId());
@@ -91,5 +112,21 @@ public class MVCController {
     model.addAttribute("sename", seName);
     
     return "createOriginal";
+  }
+
+	
+  @PostMapping("/mvc/payment/bank")
+  public String paymentSubmitBank(@ModelAttribute PaymentDto paymentDto,@RequestParam(name = "number", required = false, defaultValue = "") 
+  String number, @RequestParam(name = "sename", required = false, defaultValue = "") 
+  String sename, Model model) {
+
+    paymentRepository.save(new Payment(paymentDto.getUserId(), paymentDto.getAccountFrom(), paymentDto.getAccountTo(), paymentDto.getAmount()));
+    eventBus.publish(new Event("SAVE", "Save payment" + paymentDto));
+    model.addAttribute("list", paymentRepository.findAll());
+    model.addAttribute("number",buildNumber );
+    model.addAttribute("sename", seName);
+    return "allPayments";
+
+
   }
 }
