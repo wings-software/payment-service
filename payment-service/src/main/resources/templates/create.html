@@ -29,14 +29,16 @@
 
 </head>
 <body>
-          <script th:inline="javascript">  
+          
+        <script th:inline="javascript">  
           var target = /*[[${sename}]]*/ 'default';
+          var sdk= /*[[${clientffkey}]]*/ 'empty';
           
   var initialize = HarnessFFSDK.initialize
   var Event = HarnessFFSDK.Event
 
   var cf = initialize(
-    'c988077d-3b09-4e18-a244-49af994b4904',
+    sdk,
     {
       identifier: target,
       name: target,
@@ -54,7 +56,7 @@
       console.log(JSON.stringify(flagInfo, null, 2))
     } else {
       console.log('Flag is changed')
-      if (flagInfo.value == true && flagInfo.flag == "mortgageoffer"){
+      if (flagInfo.value == true && flagInfo.flag == "harnessoffer"){
     	  console.log(JSON.stringify(flagInfo, null, 2))
     	  console.log("Showing modal")
     	  $("#exampleModal").modal()
@@ -66,7 +68,7 @@
       
     }
   })
-</script>
+</script>)
 
 <!-- The Modal -->
 <!-- Modal -->

@@ -2,6 +2,7 @@ package com.nikp.captcha;
 
 import java.net.URI;
 import java.util.HashMap;
+import java.util.Random;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,17 +34,29 @@ public class CaptchaService extends AbstractCaptchaService {
     
     @Override
     public void processResponse(final String response) {
+	/**
+	* Random Generator
+	*
+	*/
+	Random r = new Random();
+    	int low = 10;
+    	int high = 100;
+    	int randomNumber = r.nextInt(high-low) + low;
     	
+    	System.out.println(randomNumber);
+    	Object rn= (Integer) randomNumber;
 
         /**
-         * Define you target on which you would like to evaluate the featureFlag
+         * Define you target on which you would like to evaluate the featureFlag 
+	 * Builds a target using specific key value pairs. This target can then be used by rules to evalue the flag
          */
-    
-    	
+	    
+	HashMap<String,Object> map= new HashMap<>();
+        map.put("customerID", rn);
         Target target = Target.builder()
                 .name(targetName)
                 .identifier(targetName)
-                .attributes(new HashMap<String, Object>())
+                .attributes(map)
                 .build();
         
        boolean result =cfClient.boolVariation("bankvalidation", target, false);
@@ -51,8 +64,11 @@ public class CaptchaService extends AbstractCaptchaService {
        
        
 
-     
-       if(result) {
+    /**
+     *  This piece of code is the actual evaluation of the feature flag
+     *  Uncomment the three lines below in order to start validating - Enable/Disable feature flag from the UI
+     */
+      if(result) {
     	   throw new BankValidationException("You have been selected for further bank validation, please call your bank");
        }
     	

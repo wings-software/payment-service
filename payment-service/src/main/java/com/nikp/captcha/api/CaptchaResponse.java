@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.springframework.cloud.cloudfoundry.com.fasterxml.jackson.annotation.JsonProperty;
 
-
 public class CaptchaResponse {
 
     private Boolean success;
@@ -17,7 +16,6 @@ public class CaptchaResponse {
     
     
 	public Boolean getSuccess() {
-		
 		return success;
 	}
 	public void setSuccess(Boolean success) {

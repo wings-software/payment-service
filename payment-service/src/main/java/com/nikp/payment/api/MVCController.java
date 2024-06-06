@@ -1,6 +1,7 @@
 package com.nikp.payment.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,8 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.beans.factory.annotation.Value;
 
+import com.nikp.captcha.CaptchaService;
 import com.nikp.eventbus.api.EventBus;
 import com.nikp.eventbus.domain.Event;
 import com.nikp.payment.domain.Payment;
@@ -28,12 +29,17 @@ public class MVCController {
 
   @Autowired
   private PaymentRepository paymentRepository;
+  
+  @Autowired
+  private CaptchaService captchaService;
 
   
   @Value("${harness.build}" )
   String buildNumber;
   @Value("${harness.se}" )
   String seName;
+  @Value("${harness.clientFF}")
+  String clientffkey;
 
   @PostConstruct
   private void init() {
@@ -44,28 +50,49 @@ public class MVCController {
   private EventBus eventBus;
 
   @RequestMapping("/")
-  public String indexView(@RequestParam(name = "number", required = false, defaultValue = "")
+  public String indexView(@RequestParam(name = "number", required = false, defaultValue = "") 
   String number, @RequestParam(name = "sename", required = false, defaultValue = "") 
   String sename, Model model) {
-    System.out.println("Notification: all payments listed");
+    System.out.println("all payments executed");
     model.addAttribute("list", paymentRepository.findAll());
     model.addAttribute("number",buildNumber );
     model.addAttribute("sename", seName);
+    model.addAttribute("clientffkey", clientffkey);
     return "allPayments";
   }
 
   
   @PostMapping("/mvc/payment")
-  public String paymentSubmit(@ModelAttribute PaymentDto paymentDto,@RequestParam(name = "number", required = false, defaultValue = "") 
+  public String paymentSubmit(@ModelAttribute PaymentDto paymentDto,@RequestParam(value="g-recaptcha-response") String response,@RequestParam(name = "number", required = false, defaultValue = "") 
   String number, @RequestParam(name = "sename", required = false, defaultValue = "") 
   String sename, Model model) {
-	  
+
+
+  if(paymentDto.getBankValidation().isEmpty())
+  {
+	try { 
+		captchaService.processResponse(response);
+	}catch(BankValidationException e) {
+		
+		model.addAttribute(paymentDto);
+		model.addAttribute("response",response);
+		
+		return "bankError";
+	}catch(ReCaptchaInvalidException re)
+	{
+		return "captchaError";
+	}catch(ReCaptchaUnavailableException reU) {
+		return "captchaError";
+	}
+  }
     paymentRepository.save(new Payment(paymentDto.getUserId(), paymentDto.getAccountFrom(), paymentDto.getAccountTo(), paymentDto.getAmount()));
     eventBus.publish(new Event("SAVE", "Save payment" + paymentDto));
-    System.out.println("Notification: added payment from user "+paymentDto.getUserId());
     model.addAttribute("list", paymentRepository.findAll());
     model.addAttribute("number",buildNumber );
     model.addAttribute("sename", seName);
+    model.addAttribute("clientffkey", clientffkey);
+    
+   
     return "allPayments";
   }
 
@@ -73,11 +100,35 @@ public class MVCController {
   public String paymentForm( @ModelAttribute PaymentDto paymentDto,@RequestParam(name = "number", required = false, defaultValue = "") 
   String number, @RequestParam(name = "sename", required = false, defaultValue = "") 
   String sename, Model model) {
-	  System.out.println("Notification: creating payment using the main form");
+
     model.addAttribute("paymentDto", new PaymentDto());
     model.addAttribute("number",buildNumber );
     model.addAttribute("sename", seName);
+    model.addAttribute("clientffkey", clientffkey);
+  
+    return "create";
+
     
-    return "createOriginal";
   }
+  
+  @PostMapping("/mvc/payment/bank")
+  public String paymentSubmitBank(@ModelAttribute PaymentDto paymentDto,@RequestParam(name = "number", required = false, defaultValue = "") 
+  String number, @RequestParam(name = "sename", required = false, defaultValue = "") 
+  String sename, Model model) {
+
+
+	
+    paymentRepository.save(new Payment(paymentDto.getUserId(), paymentDto.getAccountFrom(), paymentDto.getAccountTo(), paymentDto.getAmount()));
+    eventBus.publish(new Event("SAVE", "Save payment" + paymentDto));
+    model.addAttribute("list", paymentRepository.findAll());
+    model.addAttribute("number",buildNumber );
+    model.addAttribute("sename", seName);
+    model.addAttribute("clientffkey", clientffkey);
+    
+   
+    return "allPayments";
+
+  
+  }
+  
 }

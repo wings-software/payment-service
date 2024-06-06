@@ -11,7 +11,6 @@
     <name>nikp</name>
     <description>Spring-app</description>
 
-	
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -172,7 +171,7 @@
           <dependency>
       <groupId>io.harness</groupId>
       <artifactId>ff-java-server-sdk</artifactId>
-      <version>1.0.1</version>
+      <version>1.0.3</version>
     </dependency>
     </dependencies>
 
@@ -208,9 +207,9 @@
     			<artifactId>maven-surefire-plugin</artifactId>
     			<version>2.22.1</version>
     			<configuration>
-    			    <forkCount>0</forkCount>
+    			    <forkCount>1</forkCount>
     				<reuseForks>true</reuseForks>
-				 <argLine>${harnessArgLine} -Xmx1024m -XX:MaxPermSize=256m </argLine>
+    				<argLine>-Xmx1024m -XX:MaxPermSize=256m -javaagent:/addon/bin/java-agent.jar=/addon/tmp/config.ini</argLine>
        				 <useSystemClassLoader>false</useSystemClassLoader>
     			</configuration>
 			</plugin>  

@@ -1,0 +1,10 @@
+bin/
+target/
+
+# eclipse project file
+.settings/
+.classpath
+.project
+
+# OS
+.DS_Store

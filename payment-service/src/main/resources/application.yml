@@ -18,7 +18,8 @@ management:
     enabled: false
 
 harness:
-  se: ${HARNESS_SE:nikpapag}
+  se: ${HARNESS_SE:nik}
   build: ${HARNESS_BUILD:1}
+  clientFF: ${HARNESS_CLIENT_FF:sdkkey}
   api:
-    key: ${HARNESS_FF_KEY:44c9dcaa-dab2-4100-b2b5-75bdeb7aa497}
+    key: ${HARNESS_FF_KEY:1260ecd9-0af2-43d0-98f6-06570bb13a00}
