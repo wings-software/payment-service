@@ -38,8 +38,6 @@ public class MVCController {
   String buildNumber;
   @Value("${harness.se}" )
   String seName;
-  @Value("${harness.clientFF}")
-  String clientffkey;
 
   @PostConstruct
   private void init() {
@@ -57,7 +55,6 @@ public class MVCController {
     model.addAttribute("list", paymentRepository.findAll());
     model.addAttribute("number",buildNumber );
     model.addAttribute("sename", seName);
-    model.addAttribute("clientffkey", clientffkey);
     return "allPayments";
   }
 
@@ -90,7 +87,7 @@ public class MVCController {
     model.addAttribute("list", paymentRepository.findAll());
     model.addAttribute("number",buildNumber );
     model.addAttribute("sename", seName);
-    model.addAttribute("clientffkey", clientffkey);
+
     
    
     return "allPayments";
@@ -104,7 +101,7 @@ public class MVCController {
     model.addAttribute("paymentDto", new PaymentDto());
     model.addAttribute("number",buildNumber );
     model.addAttribute("sename", seName);
-    model.addAttribute("clientffkey", clientffkey);
+;
   
     return "create";
 
@@ -123,7 +120,7 @@ public class MVCController {
     model.addAttribute("list", paymentRepository.findAll());
     model.addAttribute("number",buildNumber );
     model.addAttribute("sename", seName);
-    model.addAttribute("clientffkey", clientffkey);
+
     
    
     return "allPayments";
