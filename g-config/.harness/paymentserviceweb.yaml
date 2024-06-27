@@ -650,7 +650,7 @@ pipeline:
         when:
           pipelineStatus: Success
     - stage:
-        name: Production
+        name: Productions
         identifier: Production
         description: ""
         type: Deployment
