@@ -607,6 +607,38 @@ pipeline:
         delegateSelectors:
           - devx-demo-delegate
     - stage:
+        name: JiraApproval1
+        identifier: JiraApproval1
+        description: ""
+        type: Approval
+        spec:
+          execution:
+            steps:
+              - step:
+                  name: Jira Approval1
+                  identifier: Jira_Approval1
+                  type: JiraApproval
+                  timeout: 1d
+                  spec:
+                    approvalCriteria:
+                      type: KeyValues
+                      spec:
+                        matchAnyCondition: true
+                        conditions:
+                          - key: Status
+                            operator: equals
+                            value: Approved
+                    rejectionCriteria:
+                      type: KeyValues
+                      spec:
+                        matchAnyCondition: true
+                        conditions: []
+                    connectorRef: account.Harness_JIRA
+                    projectKey: HD
+                    retryInterval: 1m
+                    issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.key>
+        tags: {}
+    - stage:
         name: DeployProd
         identifier: DeployProd
         description: ""
