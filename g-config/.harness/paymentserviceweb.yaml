@@ -462,7 +462,9 @@ pipeline:
                 type: Kubernetes
                 spec:
                   artifacts:
-                    primary: {}
+                    primary:
+                      primaryArtifactRef: <+input>
+                      sources: <+input>
           environment:
             environmentRef: Factory_Nord
             deployToAll: false
