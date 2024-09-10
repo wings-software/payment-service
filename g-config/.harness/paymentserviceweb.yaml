@@ -449,7 +449,7 @@ pipeline:
             value: https://api.sto.harness.io
         description: ""
     - stage:
-        name: DeployDev
+        name: Factory Server Deployment
         identifier: DeployDev
         description: ""
         type: Deployment
@@ -462,14 +462,12 @@ pipeline:
                 type: Kubernetes
                 spec:
                   artifacts:
-                    primary:
-                      primaryArtifactRef: <+input>
-                      sources: <+input>
+                    primary: {}
           environment:
-            environmentRef: GKEDEV
+            environmentRef: Factory_Nord
             deployToAll: false
             infrastructureDefinitions:
-              - identifier: K8s_Dev_Namespace
+              - identifier: Server_A
           execution:
             steps:
               - parallel:
@@ -607,52 +605,17 @@ pipeline:
         delegateSelectors:
           - devx-demo-delegate
     - stage:
-        name: JiraApproval1
-        identifier: JiraApproval1
-        description: ""
-        type: Approval
-        spec:
-          execution:
-            steps:
-              - step:
-                  name: Jira Approval1
-                  identifier: Jira_Approval1
-                  type: JiraApproval
-                  timeout: 1d
-                  spec:
-                    approvalCriteria:
-                      type: KeyValues
-                      spec:
-                        matchAnyCondition: true
-                        conditions:
-                          - key: Status
-                            operator: equals
-                            value: Approved
-                    rejectionCriteria:
-                      type: KeyValues
-                      spec:
-                        matchAnyCondition: true
-                        conditions: []
-                    connectorRef: account.Harness_JIRA
-                    projectKey: HD
-                    retryInterval: 1m
-                    issueKey: <+pipeline.stages.DeployDev.spec.execution.steps.JiraCreate.issue.key>
-        tags: {}
-    - stage:
-        name: DeployProd
+        name: Factory Roboter Deployment
         identifier: DeployProd
         description: ""
         type: Deployment
         spec:
           deploymentType: Kubernetes
-          service:
-            serviceRef: <+input>
-            serviceInputs: <+input>
           environment:
-            environmentRef: GKEPROD
+            environmentRef: Factory_Nord
             deployToAll: false
             infrastructureDefinitions:
-              - identifier: K8s_Prod_Namespace
+              - identifier: Roboter_A
           execution:
             steps:
               - stepGroup:
@@ -670,56 +633,20 @@ pipeline:
                             spec:
                               count: 1
                           skipDryRun: false
-                    - parallel:
-                        - step:
-                            type: Verify
-                            name: verify_canary
-                            identifier: verify_dev
+                    - step:
+                        type: ShellScript
+                        name: Smoke Tests
+                        identifier: Smoke_Tests
+                        spec:
+                          shell: Bash
+                          executionTarget: {}
+                          source:
+                            type: Inline
                             spec:
-                              type: Canary
-                              spec:
-                                sensitivity: LOW
-                                duration: 5m
-                                deploymentTag: <+serviceConfig.artifacts.primary.tag>
-                            timeout: 2h
-                            failureStrategies:
-                              - onFailure:
-                                  errors:
-                                    - Verification
-                                  action:
-                                    type: ManualIntervention
-                                    spec:
-                                      timeout: 2h
-                                      onTimeout:
-                                        action:
-                                          type: StageRollback
-                              - onFailure:
-                                  errors:
-                                    - Unknown
-                                  action:
-                                    type: ManualIntervention
-                                    spec:
-                                      timeout: 2h
-                                      onTimeout:
-                                        action:
-                                          type: Ignore
-                            when:
-                              stageStatus: Success
-                              condition: <+pipeline.variables.verify_fail> == "false"
-                        - step:
-                            type: ShellScript
-                            name: Smoke Tests
-                            identifier: Smoke_Tests
-                            spec:
-                              shell: Bash
-                              executionTarget: {}
-                              source:
-                                type: Inline
-                                spec:
-                                  script: echo "Executing smoke tests"
-                              environmentVariables: []
-                              outputVariables: []
-                            timeout: 10m
+                              script: echo "Executing smoke tests"
+                          environmentVariables: []
+                          outputVariables: []
+                        timeout: 10m
                     - step:
                         name: Canary Delete
                         identifier: canaryDelete
@@ -810,6 +737,9 @@ pipeline:
                     skipDryRun: false
                   timeout: 10m
           serviceDependencies: []
+          service:
+            useFromStage:
+              stage: DeployDev
         tags: {}
         failureStrategies:
           - onFailure:
