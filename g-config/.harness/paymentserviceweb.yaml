@@ -449,13 +449,6 @@ pipeline:
             value: https://api.sto.harness.io
         description: ""
     - stage:
-        name: approve
-        identifier: approve
-        tags: {}
-        template:
-          templateRef: account.approve_sit
-          versionLabel: v1
-    - stage:
         name: DeployDev
         identifier: DeployDev
         description: ""
