@@ -607,6 +607,32 @@ pipeline:
         delegateSelectors:
           - devx-demo-delegate
     - stage:
+        name: Approval
+        identifier: Approval
+        description: ""
+        type: Approval
+        spec:
+          execution:
+            steps:
+              - step:
+                  name: Test
+                  identifier: Test
+                  type: HarnessApproval
+                  timeout: 1d
+                  spec:
+                    approvalMessage: |-
+                      Please review the following information
+                      and approve the pipeline progression
+                    includePipelineExecutionHistory: true
+                    approvers:
+                      minimumCount: 1
+                      disallowPipelineExecutor: false
+                      userGroups:
+                        - account.Approvers
+                    isAutoRejectEnabled: false
+                    approverInputs: []
+        tags: {}
+    - stage:
         name: DeployProd
         identifier: DeployProd
         description: ""
